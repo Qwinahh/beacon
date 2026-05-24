@@ -2,8 +2,11 @@ name: Engage — Reply to Mentions
 
 on:
   schedule:
-    - cron: "30 * * * *"   # Runs at :30 past every hour.
+    - cron: "0 */4 * * *"
   workflow_dispatch:
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   engage:
@@ -36,8 +39,9 @@ jobs:
 
       - name: Commit state
         run: |
-          git config user.name  "qwinahh-bot"
-          git config user.email "bot@qwinahh.local"
+          git config user.name  "beacon-bot"
+          git config user.email "bot@beacon.local"
           git add data/state.json
-          git diff --cached --quiet || git commit -m "chore: update engage state [skip ci]"
+          git diff --cached --quiet || git commit -m "chore: engage state [skip ci]"
           git push
+
