@@ -2,18 +2,20 @@ name: Post — Crypto Commentary
 
 on:
   schedule:
-    # Four posting windows per day (UTC). Times are randomised in code via jitter.
-    - cron: "0 8  * * *"   # Asia/EU morning
-    - cron: "0 14 * * *"   # US morning
-    - cron: "0 20 * * *"   # US evening
-    - cron: "0 22 * * *"   # US late / catch-up slot
-  workflow_dispatch:        # Allow manual trigger from the Actions tab.
+    - cron: "0 8  * * *"
+    - cron: "0 14 * * *"
+    - cron: "0 20 * * *"
+    - cron: "0 22 * * *"
+  workflow_dispatch:
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   post:
     runs-on: ubuntu-latest
     permissions:
-      contents: write       # Required to commit state.json back to the repo.
+      contents: write
 
     steps:
       - name: Checkout
@@ -40,8 +42,9 @@ jobs:
 
       - name: Commit state and memory
         run: |
-          git config user.name  "qwinahh-bot"
-          git config user.email "bot@qwinahh.local"
+          git config user.name  "beacon-bot"
+          git config user.email "bot@beacon.local"
           git add data/state.json data/memory/ data/projects/
           git diff --cached --quiet || git commit -m "chore: update bot state + memory [skip ci]"
-    
+          git push
+
