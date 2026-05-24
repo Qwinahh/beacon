@@ -1,0 +1,6 @@
+{
+  "_description": "What kinds of signals consistently lead to good posts vs noise. Bot updates this over time by reflecting on what it posted and why.",
+  "good_signals": [],
+  "noise_signals": [],
+  "skipped_reasons": []
+}

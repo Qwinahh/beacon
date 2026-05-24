@@ -1,0 +1,12 @@
+{
+  "_description": "Bot-written observations about specific projects over time. The bot appends to this after each post cycle. Do not edit manually unless correcting an error.",
+  "projects": {
+    "Hyperliquid": [
+      {
+        "ts": "2026-05-23T23:17:41Z",
+        "observation": "OI crossed $4B -- model holding without blowout",
+        "source": "test"
+      }
+    ]
+  }
+}

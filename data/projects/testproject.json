@@ -1,0 +1,34 @@
+{
+  "name": "TestProject",
+  "first_seen": "2026-05-23T23:59:29.868656+00:00",
+  "last_updated": "2026-05-23T23:59:30.041486+00:00",
+  "category": "DEX",
+  "chain": "Solana",
+  "thesis": "A test DeFi protocol on Solana with growing TVL.",
+  "trust_score": 3,
+  "airdrop": {
+    "status": "watching",
+    "worth_farming": true,
+    "reasoning": "Early stage, VC-backed, no token yet. Worth watching.",
+    "actions": [
+      "Bridge funds to Solana",
+      "Use DEX daily",
+      "Provide liquidity"
+    ]
+  },
+  "observations": [
+    {
+      "ts": 1779580769.9119673,
+      "note": "TVL jumped 45% in 24h after launch tweet",
+      "source": "defillama"
+    }
+  ],
+  "consensus": {
+    "sentiment": "unknown",
+    "summary": "",
+    "updated": ""
+  },
+  "links": {
+    "website": "https://test.xyz"
+  }
+}

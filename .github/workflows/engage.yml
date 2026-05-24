@@ -1,0 +1,43 @@
+name: Engage — Reply to Mentions
+
+on:
+  schedule:
+    - cron: "30 * * * *"   # Runs at :30 past every hour.
+  workflow_dispatch:
+
+jobs:
+  engage:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run engagement
+        env:
+          X_API_KEY:         ${{ secrets.X_API_KEY }}
+          X_API_SECRET:      ${{ secrets.X_API_SECRET }}
+          X_ACCESS_TOKEN:    ${{ secrets.X_ACCESS_TOKEN }}
+          X_ACCESS_SECRET:   ${{ secrets.X_ACCESS_SECRET }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python engage.py
+
+      - name: Commit state
+        run: |
+          git config user.name  "qwinahh-bot"
+          git config user.email "bot@qwinahh.local"
+          git add data/state.json
+          git diff --cached --quiet || git commit -m "chore: update engage state [skip ci]"
+          git push
