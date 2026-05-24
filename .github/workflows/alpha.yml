@@ -2,11 +2,11 @@ name: Alpha — Urgent Signal Fast-Track
 
 on:
   schedule:
-    # Every 30 minutes. Only actually posts if an urgency-3 signal is found
-    # AND the 1-hour cooldown since the last post has elapsed.
-    # Cheap to run: exits in <5s if nothing urgent is live.
     - cron: "*/30 * * * *"
   workflow_dispatch:
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   alpha:
@@ -40,8 +40,9 @@ jobs:
 
       - name: Commit state and memory
         run: |
-          git config user.name  "qwinahh-bot"
-          git config user.email "bot@qwinahh.local"
-          git add data/state.json data/memory/
+          git config user.name  "beacon-bot"
+          git config user.email "bot@beacon.local"
+          git add data/state.json data/memory/ data/projects/
           git diff --cached --quiet || git commit -m "chore: alpha fast-track state [skip ci]"
           git push
+
