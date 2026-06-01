@@ -2,11 +2,11 @@ name: Alpha — Urgent Signal Fast-Track
 
 on:
   schedule:
+    # Every 30 minutes. Only actually posts if an urgency-3 signal is found
+    # AND the 1-hour cooldown since the last post has elapsed.
+    # Cheap to run: exits in <5s if nothing urgent is live.
     - cron: "*/30 * * * *"
   workflow_dispatch:
-
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   alpha:
@@ -30,19 +30,19 @@ jobs:
 
       - name: Run alpha fast-track
         env:
-          X_API_KEY:         ${{ secrets.X_API_KEY }}
-          X_API_SECRET:      ${{ secrets.X_API_SECRET }}
-          X_ACCESS_TOKEN:    ${{ secrets.X_ACCESS_TOKEN }}
-          X_ACCESS_SECRET:   ${{ secrets.X_ACCESS_SECRET }}
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          GITHUB_TOKEN:      ${{ secrets.GITHUB_TOKEN }}
+          X_API_KEY:            ${{ secrets.X_API_KEY }}
+          X_API_SECRET:         ${{ secrets.X_API_SECRET }}
+          X_ACCESS_TOKEN:       ${{ secrets.X_ACCESS_TOKEN }}
+          X_ACCESS_SECRET:      ${{ secrets.X_ACCESS_SECRET }}
+          ANTHROPIC_API_KEY:    ${{ secrets.ANTHROPIC_API_KEY }}
+          GITHUB_TOKEN:         ${{ secrets.GITHUB_TOKEN }}
+          X_SCRAPER_COOKIES:    ${{ secrets.X_SCRAPER_COOKIES }}
         run: python post.py --alpha-only
 
       - name: Commit state and memory
         run: |
-          git config user.name  "beacon-bot"
-          git config user.email "bot@beacon.local"
-          git add data/state.json data/memory/ data/projects/
+          git config user.name  "qwinahh-bot"
+          git config user.email "bot@qwinahh.local"
+          git add data/state.json data/memory/
           git diff --cached --quiet || git commit -m "chore: alpha fast-track state [skip ci]"
           git push
-

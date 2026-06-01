@@ -67,17 +67,22 @@ def _generate_tweet(title: str, source: str, kind: str, topic: str,
 
     global _state
     recent_fmts = _state.recent_formats() if _state else []
-    text = writer.generate(item, portfolio, recent_fmts, x_conversation=x_conversation)
+    text, fmt_name = writer.generate(item, portfolio, recent_fmts, x_conversation=x_conversation)
+
+    # Always record the format used so the rotation stays accurate.
+    if _state and fmt_name:
+        _state.record_format(fmt_name)
 
     if text is None:
         return {
             "tweet_text":     None,
             "char_count":     0,
             "quality_rejected": True,
+            "format_used":    fmt_name,
             "reason":         "Writer quality gate rejected the generated text as too generic.",
         }
 
-    return {"tweet_text": text, "char_count": len(text), "quality_rejected": False}
+    return {"tweet_text": text, "char_count": len(text), "quality_rejected": False, "format_used": fmt_name}
 
 
 def _post(tweet_text: str) -> dict:

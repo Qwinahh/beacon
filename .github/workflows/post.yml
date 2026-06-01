@@ -2,20 +2,18 @@ name: Post — Crypto Commentary
 
 on:
   schedule:
-    - cron: "0 8  * * *"
-    - cron: "0 14 * * *"
-    - cron: "0 20 * * *"
-    - cron: "0 22 * * *"
-  workflow_dispatch:
-
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+    # Four posting windows per day (UTC). Times are randomised in code via jitter.
+    - cron: "0 8  * * *"   # Asia/EU morning
+    - cron: "0 14 * * *"   # US morning
+    - cron: "0 20 * * *"   # US evening
+    - cron: "0 22 * * *"   # US late / catch-up slot
+  workflow_dispatch:        # Allow manual trigger from the Actions tab.
 
 jobs:
   post:
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      contents: write       # Required to commit state.json back to the repo.
 
     steps:
       - name: Checkout
@@ -33,18 +31,18 @@ jobs:
 
       - name: Run bot
         env:
-          X_API_KEY:         ${{ secrets.X_API_KEY }}
-          X_API_SECRET:      ${{ secrets.X_API_SECRET }}
-          X_ACCESS_TOKEN:    ${{ secrets.X_ACCESS_TOKEN }}
-          X_ACCESS_SECRET:   ${{ secrets.X_ACCESS_SECRET }}
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          X_API_KEY:            ${{ secrets.X_API_KEY }}
+          X_API_SECRET:         ${{ secrets.X_API_SECRET }}
+          X_ACCESS_TOKEN:       ${{ secrets.X_ACCESS_TOKEN }}
+          X_ACCESS_SECRET:      ${{ secrets.X_ACCESS_SECRET }}
+          ANTHROPIC_API_KEY:    ${{ secrets.ANTHROPIC_API_KEY }}
+          X_SCRAPER_COOKIES:    ${{ secrets.X_SCRAPER_COOKIES }}
         run: python post.py
 
       - name: Commit state and memory
         run: |
-          git config user.name  "beacon-bot"
-          git config user.email "bot@beacon.local"
+          git config user.name  "qwinahh-bot"
+          git config user.email "bot@qwinahh.local"
           git add data/state.json data/memory/ data/projects/
           git diff --cached --quiet || git commit -m "chore: update bot state + memory [skip ci]"
           git push
-

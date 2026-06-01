@@ -57,6 +57,18 @@ _REJECT_PHRASES = [
     "game changer",
     "revolutionary",
     "this changes everything",
+    "significant milestone",
+    "exciting development",
+    "massive news",
+    "the defi space",
+    "the crypto space",
+    "in the world of",
+    "it's worth noting",
+    "at the end of the day",
+    "paradigm shift",
+    "in today's",
+    "the latest news",
+    "according to reports",
 ]
 
 # A post must contain at least one of these to be considered substantive.
@@ -126,10 +138,71 @@ def _item_title(item: CandidateItem) -> str:
 # Prompt assembly
 # ---------------------------------------------------------------------------
 
+import random as _random
+
+_FORMAT_PALETTE = [
+    # (format_name, instruction)
+    ("data_observation",
+     "Write a DATA OBSERVATION post: lead with a specific number or metric, "
+     "then state what it actually means for positioning or the narrative. "
+     "Example structure: '[Metric] at [number]. [What that implies].'\n"
+     "Keep it under 220 chars. Two sentences max."),
+
+    ("contrarian",
+     "Write a CONTRARIAN post: push back on a mainstream narrative forming "
+     "around this topic. State what the data actually shows vs what people "
+     "are saying. Example structure: '[What everyone is saying]. "
+     "[What the data actually shows].'\nUnder 200 chars."),
+
+    ("farm_update",
+     "Write a FARM/POSITION UPDATE in first-person: share what you're "
+     "actually doing with your capital or what you've decided about a farm. "
+     "Be specific about the decision and why. Use '(position disclosed)' "
+     "if relevant. Example: 'Been LP-ing X for N weeks. [Specific observation]. "
+     "[Decision based on it].'\nUnder 200 chars."),
+
+    ("short_take",
+     "Write a SHORT PUNCHY TAKE under 150 characters — one sentence that "
+     "captures the most important implication. No explanation, no buildup. "
+     "Just the sharpest version of the observation. "
+     "Example: 'EigenLayer has 50 AVSs now. Fee revenue is still basically zero.'"),
+
+    ("question",
+     "Write a QUESTION post that prompts your audience to think or share "
+     "their own experience. Must be grounded in the specific data, not vague. "
+     "Example: 'MET unlock hits in 48h. How many of you are adjusting LP "
+     "positions before it? Curious whether the pool incentive thesis holds.'\n"
+     "Under 200 chars."),
+
+    ("pattern_recognition",
+     "Write a PATTERN RECOGNITION post: connect this event to a historical "
+     "pattern you've seen before. Shows experience. Example: 'New protocol "
+     "doing $500M TVL in a week on points. Seen this before. Check where "
+     "the TVL goes when points end.'\nUnder 220 chars."),
+
+    ("callout",
+     "Write a CALLOUT post: call out something that's being spun, overhyped, "
+     "or misrepresented. Be direct but not aggressive. Cite the specific "
+     "detail that doesn't add up. Example: Protocol announced 'fair launch' "
+     "with 40% to team at TGE. 'Fair' is doing a lot of work there.\n"
+     "Under 200 chars."),
+]
+
+
+def _pick_format(recent_formats: list[str]) -> tuple[str, str]:
+    """Pick a format not used in the last 2 posts."""
+    recent = set((recent_formats or [])[-2:])
+    options = [(n, i) for n, i in _FORMAT_PALETTE if n not in recent]
+    if not options:
+        options = _FORMAT_PALETTE
+    return _random.choice(options)
+
+
 def _user_prompt(
     item: CandidateItem,
     portfolio: dict,
-    recent_formats: list[str],
+    format_name: str,
+    format_instruction: str,
     x_conversation: Optional[str] = None,
 ) -> str:
     topic  = _item_topic(item)
@@ -137,7 +210,6 @@ def _user_prompt(
 
     item_block      = _build_item_summary(item)
     portfolio_block = _build_portfolio_context(portfolio)
-    format_history  = ", ".join(recent_formats[-5:]) if recent_formats else "none"
     context_block   = build_writer_context(topic, title, x_conversation)
 
     parts: list[str] = []
@@ -146,7 +218,7 @@ def _user_prompt(
         parts += [context_block, "---"]
 
     parts += [
-        "Write one tweet about the following item.",
+        "## Event to write about",
         "",
         item_block,
     ]
@@ -156,27 +228,39 @@ def _user_prompt(
 
     parts += [
         "",
-        f"Formats used recently (avoid repeating): {format_history}",
+        f"## Format directive: {format_name.upper().replace('_', ' ')}",
         "",
-        "HARD REQUIREMENTS -- the tweet will be rejected if it breaks these:",
-        "1. Must contain at least one specific number, dollar amount, percentage, or named protocol mechanic.",
-        "2. Must state an implication or take -- not just describe what happened.",
-        "3. No phrases like 'worth watching', 'looks interesting', 'bullish signal', 'game changer'.",
-        "4. Under 270 characters. No hashtags. No URLs. No quotes around the output.",
-        "5. Output only the tweet text. Nothing else.",
+        format_instruction,
         "",
-        "GOOD examples (study the structure, not the content):",
-        '- "Variational airdrop points now worth ~$1,540 each at Hyperliquid-comparable FDV. That changes the math on whether the farm is worth it."',
-        '- "Hyperliquid OI hit $4.2B yesterday -- up 40% in two weeks. HLP is absorbing that without blowing out. The model is holding."',
-        '- "Kaito season 2 window is open. Engagement-to-point ratio is way worse than season 1 -- the farm is crowded now."',
-        '- "EigenLayer AVS count just crossed 50 but fee revenue is still near zero. Builder activity ≠ protocol revenue yet."',
-        '- "Meteora MET unlock in 48h. $23M worth. If you\'re LP\'ing, watch pool incentive changes this week."',
+        "## Hard constraints (tweet rejected if any are broken)",
+        "1. Must contain at least one specific number, dollar amount, percentage, or named mechanic.",
+        "2. Must express a take — not just describe what happened.",
+        "3. No banned phrases: 'worth watching', 'game changer', 'bullish signal', 'exciting', 'huge'.",
+        "4. Under 270 characters. No hashtags. No URLs.",
+        "5. Output ONLY the tweet text. No intro, no label, no quotes around it.",
         "",
-        "BAD examples (never write like this):",
-        '- "Hyperliquid is looking really strong right now, worth keeping an eye on."',
-        '- "DeFi TVL is up this week. Exciting times for the space."',
-        '- "This raise could be a game changer for the sector."',
-        '- "BTC is up today. Market looking bullish."',
+        "## Real-voice examples (study the tone, not the content)",
+        "",
+        "GOOD — data observation:",
+        "  Hyperliquid OI up 40% to $4.2B in 2 weeks. HLP hasn't blown out. Model holding under real stress.",
+        "",
+        "GOOD — contrarian:",
+        "  Everyone calling Kaito S2 a layup. Engagement-to-point ratio is 3x worse than S1. Farm is crowded.",
+        "",
+        "GOOD — farm update:",
+        "  Been LP'ing Meteora for 6 weeks. MET unlock hits in 48h — watching pool incentives before I adjust. (position disclosed)",
+        "",
+        "GOOD — short take:",
+        "  EigenLayer has 50 AVSs now. Fee revenue still basically zero.",
+        "",
+        "GOOD — callout:",
+        "  Protocol announced 'fair launch' with 40% to team at TGE. 'Fair' is doing a lot of work there.",
+        "",
+        "BAD (never write like these):",
+        "  Hyperliquid is looking really strong right now, worth keeping an eye on.",
+        "  DeFi TVL is up this week. Exciting times for the space.",
+        "  This raise could be a game changer for the sector.",
+        "  The latest developments in the crypto space are very promising.",
     ]
 
     return "\n".join(parts)
@@ -234,19 +318,22 @@ def generate(
     portfolio: dict,
     recent_formats: list[str],
     x_conversation: Optional[str] = None,
-) -> Optional[str]:
+) -> tuple[Optional[str], Optional[str]]:
     """
     Generate tweet text for `item`.
 
-    Returns a validated string ready to post, or None if the generated
-    text fails quality checks (caller should skip rather than post garbage).
-    Falls back to a template only if the API is genuinely unavailable.
+    Returns (text, format_name) — text is None if the quality gate rejected it.
+    Caller should record format_name in state regardless of whether text is None.
+    Falls back to (template_text, "fallback") if the API is unavailable.
     """
+    # Pick format before any API calls so we can return it even on failure.
+    format_name, _format_instruction = _pick_format(recent_formats)
+
     api_key = os.environ.get("ANTHROPIC_API_KEY")
     if not api_key:
         if TEMPLATE_FALLBACK:
             log.warning("ANTHROPIC_API_KEY not set -- using template fallback.")
-            return _fallback_template(item)
+            return _fallback_template(item), "fallback"
         raise EnvironmentError("ANTHROPIC_API_KEY is required but not set.")
 
     topic  = _item_topic(item)
@@ -254,7 +341,7 @@ def generate(
 
     client        = anthropic.Anthropic(api_key=api_key)
     system_prompt = build_system_prompt(topic=topic, title=title)
-    user_prompt   = _user_prompt(item, portfolio, recent_formats, x_conversation)
+    user_prompt   = _user_prompt(item, portfolio, format_name, _format_instruction, x_conversation)
 
     try:
         message = client.messages.create(
@@ -277,13 +364,13 @@ def generate(
         valid, reason = _validate_quality(text)
         if not valid:
             log.warning("Tweet rejected by quality gate: %s | tweet: %s", reason, text[:80])
-            return None
+            return None, format_name
 
-        log.info("Generated tweet (%d chars): %s", len(text), text[:80])
-        return text
+        log.info("Generated tweet (%d chars) [%s]: %s", len(text), format_name, text[:80])
+        return text, format_name
 
     except anthropic.APIError as exc:
         log.error("Anthropic API error: %s", exc)
         if TEMPLATE_FALLBACK:
-            return _fallback_template(item)
+            return _fallback_template(item), "fallback"
         raise

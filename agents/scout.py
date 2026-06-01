@@ -78,16 +78,17 @@ def _detect_alpha() -> list:
 
 
 def _fetch_x_context(topic: str, max_posts: int = 8) -> dict:
-    """Fetch what crypto X accounts are saying about a topic right now."""
+    """
+    Fetch what influential X accounts are saying about a topic right now.
+    Uses twscrape (free, no API key) via X_SCRAPER_COOKIES env var.
+    Falls back gracefully if unavailable.
+    """
     try:
-        import importlib
-        lc = importlib.import_module("bot.sources.lunarcrush")
-        posts = lc.fetch_topic_posts(topic, limit=max_posts)
+        from bot.sources.xcontext import fetch_topic_posts
+        posts = fetch_topic_posts(topic, limit=max_posts)
         if not posts:
-            return {"posts": [], "summary": f"No recent X posts found for '{topic}'."}
+            return {"posts": [], "summary": f"No recent X posts found for '{topic}' (or scraper unavailable)."}
         return {"posts": posts, "summary": f"Found {len(posts)} recent X posts about '{topic}'."}
-    except ModuleNotFoundError:
-        return {"posts": [], "summary": "X context unavailable -- lunarcrush module not installed."}
     except Exception as exc:
         log.warning("fetch_x_context failed for topic '%s': %s", topic, exc)
         return {"posts": [], "summary": f"X context fetch failed: {exc}"}

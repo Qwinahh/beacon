@@ -5,6 +5,11 @@ requests>=2.32.0
 feedparser>=6.0.11
 python-dateutil>=2.9.0
 
+# X context scraping — free replacement for LunarCrush
+# Requires X_SCRAPER_COOKIES env var (set as GitHub Secret).
+# See bot/sources/xcontext.py for setup instructions.
+twscrape>=0.13.0
+
 # Optional alpha sources (fail silently if not installed)
 # pip install hyperliquid-python-sdk   -- for Hyperliquid funding rate signals
 # hyperliquid-python-sdk               -- uncomment below to require it
