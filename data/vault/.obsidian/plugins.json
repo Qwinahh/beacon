@@ -1,0 +1,7 @@
+{
+  "obsidian-git": {"enabled": true},
+  "dataview": {"enabled": true},
+  "templater-obsidian": {"enabled": true},
+  "obsidian-kanban": {"enabled": true},
+  "calendar": {"enabled": true}
+}
