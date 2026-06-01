@@ -137,20 +137,29 @@ def build_writer_context(
         A formatted string to be embedded in the writer's user prompt.
     """
     from bot.brain.memory import build_memory_context
-    from bot.brain.project_memory import get_project_context
+    from bot.brain.vault import get_project_context as vault_project_ctx
 
     persona     = load_persona()
     thesis      = extract_thesis(persona, topic, title)
     history     = build_history_context()
     memory      = build_memory_context(topic, title)
 
-    # Per-project deep memory (researcher findings, airdrop eval, X consensus)
-    # Try to infer the project name from topic and title words.
+    # Per-project deep memory — check vault (markdown) first, then fallback
+    # to legacy JSON project memory if vault has nothing yet.
     project_ctx = ""
     for candidate in _infer_project_names(topic, title):
-        project_ctx = get_project_context(candidate)
+        project_ctx = vault_project_ctx(candidate)
         if project_ctx:
             break
+    if not project_ctx:
+        try:
+            from bot.brain.project_memory import get_project_context as legacy_ctx
+            for candidate in _infer_project_names(topic, title):
+                project_ctx = legacy_ctx(candidate)
+                if project_ctx:
+                    break
+        except Exception:
+            pass
 
     parts: list[str] = []
 
@@ -253,15 +262,4 @@ def build_system_prompt(topic: str = "", title: str = "") -> str:
 
     Falls back cleanly to BASE_SYSTEM if persona.md doesn't exist.
     """
-    persona = load_persona()
-    if not persona:
-        return BASE_SYSTEM
-
-    # Pull in the narrative timing guide so Claude knows when to be punchy vs measured.
-    timing = _extract_section(persona, "Narrative Timing Guide")
-
-    parts = [BASE_SYSTEM]
-    if timing:
-        parts.append("## Posting Calibration\n" + timing)
-
-    return "\n\n".join(parts)
+    persona = lo

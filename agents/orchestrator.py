@@ -281,6 +281,19 @@ def run_post_cycle(state: State, alpha_only: bool = False) -> dict:
 
     log.info("Orchestrator: action=%s | %s", action, result.get("reason", "")[:80])
 
+    # Write to vault daily log.
+    try:
+        from bot.brain.vault import log_post, log_skip
+        tweet_text = result.get("tweet_text") or ""
+        topic      = result.get("topic", "")
+        fmt        = result.get("format_used", "unknown")
+        if action in ("posted", "announcement") and tweet_text:
+            log_post(tweet_text, topic, fmt)
+        else:
+            log_skip(topic, result.get("reason", "no reason given")[:120])
+    except Exception as exc:
+        log.warning("Vault logging failed (non-fatal): %s", exc)
+
     try:
         run_reflection(result)
     except Exception as exc:

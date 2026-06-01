@@ -22,13 +22,7 @@ import urllib.request
 from typing import Optional
 
 from agents.base import ToolAgent
-from bot.brain.project_memory import (
-    add_observation,
-    get_project,
-    update_airdrop,
-    update_consensus,
-    update_thesis,
-)
+from bot.brain import vault as _vault
 
 log = logging.getLogger(__name__)
 
@@ -96,11 +90,10 @@ def _fetch_page_text(url: str) -> dict:
 def _x_consensus(topic: str) -> dict:
     """Fetch what crypto X is saying about a project."""
     try:
-        import importlib
-        lc = importlib.import_module("bot.sources.lunarcrush")
-        posts = lc.fetch_topic_posts(topic, limit=10)
+        from bot.sources.xcontext import fetch_topic_posts
+        posts = fetch_topic_posts(topic, limit=10)
         if not posts:
-            return {"posts": [], "summary": f"No recent X posts found for '{topic}'."}
+            return {"posts": [], "summary": f"No recent X posts found for '{topic}' (or scraper unavailable)."}
         return {"posts": posts, "summary": f"Found {len(posts)} recent posts about '{topic}'."}
     except Exception as exc:
         return {"posts": [], "summary": f"X consensus unavailable: {exc}"}
@@ -116,16 +109,17 @@ def _write_thesis(
     docs: Optional[str] = None,
     defillama_url: Optional[str] = None,
 ) -> dict:
-    """Persist the researcher's thesis and metadata for a project."""
-    links = {}
-    if website:
-        links["website"] = website
-    if docs:
-        links["docs"] = docs
-    if defillama_url:
-        links["defillama"] = defillama_url
-    update_thesis(project_name, thesis, category=category, chain=chain,
-                  trust_score=trust_score, links=links)
+    """Persist the researcher's thesis and metadata to the vault."""
+    _vault.update_thesis(project_name, thesis)
+    _vault.update_trust_score(project_name, trust_score)
+    # Record links as an observation so they appear in the file.
+    links = []
+    if website:   links.append(f"website: {website}")
+    if docs:      links.append(f"docs: {docs}")
+    if defillama_url: links.append(f"DeFiLlama: {defillama_url}")
+    if links:
+        _vault.add_observation(project_name, "Links — " + " | ".join(links), source="researcher")
+    _vault.log_research(project_name, trust_score, notes=f"category={category}, chain={chain}")
     return {"saved": True, "project": project_name, "trust_score": trust_score}
 
 
@@ -136,26 +130,31 @@ def _write_airdrop(
     reasoning: str,
     actions: Optional[list] = None,
 ) -> dict:
-    """Persist airdrop evaluation for a project."""
-    update_airdrop(project_name, status, worth_farming, reasoning, actions or [])
+    """Persist airdrop evaluation to the vault."""
+    _vault.update_airdrop_status(project_name, status, worth=worth_farming)
+    note = f"Airdrop eval: status={status}, worth_farming={worth_farming}. {reasoning}"
+    if actions:
+        note += f" Actions: {', '.join(actions)}."
+    _vault.add_observation(project_name, note, source="researcher")
     return {"saved": True, "project": project_name, "worth_farming": worth_farming}
 
 
 def _write_consensus(project_name: str, sentiment: str, summary: str) -> dict:
-    """Persist X crowd consensus for a project."""
-    update_consensus(project_name, sentiment, summary)
+    """Persist X crowd consensus as an observation in the vault."""
+    note = f"X consensus: sentiment={sentiment}. {summary}"
+    _vault.add_observation(project_name, note, source="x_scraper")
     return {"saved": True}
 
 
 def _write_observation(project_name: str, note: str, source: str = "") -> dict:
-    """Add a time-stamped observation to a project's memory."""
-    add_observation(project_name, note, source)
+    """Add a time-stamped observation to a project's vault file."""
+    _vault.add_observation(project_name, note, source or "researcher")
     return {"saved": True}
 
 
 def _read_project_memory(project_name: str) -> dict:
-    """Read existing memory for a project before deciding what to research."""
-    data = get_project(project_name)
+    """Read existing vault memory for a project before deciding what to research."""
+    data = _vault.read_project(project_name)
     if not data:
         return {"exists": False, "project": project_name}
     return {"exists": True, **data}
