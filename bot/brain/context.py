@@ -188,6 +188,11 @@ def build_writer_context(
     if memory:
         parts.append(memory)
 
+    # --- Live market context (fear/greed, prices, TVL) ---
+    market_ctx = _build_market_context()
+    if market_ctx:
+        parts.append(market_ctx)
+
     # --- X conversation context ---
     if x_conversation and x_conversation.strip():
         parts.append(
@@ -199,6 +204,38 @@ def build_writer_context(
         )
 
     return "\n\n".join(parts)
+
+
+def _build_market_context() -> str:
+    """
+    Fetch live Fear & Greed, prices, and DeFi TVL and return a
+    compact context block. All sources fail silently.
+    """
+    lines: list[str] = []
+    try:
+        from bot.sources.fear_greed import fear_greed_summary
+        fg = fear_greed_summary()
+        if fg:
+            lines.append(fg)
+    except Exception:
+        pass
+    try:
+        from bot.sources.coingecko import prices_summary
+        px = prices_summary()
+        if px:
+            lines.append(px)
+    except Exception:
+        pass
+    try:
+        from bot.sources.defillama_ctx import tvl_summary
+        tvl = tvl_summary()
+        if tvl:
+            lines.append(tvl)
+    except Exception:
+        pass
+    if not lines:
+        return ""
+    return "## Live Market Context\n" + "\n".join(lines)
 
 
 def _infer_project_names(topic: str, title: str) -> list[str]:

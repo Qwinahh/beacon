@@ -1,0 +1,44 @@
+name: Learn — Absorb Market Data & Community Signals
+
+on:
+  schedule:
+    - cron: "0 8  * * *"   # Morning run (UTC)
+    - cron: "0 20 * * *"   # Evening run (UTC)
+  workflow_dispatch:        # Allow manual trigger from Actions tab.
+
+jobs:
+  learn:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write       # Required to commit knowledge updates back to repo.
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run learner
+        env:
+          ANTHROPIC_API_KEY:    ${{ secrets.ANTHROPIC_API_KEY }}
+          TELEGRAM_BOT_TOKEN:   ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHANNEL_IDS: ${{ secrets.TELEGRAM_CHANNEL_IDS }}
+          DISCORD_BOT_TOKEN:    ${{ secrets.DISCORD_BOT_TOKEN }}
+          DISCORD_CHANNEL_IDS:  ${{ secrets.DISCORD_CHANNEL_IDS }}
+        run: python -m agents.learner_agent
+
+      - name: Commit knowledge updates
+        run: |
+          git config user.name  "qwinahh-bot"
+          git config user.email "bot@qwinahh.local"
+          git add data/vault/knowledge/
+          git diff --cached --quiet || git commit -m "chore: update knowledge base [skip ci]"
+          git push

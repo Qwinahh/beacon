@@ -123,5 +123,42 @@ SORT conviction DESC
 
 ---
 
+## 🧠 Knowledge Base
+
+Reference documents seeded from crypto history (2017–2025). Used by writer for grounded takes.
+
+- [[knowledge/crypto_cycles|Market Cycles 2017–2025]]
+- [[knowledge/defi_history|DeFi History & Key Protocols]]
+- [[knowledge/protocol_patterns|Protocol Patterns — Signal vs Noise]]
+- [[knowledge/market_context|Live Market Context]] *(auto-updated 2× daily)*
+
+---
+
+## 📡 Community Signals
+
+Community signals ingested from Reddit, Telegram, Discord. Tier 3 — never cited as confirmed facts.
+
+```dataview
+LIST
+FROM "knowledge/signals"
+SORT file.name DESC
+LIMIT 7
+```
+
+---
+
+## 📰 Confirmed Events Log
+
+Confirmed market events (tier 1-2) written by the learner agent.
+
+```dataview
+LIST
+FROM "knowledge/events"
+SORT file.name DESC
+LIMIT 10
+```
+
+---
+
 *Dashboard updates automatically when Obsidian Git pulls the latest bot run from GitHub.*
 *To refresh manually: Cmd/Ctrl+R in Obsidian.*

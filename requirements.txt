@@ -10,6 +10,10 @@ python-dateutil>=2.9.0
 # See bot/sources/xcontext.py for setup instructions.
 twscrape>=0.13.0
 
+# Community signal ingestion (Reddit uses public JSON API — no extra dep needed)
+# Telegram: set TELEGRAM_BOT_TOKEN + TELEGRAM_CHANNEL_IDS in GitHub Secrets
+# Discord:  set DISCORD_BOT_TOKEN + DISCORD_CHANNEL_IDS in GitHub Secrets
+
 # Optional alpha sources (fail silently if not installed)
 # pip install hyperliquid-python-sdk   -- for Hyperliquid funding rate signals
 # hyperliquid-python-sdk               -- uncomment below to require it
