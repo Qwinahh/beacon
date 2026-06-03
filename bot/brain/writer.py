@@ -16,8 +16,6 @@ import os
 import re
 from typing import Optional, Union
 
-import anthropic
-
 from bot.brain.context import build_system_prompt, build_writer_context
 from bot.config import CLAUDE_MAX_TOKENS, CLAUDE_MODEL, TEMPLATE_FALLBACK
 from bot.sources.defillama import RaiseItem, TvlMoverItem
@@ -329,48 +327,44 @@ def generate(
     # Pick format before any API calls so we can return it even on failure.
     format_name, _format_instruction = _pick_format(recent_formats)
 
-    api_key = os.environ.get("ANTHROPIC_API_KEY")
-    if not api_key:
-        if TEMPLATE_FALLBACK:
-            log.warning("ANTHROPIC_API_KEY not set -- using template fallback.")
-            return _fallback_template(item), "fallback"
-        raise EnvironmentError("ANTHROPIC_API_KEY is required but not set.")
-
     topic  = _item_topic(item)
     title  = _item_title(item)
 
-    client        = anthropic.Anthropic(api_key=api_key)
     system_prompt = build_system_prompt(topic=topic, title=title)
     user_prompt   = _user_prompt(item, portfolio, format_name, _format_instruction, x_conversation)
 
-    try:
-        message = client.messages.create(
-            model=CLAUDE_MODEL,
-            max_tokens=CLAUDE_MAX_TOKENS,
-            system=system_prompt,
-            messages=[{"role": "user", "content": user_prompt}],
-        )
-        text = message.content[0].text.strip()
+    # Use the unified LLM layer: Groq → Cerebras → OpenRouter → Anthropic
+    from bot.brain.llm import complete as llm_complete, get_active_provider
+    log.debug("LLM provider: %s", get_active_provider())
 
-        # Strip wrapping quotes if Claude added them.
-        if len(text) >= 2 and text[0] == '"' and text[-1] == '"':
-            text = text[1:-1].strip()
+    text = llm_complete(
+        system=system_prompt,
+        user=user_prompt,
+        max_tokens=CLAUDE_MAX_TOKENS,
+        temperature=0.85,
+    )
 
-        # Hard character limit.
-        if len(text) > 279:
-            text = text[:276].rsplit(".", 1)[0] + "."
-
-        # Quality gate -- reject generic output rather than posting slop.
-        valid, reason = _validate_quality(text)
-        if not valid:
-            log.warning("Tweet rejected by quality gate: %s | tweet: %s", reason, text[:80])
-            return None, format_name
-
-        log.info("Generated tweet (%d chars) [%s]: %s", len(text), format_name, text[:80])
-        return text, format_name
-
-    except anthropic.APIError as exc:
-        log.error("Anthropic API error: %s", exc)
+    if text is None:
+        log.error("All LLM providers failed — using template fallback")
         if TEMPLATE_FALLBACK:
             return _fallback_template(item), "fallback"
-        raise
+        return None, format_name
+
+    text = text.strip()
+
+    # Strip wrapping quotes if the model added them.
+    if len(text) >= 2 and text[0] == '"' and text[-1] == '"':
+        text = text[1:-1].strip()
+
+    # Hard character limit.
+    if len(text) > 279:
+        text = text[:276].rsplit(".", 1)[0] + "."
+
+    # Quality gate -- reject generic output rather than posting slop.
+    valid, reason = _validate_quality(text)
+    if not valid:
+        log.warning("Tweet rejected by quality gate: %s | tweet: %s", reason, text[:80])
+        return None, format_name
+
+    log.info("Generated tweet (%d chars) [%s]: %s", len(text), format_name, text[:80])
+    return text, format_name

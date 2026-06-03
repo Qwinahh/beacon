@@ -1,1 +1,14 @@
-{}
+{
+  "legacyEditor": false,
+  "livePreview": true,
+  "defaultViewMode": "preview",
+  "foldHeading": false,
+  "showLineNumber": false,
+  "strictLineBreaks": false,
+  "showFrontmatter": false,
+  "newFileLocation": "folder",
+  "newFileFolderPath": "projects",
+  "attachmentFolderPath": "",
+  "alwaysUpdateLinks": true,
+  "promptDelete": true
+}

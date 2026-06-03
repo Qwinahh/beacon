@@ -1,117 +1,168 @@
 """
-Telegram community signal ingestion.
+bot/sources/telegram.py — Telegram channel signal ingestion.
 
-Reads messages from public Telegram channels via the Bot API.
-Requires TELEGRAM_BOT_TOKEN (GitHub Secret) and TELEGRAM_CHANNEL_IDS
-(comma-separated channel usernames, e.g. "@channel1,@channel2").
+Uses Telethon (MTProto API) to scrape public crypto Telegram channels.
+Requires: TELEGRAM_API_ID and TELEGRAM_API_HASH from my.telegram.org
+(free — just register an app).
 
-The bot must be added as an admin/member to each channel to read posts.
+IMPORTANT: Telegram signals are Tier 3 (community sentiment).
+They are NEVER written to vault as confirmed facts.
+They are used only as sentiment context and narrative trend detection.
 
-Community signals — tier 3. Never written as confirmed facts.
+Channels monitored are public channels only — no private groups.
 """
+
 from __future__ import annotations
 
-import logging
+import asyncio
 import os
+import logging
 import time
-from dataclasses import dataclass, field
 from typing import Optional
-
-import requests
 
 log = logging.getLogger(__name__)
 
-_BASE = "https://api.telegram.org"
+# Public Telegram channels to monitor
+_CHANNELS = [
+    "deFi_Made_Here",        # DeFi alpha
+    "on_chain_lens",         # On-chain analysis
+    "CryptoRankNews",        # Crypto news aggregator
+    "AirdropHunterAlpha",    # Airdrop signals
+    "HyperliquidAlpha",      # Hyperliquid community
+    "kaitoai_official",      # Kaito official
+    "arbitrum_official",     # Arbitrum
+    "ZkSyncCommunity",       # zkSync
+    "solana_official",       # Solana
+    "DeFiPulse",             # DeFi updates
+]
+
+_MAX_MESSAGES = 10     # per channel
+_MAX_HOURS_OLD = 24    # only fetch messages from last 24 hours
 
 
-@dataclass
-class TelegramSignal:
-    channel: str
-    text: str
-    message_id: int
-    date_ts: float
-    views: int = 0
-    tier: str = "community"
-    kind: str = "telegram"
-    meta: dict = field(default_factory=dict)
-
-    @property
-    def age_hours(self) -> float:
-        return (time.time() - self.date_ts) / 3600.0
-
-
-def _get_token() -> Optional[str]:
-    return os.environ.get("TELEGRAM_BOT_TOKEN")
-
-
-def _get_channels() -> list[str]:
-    raw = os.environ.get("TELEGRAM_CHANNEL_IDS", "")
-    return [c.strip() for c in raw.split(",") if c.strip()]
-
-
-def fetch_channel_messages(channel: str, limit: int = 10) -> list[TelegramSignal]:
-    """
-    Fetch recent channel_post updates for a channel the bot is a member of.
-
-    Telegram's Bot API only delivers updates for channels where the bot
-    has been added. Use getUpdates filtered to channel_post.
-    """
-    token = _get_token()
-    if not token:
-        return []
-
-    signals: list[TelegramSignal] = []
+async def _fetch_channel_messages(client, channel: str, limit: int, max_hours: int) -> list[dict]:
+    """Fetch recent messages from a single Telegram channel."""
     try:
-        # Verify we can see the channel.
-        chat_resp = requests.get(
-            f"{_BASE}/bot{token}/getChat",
-            params={"chat_id": channel},
-            timeout=8,
-        )
-        if not chat_resp.ok:
-            log.warning("Telegram: cannot access channel '%s'", channel)
-            return []
-
-        updates_resp = requests.get(
-            f"{_BASE}/bot{token}/getUpdates",
-            params={"limit": 100, "allowed_updates": ["channel_post"]},
-            timeout=10,
-        )
-        updates_resp.raise_for_status()
-        updates = updates_resp.json().get("result", [])
-
-        channel_username = channel.lstrip("@")
-        for upd in updates[-limit:]:
-            post = upd.get("channel_post") or upd.get("message")
-            if not post:
+        from telethon import errors  # type: ignore
+        entity = await client.get_entity(channel)
+        cutoff = time.time() - (max_hours * 3600)
+        messages = []
+        async for msg in client.iter_messages(entity, limit=limit * 3):
+            if not msg.text:
                 continue
-            chat = post.get("chat", {})
-            if chat.get("username") != channel_username:
-                continue
-            text = post.get("text") or post.get("caption") or ""
-            if not text.strip():
-                continue
-            signals.append(TelegramSignal(
-                channel=channel,
-                text=text[:500],
-                message_id=post.get("message_id", 0),
-                date_ts=float(post.get("date", time.time())),
-                views=post.get("views", 0),
-                meta={"channel": channel, "message_id": post.get("message_id", 0)},
-            ))
-    except Exception as exc:
-        log.warning("Telegram fetch failed for %s: %s", channel, exc)
-    return signals
-
-
-def fetch_all_signals(limit: int = 10) -> list[TelegramSignal]:
-    """Fetch signals from all configured Telegram channels."""
-    channels = _get_channels()
-    if not channels:
+            if msg.date.timestamp() < cutoff:
+                break
+            messages.append({
+                "text": msg.text[:500],
+                "date": msg.date.isoformat(),
+                "channel": channel,
+                "views": getattr(msg, "views", 0) or 0,
+                "source_tier": 3,
+                "source": f"telegram/{channel}",
+            })
+            if len(messages) >= limit:
+                break
+        return messages
+    except Exception as e:
+        log.warning("Telegram fetch failed for %s: %s", channel, e)
         return []
-    signals: list[TelegramSignal] = []
-    for ch in channels:
-        signals.extend(fetch_channel_messages(ch, limit=limit))
-    signals.sort(key=lambda x: x.date_ts, reverse=True)
-    log.info("Telegram: %d signals from %d channels.", len(signals), len(channels))
-    return signals
+
+
+async def _fetch_all_async(
+    channels: list[str],
+    limit: int,
+    max_hours: int,
+) -> list[dict]:
+    """Async fetch from all channels."""
+    api_id = os.environ.get("TELEGRAM_API_ID")
+    api_hash = os.environ.get("TELEGRAM_API_HASH")
+
+    if not api_id or not api_hash:
+        log.warning("TELEGRAM_API_ID / TELEGRAM_API_HASH not set — Telegram disabled")
+        return []
+
+    try:
+        from telethon import TelegramClient  # type: ignore
+        from telethon.sessions import StringSession  # type: ignore
+    except ImportError:
+        log.warning("telethon not installed — Telegram ingestion disabled. Run: pip install telethon")
+        return []
+
+    session_string = os.environ.get("TELEGRAM_SESSION_STRING", "")
+    client = TelegramClient(
+        StringSession(session_string),
+        int(api_id),
+        api_hash,
+    )
+
+    results = []
+    try:
+        await client.start()
+        tasks = [_fetch_channel_messages(client, ch, limit, max_hours) for ch in channels]
+        channel_results = await asyncio.gather(*tasks, return_exceptions=True)
+        for r in channel_results:
+            if isinstance(r, list):
+                results.extend(r)
+    except Exception as e:
+        log.error("Telegram client error: %s", e)
+    finally:
+        await client.disconnect()
+
+    return results
+
+
+def fetch_channel_messages(
+    channels: Optional[list[str]] = None,
+    limit: int = _MAX_MESSAGES,
+    max_hours: int = _MAX_HOURS_OLD,
+) -> list[dict]:
+    """
+    Public sync API. Fetches recent messages from public Telegram channels.
+    Returns list of dicts. All are Tier 3 — community sentiment only.
+    """
+    chs = channels or _CHANNELS
+    try:
+        loop = asyncio.get_event_loop()
+        if loop.is_running():
+            # Already in async context — use thread executor
+            import concurrent.futures
+            with concurrent.futures.ThreadPoolExecutor() as pool:
+                future = pool.submit(
+                    asyncio.run,
+                    _fetch_all_async(chs, limit, max_hours)
+                )
+                return future.result(timeout=30)
+        else:
+            return loop.run_until_complete(_fetch_all_async(chs, limit, max_hours))
+    except Exception as e:
+        log.error("Telegram fetch error: %s", e)
+        return []
+
+
+def search_channels(query: str, channels: Optional[list[str]] = None, limit: int = 5) -> list[dict]:
+    """
+    Filter fetched messages by keyword query.
+    Simple keyword search — not API search.
+    """
+    all_messages = fetch_channel_messages(channels=channels, limit=50, max_hours=48)
+    query_lower = query.lower()
+    return [
+        m for m in all_messages
+        if query_lower in m["text"].lower()
+    ][:limit]
+
+
+def build_telegram_context(topic: str, limit: int = 5) -> str:
+    """
+    Build community sentiment summary from Telegram for writer context.
+    Clearly marked as unconfirmed community signal.
+    """
+    messages = search_channels(topic, limit=limit)
+    if not messages:
+        return ""
+
+    lines = [f"TELEGRAM COMMUNITY SIGNALS (sentiment only, not confirmed facts) for '{topic}':"]
+    for m in messages[:limit]:
+        lines.append(f"  - [{m['channel']}]: {m['text'][:150].strip()}")
+
+    return "\n".join(lines)

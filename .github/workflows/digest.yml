@@ -1,12 +1,10 @@
-name: Digest — Daily Summary
+name: Daily Digest
 
 on:
   schedule:
-    - cron: "0 6 * * *"
+    # Runs at 22:30 UTC every day — after the last posting window closes.
+    - cron: "30 22 * * *"
   workflow_dispatch:
-
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   digest:
@@ -28,20 +26,16 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Run digest
+      - name: Generate digest
         env:
-          X_API_KEY:         ${{ secrets.X_API_KEY }}
-          X_API_SECRET:      ${{ secrets.X_API_SECRET }}
-          X_ACCESS_TOKEN:    ${{ secrets.X_ACCESS_TOKEN }}
-          X_ACCESS_SECRET:   ${{ secrets.X_ACCESS_SECRET }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GITHUB_TOKEN:      ${{ secrets.GITHUB_TOKEN }}
         run: python digest_run.py
 
-      - name: Commit state
+      - name: Commit digest file
         run: |
-          git config user.name  "beacon-bot"
-          git config user.email "bot@beacon.local"
-          git add data/state.json data/memory/
-          git diff --cached --quiet || git commit -m "chore: digest state [skip ci]"
+          git config user.name  "qwinahh-bot"
+          git config user.email "bot@qwinahh.local"
+          git add data/digests/
+          git diff --cached --quiet || git commit -m "chore: daily digest [skip ci]"
           git push
-

@@ -188,10 +188,15 @@ def build_writer_context(
     if memory:
         parts.append(memory)
 
-    # --- Live market context (fear/greed, prices, TVL) ---
-    market_ctx = _build_market_context()
+    # --- Live market data (Fear & Greed, CoinGecko, DeFiLlama) ---
+    market_ctx = _build_live_market_context(topic, title)
     if market_ctx:
         parts.append(market_ctx)
+
+    # --- Knowledge base context (confirmed facts, historical patterns) ---
+    knowledge_ctx = _build_knowledge_context(topic, title)
+    if knowledge_ctx:
+        parts.append(knowledge_ctx)
 
     # --- X conversation context ---
     if x_conversation and x_conversation.strip():
@@ -206,36 +211,109 @@ def build_writer_context(
     return "\n\n".join(parts)
 
 
-def _build_market_context() -> str:
+def _build_live_market_context(topic: str, title: str) -> str:
     """
-    Fetch live Fear & Greed, prices, and DeFi TVL and return a
-    compact context block. All sources fail silently.
+    Inject live market data: Fear & Greed, CoinGecko trending/prices, DeFiLlama TVL.
+    All free, no API keys. Fails silently if any source is unavailable.
     """
-    lines: list[str] = []
+    parts = []
+
+    # Fear & Greed Index
     try:
-        from bot.sources.fear_greed import fear_greed_summary
-        fg = fear_greed_summary()
+        from bot.sources.fear_greed import build_context as fg_context
+        fg = fg_context()
         if fg:
-            lines.append(fg)
+            parts.append(fg)
     except Exception:
         pass
+
+    # CoinGecko — global macro + trending + topic coin prices
     try:
-        from bot.sources.coingecko import prices_summary
-        px = prices_summary()
-        if px:
-            lines.append(px)
+        from bot.sources.coingecko import build_market_context, _COIN_ID_MAP
+        # Find coins mentioned in topic/title
+        search = f"{topic} {title}".lower()
+        topic_coins = [sym for sym in _COIN_ID_MAP if sym in search and len(sym) > 2][:3]
+        cg = build_market_context(topic_coins or None)
+        if cg:
+            parts.append(cg)
     except Exception:
         pass
+
+    # DeFiLlama — total TVL + weekly movers
     try:
-        from bot.sources.defillama_ctx import tvl_summary
-        tvl = tvl_summary()
-        if tvl:
-            lines.append(tvl)
+        from bot.sources.defillama_ctx import build_market_context as dl_ctx
+        dl = dl_ctx()
+        if dl:
+            parts.append(dl)
     except Exception:
         pass
-    if not lines:
+
+    if not parts:
         return ""
-    return "## Live Market Context\n" + "\n".join(lines)
+    return "## Live Market Data\n" + "\n".join(parts)
+
+
+def _build_knowledge_context(topic: str, title: str) -> str:
+    """
+    Search the knowledge base for relevant confirmed facts and recent events.
+    Returns a context block the writer uses to ground posts in real history.
+    """
+    kb_dir = Path("data/vault/knowledge")
+    if not kb_dir.exists():
+        return ""
+
+    search_terms = set()
+    for s in [topic, title]:
+        if s:
+            search_terms.update(w.lower() for w in re.split(r"[\s/,_-]+", s) if len(w) > 3)
+
+    if not search_terms:
+        return ""
+
+    matches: list[str] = []
+
+    # Search static knowledge files
+    for md_file in ["crypto-history.md", "exploit-history.md",
+                     "narrative-cycles.md", "defi-primitives.md"]:
+        path = kb_dir / md_file
+        if not path.exists():
+            continue
+        try:
+            text = path.read_text(encoding="utf-8")
+            # Split into sections and find relevant ones
+            sections = re.split(r"\n(?=#{2,3} )", text)
+            for section in sections:
+                section_lower = section.lower()
+                if any(term in section_lower for term in search_terms):
+                    snippet = section.strip()[:400]
+                    if snippet not in matches:
+                        matches.append(snippet)
+                        break
+        except Exception:
+            pass
+
+    # Search recent confirmed events
+    events_dir = kb_dir / "events"
+    if events_dir.exists():
+        for event_file in sorted(events_dir.glob("*.md"), reverse=True)[:30]:
+            try:
+                text = event_file.read_text(encoding="utf-8").lower()
+                if any(term in text for term in search_terms):
+                    content = event_file.read_text(encoding="utf-8")
+                    body = re.sub(r"^---.*?---\n", "", content, flags=re.DOTALL).strip()
+                    matches.append(body[:300])
+                    if len(matches) >= 3:
+                        break
+            except Exception:
+                pass
+
+    if not matches:
+        return ""
+
+    return (
+        "## Relevant Knowledge Base Facts (confirmed, use for grounding)\n"
+        + "\n\n---\n\n".join(matches[:3])
+    )
 
 
 def _infer_project_names(topic: str, title: str) -> list[str]:
@@ -245,10 +323,8 @@ def _infer_project_names(topic: str, title: str) -> list[str]:
     Returns a short list of candidates to try, best-guess first.
     """
     candidates = []
-    # The topic field is often already the project name (e.g. "hyperliquid")
     if topic and len(topic) > 2:
         candidates.append(topic.strip())
-    # First capitalised word in the title is often the project
     if title:
         words = title.split()
         for w in words[:4]:
@@ -268,7 +344,7 @@ def _extract_section(text: str, heading: str) -> str:
 
 
 # ---------------------------------------------------------------------------
-# System prompt builder (replaces the static string in writer.py)
+# System prompt builder
 # ---------------------------------------------------------------------------
 
 BASE_SYSTEM = """\
@@ -284,19 +360,8 @@ signal — Paradigm doesn't do headline-grab rounds."
 
 ABSOLUTE RULES:
 - One specific fact (number, protocol mechanic, data point) minimum.
-- State what it means or why it matters. Not just what happened.
-- Never start: "Just saw", "Breaking:", "Huge news", "This is significant".
-- Start with the observation, the number, or the implication.
-- Under 270 chars. No hashtags. No URLs. No quotes around the output.
-- Output ONLY the tweet text. Nothing else.
-- Add "(position disclosed)" at the end if the post is about something held.
+- No em-dashes. No "landscape". No "ecosystem". No "space". No "bullish on".
+- No hashtags. No emojis. No "gm". No "ngmi". No "wen".
+- Under 280 characters. One idea. No threads.
+- Sound like a person, not a press release.
 """
-
-
-def build_system_prompt(topic: str = "", title: str = "") -> str:
-    """
-    Build a full system prompt for the writer, augmented with persona context.
-
-    Falls back cleanly to BASE_SYSTEM if persona.md doesn't exist.
-    """
-    persona = lo

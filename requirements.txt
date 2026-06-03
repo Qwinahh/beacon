@@ -1,5 +1,6 @@
 # Core
 anthropic>=0.28.0
+openai>=1.0.0          # OpenAI-compatible client for Groq, Cerebras, OpenRouter (llm.py)
 tweepy>=4.14.0
 requests>=2.32.0
 feedparser>=6.0.11
@@ -10,10 +11,21 @@ python-dateutil>=2.9.0
 # See bot/sources/xcontext.py for setup instructions.
 twscrape>=0.13.0
 
-# Community signal ingestion (Reddit uses public JSON API — no extra dep needed)
-# Telegram: set TELEGRAM_BOT_TOKEN + TELEGRAM_CHANNEL_IDS in GitHub Secrets
-# Discord:  set DISCORD_BOT_TOKEN + DISCORD_CHANNEL_IDS in GitHub Secrets
+# Community signal ingestion (all fail silently if not configured)
+# Reddit: requires REDDIT_CLIENT_ID + REDDIT_CLIENT_SECRET (free from reddit.com/prefs/apps)
+praw>=7.7.0
+
+# Telegram: requires TELEGRAM_API_ID + TELEGRAM_API_HASH + TELEGRAM_SESSION_STRING
+# (free from my.telegram.org — register an app)
+telethon>=1.36.0
+
+# Discord: requires DISCORD_BOT_TOKEN (free from discord.com/developers)
+discord.py>=2.3.0
+
+# Market data — all FREE, no API keys required, fail silently
+# fear_greed.py: Alternative.me Fear & Greed Index (no key needed)
+# coingecko.py:  CoinGecko public API — trending, global, prices (no key needed)
+# defillama_ctx.py: DeFiLlama TVL context — extended from existing defillama.py
 
 # Optional alpha sources (fail silently if not installed)
 # pip install hyperliquid-python-sdk   -- for Hyperliquid funding rate signals
-# hyperliquid-python-sdk               -- uncomment below to require it
