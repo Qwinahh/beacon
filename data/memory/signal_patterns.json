@@ -1,6 +1,14 @@
 {
   "_description": "What kinds of signals consistently lead to good posts vs noise. Bot updates this over time by reflecting on what it posted and why.",
-  "good_signals": [],
+  "good_signals": [
+    {
+      "ts": "2026-06-04T21:30:22Z",
+      "signal_type": "tvl",
+      "topic": "Honeypop DEX TVL spike",
+      "outcome": "posted",
+      "note": "Large single-day TVL move (42%) was significant enough to merit engagement—sharp moves can signal liquidity shifts or market interest."
+    }
+  ],
   "noise_signals": [],
   "skipped_reasons": []
 }

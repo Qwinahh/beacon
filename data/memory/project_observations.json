@@ -7,6 +7,13 @@
         "observation": "OI crossed $4B -- model holding without blowout",
         "source": "test"
       }
+    ],
+    "Honeypop": [
+      {
+        "ts": "2026-06-04T21:30:22Z",
+        "observation": "Honeypop DEX TVL spiked 42% in 24 hours — a rapid inflow event that prompted a post.",
+        "source": "bot"
+      }
     ]
   }
 }
