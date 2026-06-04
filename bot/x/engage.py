@@ -10,12 +10,10 @@ Requires X API Basic tier for the mentions endpoint.
 from __future__ import annotations
 
 import logging
-import os
 from typing import Optional
 
-import anthropic
-
-from bot.config import CLAUDE_MAX_TOKENS, CLAUDE_MODEL, ENV, require_env
+from bot.brain.llm import complete as llm_complete
+from bot.config import CLAUDE_MAX_TOKENS
 from bot.state import State
 from bot.x.client import get_mentions, post_tweet
 
@@ -25,44 +23,33 @@ log = logging.getLogger(__name__)
 MAX_REPLIES_PER_RUN = 5
 
 _REPLY_SYSTEM = """\
-You write short, genuine replies for a crypto commentary account on X.
+You write short, genuine replies for @Qwinahh — a crypto commentary account on X.
 
 Rules:
-- Be direct and helpful. No filler.
+- Be direct and add something specific. No filler, no "great point", no agreement without substance.
 - Max 240 characters.
-- If the mention is hostile or nonsensical, reply with a calm one-liner or skip entirely (respond with SKIP).
-- Do not make price predictions.
-- Do not promise financial returns.
-- No hashtags.
+- If the mention is hostile, spam, or not worth engaging: respond with SKIP.
+- No price predictions. No hashtags. Sound like a person, not a bot.
+- If you have a position in the mentioned project, end with (position disclosed).
 """
 
 
 def _generate_reply(mention_text: str) -> Optional[str]:
-    api_key = os.environ.get("ANTHROPIC_API_KEY")
-    if not api_key:
-        log.warning("ANTHROPIC_API_KEY not set — skipping reply generation.")
+    prompt = (
+        f"Mention received:\n\n{mention_text}\n\n"
+        "Write a reply that adds something specific, or respond with exactly SKIP if "
+        "the mention is hostile, spam, or genuinely not worth engaging."
+    )
+    reply = llm_complete(system=_REPLY_SYSTEM, user=prompt, max_tokens=CLAUDE_MAX_TOKENS, temperature=0.7)
+    if not reply:
         return None
-
-    client = anthropic.Anthropic(api_key=api_key)
-    prompt = f"Mention received:\n\n{mention_text}\n\nWrite a reply, or respond with SKIP if a reply isn't appropriate."
-
-    try:
-        message = client.messages.create(
-            model=CLAUDE_MODEL,
-            max_tokens=CLAUDE_MAX_TOKENS,
-            system=_REPLY_SYSTEM,
-            messages=[{"role": "user", "content": prompt}],
-        )
-        reply = message.content[0].text.strip()
-        if reply.upper().startswith("SKIP"):
-            log.debug("Skipping reply (model decided not to respond).")
-            return None
-        if len(reply) > 280:
-            reply = reply[:276].rsplit(".", 1)[0] + "."
-        return reply
-    except anthropic.APIError as exc:
-        log.error("Anthropic API error generating reply: %s", exc)
+    reply = reply.strip()
+    if reply.upper().startswith("SKIP") or len(reply) < 10:
+        log.debug("Skipping reply (model decided not to respond).")
         return None
+    if len(reply) > 280:
+        reply = reply[:276].rsplit(".", 1)[0] + "."
+    return reply
 
 
 def run(state: State) -> int:

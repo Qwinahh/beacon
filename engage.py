@@ -1,12 +1,13 @@
 """
 Engagement entry point.
 
-Two jobs per run:
-  1. Reply to any new mentions using Claude-generated responses.
-  2. Find trending crypto conversations and add genuine commentary.
+Three jobs per run:
+  1. Reply to any new @mentions.
+  2. Proactive outbound engagement — replies to curated accounts and keyword search.
+  3. Strategic following — strictly gated, only high-quality accounts in focus topics.
 
-Both require X API Basic tier. If the tier is too low, each function
-exits cleanly with a log warning — no errors, no crashes.
+All three require X API Basic tier. Each exits cleanly if the tier is too low
+or if the quality gate finds nothing worth acting on.
 
 Usage:
     python engage.py
@@ -14,10 +15,10 @@ Usage:
 from __future__ import annotations
 
 import logging
-import sys
 
 from bot.state import State
 from bot.x.engage import run as run_mentions
+from bot.x.follow import run_follow_cycle
 from bot.x.trend import run as run_trends
 
 logging.basicConfig(
@@ -34,15 +35,15 @@ def main() -> None:
 
     mention_replies = run_mentions(state)
     trend_replies   = run_trends(state)
+    follows         = run_follow_cycle(state)
 
-    total = mention_replies + trend_replies
-    if total > 0:
+    if mention_replies + trend_replies > 0:
         state.save()
 
     log.info(
-        "Engagement run complete. Mention replies: %d, Trend replies: %d.",
-        mention_replies,
-        trend_replies,
+        "Engagement run complete — "
+        "mention replies: %d | outbound replies: %d | follows: %d",
+        mention_replies, trend_replies, follows,
     )
 
 
