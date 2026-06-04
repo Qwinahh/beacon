@@ -148,6 +148,47 @@ class State:
         self._data["replied_to"] = replied[-200:]
 
     # ------------------------------------------------------------------
+    # Daily reply cap (hard limit across all engage runs)
+    # ------------------------------------------------------------------
+
+    # Max outbound replies per day — anything higher looks like spam and
+    # tanks per-reply engagement rate. 8 great replies >> 80 mediocre ones.
+    MAX_REPLIES_PER_DAY = 8
+
+    def replies_today(self) -> int:
+        return self._data.get("daily_reply_counts", {}).get(self._today(), 0)
+
+    def increment_reply_count(self) -> None:
+        self._data.setdefault("daily_reply_counts", {})
+        key = self._today()
+        self._data["daily_reply_counts"][key] = (
+            self._data["daily_reply_counts"].get(key, 0) + 1
+        )
+        # Prune old days
+        counts = self._data["daily_reply_counts"]
+        for old_day in sorted(counts)[:-7]:
+            del counts[old_day]
+
+    def at_daily_reply_cap(self) -> bool:
+        return self.replies_today() >= self.MAX_REPLIES_PER_DAY
+
+    # ------------------------------------------------------------------
+    # Recent engagement targets (avoid replying to same account too often)
+    # ------------------------------------------------------------------
+
+    def recently_engaged_accounts(self, n: int = 20) -> list[str]:
+        return self._data.get("recent_engage_accounts", [])[-n:]
+
+    def mark_engaged_account(self, username: str) -> None:
+        accounts: list[str] = self._data.setdefault("recent_engage_accounts", [])
+        accounts.append(username.lower())
+        self._data["recent_engage_accounts"] = accounts[-50:]
+
+    def times_engaged_account_recently(self, username: str, window: int = 10) -> int:
+        recent = self.recently_engaged_accounts(window)
+        return recent.count(username.lower())
+
+    # ------------------------------------------------------------------
     # Portfolio event tracking
     # ------------------------------------------------------------------
 
