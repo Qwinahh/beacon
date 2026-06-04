@@ -1,0 +1,39 @@
+{
+  "fileClassAlias": "fileClass",
+  "globalFileClass": "",
+  "classFilesPath": "",
+  "isAutosuggestEnabled": true,
+  "globallyIgnoredFields": ["aliases", "tags", "cssclass"],
+  "firstDayOfWeek": 1,
+  "localSettings": [],
+  "presetFields": [
+    {
+      "name": "status",
+      "type": "Select",
+      "options": {
+        "valuesList": {
+          "active": "active",
+          "farming": "farming",
+          "exited": "exited",
+          "watching": "watching",
+          "closed": "closed"
+        }
+      },
+      "id": "status"
+    },
+    {
+      "name": "category",
+      "type": "Select",
+      "options": {
+        "valuesList": {
+          "perps": "perps",
+          "defi": "defi",
+          "airdrop": "airdrop",
+          "l2": "l2",
+          "infrastructure": "infrastructure"
+        }
+      },
+      "id": "category"
+    }
+  ]
+}

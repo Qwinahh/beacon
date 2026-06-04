@@ -1,0 +1,16 @@
+{
+  "folder": "",
+  "dateFormat": "YYYY-MM-DD",
+  "dateFormatPrefix": "",
+  "dateFormatSuffix": "",
+  "startWeekOn": "Mon",
+  "separator": ",",
+  "xAxisTickInterval": "1 month",
+  "yAxisTickInterval": "-1",
+  "xAxisTickLabelFormat": "YYYY-MM-DD",
+  "yAxisTickLabelFormat": "-1",
+  "penalty": "null",
+  "valueShift": "0",
+  "shiftOnlyValueLargerThan": "null",
+  "textValueMap": {}
+}
