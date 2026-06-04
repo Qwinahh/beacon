@@ -44,6 +44,8 @@ log = logging.getLogger(__name__)
 # ---- Strict limits --------------------------------------------------------
 MAX_FOLLOWS_PER_DAY     = 10
 MAX_FOLLOWS_PER_RUN     = 3
+MAX_UNFOLLOWS_PER_RUN   = 5
+UNFOLLOW_AFTER_HOURS    = 72   # Unfollow anyone who hasn't followed back after 3 days
 MIN_FOLLOWER_COUNT      = 1_000
 MAX_FOLLOWER_COUNT      = 500_000
 MIN_RELEVANCE_POSTS     = 2
@@ -91,6 +93,79 @@ def _increment_daily(follow_state: dict) -> None:
     days = sorted(follow_state["daily"].keys())
     for old in days[:-7]:
         del follow_state["daily"][old]
+
+
+def _normalize_followed(follow_state: dict) -> None:
+    """
+    Normalize the followed list to always be a list of dicts with timestamps.
+
+    Old format: ["uid1", "uid2"]
+    New format: [{"id": "uid1", "username": "name", "followed_at": 1234567890}]
+
+    Migrates in-place so existing follow_state.json stays valid.
+    """
+    raw = follow_state.get("followed", [])
+    normalized = []
+    for entry in raw:
+        if isinstance(entry, str):
+            # Legacy: string uid only, no timestamp -- set followed_at to 0
+            # so the unfollow pass will clean it up on next run.
+            normalized.append({"id": entry, "username": "?", "followed_at": 0})
+        elif isinstance(entry, dict):
+            normalized.append(entry)
+    follow_state["followed"] = normalized
+
+
+def _followed_ids(follow_state: dict) -> set[str]:
+    """Return set of followed user IDs (handles both old and new format)."""
+    return {
+        e["id"] if isinstance(e, dict) else e
+        for e in follow_state.get("followed", [])
+    }
+
+
+def _run_unfollow_pass(follow_state: dict) -> int:
+    """
+    Unfollow accounts followed more than UNFOLLOW_AFTER_HOURS ago.
+
+    Uses the official Tweepy client (Free tier supports unfollow).
+    Keeps the following:follower ratio clean and prevents the profile
+    looking like a follow-farmer.
+
+    Returns number of accounts unfollowed.
+    """
+    now = time.time()
+    cutoff = now - (UNFOLLOW_AFTER_HOURS * 3600)
+
+    due = [
+        entry for entry in follow_state.get("followed", [])
+        if isinstance(entry, dict) and entry.get("followed_at", now) < cutoff
+    ]
+
+    if not due:
+        return 0
+
+    client = get_client()
+    unfollowed = 0
+
+    for entry in due[:MAX_UNFOLLOWS_PER_RUN]:
+        uid      = entry["id"]
+        username = entry.get("username", "?")
+        age_h    = int((now - entry.get("followed_at", 0)) / 3600)
+        try:
+            client.unfollow_user(uid)
+            # Remove from followed list
+            follow_state["followed"] = [
+                e for e in follow_state["followed"]
+                if not (isinstance(e, dict) and e.get("id") == uid)
+            ]
+            unfollowed += 1
+            log.info("Unfollowed @%s (followed %dh ago, no follow-back).", username, age_h)
+            time.sleep(1)
+        except Exception as exc:
+            log.debug("Unfollow failed for @%s: %s", username, exc)
+
+    return unfollowed
 
 
 # ---------------------------------------------------------------------------
@@ -154,9 +229,7 @@ async def _find_candidates_async(follow_state: dict) -> list[dict]:
     if not api:
         return []
 
-    excluded = set(
-        follow_state.get("followed", []) + follow_state.get("attempted", [])
-    )
+    excluded = _followed_ids(follow_state) | set(follow_state.get("attempted", []))
     seen_ids: set[str] = set(excluded)
     candidates: list[dict] = []
 
@@ -263,10 +336,20 @@ def run_follow_cycle(state: State) -> int:
     """
     follow_state = _load_follow_state()
 
+    # Migrate old string-format followed list to dict format with timestamps.
+    _normalize_followed(follow_state)
+
+    # Unfollow anyone who hasn't followed back after UNFOLLOW_AFTER_HOURS.
+    # Run this regardless of daily follow cap -- clean up the ratio first.
+    unfollowed = _run_unfollow_pass(follow_state)
+    if unfollowed:
+        log.info("Unfollow pass: removed %d non-followers.", unfollowed)
+        _save_follow_state(follow_state)
+
     today_count = _follows_today(follow_state)
     if today_count >= MAX_FOLLOWS_PER_DAY:
-        log.info("Daily follow cap reached (%d/%d). Skipping.", today_count, MAX_FOLLOWS_PER_DAY)
-        return 0
+        log.info("Daily follow cap reached (%d/%d). Skipping new follows.", today_count, MAX_FOLLOWS_PER_DAY)
+        return unfollowed  # Still return so caller knows unfollows happened
 
     remaining_today = MAX_FOLLOWS_PER_DAY - today_count
     this_run_limit  = min(MAX_FOLLOWS_PER_RUN, remaining_today)
@@ -274,7 +357,7 @@ def run_follow_cycle(state: State) -> int:
     # Check twscrape cookies available
     if not _get_cookies():
         log.warning("X_SCRAPER_COOKIES not set -- follow cycle skipped.")
-        return 0
+        return unfollowed
 
     # --- Step 1: Find candidates via twscrape ---
     candidates = _run_async(_find_candidates_async(follow_state)) or []
@@ -301,7 +384,7 @@ def run_follow_cycle(state: State) -> int:
             follow_state["attempted"].append(uid)
             follow_state["attempted"] = follow_state["attempted"][-500:]
 
-        if uid in follow_state.get("followed", []):
+        if uid in _followed_ids(follow_state):
             continue
 
         # Quality gate
@@ -313,7 +396,11 @@ def run_follow_cycle(state: State) -> int:
         # Follow via official API (Free tier action)
         try:
             client.follow_user(uid)
-            follow_state.setdefault("followed", []).append(uid)
+            follow_state.setdefault("followed", []).append({
+                "id":          uid,
+                "username":    username,
+                "followed_at": int(time.time()),
+            })
             _increment_daily(follow_state)
             follows_this_run += 1
             log.info(

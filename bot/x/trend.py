@@ -101,6 +101,12 @@ THE GOAL OF EVERY REPLY:
 Make the person reading it think "who IS this?" and click the profile.
 That is the only metric that matters. Not likes. Not agreement. Profile clicks.
 
+The best possible outcome is the original author replies back to you.
+X's algorithm weights an author reply-back at 75-150x a like -- it is the
+single highest-value engagement signal available. Write something the author
+would actually want to respond to: a number they missed, a data point that
+reframes their take, or a question that rewards them for answering.
+
 A reply achieves this when it:
 1. Adds something the original tweet didn't say -- a specific number,
    a mechanic, a historical pattern, a counterpoint with data behind it.

@@ -1,17 +1,22 @@
 """
 Engagement entry point.
 
-Three jobs per run:
+Four jobs per run:
   1. Reply to any new @mentions.
   2. Proactive outbound engagement -- replies to curated accounts and keyword search.
-  3. Strategic following -- strictly gated, only high-quality accounts in focus topics.
+  3. Own-thread continuations -- follow-up observations on our recent high-engagement
+     posts. X weights "author continues their thread" as one of the highest-value
+     quality signals, worth far more than likes or retweets.
+  4. Strategic following -- strictly gated, plus an unfollow pass every cycle to
+     keep the following:follower ratio clean.
 
-All three work on the X Free API tier:
+All four work on the X Free API tier:
   - READING  (finding tweets, mentions, candidates) -> twscrape cookie-based scraping
-  - WRITING  (posting replies, following)           -> official X API (Free tier)
+  - WRITING  (posting replies, following, unfollowing) -> official X API (Free tier)
 
 Requires: X_SCRAPER_COOKIES secret set in GitHub for reading.
           X_API_KEY / X_API_SECRET / X_ACCESS_TOKEN / X_ACCESS_SECRET for writing.
+          X_USERNAME (optional, defaults to "Qwinahh") for own-thread detection.
 
 Usage:
     python engage.py
@@ -22,6 +27,7 @@ import logging
 
 from bot.state import State
 from bot.x.engage import run as run_mentions
+from bot.x.engage import run_own_thread_replies
 from bot.x.follow import run_follow_cycle
 from bot.x.trend import run as run_trends
 
@@ -39,14 +45,15 @@ def main() -> None:
 
     mention_replies = run_mentions(state)
     trend_replies   = run_trends(state)
+    thread_replies  = run_own_thread_replies(state)
     follows         = run_follow_cycle(state)
 
-    state.save()  # Always persist -- reply tracking, mention cursor, engaged accounts
+    state.save()  # Always persist -- reply tracking, mention cursor, thread state
 
     log.info(
         "Engagement run complete — "
-        "mention replies: %d | outbound replies: %d | follows: %d",
-        mention_replies, trend_replies, follows,
+        "mention replies: %d | outbound replies: %d | thread replies: %d | follows: %d",
+        mention_replies, trend_replies, thread_replies, follows,
     )
 
 

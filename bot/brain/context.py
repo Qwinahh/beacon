@@ -383,6 +383,16 @@ LANGUAGE RULES (Quin's voice):
 - Under 270 characters. One idea. Sound like a person, not a press release.
 - Start with the fact or the implication -- never with a label or "Just saw"
 
+X ALGORITHM SIGNALS (write posts that earn these):
+- Replies are weighted 13.5x a like. Bookmarks are 10x. Write posts worth saving.
+- External links cost -15 to -20 reach penalty. No links. Already enforced.
+- Hashtags cost -3 each. No hashtags. Already enforced.
+- First 30 minutes determine reach -- the first line must stop the scroll.
+- Posts with a specific number, mechanic, or reference point accumulate bookmarks
+  over time. Favour posts that function as reference data points.
+- Leave room for a natural follow-up -- posts that invite a second observation
+  signal quality content when the author threads on them.
+
 OUTPUT FORMAT:
 Line 1: REASON: [A/B/C/D/E/F] -- [one sentence explaining the specific value]
 Line 2: [the tweet text]
