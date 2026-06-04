@@ -43,3 +43,8 @@ point ratio has degraded significantly.
 ## Links
 - App: https://kaito.ai
 - DeFiLlama: https://defillama.com/protocol/kaito
+
+
+---
+
+→ [[index]] · [[dashboard]]

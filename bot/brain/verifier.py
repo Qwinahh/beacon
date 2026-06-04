@@ -261,6 +261,10 @@ def write_confirmed_event(result: VerificationResult) -> None:
     if path.exists():
         return  # Don't duplicate
 
+    project_link = ""
+    if result.claim.related_project:
+        project_link = f"\n**Project**: [[projects/{result.claim.related_project}]] · [[dashboard]]\n"
+
     content = f"""---
 date: {ts}
 source: {result.claim.source}
@@ -273,7 +277,7 @@ related_project: {result.claim.related_project or ""}
 
 **Source**: {result.claim.source}
 **Verified**: {result.reason}
-
+{project_link}
 {result.claim.text}
 """
     try:

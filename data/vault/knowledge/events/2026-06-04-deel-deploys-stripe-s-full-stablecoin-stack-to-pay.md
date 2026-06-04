@@ -12,3 +12,8 @@ related_project:
 **Verified**: Tier 2 source (established research/media). no contradiction found
 
 Deel Deploys Stripe's Full Stablecoin Stack to Pay 1.5M Contractors in DLUSD
+
+
+---
+
+**Related**: [[dashboard]] · [[index]]

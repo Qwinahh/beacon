@@ -12,3 +12,8 @@ related_project:
 **Verified**: Tier 2 source (established research/media). no contradiction found
 
 Builder-Deployed Perp Markets Push Hyperliquid to Record Share of Global Perps Volume
+
+
+---
+
+**Related**: [[projects/hyperliquid]] · [[dashboard]] · [[index]]

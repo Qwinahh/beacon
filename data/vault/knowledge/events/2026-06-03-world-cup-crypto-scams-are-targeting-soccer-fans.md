@@ -12,3 +12,8 @@ related_project:
 **Verified**: Tier 2 source (established research/media). no contradiction found
 
 World Cup Crypto Scams Are Targeting Soccer Fans, Law Enforcement Warns
+
+
+---
+
+**Related**: [[dashboard]] · [[index]]

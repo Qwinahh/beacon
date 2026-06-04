@@ -12,3 +12,8 @@ related_project:
 **Verified**: Tier 2 source (established research/media). no contradiction found
 
 Solayer rolls out Solana-native onchain perps trading platform Margin Trade mainnet
+
+
+---
+
+**Related**: [[dashboard]] · [[index]]

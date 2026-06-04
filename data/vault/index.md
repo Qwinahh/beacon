@@ -47,3 +47,7 @@ what was researched.
 - **Mark a farm stopped:** change `airdrop_status: farming` to `airdrop_status: stopped` in the frontmatter.
 - **Add a note:** add a bullet under `## Observations` — the bot won't overwrite existing bullets.
 - **Block a project:** add `blocked: true` to the frontmatter — bot will skip it.
+
+---
+
+→ [[dashboard]] · [[knowledge/crypto-history]] · [[knowledge/defi-primitives]] · [[knowledge/exploit-history]] · [[knowledge/narrative-cycles]] · [[knowledge/x-growth-strategy]]

@@ -12,3 +12,8 @@ related_project:
 **Verified**: Tier 2 source (established research/media). no contradiction found
 
 Hyperliquid hits record share of global perps market as HIP-3 tops $62 billion monthly volume
+
+
+---
+
+**Related**: [[projects/hyperliquid]] · [[dashboard]] · [[index]]

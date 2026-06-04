@@ -12,3 +12,8 @@ related_project:
 **Verified**: Tier 2 source (established research/media). no contradiction found
 
 Tether Debuts Tokenized Gold Stablecoin Visa Card That Pays Out Crypto Rewards
+
+
+---
+
+**Related**: [[dashboard]] · [[index]]

@@ -12,3 +12,8 @@ related_project:
 **Verified**: Tier 2 source (established research/media). no contradiction found
 
 PENDLE Token Goes Live on Revolut, Reaching 20M EEA Crypto Traders
+
+
+---
+
+**Related**: [[dashboard]] · [[index]]

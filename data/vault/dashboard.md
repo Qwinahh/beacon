@@ -195,3 +195,7 @@ LIMIT 7
 *Learner agent runs 2x per day — knowledge/events/ updates 6am and 5pm UTC.*
 *Growth analysis runs every Sunday 9am UTC → writes to growth/ folder.*
 *To refresh manually: Cmd/Ctrl+R in Obsidian.*
+
+---
+
+→ [[index]] · [[projects/hyperliquid]] · [[projects/kaito]] · [[projects/meteora]] · [[narratives/perps-meta]] · [[narratives/airdrop-meta]]

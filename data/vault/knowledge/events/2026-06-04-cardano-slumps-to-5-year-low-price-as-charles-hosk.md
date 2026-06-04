@@ -12,3 +12,8 @@ related_project:
 **Verified**: Tier 2 source (established research/media). no contradiction found
 
 Cardano Slumps to 5-Year Low Price as Charles Hoskinson Warns of 'Wave of Failures'
+
+
+---
+
+**Related**: [[dashboard]] · [[index]]

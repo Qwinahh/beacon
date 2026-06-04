@@ -12,3 +12,8 @@ related_project:
 **Verified**: Tier 2 source (established research/media). no contradiction found
 
 AI Lawyers Are Already Better Than Law Professors at Reasoning—Say Law Professors
+
+
+---
+
+**Related**: [[dashboard]] · [[index]]

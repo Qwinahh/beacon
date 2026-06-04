@@ -12,3 +12,8 @@ related_project:
 **Verified**: Tier 2 source (established research/media). no contradiction found
 
 Binance Closes Its Centralized NFT Marketplace, Joining Coinbase, Kraken in CEX-Backed NFT Retreat
+
+
+---
+
+**Related**: [[dashboard]] · [[index]]

@@ -12,3 +12,8 @@ related_project:
 **Verified**: Tier 2 source (established research/media). no contradiction found
 
 Revolut Plans 2027 US Bank Launch With Stablecoin Services Built In From Day One
+
+
+---
+
+**Related**: [[dashboard]] · [[index]]

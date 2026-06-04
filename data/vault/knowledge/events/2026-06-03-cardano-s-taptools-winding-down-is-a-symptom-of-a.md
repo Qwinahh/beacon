@@ -12,3 +12,8 @@ related_project:
 **Verified**: Tier 2 source (established research/media). no contradiction found
 
 Cardano's TapTools Winding Down is a Symptom of a Shrinking Chain
+
+
+---
+
+**Related**: [[dashboard]] · [[index]]

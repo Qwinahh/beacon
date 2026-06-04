@@ -12,3 +12,8 @@ related_project:
 **Verified**: Tier 2 source (established research/media). no contradiction found
 
 Hermes Ends AI Agent Terminal Era With Release of Official Desktop App
+
+
+---
+
+**Related**: [[dashboard]] · [[index]]

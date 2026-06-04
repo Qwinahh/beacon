@@ -12,3 +12,8 @@ related_project:
 **Verified**: Tier 2 source (established research/media). no contradiction found
 
 The Strategy playbook looks different in 2026
+
+
+---
+
+**Related**: [[dashboard]] · [[index]]

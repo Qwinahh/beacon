@@ -12,3 +12,8 @@ related_project:
 **Verified**: Tier 2 source (established research/media). no contradiction found
 
 Hyperliquid’s HYPE overtakes Solana in price as SOL falls to lowest levels since 2023
+
+
+---
+
+**Related**: [[projects/hyperliquid]] · [[dashboard]] · [[index]]
