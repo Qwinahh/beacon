@@ -365,3 +365,14 @@ ABSOLUTE RULES:
 - Under 280 characters. One idea. No threads.
 - Sound like a person, not a press release.
 """
+
+
+def build_system_prompt(topic: str = "", title: str = "") -> str:
+    """Return the LLM system prompt, enriched with persona voice rules if available."""
+    persona = load_persona()
+    if not persona:
+        return BASE_SYSTEM
+    voice = _extract_section(persona, "Voice & Style")
+    if voice:
+        return BASE_SYSTEM + "\n\n## Account-Specific Voice Rules\n" + voice
+    return BASE_SYSTEM
