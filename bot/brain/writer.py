@@ -226,39 +226,42 @@ def _user_prompt(
 
     parts += [
         "",
-        f"## Format directive: {format_name.upper().replace('_', ' ')}",
+        "## Your task",
         "",
-        format_instruction,
+        "1. Run the editorial test from the system prompt.",
+        "   -- If there is a valid reason (A-F) to post this, state it on line 1.",
+        "   -- If not, respond with exactly: SKIP",
         "",
-        "## Hard constraints (tweet rejected if any are broken)",
-        "1. Must contain at least one specific number, dollar amount, percentage, or named mechanic.",
-        "2. Must express a take — not just describe what happened.",
-        "3. No banned phrases: 'worth watching', 'game changer', 'bullish signal', 'exciting', 'huge'.",
-        "4. Under 270 characters. No hashtags. No URLs.",
-        "5. Output ONLY the tweet text. No intro, no label, no quotes around it.",
+        f"2. If posting, use this format style: {format_name.upper().replace('_', ' ')}",
+        f"   {format_instruction}",
         "",
-        "## Real-voice examples (study the tone, not the content)",
+        "## Output format (two lines only)",
+        "REASON: [A/B/C/D/E/F] -- [one sentence: what specific value does this give the reader]",
+        "[tweet text]",
         "",
-        "GOOD — data observation:",
-        "  Hyperliquid OI up 40% to $4.2B in 2 weeks. HLP hasn't blown out. Model holding under real stress.",
+        "Or: SKIP",
         "",
-        "GOOD — contrarian:",
-        "  Everyone calling Kaito S2 a layup. Engagement-to-point ratio is 3x worse than S1. Farm is crowded.",
+        "## Hard constraints on the tweet",
+        "- Must contain at least one specific number, percentage, dollar amount, or named mechanic",
+        "- Must express a take -- not just describe what happened",
+        "- Under 270 characters. No hashtags. No URLs. No quotes around the output.",
         "",
-        "GOOD — farm update:",
-        "  Been LP'ing Meteora for 6 weeks. MET unlock hits in 48h — watching pool incentives before I adjust. (position disclosed)",
+        "## Examples of the output format",
         "",
-        "GOOD — short take:",
-        "  EigenLayer has 50 AVSs now. Fee revenue still basically zero.",
+        "REASON: B -- Hyperliquid OI is up 40% but HLP utilisation is low, giving traders an edge on timing",
+        "Hyperliquid OI up 40% to $4.2B. HLP utilisation still at 34%. More capital than flow to absorb it.",
         "",
-        "GOOD — callout:",
-        "  Protocol announced 'fair launch' with 40% to team at TGE. 'Fair' is doing a lot of work there.",
+        "REASON: C -- Kaito S2 farm math is 3x worse than S1 so people farming blind are wasting capital",
+        "Everyone calling Kaito S2 a layup. Engagement-to-point ratio is 3x worse than S1. Farm is crowded.",
         "",
-        "BAD (never write like these):",
-        "  Hyperliquid is looking really strong right now, worth keeping an eye on.",
-        "  DeFi TVL is up this week. Exciting times for the space.",
-        "  This raise could be a game changer for the sector.",
-        "  The latest developments in the crypto space are very promising.",
+        "REASON: E -- MET unlock in 48h is time-sensitive for anyone currently LP-ing Meteora",
+        "Been LP'ing Meteora 6 weeks. MET unlock in 48h -- watching pool incentive changes before I adjust. (position disclosed)",
+        "",
+        "REASON: F -- EigenLayer AVS count vs zero fee revenue is a contrarian data point vs the hype",
+        "EigenLayer has 50 AVSs now. Fee revenue still basically zero.",
+        "",
+        "SKIP",
+        "(used when: generic news, no specific implication, nothing that changes how someone would position)",
     ]
 
     return "\n".join(parts)
@@ -300,11 +303,12 @@ def _validate_quality(text: str) -> tuple[bool, str]:
 def _fallback_template(item: CandidateItem) -> str:
     if isinstance(item, RaiseItem):
         amt = f"${item.amount:.0f}M" if item.amount else "an undisclosed amount"
-        return f"{item.name} raised {amt} ({item.round_name}). Worth watching."
+        lead = f" Lead: {item.category}." if item.category else ""
+        return f"{item.name} raised {amt} ({item.round_name}).{lead}"
     if isinstance(item, TvlMoverItem):
         direction = "up" if item.change_pct > 0 else "down"
-        return f"{item.name} TVL {direction} {abs(item.change_pct):.1f}% in 24h. On-chain flows don't lie."
-    return f"{item.title[:220]}."
+        return f"{item.name} TVL {direction} {abs(item.change_pct):.1f}% in 24h to ${item.tvl_usd/1e6:.0f}M."
+    return f"{item.title[:240]}"
 
 
 # ---------------------------------------------------------------------------
@@ -352,18 +356,40 @@ def generate(
 
     text = text.strip()
 
+    # Handle editorial SKIP -- model decided there's no reason to post this.
+    if text.upper().startswith("SKIP"):
+        log.info("Writer editorial test: no valid reason to post this item. Skipping.")
+        return None, format_name
+
+    # Parse two-line output: "REASON: X -- explanation\ntweet text"
+    lines = text.splitlines()
+    if lines and lines[0].upper().startswith("REASON:"):
+        reason_line = lines[0]
+        # Extract letter and explanation for logging
+        reason_part = reason_line[len("REASON:"):].strip()
+        log.info("Editorial reason: %s", reason_part[:80])
+        # The tweet is everything after the REASON line
+        text = "\n".join(lines[1:]).strip()
+    else:
+        # Model didn't follow the format -- treat the whole output as the tweet
+        log.debug("Writer did not output REASON line -- using full output as tweet.")
+
     # Strip wrapping quotes if the model added them.
     if len(text) >= 2 and text[0] == '"' and text[-1] == '"':
         text = text[1:-1].strip()
+
+    if not text:
+        log.warning("Writer returned empty tweet after parsing.")
+        return None, format_name
 
     # Hard character limit.
     if len(text) > 279:
         text = text[:276].rsplit(".", 1)[0] + "."
 
     # Quality gate -- reject generic output rather than posting slop.
-    valid, reason = _validate_quality(text)
+    valid, reject_reason = _validate_quality(text)
     if not valid:
-        log.warning("Tweet rejected by quality gate: %s | tweet: %s", reason, text[:80])
+        log.warning("Tweet rejected by quality gate: %s | tweet: %s", reject_reason, text[:80])
         return None, format_name
 
     log.info("Generated tweet (%d chars) [%s]: %s", len(text), format_name, text[:80])

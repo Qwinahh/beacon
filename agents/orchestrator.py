@@ -133,23 +133,35 @@ def _gather_candidates(alpha_only: bool = False) -> list:
 def _select_best(candidates: list, state: State) -> Optional[dict]:
     """
     Apply rejection rules, score each candidate, return best one.
+
+    Selection is editorial, not just algorithmic. The question being answered
+    is: "Is there something genuinely useful to say about this to our audience?"
+    Items are scored on relevance to portfolio/watchlist, urgency, and freshness.
+    Generic news with no posting reason is filtered at the writer stage.
+
     Returns None if nothing clears the bar.
     """
     recent_topics = state.recent_topics()
     portfolio = load_portfolio()
+
+    # Things we're actively in or farming -- highest relevance
     held = {p["project"].lower() for p in portfolio.get("positions", []) if p.get("status") == "active"}
     held |= {a["project"].lower() for a in portfolio.get("airdrops", []) if a.get("status") == "farming"}
+
+    # Things we're watching but not in -- secondary relevance
+    watching = {w["project"].lower() for w in portfolio.get("watching", [])}
 
     from bot.config import POST_SCORE_THRESHOLD, MAX_TOPIC_REPEAT
 
     rejection_log = []
     scored = []
 
-    for c in candidates[:20]:
+    for c in candidates[:25]:
         title     = c.get("title", "")
         topic     = c.get("topic", "") or ""
         age_hours = c.get("age_hours", 0)
         kind      = c.get("kind", "rss")
+        title_lower = title.lower()
 
         # Hard rejection: stale
         if age_hours > 7:
@@ -163,12 +175,12 @@ def _select_best(candidates: list, state: State) -> Optional[dict]:
             continue
 
         # Hard rejection: already seen
-        fp = state.fingerprint(title.lower())
+        fp = state.fingerprint(title_lower)
         if state.has_seen(fp):
             rejection_log.append("SEEN: %s" % title[:50])
             continue
 
-        # Score
+        # Base score from scorer
         dummy = FeedItem(
             source=c.get("source", ""), title=title, url=c.get("url"),
             published_ts=time.time() - age_hours * 3600,
@@ -176,28 +188,55 @@ def _select_best(candidates: list, state: State) -> Optional[dict]:
         )
         item_score = score_item(dummy)
 
-        # Urgency bonus
+        # Urgency bonus -- alpha signals that need fast action
         urgency = c.get("urgency", 1)
         if urgency >= 3:
-            item_score += 20
+            item_score += 25
         elif urgency >= 2:
-            item_score += 8
+            item_score += 10
+
+        # Portfolio relevance bonus -- items about things our audience is
+        # actively in or tracking. These always have a reason to post.
+        portfolio_match = any(h in title_lower for h in held)
+        watchlist_match = any(w in title_lower for w in watching) if watching else False
+
+        if portfolio_match:
+            item_score += 30   # We're in this -- definite posting reason
+            log.debug("Portfolio match (+30): %s", title[:50])
+        elif watchlist_match:
+            item_score += 15   # We're watching this -- likely posting reason
+
+        # Timing signal bonus -- things with specific deadlines
+        timing_keywords = [
+            "unlock", "tge", "snapshot", "deadline", "ends in", "closes",
+            "airdrop criteria", "airdrop announced", "mainnet", "launch",
+        ]
+        if any(kw in title_lower for kw in timing_keywords):
+            item_score += 12   # Time-sensitive = clear reason to post now
+
+        # Contrarian signal bonus -- data that contradicts narratives
+        contrarian_keywords = [
+            "despite", "but", "however", "falls short", "below expectations",
+            "exit", "outflow", "decline", "hack", "exploit", "rug",
+        ]
+        if any(kw in title_lower for kw in contrarian_keywords):
+            item_score += 8    # Counter-narrative = useful to audience
 
         # TVL movers for unknown protocols aren't worth posting
-        if kind == "tvl" and item_score < 45:
-            rejection_log.append("TVL LOW SCORE (%d): %s" % (item_score, title[:50]))
+        if kind == "tvl" and item_score < 50:
+            rejection_log.append("TVL UNKNOWN PROTOCOL (%d): %s" % (item_score, title[:50]))
             continue
 
-        # Soft score floor (10 below threshold to allow urgency bonus to lift)
-        if item_score < POST_SCORE_THRESHOLD - 10:
+        # Score floor -- well below threshold to allow bonuses to lift worthy items
+        if item_score < POST_SCORE_THRESHOLD - 15:
             rejection_log.append("LOW SCORE (%d): %s" % (item_score, title[:50]))
             continue
 
-        # Disclosure
-        needs_disclosure = any(h in title.lower() for h in held)
+        # Disclosure flag
+        needs_disclosure = portfolio_match
         c = dict(c)  # copy to avoid mutating original
         c["needs_disclosure"] = needs_disclosure
-        c["held_project"] = next((h for h in held if h in title.lower()), None)
+        c["held_project"] = next((h for h in held if h in title_lower), None)
         c["score"] = item_score
         scored.append((item_score, c))
 
@@ -210,8 +249,12 @@ def _select_best(candidates: list, state: State) -> Optional[dict]:
 
     scored.sort(key=lambda x: -x[0])
     best = scored[0][1]
-    log.info("Analyst selected (score=%d, urgency=%d): %s",
-             best["score"], best.get("urgency", 1), best["title"][:70])
+    log.info(
+        "Analyst selected (score=%d, urgency=%d, portfolio=%s): %s",
+        best["score"], best.get("urgency", 1),
+        best.get("held_project") or "no",
+        best["title"][:70],
+    )
     return best
 
 

@@ -69,9 +69,11 @@ KEYWORD_FRESHNESS_MINUTES  = 90
 MIN_FOLLOWERS_FOR_TARGETED = 10_000
 
 _KEYWORD_QUERIES = [
-    "hyperliquid perp funding lang:en",
-    "defi airdrop points farm lang:en",
-    "kaito yap leaderboard lang:en",
+    "hyperliquid perp funding lang:en min_faves:40",
+    "defi airdrop points farm lang:en min_faves:30",
+    "kaito yap leaderboard lang:en min_faves:20",
+    "defillama tvl protocol launch lang:en min_faves:40",
+    "perp dex funding rate on-chain lang:en min_faves:50",
 ]
 
 _DEFAULT_TARGET_ACCOUNTS = [
