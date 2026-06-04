@@ -140,3 +140,12 @@ The bot reads this file when generating posts referencing past events, cycles, a
 | BTC leads, alts follow (with lag) | Each cycle: BTC ATH → ETH follows → alts follow |
 | Narrative precedes price | AI tokens (2023), RWA (2024), before revenue justified it |
 | Rug pattern | Anon founders + no audit + high APY = red flags |
+
+
+---
+## Related Notes
+- [[narrative-cycles]] — Current active narratives built on this history
+- [[exploit-history]] — Security incidents by cycle
+- [[defi-primitives]] — Mechanisms that drove each era
+- [[x-growth-strategy]] — How to post about these patterns credibly
+- [[dashboard]] — Vault home

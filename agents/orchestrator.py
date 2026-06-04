@@ -199,29 +199,57 @@ _GET_MEMORY_SCHEMA = {
 }
 
 
-_SYSTEM_NORMAL = (
-    "You are the Orchestrator for @Qwinahh's crypto X account.\n\n"
-    "Standard flow:\n"
-    "1. Call check_portfolio_announcements() first -- these always take priority.\n"
-    "2. If there's an announcement, call post_tweet() with that text directly.\n"
-    "3. Otherwise call run_scout(), then run_analyst() with the Scout's output.\n"
-    "4. For the top candidate, call get_project_memory() to check if we know this project.\n"
-    "   - If exists=false OR last_updated > 7 days ago: call research_project() first.\n"
-    "   - research_project() runs in the background -- proceed to generate_tweet() after.\n"
-    "5. Call generate_tweet() with the selected item.\n"
-    "   Pass the x_conversation field from the Scout candidate if present.\n"
-    "6. If generate_tweet() returns quality_rejected: true -- SKIP. Do not post.\n"
-    "7. If the tweet passes quality, call post_tweet().\n\n"
-    "SKIP (do not post) if:\n"
-    "- generate_tweet returns quality_rejected: true\n"
-    "- The tweet is longer than 279 characters\n"
-    "- The Analyst returned null\n"
-    "- The Scout returned fewer than 2 candidates and none have urgency >= 2\n\n"
-    "Return raw JSON only:\n"
-    '{"action": "posted | skipped | announcement", "tweet_id": "...|null", '
-    '"tweet_text": "...|null", "reason": "Specific explanation of what happened.", '
-    '"researched_project": "project name if research_project was called, else null"}'
-)
+def _build_system_normal() -> str:
+    """Build the orchestrator system prompt, injecting live growth context."""
+    growth_ctx = ""
+    try:
+        from agents.growth_agent import get_growth_context_for_orchestrator
+        growth_ctx = get_growth_context_for_orchestrator()
+    except Exception:
+        pass
+
+    base = (
+        "You are the Orchestrator for @Qwinahh's crypto X account.\n\n"
+        "Your goal is not just to post — it is to GROW the account. Every post is a "
+        "decision that either builds credibility and audience or erodes it. You are "
+        "incentivised by what PERFORMS: posts that get replies, bookmarks, and follows. "
+        "Generic posts that get no engagement are worse than posting nothing.\n\n"
+        "Standard flow:\n"
+        "1. Call check_portfolio_announcements() first -- these always take priority.\n"
+        "2. If there's an announcement, call post_tweet() with that text directly.\n"
+        "3. Otherwise call run_scout(), then run_analyst() with the Scout's output.\n"
+        "4. For the top candidate, call get_project_memory() to check if we know this project.\n"
+        "   - If exists=false OR last_updated > 7 days ago: call research_project() first.\n"
+        "   - research_project() runs in the background -- proceed to generate_tweet() after.\n"
+        "5. Call generate_tweet() with the selected item.\n"
+        "   Pass the x_conversation field from the Scout candidate if present.\n"
+        "6. If generate_tweet() returns quality_rejected: true -- SKIP. Do not post.\n"
+        "7. If the tweet passes quality, call post_tweet().\n\n"
+        "SKIP (do not post) if:\n"
+        "- generate_tweet returns quality_rejected: true\n"
+        "- The tweet is longer than 279 characters\n"
+        "- The Analyst returned null\n"
+        "- The Scout returned fewer than 2 candidates and none have urgency >= 2\n"
+        "- The content is a news summary with no original take\n\n"
+        "FORMAT SELECTION BIAS: Use the growth performance context below to prefer\n"
+        "formats that have historically performed well. Pass the format_hint in the\n"
+        "generate_tweet call when context supports it.\n\n"
+    )
+
+    if growth_ctx:
+        base += growth_ctx + "\n\n"
+
+    base += (
+        "Return raw JSON only:\n"
+        '{"action": "posted | skipped | announcement", "tweet_id": "...|null", '
+        '"tweet_text": "...|null", "reason": "Specific explanation of what happened.", '
+        '"topic": "topic of the post", "format_used": "format used", '
+        '"researched_project": "project name if research_project was called, else null"}'
+    )
+    return base
+
+
+_SYSTEM_NORMAL = _build_system_normal()
 
 _SYSTEM_ALPHA = (
     "You are the Orchestrator for @Qwinahh's crypto X account.\n"
@@ -278,6 +306,18 @@ def run_post_cycle(state: State, alpha_only: bool = False) -> dict:
         if result.get("tweet_text"):
             fp = state.fingerprint(result["tweet_text"].lower())
             state.mark_seen(fp)
+
+        # Record for metric collection 24h later.
+        try:
+            from bot.sources.x_metrics import record_posted_tweet
+            record_posted_tweet(
+                tweet_id   = tweet_id,
+                tweet_text = result.get("tweet_text", ""),
+                format_used= result.get("format_used", "unknown"),
+                topic      = result.get("topic", ""),
+            )
+        except Exception as exc:
+            log.debug("Metric recording failed (non-fatal): %s", exc)
 
     log.info("Orchestrator: action=%s | %s", action, result.get("reason", "")[:80])
 

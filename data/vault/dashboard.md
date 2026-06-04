@@ -123,9 +123,27 @@ SORT conviction DESC
 
 ---
 
+## 📊 Growth Performance
+
+Latest weekly growth analysis — what formats and topics are performing.
+
+```dataview
+TABLE
+  total_posts AS "Posts",
+  avg_impressions AS "Avg Impressions",
+  avg_engagement_rate_pct AS "Eng Rate %"
+FROM "growth"
+SORT file.name DESC
+LIMIT 3
+```
+
+---
+
 ## 🧠 Knowledge Base
 
 Confirmed facts the bot has learned. Click any file to read it.
+
+Core references: [[crypto-history]] · [[defi-primitives]] · [[exploit-history]] · [[narrative-cycles]] · [[x-growth-strategy]]
 
 ```dataview
 TABLE
@@ -171,6 +189,9 @@ LIMIT 7
 
 ---
 
+---
+
 *Dashboard updates automatically when Obsidian Git pulls the latest bot run from GitHub.*
 *Learner agent runs 2x per day — knowledge/events/ updates 6am and 5pm UTC.*
+*Growth analysis runs every Sunday 9am UTC → writes to growth/ folder.*
 *To refresh manually: Cmd/Ctrl+R in Obsidian.*

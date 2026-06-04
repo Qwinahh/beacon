@@ -136,3 +136,11 @@ The airdrop meta has evolved dramatically:
 5. **Social signal**: CT engagement per post on a topic rising rapidly.
 6. **GitHub commits**: Activity on repos in a sector accelerating.
 7. **Tokenomics unlocks**: Large unlocks = sell pressure incoming, not buying signal.
+
+---
+## Related Notes
+- [[crypto-history]] — Historical cycles that inform current ones
+- [[defi-primitives]] — Underlying mechanics behind narratives
+- [[exploit-history]] — What killed previous narratives
+- [[x-growth-strategy]] — Posting contrarian takes when narratives peak
+- [[dashboard]] — Vault home
