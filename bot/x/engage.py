@@ -269,6 +269,51 @@ def run_own_thread_replies(state: State) -> int:
 
 
 # ---------------------------------------------------------------------------
+# Mention quality gate
+# ---------------------------------------------------------------------------
+
+_NICHE_KEYWORDS = {
+    "defi", "crypto", "bitcoin", "eth", "ethereum", "btc", "sol", "solana",
+    "perp", "futures", "trading", "airdrop", "yield", "farm", "protocol",
+    "dex", "liquidity", "token", "nft", "web3", "blockchain", "dao",
+    "staking", "lending", "vault", "hyperliquid", "arbitrum", "base",
+    "optimism", "layer2", "l2", "tvl", "defillama", "kaito", "points",
+    "alpha", "on-chain", "onchain", "wallet", "position", "long", "short",
+}
+
+_SPAM_SIGNALS = [
+    "follow back", "followback", "follow4follow", "f4f",
+    "giveaway", "free crypto", "dm me", "click here",
+    "limited offer", "pump", "100x", "1000x", "moon guaranteed",
+]
+
+
+def _is_niche_mention(mention: dict) -> bool:
+    """
+    Return True if the mention is worth replying to.
+    Rejects mass-tag spam, non-crypto accounts, and obvious bots.
+    """
+    text      = mention.get("text", "")
+    username  = mention.get("author_username", "").lower()
+    followers = mention.get("author_followers", 0) or 0
+
+    if text.count("@") > 4:
+        log.debug("Rejecting mention from @%s: mass-tag (%d @s)", username, text.count("@"))
+        return False
+
+    if followers < 10:
+        log.debug("Rejecting mention from @%s: too few followers (%d)", username, followers)
+        return False
+
+    lower_text = text.lower()
+    if any(s in lower_text for s in _SPAM_SIGNALS):
+        log.debug("Rejecting mention from @%s: spam signal detected", username)
+        return False
+
+    return True
+
+
+# ---------------------------------------------------------------------------
 # Mention reply helpers
 # ---------------------------------------------------------------------------
 
@@ -316,6 +361,10 @@ def run(state: State) -> int:
 
         tweet_id = mention["id"]
         if tweet_id in already_replied:
+            continue
+
+        if not _is_niche_mention(mention):
+            state.mark_replied(tweet_id)  # Mark seen so we don't retry
             continue
 
         reply_text = _generate_reply(mention["text"])

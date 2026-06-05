@@ -147,6 +147,24 @@ EXAMPLES OF REPLIES NOT WORTH SENDING:
 
 
 # ---------------------------------------------------------------------------
+# Content quality helpers
+# ---------------------------------------------------------------------------
+
+_CRYPTO_HARD_SIGNALS = [
+    "$", "btc", "eth", "sol", "defi", "perp", "airdrop", "tvl",
+    "yield", "liquidity", "protocol", "token", "blockchain", "dex",
+    "funding", "leverage", "long", "short", "farm", "points", "kaito",
+    "hyperliquid", "arbitrum", "base chain", "layer 2",
+]
+
+
+def _is_crypto_tweet(text: str) -> bool:
+    """Basic check that a tweet is about crypto/DeFi, not a coincidental keyword match."""
+    lower = text.lower()
+    return any(s in lower for s in _CRYPTO_HARD_SIGNALS)
+
+
+# ---------------------------------------------------------------------------
 # twscrape helpers
 # ---------------------------------------------------------------------------
 
@@ -310,6 +328,10 @@ async def _engage_targeted_async(state: State, portfolio: dict, budget: int) -> 
                     log.debug("@%s post not in focus topics.", username)
                     continue
 
+                if not _is_crypto_tweet(content):
+                    log.debug("Skipping non-crypto tweet from @%s", username)
+                    continue
+
                 # Engagement floor (not a dud post)
                 likes   = getattr(tweet, "likeCount", 0) or 0
                 replies = getattr(tweet, "replyCount", 0) or 0
@@ -400,6 +422,10 @@ async def _engage_keyword_async(state: State, portfolio: dict, budget: int) -> i
                     continue
 
                 content = tweet.rawContent or ""
+                if not _is_crypto_tweet(content):
+                    log.debug("Skipping non-crypto tweet from @%s", author_username)
+                    continue
+
                 reply_text = _generate_reply(content, author_username, portfolio)
                 if not reply_text:
                     continue
@@ -453,6 +479,11 @@ def run(state: State) -> int:
             "X_SCRAPER_COOKIES not set. Engagement reading disabled. "
             "Set this secret to enable targeted + keyword replies."
         )
+        return 0
+
+    from bot.sources.health_monitor import is_in_recovery
+    if is_in_recovery():
+        log.info("Recovery mode: skipping outbound engagement this cycle.")
         return 0
 
     log.info(

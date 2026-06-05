@@ -69,6 +69,16 @@ _REJECT_PHRASES = [
     "according to reports",
 ]
 
+# Patterns that look like press-release headlines — reject these.
+_HEADLINE_PATTERNS = [
+    r"^[A-Z][^.!?]*raises \$",       # "[Project] raises $X"
+    r"^[A-Z][^.!?]*launches ",        # "[Project] launches [thing]"
+    r"^[A-Z][^.!?]*announces ",       # "[Project] announces [thing]"
+    r"^[A-Z][^.!?]*partners with ",   # "[Project] partners with [X]"
+    r"^breaking:",                     # "Breaking:"
+    r"^just in:",                      # "Just in:"
+]
+
 # A post must contain at least one of these to be considered substantive.
 # Numbers count automatically if present as digits.
 _SUBSTANCE_PATTERNS = [
@@ -184,6 +194,28 @@ _FORMAT_PALETTE = [
      "detail that doesn't add up. Example: Protocol announced 'fair launch' "
      "with 40% to team at TGE. 'Fair' is doing a lot of work there.\n"
      "Under 200 chars."),
+
+    ("hot_take",
+     "Write a HOT TAKE: your actual opinion on what this means for the space, "
+     "traders, or protocol users. First person. Specific. Willing to be wrong. "
+     "Example: 'Everyone is bullish on EigenLayer restaking but the AVS demand "
+     "side is still basically zero. Restaking a yield with no actual users is "
+     "just a longer-dated risk.'\nUnder 220 chars. Must be a take, not a fact."),
+
+    ("alpha_tip",
+     "Write an ALPHA TIP: what someone should actually DO based on this information. "
+     "Specific action, specific timing, specific reasoning. First person or second person. "
+     "Example: 'If you're farming Hyperliquid, check your open referral slots — "
+     "they reset monthly and most people are leaving points on the table.'\n"
+     "Under 200 chars. Must be actionable, not just observational."),
+
+    ("thread_hook",
+     "Write a THREAD HOOK — the first tweet of a thread that makes people want "
+     "to read more. End with a thread emoji (this one time only — threads justify it). "
+     "State a specific observation or tension that demands explanation. "
+     "Example: 'Hyperliquid just did $200B in monthly volume. It has 12 employees. "
+     "Here's what that actually means for every other perp DEX'\n"
+     "Under 200 chars. Must create genuine curiosity about what comes next."),
 ]
 
 
@@ -274,20 +306,32 @@ def _user_prompt(
 # Quality validation
 # ---------------------------------------------------------------------------
 
+def _is_headline(text: str) -> bool:
+    """Return True if the tweet reads like a press-release headline."""
+    for pattern in _HEADLINE_PATTERNS:
+        if re.match(pattern, text.strip(), re.IGNORECASE):
+            return True
+    return False
+
+
 def _validate_quality(text: str) -> tuple[bool, str]:
     """
     Returns (is_valid, reason_if_rejected).
 
     Checks:
     1. No generic low-value phrases.
-    2. Contains at least one specific number or data point.
-    3. Minimum length (a post under 60 chars can't say anything substantive).
+    2. Not a press-release headline.
+    3. Contains at least one specific number or data point.
+    4. Minimum length (a post under 60 chars can't say anything substantive).
     """
     lower = text.lower()
 
     for phrase in _REJECT_PHRASES:
         if phrase in lower:
             return False, f"Contains generic phrase: '{phrase}'"
+
+    if _is_headline(text):
+        return False, "Reads like a news headline — add angle or implication"
 
     has_substance = any(re.search(p, text) for p in _SUBSTANCE_PATTERNS)
     if not has_substance:

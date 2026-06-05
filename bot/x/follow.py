@@ -448,6 +448,11 @@ def run_follow_cycle(state: State) -> int:
         log.warning("X_SCRAPER_COOKIES not set -- follow cycle skipped.")
         return unfollowed
 
+    from bot.sources.health_monitor import is_in_recovery
+    if is_in_recovery():
+        log.info("Recovery mode: skipping follow cycle this cycle.")
+        return unfollowed
+
     # --- Step 1: Priority list (curated, no quality gate) ---
     client = get_client()
     priority_followed = _priority_follow_pass(follow_state, client)

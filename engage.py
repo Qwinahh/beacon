@@ -54,6 +54,16 @@ def main() -> None:
     else:
         log.info("X_SCRAPER_COOKIES: set (%d chars)", len(cookies))
 
+    # ---- Account health check (shadowban / suppression detection) ----
+    from bot.sources.health_monitor import check_health, is_in_recovery
+    check_health()
+
+    if is_in_recovery():
+        log.warning(
+            "Account is in recovery mode (possible shadowban/suppression detected). "
+            "Reducing engagement activity. Check data/growth/health_status.json for details."
+        )
+
     # ---- Collect engagement on our own recent posts (non-fatal) ----
     try:
         from bot.sources.engagement_collector import collect_pending
