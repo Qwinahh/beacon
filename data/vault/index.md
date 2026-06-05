@@ -17,6 +17,7 @@ observations, and airdrop status.
 - [[projects/hyperliquid|Hyperliquid]] — perps DEX, long-term constructive
 - [[projects/kaito|Kaito]] — InfoFi, farming-oriented
 - [[projects/meteora|Meteora]] — Solana CLMM, actively farming
+- [[projects/eigenlayer|EigenLayer]] — restaking, watching
 
 *New projects are added automatically as the bot discovers them.*
 
@@ -29,6 +30,15 @@ Macro-level thesis tracking across projects.
 - [[narratives/perps-meta|Perps Meta]] — on-chain perps winning thesis
 - [[narratives/airdrop-meta|Airdrop Meta]] — farming strategy framework
 - [[narratives/restaking|Restaking / EigenLayer]] — AVS economics
+
+---
+
+## Daily Inspiration
+
+What's performing well in the DeFi/crypto space today — updated ~07:00 UTC.
+
+- [[inspiration/trending|Today's Top Posts]] — top posts by engagement with links
+- [[inspiration/patterns|What's Working]] — format and topic breakdown
 
 ---
 

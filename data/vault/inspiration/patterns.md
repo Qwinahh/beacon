@@ -25,8 +25,8 @@ Pattern analysis across 62 high-engagement posts from the last 24h.
 
 ## Format Breakdown
 
-- **thread_opener**: 42 posts
-- **data_post**: 31 posts
+- **thread_hook**: 42 posts
+- **data_observation**: 31 posts
 - **contrarian**: 25 posts
 - **question**: 14 posts
 

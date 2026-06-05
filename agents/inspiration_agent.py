@@ -341,11 +341,11 @@ def _format_patterns_md(posts: list[dict], today: str, analysis: str) -> str:
         if "?" in t:
             format_counts["question"] += 1
         if any(c.isdigit() for c in t) and ("%" in t or "$" in t or "M" in t or "B" in t):
-            format_counts["data_post"] += 1
+            format_counts["data_observation"] += 1
         if any(w in t.lower() for w in ["but", "however", "actually", "wrong", "not"]):
             format_counts["contrarian"] += 1
         if t.endswith(":") or t.count("\n") >= 2:
-            format_counts["thread_opener"] += 1
+            format_counts["thread_hook"] += 1
 
     lines = [
         f"---",

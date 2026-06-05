@@ -125,17 +125,7 @@ SORT conviction DESC
 
 ## 📊 Growth Performance
 
-Latest weekly growth analysis — what formats and topics are performing.
-
-```dataview
-TABLE
-  total_posts AS "Posts",
-  avg_impressions AS "Avg Impressions",
-  avg_engagement_rate_pct AS "Eng Rate %"
-FROM "growth"
-SORT file.name DESC
-LIMIT 3
-```
+*Engagement data is tracked in `data/growth/metrics.json`. Dataview cannot read JSON files directly — check the raw file or wait for the weekly growth report in the [[log/]] folder.*
 
 ---
 
@@ -148,11 +138,9 @@ Core references: [[crypto-history]] · [[defi-primitives]] · [[exploit-history]
 ```dataview
 TABLE
   category AS "Category",
-  last_updated AS "Updated",
-  source_tier AS "Source Tier"
+  last_updated AS "Updated"
 FROM "knowledge"
-WHERE confirmed = true
-  AND type = "knowledge"
+WHERE file.name != "README"
 SORT last_updated DESC
 ```
 
@@ -178,7 +166,7 @@ LIMIT 20
 ## 🔔 Community Signals (Unconfirmed)
 
 Community sentiment signals — Reddit, X/CT, Discord, Telegram.
-**Not facts.** Use as context only. Never trade based on these alone.
+**Not facts.** Use as context only.
 
 ```dataview
 LIST
@@ -186,6 +174,8 @@ FROM "knowledge/signals"
 SORT file.name DESC
 LIMIT 7
 ```
+
+*No signals yet — bot populates this as it ingests community data.*
 
 ---
 

@@ -128,20 +128,35 @@ The dashboard sorts by this field.
 
 ```
 data/vault/
-├── SETUP.md              ← this file
-├── dashboard.md          ← live Dataview tables (open this daily)
-├── farms-kanban.md       ← drag-and-drop airdrop board
-├── index.md              ← landing page with wikilinks
+├── SETUP.md                      ← this file
+├── dashboard.md                  ← live Dataview tables (open this daily)
+├── farms-kanban.md               ← drag-and-drop airdrop board
+├── index.md                      ← landing page with wikilinks
 ├── projects/
-│   ├── hyperliquid.md    ← bot writes here after research/posts
+│   ├── hyperliquid.md            ← bot writes here after research/posts
 │   ├── kaito.md
-│   └── meteora.md
+│   ├── meteora.md
+│   └── eigenlayer.md
 ├── narratives/
 │   ├── perps-meta.md
-│   └── airdrop-meta.md
+│   ├── airdrop-meta.md
+│   └── restaking.md
+├── knowledge/
+│   ├── README.md                 ← knowledge base index
+│   ├── crypto-history.md         ← major events 2017–2025
+│   ├── defi-primitives.md        ← how DeFi mechanisms work
+│   ├── exploit-history.md        ← hacks, vectors, patterns
+│   ├── narrative-cycles.md       ← how narratives rotate
+│   ├── x-growth-strategy.md      ← X algorithm and growth tactics
+│   ├── events/                   ← bot writes confirmed events here daily
+│   └── signals/                  ← bot writes community signals here (unconfirmed)
+├── inspiration/
+│   ├── trending.md               ← today's top posts, updated ~07:00 UTC daily
+│   ├── patterns.md               ← format and topic analysis of what's working
+│   └── history/                  ← archive of past trending.md snapshots
 ├── templates/
-│   ├── new-project.md    ← Templater: create new project files
-│   └── new-narrative.md  ← Templater: create new narrative files
+│   ├── new-project.md            ← Templater: create new project files
+│   └── new-narrative.md          ← Templater: create new narrative files
 └── log/
-    └── 2026-06-01.md     ← bot writes one per day
+    └── YYYY-MM-DD.md             ← bot writes one per day
 ```
