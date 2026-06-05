@@ -1,0 +1,9 @@
+# Bot runtime state — updated by GitHub Actions on every run.
+# During rebase, always keep the remote (Actions) version.
+# In git rebase, "ours" is the upstream being rebased onto, so
+# merge=ours here means: keep origin/master, discard our local version.
+data/state.json                    merge=ours
+data/growth/follow_state.json      merge=ours
+data/growth/pending.json           merge=ours
+data/growth/metrics.json           merge=ours
+data/growth/growth_context.json    merge=ours
