@@ -14,6 +14,13 @@
       "topic": "HYPE airdrop selling pressure",
       "outcome": "posted",
       "note": "Price action correlated with broader market pullback, but narrative around airdrop recipients as sellers provided a distinctive angle that justified coverage."
+    },
+    {
+      "ts": "2026-06-05T13:33:54Z",
+      "signal_type": "rss",
+      "topic": "BTC price decline 2.8%",
+      "outcome": "posted",
+      "note": "CoinDesk macro signal triggered on meaningful intraday BTC drop; tweet framed as personal risk management response rather than directional call."
     }
   ],
   "noise_signals": [],

@@ -1,21 +1,24 @@
 {
   "daily_counts": {
     "2026-06-04": 1,
-    "2026-06-05": 1
+    "2026-06-05": 2
   },
-  "last_post_ts": 1780639813.1518075,
+  "last_post_ts": 1780666429.4611,
   "seen": [
     "92721f98279b91df501b",
-    "6a52391eb83757bc8d90"
+    "6a52391eb83757bc8d90",
+    "fc78aadef75de215a30c"
   ],
   "recent_topics": [
     "general",
-    "hype"
+    "hype",
+    "general"
   ],
   "recent_formats": [
     "question",
     "data_observation",
-    "contrarian"
+    "contrarian",
+    "farm_update"
   ],
   "replied_to": [
     "2060640874699399233",
