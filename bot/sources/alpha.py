@@ -283,6 +283,30 @@ def detect_all() -> list[AlphaSignal]:
     except Exception as exc:
         log.debug("Unlock signals skipped: %s", exc)
 
+    # Large on-chain whale transactions.
+    try:
+        from bot.sources.whale_alert import get_whale_alerts
+        for w in get_whale_alerts(lookback_minutes=90):
+            if w.amount_usd >= 100_000_000:
+                urgency = 3
+            elif w.amount_usd >= 20_000_000:
+                urgency = 2
+            else:
+                urgency = 1
+            signals.append(AlphaSignal(
+                kind="whale",
+                title=w.summary(),
+                source="Whale Alert",
+                url=None,
+                published_ts=w.published_ts,
+                topic="whale",
+                urgency=urgency,
+                meta={"chain": w.chain, "symbol": w.symbol, "amount_usd": w.amount_usd,
+                      "from_type": w.from_type, "to_type": w.to_type},
+            ))
+    except Exception as exc:
+        log.debug("Whale alert signals skipped: %s", exc)
+
     # Deduplicate by title (case-insensitive)
     seen_titles: set[str] = set()
     unique: list[AlphaSignal] = []

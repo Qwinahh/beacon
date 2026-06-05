@@ -102,6 +102,14 @@ def _build_item_summary(item: CandidateItem) -> str:
             f"Current TVL: ${item.tvl_usd:,.0f}\n"
             f"Category: {item.category}"
         )
+    if isinstance(item, FeedItem) and item.kind == "whale":
+        return (
+            f"Type: whale transaction\n"
+            f"Transaction: {item.title}\n"
+            f"Context: A large on-chain movement detected by Whale Alert. "
+            f"Frame the significance — who is likely moving funds and why, "
+            f"what it might signal about sentiment or positioning."
+        )
     return f"Type: news\nHeadline: {item.title}\nSource: {item.source}"
 
 

@@ -129,7 +129,7 @@ _FETCH_TVL_SCHEMA = {
 
 _DETECT_ALPHA_SCHEMA = {
     "name": "detect_alpha",
-    "description": "Run all alpha detectors: fresh RSS, new protocols, TVL spikes, large raises, GitHub releases, Hyperliquid funding rates, token unlocks. Returns urgency-ranked signals.",
+    "description": "Run all alpha detectors: fresh RSS, new protocols, TVL spikes, large raises, GitHub releases, Hyperliquid funding rates, token unlocks, large whale transactions. Returns urgency-ranked signals.",
     "input_schema": {"type": "object", "properties": {}},
 }
 
