@@ -217,6 +217,93 @@ def _run_async(coro):
 
 
 # ---------------------------------------------------------------------------
+# Priority follow list (curated, no quality gate needed)
+# ---------------------------------------------------------------------------
+
+_PRIORITY_LIST_FILE = Path("data/growth/target_follow_accounts.json")
+
+
+async def _resolve_uid_async(username: str) -> Optional[str]:
+    """Resolve a Twitter username to a numeric user ID via twscrape."""
+    api = await _make_api()
+    if not api:
+        return None
+    try:
+        user = await api.user_by_login(username)
+        return str(user.id) if user else None
+    except Exception as exc:
+        log.debug("UID resolve failed for @%s: %s", username, exc)
+        return None
+
+
+def _priority_follow_pass(follow_state: dict, client) -> int:
+    """
+    Follow accounts from the curated priority list before random discovery.
+    These are manually vetted — no quality gate applied.
+    Returns number of accounts followed this pass.
+    """
+    if not _PRIORITY_LIST_FILE.exists():
+        return 0
+    try:
+        config = json.loads(_PRIORITY_LIST_FILE.read_text(encoding="utf-8"))
+    except Exception:
+        return 0
+
+    priority       = config.get("priority_follows", [])
+    already_done   = {u.lower() for u in config.get("already_followed", [])}
+    skip_set       = {u.lower() for u in config.get("skip", [])}
+    followed_names = {
+        e.get("username", "").lower()
+        for e in follow_state.get("followed", [])
+        if isinstance(e, dict)
+    }
+
+    followed = 0
+    config_dirty = False
+
+    for entry in priority:
+        if followed >= MAX_FOLLOWS_PER_RUN:
+            break
+        if _follows_today(follow_state) >= MAX_FOLLOWS_PER_DAY:
+            break
+
+        username = entry.get("username", "").lower()
+        if not username:
+            continue
+        if username in already_done or username in skip_set or username in followed_names:
+            continue
+
+        uid = _run_async(_resolve_uid_async(username))
+        if not uid:
+            log.debug("Could not resolve uid for @%s — skipping.", username)
+            continue
+
+        try:
+            client.follow_user(uid)
+            follow_state.setdefault("followed", []).append({
+                "id":          uid,
+                "username":    username,
+                "followed_at": int(time.time()),
+            })
+            _increment_daily(follow_state)
+            config.setdefault("already_followed", []).append(username)
+            config_dirty = True
+            followed += 1
+            log.info("Priority follow: @%s (%s)", username, entry.get("reason", ""))
+            time.sleep(2)
+        except Exception as exc:
+            log.debug("Priority follow failed for @%s: %s", username, exc)
+
+    if config_dirty:
+        try:
+            _PRIORITY_LIST_FILE.write_text(json.dumps(config, indent=2), encoding="utf-8")
+        except Exception as exc:
+            log.warning("Could not save priority follow config: %s", exc)
+
+    return followed
+
+
+# ---------------------------------------------------------------------------
 # Candidate discovery via twscrape
 # ---------------------------------------------------------------------------
 
@@ -359,7 +446,18 @@ def run_follow_cycle(state: State) -> int:
         log.warning("X_SCRAPER_COOKIES not set -- follow cycle skipped.")
         return unfollowed
 
-    # --- Step 1: Find candidates via twscrape ---
+    # --- Step 1: Priority list (curated, no quality gate) ---
+    client = get_client()
+    priority_followed = _priority_follow_pass(follow_state, client)
+    if priority_followed:
+        log.info("Priority follows: %d", priority_followed)
+        _save_follow_state(follow_state)
+        this_run_limit = max(0, this_run_limit - priority_followed)
+
+    if this_run_limit == 0:
+        return unfollowed + priority_followed
+
+    # --- Step 2: Find candidates via twscrape ---
     candidates = _run_async(_find_candidates_async(follow_state)) or []
     if not candidates:
         log.info("No follow candidates found.")
@@ -368,8 +466,7 @@ def run_follow_cycle(state: State) -> int:
     # Sort by followers descending (follow bigger accounts first for more visibility)
     candidates.sort(key=lambda c: c.get("followers", 0), reverse=True)
 
-    # --- Step 2: Quality-check and follow ---
-    client = get_client()
+    # --- Step 3: Quality-check and follow ---
     follows_this_run = 0
 
     for candidate in candidates:
@@ -414,8 +511,9 @@ def run_follow_cycle(state: State) -> int:
             log.warning("Follow failed for @%s: %s", username, exc)
 
     _save_follow_state(follow_state)
+    total_followed = priority_followed + follows_this_run
     log.info(
-        "Follow cycle done: %d followed this run (%d today).",
-        follows_this_run, _follows_today(follow_state),
+        "Follow cycle done: %d followed this run (%d priority + %d discovered, %d today).",
+        total_followed, priority_followed, follows_this_run, _follows_today(follow_state),
     )
-    return follows_this_run
+    return total_followed

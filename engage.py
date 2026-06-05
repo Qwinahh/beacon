@@ -24,6 +24,7 @@ Usage:
 from __future__ import annotations
 
 import logging
+import os
 
 from bot.state import State
 from bot.x.engage import run as run_mentions
@@ -40,6 +41,26 @@ log = logging.getLogger(__name__)
 
 
 def main() -> None:
+    # ---- Cookie gate diagnostics (gatekeeper for all reading operations) ----
+    cookies = os.environ.get("X_SCRAPER_COOKIES", "").strip()
+    if not cookies:
+        log.warning(
+            "X_SCRAPER_COOKIES is not set. Mentions, outbound replies, thread replies, "
+            "and follow candidate discovery are ALL disabled. "
+            "Set this secret in GitHub → Settings → Secrets → Actions. "
+            "Get it from browser DevTools → Application → Cookies → x.com: "
+            "copy ct0 and auth_token values as: ct0=VALUE; auth_token=VALUE"
+        )
+    else:
+        log.info("X_SCRAPER_COOKIES: set (%d chars)", len(cookies))
+
+    # ---- Collect engagement on our own recent posts (non-fatal) ----
+    try:
+        from bot.sources.engagement_collector import collect_pending
+        collect_pending()
+    except Exception as exc:
+        log.debug("engagement_collector skipped: %s", exc)
+
     state = State()
     state.load()
 

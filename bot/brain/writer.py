@@ -188,12 +188,15 @@ _FORMAT_PALETTE = [
 
 
 def _pick_format(recent_formats: list[str]) -> tuple[str, str]:
-    """Pick a format not used in the last 2 posts."""
+    """Pick a format, weighted by past engagement. Avoids last 2 used."""
+    from bot.brain.format_weights import get_weights
     recent = set((recent_formats or [])[-2:])
     options = [(n, i) for n, i in _FORMAT_PALETTE if n not in recent]
     if not options:
         options = _FORMAT_PALETTE
-    return _random.choice(options)
+    weights = get_weights()
+    w = [weights.get(n, 1.0) for n, _ in options]
+    return _random.choices(options, weights=w, k=1)[0]
 
 
 def _user_prompt(

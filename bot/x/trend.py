@@ -60,37 +60,43 @@ log = logging.getLogger(__name__)
 _COOKIES_ENV = "X_SCRAPER_COOKIES"
 
 # Per-run caps
-MAX_PER_RUN = 2
+MAX_PER_RUN = 3
 
 # Reply freshness windows (minutes)
 TARGETED_FRESHNESS_MINUTES = 60
 KEYWORD_FRESHNESS_MINUTES  = 90
 
-MIN_FOLLOWERS_FOR_TARGETED = 10_000
+MIN_FOLLOWERS_FOR_TARGETED = 5_000
 
 _KEYWORD_QUERIES = [
-    "hyperliquid perp funding lang:en min_faves:40",
-    "defi airdrop points farm lang:en min_faves:30",
-    "kaito yap leaderboard lang:en min_faves:20",
-    "defillama tvl protocol launch lang:en min_faves:40",
-    "perp dex funding rate on-chain lang:en min_faves:50",
+    "hyperliquid perp funding lang:en min_faves:8",
+    "defi airdrop points farm lang:en min_faves:5",
+    "kaito yap leaderboard lang:en min_faves:5",
+    "defillama tvl protocol lang:en min_faves:8",
+    "perp dex funding rate lang:en min_faves:10",
+    "solana defi yield farm lang:en min_faves:8",
+    "crypto airdrop criteria snapshot lang:en min_faves:5",
 ]
 
 _DEFAULT_TARGET_ACCOUNTS = [
-    "CryptoHayes",
-    "HsakaTrades",
-    "MessariCrypto",
-    "delphi_digital",
     "DefiIgnas",
-    "hasufl",
-    "tomhschmidt",
-    "Croissant_eth",
+    "HsakaTrades",
+    "Founderization",
+    "zkDrops",
     "Pentosh1",
     "0xMaki",
     "0xHamz",
-    "Founderization",
-    "zkDrops",
-    "0xShitposter",
+    "CroissantEth",
+    "SmolRefund",
+    "0xSisyphus",
+    "Route2FI",
+    "thedefiedge",
+    "Gainzy222",
+    "tayvano_",
+    "deFIYIelded",
+    "MilkyWayDeFi",
+    "functi0nZer0",
+    "EigenLayerNews",
 ]
 
 _REPLY_SYSTEM = """\
@@ -306,7 +312,7 @@ async def _engage_targeted_async(state: State, portfolio: dict, budget: int) -> 
                 # Engagement floor (not a dud post)
                 likes   = getattr(tweet, "likeCount", 0) or 0
                 replies = getattr(tweet, "replyCount", 0) or 0
-                if likes < 3 and replies < 1:
+                if likes < 1 and replies < 1:
                     continue
 
                 reply_text = _generate_reply(content, username, portfolio)
@@ -330,6 +336,11 @@ async def _engage_targeted_async(state: State, portfolio: dict, budget: int) -> 
             log.debug("Error processing @%s: %s", username, exc)
             continue
 
+    if sent == 0:
+        log.info(
+            "Targeted engagement: 0 sent. cookie=%s, accounts_checked=%d",
+            bool(_get_cookies()), len(target_accounts),
+        )
     return sent
 
 
@@ -378,7 +389,7 @@ async def _engage_keyword_async(state: State, portfolio: dict, budget: int) -> i
 
                 likes    = getattr(tweet, "likeCount", 0) or 0
                 retweets = getattr(tweet, "retweetCount", 0) or 0
-                if likes < 40 and retweets < 8:
+                if likes < 8 and retweets < 2:
                     continue
 
                 author_username = tweet.user.username if tweet.user else "unknown"
@@ -406,6 +417,11 @@ async def _engage_keyword_async(state: State, portfolio: dict, budget: int) -> i
         except Exception as exc:
             log.warning("Keyword search error for '%s': %s", query, exc)
 
+    if sent == 0:
+        log.info(
+            "Keyword engagement: 0 sent. cookie=%s, queries_run=%d",
+            bool(_get_cookies()), len(_KEYWORD_QUERIES),
+        )
     return sent
 
 
