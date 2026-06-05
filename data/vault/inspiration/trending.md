@@ -1,0 +1,20 @@
+---
+title: Trending — not yet populated
+updated: pending first run
+type: inspiration
+---
+
+# Trending Today
+
+_Waiting for the first run of the inspiration agent (daily at 07:00 UTC)._
+
+This page will show the top 20 highest-engagement posts from monitored DeFi/perps/airdrop accounts
+and keyword searches from the last 24 hours — ranked by `likes + replies×3 + retweets×2 + quotes×2`.
+
+Use these as raw material: find a post that made you think, then write your own take.
+
+[[patterns|→ What's Working Today]] | [[../dashboard|← Dashboard]]
+
+---
+
+_Check back after 07:00 UTC. You can also trigger a manual run via GitHub → Actions → "Daily Inspiration Feed" → Run workflow._

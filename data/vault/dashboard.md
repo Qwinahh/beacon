@@ -191,6 +191,16 @@ LIMIT 7
 
 ---
 
+## 💡 Daily Inspiration Feed
+
+What's performing well in the DeFi/crypto space today — raw material for your personal account.
+Updated every morning at ~07:00 UTC.
+
+→ [[inspiration/trending|Today's Top Posts]] — top 20 posts by engagement with direct links
+→ [[inspiration/patterns|What's Working]] — LLM editorial brief + topic and format breakdown
+
+---
+
 *Dashboard updates automatically when Obsidian Git pulls the latest bot run from GitHub.*
 *Learner agent runs 2x per day — knowledge/events/ updates 6am and 5pm UTC.*
 *Growth analysis runs every Sunday 9am UTC → writes to growth/ folder.*
