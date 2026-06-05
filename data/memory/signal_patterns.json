@@ -21,6 +21,13 @@
       "topic": "BTC price decline 2.8%",
       "outcome": "posted",
       "note": "CoinDesk macro signal triggered on meaningful intraday BTC drop; tweet framed as personal risk management response rather than directional call."
+    },
+    {
+      "ts": "2026-06-05T16:25:17Z",
+      "signal_type": "rss",
+      "topic": "Regulatory clarity on vaults - Crypto Council for Innovation",
+      "outcome": "posted",
+      "note": "Regulatory push with clear historical precedent for market impact (10% BTC dominance decline). Actionable narrative linking policy to alt season potential."
     }
   ],
   "noise_signals": [],
