@@ -24,7 +24,9 @@ from bot.brain import writer
 from bot.brain.scorer import score as score_item
 from bot.brain.project_memory import get_project
 from bot.portfolio.tracker import get_new_announcements, load_portfolio
+from bot.sources.dropstab import get_upcoming_unlocks, UnlockItem
 from bot.sources.rss import FeedItem
+from bot.sources.whale_alert import get_whale_alerts, WhaleItem
 from bot.state import State
 from bot.x.client import post_tweet
 
@@ -128,6 +130,46 @@ def _gather_candidates(alpha_only: bool = False) -> list:
         log.info("Scout: %d TVL movers", len([c for c in candidates if c["kind"] == "tvl"]))
     except Exception as exc:
         log.warning("TVL fetch failed: %s", exc)
+
+    # Whale alerts
+    if not alpha_only:
+        try:
+            whale_items = get_whale_alerts(lookback_minutes=90)
+            if whale_items:
+                log.info("Scout: %d whale alerts", len(whale_items))
+            for w in whale_items:
+                candidates.append({
+                    "title":        w.summary(),
+                    "source":       "Whale Alert",
+                    "kind":         "whale",
+                    "topic":        w.topic,
+                    "age_hours":    round(w.age_hours, 2),
+                    "url":          w.tx_hash,
+                    "urgency":      2,
+                    "whale_item":   w,
+                })
+        except Exception as exc:
+            log.warning("Whale alert fetch failed: %s", exc)
+
+    # Token unlocks
+    if not alpha_only:
+        try:
+            unlock_items = get_upcoming_unlocks()
+            if unlock_items:
+                log.info("Scout: %d upcoming unlocks", len(unlock_items))
+            for u in unlock_items:
+                candidates.append({
+                    "title":        u.summary(),
+                    "source":       "DropsTab",
+                    "kind":         "unlock",
+                    "topic":        u.topic,
+                    "age_hours":    round(u.age_hours, 2),
+                    "url":          "",
+                    "urgency":      2 if u.days_until <= 1 else 1,
+                    "unlock_item":  u,
+                })
+        except Exception as exc:
+            log.warning("DropsTab fetch failed: %s", exc)
 
     # Sort: urgency desc, age asc (freshest first within each urgency tier)
     candidates.sort(key=lambda c: (-c.get("urgency", 0), c.get("age_hours", 99)))
@@ -401,6 +443,10 @@ def run_post_cycle(state: State, alpha_only: bool = False) -> dict:
             url        = selected.get("url"),
             topic      = selected.get("topic", "defi"),
         )
+    elif kind == "whale" and selected.get("whale_item"):
+        item = selected["whale_item"]
+    elif kind == "unlock" and selected.get("unlock_item"):
+        item = selected["unlock_item"]
     else:
         item = FeedItem(
             source       = selected.get("source", ""),

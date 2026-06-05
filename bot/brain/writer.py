@@ -19,11 +19,13 @@ from typing import Optional, Union
 from bot.brain.context import build_system_prompt, build_writer_context
 from bot.config import CLAUDE_MAX_TOKENS, CLAUDE_MODEL, TEMPLATE_FALLBACK
 from bot.sources.defillama import RaiseItem, TvlMoverItem
+from bot.sources.dropstab import UnlockItem
 from bot.sources.rss import FeedItem
+from bot.sources.whale_alert import WhaleItem
 
 log = logging.getLogger(__name__)
 
-CandidateItem = Union[FeedItem, RaiseItem, TvlMoverItem]
+CandidateItem = Union[FeedItem, RaiseItem, TvlMoverItem, WhaleItem, UnlockItem]
 
 # Phrases that signal a generic, low-value post. If the generated tweet
 # contains any of these, it gets rejected and we skip rather than post slop.
@@ -111,6 +113,25 @@ def _build_item_summary(item: CandidateItem) -> str:
             f"TVL {direction}: {abs(item.change_pct):.1f}% in 24h\n"
             f"Current TVL: ${item.tvl_usd:,.0f}\n"
             f"Category: {item.category}"
+        )
+    if isinstance(item, WhaleItem):
+        return (
+            f"Type: whale transaction\n"
+            f"Summary: {item.summary()}\n"
+            f"Chain: {item.chain}\n"
+            f"Amount: ${item.amount_usd / 1_000_000:.1f}M USD\n"
+            f"From: {item.from_name or item.from_type}\n"
+            f"To: {item.to_name or item.to_type}"
+        )
+    if isinstance(item, UnlockItem):
+        usd_str = f" (~${item.amount_usd / 1_000_000:.1f}M)" if item.amount_usd else ""
+        return (
+            f"Type: token unlock event\n"
+            f"Project: {item.project} ({item.symbol})\n"
+            f"Amount: {item.amount_tokens:,.0f} tokens{usd_str}\n"
+            f"Unlocks in: {item.days_until:.1f} days\n"
+            f"Recipient: {item.recipient}\n"
+            f"Type: {item.unlock_type}"
         )
     return f"Type: news\nHeadline: {item.title}\nSource: {item.source}"
 
@@ -355,6 +376,10 @@ def _fallback_template(item: CandidateItem) -> str:
     if isinstance(item, TvlMoverItem):
         direction = "up" if item.change_pct > 0 else "down"
         return f"{item.name} TVL {direction} {abs(item.change_pct):.1f}% in 24h to ${item.tvl_usd/1e6:.0f}M."
+    if isinstance(item, WhaleItem):
+        return item.summary()
+    if isinstance(item, UnlockItem):
+        return item.summary()
     return f"{item.title[:240]}"
 
 

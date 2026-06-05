@@ -44,15 +44,16 @@ from bot.x.client import get_client
 log = logging.getLogger(__name__)
 
 # ---- Strict limits --------------------------------------------------------
-MAX_FOLLOWS_PER_DAY     = 10
-MAX_FOLLOWS_PER_RUN     = 3
-MAX_UNFOLLOWS_PER_RUN   = 5
-UNFOLLOW_AFTER_HOURS    = 72   # Unfollow anyone who hasn't followed back after 3 days
-MIN_FOLLOWER_COUNT      = 1_000
-MAX_FOLLOWER_COUNT      = 500_000
-MIN_RELEVANCE_POSTS     = 2
-MIN_ENGAGEMENT_RATIO    = 0.003
-MAX_FOLLOWING_RATIO     = 5.0
+MAX_FOLLOWS_PER_DAY          = 10
+MAX_FOLLOWS_PER_RUN          = 3
+MAX_UNFOLLOWS_PER_RUN        = 5
+UNFOLLOW_AFTER_HOURS         = 72   # Unfollow anyone who hasn't followed back after 3 days
+MIN_FOLLOWER_COUNT           = 1_000
+MAX_FOLLOWER_COUNT           = 500_000
+MIN_RELEVANCE_POSTS          = 2
+MIN_ENGAGEMENT_RATIO         = 0.003
+MAX_FOLLOWING_RATIO          = 5.0
+MIN_FOLLOWER_FOLLOWING_RATIO = 0.1  # followers/following >= 0.1; below = follow-farmer or bot
 
 _FOLLOW_STATE_FILE = Path("data/growth/follow_state.json")
 
@@ -369,9 +370,19 @@ async def _check_quality_async(candidate: dict) -> tuple[bool, str]:
     if followers > MAX_FOLLOWER_COUNT:
         return False, f"too large ({followers} followers)"
 
-    # Bot/farmer ratio
+    # Bot/farmer ratio — high following relative to followers
     if following > 0 and (following / max(followers, 1)) > MAX_FOLLOWING_RATIO:
         return False, f"suspect ratio ({following}/{followers})"
+
+    # Also reject very low followers/following ratio — almost certainly a follow-farmer
+    if following > 0:
+        ratio = followers / following
+        if ratio < MIN_FOLLOWER_FOLLOWING_RATIO:
+            log.debug(
+                "Skipping @%s: poor follower ratio %.2f (followers=%d following=%d)",
+                username, ratio, followers, following,
+            )
+            return False, f"follow-farmer ratio ({ratio:.2f} followers/following)"
 
     # Check recent posts for topic relevance and engagement
     api = await _make_api()

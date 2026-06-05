@@ -19,7 +19,7 @@ multiple farms to smooth variance.
 
 ## Active farms
 - [[projects/meteora|Meteora]] — CLMM LP, solid, trust 4
-- [[projects/kaito|Kaito]] — InfoFi, crowded but still positive EV
+- ~~[[projects/kaito|Kaito]]~~ — Yaps shut down 2026, no active farming mechanism
 
 ## Watching
 - New Solana DeFi protocols with VC backing
@@ -27,6 +27,7 @@ multiple farms to smooth variance.
 
 ## Dead farms / lessons
 <!-- Add when a farm ends — what worked, what didn't -->
+- **Kaito Yaps (2026)** — Lesson: X platform risk. When X revoked API access for engagement-reward apps, the entire Kaito farming meta collapsed overnight. Never size heavily into farms that depend on platform API goodwill. Always have an exit plan when the platform (not the protocol) is the gating factor.
 
 ## Updates
 <!-- Bot appends meta updates here -->

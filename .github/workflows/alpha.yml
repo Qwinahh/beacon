@@ -43,6 +43,8 @@ jobs:
           ANTHROPIC_API_KEY:    ${{ secrets.ANTHROPIC_API_KEY }}
           GITHUB_TOKEN:         ${{ secrets.GITHUB_TOKEN }}
           X_SCRAPER_COOKIES:    ${{ secrets.X_SCRAPER_COOKIES }}
+          WHALE_ALERT_API_KEY:  ${{ secrets.WHALE_ALERT_API_KEY }}
+          DROPSTAB_API_KEY:     ${{ secrets.DROPSTAB_API_KEY }}
         run: python post.py --alpha-only
 
       - name: Commit state and memory

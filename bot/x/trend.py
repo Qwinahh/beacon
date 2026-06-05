@@ -127,7 +127,17 @@ HARD RULES:
 - Never make price predictions. No hashtags.
 - If you hold a relevant position, end with: (position disclosed)
 - If the tweet is price-only, hostile, vague, or there is genuinely
-  nothing specific to add: respond with exactly SKIP.
+  nothing specific to add: use the SKIP format below.
+
+OUTPUT FORMAT — respond with exactly one of:
+  REPLY: [your reply text under 220 chars]
+  SKIP: [one-word reason: hostile/spam/vague/no_value]
+
+Examples:
+  REPLY: OI up but HLP utilisation still 34%. More TVL than traders right now.
+  SKIP: vague
+
+Never output anything else. No explanation before REPLY/SKIP.
 
 EXAMPLES OF REPLIES WORTH SENDING:
 Tweet: "Hyperliquid TVL up 40% this week"
@@ -251,22 +261,40 @@ def _portfolio_context(portfolio: dict) -> str:
     return "Your held positions (disclose if relevant): " + ", ".join(positions + airdrops)
 
 
+def _parse_reply(raw: str) -> Optional[str]:
+    """Parse structured REPLY:/SKIP: response from LLM."""
+    if not raw:
+        return None
+    raw = raw.strip()
+
+    if raw.upper().startswith("REPLY:"):
+        text = raw[6:].strip()
+        return text if len(text) >= 15 else None
+
+    if raw.upper().startswith("SKIP"):
+        return None
+
+    # Fallback: treat unstructured output as a reply if it looks like one
+    if len(raw) <= 280 and not any(
+        raw.lower().startswith(w) for w in ["i'll skip", "skipping", "not worth", "no value"]
+    ):
+        return raw if len(raw) >= 15 else None
+
+    return None
+
+
 def _generate_reply(tweet_text: str, author_username: str, portfolio: dict) -> Optional[str]:
     portfolio_ctx = _portfolio_context(portfolio)
     prompt = f"Tweet by @{author_username}:\n\n{tweet_text}"
     if portfolio_ctx:
         prompt += f"\n\n{portfolio_ctx}"
     prompt += (
-        "\n\nWrite a reply that would make someone click the profile, "
-        "or respond with exactly SKIP if there is nothing specific to add."
+        "\n\nWrite a reply that would make someone click the profile. "
+        "Use the REPLY:/SKIP: format from the system prompt."
     )
-    reply = llm_complete(system=_REPLY_SYSTEM, user=prompt, max_tokens=CLAUDE_MAX_TOKENS, temperature=0.72)
-    if not reply:
-        return None
-    reply = reply.strip()
-    if reply.upper().startswith("SKIP") or len(reply) < 15:
-        return None
-    if len(reply) > 280:
+    raw = llm_complete(system=_REPLY_SYSTEM, user=prompt, max_tokens=CLAUDE_MAX_TOKENS, temperature=0.72)
+    reply = _parse_reply(raw)
+    if reply and len(reply) > 280:
         reply = reply[:276].rsplit(".", 1)[0] + "."
     return reply
 

@@ -72,9 +72,14 @@ You write short, genuine replies for @Qwinahh — a crypto commentary account on
 Rules:
 - Be direct and add something specific. No filler, no "great point", no agreement without substance.
 - Max 240 characters.
-- If the mention is hostile, spam, or not worth engaging: respond with SKIP.
 - No price predictions. No hashtags. Sound like a person, not a bot.
 - If you have a position in the mentioned project, end with (position disclosed).
+
+OUTPUT FORMAT — respond with exactly one of:
+  REPLY: [your reply text under 240 chars]
+  SKIP: [one-word reason: hostile/spam/vague/no_value]
+
+Never output anything else. No explanation before REPLY/SKIP.
 """
 
 
@@ -317,20 +322,41 @@ def _is_niche_mention(mention: dict) -> bool:
 # Mention reply helpers
 # ---------------------------------------------------------------------------
 
+def _parse_mention_reply(raw: str) -> Optional[str]:
+    """Parse structured REPLY:/SKIP: response from LLM."""
+    if not raw:
+        return None
+    raw = raw.strip()
+
+    if raw.upper().startswith("REPLY:"):
+        text = raw[6:].strip()
+        if len(text) < 10:
+            return None
+        log.debug("Parsed REPLY: prefix from mention reply.")
+        return text
+
+    if raw.upper().startswith("SKIP"):
+        log.debug("Skipping reply (model decided not to respond).")
+        return None
+
+    # Fallback: treat unstructured output as a reply if it looks like one
+    if len(raw) <= 280 and not any(
+        raw.lower().startswith(w) for w in ["i'll skip", "skipping", "not worth", "no value"]
+    ):
+        return raw if len(raw) >= 10 else None
+
+    return None
+
+
 def _generate_reply(mention_text: str) -> Optional[str]:
     prompt = (
         f"Mention received:\n\n{mention_text}\n\n"
-        "Write a reply that adds something specific, or respond with exactly SKIP if "
-        "the mention is hostile, spam, or genuinely not worth engaging."
+        "Write a reply that adds something specific. "
+        "Use the REPLY:/SKIP: format from the system prompt."
     )
-    reply = llm_complete(system=_REPLY_SYSTEM, user=prompt, max_tokens=CLAUDE_MAX_TOKENS, temperature=0.7)
-    if not reply:
-        return None
-    reply = reply.strip()
-    if reply.upper().startswith("SKIP") or len(reply) < 10:
-        log.debug("Skipping reply (model decided not to respond).")
-        return None
-    if len(reply) > 280:
+    raw = llm_complete(system=_REPLY_SYSTEM, user=prompt, max_tokens=CLAUDE_MAX_TOKENS, temperature=0.7)
+    reply = _parse_mention_reply(raw)
+    if reply and len(reply) > 280:
         reply = reply[:276].rsplit(".", 1)[0] + "."
     return reply
 

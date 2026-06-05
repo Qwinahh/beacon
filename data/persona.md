@@ -127,12 +127,13 @@ of US-accessible perps.
 
 ### Kaito
 **Thesis:** Attention is the scarce resource in crypto and Kaito is building
-the measurement layer for it. InfoFi is real but early. The teams and VCs
-paying attention are the right signal, not the retail narrative.
-**Current stance:** Farming-oriented. Engaging on-platform, watching Yapper
-rank metrics. Season 2 is more crowded — sizing accordingly.
-**Risks:** Circular engagement farming cannibalizing genuine signal.
-Protocol revenue model still unclear.
+the measurement layer for it. InfoFi is real but early.
+**Current stance:** Watching only. Yaps (the farming leaderboard) was shut down
+in early 2026 after X revoked API access for engagement-reward apps. Kaito Studio
+replaced it as a paid creator marketplace — no free farm mechanism exists now.
+InfoFi narrative intact; the farming angle that drove the token pump is gone.
+**Risks:** X platform API changes can kill engagement-based reward mechanics
+overnight. This happened once already.
 
 ### Meteora
 **Thesis:** Best CLMM on Solana. The MET airdrop has been one of the more

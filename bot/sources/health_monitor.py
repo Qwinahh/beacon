@@ -217,6 +217,29 @@ def _test_engagement_drop() -> tuple[bool, float]:
 
 
 # ---------------------------------------------------------------------------
+# Test 3: Reply visibility (ghost ban heuristic)
+# ---------------------------------------------------------------------------
+
+def _test_reply_visibility(api, own_username: str) -> bool:
+    """
+    Check if our recent replies appear in the threads they were posted to.
+    A reply ghost ban means replies post successfully but are invisible to others.
+    Returns True if replies are visible (healthy), False if possibly ghost-banned.
+    This is a heuristic — not 100% reliable but good enough as an early signal.
+    """
+    return True  # Placeholder — extend if shadowban is confirmed
+
+
+def _test_suggestion_ban(api, own_username: str) -> bool:
+    """
+    Check if our account appears in typeahead/suggestions.
+    A suggestion ban removes you from who-to-follow and search autocomplete.
+    Returns True if visible, False if banned from suggestions.
+    """
+    return True  # Placeholder — hard to test without a separate cookie-free session
+
+
+# ---------------------------------------------------------------------------
 # Recovery mode
 # ---------------------------------------------------------------------------
 
@@ -277,33 +300,47 @@ def check_health() -> None:
         # Test 2: engagement drop
         suppressed, ratio = _test_engagement_drop()
 
-        status["checked_at"]          = int(time.time())
-        status["search_banned"]        = search_banned
+        ban_type = (
+            "search" if search_banned
+            else "suppression" if suppressed
+            else "none"
+        )
+
+        status["checked_at"]            = int(time.time())
+        status["search_banned"]         = search_banned
+        status["reply_ghosted"]         = False   # populated by _test_reply_visibility when detectable
+        status["suggestion_banned"]     = False   # populated by _test_suggestion_ban when detectable
         status["engagement_suppressed"] = suppressed
-        status["suppression_ratio"]    = round(ratio, 3)
+        status["suppression_ratio"]     = round(ratio, 3)
+        status["ban_type"]              = ban_type
+        status["notes"] = (
+            "Search ban detected — account not visible in from: search." if search_banned
+            else f"Engagement suppression — avg engagement dropped >60% (ratio={ratio:.2f})." if suppressed
+            else ""
+        )
 
         # Enter recovery if any flag tripped and not already in recovery
         if (search_banned or suppressed) and not status.get("recovery_mode"):
             status["recovery_mode"]       = True
             status["recovery_started_at"] = int(time.time())
-            notes = []
-            if search_banned:
-                notes.append("search visibility 0")
-            if suppressed:
-                notes.append(f"engagement at {ratio*100:.0f}% of prior 7d avg")
-            status["notes"] = "; ".join(notes)
             log.warning(
-                "health_monitor: RECOVERY MODE ACTIVATED. Reason: %s",
-                status["notes"],
+                "ACCOUNT HEALTH: %s detected. Recovery mode active for 48h.\n"
+                "Ban type: %s\n"
+                "Suppression ratio: %.2f (last 7d vs prior 7d avg engagement)\n"
+                "Recovery: follow/outbound reply cycles paused. Posts continue.\n"
+                "Do NOT delete recent tweets. Do NOT follow aggressively.\n"
+                "Check data/growth/health_status.json for details.",
+                "Shadowban" if search_banned else "Engagement suppression",
+                ban_type,
+                ratio,
             )
             _log_recovery_protocol()
         elif not search_banned and not suppressed and status.get("recovery_mode"):
-            # Checks pass — keep recovery_mode as-is (time-based auto-clear handles it)
             log.info("health_monitor: checks pass, but recovery still active (time-gated).")
         else:
             log.info(
-                "health_monitor: OK (search_banned=%s, suppressed=%s, ratio=%.2f)",
-                search_banned, suppressed, ratio,
+                "health_monitor: OK (search_banned=%s, suppressed=%s, ratio=%.2f, ban_type=%s)",
+                search_banned, suppressed, ratio, ban_type,
             )
 
         _save_status(status)
