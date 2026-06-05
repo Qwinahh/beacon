@@ -25,6 +25,7 @@ import concurrent.futures
 import json
 import logging
 import os
+import tempfile
 import time
 from datetime import date, datetime, timezone
 from pathlib import Path
@@ -98,7 +99,7 @@ async def _make_api():
     cookies = _get_cookies()
     if not cookies:
         return None
-    api = API(":memory:")
+    api = API(os.path.join(tempfile.gettempdir(), "twscrape_pool.db"))
     try:
         await api.pool.add_account(
             username="beacon_inspiration_scraper",

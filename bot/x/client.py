@@ -7,6 +7,8 @@ All X operations go through this module — nothing else imports tweepy directly
 from __future__ import annotations
 
 import logging
+import os
+import tempfile
 import time
 from typing import Optional
 
@@ -130,7 +132,7 @@ def _get_mentions_via_twscrape(since_id: Optional[str] = None) -> list[dict]:
         except ImportError:
             return []
 
-        api = API(":memory:")
+        api = API(os.path.join(tempfile.gettempdir(), "twscrape_pool.db"))
         try:
             await api.pool.add_account(
                 username="beacon_mentions_scraper",

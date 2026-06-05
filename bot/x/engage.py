@@ -17,6 +17,7 @@ import asyncio
 import concurrent.futures
 import logging
 import os
+import tempfile
 import time
 from typing import Optional
 
@@ -113,7 +114,7 @@ async def _fetch_own_recent_tweets_async() -> list[dict]:
         log.debug("twscrape not installed -- thread reply fetch skipped.")
         return []
 
-    api = API(":memory:")
+    api = API(os.path.join(tempfile.gettempdir(), "twscrape_pool.db"))
     try:
         await api.pool.add_account(
             username="beacon_thread_scraper",

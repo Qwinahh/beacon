@@ -45,6 +45,7 @@ import asyncio
 import concurrent.futures
 import logging
 import os
+import tempfile
 import time
 from datetime import timezone
 from typing import Optional
@@ -166,7 +167,7 @@ async def _make_api():
         log.warning("X_SCRAPER_COOKIES not set -- engagement reading unavailable.")
         return None
 
-    api = API(":memory:")
+    api = API(os.path.join(tempfile.gettempdir(), "twscrape_pool.db"))
     try:
         await api.pool.add_account(
             username="beacon_scraper",

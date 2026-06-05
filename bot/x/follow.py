@@ -31,6 +31,8 @@ import asyncio
 import concurrent.futures
 import json
 import logging
+import os
+import tempfile
 import time
 from pathlib import Path
 from typing import Optional
@@ -187,7 +189,7 @@ async def _make_api():
     if not cookies:
         log.warning("X_SCRAPER_COOKIES not set -- follow candidate discovery unavailable.")
         return None
-    api = API(":memory:")
+    api = API(os.path.join(tempfile.gettempdir(), "twscrape_pool.db"))
     try:
         await api.pool.add_account(
             username="beacon_follow_scraper",
