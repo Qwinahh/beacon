@@ -14,6 +14,13 @@
         "observation": "Honeypop DEX TVL spiked 42% in 24 hours — a rapid inflow event that prompted a post.",
         "source": "bot"
       }
+    ],
+    "HYPE": [
+      {
+        "ts": "2026-06-05T06:10:17Z",
+        "observation": "HYPE fell 15.67% in a cycle where Bitcoin retreated to near $62,000 amid broader AI trade unwinding. Post highlighted airdrop recipients potentially selling pressure.",
+        "source": "bot"
+      }
     ]
   }
 }
