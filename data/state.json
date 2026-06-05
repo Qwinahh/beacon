@@ -16,10 +16,17 @@
     "question",
     "data_observation"
   ],
-  "replied_to": [],
+  "replied_to": [
+    "2060640874699399233",
+    "2057583159680589841",
+    "2057358940229321070",
+    "2057024050119983612",
+    "2047156016295391475"
+  ],
   "daily_reply_counts": {},
   "recent_engage_accounts": [],
   "portfolio_posted": [],
   "threaded_tweet_ids": [],
-  "thread_replies_daily": {}
+  "thread_replies_daily": {},
+  "last_mention_id": "2060640874699399233"
 }
