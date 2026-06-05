@@ -50,12 +50,13 @@ FINGERPRINT_MEMORY_SIZE: Final[int] = 500
 # ---------------------------------------------------------------------------
 
 FOCUS_KEYWORDS: Final[list[str]] = [
-    "hyperliquid", "hype", "kaito", "meteora", "lighter",
+    "hyperliquid", "hype", "meteora", "lighter",
     "perp", "perps", "dex", "defi", "points", "airdrop",
     "leaderboard", "tge", "listing", "raise", "funding",
     "seed", "series a", "series b", "launch", "incentives",
     "jupiter", "dtf", "agent", "virtual", "virtuals",
     "layerzero", "stargate", "arbitrum", "optimism", "base",
+    "kaito studio",
 ]
 
 # Phrases that signal low-quality clickbait — items containing these score lower.
@@ -71,11 +72,16 @@ JUNK_PHRASES: Final[list[str]] = [
 # ---------------------------------------------------------------------------
 
 RSS_FEEDS: Final[list[tuple[str, str]]] = [
-    ("CoinDesk",    "https://www.coindesk.com/arc/outboundfeeds/rss/?outputType=xml"),
-    ("The Defiant", "https://thedefiant.io/feed/"),
-    ("The Block",   "https://www.theblock.co/rss.xml"),
-    ("Blockworks",  "https://blockworks.co/feed"),
-    ("DL News",     "https://www.dlnews.com/feed/"),
+    ("CoinDesk",         "https://www.coindesk.com/arc/outboundfeeds/rss/?outputType=xml"),
+    ("The Defiant",      "https://thedefiant.io/feed/"),
+    ("The Block",        "https://www.theblock.co/rss.xml"),
+    ("Blockworks",       "https://blockworks.co/feed"),
+    ("DL News",          "https://www.dlnews.com/feed/"),
+    ("Decrypt",          "https://decrypt.co/feed"),
+    ("Protos",           "https://protos.com/feed/"),
+    ("CoinTelegraph",    "https://cointelegraph.com/rss"),
+    ("Hyperliquid Blog", "https://hyperliquid.xyz/blog/rss.xml"),
+    ("DefiLlama Blog",   "https://defillama.com/blog/rss.xml"),
 ]
 
 DEFILLAMA_PROTOCOLS_URL: Final[str] = "https://api.llama.fi/protocols"

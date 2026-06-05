@@ -3,9 +3,9 @@ name: Kaito
 trust_score: 3
 category: InfoFi / Attention Layer
 chain: Ethereum
-last_updated: 2026-06-01
-airdrop_status: farming
-worth_farming: true
+last_updated: 2026-06-05
+airdrop_status: watching
+worth_farming: false
 blocked: false
 ---
 
@@ -18,23 +18,26 @@ be messy before it's clean. The teams and VCs paying attention are the
 right signal, not the retail narrative.
 
 ## Stance
-Farming-oriented. Engaging on-platform and watching Yapper rank metrics.
-Season 2 is more crowded than S1 — sizing accordingly. The engagement-to-
-point ratio has degraded significantly.
+Watching only. Yaps and the Yapper Leaderboard were shut down in 2026
+after X revoked Kaito's API access. Kaito Studio replaced Yaps for brand
+monitoring, but there is no active on-chain farming mechanism. The InfoFi
+thesis is still intact but the farming path is closed until a new airdrop
+mechanism is announced.
 
 ## Risks
 - Circular engagement farming cannibalising genuine signal
 - Protocol revenue model still unclear
-- Farm crowding makes math worse each week
+- No active farming mechanism means no way to accumulate points
 
 ## Observations
 <!-- Bot appends new observations below. Newest at bottom. -->
 - **2026-06-01** — Initial vault entry. S2 engagement-to-point ratio ~3x worse than S1.
+- **2026-06-05** — Yaps and Yapper Leaderboard shut down after X API revocation. Kaito Studio is the replacement product. No active airdrop farming mechanism.
 
 ## Airdrop
-- Status: farming (Season 2)
-- Worth farming: yes, but sizing down vs S1 due to crowding
-- Actions: daily engagement on Kaito, watch Yapper rank
+- Status: watching — no active mechanism since Yaps shutdown
+- Worth farming: no active farm available
+- Actions: monitor for new airdrop mechanism announcement
 
 ## X Consensus
 - Sentiment: mixed

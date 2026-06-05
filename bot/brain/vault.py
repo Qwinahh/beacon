@@ -141,7 +141,7 @@ def _append_to_section(body: str, heading: str, bullet: str) -> str:
     else:
         new_section_body = section_body.rstrip() + f"\n{bullet}\n"
 
-    return body[:m.start()] + m.group(1) + new_section_body + m.group(3)
+    return body[:m.start()] + m.group(1) + new_section_body + m.group(3) + body[m.end():]
 
 
 # ---------------------------------------------------------------------------
@@ -366,7 +366,11 @@ def log_post(tweet_text: str, topic: str, fmt: str) -> None:
     text = path.read_text(encoding="utf-8")
     _, body = _parse_frontmatter(text)
 
-    project_link = f"[[projects/{_safe_name(topic)}|{topic}]]" if topic else topic
+    proj_file = PROJ_DIR / f"{_safe_name(topic)}.md"
+    if topic and proj_file.exists():
+        project_link = f"[[projects/{_safe_name(topic)}|{topic}]]"
+    else:
+        project_link = topic or "general"
     bullet = (
         f"- **{_now_ts()}** | `{fmt}` | {project_link}\n"
         f"  > {tweet_text}"

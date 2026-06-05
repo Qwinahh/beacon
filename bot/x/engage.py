@@ -29,12 +29,25 @@ You write short, genuine replies for a crypto commentary account on X.
 
 Rules:
 - Be direct and helpful. No filler.
-- Max 240 characters.
-- If the mention is hostile or nonsensical, reply with a calm one-liner or skip entirely (respond with SKIP).
+- Max 220 characters.
 - Do not make price predictions.
 - Do not promise financial returns.
 - No hashtags.
+
+OUTPUT FORMAT — respond with exactly one of:
+  REPLY: [your reply text under 220 chars]
+  SKIP: [one-word reason: hostile/spam/vague/no_value]
 """
+
+
+def _parse_mention_reply(raw: str) -> Optional[str]:
+    upper = raw.upper()
+    if upper.startswith("REPLY:"):
+        text = raw[6:].strip()
+        return text if len(text) >= 15 else None
+    if upper.startswith("SKIP"):
+        return None
+    return raw.strip() if len(raw.strip()) >= 15 else None
 
 
 def _generate_reply(mention_text: str) -> Optional[str]:
@@ -44,7 +57,7 @@ def _generate_reply(mention_text: str) -> Optional[str]:
         return None
 
     client = anthropic.Anthropic(api_key=api_key)
-    prompt = f"Mention received:\n\n{mention_text}\n\nWrite a reply, or respond with SKIP if a reply isn't appropriate."
+    prompt = f"Mention received:\n\n{mention_text}\n\nRespond using the OUTPUT FORMAT from the system prompt."
 
     try:
         message = client.messages.create(
@@ -53,8 +66,9 @@ def _generate_reply(mention_text: str) -> Optional[str]:
             system=_REPLY_SYSTEM,
             messages=[{"role": "user", "content": prompt}],
         )
-        reply = message.content[0].text.strip()
-        if reply.upper().startswith("SKIP"):
+        raw = message.content[0].text.strip()
+        reply = _parse_mention_reply(raw)
+        if reply is None:
             log.debug("Skipping reply (model decided not to respond).")
             return None
         if len(reply) > 280:

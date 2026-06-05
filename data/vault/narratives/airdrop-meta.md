@@ -19,14 +19,13 @@ multiple farms to smooth variance.
 
 ## Active farms
 - [[projects/meteora|Meteora]] — CLMM LP, solid, trust 4
-- [[projects/kaito|Kaito]] — InfoFi, crowded but still positive EV
 
 ## Watching
 - New Solana DeFi protocols with VC backing
 - Any perps protocol without a token that has real OI
 
 ## Dead farms / lessons
-<!-- Add when a farm ends — what worked, what didn't -->
+- ~~[[projects/kaito|Kaito]]~~ — Yaps shut down 2026 after X API revocation. Lesson: X platform risk is real; Kaito Studio replaced Yaps but removed the farming mechanism entirely.
 
 ## Updates
 <!-- Bot appends meta updates here -->

@@ -46,15 +46,18 @@ You write short, insightful replies for a crypto commentary account (@Qwinahh).
 
 The reply must:
 - Add something the original tweet didn't say (a data point, a counterpoint, a sharper angle).
-- Be under 240 characters.
+- Be under 220 characters.
 - Sound like someone who actually follows this space closely.
 - NOT start with "Great point" or "Totally agree" or any filler opener.
 - NOT make price predictions.
 - NOT use hashtags.
 - If the topic is linked to a held position in the portfolio, end with "(position disclosed)".
-- If the tweet is poor quality, hostile, or not worth engaging, respond with: SKIP
 
 Be selective. A reply that adds nothing is worse than no reply.
+
+OUTPUT FORMAT — respond with exactly one of:
+  REPLY: [your reply text under 220 chars]
+  SKIP: [one-word reason: hostile/spam/vague/no_value]
 """
 
 
@@ -64,6 +67,17 @@ def _portfolio_context(portfolio: dict) -> str:
     if not positions and not airdrops:
         return ""
     return "Held positions: " + ", ".join(positions + airdrops)
+
+
+def _parse_reply(raw: str) -> Optional[str]:
+    upper = raw.upper()
+    if upper.startswith("REPLY:"):
+        text = raw[6:].strip()
+        return text if len(text) >= 15 else None
+    if upper.startswith("SKIP"):
+        return None
+    # Fallback: treat unstructured output as a reply if long enough.
+    return raw.strip() if len(raw.strip()) >= 15 else None
 
 
 def _generate_trend_reply(tweet_text: str, portfolio: dict) -> Optional[str]:
@@ -84,8 +98,9 @@ def _generate_trend_reply(tweet_text: str, portfolio: dict) -> Optional[str]:
             system=_TREND_REPLY_SYSTEM,
             messages=[{"role": "user", "content": prompt}],
         )
-        reply = message.content[0].text.strip()
-        if reply.upper().startswith("SKIP") or len(reply) < 15:
+        raw = message.content[0].text.strip()
+        reply = _parse_reply(raw)
+        if reply is None:
             return None
         if len(reply) > 280:
             reply = reply[:276].rsplit(".", 1)[0] + "."
