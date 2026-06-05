@@ -115,7 +115,8 @@ TVL_MIN_CHANGE_PCT: Final[float] = 12.0
 CLAUDE_MODEL: Final[str] = "claude-haiku-4-5-20251001"
 
 # Maximum tokens for a generated tweet.
-CLAUDE_MAX_TOKENS: Final[int] = 300
+# 400 gives headroom for the REASON: line + tweet text without truncation.
+CLAUDE_MAX_TOKENS: Final[int] = 400
 
 # Whether to fall back to template writing when the Claude API is unavailable.
 TEMPLATE_FALLBACK: Final[bool] = True

@@ -36,7 +36,13 @@ def _load() -> dict[str, Any]:
 def _save(state: dict[str, Any]) -> None:
     path = Path(STATE_PATH)
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(state, indent=2, ensure_ascii=False), encoding="utf-8")
+    # Write to a temp file then rename for atomic replacement.
+    # Prevents truncation if the process is interrupted mid-write
+    # (which was corrupting state.json when two GitHub Actions jobs
+    # ran simultaneously and one was killed during the commit step).
+    tmp = path.with_suffix(".tmp")
+    tmp.write_text(json.dumps(state, indent=2, ensure_ascii=False), encoding="utf-8")
+    tmp.replace(path)
 
 
 class State:

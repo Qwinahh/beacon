@@ -99,7 +99,12 @@ def _gather_candidates(alpha_only: bool = False) -> list:
                 "kind": "raise", "topic": r.topic,
                 "age_hours": round(r.age_hours, 2),
                 "url": r.url, "urgency": 2,
-                "amount_m": r.amount,
+                # Store structured fields so the writer gets rich data, not just the headline
+                "raise_name":       r.name,
+                "raise_amount_m":   r.amount,
+                "raise_round":      r.round_name,
+                "raise_category":   r.category,
+                "raise_published":  r.published_ts,
             })
         log.info("Scout: %d raises", len([c for c in candidates if c["kind"] == "raise"]))
     except Exception as exc:
@@ -114,7 +119,11 @@ def _gather_candidates(alpha_only: bool = False) -> list:
                 "title": f"{m.name} TVL {direction} {abs(m.change_pct):.1f}%",
                 "source": "DeFiLlama", "kind": "tvl", "topic": m.topic,
                 "age_hours": 0.0, "url": m.url, "urgency": 1,
-                "change_pct": m.change_pct,
+                # Store structured fields so the writer gets the actual numbers
+                "tvl_name":       m.name,
+                "tvl_change_pct": m.change_pct,
+                "tvl_usd":        m.tvl_usd,
+                "tvl_category":   m.category,
             })
         log.info("Scout: %d TVL movers", len([c for c in candidates if c["kind"] == "tvl"]))
     except Exception as exc:
@@ -365,14 +374,42 @@ def run_post_cycle(state: State, alpha_only: bool = False) -> dict:
     portfolio   = load_portfolio()
     recent_fmts = state.recent_formats()
 
-    item = FeedItem(
-        source       = selected.get("source", ""),
-        title        = selected["title"],
-        url          = selected.get("url"),
-        published_ts = time.time() - selected.get("age_hours", 0) * 3600,
-        topic        = selected.get("topic", ""),
-        kind         = selected.get("kind", "rss"),
-    )
+    # Build a properly-typed item so the writer gets full structured data.
+    # Raises and TVL movers have richer context (amounts, percentages) that
+    # the generic FeedItem would strip out, causing the quality gate to reject
+    # posts for being "too vague" even when the data is specific.
+    kind = selected.get("kind", "rss")
+    if kind == "raise" and selected.get("raise_name"):
+        from bot.sources.defillama import RaiseItem
+        item = RaiseItem(
+            name         = selected["raise_name"],
+            amount       = selected.get("raise_amount_m"),
+            round_name   = selected.get("raise_round", ""),
+            category     = selected.get("raise_category", selected.get("topic", "")),
+            url          = selected.get("url"),
+            published_ts = selected.get("raise_published",
+                           time.time() - selected.get("age_hours", 0) * 3600),
+            topic        = selected.get("topic", "raise"),
+        )
+    elif kind == "tvl" and selected.get("tvl_name"):
+        from bot.sources.defillama import TvlMoverItem
+        item = TvlMoverItem(
+            name       = selected["tvl_name"],
+            change_pct = selected["tvl_change_pct"],
+            tvl_usd    = selected["tvl_usd"],
+            category   = selected.get("tvl_category", selected.get("topic", "")),
+            url        = selected.get("url"),
+            topic      = selected.get("topic", "defi"),
+        )
+    else:
+        item = FeedItem(
+            source       = selected.get("source", ""),
+            title        = selected["title"],
+            url          = selected.get("url"),
+            published_ts = time.time() - selected.get("age_hours", 0) * 3600,
+            topic        = selected.get("topic", ""),
+            kind         = kind,
+        )
 
     try:
         text, fmt_name = writer.generate(

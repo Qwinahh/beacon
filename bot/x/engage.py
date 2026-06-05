@@ -38,7 +38,8 @@ MAX_THREAD_REPLIES_PER_DAY = 3
 _OWN_USERNAME = os.environ.get("X_USERNAME", "Qwinahh")
 
 # Only thread on posts from this window (hours) that have engagement.
-_THREAD_WINDOW_HOURS = 8
+# 12h catches morning posts when the evening engage run fires.
+_THREAD_WINDOW_HOURS = 12
 
 _THREAD_SYSTEM = """\
 You write follow-up additions to @Qwinahh's own tweets.

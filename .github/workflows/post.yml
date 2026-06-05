@@ -53,4 +53,7 @@ jobs:
           git config user.email "bot@qwinahh.local"
           git add data/state.json data/memory/ data/projects/ data/vault/
           git diff --cached --quiet || git commit -m "chore: update bot state + vault [skip ci]"
+          # Pull-rebase before push to handle concurrent workflow runs
+          # (post.yml and alpha.yml can overlap and both try to push state.json)
+          git pull --rebase origin main 2>/dev/null || true
           git push

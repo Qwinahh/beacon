@@ -48,4 +48,11 @@ jobs:
       - name: Commit state and memory
         run: |
           git config user.name  "qwinahh-bot"
-          git config user.email "bot@qwinah
+          git config user.email "bot@qwinahh.local"
+          git add data/state.json data/memory/ data/projects/ data/vault/
+          git diff --cached --quiet || git commit -m "chore: alpha state + vault [skip ci]"
+          # Pull-rebase before push — alpha.yml and post.yml can run simultaneously
+          # and both push state.json; without this one will fail with non-fast-forward
+          # and the other's write may corrupt the file mid-push.
+          git pull --rebase origin main 2>/dev/null || true
+          git push
