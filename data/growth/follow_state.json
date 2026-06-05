@@ -29,10 +29,25 @@
       "id": "944686196331966464",
       "username": "hsakatrades",
       "followed_at": 1780657090
+    },
+    {
+      "id": "1370222631203508224",
+      "username": "croissanteth",
+      "followed_at": 1780668419
+    },
+    {
+      "id": "1709292947810725888",
+      "username": "0xhamz",
+      "followed_at": 1780668421
+    },
+    {
+      "id": "1084397942319054850",
+      "username": "route2fi",
+      "followed_at": 1780668424
     }
   ],
   "daily": {
-    "2026-06-05": 6
+    "2026-06-05": 9
   },
   "attempted": []
 }
