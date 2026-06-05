@@ -1,16 +1,17 @@
-name: Learn — Absorb Market Data & Community Signals
+name: Learn — Continuous Knowledge Ingestion
 
 on:
   schedule:
-    - cron: "0 8  * * *"   # Morning run (UTC)
-    - cron: "0 20 * * *"   # Evening run (UTC)
-  workflow_dispatch:        # Allow manual trigger from Actions tab.
+    # Run twice per day — off-peak from posting schedule
+    - cron: "0 6  * * *"   # Before morning posts (builds knowledge for the day)
+    - cron: "0 17 * * *"   # Afternoon refresh
+  workflow_dispatch:        # Manual trigger from Actions tab
 
 jobs:
   learn:
     runs-on: ubuntu-latest
     permissions:
-      contents: write       # Required to commit knowledge updates back to repo.
+      contents: write       # Required to commit updated knowledge/events to vault
 
     steps:
       - name: Checkout
@@ -26,19 +27,29 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Run learner
+      - name: Run learner agent
         env:
-          ANTHROPIC_API_KEY:    ${{ secrets.ANTHROPIC_API_KEY }}
-          TELEGRAM_BOT_TOKEN:   ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHANNEL_IDS: ${{ secrets.TELEGRAM_CHANNEL_IDS }}
-          DISCORD_BOT_TOKEN:    ${{ secrets.DISCORD_BOT_TOKEN }}
-          DISCORD_CHANNEL_IDS:  ${{ secrets.DISCORD_CHANNEL_IDS }}
+          ANTHROPIC_API_KEY:        ${{ secrets.ANTHROPIC_API_KEY }}
+          # X scraping (community signals)
+          X_SCRAPER_COOKIES:        ${{ secrets.X_SCRAPER_COOKIES }}
+          # Reddit (community signals — Tier 3)
+          # Get free credentials at reddit.com/prefs/apps → "script" app type
+          REDDIT_CLIENT_ID:         ${{ secrets.REDDIT_CLIENT_ID }}
+          REDDIT_CLIENT_SECRET:     ${{ secrets.REDDIT_CLIENT_SECRET }}
+          # Telegram (community signals — Tier 3)
+          # Get from my.telegram.org → "API development tools"
+          TELEGRAM_API_ID:          ${{ secrets.TELEGRAM_API_ID }}
+          TELEGRAM_API_HASH:        ${{ secrets.TELEGRAM_API_HASH }}
+          TELEGRAM_SESSION_STRING:  ${{ secrets.TELEGRAM_SESSION_STRING }}
+          # Discord (community signals — Tier 3)
+          # Get from discord.com/developers → create bot → copy token
+          DISCORD_BOT_TOKEN:        ${{ secrets.DISCORD_BOT_TOKEN }}
         run: python -m agents.learner_agent
 
-      - name: Commit knowledge updates
+      - name: Commit updated knowledge
         run: |
           git config user.name  "qwinahh-bot"
           git config user.email "bot@qwinahh.local"
           git add data/vault/knowledge/
-          git diff --cached --quiet || git commit -m "chore: update knowledge base [skip ci]"
+          git diff --cached --quiet || git commit -m "learn: ingest new events + signals [skip ci]"
           git push

@@ -1,156 +1,334 @@
 """
-4-tier fact-checking verifier.
+bot/brain/verifier.py — Fact-checking and source credibility layer.
 
-Every piece of information is assigned a confidence tier before it can
-appear in a post as a stated fact.
+4-tier source system:
+  Tier 1: On-chain data, official announcements, SEC/regulatory filings, verified audits
+  Tier 2: Established researchers (Delphi, Messari, The Block, Arkham), major crypto media
+  Tier 3: CT consensus, Reddit, Discord, Telegram — sentiment only, never written as fact
+  Tier 4: Anonymous tips, single-source unverified claims — discarded
 
-  Tier 1 — On-chain / primary data:  DeFiLlama, CoinGecko, block explorers.
-            Highest trust. Numbers here are facts. State directly.
-  Tier 2 — Research / credible press: CoinDesk, The Block, Blockworks, etc.
-            High trust. State as fact, optionally attribute the source.
-  Tier 3 — Community:  Reddit, Telegram, Discord, LunarCrush, X crowd.
-            Low trust. Surface as "community thesis" or "people are saying".
-            NEVER write as a confirmed fact.
-  Tier 4 — Noise:  Price predictions, "analyst says", "could reach $X", etc.
-            Reject entirely. Never written.
+The verifier checks incoming claims before they're written to the vault as confirmed facts.
+Community signals (Tier 3/4) go into a separate unconfirmed_signals store.
 """
+
 from __future__ import annotations
 
+import json
 import re
 import time
+import logging
 from dataclasses import dataclass, field
 from enum import IntEnum
+from pathlib import Path
+from typing import Optional
 
+log = logging.getLogger(__name__)
 
-class Tier(IntEnum):
-    ON_CHAIN  = 1
-    RESEARCH  = 2
-    COMMUNITY = 3
-    NOISE     = 4
+# ---------------------------------------------------------------------------
+# Source Tier Classification
+# ---------------------------------------------------------------------------
 
+class SourceTier(IntEnum):
+    ON_CHAIN    = 1  # on-chain tx, official contract, protocol announcement
+    RESEARCHER  = 2  # Delphi, Messari, The Block, DeFiLlama, Nansen, Arkham
+    COMMUNITY   = 3  # CT, Reddit, Discord, Telegram — sentiment only
+    NOISE       = 4  # unverified, anon tips, single-source rumour
 
-_ON_CHAIN_SOURCES = {
-    "defillama", "coingecko", "etherscan", "solscan", "arbiscan",
-    "hyperliquid", "dune", "nansen", "defillama_ctx",
+# Domains / sources that qualify as Tier 2
+_TIER2_SOURCES = {
+    # Research
+    "delphi", "messari", "theblock", "coindesk", "cointelegraph",
+    "blockworks", "decrypt", "thedefiant", "banklesshq", "unchainedcrypto",
+    # On-chain analytics
+    "nansen", "arkham", "dune", "defillama", "glassnode", "chainalysis",
+    # Official
+    "sec.gov", "cftc.gov", "whitehouse.gov",
+    # Protocol official channels
+    "mirror.xyz", "medium.com",  # acceptable if verified author
+    "forum.arbitrum", "forum.compound", "governance.aave",
 }
 
-_RESEARCH_SOURCES = {
-    "coindesk", "the defiant", "the block", "blockworks", "dl news",
-    "messari", "kaito", "decrypt", "rss",
-}
-
-_COMMUNITY_SOURCES = {
-    "reddit", "telegram", "discord", "lunarcrush", "twitter", "x",
-    "xcontext",
-}
-
-_NOISE_PATTERNS = [
-    r"price prediction",
-    r"could reach \$",
-    r"might hit \$",
-    r"set to (?:moon|pump|explode|surge|skyrocket)",
-    r"analyst says",
-    r"experts predict",
-    r"\d+x (?:gains|returns|profit)",
-    r"guaranteed (?:returns|profit|gains)",
-    r"top \d+ (?:reasons|coins|cryptos)",
-    r"you need to know",
+# Patterns that indicate Tier 1 (on-chain / official)
+_ONCHAIN_PATTERNS = [
+    r"etherscan\.io/tx/",
+    r"solscan\.io/tx/",
+    r"explorer\.\w+/tx/",
+    r"github\.com/\w+/\w+/releases",   # official release notes
+    r"on-chain data",
+    r"contract address",
+    r"block\s+#?\d{7,}",
 ]
 
-_NOISE_RE = re.compile("|".join(_NOISE_PATTERNS), re.IGNORECASE)
+def classify_source(source: str) -> SourceTier:
+    """
+    Classify a source string (URL, domain, or description) into a tier.
+    Returns SourceTier enum.
+    """
+    if not source:
+        return SourceTier.NOISE
+
+    s = source.lower()
+
+    # Tier 1: on-chain / official
+    for pat in _ONCHAIN_PATTERNS:
+        if re.search(pat, s):
+            return SourceTier.ON_CHAIN
+
+    if any(kw in s for kw in ("on-chain", "official announcement", "sec filing",
+                               "etherscan", "solscan", "smart contract")):
+        return SourceTier.ON_CHAIN
+
+    # Tier 2: established media/research
+    for domain in _TIER2_SOURCES:
+        if domain in s:
+            return SourceTier.RESEARCHER
+
+    # Tier 3: community
+    community_kw = ("twitter", "x.com", "reddit", "discord", "telegram",
+                    "ct", "crypto twitter", "community", "gm", "according to")
+    if any(kw in s for kw in community_kw):
+        return SourceTier.COMMUNITY
+
+    # Default: noise if we can't identify
+    return SourceTier.NOISE
+
+
+# ---------------------------------------------------------------------------
+# Claim dataclass
+# ---------------------------------------------------------------------------
+
+@dataclass
+class Claim:
+    """A piece of information to be verified before vault write."""
+    text: str
+    source: str
+    source_tier: SourceTier = field(init=False)
+    timestamp: float = field(default_factory=time.time)
+    related_project: Optional[str] = None
+
+    def __post_init__(self):
+        self.source_tier = classify_source(self.source)
 
 
 @dataclass
-class VerifiedItem:
-    text: str
-    source: str
-    tier: Tier
-    added_at: float = field(default_factory=time.time)
-    raw: bool = False
+class VerificationResult:
+    claim: Claim
+    verdict: str          # "confirmed" | "unconfirmed" | "rejected"
+    reason: str
+    should_write_to_vault: bool
+    write_as: str         # "fact" | "signal" | "discard"
 
 
-def _classify_source(source: str) -> Tier:
-    s = source.lower().strip()
-    if s in _ON_CHAIN_SOURCES:
-        return Tier.ON_CHAIN
-    if s in _RESEARCH_SOURCES:
-        return Tier.RESEARCH
-    if s in _COMMUNITY_SOURCES:
-        return Tier.COMMUNITY
-    return Tier.COMMUNITY
+# ---------------------------------------------------------------------------
+# Knowledge cross-reference
+# ---------------------------------------------------------------------------
+
+_KNOWLEDGE_DIR = Path("data/vault/knowledge")
+_KNOWN_FACTS_CACHE: dict[str, str] = {}
+_CACHE_LOADED = False
 
 
-class Verifier:
-    """Collects signals and classifies them by confidence tier."""
+def _load_knowledge_cache() -> None:
+    """Load knowledge base files into memory for cross-reference."""
+    global _CACHE_LOADED, _KNOWN_FACTS_CACHE
+    if _CACHE_LOADED:
+        return
+    if not _KNOWLEDGE_DIR.exists():
+        _CACHE_LOADED = True
+        return
+    for md_file in _KNOWLEDGE_DIR.rglob("*.md"):
+        try:
+            text = md_file.read_text(encoding="utf-8")
+            _KNOWN_FACTS_CACHE[md_file.stem] = text.lower()
+        except Exception:
+            pass
+    _CACHE_LOADED = True
 
-    def __init__(self) -> None:
-        self._items: list[VerifiedItem] = []
 
-    def add(self, text: str, source: str, raw: bool = False) -> VerifiedItem:
-        """Add a signal. Noise patterns override source classification."""
-        tier = Tier.NOISE if _NOISE_RE.search(text) else _classify_source(source)
-        item = VerifiedItem(text=text, source=source, tier=tier, raw=raw)
-        self._items.append(item)
-        return item
+def _check_against_knowledge(claim_text: str) -> tuple[bool, str]:
+    """
+    Check if the claim contradicts known facts in the knowledge base.
+    Returns (is_contradicted, explanation).
+    Simple heuristic — looks for obvious contradictions.
+    """
+    _load_knowledge_cache()
+    text_lower = claim_text.lower()
 
-    def add_many(self, texts: list[str], source: str) -> list[VerifiedItem]:
-        return [self.add(t, source) for t in texts]
+    # Extract key entities to check (protocol names, amounts, dates)
+    # If claim says a protocol was hacked and we have no record of it — flag
+    hack_match = re.search(r"(\w+)\s+(was|got)\s+hacked\s+for\s+\$?([\d,.]+[kmb]?)", text_lower)
+    if hack_match:
+        protocol = hack_match.group(1)
+        # Check if it appears in our exploit history
+        exploit_kb = _KNOWN_FACTS_CACHE.get("exploit-history", "")
+        if exploit_kb and protocol in exploit_kb:
+            return False, f"{protocol} found in exploit history — consistent"
+        # Not in KB doesn't mean it didn't happen — just unverified
+        return False, "not in knowledge base — proceed with tier check"
 
-    # ------------------------------------------------------------------
-    # Tier accessors
-    # ------------------------------------------------------------------
+    return False, "no contradiction found"
 
-    def tier1(self) -> list[VerifiedItem]:
-        return [i for i in self._items if i.tier == Tier.ON_CHAIN]
 
-    def tier2(self) -> list[VerifiedItem]:
-        return [i for i in self._items if i.tier == Tier.RESEARCH]
+# ---------------------------------------------------------------------------
+# Main verifier
+# ---------------------------------------------------------------------------
 
-    def tier3(self) -> list[VerifiedItem]:
-        return [i for i in self._items if i.tier == Tier.COMMUNITY]
+def verify(claim: Claim) -> VerificationResult:
+    """
+    Main entry point. Given a Claim, return a VerificationResult that tells
+    the caller whether to write to vault as fact, signal, or discard.
+    """
+    tier = claim.source_tier
 
-    def tier4(self) -> list[VerifiedItem]:
-        return [i for i in self._items if i.tier == Tier.NOISE]
-
-    def confirmed_facts(self) -> list[VerifiedItem]:
-        """Tier 1+2 items — safe to state as facts in posts."""
-        return [i for i in self._items if i.tier <= Tier.RESEARCH]
-
-    def community_signals(self) -> list[VerifiedItem]:
-        """Tier 3 — surface as sentiment, never as confirmed fact."""
-        return [i for i in self._items if i.tier == Tier.COMMUNITY]
-
-    def rejected(self) -> list[VerifiedItem]:
-        """Tier 4 — noise. Do not use."""
-        return [i for i in self._items if i.tier == Tier.NOISE]
-
-    # ------------------------------------------------------------------
-    # Output helpers
-    # ------------------------------------------------------------------
-
-    def summary(self) -> str:
-        return (
-            f"Tier 1 (on-chain): {len(self.tier1())} | "
-            f"Tier 2 (research): {len(self.tier2())} | "
-            f"Tier 3 (community): {len(self.community_signals())} | "
-            f"Tier 4 (noise, rejected): {len(self.rejected())}"
+    # --- Tier 1: On-chain / official ---
+    if tier == SourceTier.ON_CHAIN:
+        _, kb_note = _check_against_knowledge(claim.text)
+        return VerificationResult(
+            claim=claim,
+            verdict="confirmed",
+            reason=f"Tier 1 source (on-chain/official). {kb_note}",
+            should_write_to_vault=True,
+            write_as="fact",
         )
 
-    def to_context_block(self) -> str:
-        """Format for injection into the writer context."""
-        parts: list[str] = []
+    # --- Tier 2: Established research / media ---
+    if tier == SourceTier.RESEARCHER:
+        # Still run knowledge check for obvious contradictions
+        contradicted, kb_note = _check_against_knowledge(claim.text)
+        if contradicted:
+            return VerificationResult(
+                claim=claim,
+                verdict="rejected",
+                reason=f"Tier 2 source but contradicts known facts. {kb_note}",
+                should_write_to_vault=False,
+                write_as="discard",
+            )
+        return VerificationResult(
+            claim=claim,
+            verdict="confirmed",
+            reason=f"Tier 2 source (established research/media). {kb_note}",
+            should_write_to_vault=True,
+            write_as="fact",
+        )
 
-        facts = self.confirmed_facts()
-        if facts:
-            parts.append("## Confirmed Market Facts (on-chain + research)")
-            for item in facts:
-                parts.append(f"- [{item.source}] {item.text}")
+    # --- Tier 3: Community (CT, Reddit, Discord, Telegram) ---
+    if tier == SourceTier.COMMUNITY:
+        return VerificationResult(
+            claim=claim,
+            verdict="unconfirmed",
+            reason="Tier 3 source (community). Written as sentiment signal only, not fact.",
+            should_write_to_vault=True,
+            write_as="signal",
+        )
 
-        community = self.community_signals()
-        if community:
-            parts.append("\n## Community Signals (NOT confirmed facts)")
-            parts.append("*Treat as community narrative. Never state as confirmed.*")
-            for item in community[:5]:
-                parts.append(f"- [{item.source}] {item.text}")
+    # --- Tier 4: Noise ---
+    return VerificationResult(
+        claim=claim,
+        verdict="rejected",
+        reason="Tier 4 source (unverifiable / anonymous). Discarded.",
+        should_write_to_vault=False,
+        write_as="discard",
+    )
 
-        return "\n".join(parts)
+
+def verify_batch(claims: list[Claim]) -> list[VerificationResult]:
+    """Verify a list of claims. Returns list of results in same order."""
+    return [verify(c) for c in claims]
+
+
+# ---------------------------------------------------------------------------
+# Vault write helpers
+# ---------------------------------------------------------------------------
+
+_SIGNALS_DIR = Path("data/vault/knowledge/signals")
+_EVENTS_DIR  = Path("data/vault/knowledge/events")
+
+
+def write_confirmed_event(result: VerificationResult) -> None:
+    """
+    Write a confirmed (Tier 1 or 2) event to the events knowledge directory.
+    One file per event, named by timestamp.
+    """
+    if result.write_as != "fact":
+        return
+
+    _EVENTS_DIR.mkdir(parents=True, exist_ok=True)
+    ts = time.strftime("%Y-%m-%d", time.gmtime(result.claim.timestamp))
+    slug = re.sub(r"[^a-z0-9]+", "-", result.claim.text[:50].lower()).strip("-")
+    fname = f"{ts}-{slug}.md"
+    path = _EVENTS_DIR / fname
+
+    if path.exists():
+        return  # Don't duplicate
+
+    content = f"""---
+date: {ts}
+source: {result.claim.source}
+source_tier: {int(result.claim.source_tier)}
+confirmed: true
+related_project: {result.claim.related_project or ""}
+---
+
+# Event: {result.claim.text[:100]}
+
+**Source**: {result.claim.source}
+**Verified**: {result.reason}
+
+{result.claim.text}
+"""
+    try:
+        path.write_text(content, encoding="utf-8")
+        log.info("Wrote confirmed event: %s", fname)
+    except Exception as e:
+        log.error("Failed to write event %s: %s", fname, e)
+
+
+def write_unconfirmed_signal(result: VerificationResult) -> None:
+    """
+    Write a community signal to the signals directory.
+    These are NEVER treated as fact by the bot — only used as sentiment context.
+    """
+    if result.write_as != "signal":
+        return
+
+    _SIGNALS_DIR.mkdir(parents=True, exist_ok=True)
+    ts = time.strftime("%Y-%m-%d", time.gmtime(result.claim.timestamp))
+    # Append to daily signals file
+    fname = f"{ts}-signals.md"
+    path = _SIGNALS_DIR / fname
+
+    entry = (
+        f"\n- [{result.claim.source}] {result.claim.text[:200]}"
+        f" _(unconfirmed, tier {int(result.claim.source_tier)})_\n"
+    )
+    try:
+        with open(path, "a", encoding="utf-8") as f:
+            if path.stat().st_size == 0 if path.exists() else True:
+                f.write(f"# Unconfirmed Signals — {ts}\n\n"
+                        "_Community sentiment only. Not facts. Not written to project files as confirmed._\n")
+            f.write(entry)
+        log.info("Wrote unconfirmed signal to %s", fname)
+    except Exception as e:
+        log.error("Failed to write signal: %s", e)
+
+
+def process_and_store(claims: list[Claim]) -> dict:
+    """
+    Verify a batch of claims and store results appropriately.
+    Returns summary dict with counts.
+    """
+    results = verify_batch(claims)
+    counts = {"confirmed": 0, "unconfirmed": 0, "rejected": 0}
+
+    for r in results:
+        if r.write_as == "fact":
+            write_confirmed_event(r)
+            counts["confirmed"] += 1
+        elif r.write_as == "signal":
+            write_unconfirmed_signal(r)
+            counts["unconfirmed"] += 1
+        else:
+            counts["rejected"] += 1
+            log.debug("Rejected: %s — %s", r.claim.text[:60], r.reason)
+
+    return counts

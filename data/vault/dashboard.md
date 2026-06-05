@@ -125,18 +125,42 @@ SORT conviction DESC
 
 ## 🧠 Knowledge Base
 
-Reference documents seeded from crypto history (2017–2025). Used by writer for grounded takes.
+Confirmed facts the bot has learned. Click any file to read it.
 
-- [[knowledge/crypto_cycles|Market Cycles 2017–2025]]
-- [[knowledge/defi_history|DeFi History & Key Protocols]]
-- [[knowledge/protocol_patterns|Protocol Patterns — Signal vs Noise]]
-- [[knowledge/market_context|Live Market Context]] *(auto-updated 2× daily)*
+```dataview
+TABLE
+  category AS "Category",
+  last_updated AS "Updated",
+  source_tier AS "Source Tier"
+FROM "knowledge"
+WHERE confirmed = true
+  AND type = "knowledge"
+SORT last_updated DESC
+```
 
 ---
 
-## 📡 Community Signals
+## ⚡ Recent Confirmed Events
 
-Community signals ingested from Reddit, Telegram, Discord. Tier 3 — never cited as confirmed facts.
+New confirmed events ingested by the learner agent (Tier 1/2 sources only).
+
+```dataview
+TABLE
+  date AS "Date",
+  source_tier AS "Tier",
+  related_project AS "Project"
+FROM "knowledge/events"
+WHERE confirmed = true
+SORT date DESC
+LIMIT 20
+```
+
+---
+
+## 🔔 Community Signals (Unconfirmed)
+
+Community sentiment signals — Reddit, X/CT, Discord, Telegram.
+**Not facts.** Use as context only. Never trade based on these alone.
 
 ```dataview
 LIST
@@ -147,18 +171,6 @@ LIMIT 7
 
 ---
 
-## 📰 Confirmed Events Log
-
-Confirmed market events (tier 1-2) written by the learner agent.
-
-```dataview
-LIST
-FROM "knowledge/events"
-SORT file.name DESC
-LIMIT 10
-```
-
----
-
 *Dashboard updates automatically when Obsidian Git pulls the latest bot run from GitHub.*
+*Learner agent runs 2x per day — knowledge/events/ updates 6am and 5pm UTC.*
 *To refresh manually: Cmd/Ctrl+R in Obsidian.*

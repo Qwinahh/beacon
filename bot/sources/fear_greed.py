@@ -1,50 +1,151 @@
 """
-Fear & Greed Index data source.
+bot/sources/fear_greed.py — Crypto Fear & Greed Index
 
-Fetches the Crypto Fear & Greed Index from alternative.me (free, no auth).
-Injected into every post for macro sentiment context.
+Source: Alternative.me (https://alternative.me/crypto/fear-and-greed-index/)
+API: https://api.alternative.me/fng/
+Cost: Completely FREE. No API key. No rate limits mentioned.
+
+Returns 0-100 index updated daily:
+  0-24   = Extreme Fear
+  25-49  = Fear
+  50     = Neutral
+  51-74  = Greed
+  75-100 = Extreme Greed
+
+HOW THE BOT USES THIS:
+  - Writer gets the current F&G value injected as context
+  - Helps calibrate tone: don't post bullish takes during extreme greed (crowded),
+    don't post neutral takes during extreme fear (missed opportunity for conviction)
+  - Enables posts like: "F&G at 12 (extreme fear). Last time it was here was
+    the FTX bottom. Not saying that's the floor but..."
+  - Scout uses it to flag when sentiment extremes are worth posting about directly
 """
+
 from __future__ import annotations
 
 import logging
+import time
+import urllib.request
+import json
 from typing import Optional
-
-import requests
 
 log = logging.getLogger(__name__)
 
-_URL = "https://api.alternative.me/fng/"
-_SESSION = requests.Session()
-_SESSION.headers.update({"User-Agent": "CryptoBot/2.0"})
+_API_URL = "https://api.alternative.me/fng/?limit=7&format=json"
+_CACHE: dict = {}
+_CACHE_TTL = 3600  # 1 hour — index only updates daily
 
 
-def fetch_fear_greed() -> Optional[dict]:
-    """Return current Fear & Greed reading as {value, label, direction}."""
+def _fetch_raw() -> Optional[dict]:
+    """Fetch raw F&G data from Alternative.me. Returns None on failure."""
+    now = time.time()
+    if _CACHE.get("ts", 0) + _CACHE_TTL > now:
+        return _CACHE.get("data")
+
     try:
-        resp = _SESSION.get(_URL, params={"limit": 2}, timeout=8)
-        resp.raise_for_status()
-        data = resp.json().get("data", [])
-        if not data:
-            return None
-        current = data[0]
-        value = int(current["value"])
-        label = current["value_classification"]
-        prev  = int(data[1]["value"]) if len(data) > 1 else value
-        return {
-            "value":     value,
-            "label":     label.lower(),
-            "prev":      prev,
-            "direction": "rising" if value > prev else ("falling" if value < prev else "flat"),
-        }
-    except Exception as exc:
-        log.warning("Fear & Greed Index fetch failed: %s", exc)
+        with urllib.request.urlopen(_API_URL, timeout=8) as resp:
+            data = json.loads(resp.read())
+        _CACHE["data"] = data
+        _CACHE["ts"] = now
+        return data
+    except Exception as e:
+        log.warning("Fear & Greed fetch failed: %s", e)
         return None
 
 
-def fear_greed_summary() -> str:
-    """Return a compact one-liner for context injection."""
-    data = fetch_fear_greed()
-    if not data:
+def get_current() -> Optional[dict]:
+    """
+    Get current Fear & Greed reading.
+    Returns dict with: value (int), classification (str), timestamp (str)
+    Returns None if API unavailable.
+    """
+    raw = _fetch_raw()
+    if not raw or not raw.get("data"):
+        return None
+    entry = raw["data"][0]
+    return {
+        "value": int(entry["value"]),
+        "classification": entry["value_classification"],
+        "timestamp": entry["timestamp"],
+    }
+
+
+def get_history(days: int = 7) -> list[dict]:
+    """Get last N days of F&G readings."""
+    raw = _fetch_raw()
+    if not raw or not raw.get("data"):
+        return []
+    return [
+        {
+            "value": int(e["value"]),
+            "classification": e["value_classification"],
+            "timestamp": e["timestamp"],
+        }
+        for e in raw["data"][:days]
+    ]
+
+
+def get_trend() -> str:
+    """
+    Returns a one-line trend description: rising/falling/stable + direction.
+    E.g. "Rising from Fear (32) → Greed (61) over 7 days"
+    """
+    history = get_history(7)
+    if len(history) < 2:
         return ""
-    direction = f", {data['direction']}" if data["direction"] != "flat" else ""
-    return f"Fear & Greed: {data['value']}/100 ({data['label']}{direction})"
+    oldest = history[-1]["value"]
+    newest = history[0]["value"]
+    delta = newest - oldest
+    direction = "rising" if delta > 5 else "falling" if delta < -5 else "stable"
+    return (
+        f"{direction.title()} from {history[-1]['classification']} ({oldest}) "
+        f"→ {history[0]['classification']} ({newest}) over 7 days"
+    )
+
+
+def build_context() -> str:
+    """
+    Build a one-line context string for injection into writer prompts.
+    Empty string if unavailable.
+    """
+    current = get_current()
+    if not current:
+        return ""
+
+    v = current["value"]
+    c = current["classification"]
+    trend = get_trend()
+
+    # Contextual note for extreme readings
+    note = ""
+    if v <= 20:
+        note = " — historically a strong contrarian buy signal"
+    elif v >= 80:
+        note = " — historically when retail gets wrecked chasing tops"
+    elif v <= 35:
+        note = " — market skewing cautious"
+    elif v >= 65:
+        note = " — market skewing greedy"
+
+    line = f"Market Sentiment: Fear & Greed Index = {v}/100 ({c}){note}"
+    if trend:
+        line += f". Trend: {trend}"
+    return line
+
+
+def should_post_about_fg() -> tuple[bool, str]:
+    """
+    Returns (should_post, reason) — whether F&G is extreme enough to
+    be worth posting about directly as a market sentiment observation.
+    Threshold: <20 (extreme fear) or >80 (extreme greed).
+    """
+    current = get_current()
+    if not current:
+        return False, ""
+
+    v = current["value"]
+    if v <= 20:
+        return True, f"Extreme Fear at {v} — contrarian signal worth calling out"
+    if v >= 80:
+        return True, f"Extreme Greed at {v} — worth warning about crowded positioning"
+    return False, ""

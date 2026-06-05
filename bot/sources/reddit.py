@@ -1,108 +1,159 @@
 """
-Reddit community signal ingestion.
+bot/sources/reddit.py — Reddit community signal ingestion.
 
-Polls hot posts from crypto-focused subreddits via the public JSON API.
-No auth required for public subreddits.
+Uses PRAW (Python Reddit API Wrapper) with read-only access.
+Requires: REDDIT_CLIENT_ID, REDDIT_CLIENT_SECRET env vars (free, no user login needed).
 
-Community signals are NEVER treated as confirmed facts. They feed the
-community tier (tier 3) of the verifier and are never written as facts.
+IMPORTANT: Reddit posts are Tier 3 (community sentiment).
+They are NEVER written to vault as confirmed facts.
+They are used only as:
+  - Sentiment context for writer prompts
+  - Signal that a narrative is heating up
+  - Community concern detection (e.g., rug fears, exploit rumours)
 """
+
 from __future__ import annotations
 
+import os
 import logging
-import re
 import time
-from collections import Counter
-from dataclasses import dataclass, field
 from typing import Optional
-
-import requests
 
 log = logging.getLogger(__name__)
 
+# Subreddits to monitor
 _SUBREDDITS = [
     "CryptoCurrency",
     "defi",
     "ethfinance",
     "solana",
+    "ethereum",
+    "Bitcoin",
+    "airdrops",
     "HyperliquidTrading",
+    "kaito_ai",
+    "layer2",
 ]
 
-_SESSION = requests.Session()
-_SESSION.headers.update({"User-Agent": "CryptoSignalBot/1.0 (research only)"})
+_MAX_POSTS = 5          # per subreddit
+_MIN_UPVOTES = 20       # filter noise
+_SORT = "hot"           # hot | top | new
 
 
-@dataclass
-class RedditSignal:
-    subreddit: str
-    title: str
-    score: int
-    comments: int
-    url: str
-    created_ts: float
-    tier: str = "community"
-    kind: str = "reddit"
-    meta: dict = field(default_factory=dict)
-
-    @property
-    def age_hours(self) -> float:
-        return (time.time() - self.created_ts) / 3600.0
-
-
-def fetch_hot(subreddit: str, limit: int = 10) -> list[RedditSignal]:
-    """Fetch hot posts from a single subreddit via the public JSON API."""
-    items: list[RedditSignal] = []
+def _get_reddit():
+    """Lazy-import praw and initialise read-only Reddit client."""
     try:
-        url  = f"https://www.reddit.com/r/{subreddit}/hot.json"
-        resp = _SESSION.get(url, params={"limit": limit}, timeout=10)
-        resp.raise_for_status()
-        posts = resp.json()["data"]["children"]
-        for post in posts:
-            d     = post["data"]
-            title = d.get("title", "").strip()
-            if not title or d.get("stickied"):
-                continue
-            items.append(RedditSignal(
-                subreddit=subreddit,
-                title=title,
-                score=d.get("score", 0),
-                comments=d.get("num_comments", 0),
-                url=f"https://reddit.com{d.get('permalink', '')}",
-                created_ts=float(d.get("created_utc", time.time())),
-                meta={"subreddit": subreddit, "score": d.get("score", 0)},
-            ))
-    except Exception as exc:
-        log.warning("Reddit fetch failed for r/%s: %s", subreddit, exc)
-    return items
+        import praw  # type: ignore
+    except ImportError:
+        log.warning("praw not installed — Reddit ingestion disabled. Run: pip install praw")
+        return None
+
+    client_id = os.environ.get("REDDIT_CLIENT_ID")
+    client_secret = os.environ.get("REDDIT_CLIENT_SECRET")
+
+    if not client_id or not client_secret:
+        log.warning("REDDIT_CLIENT_ID / REDDIT_CLIENT_SECRET not set — Reddit disabled")
+        return None
+
+    try:
+        reddit = praw.Reddit(
+            client_id=client_id,
+            client_secret=client_secret,
+            user_agent="beacon-bot/1.0 (crypto alpha bot, read-only)",
+            ratelimit_seconds=60,
+        )
+        # Verify connection
+        _ = reddit.subreddit("CryptoCurrency").id
+        return reddit
+    except Exception as e:
+        log.error("Reddit init failed: %s", e)
+        return None
 
 
-def fetch_all_signals(
+def fetch_hot_posts(
     subreddits: Optional[list[str]] = None,
-    limit: int = 8,
-) -> list[RedditSignal]:
-    """Fetch hot posts across all configured subreddits, sorted by score."""
-    subs    = subreddits or _SUBREDDITS
-    signals: list[RedditSignal] = []
-    for sub in subs:
-        signals.extend(fetch_hot(sub, limit=limit))
-    signals.sort(key=lambda x: x.score, reverse=True)
-    log.info("Reddit: %d signals from %d subreddits.", len(signals), len(subs))
-    return signals
+    limit: int = _MAX_POSTS,
+    min_upvotes: int = _MIN_UPVOTES,
+) -> list[dict]:
+    """
+    Fetch hot posts from crypto subreddits.
+    Returns list of dicts with: title, score, url, subreddit, created_utc, selftext_snippet.
+    All returned data is Tier 3 — community sentiment only.
+    """
+    reddit = _get_reddit()
+    if not reddit:
+        return []
+
+    subs = subreddits or _SUBREDDITS
+    results = []
+
+    for sub_name in subs:
+        try:
+            sub = reddit.subreddit(sub_name)
+            for post in sub.hot(limit=limit * 3):  # fetch more, filter down
+                if post.score < min_upvotes:
+                    continue
+                if post.stickied:
+                    continue
+                results.append({
+                    "title": post.title,
+                    "score": post.score,
+                    "url": f"https://reddit.com{post.permalink}",
+                    "subreddit": sub_name,
+                    "created_utc": post.created_utc,
+                    "selftext_snippet": (post.selftext or "")[:300],
+                    "source_tier": 3,
+                    "source": f"reddit/r/{sub_name}",
+                })
+                if len([r for r in results if r["subreddit"] == sub_name]) >= limit:
+                    break
+        except Exception as e:
+            log.warning("Reddit fetch failed for r/%s: %s", sub_name, e)
+            continue
+
+    return results
 
 
-_STOPWORDS = {
-    "that", "this", "with", "from", "have", "will", "just", "been",
-    "about", "more", "what", "your", "their", "there", "here", "when",
-    "than", "into", "which", "been",
-}
+def search_reddit(query: str, limit: int = 10) -> list[dict]:
+    """
+    Search Reddit for a specific topic.
+    Useful when researcher agent wants Reddit context on a specific protocol.
+    """
+    reddit = _get_reddit()
+    if not reddit:
+        return []
+
+    results = []
+    try:
+        sub = reddit.subreddit("+".join(_SUBREDDITS))
+        for post in sub.search(query, limit=limit, sort="relevance", time_filter="week"):
+            results.append({
+                "title": post.title,
+                "score": post.score,
+                "url": f"https://reddit.com{post.permalink}",
+                "subreddit": post.subreddit.display_name,
+                "created_utc": post.created_utc,
+                "selftext_snippet": (post.selftext or "")[:300],
+                "source_tier": 3,
+                "source": f"reddit/r/{post.subreddit.display_name}",
+            })
+    except Exception as e:
+        log.error("Reddit search failed for '%s': %s", query, e)
+
+    return results
 
 
-def top_topics(n: int = 5) -> list[str]:
-    """Return the top n recurring words across hot Reddit posts."""
-    signals = fetch_all_signals()
-    words: Counter[str] = Counter()
-    for s in signals:
-        for w in re.findall(r"\b[a-zA-Z]{4,}\b", s.title.lower()):
-            if w not in _STOPWORDS:
-                words[w] += 1
-    return [w for w, _ in words.most_common(n)]
+def build_reddit_context(topic: str, limit: int = 5) -> str:
+    """
+    Build a community sentiment summary string for the writer context.
+    Clearly marked as community sentiment, not confirmed information.
+    """
+    posts = search_reddit(topic, limit=limit)
+    if not posts:
+        return ""
+
+    lines = [f"REDDIT COMMUNITY SIGNALS (sentiment only, not confirmed facts) for '{topic}':"]
+    for p in posts[:limit]:
+        lines.append(f"  - r/{p['subreddit']} [{p['score']} upvotes]: {p['title']}")
+
+    return "\n".join(lines)
