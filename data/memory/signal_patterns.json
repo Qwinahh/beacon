@@ -28,6 +28,20 @@
       "topic": "Regulatory clarity on vaults - Crypto Council for Innovation",
       "outcome": "posted",
       "note": "Regulatory push with clear historical precedent for market impact (10% BTC dominance decline). Actionable narrative linking policy to alt season potential."
+    },
+    {
+      "ts": "2026-06-06T16:00:39Z",
+      "signal_type": "tvl",
+      "topic": "Rysk Premium TVL",
+      "outcome": "posted",
+      "note": "1966% increase in 24h was significant enough to trigger a post and warrants disclosure of exposure impact."
+    },
+    {
+      "ts": "2026-06-06T20:03:15Z",
+      "signal_type": "alpha",
+      "topic": "Hyperion HYPE unwinding",
+      "outcome": "posted",
+      "note": "Large deal unwinding is a concrete liquidity event that compounds prior selling pressure; significant enough to flag to audience."
     }
   ],
   "noise_signals": [],
