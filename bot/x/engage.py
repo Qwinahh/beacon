@@ -73,6 +73,11 @@ def _generate_reply(mention_text: str) -> Optional[str]:
             return None
         if len(reply) > 280:
             reply = reply[:276].rsplit(".", 1)[0] + "."
+        from bot.brain.authenticity_judge import passes as judge_passes
+        ok, result = judge_passes(reply, content_type="reply")
+        if not ok:
+            log.debug("Reply failed authenticity check (score=%d) — skipping", result["score"])
+            return None
         return reply
     except anthropic.APIError as exc:
         log.error("Anthropic API error generating reply: %s", exc)

@@ -104,6 +104,11 @@ def _generate_trend_reply(tweet_text: str, portfolio: dict) -> Optional[str]:
             return None
         if len(reply) > 280:
             reply = reply[:276].rsplit(".", 1)[0] + "."
+        from bot.brain.authenticity_judge import passes as judge_passes
+        ok, result = judge_passes(reply, content_type="reply")
+        if not ok:
+            log.info("Reply failed authenticity (score=%d): %s", result["score"], reply[:60])
+            return None
         return reply
     except anthropic.APIError as exc:
         log.error("Anthropic API error in trend reply: %s", exc)
