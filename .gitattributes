@@ -1,0 +1,8 @@
+# Bot-managed data files — always keep the current branch's version on pull.
+# These are written by GitHub Actions and should not be overwritten by local edits.
+data/vault/projects/*.md    merge=ours
+data/vault/narratives/*.md  merge=ours
+data/vault/log/*.md         merge=ours
+data/vault/knowledge/events/*.md  merge=ours
+data/growth/*.json          merge=ours
+data/state.json             merge=ours

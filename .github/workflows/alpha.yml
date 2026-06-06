@@ -45,4 +45,5 @@ jobs:
           git config user.email "bot@qwinahh.local"
           git add data/state.json data/memory/ data/vault/
           git diff --cached --quiet || git commit -m "chore: alpha fast-track state + vault [skip ci]"
+          git pull --rebase -X ours origin main 2>/dev/null || true
           git push

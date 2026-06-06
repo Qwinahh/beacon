@@ -40,4 +40,5 @@ jobs:
           git config user.email "bot@qwinahh.local"
           git add data/state.json
           git diff --cached --quiet || git commit -m "chore: update engage state [skip ci]"
+          git pull --rebase -X ours origin main 2>/dev/null || true
           git push

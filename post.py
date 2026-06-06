@@ -109,6 +109,39 @@ def main() -> None:
         log.info("Jitter: waiting %ds.", jitter)
         time.sleep(jitter)
 
+    # FREEFORM MODE: 30% of normal cycles post a pure opinion instead of data-driven content.
+    # Top accounts post this way constantly — not tied to any specific event.
+    # Never in alpha-only mode (breaking news takes full priority).
+    if not alpha_only and random.random() < 0.30:
+        try:
+            from bot.brain.freeform_writer import generate_freeform
+            from bot.x.client import post_tweet
+            log.info("Post cycle: attempting freeform opinion post (30% mode)")
+            freeform_text = generate_freeform(
+                recent_formats=state.recent_formats(),
+                recent_topics=state.recent_topics(),
+            )
+            if freeform_text:
+                tweet_id = post_tweet(freeform_text)
+                if tweet_id:
+                    state.increment_post_count()
+                    state.set_last_post_timestamp(time.time())
+                    fp = state.fingerprint(freeform_text.lower())
+                    state.mark_seen(fp)
+                    state.record_topic("opinion")
+                    state.record_format("freeform")
+                    try:
+                        from bot.brain.vault import log_post
+                        log_post(freeform_text, "opinion", "freeform")
+                    except Exception:
+                        pass
+                    state.save()
+                    log.info("Freeform post sent: %s", freeform_text[:80])
+                    return
+            log.debug("Freeform attempt: no qualifying post generated, falling through to normal pipeline")
+        except Exception as exc:
+            log.warning("Freeform mode failed: %s — falling through to normal pipeline", exc)
+
     result = run_post_cycle(state, alpha_only=alpha_only)
     state.save()
 
