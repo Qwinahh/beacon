@@ -10,6 +10,14 @@ from typing import Final
 
 
 # ---------------------------------------------------------------------------
+# Bot identity
+# ---------------------------------------------------------------------------
+
+# Bot's own X username. Override via X_USERNAME env var if the account changes.
+BOT_USERNAME: Final[str] = os.environ.get("X_USERNAME", "Qwinahh")
+
+
+# ---------------------------------------------------------------------------
 # Posting cadence
 # ---------------------------------------------------------------------------
 

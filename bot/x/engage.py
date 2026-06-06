@@ -22,7 +22,7 @@ import time
 from typing import Optional
 
 from bot.brain.llm import complete as llm_complete
-from bot.config import CLAUDE_MAX_TOKENS, QUOTE_TWEET_COOLDOWN_HOURS
+from bot.config import BOT_USERNAME, CLAUDE_MAX_TOKENS, QUOTE_TWEET_COOLDOWN_HOURS
 from bot.state import State
 from bot.x.client import get_mentions, post_tweet, quote_tweet
 
@@ -35,8 +35,8 @@ MAX_REPLIES_PER_RUN = 5
 # and we want to spread them across different posts rather than batch them.
 MAX_THREAD_REPLIES_PER_DAY = 3
 
-# Own username — used to look up our own tweets via twscrape.
-_OWN_USERNAME = os.environ.get("X_USERNAME", "Qwinahh")
+# Own username — sourced from config so it's consistent across all modules.
+_OWN_USERNAME = BOT_USERNAME
 
 # Only thread on posts from this window (hours) that have engagement.
 # 12h catches morning posts when the evening engage run fires.
@@ -509,6 +509,242 @@ def run_quote_tweet(state: State) -> int:
 
     log.info("Quote tweet: no viable candidate passed quality gate this run.")
     return 0
+
+
+# ---------------------------------------------------------------------------
+# Replies to own-post mentions
+# ---------------------------------------------------------------------------
+
+# Hard cap per engage run — we reply to inbound engagement, but don't flood.
+MAX_MENTION_REPLIES_PER_RUN = 3
+
+# Hours before we'll reply to the same author again for this feature.
+# Different from the outbound reply cooldown — this is inbound conversation.
+_MENTION_REPLY_COOLDOWN_HOURS = 12
+
+_MENTION_REPLY_SYSTEM = """\
+You write replies for @Qwinahh responding to people who replied to one of their tweets.
+@Qwinahh trades perps, farms airdrops, and moves into DeFi protocols early.
+
+Context: Someone replied to a post @Qwinahh made. Write @Qwinahh's response to keep
+the conversation going.
+
+RULES:
+- Under 160 characters. One exchange, not an essay.
+- Be genuine and conversational. Engage with their actual point — add to it,
+  push back with data, or ask something specific.
+- Never say "thanks for engaging", "great question", "appreciate the reply",
+  or anything that sounds like customer service or PR copy.
+- If they're pushing back: engage with the substance, not the emotion.
+- If they're agreeing without adding anything: add one more layer yourself.
+- No hashtags. No emojis. Sound like a real person mid-conversation.
+- If the reply is low-effort ("wen token", "price?", "gm", "ser", "ngmi"):
+  respond with SKIP.
+
+OUTPUT FORMAT — respond with exactly one of:
+  REPLY: [your reply under 160 chars]
+  SKIP: [one-word reason: low_effort/spam/price_ask/hostile/no_value]
+"""
+
+
+async def _fetch_replies_to_own_posts_async() -> list[dict]:
+    """
+    Fetch recent replies to @Qwinahh's own posts via twscrape.
+
+    Step 1: build a set of our own tweet IDs from the last 48h (all tweets,
+            not just high-engagement ones — any post can receive replies).
+    Step 2: search for @Qwinahh mentions, return only those whose
+            inReplyToTweetId matches one of our own tweet IDs.
+    """
+    cookies = os.environ.get("X_SCRAPER_COOKIES", "").strip()
+    if not cookies:
+        return []
+
+    try:
+        from twscrape import API
+    except ImportError:
+        log.debug("twscrape not installed — post-reply fetch skipped.")
+        return []
+
+    api = API(os.path.join(tempfile.gettempdir(), "twscrape_pool.db"))
+    try:
+        await api.pool.add_account(
+            username="beacon_post_reply_scraper",
+            password="placeholder",
+            email="placeholder@placeholder.com",
+            email_password="placeholder",
+            cookies=cookies,
+        )
+    except Exception as exc:
+        log.debug("twscrape setup error (post reply): %s", exc)
+        return []
+
+    now = time.time()
+
+    # Step 1 — own tweet IDs from last 48h (tweets we could receive replies to)
+    own_tweets: dict[str, str] = {}  # tweet_id -> tweet_text
+    try:
+        user = await api.user_by_login(_OWN_USERNAME)
+        if not user:
+            log.debug("Could not resolve @%s for post-reply fetch.", _OWN_USERNAME)
+            return []
+        async for tweet in api.user_tweets(user.id, limit=50):
+            ts = getattr(tweet, "date", None)
+            if ts and ts.timestamp() < now - 172_800:  # 48h cutoff; newest-first → safe to break
+                break
+            content = tweet.rawContent or ""
+            if not content.startswith("RT @"):
+                own_tweets[str(tweet.id)] = content
+    except Exception as exc:
+        log.debug("Own tweet fetch (post-reply): %s", exc)
+
+    if not own_tweets:
+        log.debug("No own tweets in last 48h — skipping post-reply fetch.")
+        return []
+
+    # Step 2 — search mentions, keep only direct replies to our posts
+    results: list[dict] = []
+    try:
+        query = f"@{_OWN_USERNAME} -from:{_OWN_USERNAME} lang:en"
+        async for tweet in api.search(query, limit=50, kv={"product": "Latest"}):
+            ts = getattr(tweet, "date", None)
+            if ts and ts.timestamp() < now - 86_400:
+                continue  # Skip mentions older than 24h; don't break (search not time-sorted)
+
+            in_reply_to = str(getattr(tweet, "inReplyToTweetId", "") or "")
+            if in_reply_to not in own_tweets:
+                continue  # Not a reply to one of our posts
+
+            content = tweet.rawContent or ""
+            author = tweet.user.username if tweet.user else ""
+            if not author or author.lower() == _OWN_USERNAME.lower():
+                continue  # Skip our own replies
+
+            results.append({
+                "id":          str(tweet.id),
+                "text":        content,
+                "author":      author,
+                "parent_id":   in_reply_to,
+                "parent_text": own_tweets[in_reply_to],
+            })
+    except Exception as exc:
+        log.debug("Post-reply mention search error: %s", exc)
+
+    return results
+
+
+def _generate_mention_reply(
+    original_text: str,
+    reply_text: str,
+    author: str,
+) -> Optional[str]:
+    prompt = (
+        f"Your original tweet:\n\n{original_text}\n\n"
+        f"Reply from @{author}:\n\n{reply_text}\n\n"
+        "Write a response. Use the REPLY:/SKIP: format from the system prompt."
+    )
+    raw = llm_complete(
+        system=_MENTION_REPLY_SYSTEM,
+        user=prompt,
+        max_tokens=200,
+        temperature=0.72,
+    )
+    if not raw:
+        return None
+
+    raw = raw.strip()
+    if raw.upper().startswith("REPLY:"):
+        text = raw[6:].strip()
+    elif raw.upper().startswith("SKIP"):
+        log.debug("Mention reply skipped by model for @%s.", author)
+        return None
+    else:
+        text = raw  # unstructured fallback
+
+    if not text or len(text) < 10:
+        return None
+
+    if len(text) > 160:
+        text = text[:157].rsplit(".", 1)[0] + "."
+
+    from bot.brain.authenticity_judge import passes as judge_passes
+    ok, result = judge_passes(text, content_type="reply")
+    if not ok:
+        log.debug(
+            "Mention reply failed authenticity (score=%d) — skipping",
+            result["score"],
+        )
+        return None
+
+    return text
+
+
+def reply_to_own_mentions(state: State) -> int:
+    """
+    Reply to people who replied directly to one of the bot's own posts.
+
+    Gated at MAX_MENTION_REPLIES_PER_RUN (3) per run.
+    Per-author cooldown of _MENTION_REPLY_COOLDOWN_HOURS (12h) tracked under
+    state "replied_to_mentions" dict: {username_lower: last_replied_timestamp}.
+
+    Returns number of replies sent.
+    """
+    mentions = _run_async_engage(_fetch_replies_to_own_posts_async()) or []
+    if not mentions:
+        log.debug("No replies to own posts found this run.")
+        return 0
+
+    # Per-author cooldown dict — keyed by lowercase username, value is last reply ts
+    replied_ts: dict[str, float] = state._data.setdefault("replied_to_mentions", {})
+
+    # Prune entries older than 24h to prevent unbounded growth
+    now = time.time()
+    stale = [u for u, ts in replied_ts.items() if ts < now - 86_400]
+    for u in stale:
+        del replied_ts[u]
+
+    already_replied = state.last_replied_to()
+    sent = 0
+
+    for mention in mentions:
+        if sent >= MAX_MENTION_REPLIES_PER_RUN:
+            break
+
+        tweet_id = mention["id"]
+        if tweet_id in already_replied:
+            continue
+
+        author_lower = mention["author"].lower()
+
+        # Skip spam
+        if any(s in mention["text"].lower() for s in _SPAM_SIGNALS):
+            log.debug("Skipping post-reply from @%s: spam signal.", author_lower)
+            continue
+
+        # 12h per-author cooldown
+        if now - replied_ts.get(author_lower, 0) < _MENTION_REPLY_COOLDOWN_HOURS * 3600:
+            log.debug("Author @%s in cooldown — skipping.", author_lower)
+            continue
+
+        reply_text = _generate_mention_reply(
+            original_text=mention["parent_text"],
+            reply_text=mention["text"],
+            author=mention["author"],
+        )
+        if not reply_text:
+            continue
+
+        sent_id = post_tweet(reply_text, reply_to_id=tweet_id)
+        if sent_id:
+            state.mark_replied(tweet_id)
+            replied_ts[author_lower] = now
+            sent += 1
+            log.info(
+                "Replied to @%s's reply on post %s → %s: %s",
+                mention["author"], mention["parent_id"], sent_id, reply_text[:60],
+            )
+
+    return sent
 
 
 # ---------------------------------------------------------------------------
