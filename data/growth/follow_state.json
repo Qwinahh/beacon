@@ -49,10 +49,26 @@
       "id": "1287576585353039872",
       "username": "0xcygaar",
       "followed_at": 1780678761
+    },
+    {
+      "id": "19748227",
+      "username": "tayvano_",
+      "followed_at": 1780760984
+    },
+    {
+      "id": "22758405",
+      "username": "functi0nzer0",
+      "followed_at": 1780760986
+    },
+    {
+      "id": "1761088800535560192",
+      "username": "eigenlayernews",
+      "followed_at": 1780760988
     }
   ],
   "daily": {
-    "2026-06-05": 10
+    "2026-06-05": 10,
+    "2026-06-06": 3
   },
   "attempted": []
 }
