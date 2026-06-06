@@ -17,3 +17,9 @@ build/
 .idea/
 .vscode/
 *.swp
+
+# Obsidian — plugin binaries and scratch files don't belong in version control
+data/vault/.obsidian/plugins/
+data/vault/.obsidian/workspace.json
+data/vault/.obsidian/graph.json
+data/vault/Untitled*.canvas
