@@ -1,1 +1,17 @@
-["obsidian-git","dataview","templater-obsidian","obsidian-kanban","calendar"]
+[
+  "dataview",
+  "templater-obsidian",
+  "obsidian-kanban",
+  "calendar",
+  "obsidian-tracker",
+  "obsidian-charts",
+  "quickadd",
+  "metadata-menu",
+  "obsidian-tasks-plugin",
+  "periodic-notes",
+  "obsidian-hover-editor",
+  "table-editor-obsidian",
+  "obsidian-excalidraw-plugin",
+  "obsidian-linter",
+  "obsidian-git"
+]
