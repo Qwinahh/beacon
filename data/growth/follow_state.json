@@ -64,11 +64,29 @@
       "id": "1761088800535560192",
       "username": "eigenlayernews",
       "followed_at": 1780760988
+    },
+    {
+      "id": "4107711",
+      "username": "gainzy222",
+      "followed_at": 1780767612
+    },
+    {
+      "id": "1480297433020215297",
+      "username": "thedefiedge",
+      "followed_at": 1780767614
+    },
+    {
+      "id": "1547302457432236035",
+      "username": "wyckoffweb",
+      "followed_at": 1780767620
     }
   ],
   "daily": {
     "2026-06-05": 10,
-    "2026-06-06": 3
+    "2026-06-06": 6
   },
-  "attempted": []
+  "attempted": [
+    "2800345565",
+    "1547302457432236035"
+  ]
 }
