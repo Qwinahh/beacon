@@ -1,10 +1,10 @@
 ---
-title: Trending — 2026-06-05
-updated: 2026-06-05 10:53 UTC
+title: Trending — 2026-06-06
+updated: 2026-06-06 09:29 UTC
 type: inspiration
 ---
 
-# Trending Today — 2026-06-05
+# Trending Today — 2026-06-06
 
 Top-performing posts from monitored accounts + keyword searches in the last 24h.
 Use these as raw material — find a post that made you think, then write your own take.
@@ -15,188 +15,186 @@ Use these as raw material — find a post that made you think, then write your o
 
 ## Top Posts by Engagement
 
-### 1. @0xSisyphus · 16:25 UTC
+### 1. @0xSisyphus · 15:45 UTC
 
-> it's unclear if most ppl realize that ozempic’s real effects on culture haven’t even started.
+> @gmoneyNFT Hyperliquid
 
-cuz what you’re seeing now is the first order effects & some glimpses of second order where ppl get thinner & some products experiencing a resurgence.
+**Likes:** 7713 · **Replies:** 1003 · **RTs:** 1236 · **Quotes:** 678 🔥🔥🔥🔥🔥
+[View post](https://x.com/0xSisyphus/status/2062923669370810405)
 
-but the second & third order effects are where things...
+### 2. @0xSisyphus · 11:34 UTC
 
-**Likes:** 4828 · **Replies:** 358 · **RTs:** 280 · **Quotes:** 76 🔥🔥🔥🔥🔥
-[View post](https://x.com/0xSisyphus/status/2062571564118196623)
+> The concerted shilling of Zcash that started last year makes more sense when you consider someone was probably minting and dumping endless supply the entire time
 
-### 2. @tayvano_ · 22:30 UTC
+**Likes:** 2852 · **Replies:** 93 · **RTs:** 172 · **Quotes:** 26 🔥🔥🔥🔥🔥
+[View post](https://x.com/0xSisyphus/status/2062860675412644253)
 
-> bro basically said "look for bugs that could exploit zcash"
-
-that's the prompt that found an exploit in a 10 billion dollar protocol https://t.co/4S7PJ2BeYZ
-
-**Likes:** 2386 · **Replies:** 153 · **RTs:** 146 · **Quotes:** 67 🔥🔥🔥🔥🔥
-[View post](https://x.com/tayvano_/status/2062663346046828832)
-
-### 3. @0xSisyphus · 03:17 UTC
-
-> Watching all the Solana scammers go down with the Zcash ship is just *chef’s kiss*
-
-**Likes:** 1421 · **Replies:** 66 · **RTs:** 93 · **Quotes:** 7 🔥🔥🔥🔥🔥
-[View post](https://x.com/0xSisyphus/status/2062735576801984833)
-
-### 4. @Gainzy222 · 00:48 UTC
-
-> https://t.co/C3anBcuBrK
-
-**Likes:** 782 · **Replies:** 90 · **RTs:** 19 · **Quotes:** 1 🔥🔥🔥🔥🔥
-[View post](https://x.com/Gainzy222/status/2062698153783308618)
-
-### 5. @Gainzy222 · 07:47 UTC
+### 3. @Gainzy222 · 07:47 UTC
 
 > down 7 figures, my top tick tweet is now a copy pasta, and some asian chick is calling my doppelgänger a sub3
 
 what a shit day
 
-**Likes:** 623 · **Replies:** 70 · **RTs:** 5 · **Quotes:** 5 🔥🔥🔥🔥🔥
+**Likes:** 1746 · **Replies:** 140 · **RTs:** 19 · **Quotes:** 16 🔥🔥🔥🔥🔥
 [View post](https://x.com/Gainzy222/status/2062803596320878986)
 
-### 6. @Gainzy222 · 04:49 UTC
+### 4. @0xSisyphus · 08:28 UTC
 
-> I am down infinite https://t.co/ydGIT7ZoUP
+> If you connect the dots hard enough — the exploit went through, and the optimized route for the exploiter to offload their newfound infinite supply was to pay for a coordinated pump of the coin, which we witnessed via the biggest names in this space, all at the same time.
 
-**Likes:** 568 · **Replies:** 79 · **RTs:** 16 · **Quotes:** 4 🔥🔥🔥🔥🔥
-[View post](https://x.com/Gainzy222/status/2062758811115368926)
+**Likes:** 1219 · **Replies:** 93 · **RTs:** 84 · **Quotes:** 27 🔥🔥🔥🔥🔥
+[View post](https://x.com/0xSisyphus/status/2062813696548893083)
 
-### 7. @Gainzy222 · 06:00 UTC
+### 5. @Gainzy222 · 10:22 UTC
 
-> bro what the fuck is this cursed never ending unravel
+> buy zec
 
-**Likes:** 564 · **Replies:** 81 · **RTs:** 12 · **Quotes:** 5 🔥🔥🔥🔥🔥
-[View post](https://x.com/Gainzy222/status/2062776499875295370)
+up only https://t.co/RMguxazhYF
 
-### 8. @Gainzy222 · 23:06 UTC
+**Likes:** 520 · **Replies:** 95 · **RTs:** 14 · **Quotes:** 6 🔥🔥🔥🔥🔥
+[View post](https://x.com/Gainzy222/status/2062842418828054573)
 
-> https://t.co/5N5Y8HfiF2
+### 6. @VikingoDigital_ · 11:13 UTC
 
-**Likes:** 507 · **Replies:** 55 · **RTs:** 18 · **Quotes:** 3 🔥🔥🔥🔥🔥
-[View post](https://x.com/Gainzy222/status/2062672492792357338)
+> Hyperliquid just generated more fees in the last 24 hours than all other chains combined with $4,2M in fees.
 
-### 9. @Pentosh1 · 14:38 UTC
+Hyperliquid: 4,2M
+Other chains combined: 3,2M https://t.co/Fs9095L4gN
 
-> trading is so much more about emotional regulation than anything or at least it's one of the biggest parts of it. and we all fall victim to it at times as well. I think you are in a good spot if a good or bad trade doesn't affect the way you treat others or really affect your personal life so much
+**Likes:** 486 · **Replies:** 34 · **RTs:** 62 · **Quotes:** 11 🔥🔥🔥🔥🔥
+[View post](https://x.com/VikingoDigital_/status/2062855287246123391)
 
-...
+### 7. @0xSisyphus · 08:51 UTC
 
-**Likes:** 469 · **Replies:** 48 · **RTs:** 34 · **Quotes:** 3 🔥🔥🔥🔥🔥
-[View post](https://x.com/Pentosh1/status/2062544537944224107)
+> https://t.co/U6vM61U9Or
 
-### 10. @Pentosh1 · 14:17 UTC
+**Likes:** 552 · **Replies:** 33 · **RTs:** 24 · **Quotes:** 5 🔥🔥🔥🔥🔥
+[View post](https://x.com/0xSisyphus/status/2062819654452892011)
 
-> gm 
+### 8. @solsticefi · 08:50 UTC
 
-looks like we got some stink bids filled overnight on hyperliquid:native 
+> Private AI infrastructure can't be financed by the companies it's designed to replace.
 
-not sure what to expect in the short term but have a feeling we close this week above $70 
+That financing is moving onchain - for the people.
 
-lets see https://t.co/cZYdIDRCUm
+aiUSX is coming. https://t.co/qa4MFZnAY0
 
-**Likes:** 411 · **Replies:** 52 · **RTs:** 21 · **Quotes:** 2 🔥🔥🔥🔥🔥
-[View post](https://x.com/Pentosh1/status/2062539222137917878)
+**Likes:** 202 · **Replies:** 91 · **RTs:** 19 · **Quotes:** 66 🔥🔥🔥🔥🔥
+[View post](https://x.com/solsticefi/status/2062819328106610862)
 
-### 11. @Gainzy222 · 03:08 UTC
+### 9. @Pentosh1 · 13:33 UTC
 
-> I trade like I’m tom lee but with less money
+> already seeing pretty big drops in equties in the hot sectors, some of the leaders down 10-15% or more in semis, ewy is -13%, some of the mid caps and small caps down more than 15-20%, and some markets  like kospi down nearly 10% already. 
 
-**Likes:** 435 · **Replies:** 47 · **RTs:** 10 · **Quotes:** 4 🔥🔥🔥🔥🔥
-[View post](https://x.com/Gainzy222/status/2062733223721931021)
+I will have some ideas and chart over the weekend. Not in a...
 
-### 12. @WhiteWhaleLabs · 18:44 UTC
+**Likes:** 376 · **Replies:** 43 · **RTs:** 17 · **Quotes:** 0 🔥🔥🔥🔥🔥
+[View post](https://x.com/Pentosh1/status/2062890672101679195)
 
-> Where Has All Of The Liquidity Gone?
+### 10. @0xSisyphus · 13:30 UTC
 
-Everyone keeps asking why crypto feels dead.
+> [ ZOOMER ]
 
-I don’t think crypto is dead.
+THE NSA HAS BEEN USING ANTHROPIC'S MYTHOS FOR OFFENSIVE HACKING, EVEN AS THE US FIGHTS LEGAL BATTLE WITH ANTHROPIC: SEMAFOR
 
-I think crypto is being diluted by the same entities who once called it home.
+**Likes:** 371 · **Replies:** 18 · **RTs:** 23 · **Quotes:** 21 🔥🔥🔥🔥🔥
+[View post](https://x.com/0xSisyphus/status/2062889887355851237)
 
-For years, crypto was one of the only places on earth where you could find 24/7 markets, insane leverage, ...
+### 11. @NekiWeb3 · 04:44 UTC
 
-**Likes:** 279 · **Replies:** 67 · **RTs:** 36 · **Quotes:** 6 🔥🔥🔥🔥🔥
-[View post](https://x.com/WhiteWhaleLabs/status/2062606370868715620)
+> Good morning fam ☀️
 
-### 13. @0xSisyphus · 23:48 UTC
+I am honestly so glad we are finally moving away from the ghost chain era toward platforms that focus on real daily utility.
 
-> @KyleSamani TLDR https://t.co/dGPQzzz0Ei
+@useTria is absolutely nailng this shift with their Season 3 reward loop where your accumulated points actually stick around instead of being burned for ...
 
-**Likes:** 387 · **Replies:** 33 · **RTs:** 36 · **Quotes:** 0 🔥🔥🔥🔥🔥
-[View post](https://x.com/0xSisyphus/status/2062683046084563234)
+**Likes:** 120 · **Replies:** 125 · **RTs:** 3 · **Quotes:** 0 🔥🔥🔥🔥🔥
+[View post](https://x.com/NekiWeb3/status/2063119828890853802)
 
-### 14. @Gainzy222 · 02:19 UTC
+### 12. @NDIDI_GRAM · 09:35 UTC
 
-> Just checked my watch and it’s casino partnership time https://t.co/nJCkLJXlki
+> At ATH, my Hyperliquid airdrop was worth over $342,000.
 
-**Likes:** 402 · **Replies:** 35 · **RTs:** 5 · **Quotes:** 1 🔥🔥🔥🔥🔥
-[View post](https://x.com/Gainzy222/status/2062720903302304044)
+Back in 2024, I sold it for just $18,800.
 
-### 15. @Gainzy222 · 23:37 UTC
+Still my biggest airdrop ever from a single wallet, and easily my biggest fumble to date.
 
-> bro stop selling my zcrash, or i will be forced to stream forever and gainzy clips will plague your feed for decades to come
+The funny part? I wasn't even a pro trader back then and it was my first time fully exploring leverage tradin...
 
-**Likes:** 329 · **Replies:** 54 · **RTs:** 4 · **Quotes:** 4 🔥🔥🔥🔥🔥
-[View post](https://x.com/Gainzy222/status/2062680286505341214)
+**Likes:** 243 · **Replies:** 57 · **RTs:** 10 · **Quotes:** 4 🔥🔥🔥🔥🔥
+[View post](https://x.com/NDIDI_GRAM/status/2062830537547387201)
 
-### 16. @Pentosh1 · 14:57 UTC
+### 13. @0xSisyphus · 13:11 UTC
 
-> I'm going to have to put my account on private i think
+> elites won't tell you this but the real way to escape the permanent underclass is learning to manage risk https://t.co/haBy1zZBan
 
-the bots are out of hand again, so much spam in the replies. its just impossible to block or hide all the replies of impersonators. it was fixed for awhile and now its back to how it was
+**Likes:** 368 · **Replies:** 8 · **RTs:** 17 · **Quotes:** 1 🔥🔥🔥🔥🔥
+[View post](https://x.com/0xSisyphus/status/2062884930044985593)
 
-**Likes:** 370 · **Replies:** 36 · **RTs:** 0 · **Quotes:** 0 🔥🔥🔥🔥🔥
-[View post](https://x.com/Pentosh1/status/2062549288069083424)
+### 14. @Gainzy222 · 23:56 UTC
 
-### 17. @Jampzey · 18:06 UTC
+> new day new me https://t.co/4VoenN9n32
 
-> looking to sell 10,400 yaps at a 10% market discount, $33 a piece, single fill only
+**Likes:** 265 · **Replies:** 44 · **RTs:** 7 · **Quotes:** 0 🔥🔥🔥🔥🔥
+[View post](https://x.com/Gainzy222/status/2063047340005679106)
 
-hit me up or the arbitrum otc marketplace https://t.co/Zgt27EYVfx
+### 15. @sumonrazamd17 · 09:47 UTC
 
-**Likes:** 153 · **Replies:** 95 · **RTs:** 4 · **Quotes:** 1 🔥🔥🔥🔥🔥
-[View post](https://x.com/Jampzey/status/2062596897953771544)
+> Good afternoon my bros 😃
 
-### 18. @0xALTF4 · 16:09 UTC
+Tired of wondering if your crypto will survive the quantum era?
 
-> RWA protocols still settle on DTCC rails, rely on custodians, and take T+1 or T+2 to move anything. the asset lives off-chain, the token is just a wrapper. same broken infrastructure, different label.
+Quip Network is already fixing that right now.
 
-that's been the quiet problem with the whole category.
+It adds real post-quantum security to your Bitcoin, Ethereum and Solana wallets.
 
-@Figure May numbers just showed what actua...
+Smart keys that protect everything without any forks or hassle.
 
-**Likes:** 165 · **Replies:** 79 · **RTs:** 18 · **Quotes:** 0 🔥🔥🔥🔥🔥
-[View post](https://x.com/0xALTF4/status/2062567481286222228)
+Then Tria make...
 
-### 19. @derekedws · 19:09 UTC
+**Likes:** 87 · **Replies:** 101 · **RTs:** 7 · **Quotes:** 1 🔥🔥🔥🔥🔥
+[View post](https://x.com/sumonrazamd17/status/2062833682482966883)
 
-> hyperliquid is a killer product
+### 16. @Pentosh1 · 17:58 UTC
 
-meanwhile, there are pressures that may constrain the project’s viability within US borders
+> looking at some of the recent data, metrics and such things. I am slowly beginning to think we may not close THIS week quite at $70 https://t.co/pzS6lBH0iY
 
-including:
+**Likes:** 283 · **Replies:** 20 · **RTs:** 5 · **Quotes:** 0 🔥🔥🔥🔥🔥
+[View post](https://x.com/Pentosh1/status/2062957264051327174)
 
-- hyperliquid’s product layer (via CFTC’s kalshi approval, coinbase/deribit no action, and policy statement)
-- hyperliquid’s network and token layer (via clarity ...
+### 17. @Kaffchad · 08:00 UTC
 
-**Likes:** 260 · **Replies:** 26 · **RTs:** 31 · **Quotes:** 17 🔥🔥🔥🔥🔥
-[View post](https://x.com/derekedws/status/2062612635552817603)
+> Instead of being bearish at the bottom, I want to map out the catalysts that could be the main plays for the crypto market in Q3 2026.
 
-### 20. @Ellaweb_3 · 05:22 UTC
+Capital is now only deploying into where there's real use cases, real users, and real revenue, so I use that to build my thesis.
 
-> HYPE finally cooled off a bit after one of the strongest runs in crypto this year.
+The biggest catalysts, I think, ar...
 
-The pullback came shortly after Arthur Hayes said he exited his entire HYPE position, even though he had recently talked openly about much higher long-term price targets for the project.
+**Likes:** 165 · **Replies:** 49 · **RTs:** 13 · **Quotes:** 5 🔥🔥🔥🔥🔥
+[View post](https://x.com/Kaffchad/status/2062806879668211859)
 
-That obviously got attention...
+### 18. @Route2FI · 14:38 UTC
 
-**Likes:** 137 · **Replies:** 83 · **RTs:** 12 · **Quotes:** 0 🔥🔥🔥🔥🔥
-[View post](https://x.com/Ellaweb_3/status/2062766976980709580)
+> Life without obligations sounds incredible until you live it for long enough. Then you realize humans are not built for endless optionality. We need  goals, and routines to push against fr.
+
+**Likes:** 270 · **Replies:** 8 · **RTs:** 25 · **Quotes:** 0 🔥🔥🔥🔥🔥
+[View post](https://x.com/Route2FI/status/2062906889994649926)
+
+### 19. @Gainzy222 · 02:27 UTC
+
+> It is entirely possible I am the ultimate counter signal
+
+**Likes:** 188 · **Replies:** 36 · **RTs:** 8 · **Quotes:** 0 🔥🔥🔥🔥🔥
+[View post](https://x.com/Gainzy222/status/2063085238608335235)
+
+### 20. @Gainzy222 · 08:22 UTC
+
+> gainzy tweeting rainbet slips
+
+sponsored by zcash
+
+**Likes:** 188 · **Replies:** 40 · **RTs:** 0 · **Quotes:** 0 🔥🔥🔥🔥🔥
+[View post](https://x.com/Gainzy222/status/2062812344179175691)
 
 ---
 
@@ -206,26 +204,30 @@ That obviously got attention...
 Based on the top-performing crypto posts from the last 24 hours, we've identified key trends to inform @Qwinahh's content strategy.
 
 ### Topics Getting Traction
-The current narrative revolves around the **Zcash exploit**, with @tayvano_ highlighting a bug that could exploit the $10 billion protocol. Additionally, **Solana scammers** are being called out, as seen in @0xSisyphus's post. **Ozempic's cultural impact** is also a topic of interest, with @0xSisyphus discussing its first, second, and third-order effects.
+The following narratives are gaining traction:
+* Hyperliquid, with **$4.2M in fees** generated in the last 24 hours, outpacing other chains combined (via @VikingoDigital_)
+* Zcash, with allegations of **coordinated pump and dump schemes** (via @0xSisyphus)
+* AI infrastructure, with **aiUSX** promising to bring financing on-chain (via @solsticefi)
+* Risk management, with **elites hiding the secret to escaping the permanent underclass** (via @0xSisyphus)
 
 ### Formats Working
 Effective formats include:
-* **Contrarian takes**: @0xSisyphus's post on Ozempic's cultural impact and @Gainzy222's humorous, relatable tweets about trading losses.
-* **Data dumps**: @tayvano_'s tweet about the Zcash exploit.
-* **Thread openers**: @WhiteWhaleLabs's post on liquidity in crypto markets.
+* **Data dumps**, such as @VikingoDigital_'s comparison of Hyperliquid fees to other chains
+* **Contrarian takes**, like @0xSisyphus's allegations of Zcash manipulation
+* **Personal anecdotes**, such as @NDIDI_GRAM's story of selling their Hyperliquid airdrop too early
+* **Thread openers**, like @Gainzy222's "new day new me" post
 
 ### Voice Patterns
-Successful posts often feature:
-* **Strong opinions**: @0xSisyphus's scathing remarks about Solana scammers.
-* **Specific numbers**: @tayvano_'s mention of a $10 billion protocol.
-* **Humor**: @Gainzy222's lighthearted tweets about trading losses.
+Posts with strong opinions, specific numbers, and insider knowledge are resonating with audiences. For example:
+* **$342,000** (the value of @NDIDI_GRAM's Hyperliquid airdrop at ATH)
+* **"elites won't tell you this"** (via @0xSisyphus, implying exclusive knowledge)
 
 ### Content Angles
 For @Qwinahh's next posts, consider the following angles:
-1. **Analyzing the Zcash exploit**: Provide an in-depth look at the bug and its potential implications for the protocol.
-2. **The cultural significance of Ozempic**: Explore the first, second, and third-order effects of Ozempic on culture, as discussed by @0xSisyphus.
-3. **The state of liquidity in crypto markets**: Expand on @WhiteWhaleLabs's post and discuss the current liquidity landscape, including potential causes and consequences.
+1. **Hyperliquid's fee dominance**: Explore the implications of Hyperliquid's $4.2M in fees and how it's changing the crypto landscape.
+2. **Zcash pump and dump allegations**: Delve into the controversy surrounding Zcash and the potential consequences for investors.
+3. **AI infrastructure on-chain**: Discuss the potential of aiUSX and how it could revolutionize financing for AI projects, and what this means for the future of crypto and AI.
 
 ---
 
-_Updated daily at ~07:00 UTC by the inspiration agent. Archive: [[history/2026-06-05]]_
+_Updated daily at ~07:00 UTC by the inspiration agent. Archive: [[history/2026-06-06]]_
