@@ -35,6 +35,13 @@
       "topic": "Rysk Premium TVL",
       "outcome": "posted",
       "note": "1966% increase in 24h was significant enough to trigger a post and warrants disclosure of exposure impact."
+    },
+    {
+      "ts": "2026-06-06T20:03:15Z",
+      "signal_type": "alpha",
+      "topic": "Hyperion HYPE unwinding",
+      "outcome": "posted",
+      "note": "Large deal unwinding is a concrete liquidity event that compounds prior selling pressure; significant enough to flag to audience."
     }
   ],
   "noise_signals": [],
