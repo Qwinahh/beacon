@@ -45,5 +45,5 @@ jobs:
           git config user.email "bot@qwinahh.local"
           git add data/state.json data/memory/ data/projects/ data/vault/
           git diff --cached --quiet || git commit -m "chore: update bot state + vault [skip ci]"
-          git pull --rebase -X ours origin main 2>/dev/null || true
+          git pull --no-rebase -X ours origin main 2>/dev/null || true
           git push
