@@ -35,6 +35,13 @@
         "observation": "Crypto Council for Innovation launched coalition pushing for regulatory clarity on vaults. Historical pattern: last similar regulatory clarity push coincided with 10% BTC dominance drop over one month.",
         "source": "bot"
       }
+    ],
+    "Rysk": [
+      {
+        "ts": "2026-06-06T16:00:39Z",
+        "observation": "Rysk Premium TVL surged 1966.4% in 24h—an extreme spike suggesting either a major liquidity event, strategy rebalance, or market movement that warrants close monitoring of sustainability.",
+        "source": "bot"
+      }
     ]
   }
 }
