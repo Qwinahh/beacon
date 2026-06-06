@@ -22,9 +22,9 @@ import time
 from typing import Optional
 
 from bot.brain.llm import complete as llm_complete
-from bot.config import CLAUDE_MAX_TOKENS
+from bot.config import CLAUDE_MAX_TOKENS, QUOTE_TWEET_COOLDOWN_HOURS
 from bot.state import State
-from bot.x.client import get_mentions, post_tweet
+from bot.x.client import get_mentions, post_tweet, quote_tweet
 
 log = logging.getLogger(__name__)
 
@@ -271,6 +271,244 @@ def run_own_thread_replies(state: State) -> int:
     state._data["threaded_tweet_ids"] = list(already_threaded)[-200:]
     thread_daily[today] = count_today
     return sent
+
+
+# ---------------------------------------------------------------------------
+# Quote tweet
+# ---------------------------------------------------------------------------
+
+# Minimum likes for a post to be considered worth quote-tweeting.
+_QT_LIKES_MIN_SOFT = 50    # required for _quote_tweet_with_take() to proceed
+_QT_LIKES_MIN_HARD = 100   # required for run_quote_tweet() candidate selection
+
+# Keyword queries for finding quote-tweet candidates. Higher min_faves than
+# trend.py because we want established engagement, not just freshness.
+_QT_KEYWORD_QUERIES = [
+    "hyperliquid defi lang:en min_faves:100",
+    "airdrop points farm defi lang:en min_faves:80",
+    "defillama tvl protocol lang:en min_faves:100",
+    "perp dex funding rate crypto lang:en min_faves:100",
+    "solana defi yield lang:en min_faves:150",
+]
+
+_QUOTE_TWEET_SYSTEM = """\
+You write quote-tweet commentary for @Qwinahh — a crypto account that trades perps,
+farms airdrops, and moves into DeFi protocols before narratives form.
+
+A quote tweet is NOT amplification. It is you adding your own specific take that
+the reader wouldn't have gotten from the original alone.
+
+RULES:
+- Under 180 characters. One observation only. One sentence is fine.
+- Must ADD something the original didn't say: a mechanism it missed, a counterpoint
+  with data, a specific consequence, a direct implication for someone farming/trading this.
+- Do NOT praise or agree without substance. Do NOT say "great take", "this", or "exactly".
+- Do NOT summarize what the original said — the reader can see it.
+- No hashtags. No emojis. Sound like someone with real skin in the game.
+- If you hold a relevant position, end with (position disclosed).
+- If you cannot add something genuinely new and specific: respond with exactly SKIP.
+
+OUTPUT FORMAT — respond with exactly one of:
+  TAKE: [your commentary under 180 chars]
+  SKIP: [one-word reason: vague/no_value/agree_only/price_only]
+
+Examples:
+  TAKE: That TVL is almost entirely protocol-owned liquidity. Strip it and organic demand is half what the headline shows.
+  TAKE: Seen this. The farm math breaks when points end. Check what happened to the previous cohort before sizing in.
+  SKIP: price_only
+"""
+
+
+async def _fetch_quote_candidates_async() -> list[dict]:
+    """
+    Fetch high-engagement crypto posts suitable for quote-tweeting via twscrape.
+
+    Returns posts with >_QT_LIKES_MIN_HARD likes from the last 24h, sorted by
+    engagement descending.
+    """
+    cookies = os.environ.get("X_SCRAPER_COOKIES", "").strip()
+    if not cookies:
+        return []
+
+    try:
+        from twscrape import API
+    except ImportError:
+        log.debug("twscrape not installed — quote tweet candidate fetch skipped.")
+        return []
+
+    api = API(os.path.join(tempfile.gettempdir(), "twscrape_pool.db"))
+    try:
+        await api.pool.add_account(
+            username="beacon_qt_scraper",
+            password="placeholder",
+            email="placeholder@placeholder.com",
+            email_password="placeholder",
+            cookies=cookies,
+        )
+    except Exception as exc:
+        log.debug("twscrape setup error (qt): %s", exc)
+        return []
+
+    results: list[dict] = []
+    now = time.time()
+    cutoff_24h = now - 86_400  # 24 hour window — QTs don't need to be fresh
+
+    for query in _QT_KEYWORD_QUERIES:
+        try:
+            async for tweet in api.search(
+                f"{query} -is:retweet",
+                limit=20,
+                kv={"product": "Top"},  # Top posts, not Latest, for high engagement
+            ):
+                ts = getattr(tweet, "date", None)
+                if ts and ts.timestamp() < cutoff_24h:
+                    continue
+
+                content = tweet.rawContent or ""
+                if content.startswith("RT @"):
+                    continue
+
+                likes    = getattr(tweet, "likeCount", 0) or 0
+                retweets = getattr(tweet, "retweetCount", 0) or 0
+
+                if likes < _QT_LIKES_MIN_HARD:
+                    continue
+
+                author = tweet.user.username if tweet.user else "unknown"
+                # Skip our own posts — no value in quote-tweeting yourself
+                if author.lower() == _OWN_USERNAME.lower():
+                    continue
+
+                results.append({
+                    "id":       str(tweet.id),
+                    "text":     content,
+                    "author":   author,
+                    "likes":    likes,
+                    "replies":  getattr(tweet, "replyCount", 0) or 0,
+                    "retweets": retweets,
+                    "url":      f"https://x.com/{author}/status/{tweet.id}",
+                })
+        except Exception as exc:
+            log.debug("QT keyword search error for '%s': %s", query, exc)
+
+    # Deduplicate by tweet ID and sort by engagement
+    seen_ids: set[str] = set()
+    unique = []
+    for post in results:
+        if post["id"] not in seen_ids:
+            seen_ids.add(post["id"])
+            unique.append(post)
+
+    unique.sort(key=lambda p: p["likes"] + p["retweets"] * 2, reverse=True)
+    return unique
+
+
+def _quote_tweet_with_take(post_data: dict) -> Optional[str]:
+    """
+    Generate a quote-tweet commentary for a high-engagement post.
+
+    Returns the commentary text (under 180 chars) or None if rejected.
+    post_data must have: id, text, author, likes. Requires likes > _QT_LIKES_MIN_SOFT.
+    """
+    if post_data.get("likes", 0) < _QT_LIKES_MIN_SOFT:
+        return None
+
+    prompt = (
+        f"Tweet by @{post_data['author']}:\n\n{post_data['text']}\n\n"
+        "Write a quote-tweet take that adds something specific. "
+        "Use the TAKE:/SKIP: format from the system prompt."
+    )
+    raw = llm_complete(
+        system=_QUOTE_TWEET_SYSTEM,
+        user=prompt,
+        max_tokens=220,
+        temperature=0.78,
+    )
+    if not raw:
+        return None
+
+    raw = raw.strip()
+    if raw.upper().startswith("TAKE:"):
+        text = raw[5:].strip()
+    elif raw.upper().startswith("SKIP"):
+        log.debug("QT take skipped by model for @%s post.", post_data.get("author"))
+        return None
+    else:
+        text = raw  # unstructured fallback
+
+    if not text or len(text) < 20:
+        return None
+
+    if len(text) > 180:
+        text = text[:177].rsplit(".", 1)[0] + "."
+
+    from bot.brain.authenticity_judge import passes as judge_passes
+    ok, result = judge_passes(text, content_type="reply")
+    if not ok:
+        log.debug(
+            "QT take failed authenticity (score=%d) — skipping: %s",
+            result["score"], text[:60],
+        )
+        return None
+
+    return text
+
+
+def run_quote_tweet(state: State) -> int:
+    """
+    Find one high-engagement crypto post and quote-tweet it with a specific take.
+
+    Gated by QUOTE_TWEET_COOLDOWN_HOURS (6h). Only posts with >100 likes qualify.
+    Tracks posted quote tweet IDs in state to avoid repeating.
+
+    Returns 1 if a quote tweet was posted, 0 otherwise.
+    """
+    now = time.time()
+
+    # Cooldown check
+    elapsed_h = (now - state.last_quote_tweet_ts()) / 3600
+    if elapsed_h < QUOTE_TWEET_COOLDOWN_HOURS:
+        log.debug(
+            "Quote tweet cooldown: %.1fh elapsed, %.1fh required.",
+            elapsed_h, QUOTE_TWEET_COOLDOWN_HOURS,
+        )
+        return 0
+
+    cookies = os.environ.get("X_SCRAPER_COOKIES", "").strip()
+    if not cookies:
+        log.debug("X_SCRAPER_COOKIES not set — quote tweet skipped.")
+        return 0
+
+    candidates = _run_async_engage(_fetch_quote_candidates_async()) or []
+    if not candidates:
+        log.info("No quote tweet candidates found this run.")
+        return 0
+
+    # Pick the first candidate that hasn't been quote-tweeted yet
+    for post in candidates:
+        tweet_id = post["id"]
+        if state.already_quote_tweeted(tweet_id):
+            continue
+
+        take = _quote_tweet_with_take(post)
+        if not take:
+            # Mark as seen so we don't retry the same post next run
+            state.mark_quote_tweeted(tweet_id)
+            log.debug("No viable take for @%s post %s — marking seen.", post["author"], tweet_id)
+            continue
+
+        sent_id = quote_tweet(take, quote_tweet_id=tweet_id)
+        if sent_id:
+            state.mark_quote_tweeted(tweet_id)
+            state.set_last_quote_tweet_ts(now)
+            log.info(
+                "Quote-tweeted @%s (%d likes) → %s: %s",
+                post["author"], post["likes"], sent_id, take[:70],
+            )
+            return 1
+
+    log.info("Quote tweet: no viable candidate passed quality gate this run.")
+    return 0
 
 
 # ---------------------------------------------------------------------------

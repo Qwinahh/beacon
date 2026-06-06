@@ -33,6 +33,9 @@ POSTING_WINDOWS: Final[list[tuple[int, int]]] = [
 # Random jitter added to posting time so the schedule never looks mechanical.
 POST_JITTER_SECONDS: Final[int] = 900  # ±15 min
 
+# Minimum hours between quote tweets. One thoughtful QT per 6h is plenty.
+QUOTE_TWEET_COOLDOWN_HOURS: Final[float] = 6.0
+
 
 # ---------------------------------------------------------------------------
 # Content quality gate

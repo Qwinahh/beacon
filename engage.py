@@ -29,6 +29,7 @@ import os
 from bot.state import State
 from bot.x.engage import run as run_mentions
 from bot.x.engage import run_own_thread_replies
+from bot.x.engage import run_quote_tweet
 from bot.x.follow import run_follow_cycle
 from bot.x.trend import run as run_trends
 
@@ -76,6 +77,7 @@ def main() -> None:
 
     mention_replies = run_mentions(state)
     trend_replies   = run_trends(state)
+    quote_tweets    = run_quote_tweet(state)
     thread_replies  = run_own_thread_replies(state)
     follows         = run_follow_cycle(state)
 
@@ -83,8 +85,9 @@ def main() -> None:
 
     log.info(
         "Engagement run complete — "
-        "mention replies: %d | outbound replies: %d | thread replies: %d | follows: %d",
-        mention_replies, trend_replies, thread_replies, follows,
+        "mention replies: %d | outbound replies: %d | quote tweets: %d | "
+        "thread replies: %d | follows: %d",
+        mention_replies, trend_replies, quote_tweets, thread_replies, follows,
     )
 
 

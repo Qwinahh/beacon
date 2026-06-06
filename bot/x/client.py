@@ -70,6 +70,35 @@ def post_tweet(text: str, reply_to_id: Optional[str] = None) -> Optional[str]:
         return None
 
 
+def quote_tweet(text: str, quote_tweet_id: str) -> Optional[str]:
+    """
+    Post a quote tweet and return its ID, or None on failure.
+
+    Args:
+        text:           The commentary text (≤280 characters).
+        quote_tweet_id: The ID of the tweet being quoted.
+    """
+    if len(text) > 280:
+        log.error("Quote tweet exceeds 280 characters (%d). Aborting.", len(text))
+        return None
+
+    client = get_client()
+    try:
+        response = client.create_tweet(text=text, quote_tweet_id=quote_tweet_id)
+        tweet_id = str(response.data["id"])
+        log.info("Quote-tweeted %s → new tweet %s: %s", quote_tweet_id, tweet_id, text[:60])
+        return tweet_id
+    except tweepy.errors.Forbidden as exc:
+        log.error("Quote tweet rejected (Forbidden): %s", exc)
+        return None
+    except tweepy.errors.TooManyRequests:
+        log.warning("Rate limited on quote tweet. Will retry on next run.")
+        return None
+    except tweepy.errors.TweepyException as exc:
+        log.error("Tweepy error posting quote tweet: %s", exc)
+        return None
+
+
 def get_mentions(since_id: Optional[str] = None) -> list[dict]:
     """
     Fetch recent mentions of the authenticated account.

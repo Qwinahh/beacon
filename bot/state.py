@@ -205,3 +205,23 @@ class State:
         posted: list[str] = self._data.setdefault("portfolio_posted", [])
         if key not in posted:
             posted.append(key)
+
+    # ------------------------------------------------------------------
+    # Quote tweet tracking
+    # ------------------------------------------------------------------
+
+    def last_quote_tweet_ts(self) -> float:
+        return float(self._data.get("last_quote_tweet_ts", 0))
+
+    def set_last_quote_tweet_ts(self, ts: float) -> None:
+        self._data["last_quote_tweet_ts"] = ts
+
+    def already_quote_tweeted(self, tweet_id: str) -> bool:
+        return tweet_id in self._data.get("quote_tweeted_ids", [])
+
+    def mark_quote_tweeted(self, tweet_id: str) -> None:
+        ids: list[str] = self._data.setdefault("quote_tweeted_ids", [])
+        if tweet_id not in ids:
+            ids.append(tweet_id)
+        # Keep last 100 — more than enough for dedup purposes
+        self._data["quote_tweeted_ids"] = ids[-100:]
