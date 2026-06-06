@@ -43,3 +43,8 @@ follow-on opportunities (HLP LP, builder grants, ecosystem tokens).
 ## Links
 - DeFiLlama: https://defillama.com/protocol/hyperliquid
 - App: https://app.hyperliquid.xyz
+
+
+---
+
+→ [[index]] · [[dashboard]]

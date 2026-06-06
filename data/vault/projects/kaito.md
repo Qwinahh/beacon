@@ -18,26 +18,29 @@ be messy before it's clean. The teams and VCs paying attention are the
 right signal, not the retail narrative.
 
 ## Stance
-Watching only. Yaps and the Yapper Leaderboard were shut down in 2026
-after X revoked Kaito's API access. Kaito Studio replaced Yaps for brand
-monitoring, but there is no active on-chain farming mechanism. The InfoFi
-thesis is still intact but the farming path is closed until a new airdrop
-mechanism is announced.
+Watching only. Yaps (the points farming leaderboard) was shut down in early 2026
+after X revoked API access for apps that reward posting. Kaito Studio replaced it —
+now a selective creator-brand marketplace, not a free farm.
+
+The on-platform engagement farming meta is over. The InfoFi narrative is intact
+but the farming angle that drove the token pump is gone. Watch for: Kaito Studio
+partner deals with major protocols, KAITO tokenomics changes, revival of any
+on-chain attention measurement.
 
 ## Risks
 - Circular engagement farming cannibalising genuine signal
 - Protocol revenue model still unclear
-- No active farming mechanism means no way to accumulate points
+- Farm crowding makes math worse each week
 
 ## Observations
 <!-- Bot appends new observations below. Newest at bottom. -->
 - **2026-06-01** — Initial vault entry. S2 engagement-to-point ratio ~3x worse than S1.
-- **2026-06-05** — Yaps and Yapper Leaderboard shut down after X API revocation. Kaito Studio is the replacement product. No active airdrop farming mechanism.
+- **2026-06-05** — Yaps and Yapper Leaderboard shut down after X API revocation. Kaito Studio launched as replacement — paid creator marketplace, not free farm. Farming meta over.
 
 ## Airdrop
-- Status: watching — no active mechanism since Yaps shutdown
-- Worth farming: no active farm available
-- Actions: monitor for new airdrop mechanism announcement
+- Status: watching (farming meta over — Yaps shut down 2026)
+- Worth farming: no active mechanism currently
+- Actions: monitor Kaito Studio announcements; watch for any new engagement-to-reward mechanism
 
 ## X Consensus
 - Sentiment: mixed
@@ -46,3 +49,8 @@ mechanism is announced.
 ## Links
 - App: https://kaito.ai
 - DeFiLlama: https://defillama.com/protocol/kaito
+
+
+---
+
+→ [[index]] · [[dashboard]]

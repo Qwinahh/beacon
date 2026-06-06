@@ -123,18 +123,24 @@ SORT conviction DESC
 
 ---
 
+## 📊 Growth Performance
+
+*Engagement data is tracked in `data/growth/metrics.json`. Dataview cannot read JSON files directly — check the raw file or wait for the weekly growth report in the [[log/]] folder.*
+
+---
+
 ## 🧠 Knowledge Base
 
 Confirmed facts the bot has learned. Click any file to read it.
 
+Core references: [[crypto-history]] · [[defi-primitives]] · [[exploit-history]] · [[narrative-cycles]] · [[x-growth-strategy]]
+
 ```dataview
 TABLE
   category AS "Category",
-  last_updated AS "Updated",
-  source_tier AS "Source Tier"
+  last_updated AS "Updated"
 FROM "knowledge"
-WHERE confirmed = true
-  AND type = "knowledge"
+WHERE file.name != "README"
 SORT last_updated DESC
 ```
 
@@ -160,7 +166,7 @@ LIMIT 20
 ## 🔔 Community Signals (Unconfirmed)
 
 Community sentiment signals — Reddit, X/CT, Discord, Telegram.
-**Not facts.** Use as context only. Never trade based on these alone.
+**Not facts.** Use as context only.
 
 ```dataview
 LIST
@@ -169,8 +175,27 @@ SORT file.name DESC
 LIMIT 7
 ```
 
+*No signals yet — bot populates this as it ingests community data.*
+
+---
+
+---
+
+## 💡 Daily Inspiration Feed
+
+What's performing well in the DeFi/crypto space today — raw material for your personal account.
+Updated every morning at ~07:00 UTC.
+
+→ [[inspiration/trending|Today's Top Posts]] — top 20 posts by engagement with direct links
+→ [[inspiration/patterns|What's Working]] — LLM editorial brief + topic and format breakdown
+
 ---
 
 *Dashboard updates automatically when Obsidian Git pulls the latest bot run from GitHub.*
 *Learner agent runs 2x per day — knowledge/events/ updates 6am and 5pm UTC.*
+*Growth analysis runs every Sunday 9am UTC → writes to growth/ folder.*
 *To refresh manually: Cmd/Ctrl+R in Obsidian.*
+
+---
+
+→ [[index]] · [[projects/hyperliquid]] · [[projects/kaito]] · [[projects/meteora]] · [[narratives/perps-meta]] · [[narratives/airdrop-meta]]

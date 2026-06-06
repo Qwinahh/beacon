@@ -12,3 +12,8 @@ related_project:
 **Verified**: Tier 2 source (established research/media). no contradiction found
 
 Bessent backs summer push for Clarity Act, says bitcoin reserve moving at ‘deliberate speed’
+
+
+---
+
+**Related**: [[dashboard]] · [[index]]

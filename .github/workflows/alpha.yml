@@ -8,6 +8,9 @@ on:
     - cron: "*/30 * * * *"
   workflow_dispatch:
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
 jobs:
   alpha:
     runs-on: ubuntu-latest
@@ -35,16 +38,24 @@ jobs:
           X_API_SECRET:         ${{ secrets.X_API_SECRET }}
           X_ACCESS_TOKEN:       ${{ secrets.X_ACCESS_TOKEN }}
           X_ACCESS_SECRET:      ${{ secrets.X_ACCESS_SECRET }}
+          GROQ_API_KEY:         ${{ secrets.GROQ_API_KEY }}
+          CEREBRAS_API_KEY:     ${{ secrets.CEREBRAS_API_KEY }}
+          OPENROUTER_API_KEY:   ${{ secrets.OPENROUTER_API_KEY }}
           ANTHROPIC_API_KEY:    ${{ secrets.ANTHROPIC_API_KEY }}
           GITHUB_TOKEN:         ${{ secrets.GITHUB_TOKEN }}
           X_SCRAPER_COOKIES:    ${{ secrets.X_SCRAPER_COOKIES }}
+          WHALE_ALERT_API_KEY:  ${{ secrets.WHALE_ALERT_API_KEY }}
+          DROPSTAB_API_KEY:     ${{ secrets.DROPSTAB_API_KEY }}
         run: python post.py --alpha-only
 
       - name: Commit state and memory
         run: |
           git config user.name  "qwinahh-bot"
           git config user.email "bot@qwinahh.local"
-          git add data/state.json data/memory/ data/vault/
-          git diff --cached --quiet || git commit -m "chore: alpha fast-track state + vault [skip ci]"
+          git add data/state.json data/memory/ data/projects/ data/vault/
+          git diff --cached --quiet || git commit -m "chore: alpha state + vault [skip ci]"
+          # Pull-rebase before push — alpha.yml and post.yml can run simultaneously
+          # and both push state.json; without this one will fail with non-fast-forward
+          # and the other's write may corrupt the file mid-push.
           git pull --no-rebase -X ours origin main 2>/dev/null || true
           git push

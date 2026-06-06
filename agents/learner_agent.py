@@ -190,6 +190,36 @@ def _detect_narrative_trend(signals: list[dict]) -> dict[str, int]:
 
 
 # ---------------------------------------------------------------------------
+# Project detection — maps article text to known project slugs
+# ---------------------------------------------------------------------------
+
+# Maps keyword → vault project slug (must match data/vault/projects/<slug>.md)
+_PROJECT_KEYWORDS: dict[str, list[str]] = {
+    "hyperliquid": ["hyperliquid", "hype token", "hlp", "hip-3", "hip-2"],
+    "kaito":       ["kaito", "yap", "yappers", "infofi"],
+    "meteora":     ["meteora", "dlmm", "dynamic liquidity"],
+    "jupiter":     ["jupiter", "jup", "jlp"],
+    "layerzero":   ["layerzero", "layer zero", "zro"],
+    "arbitrum":    ["arbitrum", "arb token"],
+    "optimism":    ["optimism", "op token", "superchain"],
+    "base":        ["base chain", "base network", "base l2"],
+    "eigenlayer":  ["eigenlayer", "eigen", "restaking", "avs"],
+    "solana":      ["solana", "sol token"],
+    "ethereum":    ["ethereum", "eth"],
+    "bitcoin":     ["bitcoin", "btc"],
+}
+
+
+def _detect_project_from_text(text: str) -> Optional[str]:
+    """Return the vault project slug if a known project is mentioned in text."""
+    lower = text.lower()
+    for slug, keywords in _PROJECT_KEYWORDS.items():
+        if any(kw in lower for kw in keywords):
+            return slug
+    return None
+
+
+# ---------------------------------------------------------------------------
 # Main learner run
 # ---------------------------------------------------------------------------
 
@@ -271,6 +301,7 @@ def run_learning_cycle() -> dict:
                 claims.append(Claim(
                     text=article["title"],
                     source=article["link"] or feed_url,
+                    related_project=_detect_project_from_text(article["title"]),
                 ))
         except Exception as e:
             summary["errors"].append(f"RSS {feed_url}: {e}")

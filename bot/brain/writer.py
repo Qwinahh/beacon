@@ -19,11 +19,13 @@ from typing import Optional, Union
 from bot.brain.context import build_system_prompt, build_writer_context
 from bot.config import CLAUDE_MAX_TOKENS, CLAUDE_MODEL, TEMPLATE_FALLBACK
 from bot.sources.defillama import RaiseItem, TvlMoverItem
+from bot.sources.dropstab import UnlockItem
 from bot.sources.rss import FeedItem
+from bot.sources.whale_alert import WhaleItem
 
 log = logging.getLogger(__name__)
 
-CandidateItem = Union[FeedItem, RaiseItem, TvlMoverItem]
+CandidateItem = Union[FeedItem, RaiseItem, TvlMoverItem, WhaleItem, UnlockItem]
 
 # Phrases that signal a generic, low-value post. If the generated tweet
 # contains any of these, it gets rejected and we skip rather than post slop.
@@ -113,6 +115,17 @@ def _has_bad_opener(text: str) -> bool:
     lower = text.lower().strip()
     return any(lower.startswith(opener) for opener in _REJECT_OPENERS)
 
+
+# Patterns that look like press-release headlines — reject these.
+_HEADLINE_PATTERNS = [
+    r"^[A-Z][^.!?]*raises \$",       # "[Project] raises $X"
+    r"^[A-Z][^.!?]*launches ",        # "[Project] launches [thing]"
+    r"^[A-Z][^.!?]*announces ",       # "[Project] announces [thing]"
+    r"^[A-Z][^.!?]*partners with ",   # "[Project] partners with [X]"
+    r"^breaking:",                     # "Breaking:"
+    r"^just in:",                      # "Just in:"
+]
+
 # A post must contain at least one of these to be considered substantive.
 # Numbers count automatically if present as digits.
 _SUBSTANCE_PATTERNS = [
@@ -146,13 +159,24 @@ def _build_item_summary(item: CandidateItem) -> str:
             f"Current TVL: ${item.tvl_usd:,.0f}\n"
             f"Category: {item.category}"
         )
-    if isinstance(item, FeedItem) and item.kind == "whale":
+    if isinstance(item, WhaleItem):
         return (
             f"Type: whale transaction\n"
-            f"Transaction: {item.title}\n"
-            f"Context: A large on-chain movement detected by Whale Alert. "
-            f"Frame the significance — who is likely moving funds and why, "
-            f"what it might signal about sentiment or positioning."
+            f"Summary: {item.summary()}\n"
+            f"Chain: {item.chain}\n"
+            f"Amount: ${item.amount_usd / 1_000_000:.1f}M USD\n"
+            f"From: {item.from_name or item.from_type}\n"
+            f"To: {item.to_name or item.to_type}"
+        )
+    if isinstance(item, UnlockItem):
+        usd_str = f" (~${item.amount_usd / 1_000_000:.1f}M)" if item.amount_usd else ""
+        return (
+            f"Type: token unlock event\n"
+            f"Project: {item.project} ({item.symbol})\n"
+            f"Amount: {item.amount_tokens:,.0f} tokens{usd_str}\n"
+            f"Unlocks in: {item.days_until:.1f} days\n"
+            f"Recipient: {item.recipient}\n"
+            f"Type: {item.unlock_type}"
         )
     return f"Type: news\nHeadline: {item.title}\nSource: {item.source}"
 
@@ -236,6 +260,28 @@ _FORMAT_PALETTE = [
      "detail that doesn't add up. Example: Protocol announced 'fair launch' "
      "with 40% to team at TGE. 'Fair' is doing a lot of work there.\n"
      "Under 200 chars."),
+
+    ("hot_take",
+     "Write a HOT TAKE: your actual opinion on what this means for the space, "
+     "traders, or protocol users. First person. Specific. Willing to be wrong. "
+     "Example: 'Everyone is bullish on EigenLayer restaking but the AVS demand "
+     "side is still basically zero. Restaking a yield with no actual users is "
+     "just a longer-dated risk.'\nUnder 220 chars. Must be a take, not a fact."),
+
+    ("alpha_tip",
+     "Write an ALPHA TIP: what someone should actually DO based on this information. "
+     "Specific action, specific timing, specific reasoning. First person or second person. "
+     "Example: 'If you're farming Hyperliquid, check your open referral slots — "
+     "they reset monthly and most people are leaving points on the table.'\n"
+     "Under 200 chars. Must be actionable, not just observational."),
+
+    ("thread_hook",
+     "Write a THREAD HOOK — the first tweet of a thread that makes people want "
+     "to read more. End with a thread emoji (this one time only — threads justify it). "
+     "State a specific observation or tension that demands explanation. "
+     "Example: 'Hyperliquid just did $200B in monthly volume. It has 12 employees. "
+     "Here's what that actually means for every other perp DEX'\n"
+     "Under 200 chars. Must create genuine curiosity about what comes next."),
 ]
 
 
@@ -279,12 +325,15 @@ _FORMAT_EXAMPLES: dict[str, list[str]] = {
 
 
 def _pick_format(recent_formats: list[str]) -> tuple[str, str]:
-    """Pick a format not used in the last 2 posts."""
+    """Pick a format, weighted by past engagement. Avoids last 2 used."""
+    from bot.brain.format_weights import get_weights
     recent = set((recent_formats or [])[-2:])
     options = [(n, i) for n, i in _FORMAT_PALETTE if n not in recent]
     if not options:
         options = _FORMAT_PALETTE
-    return _random.choice(options)
+    weights = get_weights()
+    w = [weights.get(n, 1.0) for n, _ in options]
+    return _random.choices(options, weights=w, k=1)[0]
 
 
 def _user_prompt(
@@ -327,39 +376,42 @@ def _user_prompt(
 
     parts += [
         "",
-        f"## Format directive: {format_name.upper().replace('_', ' ')}",
+        "## Your task",
         "",
-        format_instruction,
+        "1. Run the editorial test from the system prompt.",
+        "   -- If there is a valid reason (A-F) to post this, state it on line 1.",
+        "   -- If not, respond with exactly: SKIP",
         "",
-        "## Hard constraints (tweet rejected if any are broken)",
-        "1. Must contain at least one specific number, dollar amount, percentage, or named mechanic.",
-        "2. Must express a take — not just describe what happened.",
-        "3. No banned phrases: 'worth watching', 'game changer', 'bullish signal', 'exciting', 'huge'.",
-        "4. Under 270 characters. No hashtags. No URLs.",
-        "5. Output ONLY the tweet text. No intro, no label, no quotes around it.",
+        f"2. If posting, use this format style: {format_name.upper().replace('_', ' ')}",
+        f"   {format_instruction}",
         "",
-        "## Real-voice examples (study the tone, not the content)",
+        "## Output format (two lines only)",
+        "REASON: [A/B/C/D/E/F] -- [one sentence: what specific value does this give the reader]",
+        "[tweet text]",
         "",
-        "GOOD — data observation:",
-        "  Hyperliquid OI up 40% to $4.2B in 2 weeks. HLP hasn't blown out. Model holding under real stress.",
+        "Or: SKIP",
         "",
-        "GOOD — contrarian:",
-        "  Everyone calling Kaito S2 a layup. Engagement-to-point ratio is 3x worse than S1. Farm is crowded.",
+        "## Hard constraints on the tweet",
+        "- Must contain at least one specific number, percentage, dollar amount, or named mechanic",
+        "- Must express a take -- not just describe what happened",
+        "- Under 270 characters. No hashtags. No URLs. No quotes around the output.",
         "",
-        "GOOD — farm update:",
-        "  Been LP'ing Meteora for 6 weeks. MET unlock hits in 48h — watching pool incentives before I adjust. (position disclosed)",
+        "## Examples of the output format",
         "",
-        "GOOD — short take:",
-        "  EigenLayer has 50 AVSs now. Fee revenue still basically zero.",
+        "REASON: B -- Hyperliquid OI is up 40% but HLP utilisation is low, giving traders an edge on timing",
+        "Hyperliquid OI up 40% to $4.2B. HLP utilisation still at 34%. More capital than flow to absorb it.",
         "",
-        "GOOD — callout:",
-        "  Protocol announced 'fair launch' with 40% to team at TGE. 'Fair' is doing a lot of work there.",
+        "REASON: C -- Kaito S2 farm math is 3x worse than S1 so people farming blind are wasting capital",
+        "Everyone calling Kaito S2 a layup. Engagement-to-point ratio is 3x worse than S1. Farm is crowded.",
         "",
-        "BAD (never write like these):",
-        "  Hyperliquid is looking really strong right now, worth keeping an eye on.",
-        "  DeFi TVL is up this week. Exciting times for the space.",
-        "  This raise could be a game changer for the sector.",
-        "  The latest developments in the crypto space are very promising.",
+        "REASON: E -- MET unlock in 48h is time-sensitive for anyone currently LP-ing Meteora",
+        "Been LP'ing Meteora 6 weeks. MET unlock in 48h -- watching pool incentive changes before I adjust. (position disclosed)",
+        "",
+        "REASON: F -- EigenLayer AVS count vs zero fee revenue is a contrarian data point vs the hype",
+        "EigenLayer has 50 AVSs now. Fee revenue still basically zero.",
+        "",
+        "SKIP",
+        "(used when: generic news, no specific implication, nothing that changes how someone would position)",
     ]
 
     return "\n".join(parts)
@@ -369,14 +421,23 @@ def _user_prompt(
 # Quality validation
 # ---------------------------------------------------------------------------
 
+def _is_headline(text: str) -> bool:
+    """Return True if the tweet reads like a press-release headline."""
+    for pattern in _HEADLINE_PATTERNS:
+        if re.match(pattern, text.strip(), re.IGNORECASE):
+            return True
+    return False
+
+
 def _validate_quality(text: str) -> tuple[bool, str]:
     """
     Returns (is_valid, reason_if_rejected).
 
     Checks:
     1. No generic low-value phrases.
-    2. Contains at least one specific number or data point.
-    3. Minimum length (a post under 60 chars can't say anything substantive).
+    2. Not a press-release headline.
+    3. Contains at least one specific number or data point.
+    4. Minimum length (a post under 60 chars can't say anything substantive).
     """
     lower = text.lower()
 
@@ -386,6 +447,9 @@ def _validate_quality(text: str) -> tuple[bool, str]:
 
     if _has_bad_opener(text):
         return False, "AI-sounding opener"
+
+    if _is_headline(text):
+        return False, "Reads like a news headline — add angle or implication"
 
     has_substance = any(re.search(p, text) for p in _SUBSTANCE_PATTERNS)
     if not has_substance:
@@ -404,11 +468,16 @@ def _validate_quality(text: str) -> tuple[bool, str]:
 def _fallback_template(item: CandidateItem) -> str:
     if isinstance(item, RaiseItem):
         amt = f"${item.amount:.0f}M" if item.amount else "an undisclosed amount"
-        return f"{item.name} raised {amt} ({item.round_name}). Worth watching."
+        lead = f" Lead: {item.category}." if item.category else ""
+        return f"{item.name} raised {amt} ({item.round_name}).{lead}"
     if isinstance(item, TvlMoverItem):
         direction = "up" if item.change_pct > 0 else "down"
-        return f"{item.name} TVL {direction} {abs(item.change_pct):.1f}% in 24h. On-chain flows don't lie."
-    return f"{item.title[:220]}."
+        return f"{item.name} TVL {direction} {abs(item.change_pct):.1f}% in 24h to ${item.tvl_usd/1e6:.0f}M."
+    if isinstance(item, WhaleItem):
+        return item.summary()
+    if isinstance(item, UnlockItem):
+        return item.summary()
+    return f"{item.title[:240]}"
 
 
 # ---------------------------------------------------------------------------
@@ -456,18 +525,40 @@ def generate(
 
     text = text.strip()
 
+    # Handle editorial SKIP -- model decided there's no reason to post this.
+    if text.upper().startswith("SKIP"):
+        log.info("Writer editorial test: no valid reason to post this item. Skipping.")
+        return None, format_name
+
+    # Parse two-line output: "REASON: X -- explanation\ntweet text"
+    lines = text.splitlines()
+    if lines and lines[0].upper().startswith("REASON:"):
+        reason_line = lines[0]
+        # Extract letter and explanation for logging
+        reason_part = reason_line[len("REASON:"):].strip()
+        log.info("Editorial reason: %s", reason_part[:80])
+        # The tweet is everything after the REASON line
+        text = "\n".join(lines[1:]).strip()
+    else:
+        # Model didn't follow the format -- treat the whole output as the tweet
+        log.debug("Writer did not output REASON line -- using full output as tweet.")
+
     # Strip wrapping quotes if the model added them.
     if len(text) >= 2 and text[0] == '"' and text[-1] == '"':
         text = text[1:-1].strip()
+
+    if not text:
+        log.warning("Writer returned empty tweet after parsing.")
+        return None, format_name
 
     # Hard character limit.
     if len(text) > 279:
         text = text[:276].rsplit(".", 1)[0] + "."
 
     # Quality gate -- reject generic output rather than posting slop.
-    valid, reason = _validate_quality(text)
+    valid, reject_reason = _validate_quality(text)
     if not valid:
-        log.warning("Tweet rejected by quality gate: %s | tweet: %s", reason, text[:80])
+        log.warning("Tweet rejected by quality gate: %s | tweet: %s", reject_reason, text[:80])
         return None, format_name
 
     # AUTHENTICITY GATE — second-pass LLM check for AI-sounding content.

@@ -7,6 +7,8 @@ All X operations go through this module — nothing else imports tweepy directly
 from __future__ import annotations
 
 import logging
+import os
+import tempfile
 import time
 from typing import Optional
 
@@ -72,40 +74,105 @@ def get_mentions(since_id: Optional[str] = None) -> list[dict]:
     """
     Fetch recent mentions of the authenticated account.
 
-    Requires X API Basic tier or above.
+    Tries the official API first (Basic tier). On Forbidden, falls back to
+    twscrape cookie-based search (Free tier) via X_SCRAPER_COOKIES env var.
     Returns a list of tweet dicts with keys: id, text, author_id, conversation_id.
     """
+    # --- Try official API (Basic tier) ---
     client = get_client()
     try:
         me = client.get_me()
-        if not me or not me.data:
-            return []
-        user_id = me.data.id
-
-        kwargs: dict = {
-            "id": user_id,
-            "tweet_fields": ["conversation_id", "author_id", "created_at"],
-            "max_results": 20,
-        }
-        if since_id:
-            kwargs["since_id"] = since_id
-
-        resp = client.get_users_mentions(**kwargs)
-        if not resp.data:
-            return []
-
-        return [
-            {
-                "id": str(t.id),
-                "text": t.text,
-                "author_id": str(t.author_id),
-                "conversation_id": str(t.conversation_id),
+        if me and me.data:
+            user_id = me.data.id
+            kwargs: dict = {
+                "id": user_id,
+                "tweet_fields": ["conversation_id", "author_id", "created_at"],
+                "max_results": 20,
             }
-            for t in resp.data
-        ]
+            if since_id:
+                kwargs["since_id"] = since_id
+            resp = client.get_users_mentions(**kwargs)
+            if resp.data:
+                return [
+                    {
+                        "id": str(t.id),
+                        "text": t.text,
+                        "author_id": str(getattr(t, "author_id", "")),
+                        "conversation_id": str(getattr(t, "conversation_id", "")),
+                    }
+                    for t in resp.data
+                ]
+            return []
     except tweepy.errors.Forbidden:
-        log.warning("Mentions access denied — X API Basic tier required.")
-        return []
+        log.info("Official mentions API needs Basic tier — falling back to twscrape.")
     except tweepy.errors.TweepyException as exc:
-        log.error("Error fetching mentions: %s", exc)
+        log.warning("Official mentions fetch error: %s — trying twscrape.", exc)
+
+    # --- Fallback: twscrape cookie-based search (Free tier) ---
+    return _get_mentions_via_twscrape(since_id=since_id)
+
+
+def _get_mentions_via_twscrape(since_id: Optional[str] = None) -> list[dict]:
+    """
+    Fetch @Qwinahh mentions using twscrape (cookie-based, no API tier required).
+    Returns same format as get_mentions().
+    """
+    import asyncio
+    import concurrent.futures
+    import os
+
+    cookies = os.environ.get("X_SCRAPER_COOKIES", "").strip()
+    if not cookies:
+        log.warning("X_SCRAPER_COOKIES not set — mentions unavailable.")
+        return []
+
+    async def _fetch():
+        try:
+            from twscrape import API
+        except ImportError:
+            return []
+
+        api = API(os.path.join(tempfile.gettempdir(), "twscrape_pool.db"))
+        try:
+            await api.pool.add_account(
+                username="beacon_mentions_scraper",
+                password="placeholder",
+                email="placeholder@placeholder.com",
+                email_password="placeholder",
+                cookies=cookies,
+            )
+        except Exception as exc:
+            log.warning("twscrape mentions setup: %s", exc)
+            return []
+
+        results = []
+        # Search for recent mentions, exclude our own tweets
+        query = "@Qwinahh -from:Qwinahh lang:en"
+        try:
+            async for tweet in api.search(query, limit=20, kv={"product": "Latest"}):
+                tweet_id = str(tweet.id)
+                # If since_id given, skip tweets with ID <= since_id
+                if since_id and int(tweet_id) <= int(since_id):
+                    continue
+                results.append({
+                    "id": tweet_id,
+                    "text": tweet.rawContent or "",
+                    "author_id": str(tweet.user.id) if tweet.user else "",
+                    "conversation_id": str(getattr(tweet, "conversationId", tweet.id) or tweet.id),
+                })
+        except Exception as exc:
+            log.warning("twscrape mentions search error: %s", exc)
+
+        return results
+
+    try:
+        loop = asyncio.get_event_loop()
+        if loop.is_running():
+            with concurrent.futures.ThreadPoolExecutor(max_workers=1) as pool:
+                future = pool.submit(asyncio.run, _fetch())
+                return future.result(timeout=45) or []
+        else:
+            return loop.run_until_complete(_fetch()) or []
+    except Exception as exc:
+        log.warning("twscrape mentions runner error: %s", exc)
         return []

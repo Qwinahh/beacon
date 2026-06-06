@@ -12,3 +12,8 @@ related_project:
 **Verified**: Tier 2 source (established research/media). no contradiction found
 
 Why Ethereum Could Tank Another 25% Before Finding a Bottom: Analysis
+
+
+---
+
+**Related**: [[dashboard]] · [[index]]

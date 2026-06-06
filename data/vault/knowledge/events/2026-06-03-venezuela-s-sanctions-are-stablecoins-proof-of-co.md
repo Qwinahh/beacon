@@ -12,3 +12,8 @@ related_project:
 **Verified**: Tier 2 source (established research/media). no contradiction found
 
 Venezuela’s sanctions are stablecoins’ proof of concept
+
+
+---
+
+**Related**: [[dashboard]] · [[index]]

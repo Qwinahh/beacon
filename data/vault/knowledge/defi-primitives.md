@@ -166,3 +166,11 @@ Ask: "If token price went to zero, would this yield still exist?"
 - No value accrual to token (governance only)
 - Token unlock schedules with large near-term unlocks
 - Concentrated ownership (whale can dump)
+
+---
+## Related Notes
+- [[crypto-history]] — When these primitives emerged and why
+- [[exploit-history]] — How each primitive has been exploited
+- [[narrative-cycles]] — Which primitives are driving current narratives
+- [[x-growth-strategy]] — Posting credibly about DeFi mechanics
+- [[dashboard]] — Vault home

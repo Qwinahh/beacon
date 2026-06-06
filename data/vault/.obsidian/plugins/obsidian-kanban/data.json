@@ -1,0 +1,18 @@
+{
+  "lane-width": 272,
+  "max-archive-size": -1,
+  "date-format": "YYYY-MM-DD",
+  "date-display-format": "YYYY-MM-DD",
+  "hide-date-in-title": false,
+  "link-date-to-daily-note": true,
+  "time-format": "HH:mm",
+  "hide-tags-in-title": false,
+  "move-dates": true,
+  "move-tags": true,
+  "show-archive-lane": false,
+  "prepend-archive-format": "",
+  "prepend-archive-date": false,
+  "prepend-archive-separator": "",
+  "new-note-folder": "",
+  "new-note-template": ""
+}

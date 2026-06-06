@@ -25,7 +25,7 @@ multiple farms to smooth variance.
 - Any perps protocol without a token that has real OI
 
 ## Dead farms / lessons
-- ~~[[projects/kaito|Kaito]]~~ — Yaps shut down 2026 after X API revocation. Lesson: X platform risk is real; Kaito Studio replaced Yaps but removed the farming mechanism entirely.
+- **Kaito Yaps (2026)** — Lesson: X platform risk. When X revoked API access for engagement-reward apps, the entire Kaito farming meta collapsed overnight. Never size heavily into farms that depend on platform API goodwill. Always have an exit plan when the platform (not the protocol) is the gating factor.
 
 ## Updates
 <!-- Bot appends meta updates here -->

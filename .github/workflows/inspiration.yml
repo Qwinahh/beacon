@@ -1,0 +1,47 @@
+name: Daily Inspiration Feed
+
+on:
+  schedule:
+    # Runs at 07:00 UTC every day — morning brief before the first posting window.
+    - cron: "0 7 * * *"
+  workflow_dispatch:
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
+jobs:
+  inspiration:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Collect inspiration feed
+        env:
+          X_SCRAPER_COOKIES:   ${{ secrets.X_SCRAPER_COOKIES }}
+          ANTHROPIC_API_KEY:   ${{ secrets.ANTHROPIC_API_KEY }}
+          GROQ_API_KEY:        ${{ secrets.GROQ_API_KEY }}
+          CEREBRAS_API_KEY:    ${{ secrets.CEREBRAS_API_KEY }}
+          OPENROUTER_API_KEY:  ${{ secrets.OPENROUTER_API_KEY }}
+        run: python -c "from agents.inspiration_agent import run; run()"
+
+      - name: Commit vault pages
+        run: |
+          git config user.name  "qwinahh-bot"
+          git config user.email "bot@qwinahh.local"
+          git add data/vault/inspiration/
+          git diff --cached --quiet || git commit -m "chore: daily inspiration feed [skip ci]"
+          git push

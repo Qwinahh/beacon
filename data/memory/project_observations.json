@@ -7,6 +7,34 @@
         "observation": "OI crossed $4B -- model holding without blowout",
         "source": "test"
       }
+    ],
+    "Honeypop": [
+      {
+        "ts": "2026-06-04T21:30:22Z",
+        "observation": "Honeypop DEX TVL spiked 42% in 24 hours — a rapid inflow event that prompted a post.",
+        "source": "bot"
+      }
+    ],
+    "HYPE": [
+      {
+        "ts": "2026-06-05T06:10:17Z",
+        "observation": "HYPE fell 15.67% in a cycle where Bitcoin retreated to near $62,000 amid broader AI trade unwinding. Post highlighted airdrop recipients potentially selling pressure.",
+        "source": "bot"
+      }
+    ],
+    "Bitcoin": [
+      {
+        "ts": "2026-06-05T13:33:54Z",
+        "observation": "BTC dropped 2.8% and triggered RSS alert from CoinDesk index decline, but author's stop orders did not execute—indicating volatility in the 2-3% range is not yet hitting critical support levels in author's position.",
+        "source": "bot"
+      }
+    ],
+    "Crypto Council for Innovation": [
+      {
+        "ts": "2026-06-05T16:25:17Z",
+        "observation": "Crypto Council for Innovation launched coalition pushing for regulatory clarity on vaults. Historical pattern: last similar regulatory clarity push coincided with 10% BTC dominance drop over one month.",
+        "source": "bot"
+      }
     ]
   }
 }

@@ -12,3 +12,8 @@ related_project:
 **Verified**: Tier 2 source (established research/media). no contradiction found
 
 Crypto VC deal count slumps to five-year low as investors grow more selective
+
+
+---
+
+**Related**: [[dashboard]] · [[index]]

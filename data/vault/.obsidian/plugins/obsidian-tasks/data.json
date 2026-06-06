@@ -1,0 +1,11 @@
+{
+  "globalFilter": "",
+  "globalQuery": "",
+  "removeGlobalFilter": false,
+  "setDoneDate": true,
+  "autoSuggestInEditor": true,
+  "autoSuggestMinMatch": 0,
+  "autoSuggestMaxItems": 20,
+  "provideAccessToNoteContext": false,
+  "enableInlineRendering": false
+}

@@ -12,3 +12,8 @@ related_project:
 **Verified**: Tier 2 source (established research/media). no contradiction found
 
 Ranger’s ICO starts today, and MetaDAO eyes a reset
+
+
+---
+
+**Related**: [[dashboard]] · [[index]]

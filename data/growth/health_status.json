@@ -1,0 +1,12 @@
+{
+  "checked_at": 1780693639,
+  "search_banned": false,
+  "engagement_suppressed": false,
+  "suppression_ratio": 1.0,
+  "recovery_mode": false,
+  "recovery_started_at": null,
+  "notes": "",
+  "reply_ghosted": false,
+  "suggestion_banned": false,
+  "ban_type": "none"
+}

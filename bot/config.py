@@ -13,15 +13,21 @@ from typing import Final
 # Posting cadence
 # ---------------------------------------------------------------------------
 
-MAX_POSTS_PER_DAY: Final[int] = 5
-MIN_HOURS_BETWEEN_POSTS: Final[float] = 3.0
+# 3 quality posts per day. This isn't arbitrary:
+# - Each post competes for feed space against all your other posts
+# - The algorithm gives higher per-post distribution to accounts with high
+#   engagement rates, not high volume. 3 posts at 5% eng rate beats 8 at 1%.
+# - Audience fatigue: followers who see 5+ posts/day from one account start
+#   muting. You need every post to feel worth reading.
+MAX_POSTS_PER_DAY: Final[int] = 3
+MIN_HOURS_BETWEEN_POSTS: Final[float] = 4.0  # Forces genuine content variety.
 
 # UTC hour ranges during which posting is allowed (start_inclusive, end_exclusive).
-# Three windows: Asia morning / US morning / US evening.
+# Two peak windows: US morning overlap (highest global audience) + US evening.
+# Removed Asia window for now — audience is primarily EN-speaking DeFi traders.
 POSTING_WINDOWS: Final[list[tuple[int, int]]] = [
-    (7, 10),
-    (13, 16),
-    (19, 22),
+    (13, 16),   # US morning / EU afternoon — highest engagement window globally
+    (19, 22),   # US prime time — second best window
 ]
 
 # Random jitter added to posting time so the schedule never looks mechanical.
@@ -72,16 +78,21 @@ JUNK_PHRASES: Final[list[str]] = [
 # ---------------------------------------------------------------------------
 
 RSS_FEEDS: Final[list[tuple[str, str]]] = [
+    # Existing sources
     ("CoinDesk",         "https://www.coindesk.com/arc/outboundfeeds/rss/?outputType=xml"),
     ("The Defiant",      "https://thedefiant.io/feed/"),
     ("The Block",        "https://www.theblock.co/rss.xml"),
     ("Blockworks",       "https://blockworks.co/feed"),
     ("DL News",          "https://www.dlnews.com/feed/"),
+
+    # DeFi-specific — lower noise, higher signal (validated 2026-06-05)
     ("Decrypt",          "https://decrypt.co/feed"),
     ("Protos",           "https://protos.com/feed/"),
     ("CoinTelegraph",    "https://cointelegraph.com/rss"),
-    ("Hyperliquid Blog", "https://hyperliquid.xyz/blog/rss.xml"),
-    ("DefiLlama Blog",   "https://defillama.com/blog/rss.xml"),
+
+    # Protocol blogs — direct from source (validated 2026-06-05)
+    ("Hyperliquid Blog", "https://hyperliquid.substack.com/feed"),
+    ("DefiLlama Blog",   "https://defillama.substack.com/feed"),
 ]
 
 DEFILLAMA_PROTOCOLS_URL: Final[str] = "https://api.llama.fi/protocols"
@@ -115,7 +126,8 @@ TVL_MIN_CHANGE_PCT: Final[float] = 12.0
 CLAUDE_MODEL: Final[str] = "claude-haiku-4-5-20251001"
 
 # Maximum tokens for a generated tweet.
-CLAUDE_MAX_TOKENS: Final[int] = 300
+# 400 gives headroom for the REASON: line + tweet text without truncation.
+CLAUDE_MAX_TOKENS: Final[int] = 400
 
 # Whether to fall back to template writing when the Claude API is unavailable.
 TEMPLATE_FALLBACK: Final[bool] = True

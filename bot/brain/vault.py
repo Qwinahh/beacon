@@ -366,6 +366,8 @@ def log_post(tweet_text: str, topic: str, fmt: str) -> None:
     text = path.read_text(encoding="utf-8")
     _, body = _parse_frontmatter(text)
 
+    # Only generate a wikilink if the project file actually exists.
+    # Topics like "defi", "general", "whale" are not project files.
     proj_file = PROJ_DIR / f"{_safe_name(topic)}.md"
     if topic and proj_file.exists():
         project_link = f"[[projects/{_safe_name(topic)}|{topic}]]"

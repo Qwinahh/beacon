@@ -2,12 +2,16 @@ name: Post — Crypto Commentary
 
 on:
   schedule:
-    # Four posting windows per day (UTC). Times are randomised in code via jitter.
-    - cron: "0 8  * * *"   # Asia/EU morning
-    - cron: "0 14 * * *"   # US morning
-    - cron: "0 20 * * *"   # US evening
-    - cron: "0 22 * * *"   # US late / catch-up slot
+    # Two windows per day, inside the peak engagement hours in config.py.
+    # The bot posts max 3x/day — these triggers just wake it up to check.
+    # Jitter in post.py prevents every post landing at exactly :00.
+    - cron: "0 13 * * *"   # US morning / EU afternoon (peak window)
+    - cron: "0 16 * * *"   # Mid-window check (catches anything missed at 13:00)
+    - cron: "0 19 * * *"   # US prime time
   workflow_dispatch:        # Allow manual trigger from the Actions tab.
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
 
 jobs:
   post:
@@ -36,8 +40,14 @@ jobs:
           X_API_SECRET:         ${{ secrets.X_API_SECRET }}
           X_ACCESS_TOKEN:       ${{ secrets.X_ACCESS_TOKEN }}
           X_ACCESS_SECRET:      ${{ secrets.X_ACCESS_SECRET }}
+          # LLM providers — Groq is free (14,400/day). Set at least one.
+          GROQ_API_KEY:         ${{ secrets.GROQ_API_KEY }}
+          CEREBRAS_API_KEY:     ${{ secrets.CEREBRAS_API_KEY }}
+          OPENROUTER_API_KEY:   ${{ secrets.OPENROUTER_API_KEY }}
           ANTHROPIC_API_KEY:    ${{ secrets.ANTHROPIC_API_KEY }}
           X_SCRAPER_COOKIES:    ${{ secrets.X_SCRAPER_COOKIES }}
+          WHALE_ALERT_API_KEY:  ${{ secrets.WHALE_ALERT_API_KEY }}
+          DROPSTAB_API_KEY:     ${{ secrets.DROPSTAB_API_KEY }}
         run: python post.py
 
       - name: Commit state and memory

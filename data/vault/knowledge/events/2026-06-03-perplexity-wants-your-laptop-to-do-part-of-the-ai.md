@@ -12,3 +12,8 @@ related_project:
 **Verified**: Tier 2 source (established research/media). no contradiction found
 
 Perplexity Wants Your Laptop to Do Part of the AI Work—So It Doesn't Have To
+
+
+---
+
+**Related**: [[dashboard]] · [[index]]

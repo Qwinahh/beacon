@@ -1,9 +1,12 @@
-name: Engage — Reply to Mentions
+name: Engage — Replies + Outbound + Follow
 
 on:
   schedule:
     - cron: "30 * * * *"   # Runs at :30 past every hour.
   workflow_dispatch:
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
 
 jobs:
   engage:
@@ -28,18 +31,22 @@ jobs:
 
       - name: Run engagement
         env:
-          X_API_KEY:         ${{ secrets.X_API_KEY }}
-          X_API_SECRET:      ${{ secrets.X_API_SECRET }}
-          X_ACCESS_TOKEN:    ${{ secrets.X_ACCESS_TOKEN }}
-          X_ACCESS_SECRET:   ${{ secrets.X_ACCESS_SECRET }}
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          X_API_KEY:            ${{ secrets.X_API_KEY }}
+          X_API_SECRET:         ${{ secrets.X_API_SECRET }}
+          X_ACCESS_TOKEN:       ${{ secrets.X_ACCESS_TOKEN }}
+          X_ACCESS_SECRET:      ${{ secrets.X_ACCESS_SECRET }}
+          X_SCRAPER_COOKIES:    ${{ secrets.X_SCRAPER_COOKIES }}
+          GROQ_API_KEY:         ${{ secrets.GROQ_API_KEY }}
+          CEREBRAS_API_KEY:     ${{ secrets.CEREBRAS_API_KEY }}
+          OPENROUTER_API_KEY:   ${{ secrets.OPENROUTER_API_KEY }}
+          ANTHROPIC_API_KEY:    ${{ secrets.ANTHROPIC_API_KEY }}
         run: python engage.py
 
       - name: Commit state
         run: |
           git config user.name  "qwinahh-bot"
           git config user.email "bot@qwinahh.local"
-          git add data/state.json
-          git diff --cached --quiet || git commit -m "chore: update engage state [skip ci]"
+          git add data/state.json data/growth/
+          git diff --cached --quiet || git commit -m "chore: update engage + follow state [skip ci]"
           git pull --no-rebase -X ours origin main 2>/dev/null || true
           git push

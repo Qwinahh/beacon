@@ -27,6 +27,7 @@ from __future__ import annotations
 import asyncio
 import logging
 import os
+import tempfile
 from typing import Optional
 
 log = logging.getLogger(__name__)
@@ -57,7 +58,7 @@ async def _scrape(topic: str, limit: int) -> list[dict]:
         return []
 
     # Use a temp in-memory db so we don't write files during CI runs.
-    api = API(":memory:")
+    api = API(os.path.join(tempfile.gettempdir(), "twscrape_pool.db"))
     try:
         await api.pool.add_account(
             username="beacon_scraper",

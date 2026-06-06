@@ -12,3 +12,8 @@ related_project:
 **Verified**: Tier 2 source (established research/media). no contradiction found
 
 ETH derivatives reset and the next retail trade
+
+
+---
+
+**Related**: [[dashboard]] · [[index]]

@@ -6,3 +6,7 @@ data/vault/log/*.md         merge=ours
 data/vault/knowledge/events/*.md  merge=ours
 data/growth/*.json          merge=ours
 data/state.json             merge=ours
+data/growth/follow_state.json      merge=ours
+data/growth/pending.json           merge=ours
+data/growth/metrics.json           merge=ours
+data/growth/growth_context.json    merge=ours

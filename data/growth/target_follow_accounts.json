@@ -1,0 +1,97 @@
+{
+  "priority_follows": [
+    {
+      "username": "DefiIgnas",
+      "reason": "defi alpha, airdrop analysis, 80k followers"
+    },
+    {
+      "username": "0xSisyphus",
+      "reason": "perps and market structure, quality posts"
+    },
+    {
+      "username": "Founderization",
+      "reason": "airdrop meta, points economy analysis"
+    },
+    {
+      "username": "zkDrops",
+      "reason": "airdrop tracking, points farming"
+    },
+    {
+      "username": "Pentosh1",
+      "reason": "market structure, perps, options"
+    },
+    {
+      "username": "0xMaki",
+      "reason": "DeFi protocols, TVL analysis"
+    },
+    {
+      "username": "HsakaTrades",
+      "reason": "perps, macro, high engagement threads"
+    },
+    {
+      "username": "CroissantEth",
+      "reason": "DeFi protocols, yield farming"
+    },
+    {
+      "username": "0xHamz",
+      "reason": "DeFi alpha, airdrop hunting"
+    },
+    {
+      "username": "SmolRefund",
+      "reason": "airdrop farming, points meta"
+    },
+    {
+      "username": "deFIYIelded",
+      "reason": "yield farming, defi protocol analysis"
+    },
+    {
+      "username": "Route2FI",
+      "reason": "DeFi education, strategy posts"
+    },
+    {
+      "username": "0xCygaar",
+      "reason": "Ethereum dev, protocol mechanics"
+    },
+    {
+      "username": "tayvano_",
+      "reason": "security, wallet safety, exploit analysis"
+    },
+    {
+      "username": "functi0nZer0",
+      "reason": "MEV, on-chain analysis"
+    },
+    {
+      "username": "EigenLayerNews",
+      "reason": "restaking narrative, AVS updates"
+    },
+    {
+      "username": "MilkyWayDeFi",
+      "reason": "liquid staking, points programs"
+    },
+    {
+      "username": "Gainzy222",
+      "reason": "airdrop farming, points meta"
+    },
+    {
+      "username": "thedefiedge",
+      "reason": "DeFi education, protocol breakdowns"
+    },
+    {
+      "username": "DeFiMoon_",
+      "reason": "defi opportunities, yield strategies"
+    }
+  ],
+  "already_followed": [
+    "defiignas",
+    "0xsisyphus",
+    "zkdrops",
+    "pentosh1",
+    "0xmaki",
+    "hsakatrades",
+    "croissanteth",
+    "0xhamz",
+    "route2fi",
+    "0xcygaar"
+  ],
+  "skip": []
+}

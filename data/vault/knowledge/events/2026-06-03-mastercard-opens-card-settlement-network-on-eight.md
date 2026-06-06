@@ -12,3 +12,8 @@ related_project:
 **Verified**: Tier 2 source (established research/media). no contradiction found
 
 Mastercard Opens Card-Settlement Network on Eight Blockchains, Adding Weekend and Holiday Cycles
+
+
+---
+
+**Related**: [[dashboard]] · [[index]]

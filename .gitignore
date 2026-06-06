@@ -1,6 +1,12 @@
 # Never commit secrets
 .env
 
+# Obsidian local UI state — changes every session, causes conflicts with GitHub Actions.
+data/vault/.obsidian/workspace.json
+data/vault/.obsidian/workspace-mobile.json
+data/vault/.obsidian/graph.json
+data/vault/.obsidian/plugins/obsidian-git/data.json
+
 # Python
 __pycache__/
 *.py[cod]
@@ -20,6 +26,7 @@ build/
 
 # Obsidian — plugin binaries and scratch files don't belong in version control
 data/vault/.obsidian/plugins/
-data/vault/.obsidian/workspace.json
-data/vault/.obsidian/graph.json
 data/vault/Untitled*.canvas
+
+# Backup files
+*.bak
