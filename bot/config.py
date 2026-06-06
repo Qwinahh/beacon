@@ -44,6 +44,10 @@ POST_JITTER_SECONDS: Final[int] = 900  # ±15 min
 # Minimum hours between quote tweets. One thoughtful QT per 6h is plenty.
 QUOTE_TWEET_COOLDOWN_HOURS: Final[float] = 6.0
 
+# Fraction of normal posting cycles that attempt a thread (3-5 tweets).
+# Separate from and checked before FREEFORM_CHANCE. Falls through if thread fails.
+THREAD_CHANCE: Final[float] = 0.15
+
 
 # ---------------------------------------------------------------------------
 # Content quality gate

@@ -429,7 +429,7 @@ def _is_headline(text: str) -> bool:
     return False
 
 
-def _validate_quality(text: str) -> tuple[bool, str]:
+def _validate_quality(text: str, format_name: str = "") -> tuple[bool, str]:
     """
     Returns (is_valid, reason_if_rejected).
 
@@ -437,6 +437,7 @@ def _validate_quality(text: str) -> tuple[bool, str]:
     1. No generic low-value phrases.
     2. Not a press-release headline.
     3. Contains at least one specific number or data point.
+       (Skipped for format_name="thread_hook" — hooks are questions/claims, not data dumps.)
     4. Minimum length (a post under 60 chars can't say anything substantive).
     """
     lower = text.lower()
@@ -451,9 +452,10 @@ def _validate_quality(text: str) -> tuple[bool, str]:
     if _is_headline(text):
         return False, "Reads like a news headline — add angle or implication"
 
-    has_substance = any(re.search(p, text) for p in _SUBSTANCE_PATTERNS)
-    if not has_substance:
-        return False, "No specific number, amount, or percentage found -- too vague"
+    if format_name != "thread_hook":
+        has_substance = any(re.search(p, text) for p in _SUBSTANCE_PATTERNS)
+        if not has_substance:
+            return False, "No specific number, amount, or percentage found -- too vague"
 
     if len(text.strip()) < 60:
         return False, f"Too short ({len(text)} chars) to say anything substantive"
@@ -592,3 +594,263 @@ def generate(
 
     log.info("Generated tweet (%d chars) [%s]: %s", len(text), format_name, text[:80])
     return text, format_name
+
+
+# ---------------------------------------------------------------------------
+# Thread writer
+# ---------------------------------------------------------------------------
+
+_THREAD_WRITER_SYSTEM = """\
+You write Twitter threads for @Qwinahh — a crypto account that trades perps,
+farms airdrops, and moves into DeFi protocols before narratives form.
+The audience: people who are actively farming, trading, or watching the same protocols.
+
+EDITORIAL TEST — before writing, ask: does this topic have enough substance to fill
+3 meaningful, non-repetitive tweets? Valid reasons to thread:
+
+  A. A multi-part argument that loses its logic when compressed to one tweet.
+  B. Data with 3+ distinct implications — each worth its own sentence.
+  C. Pattern + historical parallel + what to watch now — each a separate tweet.
+  D. A contrarian view that needs evidence tweets to be credible, not just asserted.
+
+If the topic can be said in one tweet: SKIP.
+
+THREAD STRUCTURE:
+- Tweet 1 (HOOK): A specific question, contrarian claim, or surprising fact.
+  Under 180 chars. Creates tension. Must make someone want to read the rest.
+  NOT a data dump. A thread emoji (🧵) is allowed here if it fits naturally.
+- Tweets 2-4 (ARGUMENT): One specific point per tweet. Numbers, mechanics, implications.
+  Each under 270 chars. First person where it adds credibility.
+  Each tweet must add something the previous didn't say — no restatement.
+- Last tweet (CONCLUSION): The implication or what to watch next.
+  A soft CTA is fine ("watching X this week", "will update when..."). Under 270 chars.
+
+VOICE: Direct. Specific. Opinionated. No "the DeFi ecosystem", no "it's worth noting",
+no hedged opinions ("could be", "might mean"). You have money in these protocols.
+Write like it.
+
+OUTPUT FORMAT:
+REASON: [A/B/C/D] -- [why this warrants a thread, not just one tweet]
+1. [hook — under 180 chars]
+2. [argument — under 270 chars]
+3. [argument — under 270 chars]
+4. [conclusion — under 270 chars]
+
+Or: SKIP
+"""
+
+
+def _thread_user_prompt(
+    item: Optional[CandidateItem],
+    portfolio: dict,
+    x_conversation: Optional[str] = None,
+) -> str:
+    portfolio_block = _build_portfolio_context(portfolio)
+
+    if item is not None:
+        topic  = _item_topic(item)
+        title  = _item_title(item)
+        data_section = "## Event to build a thread about\n\n" + _build_item_summary(item)
+        context_block = build_writer_context(topic, title, x_conversation)
+    else:
+        # Freeform thread — no specific event, draw from current thinking and vault context
+        data_section = (
+            "## Thread topic\n\n"
+            "No specific event. Write from your current observations about DeFi, "
+            "perps, airdrops, or the protocols you're tracking. Pick the topic "
+            "that has the most substance right now."
+        )
+        context_block = build_writer_context("", "", x_conversation)
+
+    parts: list[str] = []
+    if context_block:
+        parts += [context_block, "---"]
+
+    parts.append(data_section)
+
+    if portfolio_block:
+        parts += ["", portfolio_block]
+
+    parts += [
+        "",
+        "## Hard constraints on every tweet in the thread",
+        "- No hashtags. No URLs. No quotes around output.",
+        "- Tweets 2+ must contain at least one specific number, percentage, "
+        "dollar amount, or named mechanic.",
+        "- Hook under 180 chars. All other tweets under 270 chars.",
+        "- Thread emoji on tweet 1 is the ONLY emoji allowed in the whole thread.",
+        "- If the topic can be said in one tweet, respond with SKIP.",
+    ]
+
+    return "\n".join(parts)
+
+
+def _parse_thread_tweets(raw: str) -> list[str]:
+    """
+    Parse numbered tweets from thread LLM output.
+
+    Handles: "1. text", "1/ text", "Tweet 1: text", "1) text"
+    Skips REASON: lines and SKIP responses.
+    Joins continuation lines (non-numbered lines after a numbered one).
+    """
+    tweets: list[str] = []
+    current: list[str] = []
+
+    for line in raw.splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        if line.upper().startswith(("REASON:", "SKIP")):
+            continue
+
+        m = re.match(r'^(?:tweet\s*)?\d+\s*[./:)]\s*', line, re.IGNORECASE)
+        if m:
+            if current:
+                tweets.append(" ".join(current).strip())
+                current = []
+            rest = line[m.end():].strip()
+            if rest:
+                current.append(rest)
+        elif current:
+            # Continuation of the current numbered tweet
+            current.append(line)
+
+    if current:
+        tweets.append(" ".join(current).strip())
+
+    return [t for t in tweets if t]
+
+
+def generate_thread(
+    item: Optional[CandidateItem],
+    portfolio: dict,
+    recent_formats: list[str],
+    x_conversation: Optional[str] = None,
+) -> Optional[list[str]]:
+    """
+    Generate a 3-5 tweet thread.
+
+    item may be None — in that case the thread draws from vault context
+    (freeform mode). When provided, the thread is built around the item.
+
+    Returns a list of 3-5 tweet strings or None if rejected.
+    Validates each tweet individually: the hook uses format_name="thread_hook"
+    (skips substance gate); body tweets require the full quality gate.
+    Runs authenticity judge on tweet 1 only; retries once with feedback.
+    """
+    from bot.brain.llm import complete as llm_complete, get_active_provider
+    log.debug("Thread writer — LLM: %s", get_active_provider())
+
+    system_prompt = _THREAD_WRITER_SYSTEM
+    user_prompt   = _thread_user_prompt(item, portfolio, x_conversation)
+
+    raw = llm_complete(
+        system=system_prompt,
+        user=user_prompt,
+        max_tokens=800,
+        temperature=0.85,
+    )
+
+    if raw is None:
+        log.debug("Thread writer: LLM returned None")
+        return None
+
+    raw = raw.strip()
+    if raw.upper().startswith("SKIP"):
+        log.info("Thread writer: editorial SKIP")
+        return None
+
+    tweets = _parse_thread_tweets(raw)
+    if not tweets or len(tweets) < 3:
+        log.debug("Thread writer: only %d tweets parsed — need at least 3", len(tweets) if tweets else 0)
+        return None
+
+    tweets = tweets[:5]  # Cap at 5 even if the model went longer
+
+    return _validate_and_judge_thread(tweets, system_prompt, user_prompt)
+
+
+def _validate_and_judge_thread(
+    tweets: list[str],
+    system_prompt: str,
+    user_prompt: str,
+) -> Optional[list[str]]:
+    """Validate, length-cap, and judge a parsed tweet list. Returns cleaned list or None."""
+    from bot.brain.llm import complete as llm_complete
+
+    # Length-cap every tweet before validation
+    capped: list[str] = []
+    for t in tweets:
+        if len(t) > 279:
+            t = t[:276].rsplit(".", 1)[0] + "."
+        capped.append(t)
+
+    # Validate hook with substance gate bypassed
+    hook_valid, reason = _validate_quality(capped[0], format_name="thread_hook")
+    if not hook_valid:
+        log.debug("Thread hook failed quality gate: %s | %s", reason, capped[0][:60])
+        return None
+
+    # Validate body tweets with full quality gate; stop accumulating on first failure
+    validated: list[str] = [capped[0]]
+    for i, tweet in enumerate(capped[1:], start=2):
+        v, r = _validate_quality(tweet)
+        if not v:
+            log.debug("Thread tweet %d failed quality: %s | %s", i, r, tweet[:60])
+            break
+        validated.append(tweet)
+
+    if len(validated) < 3:
+        log.debug("Thread: only %d tweets passed quality gate — need 3", len(validated))
+        return None
+
+    # Authenticity judge on hook only — hook quality determines the whole thread's fate
+    from bot.brain.authenticity_judge import passes as judge_passes
+    ok, judge_result = judge_passes(validated[0], content_type="post")
+    if not ok:
+        feedback = judge_result.get("feedback", "")
+        if feedback and feedback != "NONE":
+            log.info("Thread hook failed judge — retrying with feedback: %s", feedback)
+            retry_prompt = (
+                user_prompt
+                + f"\n\nIMPORTANT: The hook tweet failed the authenticity check. Fix: {feedback}\n"
+                "Rewrite the full thread with a stronger hook."
+            )
+            retry_raw = llm_complete(
+                system=system_prompt,
+                user=retry_prompt,
+                max_tokens=800,
+                temperature=0.85,
+            )
+            if retry_raw:
+                retry_tweets = _parse_thread_tweets(retry_raw.strip())
+                if retry_tweets and len(retry_tweets) >= 3:
+                    retry_tweets = retry_tweets[:5]
+                    retry_capped = []
+                    for t in retry_tweets:
+                        if len(t) > 279:
+                            t = t[:276].rsplit(".", 1)[0] + "."
+                        retry_capped.append(t)
+
+                    h_valid, _ = _validate_quality(retry_capped[0], format_name="thread_hook")
+                    if h_valid:
+                        ok2, _ = judge_passes(retry_capped[0], content_type="post")
+                        if ok2:
+                            retry_validated = [retry_capped[0]]
+                            for tweet in retry_capped[1:]:
+                                v, _ = _validate_quality(tweet)
+                                if not v:
+                                    break
+                                retry_validated.append(tweet)
+                            if len(retry_validated) >= 3:
+                                log.info(
+                                    "Thread retry passed judge (%d tweets): %s",
+                                    len(retry_validated), retry_validated[0][:70],
+                                )
+                                return retry_validated
+
+        log.info("Thread hook failed authenticity judge after retry — skipping")
+        return None
+
+    log.info("Generated thread (%d tweets): %s", len(validated), validated[0][:70])
+    return validated
