@@ -141,9 +141,10 @@ Threads should NOT be used for:
 - Opinion without data
 - More than once per week
 
-**The bot does not currently post threads — single posts only. This is correct.**
-When performance data shows strong engagement on educational observations,
-that's a signal to eventually build thread capability.
+**The bot now posts threads.** 15% of normal posting cycles attempt a 3-5 tweet thread
+(`THREAD_CHANCE = 0.15` in config). Thread mode runs before freeform, falls through on
+failure. Hook tweet passes the authenticity judge; body tweets require a specific number
+or mechanic each. Performance data will show whether to raise or lower the 15% weight.
 
 ---
 
