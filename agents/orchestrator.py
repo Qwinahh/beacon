@@ -279,7 +279,7 @@ def _select_best(candidates: list, state: State) -> Optional[dict]:
             continue
 
         # Score floor -- well below threshold to allow bonuses to lift worthy items
-        if item_score < POST_SCORE_THRESHOLD - 15:
+        if item_score < POST_SCORE_THRESHOLD - 25:
             rejection_log.append("LOW SCORE (%d): %s" % (item_score, title[:50]))
             continue
 

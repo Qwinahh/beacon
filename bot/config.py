@@ -34,7 +34,7 @@ MIN_HOURS_BETWEEN_POSTS: Final[float] = 4.0  # Forces genuine content variety.
 # Two peak windows: US morning overlap (highest global audience) + US evening.
 # Removed Asia window for now — audience is primarily EN-speaking DeFi traders.
 POSTING_WINDOWS: Final[list[tuple[int, int]]] = [
-    (13, 16),   # US morning / EU afternoon — highest engagement window globally
+    (13, 17),   # US morning / EU afternoon — highest engagement window globally
     (19, 22),   # US prime time — second best window
 ]
 
