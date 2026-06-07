@@ -15,10 +15,12 @@ from __future__ import annotations
 
 import asyncio
 import concurrent.futures
+import json
 import logging
 import os
 import tempfile
 import time
+from pathlib import Path
 from typing import Optional
 
 from bot.brain.llm import complete as llm_complete
@@ -81,6 +83,85 @@ OUTPUT FORMAT — respond with exactly one of:
 
 Never output anything else. No explanation before REPLY/SKIP.
 """
+
+
+# ---------------------------------------------------------------------------
+# Post metrics collection
+# ---------------------------------------------------------------------------
+
+_METRICS_PATH = Path("data/growth/metrics.json")
+_MAX_METRIC_FETCHES_PER_RUN = 10
+
+
+def _load_metrics_file() -> dict:
+    if not _METRICS_PATH.exists():
+        return {}
+    try:
+        data = json.loads(_METRICS_PATH.read_text(encoding="utf-8"))
+        return data if isinstance(data, dict) else {}
+    except Exception:
+        return {}
+
+
+def _save_metrics_file(metrics: dict) -> None:
+    _METRICS_PATH.parent.mkdir(parents=True, exist_ok=True)
+    _METRICS_PATH.write_text(json.dumps(metrics, indent=2), encoding="utf-8")
+
+
+def update_post_metrics(state: State) -> int:
+    """
+    Fetch engagement metrics for recently posted tweets via the official X API.
+
+    Reads the state posts list, filters for posts between 2h and 48h old that
+    are not already in data/growth/metrics.json, fetches up to 10 per run to
+    stay inside the Free tier rate limits, and writes results to metrics.json
+    so format_weights.py can bias the writer toward high-performing formats.
+
+    Returns number of tweets updated.
+    """
+    from bot.x.client import fetch_tweet_metrics
+
+    candidates = state.posts(min_age_h=2.0, max_age_h=48.0)
+    if not candidates:
+        log.debug("update_post_metrics: no posts in 2–48h window.")
+        return 0
+
+    metrics = _load_metrics_file()
+    to_fetch = [p for p in candidates if p["tweet_id"] not in metrics]
+    to_fetch = to_fetch[:_MAX_METRIC_FETCHES_PER_RUN]
+
+    if not to_fetch:
+        log.debug("update_post_metrics: all eligible posts already in metrics.json.")
+        return 0
+
+    updated = 0
+    for post in to_fetch:
+        tweet_id = post["tweet_id"]
+        m = fetch_tweet_metrics(tweet_id)
+        if m is None:
+            log.debug("update_post_metrics: no metrics returned for %s.", tweet_id)
+            continue
+        metrics[tweet_id] = {
+            "format":      post.get("format", "unknown"),
+            "topic":       post.get("topic", ""),
+            "likes":       m["likes"],
+            "replies":     m["replies"],
+            "retweets":    m["retweets"],
+            "impressions": m["impressions"],
+            "posted_at":   post.get("posted_at", 0),
+        }
+        updated += 1
+        log.info(
+            "Metrics for %s [%s] — likes:%d replies:%d rt:%d impressions:%d",
+            tweet_id, post.get("format", "?"),
+            m["likes"], m["replies"], m["retweets"], m["impressions"],
+        )
+
+    if updated:
+        _save_metrics_file(metrics)
+        log.info("update_post_metrics: stored metrics for %d tweet(s).", updated)
+
+    return updated
 
 
 # ---------------------------------------------------------------------------

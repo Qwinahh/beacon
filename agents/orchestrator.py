@@ -524,6 +524,15 @@ def run_post_cycle(state: State, alpha_only: bool = False) -> dict:
 def _post_success_hooks(state: State, result: dict) -> None:
     """Non-fatal post-success actions: metrics, vault log, memory."""
     try:
+        state.record_post(
+            tweet_id  = result["tweet_id"],
+            fmt       = result.get("format_used", "unknown"),
+            topic     = result.get("topic", ""),
+        )
+    except Exception as exc:
+        log.debug("state.record_post failed (non-fatal): %s", exc)
+
+    try:
         from bot.sources.x_metrics import record_posted_tweet
         record_posted_tweet(
             tweet_id    = result["tweet_id"],

@@ -9,9 +9,10 @@ from __future__ import annotations
 import hashlib
 import json
 import logging
+import time
 from datetime import date, datetime, timezone
 from pathlib import Path
-from typing import Any
+from typing import Any, Optional
 
 from bot.config import (
     FINGERPRINT_MEMORY_SIZE,
@@ -205,6 +206,45 @@ class State:
         posted: list[str] = self._data.setdefault("portfolio_posted", [])
         if key not in posted:
             posted.append(key)
+
+    # ------------------------------------------------------------------
+    # Quote tweet tracking
+    # ------------------------------------------------------------------
+
+    # ------------------------------------------------------------------
+    # Post tracking (for metrics collection)
+    # ------------------------------------------------------------------
+
+    _POSTS_MEMORY = 200  # last ~2 months at 3 posts/day
+
+    def record_post(
+        self,
+        tweet_id: str,
+        fmt: str,
+        topic: str,
+        posted_at: Optional[float] = None,
+    ) -> None:
+        """Record a posted tweet so update_post_metrics can fetch its engagement later."""
+        posts: list = self._data.setdefault("posts", [])
+        if any(p.get("tweet_id") == tweet_id for p in posts):
+            return  # already recorded
+        posts.append({
+            "tweet_id":  tweet_id,
+            "format":    fmt,
+            "topic":     topic,
+            "posted_at": posted_at or time.time(),
+        })
+        self._data["posts"] = posts[-self._POSTS_MEMORY:]
+
+    def posts(self, min_age_h: float = 2.0, max_age_h: float = 48.0) -> list[dict]:
+        """Return posts that were made between min_age_h and max_age_h ago."""
+        now = time.time()
+        min_s = min_age_h * 3600
+        max_s = max_age_h * 3600
+        return [
+            p for p in self._data.get("posts", [])
+            if min_s <= (now - p.get("posted_at", 0)) <= max_s
+        ]
 
     # ------------------------------------------------------------------
     # Quote tweet tracking

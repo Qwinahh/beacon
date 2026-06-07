@@ -31,6 +31,7 @@ from bot.x.engage import reply_to_own_mentions
 from bot.x.engage import run as run_mentions
 from bot.x.engage import run_own_thread_replies
 from bot.x.engage import run_quote_tweet
+from bot.x.engage import update_post_metrics
 from bot.x.follow import run_follow_cycle
 from bot.x.trend import run as run_trends
 
@@ -75,6 +76,12 @@ def main() -> None:
 
     state = State()
     state.load()
+
+    # ---- Pull engagement metrics for recent posts (feeds format_weights.py) ----
+    try:
+        update_post_metrics(state)
+    except Exception as exc:
+        log.debug("update_post_metrics skipped: %s", exc)
 
     mention_replies      = run_mentions(state)
     post_mention_replies = reply_to_own_mentions(state)

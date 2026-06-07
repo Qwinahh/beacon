@@ -99,6 +99,42 @@ def quote_tweet(text: str, quote_tweet_id: str) -> Optional[str]:
         return None
 
 
+def fetch_tweet_metrics(tweet_id: str) -> Optional[dict]:
+    """
+    Fetch public engagement metrics for a tweet we posted.
+
+    Returns dict with keys: likes, replies, retweets, impressions (all int, default 0).
+    Returns None on any error — callers must handle None gracefully.
+
+    impressions requires Basic/Pro tier and will be 0 on the Free tier.
+    """
+    client = get_client()
+    try:
+        resp = client.get_tweet(tweet_id, tweet_fields=["public_metrics"])
+        if resp.data is None:
+            log.debug("fetch_tweet_metrics: no data for tweet %s.", tweet_id)
+            return None
+        pm = resp.data.public_metrics or {}
+        return {
+            "likes":       int(pm.get("like_count",       0) or 0),
+            "replies":     int(pm.get("reply_count",      0) or 0),
+            "retweets":    int(pm.get("retweet_count",    0) or 0),
+            "impressions": int(pm.get("impression_count", 0) or 0),
+        }
+    except tweepy.errors.NotFound:
+        log.debug("fetch_tweet_metrics: tweet %s not found.", tweet_id)
+        return None
+    except tweepy.errors.Forbidden as exc:
+        log.warning("fetch_tweet_metrics forbidden for %s: %s", tweet_id, exc)
+        return None
+    except tweepy.errors.TooManyRequests:
+        log.warning("Rate limited fetching metrics for %s — will retry next run.", tweet_id)
+        return None
+    except tweepy.errors.TweepyException as exc:
+        log.error("fetch_tweet_metrics error for %s: %s", tweet_id, exc)
+        return None
+
+
 def get_mentions(since_id: Optional[str] = None) -> list[dict]:
     """
     Fetch recent mentions of the authenticated account.
