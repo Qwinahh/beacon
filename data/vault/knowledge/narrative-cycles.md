@@ -1,9 +1,12 @@
 ---
+title: Crypto Narrative Cycles
 type: knowledge
 category: market-narrative
+tags: [knowledge, narratives, strategy]
 confirmed: true
 source_tier: 1
 last_updated: 2026-06-04
+updated: 2026-06-07
 ---
 
 # Crypto Narrative Cycles

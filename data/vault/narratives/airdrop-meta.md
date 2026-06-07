@@ -1,7 +1,10 @@
 ---
+title: Airdrop Meta
 narrative: Airdrop Meta
-last_updated: 2026-06-01
+tags: [narrative, airdrop, farming]
 conviction: high
+last_updated: 2026-06-01
+updated: 2026-06-07
 ---
 
 # Airdrop Meta

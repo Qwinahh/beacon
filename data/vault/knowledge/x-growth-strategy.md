@@ -1,9 +1,12 @@
 ---
+title: X Growth Strategy — What Actually Works
 type: knowledge
 topic: x-growth
+tags: [knowledge, growth, x-strategy]
 confirmed: true
 source: synthesized from top crypto accounts + X algorithm research
 last_updated: 2025-06-04
+updated: 2026-06-07
 ---
 
 # X Growth Strategy — What Actually Works

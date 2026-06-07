@@ -1,7 +1,10 @@
 ---
+title: Perps Meta
 narrative: Perps Meta
-last_updated: 2026-06-01
+tags: [narrative, perps, trading]
 conviction: high
+last_updated: 2026-06-01
+updated: 2026-06-07
 ---
 
 # Perps Meta

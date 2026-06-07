@@ -13,5 +13,6 @@
   "table-editor-obsidian",
   "obsidian-excalidraw-plugin",
   "obsidian-linter",
-  "obsidian-git"
+  "obsidian-git",
+  "tag-wrangler"
 ]

@@ -2,9 +2,11 @@
 title: DeFi Primitives — How the Core Protocols Work
 type: knowledge
 category: technical
+tags: [knowledge, technical, defi]
 last_updated: 2026-06-01
 source_tier: 1
 confirmed: true
+updated: 2026-06-07
 ---
 
 # DeFi Primitives — How the Core Protocols Work

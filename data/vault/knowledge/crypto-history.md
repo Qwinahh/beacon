@@ -2,9 +2,11 @@
 title: Crypto History — Major Events 2017-2025
 type: knowledge
 category: history
+tags: [knowledge, history]
 last_updated: 2026-06-01
 source_tier: 1
 confirmed: true
+updated: 2026-06-07
 ---
 
 # Crypto History — Major Events 2017–2025

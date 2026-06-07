@@ -1,5 +1,7 @@
 ---
+title: Hyperliquid
 name: Hyperliquid
+tags: [project, perps, hyperliquid-l1]
 trust_score: 4
 category: Perps DEX
 chain: Hyperliquid L1
@@ -7,6 +9,7 @@ last_updated: 2026-06-01
 airdrop_status: distributed
 worth_farming: false
 blocked: false
+updated: 2026-06-07
 ---
 
 # Hyperliquid

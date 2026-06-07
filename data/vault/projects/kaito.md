@@ -1,5 +1,7 @@
 ---
+title: Kaito
 name: Kaito
+tags: [project, infofi, ethereum]
 trust_score: 3
 category: InfoFi / Attention Layer
 chain: Ethereum
@@ -7,6 +9,7 @@ last_updated: 2026-06-05
 airdrop_status: watching
 worth_farming: false
 blocked: false
+updated: 2026-06-07
 ---
 
 # Kaito

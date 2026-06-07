@@ -2,7 +2,9 @@
 title: Knowledge Base Index
 type: knowledge
 category: index
+tags: [knowledge, index]
 last_updated: 2026-06-01
+updated: 2026-06-07
 ---
 
 # Knowledge Base Index
