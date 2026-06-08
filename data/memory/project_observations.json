@@ -54,6 +54,13 @@
         "observation": "Hyperion DeFi is unwinding $29 million in HYPE deals across Felix and Native Markets, signaling a liquidity reduction event.",
         "source": "bot"
       }
+    ],
+    "MetaMask": [
+      {
+        "ts": "2026-06-08T16:34:04Z",
+        "observation": "MetaMask launched Agent Wallet in early access—positioned as enabling self-custody for AI agents, but bot evaluated most real-world use cases still require human intervention, limiting autonomous utility.",
+        "source": "bot"
+      }
     ]
   }
 }

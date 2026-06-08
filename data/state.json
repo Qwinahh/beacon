@@ -2,16 +2,18 @@
   "daily_counts": {
     "2026-06-04": 1,
     "2026-06-05": 3,
-    "2026-06-06": 2
+    "2026-06-06": 2,
+    "2026-06-08": 1
   },
-  "last_post_ts": 1780776190.9346333,
+  "last_post_ts": 1780936439.193729,
   "seen": [
     "92721f98279b91df501b",
     "6a52391eb83757bc8d90",
     "fc78aadef75de215a30c",
     "199afee4dae892c9403a",
     "47ed3548fb86b98a0f33",
-    "28a7ca9bc4c0602aeeb6"
+    "28a7ca9bc4c0602aeeb6",
+    "f9fd88e045a985ee651e"
   ],
   "recent_topics": [
     "general",
@@ -19,7 +21,8 @@
     "general",
     "defi",
     "defi",
-    "hype"
+    "hype",
+    "agents"
   ],
   "recent_formats": [
     "question",
@@ -29,7 +32,8 @@
     "pattern_recognition",
     "hot_take",
     "farm_update",
-    "callout"
+    "callout",
+    "hot_take"
   ],
   "replied_to": [
     "2060640874699399233",
@@ -46,5 +50,13 @@
   "last_mention_id": "2060640874699399233",
   "quote_tweeted_ids": [
     "2063274981346402786"
+  ],
+  "posts": [
+    {
+      "tweet_id": "2064023140624126370",
+      "format": "hot_take",
+      "topic": "agents",
+      "posted_at": 1780936439.1938128
+    }
   ]
 }
