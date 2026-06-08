@@ -1,10 +1,10 @@
 ---
-title: Trending — 2026-06-07
-updated: 2026-06-07 09:57 UTC
+title: Trending — 2026-06-08
+updated: 2026-06-08 11:52 UTC
 type: inspiration
 ---
 
-# Trending Today — 2026-06-07
+# Trending Today — 2026-06-08
 
 Top-performing posts from monitored accounts + keyword searches in the last 24h.
 Use these as raw material — find a post that made you think, then write your own take.
@@ -15,249 +15,250 @@ Use these as raw material — find a post that made you think, then write your o
 
 ## Top Posts by Engagement
 
-### 1. @0xSisyphus · 21:58 UTC
+### 1. @0xSisyphus · 12:42 UTC
 
-> N3on asks the wealthiest Indian billionaire why crypto prices are falling and says now is the best time to invest, as many people could become millionaires...😳👀
+> A good time to add more dots. https://t.co/4cRmmtbzKv
 
-"I don't think you will get another buying opportunity for the next couple of years." https://t.co/mhPosSS88A
+**Likes:** 29321 · **Replies:** 3045 · **RTs:** 2870 · **Quotes:** 1135 🔥🔥🔥🔥🔥
+[View post](https://x.com/0xSisyphus/status/2063602383863660976)
 
-**Likes:** 1833 · **Replies:** 53 · **RTs:** 68 · **Quotes:** 12 🔥🔥🔥🔥🔥
-[View post](https://x.com/0xSisyphus/status/2063379970987327655)
+### 2. @Route2FI · 12:04 UTC
 
-### 2. @Crypto_Pranjal · 23:30 UTC
+> If you own 1 single bitcoin, it’s worth $62k.
 
-> Full List of Airdrops I'm Currently Farming
+If you own 21 million bitcoin, it’s worth zero.
 
-Some of you have been asking for a fresh update on which airdrops I'm farming right now, so here it is.
+**Likes:** 19309 · **Replies:** 266 · **RTs:** 428 · **Quotes:** 60 🔥🔥🔥🔥🔥
+[View post](https://x.com/Route2FI/status/2063593028309160220)
 
-Some are high priority, some are lower effort, but overall these are the projects I'm actively spending time and keeping an eye on.
+### 3. @0xSisyphus · 19:54 UTC
 
-Here's the curren...
+> A new study of more than 111,000 women ages 45 to 80 found those on GLP-1 medications had a reduced risk of developing breast cancer by about 30%. https://t.co/d88z6D6YBQ
 
-**Likes:** 395 · **Replies:** 92 · **RTs:** 70 · **Quotes:** 0 🔥🔥🔥🔥🔥
-[View post](https://x.com/Crypto_Pranjal/status/2063403103723123084)
+**Likes:** 3493 · **Replies:** 76 · **RTs:** 486 · **Quotes:** 163 🔥🔥🔥🔥🔥
+[View post](https://x.com/0xSisyphus/status/2063711304959828258)
 
-### 3. @Trathoa · 15:03 UTC
+### 4. @ramseyfox1 · 04:55 UTC
 
-> aiUSX is coming ... and this feels like another significant milestone for @solsticefi 
+> Excited to dive deeper into the  ecosystem
 
-the new structured yield token will finance private AI infrastructure onchain through strategic partnerships with Apex and Tensorix. this isn’t just another DeFi experiment. it’s a real-world use case where USX c...
+@perx_trade is making waves as a top perpetual DEX on @NomismaNetwork  delivering seamless on-chain perp trading with real volume, leaderboards, and testnet action that's heating up Season 3. 
 
-**Likes:** 300 · **Replies:** 132 · **RTs:** 8 · **Quotes:** 0 🔥🔥🔥🔥🔥
-[View post](https://x.com/Trathoa/status/2063275523749609485)
+Whether you're grinding trades, chasing PnL, or exploring AI-p...
 
-### 4. @aixbt_agent · 21:45 UTC
+**Likes:** 381 · **Replies:** 185 · **RTs:** 100 · **Quotes:** 0 🔥🔥🔥🔥🔥
+[View post](https://x.com/ramseyfox1/status/2063847313450139655)
 
-> hyperliquid ZEC perp volume spiked 12-13x on may 26th. zero public catalyst. three days later the orchard vulnerability gets disclosed. ZEC crashes from $680 to $250, $117m in liquidations. one whale on hyperliquid has $100m+ in cumulative profits from shorting ZEC across multiple events. responsibl...
+### 5. @Gainzy222 · 14:37 UTC
 
-**Likes:** 421 · **Replies:** 0 · **RTs:** 63 · **Quotes:** 14 🔥🔥🔥🔥🔥
-[View post](https://x.com/aixbt_agent/status/2063376699958632459)
+> Let me add, Iran promises to strike Israel…. TONIGHT 
 
-### 5. @Akanimo_dx · 03:05 UTC
+Let’s see if Israel makes a statement. 
 
-> Sleep isn't just a basic necessity anymore, it’s a literal asset.
+It can go either way, but if Iran launches, Israel will respond
 
-@sleepagotchi is changing the game by turning your nightly rest into real rewards. 
+**Likes:** 704 · **Replies:** 63 · **RTs:** 108 · **Quotes:** 11 🔥🔥🔥🔥🔥
+[View post](https://x.com/Gainzy222/status/2063631336342995136)
 
-Every good night of sleep helps you track your health habits while giving back value. It’s actual, practical innovation that builds your health prof...
+### 6. @gainers_top · 03:30 UTC
 
-**Likes:** 105 · **Replies:** 104 · **RTs:** 32 · **Quotes:** 0 🔥🔥🔥🔥🔥
-[View post](https://x.com/Akanimo_dx/status/2063457253097615367)
+> Good Morning X Family 💗
 
-### 6. @Akanimo_dx · 04:43 UTC
+Most traders are chasing narratives. @dango is building infrastructure.
 
-> Looking to stack more diamonds and bonus points? It all starts with @perx_trade one of the most active perp DEXs in the ecosystem right now, fueling the @NomismaNetwork testnet.
+A purpose-built Layer 1 for trading, a fully on-chain order book, unified margin accounts, vaults, points, loot boxes, and a user experience that feels closer to a CEX while staying decentralized. 
 
-Getting your volume up on PerX is straightforward, depending on your strategy:
+Wha...
 
-Market Order: Instant entry at current ma...
+**Likes:** 183 · **Replies:** 178 · **RTs:** 52 · **Quotes:** 1 🔥🔥🔥🔥🔥
+[View post](https://x.com/gainers_top/status/2063825919777911248)
 
-**Likes:** 95 · **Replies:** 88 · **RTs:** 19 · **Quotes:** 2 🔥🔥🔥🔥🔥
-[View post](https://x.com/Akanimo_dx/status/2063481930146795819)
+### 7. @0xSisyphus · 19:39 UTC
 
-### 7. @0xSisyphus · 15:17 UTC
+> The new class of GLP-1 + glucagon drugs has, once again, shown that it can obliterate liver fat.
 
-> A lot of Saylor’s decisions which are getting overthought (why buy back 2029 debt with the only cash you have? Why only sell a tiny amount of BTC instead of nuking the mkt in advance?) can just be chalked up to negligence, I think
+Fatty liver disease might be a thing of the past when these things hit the market.
 
-**Likes:** 291 · **Replies:** 28 · **RTs:** 8 · **Quotes:** 2 🔥🔥🔥🔥🔥
-[View post](https://x.com/0xSisyphus/status/2063279197838103038)
+Consider this earlier result for Retatrutide, where they saw 80% reductions in 24 weeks: https://t.co/RPZ9cMK3gW
 
-### 8. @andrewmoh · 15:01 UTC
+**Likes:** 525 · **Replies:** 23 · **RTs:** 48 · **Quotes:** 4 🔥🔥🔥🔥🔥
+[View post](https://x.com/0xSisyphus/status/2063707540966232472)
 
-> Till now, perp trading appears in most of the trending markets, not only crypto.
+### 8. @Route2FI · 11:26 UTC
 
-+ RWAs, especially tokenized stocks
+> Seems like the common consensus is that the near-term BTC price action comes down to one question:
 
-+ trading cards
+Did Saylor sell enough $BTC last week?
 
-+ collectible NFTs
+$0 sold → Goblin town next
+$1B → not enough, still lower
+$2B or more → bounce
 
-Any markets whose prices are fluctuating can be the core material for perp trading.
+The more he sold this week, the more we will go up.
 
-But not every perp platform is able to maintain a sustainab...
+**Likes:** 349 · **Replies:** 66 · **RTs:** 33 · **Quotes:** 4 🔥🔥🔥🔥🔥
+[View post](https://x.com/Route2FI/status/2063583481016279211)
 
-**Likes:** 145 · **Replies:** 68 · **RTs:** 11 · **Quotes:** 0 🔥🔥🔥🔥🔥
-[View post](https://x.com/andrewmoh/status/2063274981346402786)
+### 9. @hl_eco · 12:31 UTC
 
-### 9. @Kaffchad · 08:32 UTC
+> By community request, 15 new dashboards are live on https://t.co/WaFSSsVwBa:
 
-> Why sell $HYPE when the catalysts for the next leg are massive?
+Price-to-Earnings: HYPE valued like a stock, its trailing P/E on one line next to Robinhood, Nasdaq, CME, ICE and Interactive Brokers.
 
-Only 22% of supply is circulating, with a daily buyer underneath. That's a very different market structure.
+HYPE Holders: how many wallets hold and stake HYPE, how fast that base is growing, and...
 
-THYP, BHYP, and HYPG are all live now, and cumulative HYPE ETF inflows are ~$130M.
+**Likes:** 369 · **Replies:** 38 · **RTs:** 46 · **Quotes:** 5 🔥🔥🔥🔥🔥
+[View post](https://x.com/hl_eco/status/2063599792639430869)
 
-FalconX estimates ETF flows absorbed aroun...
+### 10. @Gainzy222 · 02:54 UTC
 
-**Likes:** 161 · **Replies:** 37 · **RTs:** 17 · **Quotes:** 6 🔥🔥🔥🔥🔥
-[View post](https://x.com/Kaffchad/status/2063177087335448740)
+> Holy fuck
 
-### 10. @dazzlercoin · 14:02 UTC
+War https://t.co/e3pdRZRVQF
 
-> Stocks > crypto? 
+**Likes:** 319 · **Replies:** 79 · **RTs:** 7 · **Quotes:** 2 🔥🔥🔥🔥🔥
+[View post](https://x.com/Gainzy222/status/2063816832461770947)
 
-Looking at a 1 year period 
-- BTC is down 40% 
-- S&P500 is up 26% 
+### 11. @0xSisyphus · 14:31 UTC
 
-If you are still 100% portfolio into crypto, is it about time that changed?? 
+> An ex-Citadel and Tiger Cub PM breaks down a workflow that used to take days across 300 companies — and how AI does it now:
 
-There is a big shift coming, REAL spot equities on-chain (not just tokenised perp dex trading) 
+@FundamentEdge explains:
 
-Use your magic internet money to buy ...
+"There are workflows we would do in the tiger cub world that you just don't have the time to do in the multi-manager world."
 
-**Likes:** 90 · **Replies:** 60 · **RTs:** 0 · **Quotes:** 0 🔥🔥🔥🔥🔥
-[View post](https://x.com/dazzlercoin/status/2063260292855816336)
+"One is a guidance cred...
 
-### 11. @0xSisyphus · 14:09 UTC
+**Likes:** 471 · **Replies:** 4 · **RTs:** 36 · **Quotes:** 2 🔥🔥🔥🔥🔥
+[View post](https://x.com/0xSisyphus/status/2063629803966910526)
 
-> "ETH is the worst performing asset since 2022"
+### 12. @Route2FI · 15:53 UTC
 
-What people were actually buying in 2022: https://t.co/ynHyFHowVm
+> I think one of my biggest mistakes in my life was staying in the same circle for way too long due to comfort, instead of seeking out to people who actually knew how to move to a higher level in life.
 
-**Likes:** 206 · **Replies:** 11 · **RTs:** 13 · **Quotes:** 0 🔥🔥🔥🔥🔥
-[View post](https://x.com/0xSisyphus/status/2063262125359775779)
+**Likes:** 408 · **Replies:** 19 · **RTs:** 47 · **Quotes:** 0 🔥🔥🔥🔥🔥
+[View post](https://x.com/Route2FI/status/2063650621643804899)
 
-### 12. @Gainzy222 · 07:40 UTC
+### 13. @enesonchain · 20:16 UTC
 
-> You’ll all buy zec at the price you deserve https://t.co/xPjT8Vjcqr
+> i wouldnt recommend perp trading in this trading environment but if you do, at least use other platforms that didnt do airdrop yet
 
-**Likes:** 113 · **Replies:** 41 · **RTs:** 0 · **Quotes:** 2 🔥🔥🔥🔥
-[View post](https://x.com/Gainzy222/status/2063526381464735760)
+i think its too late for variational unless youre trading with size but otherwise, i have two option for you
 
-### 13. @Gainzy222 · 08:06 UTC
+one of them is phoenix - heavily supported by solana core ...
 
-> why is it pronounced brett “farve” if it’s spelled brett favre ?
+**Likes:** 163 · **Replies:** 94 · **RTs:** 30 · **Quotes:** 0 🔥🔥🔥🔥🔥
+[View post](https://x.com/enesonchain/status/2063716718573232637)
 
-**Likes:** 63 · **Replies:** 48 · **RTs:** 3 · **Quotes:** 1 🔥🔥🔥🔥
-[View post](https://x.com/Gainzy222/status/2063170690186953101)
+### 14. @StreetSensex · 16:12 UTC
 
-### 14. @stacverse · 05:06 UTC
+> SpaceX is "crashing" on Hyperliquid - before it even lists on Nasdaq.
 
-> StacVerse: StacSol | Superiority | Lets Discuss
+What's happening: 
+A crypto exchange called Hyperliquid let people bet on SpaceX's price BEFORE it goes public on June 12.
+🔹 Launched May 18 at $150.
+🔹 Peaked at $216.
+🔹 Today: $163 (down ~25% from peak).
+🔹 Actual IPO price: $135...
 
-🚨 Everyone loves bull markets. The real test is what your asset does when charts turn red. 📉
+**Likes:** 237 · **Replies:** 50 · **RTs:** 47 · **Quotes:** 9 🔥🔥🔥🔥🔥
+[View post](https://x.com/StreetSensex/status/2063655348095901953)
 
-🟢 stacSOL isn’t just “yield.” It’s a position engineered around three edges:
+### 15. @Mars_DeFi · 06:34 UTC
 
-💸 Carry that exceeds the borrowing cost most people pay.
-🛡️ Leveraged SOL expos...
+> Last week had a good number of product launches, infrastructure upgrades, and market expansions across the crypto ecosystem.
 
-**Likes:** 72 · **Replies:** 18 · **RTs:** 30 · **Quotes:** 0 🔥🔥🔥
-[View post](https://x.com/stacverse/status/2063487837379404131)
+From new prediction markets to multichain stablecoin integrations and institutional RWA products, teams continued pushing the boundaries of what can be built onchain.
 
-### 15. @WuBlockchain · 18:43 UTC
+Here’s...
 
-> CZ: What Would It Take for Aster to Beat Hyperliquid? (ARCHIVE FOOTAGE )  
+**Likes:** 79 · **Replies:** 67 · **RTs:** 106 · **Quotes:** 0 🔥🔥🔥🔥🔥
+[View post](https://x.com/Mars_DeFi/status/2063872217285619771)
 
-In an October 11, 2025 interview on the Threadguy channel, when asked what Aster needs to do to surpass Hyperliquid, Binance founder Changpeng Zhao (CZ) @cz_binance  stated that the two are not simply competitors, but serve ...
+### 16. @quang250802 · 12:35 UTC
 
-**Likes:** 73 · **Replies:** 26 · **RTs:** 8 · **Quotes:** 2 🔥🔥🔥
-[View post](https://x.com/WuBlockchain/status/2063330834107531576)
+> full List of Airdrops Farming
 
-### 16. @Gainzy222 · 07:11 UTC
+not saying all of these will print.
 
-> Fuck man I sorta see it https://t.co/lA0KQa9EA2
+not saying all of these will even launch.
 
-**Likes:** 104 · **Replies:** 19 · **RTs:** 3 · **Quotes:** 1 🔥🔥🔥
-[View post](https://x.com/Gainzy222/status/2063519203584577658)
+1. Grass - Still one of the strongest DePIN plays. Massive user base, real product, and probably the easiest farm on this list.
+https://t.co/Pds3mbH68I
 
-### 17. @Agossstina4 · 20:15 UTC
+2. GenLayer - AI infrastructure is s...
 
-> Solana just got its first liquid staking token that generates yield from blockspace auction revenue. $rkuSOL from Raiku launched on June 3, stacking standard staking rewards with MEV and proceeds from ahead-of-time (AOT) and just-in-time (JIT) blockspace sales - a triple-revenue model no other $SOL ...
+**Likes:** 164 · **Replies:** 78 · **RTs:** 11 · **Quotes:** 0 🔥🔥🔥🔥🔥
+[View post](https://x.com/quang250802/status/2063600650626445651)
 
-**Likes:** 51 · **Replies:** 7 · **RTs:** 21 · **Quotes:** 13 🔥🔥
-[View post](https://x.com/Agossstina4/status/2063354039660646697)
+### 17. @Route2FI · 12:13 UTC
 
-### 18. @Havochl_ · 10:01 UTC
+> 90% probability that Saylor bought BTC this week accordring to Polymarket.
 
-> One thing people still don't fully understand about $HYPE
+Tempted to take the other side here, but idk man...prob best to stay away. https://t.co/AJa58oaA09
 
-The real question isn't:
+**Likes:** 286 · **Replies:** 16 · **RTs:** 40 · **Quotes:** 0 🔥🔥🔥🔥🔥
+[View post](https://x.com/Route2FI/status/2063595283246686356)
 
-"Why is HYPE worth $60 today?"
+### 18. @Kaffchad · 07:13 UTC
 
-It's:
+> This bear market is very different btw. Okay, most charts look dead but usage is not dead at all.
 
-"Who is going to be selling HYPE 6-12 months from now?"
+Some fundamentals are printing fees, liquidity still moves, and some tokens are somehow outperforming BTC.
 
-Over the last month we already saw the market started repricing what Hyperliquid building and $HYPE ran from $45 to $75...
+Those products have product-market fit and some version of demand that doesn’t need CT to be ...
 
-**Likes:** 88 · **Replies:** 12 · **RTs:** 4 · **Quotes:** 0 🔥🔥
-[View post](https://x.com/Havochl_/status/2063199468552692009)
+**Likes:** 150 · **Replies:** 46 · **RTs:** 15 · **Quotes:** 5 🔥🔥🔥🔥🔥
+[View post](https://x.com/Kaffchad/status/2063882149871460775)
 
-### 19. @BNB_Hub · 17:00 UTC
+### 19. @Gainzy222 · 06:34 UTC
 
-> This Week on @BNBCHAIN
+> It’s legit war lads
 
-News:  
-🔶 Zero-fee carnival for U, USDC & USD1 officially extended until June 30.  
-🔶 BNB Beacon Chain Token Recovery Tool Phase 2 ends June 30.  
-🔶 Binance launched direct stocks & ETFs trading (7,000+ assets like AAPL & TSLA) using stablecoins from just $5.  
-🔶 Binance open...
+Round the clock alerts on tel aviv it seems https://t.co/vlozV8zCqE
 
-**Likes:** 56 · **Replies:** 13 · **RTs:** 13 · **Quotes:** 1 🔥🔥
-[View post](https://x.com/BNB_Hub/status/2063304913904431173)
+**Likes:** 134 · **Replies:** 53 · **RTs:** 8 · **Quotes:** 3 🔥🔥🔥🔥🔥
+[View post](https://x.com/Gainzy222/status/2063872167096557597)
 
-### 20. @mr_abusadeeq · 23:31 UTC
+### 20. @0xSisyphus · 19:43 UTC
 
-> Raiku, a Solana ($SOL) infrastructure startup, launched $rkuSOL on June 3 - a liquid staking token that blends staking rewards, MEV, and a novel blockspace auction revenue stream.
+> Eli Lilly says its experimental obesity drug cut sleep apnea severity by 60.6% in a Phase 3 trial.
 
-Validators using Raiku’s client can sell blockspace via Ahead-of-Time and Just-in-Time auctions, then pass proceeds bac...
+Retatrutide will change the world.
 
-**Likes:** 56 · **Replies:** 6 · **RTs:** 19 · **Quotes:** 5 🔥🔥
-[View post](https://x.com/mr_abusadeeq/status/2063403402483109999)
+**Likes:** 221 · **Replies:** 18 · **RTs:** 14 · **Quotes:** 0 🔥🔥🔥🔥🔥
+[View post](https://x.com/0xSisyphus/status/2063708326878179628)
 
 ---
 
 ## Today's Pattern Analysis
 
 ### Editorial Brief
-Based on the top-performing crypto posts from the last 24 hours, we've identified key trends and narratives that are driving engagement.
+Based on the top-performing posts from the last 24 hours, we've identified key trends to inform @Qwinahh's content strategy.
 
 ### Topics Getting Traction
-The posts reveal a strong interest in:
-* **Perpetual trading (perp)**: Multiple posts mention perp trading, with @aixbt_agent highlighting a 12-13x spike in hyperliquid ZEC perp volume, resulting in $117m in liquidations.
-* **Airdrops and farming**: @Crypto_Pranjal's post on airdrops they're currently farming garnered significant attention, with 395 likes and 92 replies.
-* **Innovative protocols**: @Akanimo_dx's post on @sleepagotchi, which rewards users for sleeping, received 105 likes and 104 replies, indicating interest in unique use cases.
-* **Market analysis and predictions**: Posts from @0xSisyphus, @Kaffchad, and @dazzlercoin sparked engagement with their market insights and predictions, such as @0xSisyphus's statement that "ETH is the worst performing asset since 2022."
+The following narratives are gaining traction:
+* Bitcoin price action and its correlation with Michael Saylor's selling activity, with **$0 sold → Goblin town next** and **$2B or more → bounce** being potential scenarios.
+* Perpetual DEXs, such as @perx_trade on @NomismaNetwork, offering seamless on-chain perp trading with real volume and leaderboards.
+* Layer 1 infrastructure development, like @dango's purpose-built Layer 1 for trading, with a fully on-chain order book and unified margin accounts.
 
 ### Formats Working
-Effective post formats include:
-* **Data dumps**: @aixbt_agent's post on hyperliquid ZEC perp volume and @Crypto_Pranjal's airdrop list were well-received.
-* **Contrarian takes**: @0xSisyphus's opinion on Saylor's decisions and @Kaffchad's bullish stance on $HYPE encouraged discussion.
-* **Innovative project showcases**: @Akanimo_dx's introduction to @sleepagotchi and @stacverse's explanation of stacSOL generated interest.
+Data dumps, contrarian takes, and thread openers are effective formats, as seen in:
+* @0xSisyphus's posts on GLP-1 medications and their potential to reduce breast cancer risk by **about 30%**.
+* @Route2FI's posts on Bitcoin price action and the impact of Saylor's selling activity.
 
 ### Voice Patterns
-Posts that landed well often featured:
-* **Specific numbers**: @aixbt_agent's $117m in liquidations and @Kaffchad's $130M in HYPE ETF inflows added credibility to their claims.
-* **Strong opinions**: @0xSisyphus's blunt assessment of Saylor's decisions and @Kaffchad's bullishness on $HYPE sparked engagement.
-* **Insider knowledge**: @Crypto_Pranjal's airdrop list and @stacverse's explanation of stacSOL's edges demonstrated expertise.
+Posts with specific numbers, strong opinions, and insider knowledge are resonating with the audience, such as:
+* **$62k** being the worth of 1 single Bitcoin.
+* **111,000 women** being part of a study on GLP-1 medications.
+* **80% reductions in 24 weeks** being the result of Retatrutide treatment.
 
-### Content Angles for @Qwinahh
-Based on these trends, @Qwinahh could post about:
-1. **
+### Content Angles
+For @Qwinahh's next posts, we recommend the following content angles:
+1. **Analyzing the Impact of Saylor's Selling Activity on Bitcoin Price**: Explore the potential scenarios and their effects on the market.
+2. **Uncovering the Potential of Perpetual DEXs**: Dive deeper into the features and benefits of @perx_trade on @NomismaNetwork.
+3. **Demystifying Layer 1 Infrastructure Development**: Break down the advancements in @dango's purpose-built Layer 1 for trading and its implications for the crypto ecosystem.
 
 ---
 
-_Updated daily at ~07:00 UTC by the inspiration agent. Archive: [[history/2026-06-07]]_
+_Updated daily at ~07:00 UTC by the inspiration agent. Archive: [[history/2026-06-08]]_
