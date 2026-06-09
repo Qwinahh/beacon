@@ -1,12 +1,12 @@
 ---
-title: What's Working — 2026-06-07
-updated: 2026-06-07 09:57 UTC
+title: What's Working — 2026-06-08
+updated: 2026-06-08 11:52 UTC
 type: inspiration
 ---
 
-# What's Working Today — 2026-06-07
+# What's Working Today — 2026-06-08
 
-Pattern analysis across 45 high-engagement posts from the last 24h.
+Pattern analysis across 42 high-engagement posts from the last 24h.
 
 [[trending|→ Today's Top Posts]] | [[../dashboard|← Dashboard]]
 
@@ -20,58 +20,58 @@ Pattern analysis across 45 high-engagement posts from the last 24h.
 - **perp** █ (1 posts)
 - **defi** █ (1 posts)
 - **solana** █ (1 posts)
-- **arbitrum** █ (1 posts)
 - **base** █ (1 posts)
+- **tvl** █ (1 posts)
 
 ## Format Breakdown
 
 - **thread_hook**: 38 posts
-- **data_observation**: 35 posts
-- **contrarian**: 25 posts
+- **data_observation**: 32 posts
+- **contrarian**: 26 posts
 - **question**: 12 posts
 
 ## Editorial Analysis
 
 ### Editorial Brief
-Based on the top-performing crypto posts from the last 24 hours, we've identified key trends and narratives that are driving engagement.
+Based on the top-performing posts from the last 24 hours, we've identified key trends to inform @Qwinahh's content strategy.
 
 ### Topics Getting Traction
-The posts reveal a strong interest in:
-* **Perpetual trading (perp)**: Multiple posts mention perp trading, with @aixbt_agent highlighting a 12-13x spike in hyperliquid ZEC perp volume, resulting in $117m in liquidations.
-* **Airdrops and farming**: @Crypto_Pranjal's post on airdrops they're currently farming garnered significant attention, with 395 likes and 92 replies.
-* **Innovative protocols**: @Akanimo_dx's post on @sleepagotchi, which rewards users for sleeping, received 105 likes and 104 replies, indicating interest in unique use cases.
-* **Market analysis and predictions**: Posts from @0xSisyphus, @Kaffchad, and @dazzlercoin sparked engagement with their market insights and predictions, such as @0xSisyphus's statement that "ETH is the worst performing asset since 2022."
+The following narratives are gaining traction:
+* Bitcoin price action and its correlation with Michael Saylor's selling activity, with **$0 sold → Goblin town next** and **$2B or more → bounce** being potential scenarios.
+* Perpetual DEXs, such as @perx_trade on @NomismaNetwork, offering seamless on-chain perp trading with real volume and leaderboards.
+* Layer 1 infrastructure development, like @dango's purpose-built Layer 1 for trading, with a fully on-chain order book and unified margin accounts.
 
 ### Formats Working
-Effective post formats include:
-* **Data dumps**: @aixbt_agent's post on hyperliquid ZEC perp volume and @Crypto_Pranjal's airdrop list were well-received.
-* **Contrarian takes**: @0xSisyphus's opinion on Saylor's decisions and @Kaffchad's bullish stance on $HYPE encouraged discussion.
-* **Innovative project showcases**: @Akanimo_dx's introduction to @sleepagotchi and @stacverse's explanation of stacSOL generated interest.
+Data dumps, contrarian takes, and thread openers are effective formats, as seen in:
+* @0xSisyphus's posts on GLP-1 medications and their potential to reduce breast cancer risk by **about 30%**.
+* @Route2FI's posts on Bitcoin price action and the impact of Saylor's selling activity.
 
 ### Voice Patterns
-Posts that landed well often featured:
-* **Specific numbers**: @aixbt_agent's $117m in liquidations and @Kaffchad's $130M in HYPE ETF inflows added credibility to their claims.
-* **Strong opinions**: @0xSisyphus's blunt assessment of Saylor's decisions and @Kaffchad's bullishness on $HYPE sparked engagement.
-* **Insider knowledge**: @Crypto_Pranjal's airdrop list and @stacverse's explanation of stacSOL's edges demonstrated expertise.
+Posts with specific numbers, strong opinions, and insider knowledge are resonating with the audience, such as:
+* **$62k** being the worth of 1 single Bitcoin.
+* **111,000 women** being part of a study on GLP-1 medications.
+* **80% reductions in 24 weeks** being the result of Retatrutide treatment.
 
-### Content Angles for @Qwinahh
-Based on these trends, @Qwinahh could post about:
-1. **
+### Content Angles
+For @Qwinahh's next posts, we recommend the following content angles:
+1. **Analyzing the Impact of Saylor's Selling Activity on Bitcoin Price**: Explore the potential scenarios and their effects on the market.
+2. **Uncovering the Potential of Perpetual DEXs**: Dive deeper into the features and benefits of @perx_trade on @NomismaNetwork.
+3. **Demystifying Layer 1 Infrastructure Development**: Break down the advancements in @dango's purpose-built Layer 1 for trading and its implications for the crypto ecosystem.
 
 ---
 
 ## Top Accounts Active Today
 
-- @0xSisyphus (6 qualifying posts)
-- @Gainzy222 (3 qualifying posts)
-- @Akanimo_dx (2 qualifying posts)
-- @dens_club (1 qualifying posts)
-- @Crypto_Pranjal (1 qualifying posts)
-- @WuBlockchain (1 qualifying posts)
-- @andrewmoh (1 qualifying posts)
-- @Havochl_ (1 qualifying posts)
-- @Kaffchad (1 qualifying posts)
-- @aixbt_agent (1 qualifying posts)
+- @0xSisyphus (7 qualifying posts)
+- @Route2FI (5 qualifying posts)
+- @Gainzy222 (4 qualifying posts)
+- @dens_club (2 qualifying posts)
+- @DefiIgnas (1 qualifying posts)
+- @FabiusDefi (1 qualifying posts)
+- @Mars_DeFi (1 qualifying posts)
+- @enesonchain (1 qualifying posts)
+- @StreetSensex (1 qualifying posts)
+- @hectofinance (1 qualifying posts)
 
 ---
-_Updated daily at ~07:00 UTC. Archive: [[history/2026-06-07]]_
+_Updated daily at ~07:00 UTC. Archive: [[history/2026-06-08]]_
