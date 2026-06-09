@@ -1,10 +1,10 @@
 ---
-title: Trending — 2026-06-08
-updated: 2026-06-08 11:52 UTC
+title: Trending — 2026-06-09
+updated: 2026-06-09 10:31 UTC
 type: inspiration
 ---
 
-# Trending Today — 2026-06-08
+# Trending Today — 2026-06-09
 
 Top-performing posts from monitored accounts + keyword searches in the last 24h.
 Use these as raw material — find a post that made you think, then write your own take.
@@ -15,250 +15,257 @@ Use these as raw material — find a post that made you think, then write your o
 
 ## Top Posts by Engagement
 
-### 1. @0xSisyphus · 12:42 UTC
+### 1. @0xSisyphus · 02:18 UTC
 
-> A good time to add more dots. https://t.co/4cRmmtbzKv
+> SOURCES: ANTHROPIC WILL RELEASE THE PUBLIC VERSION OF MYTHOS TOMORROW
 
-**Likes:** 29321 · **Replies:** 3045 · **RTs:** 2870 · **Quotes:** 1135 🔥🔥🔥🔥🔥
-[View post](https://x.com/0xSisyphus/status/2063602383863660976)
+**Likes:** 4319 · **Replies:** 245 · **RTs:** 264 · **Quotes:** 208 🔥🔥🔥🔥🔥
+[View post](https://x.com/0xSisyphus/status/2064170300452098183)
 
-### 2. @Route2FI · 12:04 UTC
+### 2. @Pentosh1 · 13:16 UTC
 
-> If you own 1 single bitcoin, it’s worth $62k.
+> Coinbase is now the official deployer of @HyperliquidX's USDC treasury wallet. 
 
-If you own 21 million bitcoin, it’s worth zero.
+We will be activating AQAv2 from the two addresses below:
 
-**Likes:** 19309 · **Replies:** 266 · **RTs:** 428 · **Quotes:** 60 🔥🔥🔥🔥🔥
-[View post](https://x.com/Route2FI/status/2063593028309160220)
+0x4E5319dEb1072B01439EE674db5C321d11fd96F8
 
-### 3. @0xSisyphus · 19:54 UTC
+0xc20699185c15D0a2fD65779BB5d69f5b0B113c00
 
-> A new study of more than 111,000 women ages 45 to 80 found those on GLP-1 medications had a reduced risk of developing breast cancer by about 30%. https://t.co/d88z6D6YBQ
+**Likes:** 2014 · **Replies:** 316 · **RTs:** 412 · **Quotes:** 135 🔥🔥🔥🔥🔥
+[View post](https://x.com/Pentosh1/status/2063973364117414207)
 
-**Likes:** 3493 · **Replies:** 76 · **RTs:** 486 · **Quotes:** 163 🔥🔥🔥🔥🔥
-[View post](https://x.com/0xSisyphus/status/2063711304959828258)
+### 3. @base · 16:53 UTC
 
-### 4. @ramseyfox1 · 04:55 UTC
+> Over $1B of DEX volume on Base today
 
-> Excited to dive deeper into the  ecosystem
+And the day before
 
-@perx_trade is making waves as a top perpetual DEX on @NomismaNetwork  delivering seamless on-chain perp trading with real volume, leaderboards, and testnet action that's heating up Season 3. 
+Oh and the day before that https://t.co/WAGtzhuieu
 
-Whether you're grinding trades, chasing PnL, or exploring AI-p...
+**Likes:** 882 · **Replies:** 235 · **RTs:** 140 · **Quotes:** 42 🔥🔥🔥🔥🔥
+[View post](https://x.com/base/status/2064027992708268146)
 
-**Likes:** 381 · **Replies:** 185 · **RTs:** 100 · **Quotes:** 0 🔥🔥🔥🔥🔥
-[View post](https://x.com/ramseyfox1/status/2063847313450139655)
+### 4. @0xSisyphus · 01:18 UTC
 
-### 5. @Gainzy222 · 14:37 UTC
+> Humanity(@Humanityprot) has been exploited, with losses exceeding $30M!
 
-> Let me add, Iran promises to strike Israel…. TONIGHT 
+The hacker is currently dumping $H and swapping it for $ETH.
 
-Let’s see if Israel makes a statement. 
+$H has already crashed ~90%.
 
-It can go either way, but if Iran launches, Israel will respond
+https://t.co/0Bhtu6TZDr https://t.co/cNGO70PHDH
 
-**Likes:** 704 · **Replies:** 63 · **RTs:** 108 · **Quotes:** 11 🔥🔥🔥🔥🔥
-[View post](https://x.com/Gainzy222/status/2063631336342995136)
+**Likes:** 780 · **Replies:** 185 · **RTs:** 78 · **Quotes:** 149 🔥🔥🔥🔥🔥
+[View post](https://x.com/0xSisyphus/status/2064155121341305075)
 
-### 6. @gainers_top · 03:30 UTC
+### 5. @Pentosh1 · 13:22 UTC
 
-> Good Morning X Family 💗
+> Let's goooo! 
 
-Most traders are chasing narratives. @dango is building infrastructure.
+This is potentially 500k-600k + of new buy pressure per day for hyperliquid:native and even more if it is retroactive from the deal date
 
-A purpose-built Layer 1 for trading, a fully on-chain order book, unified margin accounts, vaults, points, loot boxes, and a user experience that feels closer to a CEX while staying decentralized. 
+**Likes:** 722 · **Replies:** 61 · **RTs:** 52 · **Quotes:** 3 🔥🔥🔥🔥🔥
+[View post](https://x.com/Pentosh1/status/2063974926751568082)
 
-Wha...
+### 6. @0xSisyphus · 03:11 UTC
 
-**Likes:** 183 · **Replies:** 178 · **RTs:** 52 · **Quotes:** 1 🔥🔥🔥🔥🔥
-[View post](https://x.com/gainers_top/status/2063825919777911248)
+> unlucky timing for this hack to happen just 6 days before investors were supposed to start vesting tokens
 
-### 7. @0xSisyphus · 19:39 UTC
+**Likes:** 708 · **Replies:** 64 · **RTs:** 42 · **Quotes:** 8 🔥🔥🔥🔥🔥
+[View post](https://x.com/0xSisyphus/status/2064183511066796146)
 
-> The new class of GLP-1 + glucagon drugs has, once again, shown that it can obliterate liver fat.
+### 7. @tayvano_ · 10:39 UTC
 
-Fatty liver disease might be a thing of the past when these things hit the market.
+> Recent UK crypto sanctions seem to be a bit of an overreach. 
 
-Consider this earlier result for Retatrutide, where they saw 80% reductions in 24 weeks: https://t.co/RPZ9cMK3gW
+Wonder if it will ever get to the point where it’s ignored because HTX address tainting onchain has been catastrophic. 
 
-**Likes:** 525 · **Replies:** 23 · **RTs:** 48 · **Quotes:** 4 🔥🔥🔥🔥🔥
-[View post](https://x.com/0xSisyphus/status/2063707540966232472)
+In the past sanctions were done and those crypto businesses typically had a high % of illicit activity (Huione, Blen...
 
-### 8. @Route2FI · 11:26 UTC
+**Likes:** 471 · **Replies:** 70 · **RTs:** 43 · **Quotes:** 34 🔥🔥🔥🔥🔥
+[View post](https://x.com/tayvano_/status/2063933891782799397)
 
-> Seems like the common consensus is that the near-term BTC price action comes down to one question:
+### 8. @0xSisyphus · 10:00 UTC
 
-Did Saylor sell enough $BTC last week?
+> Retatrutide is basically twice as good at stimulating weight loss as semaglutide 
 
-$0 sold → Goblin town next
-$1B → not enough, still lower
-$2B or more → bounce
+Almost every single chronic health issue is downstream of fatness 
 
-The more he sold this week, the more we will go up.
+These drugs will dominate not just the entire weight loss industry, but all chronic disease budgets
 
-**Likes:** 349 · **Replies:** 66 · **RTs:** 33 · **Quotes:** 4 🔥🔥🔥🔥🔥
-[View post](https://x.com/Route2FI/status/2063583481016279211)
+**Likes:** 570 · **Replies:** 47 · **RTs:** 16 · **Quotes:** 4 🔥🔥🔥🔥🔥
+[View post](https://x.com/0xSisyphus/status/2063924107729645667)
 
-### 9. @hl_eco · 12:31 UTC
+### 9. @DefiIgnas · 09:45 UTC
 
-> By community request, 15 new dashboards are live on https://t.co/WaFSSsVwBa:
+> I can't shake off the thought that $ETH is following $ATOM.
 
-Price-to-Earnings: HYPE valued like a stock, its trailing P/E on one line next to Robinhood, Nasdaq, CME, ICE and Interactive Brokers.
+Both has tech used beyond their own ecosystem:
 
-HYPE Holders: how many wallets hold and stake HYPE, how fast that base is growing, and...
+- IBC and the Cosmos SDK run under dYdX, Celestia and Injective.
 
-**Likes:** 369 · **Replies:** 38 · **RTs:** 46 · **Quotes:** 5 🔥🔥🔥🔥🔥
-[View post](https://x.com/hl_eco/status/2063599792639430869)
+- The EVM runs almost every chain that isn't Solana.
 
-### 10. @Gainzy222 · 02:54 UTC
+Lots of adoption but native coins don't accrue much value.
 
-> Holy fuck
+Both scaled...
 
-War https://t.co/e3pdRZRVQF
+**Likes:** 242 · **Replies:** 134 · **RTs:** 17 · **Quotes:** 15 🔥🔥🔥🔥🔥
+[View post](https://x.com/DefiIgnas/status/2063920301180862580)
 
-**Likes:** 319 · **Replies:** 79 · **RTs:** 7 · **Quotes:** 2 🔥🔥🔥🔥🔥
-[View post](https://x.com/Gainzy222/status/2063816832461770947)
+### 10. @Route2FI · 11:04 UTC
 
-### 11. @0xSisyphus · 14:31 UTC
+> While most privacy infra struggles to get usage, Arcium has processed almost a million encrypted computations on Mainnet Alpha.
 
-> An ex-Citadel and Tiger Cub PM breaks down a workflow that used to take days across 300 companies — and how AI does it now:
+It's now the biggest and fastest growing encrypted computing network in the world.
 
-@FundamentEdge explains:
+Also hearing things about a large Encrypted AI release soon, which would put them head ...
 
-"There are workflows we would do in the tiger cub world that you just don't have the time to do in the multi-manager world."
+**Likes:** 365 · **Replies:** 32 · **RTs:** 46 · **Quotes:** 3 🔥🔥🔥🔥🔥
+[View post](https://x.com/Route2FI/status/2063940313861771474)
 
-"One is a guidance cred...
+### 11. @cryptogoos · 07:03 UTC
 
-**Likes:** 471 · **Replies:** 4 · **RTs:** 36 · **Quotes:** 2 🔥🔥🔥🔥🔥
-[View post](https://x.com/0xSisyphus/status/2063629803966910526)
+> 🚨 SPACEX IS GETTING CRUSHED ON HYPERLIQUID BEFORE THE IPO EVEN HITS WALL STREET.
 
-### 12. @Route2FI · 15:53 UTC
+$SPCX is down 31% from its perp listing high. 
+From $230 to $159.
 
-> I think one of my biggest mistakes in my life was staying in the same circle for way too long due to comfort, instead of seeking out to people who actually knew how to move to a higher level in life.
+This is the only place retail can trade SpaceX right now. 
 
-**Likes:** 408 · **Replies:** 19 · **RTs:** 47 · **Quotes:** 0 🔥🔥🔥🔥🔥
-[View post](https://x.com/Route2FI/status/2063650621643804899)
+Synthetic perps. No shares, no voting rights. 
+Just a pure bet on the valuation.
 
-### 13. @enesonchain · 20:16 UTC
+And the b...
 
-> i wouldnt recommend perp trading in this trading environment but if you do, at least use other platforms that didnt do airdrop yet
+**Likes:** 339 · **Replies:** 41 · **RTs:** 24 · **Quotes:** 4 🔥🔥🔥🔥🔥
+[View post](https://x.com/cryptogoos/status/2064241836697247851)
 
-i think its too late for variational unless youre trading with size but otherwise, i have two option for you
+### 12. @0xSisyphus · 17:00 UTC
 
-one of them is phoenix - heavily supported by solana core ...
+> *ANTHROPIC TESTING CONFIRMS MYTHOS SUCCESSFULLY EXPLOITED 18 OF 21 WINDOWS KERNEL BUGS DISCLOSED RECENTLY
 
-**Likes:** 163 · **Replies:** 94 · **RTs:** 30 · **Quotes:** 0 🔥🔥🔥🔥🔥
-[View post](https://x.com/enesonchain/status/2063716718573232637)
+*ANTHROPIC RESEARCH SHOWS MYTHOS EXPLOITS WINDOWS KERNEL FLAWS AT A COST OF $2,000 EACH
 
-### 14. @StreetSensex · 16:12 UTC
+*ANTHROPIC'S MYTHOS MODEL CREATES WORKING CYBER EXPLOITS FROM PUBLIC VULNERABILITIES WITHIN 31 MINUTES
 
-> SpaceX is "crashing" on Hyperliquid - before it even lists on Nasdaq.
+...
 
-What's happening: 
-A crypto exchange called Hyperliquid let people bet on SpaceX's price BEFORE it goes public on June 12.
-🔹 Launched May 18 at $150.
-🔹 Peaked at $216.
-🔹 Today: $163 (down ~25% from peak).
-🔹 Actual IPO price: $135...
+**Likes:** 341 · **Replies:** 12 · **RTs:** 24 · **Quotes:** 14 🔥🔥🔥🔥🔥
+[View post](https://x.com/0xSisyphus/status/2064029836591632392)
 
-**Likes:** 237 · **Replies:** 50 · **RTs:** 47 · **Quotes:** 9 🔥🔥🔥🔥🔥
-[View post](https://x.com/StreetSensex/status/2063655348095901953)
+### 13. @Gainzy222 · 06:11 UTC
 
-### 15. @Mars_DeFi · 06:34 UTC
+> Zec to 6000$
 
-> Last week had a good number of product launches, infrastructure upgrades, and market expansions across the crypto ecosystem.
+Zideliners can eat a bag of dicks
 
-From new prediction markets to multichain stablecoin integrations and institutional RWA products, teams continued pushing the boundaries of what can be built onchain.
+Spurs in 6
 
-Here’s...
+**Likes:** 204 · **Replies:** 55 · **RTs:** 7 · **Quotes:** 12 🔥🔥🔥🔥🔥
+[View post](https://x.com/Gainzy222/status/2064228753371431371)
 
-**Likes:** 79 · **Replies:** 67 · **RTs:** 106 · **Quotes:** 0 🔥🔥🔥🔥🔥
-[View post](https://x.com/Mars_DeFi/status/2063872217285619771)
+### 14. @variational_io · 14:29 UTC
 
-### 16. @quang250802 · 12:35 UTC
+> South Korea ETF $EWY and Japan ETF $EWJ perps are now live with zero fees and up to 20x leverage. https://t.co/NU1RAubDCb
 
-> full List of Airdrops Farming
+**Likes:** 185 · **Replies:** 45 · **RTs:** 20 · **Quotes:** 21 🔥🔥🔥🔥🔥
+[View post](https://x.com/variational_io/status/2063991768652402718)
 
-not saying all of these will print.
+### 15. @Route2FI · 18:29 UTC
 
-not saying all of these will even launch.
+> Absolute degenerate behavior.
 
-1. Grass - Still one of the strongest DePIN plays. Massive user base, real product, and probably the easiest farm on this list.
-https://t.co/Pds3mbH68I
+**Likes:** 277 · **Replies:** 9 · **RTs:** 43 · **Quotes:** 0 🔥🔥🔥🔥🔥
+[View post](https://x.com/Route2FI/status/2064052311006056470)
 
-2. GenLayer - AI infrastructure is s...
+### 16. @KookCapitalLLC · 19:18 UTC
 
-**Likes:** 164 · **Replies:** 78 · **RTs:** 11 · **Quotes:** 0 🔥🔥🔥🔥🔥
-[View post](https://x.com/quang250802/status/2063600650626445651)
+> observe $hype right now
 
-### 17. @Route2FI · 12:13 UTC
+ct freaked out over the june unlock and one visible seller
+price gave up some ground from the $75 area
 
-> 90% probability that Saylor bought BTC this week accordring to Polymarket.
+same old noise
 
-Tempted to take the other side here, but idk man...prob best to stay away. https://t.co/AJa58oaA09
+then adult markets opened and the bid came back in size
 
-**Likes:** 286 · **Replies:** 16 · **RTs:** 40 · **Quotes:** 0 🔥🔥🔥🔥🔥
-[View post](https://x.com/Route2FI/status/2063595283246686356)
+this isnt random
 
-### 18. @Kaffchad · 07:13 UTC
+its the same mechanical bid that’s been there every time volume and open interes...
 
-> This bear market is very different btw. Okay, most charts look dead but usage is not dead at all.
+**Likes:** 206 · **Replies:** 39 · **RTs:** 23 · **Quotes:** 5 🔥🔥🔥🔥🔥
+[View post](https://x.com/KookCapitalLLC/status/2064064637331521843)
 
-Some fundamentals are printing fees, liquidity still moves, and some tokens are somehow outperforming BTC.
+### 17. @Ellaweb_3 · 06:26 UTC
 
-Those products have product-market fit and some version of demand that doesn’t need CT to be ...
+> Hyperliquid keeps pulling attention even while most of the broader crypto market still looks shaky.
 
-**Likes:** 150 · **Replies:** 46 · **RTs:** 15 · **Quotes:** 5 🔥🔥🔥🔥🔥
-[View post](https://x.com/Kaffchad/status/2063882149871460775)
+Now Citrini Research, the same firm that shook markets earlier this year with its AI bubble warnings, is calling HYPE a “compelling” idea because of something many crypto projects still struggle with...
 
-### 19. @Gainzy222 · 06:34 UTC
+**Likes:** 146 · **Replies:** 66 · **RTs:** 12 · **Quotes:** 0 🔥🔥🔥🔥🔥
+[View post](https://x.com/Ellaweb_3/status/2064232754414285101)
 
-> It’s legit war lads
+### 18. @Omaofweb3 · 06:52 UTC
 
-Round the clock alerts on tel aviv it seems https://t.co/vlozV8zCqE
+> liquidity and hype are about to go parabolic on the most efficient perp dex alive !
 
-**Likes:** 134 · **Replies:** 53 · **RTs:** 8 · **Quotes:** 3 🔥🔥🔥🔥🔥
-[View post](https://x.com/Gainzy222/status/2063872167096557597)
+this is really  a good one from coinbase as they just became hyperliquid's official usdc treasury deployer and flipped on AQAv2 from the onchain addresses.
 
-### 20. @0xSisyphus · 19:43 UTC
+coinbase and hyperliquid incentives are now perfectly lock...
 
-> Eli Lilly says its experimental obesity drug cut sleep apnea severity by 60.6% in a Phase 3 trial.
+**Likes:** 128 · **Replies:** 69 · **RTs:** 1 · **Quotes:** 0 🔥🔥🔥🔥🔥
+[View post](https://x.com/Omaofweb3/status/2064239129320153422)
 
-Retatrutide will change the world.
+### 19. @tayvano_ · 14:10 UTC
 
-**Likes:** 221 · **Replies:** 18 · **RTs:** 14 · **Quotes:** 0 🔥🔥🔥🔥🔥
-[View post](https://x.com/0xSisyphus/status/2063708326878179628)
+> HTX sanctions have single-handedly undone years of work trying to get defi protocols and swappers to actually screen and block stolen funds.
+
+Treating every user of a top 10 exchange as ~sanctioned is fucking retarded and has led to a lot of legit people being frozen and unable to access their funds...
+
+**Likes:** 205 · **Replies:** 21 · **RTs:** 21 · **Quotes:** 6 🔥🔥🔥🔥🔥
+[View post](https://x.com/tayvano_/status/2063987060432859464)
+
+### 20. @Defi_Rocketeer · 15:01 UTC
+
+> How I find a winning DeFi product for the next cycle
+
+When I look at DeFi products, I start with the question: can this product survive when liquidity leaves, rates change, and users become more selective?
+
+The next cycle will reward products that combine yield, risk control, real demand, and deep D...
+
+**Likes:** 164 · **Replies:** 46 · **RTs:** 7 · **Quotes:** 0 🔥🔥🔥🔥🔥
+[View post](https://x.com/Defi_Rocketeer/status/2063999894545932503)
 
 ---
 
 ## Today's Pattern Analysis
 
-### Editorial Brief
-Based on the top-performing posts from the last 24 hours, we've identified key trends to inform @Qwinahh's content strategy.
+### Analysis of High-Performing Crypto Posts
+The top posts from the last 24 hours reveal several key trends. 
+**Topics getting traction** include:
+- The upcoming release of Anthropic's Mythos, with over 4,300 engagements
+- Exploits and hacks, such as the $30M loss suffered by Humanity, generating over 780 engagements
+- Adoption and integration of protocols like Hyperliquid and Base, with over 2,000 engagements
+- Regulatory concerns, such as the UK's crypto sanctions, sparking debate with over 470 engagements
 
-### Topics Getting Traction
-The following narratives are gaining traction:
-* Bitcoin price action and its correlation with Michael Saylor's selling activity, with **$0 sold → Goblin town next** and **$2B or more → bounce** being potential scenarios.
-* Perpetual DEXs, such as @perx_trade on @NomismaNetwork, offering seamless on-chain perp trading with real volume and leaderboards.
-* Layer 1 infrastructure development, like @dango's purpose-built Layer 1 for trading, with a fully on-chain order book and unified margin accounts.
+### Formats and Voice Patterns
+**Formats working well** include:
+- Data dumps, like the detailed information about Coinbase's deployment of HyperliquidX's USDC treasury wallet, which garnered over 2,000 engagements
+- Contrarian takes, such as the opinion that UK crypto sanctions may be overreaching, with over 470 engagements
+- Strong opinions and insider knowledge, like the analysis of Anthropic's Mythos and its potential impact, generating over 4,300 engagements
+**Voice patterns** that make these posts land include:
+- Specific numbers, such as the $1B in DEX volume on Base and the $30M loss suffered by Humanity
+- Strong opinions, like the statement that "Zec to 6000$"
+- Insider knowledge, such as the details about Anthropic's Mythos and its potential applications
 
-### Formats Working
-Data dumps, contrarian takes, and thread openers are effective formats, as seen in:
-* @0xSisyphus's posts on GLP-1 medications and their potential to reduce breast cancer risk by **about 30%**.
-* @Route2FI's posts on Bitcoin price action and the impact of Saylor's selling activity.
-
-### Voice Patterns
-Posts with specific numbers, strong opinions, and insider knowledge are resonating with the audience, such as:
-* **$62k** being the worth of 1 single Bitcoin.
-* **111,000 women** being part of a study on GLP-1 medications.
-* **80% reductions in 24 weeks** being the result of Retatrutide treatment.
-
-### Content Angles
-For @Qwinahh's next posts, we recommend the following content angles:
-1. **Analyzing the Impact of Saylor's Selling Activity on Bitcoin Price**: Explore the potential scenarios and their effects on the market.
-2. **Uncovering the Potential of Perpetual DEXs**: Dive deeper into the features and benefits of @perx_trade on @NomismaNetwork.
-3. **Demystifying Layer 1 Infrastructure Development**: Break down the advancements in @dango's purpose-built Layer 1 for trading and its implications for the crypto ecosystem.
+### Content Angles for @Qwinahh
+Based on these trends, here are three content angles for @Qwinahh to post about today:
+1. **Analysis of the Mythos release**: Provide an in-depth look at Anthropic's Mythos, its potential applications, and the implications of its release, similar to @0xSisyphus's post with over 4,300 engagements.
+2. **Hyperliquid adoption and its impact**: Discuss the integration of HyperliquidX's USDC treasury wallet by Coinbase and the potential effects on the market, building on @Pentosh1's post with over 2,000 engagements.
+3. **The regulatory landscape and its effects on crypto**: Explore the recent UK crypto sanctions and their potential consequences for the industry, using @tayvano_'s post with over 470 engagements as a starting point.
 
 ---
 
-_Updated daily at ~07:00 UTC by the inspiration agent. Archive: [[history/2026-06-08]]_
+_Updated daily at ~07:00 UTC by the inspiration agent. Archive: [[history/2026-06-09]]_

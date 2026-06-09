@@ -1,12 +1,12 @@
 ---
-title: What's Working — 2026-06-08
-updated: 2026-06-08 11:52 UTC
+title: What's Working — 2026-06-09
+updated: 2026-06-09 10:31 UTC
 type: inspiration
 ---
 
-# What's Working Today — 2026-06-08
+# What's Working Today — 2026-06-09
 
-Pattern analysis across 42 high-engagement posts from the last 24h.
+Pattern analysis across 68 high-engagement posts from the last 24h.
 
 [[trending|→ Today's Top Posts]] | [[../dashboard|← Dashboard]]
 
@@ -19,59 +19,57 @@ Pattern analysis across 42 high-engagement posts from the last 24h.
 - **points** █ (1 posts)
 - **perp** █ (1 posts)
 - **defi** █ (1 posts)
+- **restaking** █ (1 posts)
+- **eigenlayer** █ (1 posts)
 - **solana** █ (1 posts)
-- **base** █ (1 posts)
-- **tvl** █ (1 posts)
 
 ## Format Breakdown
 
-- **thread_hook**: 38 posts
-- **data_observation**: 32 posts
-- **contrarian**: 26 posts
-- **question**: 12 posts
+- **thread_hook**: 60 posts
+- **data_observation**: 53 posts
+- **contrarian**: 37 posts
+- **question**: 17 posts
 
 ## Editorial Analysis
 
-### Editorial Brief
-Based on the top-performing posts from the last 24 hours, we've identified key trends to inform @Qwinahh's content strategy.
+### Analysis of High-Performing Crypto Posts
+The top posts from the last 24 hours reveal several key trends. 
+**Topics getting traction** include:
+- The upcoming release of Anthropic's Mythos, with over 4,300 engagements
+- Exploits and hacks, such as the $30M loss suffered by Humanity, generating over 780 engagements
+- Adoption and integration of protocols like Hyperliquid and Base, with over 2,000 engagements
+- Regulatory concerns, such as the UK's crypto sanctions, sparking debate with over 470 engagements
 
-### Topics Getting Traction
-The following narratives are gaining traction:
-* Bitcoin price action and its correlation with Michael Saylor's selling activity, with **$0 sold → Goblin town next** and **$2B or more → bounce** being potential scenarios.
-* Perpetual DEXs, such as @perx_trade on @NomismaNetwork, offering seamless on-chain perp trading with real volume and leaderboards.
-* Layer 1 infrastructure development, like @dango's purpose-built Layer 1 for trading, with a fully on-chain order book and unified margin accounts.
+### Formats and Voice Patterns
+**Formats working well** include:
+- Data dumps, like the detailed information about Coinbase's deployment of HyperliquidX's USDC treasury wallet, which garnered over 2,000 engagements
+- Contrarian takes, such as the opinion that UK crypto sanctions may be overreaching, with over 470 engagements
+- Strong opinions and insider knowledge, like the analysis of Anthropic's Mythos and its potential impact, generating over 4,300 engagements
+**Voice patterns** that make these posts land include:
+- Specific numbers, such as the $1B in DEX volume on Base and the $30M loss suffered by Humanity
+- Strong opinions, like the statement that "Zec to 6000$"
+- Insider knowledge, such as the details about Anthropic's Mythos and its potential applications
 
-### Formats Working
-Data dumps, contrarian takes, and thread openers are effective formats, as seen in:
-* @0xSisyphus's posts on GLP-1 medications and their potential to reduce breast cancer risk by **about 30%**.
-* @Route2FI's posts on Bitcoin price action and the impact of Saylor's selling activity.
-
-### Voice Patterns
-Posts with specific numbers, strong opinions, and insider knowledge are resonating with the audience, such as:
-* **$62k** being the worth of 1 single Bitcoin.
-* **111,000 women** being part of a study on GLP-1 medications.
-* **80% reductions in 24 weeks** being the result of Retatrutide treatment.
-
-### Content Angles
-For @Qwinahh's next posts, we recommend the following content angles:
-1. **Analyzing the Impact of Saylor's Selling Activity on Bitcoin Price**: Explore the potential scenarios and their effects on the market.
-2. **Uncovering the Potential of Perpetual DEXs**: Dive deeper into the features and benefits of @perx_trade on @NomismaNetwork.
-3. **Demystifying Layer 1 Infrastructure Development**: Break down the advancements in @dango's purpose-built Layer 1 for trading and its implications for the crypto ecosystem.
+### Content Angles for @Qwinahh
+Based on these trends, here are three content angles for @Qwinahh to post about today:
+1. **Analysis of the Mythos release**: Provide an in-depth look at Anthropic's Mythos, its potential applications, and the implications of its release, similar to @0xSisyphus's post with over 4,300 engagements.
+2. **Hyperliquid adoption and its impact**: Discuss the integration of HyperliquidX's USDC treasury wallet by Coinbase and the potential effects on the market, building on @Pentosh1's post with over 2,000 engagements.
+3. **The regulatory landscape and its effects on crypto**: Explore the recent UK crypto sanctions and their potential consequences for the industry, using @tayvano_'s post with over 470 engagements as a starting point.
 
 ---
 
 ## Top Accounts Active Today
 
-- @0xSisyphus (7 qualifying posts)
-- @Route2FI (5 qualifying posts)
-- @Gainzy222 (4 qualifying posts)
+- @0xSisyphus (9 qualifying posts)
+- @Pentosh1 (3 qualifying posts)
+- @Tanaka_L2 (3 qualifying posts)
+- @DefiIgnas (2 qualifying posts)
+- @Route2FI (2 qualifying posts)
+- @tayvano_ (2 qualifying posts)
 - @dens_club (2 qualifying posts)
-- @DefiIgnas (1 qualifying posts)
-- @FabiusDefi (1 qualifying posts)
-- @Mars_DeFi (1 qualifying posts)
-- @enesonchain (1 qualifying posts)
-- @StreetSensex (1 qualifying posts)
-- @hectofinance (1 qualifying posts)
+- @thedefiedge (1 qualifying posts)
+- @Gainzy222 (1 qualifying posts)
+- @DukeD_Defi (1 qualifying posts)
 
 ---
-_Updated daily at ~07:00 UTC. Archive: [[history/2026-06-08]]_
+_Updated daily at ~07:00 UTC. Archive: [[history/2026-06-09]]_
