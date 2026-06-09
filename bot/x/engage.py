@@ -210,6 +210,7 @@ async def _fetch_own_recent_tweets_async() -> list[dict]:
             cookies=cookies,
         )
     except Exception as exc:
+        log.warning("X_SCRAPER_COOKIES missing or expired — refresh in GitHub Secrets")
         log.debug("twscrape setup error (thread): %s", exc)
         return []
 
@@ -427,6 +428,7 @@ async def _fetch_quote_candidates_async() -> list[dict]:
             cookies=cookies,
         )
     except Exception as exc:
+        log.warning("X_SCRAPER_COOKIES missing or expired — refresh in GitHub Secrets")
         log.debug("twscrape setup error (qt): %s", exc)
         return []
 
@@ -557,7 +559,7 @@ def run_quote_tweet(state: State) -> int:
 
     cookies = os.environ.get("X_SCRAPER_COOKIES", "").strip()
     if not cookies:
-        log.debug("X_SCRAPER_COOKIES not set — quote tweet skipped.")
+        log.warning("X_SCRAPER_COOKIES missing or expired — refresh in GitHub Secrets")
         return 0
 
     candidates = _run_async_engage(_fetch_quote_candidates_async()) or []
@@ -657,6 +659,7 @@ async def _fetch_replies_to_own_posts_async() -> list[dict]:
             cookies=cookies,
         )
     except Exception as exc:
+        log.warning("X_SCRAPER_COOKIES missing or expired — refresh in GitHub Secrets")
         log.debug("twscrape setup error (post reply): %s", exc)
         return []
 

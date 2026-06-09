@@ -216,10 +216,32 @@ def main() -> None:
             log.warning("Freeform mode failed: %s — falling through to normal pipeline", exc)
 
     result = run_post_cycle(state, alpha_only=alpha_only)
-    state.save()
 
     action = result.get("action", "skipped")
     log.info("Done. Action: %s | %s", action, result.get("reason", "")[:100])
+
+    # Guaranteed fallback: if the full pipeline found nothing AND it has been
+    # over 6 hours since the last post, generate a freeform opinion post.
+    # Ensures the bot always posts on schedule during slow news days.
+    if action == "skipped" and not alpha_only and _hours_since(state.last_post_timestamp()) > 6.0:
+        try:
+            from bot.brain.freeform_writer import generate_freeform
+            from bot.x.client import post_tweet
+            fallback_text = generate_freeform(state.recent_formats(), state.recent_topics())
+            if fallback_text:
+                posted = post_tweet(fallback_text)
+                if posted:
+                    state.increment_post_count()
+                    state.set_last_post_timestamp(time.time())
+                    state.record_format("short_take")
+                    state.record_topic("freeform")
+                    state.save()
+                    log.info("Guaranteed fallback post used — normal pipeline found nothing")
+                    sys.exit(0)
+        except Exception as exc:
+            log.warning("Guaranteed fallback failed: %s", exc)
+
+    state.save()
 
     if action == "skipped":
         sys.exit(0)

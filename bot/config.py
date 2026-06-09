@@ -21,13 +21,9 @@ BOT_USERNAME: Final[str] = os.environ.get("X_USERNAME", "Qwinahh")
 # Posting cadence
 # ---------------------------------------------------------------------------
 
-# 3 quality posts per day. This isn't arbitrary:
-# - Each post competes for feed space against all your other posts
-# - The algorithm gives higher per-post distribution to accounts with high
-#   engagement rates, not high volume. 3 posts at 5% eng rate beats 8 at 1%.
-# - Audience fatigue: followers who see 5+ posts/day from one account start
-#   muting. You need every post to feel worth reading.
-MAX_POSTS_PER_DAY: Final[int] = 3
+# Post cadence cap — quality over volume; every post must pass the bar.
+# Algorithm visibility needs 5 posts/day; quality gate enforces the standard.
+MAX_POSTS_PER_DAY: Final[int] = 5
 MIN_HOURS_BETWEEN_POSTS: Final[float] = 3.0  # Forces genuine content variety.
 
 # UTC hour ranges during which posting is allowed (start_inclusive, end_exclusive).

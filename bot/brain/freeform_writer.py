@@ -61,6 +61,42 @@ _FREEFORM_FORMATS = [
      "the market is missing. Authenticity is the entire value here. "
      "Example: 'Held my Meteora LP position through the last SOL drawdown. "
      "IL was worse than I modelled. Still positive EV but I sized it wrong.'\nUnder 200 chars."),
+
+    ("crowded_trade",
+     "Write about THE TRADE EVERYONE IS CROWDING INTO right now and why that's the signal "
+     "to pay attention to. What does it mean when a position or narrative gets this crowded? "
+     "What has historically happened next? Be specific about which trade or narrative you mean. "
+     "Under 220 chars."),
+
+    ("got_it_wrong",
+     "Write about ONE THING YOU GOT COMPLETELY WRONG about a topic you've been covering recently — "
+     "what was your view, what actually happened, and what it revealed about how to think about it. "
+     "Admitting errors builds more credibility than always being right. Be specific. "
+     "Use the recent topics listed in your context to pick something concrete. "
+     "Under 200 chars."),
+
+    ("narrative_timer",
+     "Write about a CURRENT NARRATIVE that you think has 2-4 weeks left before rotation. "
+     "Name the narrative specifically. What's the tell — what signal will confirm it's rotating out? "
+     "No vague 'market sentiment' — name a specific thing to watch. "
+     "Under 220 chars."),
+
+    ("hidden_metric",
+     "Write about THE METRIC NOBODY IS WATCHING right now that you check every morning. "
+     "Name it. Why does it matter? What would a move in it signal? "
+     "The more specific and obscure (but real) the metric, the more valuable the post. "
+     "Under 200 chars."),
+
+    ("first_timer_advice",
+     "Write what you'd tell SOMEONE ENTERING CRYPTO FOR THE FIRST TIME this week. "
+     "Not 'do your research' or 'it's volatile' — something specific, non-obvious, "
+     "and grounded in what you've actually learned from being in the space. "
+     "Under 220 chars."),
+
+    ("quiet_builder",
+     "Write about A PROTOCOL QUIETLY BUILDING WITHOUT HYPE that you keep coming back to. "
+     "Name it. What are they building, why does it matter, and why aren't people talking about it yet. "
+     "Under 220 chars."),
 ]
 
 _FREEFORM_SYSTEM = """\

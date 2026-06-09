@@ -158,9 +158,9 @@ class State:
     # Daily reply cap (hard limit across all engage runs)
     # ------------------------------------------------------------------
 
-    # Max outbound replies per day — anything higher looks like spam and
-    # tanks per-reply engagement rate. 8 great replies >> 80 mediocre ones.
-    MAX_REPLIES_PER_DAY = 8
+    # Max outbound replies per day — spread across hourly engage runs.
+    # 18 gives ~2-3 quality replies per active window without looking like spam.
+    MAX_REPLIES_PER_DAY = 18
 
     def replies_today(self) -> int:
         return self._data.get("daily_reply_counts", {}).get(self._today(), 0)
