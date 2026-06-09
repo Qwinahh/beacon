@@ -28,7 +28,7 @@ BOT_USERNAME: Final[str] = os.environ.get("X_USERNAME", "Qwinahh")
 # - Audience fatigue: followers who see 5+ posts/day from one account start
 #   muting. You need every post to feel worth reading.
 MAX_POSTS_PER_DAY: Final[int] = 3
-MIN_HOURS_BETWEEN_POSTS: Final[float] = 4.0  # Forces genuine content variety.
+MIN_HOURS_BETWEEN_POSTS: Final[float] = 3.0  # Forces genuine content variety.
 
 # UTC hour ranges during which posting is allowed (start_inclusive, end_exclusive).
 # Two peak windows: US morning overlap (highest global audience) + US evening.
