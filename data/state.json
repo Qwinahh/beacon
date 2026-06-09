@@ -3,9 +3,10 @@
     "2026-06-04": 1,
     "2026-06-05": 3,
     "2026-06-06": 2,
-    "2026-06-08": 1
+    "2026-06-08": 1,
+    "2026-06-09": 1
   },
-  "last_post_ts": 1780936439.193729,
+  "last_post_ts": 1781020567.6992788,
   "seen": [
     "92721f98279b91df501b",
     "6a52391eb83757bc8d90",
@@ -22,7 +23,8 @@
     "defi",
     "defi",
     "hype",
-    "agents"
+    "agents",
+    "freeform"
   ],
   "recent_formats": [
     "question",
@@ -33,7 +35,9 @@
     "hot_take",
     "farm_update",
     "callout",
-    "hot_take"
+    "hot_take",
+    "data_observation",
+    "short_take"
   ],
   "replied_to": [
     "2060640874699399233",
