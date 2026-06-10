@@ -1,12 +1,12 @@
 {
-  "checked_at": 1781121191,
-  "search_banned": false,
+  "checked_at": 1781130357,
+  "search_banned": true,
   "engagement_suppressed": false,
   "suppression_ratio": 1.0,
-  "recovery_mode": false,
-  "recovery_started_at": null,
-  "notes": "",
+  "recovery_mode": true,
+  "recovery_started_at": 1781130357,
+  "notes": "Search ban detected \u2014 account not visible in from: search.",
   "reply_ghosted": false,
   "suggestion_banned": false,
-  "ban_type": "none"
+  "ban_type": "search"
 }
