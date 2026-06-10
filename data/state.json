@@ -4,9 +4,10 @@
     "2026-06-05": 3,
     "2026-06-06": 2,
     "2026-06-08": 1,
-    "2026-06-09": 2
+    "2026-06-09": 2,
+    "2026-06-10": 1
   },
-  "last_post_ts": 1781039209.9610467,
+  "last_post_ts": 1781109311.803296,
   "seen": [
     "92721f98279b91df501b",
     "6a52391eb83757bc8d90",
@@ -15,7 +16,8 @@
     "47ed3548fb86b98a0f33",
     "28a7ca9bc4c0602aeeb6",
     "f9fd88e045a985ee651e",
-    "1e29cf69859d9dbaafc4"
+    "1e29cf69859d9dbaafc4",
+    "3698a9bd4f5dc8a04780"
   ],
   "recent_topics": [
     "general",
@@ -26,7 +28,8 @@
     "hype",
     "agents",
     "freeform",
-    "opinion"
+    "opinion",
+    "raise"
   ],
   "recent_formats": [
     "question",
@@ -41,7 +44,8 @@
     "data_observation",
     "short_take",
     "thread",
-    "alpha_tip"
+    "alpha_tip",
+    "thread_hook"
   ],
   "replied_to": [
     "2060640874699399233",
@@ -74,6 +78,12 @@
       "format": "hot_take",
       "topic": "agents",
       "posted_at": 1780936439.1938128
+    },
+    {
+      "tweet_id": "2064748220727578872",
+      "format": "thread_hook",
+      "topic": "raise",
+      "posted_at": 1781109311.8034058
     }
   ],
   "thread_tweet_ids": [

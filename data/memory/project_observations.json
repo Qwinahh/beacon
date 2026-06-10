@@ -61,6 +61,13 @@
         "observation": "MetaMask launched Agent Wallet in early access—positioned as enabling self-custody for AI agents, but bot evaluated most real-world use cases still require human intervention, limiting autonomous utility.",
         "source": "bot"
       }
+    ],
+    "MNX": [
+      {
+        "ts": "2026-06-10T16:35:16Z",
+        "observation": "MNX raised $6.4M pre-seed at $40M valuation to build AI-focused futures exchange on MegaETH, entering competitive perp DEX space with deep-pocketed capital backing.",
+        "source": "bot"
+      }
     ]
   }
 }

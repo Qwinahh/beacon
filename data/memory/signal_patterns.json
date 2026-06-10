@@ -49,6 +49,13 @@
       "topic": "MetaMask Agent Wallet launch",
       "outcome": "posted",
       "note": "Product launch signals are valuable when paired with critical framing—post took contrarian stance on actual utility limitations rather than just amplifying hype."
+    },
+    {
+      "ts": "2026-06-10T16:35:16Z",
+      "signal_type": "raise",
+      "topic": "MNX $6.4M pre-seed raise",
+      "outcome": "posted",
+      "note": "Clear signal with concrete numbers and specific positioning (AI + MegaETH + perp DEX); raised enough capital to be noteworthy in the space."
     }
   ],
   "noise_signals": [],
