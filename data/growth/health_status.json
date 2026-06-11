@@ -1,10 +1,12 @@
 {
-  "checked_at": 1780693639,
+  "checked_at": 0,
   "search_banned": false,
   "engagement_suppressed": false,
   "suppression_ratio": 1.0,
   "recovery_mode": false,
   "recovery_started_at": null,
+  "recovery_cleared_reason": "Manual reset — account was inactive not banned",
+  "search_zero_streak": 0,
   "notes": "",
   "reply_ghosted": false,
   "suggestion_banned": false,

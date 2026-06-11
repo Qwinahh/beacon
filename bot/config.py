@@ -13,21 +13,23 @@ from typing import Final
 # Posting cadence
 # ---------------------------------------------------------------------------
 
-# 3 quality posts per day. This isn't arbitrary:
-# - Each post competes for feed space against all your other posts
-# - The algorithm gives higher per-post distribution to accounts with high
-#   engagement rates, not high volume. 3 posts at 5% eng rate beats 8 at 1%.
-# - Audience fatigue: followers who see 5+ posts/day from one account start
-#   muting. You need every post to feel worth reading.
-MAX_POSTS_PER_DAY: Final[int] = 3
-MIN_HOURS_BETWEEN_POSTS: Final[float] = 4.0  # Forces genuine content variety.
+# 6 posts per day — matches what top CT accounts actually do.
+# Research across HsakaTrades, DefiIgnas, Pentosh1 and similar: they post 5-8x/day.
+# X's algorithm punishes inactivity: one inactive day drops per-post views from
+# 5-10k down to <1k. Frequency AND quality both matter — this is not either/or.
+# Quality gates (authenticity judge, reject phrases, score threshold) handle quality.
+# Frequency handles distribution.
+#
+# Mix: 2 filler/quick-takes early in the day, 2 value posts mid-day,
+# 2 bangers in US prime time. The last post works while you sleep.
+MAX_POSTS_PER_DAY: Final[int] = 6
+MIN_HOURS_BETWEEN_POSTS: Final[float] = 1.5  # Posts every ~2h during active windows.
 
-# UTC hour ranges during which posting is allowed (start_inclusive, end_exclusive).
-# Two peak windows: US morning overlap (highest global audience) + US evening.
-# Removed Asia window for now — audience is primarily EN-speaking DeFi traders.
+# UTC hour ranges during which posting is allowed.
+# Covers the full active crypto window: EU morning through US late evening.
+# Posts spread across 5 cron triggers (see post.yml) so distribution is even.
 POSTING_WINDOWS: Final[list[tuple[int, int]]] = [
-    (13, 16),   # US morning / EU afternoon — highest engagement window globally
-    (19, 22),   # US prime time — second best window
+    (8, 23),    # Wide window — individual post timing handled by cron schedule
 ]
 
 # Random jitter added to posting time so the schedule never looks mechanical.

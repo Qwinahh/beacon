@@ -2,12 +2,15 @@ name: Post — Crypto Commentary
 
 on:
   schedule:
-    # Two windows per day, inside the peak engagement hours in config.py.
-    # The bot posts max 3x/day — these triggers just wake it up to check.
-    # Jitter in post.py prevents every post landing at exactly :00.
-    - cron: "0 13 * * *"   # US morning / EU afternoon (peak window)
-    - cron: "0 16 * * *"   # Mid-window check (catches anything missed at 13:00)
-    - cron: "0 19 * * *"   # US prime time
+    # Six trigger points per day — bot posts up to 6x/day if content quality passes.
+    # Jitter in post.py prevents all posts landing at exactly :00.
+    # Spread across EU morning → US late night to hit every audience window.
+    - cron: "0 8  * * *"   # EU morning open
+    - cron: "0 11 * * *"   # EU midday / Asian close
+    - cron: "0 14 * * *"   # US morning / EU afternoon (peak)
+    - cron: "0 17 * * *"   # US midday
+    - cron: "0 20 * * *"   # US prime time (biggest window)
+    - cron: "0 22 * * *"   # US late / works while you sleep
   workflow_dispatch:        # Allow manual trigger from the Actions tab.
 
 env:
