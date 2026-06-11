@@ -35,6 +35,13 @@
       "topic": "DefiChain DEX TVL surge",
       "outcome": "posted",
       "note": "Large single-day TVL jump (112%+) was significant enough to warrant a post and framed as a timing opportunity."
+    },
+    {
+      "ts": "2026-06-11T18:31:04Z",
+      "signal_type": "rss",
+      "topic": "GameStop BTC custodial arrangement",
+      "outcome": "posted",
+      "note": "10-Q filing revealed material on-chain collateral position with custodial terms that raise questions about position control and liquidation risk."
     }
   ],
   "noise_signals": [],

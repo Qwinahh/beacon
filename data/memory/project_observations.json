@@ -42,6 +42,13 @@
         "observation": "DEX TVL spiked 112.1% in 24 hours, triggering a post about potential early entry opportunity.",
         "source": "bot"
       }
+    ],
+    "GameStop": [
+      {
+        "ts": "2026-06-11T18:31:04Z",
+        "observation": "GameStop holds $215M in BTC as of 10-Q filing, with Coinbase holding custodial liquidation rights on the position.",
+        "source": "bot"
+      }
     ]
   }
 }
