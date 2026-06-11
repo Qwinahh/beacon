@@ -67,9 +67,7 @@
   "threaded_tweet_ids": [
     "2064454190307422698"
   ],
-  "thread_replies_daily": {
-    "2026-06-10": 0
-  },
+  "thread_replies_daily": {},
   "last_mention_id": "2064419074197553316",
   "quote_tweeted_ids": [
     "2063274981346402786",
