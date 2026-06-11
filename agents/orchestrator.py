@@ -112,15 +112,16 @@ def _gather_candidates(alpha_only: bool = False) -> list:
     except Exception as exc:
         log.warning("Raises fetch failed: %s", exc)
 
-    # TVL movers
+    # TVL movers — cap at 3 items, raise threshold, set real age so they
+    # don't always sort to the top (TVL data is not timestamped, use 1.5h)
     try:
         from bot.sources import defillama
-        for m in defillama.fetch_tvl_movers(min_change_pct=15.0)[:10]:
+        for m in defillama.fetch_tvl_movers(min_change_pct=20.0)[:3]:
             direction = "up" if m.change_pct > 0 else "down"
             candidates.append({
                 "title": f"{m.name} TVL {direction} {abs(m.change_pct):.1f}%",
                 "source": "DeFiLlama", "kind": "tvl", "topic": m.topic,
-                "age_hours": 0.0, "url": m.url, "urgency": 1,
+                "age_hours": 1.5, "url": m.url, "urgency": 1,
                 # Store structured fields so the writer gets the actual numbers
                 "tvl_name":       m.name,
                 "tvl_change_pct": m.change_pct,
@@ -219,11 +220,16 @@ def _select_best(candidates: list, state: State) -> Optional[dict]:
             rejection_log.append("STALE (%.1fh): %s" % (age_hours, title[:50]))
             continue
 
-        # Hard rejection: repeated topic
-        topic_count = recent_topics.count(topic) if topic else 0
-        if topic_count >= MAX_TOPIC_REPEAT:
-            rejection_log.append("TOPIC REPEAT (%dx): %s" % (topic_count, title[:50]))
-            continue
+        # Hard rejection: repeated topic.
+        # "general" is the catch-all category (anything not matching a specific
+        # keyword). Applying the repeat cap to it blocks the majority of RSS
+        # content, so we exempt it entirely -- variety comes from the title
+        # fingerprint deduplication instead.
+        if topic and topic != "general":
+            topic_count = recent_topics.count(topic)
+            if topic_count >= MAX_TOPIC_REPEAT:
+                rejection_log.append("TOPIC REPEAT (%dx): %s" % (topic_count, title[:50]))
+                continue
 
         # Hard rejection: already seen
         fp = state.fingerprint(title_lower)
@@ -278,8 +284,18 @@ def _select_best(candidates: list, state: State) -> Optional[dict]:
             rejection_log.append("TVL UNKNOWN PROTOCOL (%d): %s" % (item_score, title[:50]))
             continue
 
-        # Score floor -- well below threshold to allow bonuses to lift worthy items
-        if item_score < POST_SCORE_THRESHOLD - 15:
+        # Source diversity: never post TVL/DeFiLlama back-to-back
+        last_source = (state.recent_topics() or [""])[-1]
+        last_fmt    = (state._data.get("recent_formats") or [""])[-1]
+        if kind == "tvl" and last_fmt in ("data_observation",) and "defillama" in (c.get("source", "")).lower():
+            rejection_log.append("SOURCE DIVERSITY (no back-to-back TVL): %s" % title[:50])
+            continue
+
+        # Score floor -- wide enough that bonuses (portfolio +30, watchlist +15,
+        # timing +12) can lift worthy items. Raised from -15 to -25 because the
+        # TVL penalty changes narrowed the effective range too much, causing
+        # 3-6h old articles to score 42 and get rejected despite being relevant.
+        if item_score < POST_SCORE_THRESHOLD - 25:
             rejection_log.append("LOW SCORE (%d): %s" % (item_score, title[:50]))
             continue
 
