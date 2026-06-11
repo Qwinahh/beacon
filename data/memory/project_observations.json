@@ -13,6 +13,11 @@
         "ts": "2026-06-04T21:30:22Z",
         "observation": "Honeypop DEX TVL spiked 42% in 24 hours — a rapid inflow event that prompted a post.",
         "source": "bot"
+      },
+      {
+        "ts": "2026-06-11T20:44:46Z",
+        "observation": "Honeypop DEX TVL up 50.7% in 24h — a larger spike than the 42% move previously observed, suggesting accelerating inflow momentum and repeated strong capital attraction signals.",
+        "source": "bot"
       }
     ],
     "HYPE": [
