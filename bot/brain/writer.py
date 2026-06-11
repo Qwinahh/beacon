@@ -650,3 +650,85 @@ def generate(
 
     log.info("Generated tweet (%d chars) [%s]: %s", len(text), format_name, text[:80])
     return text, format_name
+
+
+# ---------------------------------------------------------------------------
+# Thread continuation
+# ---------------------------------------------------------------------------
+
+_THREAD_SYSTEM = """You are writing the continuation tweets of a thread for @Qwinahh -- a crypto
+account that trades perps, farms airdrops, and moves into DeFi protocols
+before narratives form.
+
+The first tweet (the hook) has already been posted. Your job: write 2-3
+follow-up tweets that deliver the promised substance.
+
+THREAD RULES:
+- Each tweet must be a self-contained insight, not just a sentence fragment
+- The thread should read: hook -> data/context -> implication/takeaway
+- Number them: start each with the tweet number (2/, 3/, 4/)
+- Under 260 chars each
+- No hashtags, no emojis (thread emoji was already used in the hook)
+- The last tweet should have a concrete takeaway or opinion
+
+OUTPUT FORMAT (exactly):
+2/ [second tweet]
+3/ [third tweet]
+4/ [fourth tweet if needed]
+
+Two tweets minimum, three maximum. Do not include the first tweet.
+"""
+
+
+def generate_thread_continuation(
+    hook_text: str,
+    item: CandidateItem,
+    portfolio: dict,
+) -> list[str]:
+    """
+    Given the already-posted hook tweet, generate 2-3 continuation tweets.
+
+    Returns a list of tweet strings (not including the hook).
+    Returns empty list on failure -- thread stops at hook.
+    """
+    topic  = _item_topic(item)
+    title  = _item_title(item)
+    item_summary = _build_item_summary(item)
+
+    user_prompt = (
+        f"Hook tweet already posted:\n\n\"{hook_text}\"\n\n"
+        f"The item that triggered this thread:\n{item_summary}\n\n"
+        f"Topic: {topic} | Title: {title}\n\n"
+        "Write 2-3 follow-up tweets (numbered 2/, 3/, 4/) that deliver the substance "
+        "promised by the hook. Each tweet must give a DeFi trader or airdrop farmer "
+        "a specific, actionable insight. Under 260 chars each."
+    )
+
+    from bot.brain.llm import complete as llm_complete
+    try:
+        raw = llm_complete(
+            system=_THREAD_SYSTEM,
+            user=user_prompt,
+            max_tokens=400,
+            temperature=0.80,
+        )
+    except Exception as exc:
+        log.warning("Thread continuation LLM call failed: %s", exc)
+        return []
+
+    if not raw:
+        return []
+
+    # Parse numbered tweets
+    tweets: list[str] = []
+    for line in raw.strip().splitlines():
+        line = line.strip()
+        # Match "2/ ...", "3/ ...", "4/ ..."
+        if len(line) >= 3 and line[0].isdigit() and line[1] == "/":
+            tweet_text = line[2:].strip()
+            if 20 <= len(tweet_text) <= 280:
+                tweets.append(tweet_text)
+
+    log.info("Thread continuation: %d follow-up tweets generated.", len(tweets))
+    return tweets[:3]  # Hard cap at 3 follow-ups
+

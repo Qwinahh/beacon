@@ -36,13 +36,20 @@ def get_client() -> tweepy.Client:
     return _client
 
 
-def post_tweet(text: str, reply_to_id: Optional[str] = None) -> Optional[str]:
+def post_tweet(
+    text: str,
+    reply_to_id: Optional[str] = None,
+    quote_tweet_id: Optional[str] = None,
+) -> Optional[str]:
     """
     Post a tweet and return its ID, or None on failure.
 
     Args:
-        text:         The tweet text (≤280 characters).
-        reply_to_id:  If set, post as a reply to this tweet ID.
+        text:            The tweet text (≤280 characters).
+        reply_to_id:     If set, post as a reply to this tweet ID.
+        quote_tweet_id:  If set, post as a quote-tweet of this tweet ID.
+                         Quote tweets appear in your own timeline; plain
+                         replies do not — use this for high-value viral posts.
     """
     if len(text) > 280:
         log.error("Tweet exceeds 280 characters (%d). Aborting.", len(text))
@@ -52,11 +59,14 @@ def post_tweet(text: str, reply_to_id: Optional[str] = None) -> Optional[str]:
     kwargs: dict = {"text": text}
     if reply_to_id:
         kwargs["in_reply_to_tweet_id"] = reply_to_id
+    if quote_tweet_id:
+        kwargs["quote_tweet_id"] = quote_tweet_id
 
     try:
         response = client.create_tweet(**kwargs)
         tweet_id = str(response.data["id"])
-        log.info("Posted tweet %s: %s", tweet_id, text[:60])
+        mode = "quote" if quote_tweet_id else ("reply" if reply_to_id else "post")
+        log.info("Posted %s %s: %s", mode, tweet_id, text[:60])
         return tweet_id
     except tweepy.errors.Forbidden as exc:
         # Duplicate content, suspended account, etc.
@@ -166,6 +176,16 @@ def _get_mentions_via_twscrape(since_id: Optional[str] = None) -> list[dict]:
         return results
 
     try:
+        loop = asyncio.get_event_loop()
+        if loop.is_running():
+            with concurrent.futures.ThreadPoolExecutor(max_workers=1) as pool:
+                future = pool.submit(asyncio.run, _fetch())
+                return future.result(timeout=45) or []
+        else:
+            return loop.run_until_complete(_fetch()) or []
+    except Exception as exc:
+        log.warning("twscrape mentions runner error: %s", exc)
+        return []
         loop = asyncio.get_event_loop()
         if loop.is_running():
             with concurrent.futures.ThreadPoolExecutor(max_workers=1) as pool:

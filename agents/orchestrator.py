@@ -326,6 +326,342 @@ def _select_best(candidates: list, state: State) -> Optional[dict]:
 
 
 # ---------------------------------------------------------------------------
+# Standalone opinion post -- no news trigger required
+# ---------------------------------------------------------------------------
+
+_OPINION_ONLY_FORMATS = ["hot_take", "prediction", "contrarian", "mistake_admission"]
+
+_OPINION_SYSTEM = """You write standalone opinion tweets for @Qwinahh -- a crypto account that
+trades perps, farms airdrops, and moves into DeFi protocols before
+narratives form. The audience: active DeFi farmers, perp traders,
+airdrop hunters.
+
+These posts have NO news hook. They are:
+  - Strong opinions about narratives the account is tracking
+  - Predictions with a specific timeframe and testable outcome
+  - Things the account got wrong and what changed the view
+  - Observations about how the market is behaving RIGHT NOW
+  - "Hot takes" that challenge conventional CT wisdom with data
+
+LANGUAGE RULES (Quin's voice):
+- No em-dashes, no "landscape", no "ecosystem", no "space", no "bullish on"
+- No hashtags, no emojis, no "gm", no "ngmi", no "wen", no "alpha"
+- Under 260 characters. One idea. Sound like a person, not a press release.
+- Start with the opinion or prediction -- never with "I think" or "Just saw"
+- Must contain "I", "my", or a direct opinion ("this is", "that means", "the issue is")
+
+OUTPUT FORMAT:
+Line 1: FORMAT: [hot_take / prediction / contrarian / mistake_admission]
+Line 2: [the tweet text]
+
+Or if nothing genuine to say:
+SKIP
+"""
+
+
+def _maybe_standalone_opinion(state: State):
+    """
+    Generate and post a standalone opinion tweet if conditions are met.
+
+    Fires at most twice per day, with a minimum 4h gap since the last
+    opinion post. Uses persona + trending context as the only inputs --
+    no news item required.
+
+    Returns a result dict like run_post_cycle(), or None if not firing.
+    """
+    opinion_today = state._data.get("opinion_posts_today", 0)
+    if opinion_today >= 2:
+        return None
+
+    last_opinion_ts = state._data.get("last_opinion_ts", 0)
+    if time.time() - last_opinion_ts < 4 * 3600:
+        return None
+
+    from bot.config import MIN_HOURS_BETWEEN_POSTS, MAX_POSTS_PER_DAY
+    if state.posts_today() >= MAX_POSTS_PER_DAY:
+        return None
+    last_post = state.last_post_timestamp()
+    if last_post and (time.time() - last_post) < MIN_HOURS_BETWEEN_POSTS * 3600:
+        return None
+
+    log.info("Standalone opinion: conditions met (opinions today=%d/2)", opinion_today)
+
+    try:
+        from bot.brain.context import build_writer_context
+        context_block = build_writer_context(topic="defi_opinion", title="standalone opinion post")
+    except Exception as exc:
+        log.warning("Opinion context build failed: %s", exc)
+        context_block = ""
+
+    import random
+    fmt = random.choice(_OPINION_ONLY_FORMATS)
+
+    user_prompt = (
+        f"Write a {fmt.upper().replace('_', ' ')} post for @Qwinahh. "
+        "This has no news hook -- it's a genuine opinion based on what you're "
+        "seeing in DeFi/perps/airdrops right now.\n\n"
+        "Draw from the context below to make it feel specific and timely:\n\n"
+        + context_block[:2000]
+        + "\n\nRemember: one strong opinion, under 260 characters, starts with the take."
+    )
+
+    from bot.brain.llm import complete as llm_complete
+    from bot.config import CLAUDE_MAX_TOKENS
+    try:
+        raw = llm_complete(
+            system=_OPINION_SYSTEM,
+            user=user_prompt,
+            max_tokens=CLAUDE_MAX_TOKENS,
+            temperature=0.85,
+        )
+    except Exception as exc:
+        log.warning("Opinion generation failed: %s", exc)
+        return None
+
+    if not raw:
+        return None
+
+    raw = raw.strip()
+    if raw.upper().startswith("SKIP") or not raw:
+        log.info("Opinion writer chose to SKIP this slot.")
+        return None
+
+    lines = raw.splitlines()
+    tweet_text = ""
+    detected_fmt = fmt
+    for i, line in enumerate(lines):
+        if line.upper().startswith("FORMAT:"):
+            detected_fmt = line.split(":", 1)[1].strip().lower()
+            remaining = "\n".join(lines[i+1:]).strip()
+            if remaining:
+                tweet_text = remaining
+        elif not tweet_text and not line.upper().startswith("FORMAT:"):
+            tweet_text = line.strip()
+
+    if not tweet_text:
+        tweet_text = raw.strip()
+
+    if tweet_text.upper().startswith("FORMAT:"):
+        tweet_text = "\n".join(tweet_text.splitlines()[1:]).strip()
+
+    if len(tweet_text) < 20 or len(tweet_text) > 280:
+        log.info("Opinion text invalid (len=%d): %s", len(tweet_text), tweet_text[:60])
+        return None
+
+    try:
+        from bot.brain.authenticity_judge import passes as judge_passes
+        ok, judge_result = judge_passes(tweet_text, content_type="tweet")
+        if not ok:
+            log.info("Opinion failed authenticity gate (score=%d): %s",
+                     judge_result["score"], tweet_text[:60])
+            return None
+    except Exception as exc:
+        log.debug("Opinion judge error: %s -- proceeding", exc)
+
+    log.info("Posting standalone opinion (%s, %d chars): %s",
+             detected_fmt, len(tweet_text), tweet_text[:80])
+    tweet_id = post_tweet(tweet_text)
+    if not tweet_id:
+        log.error("Standalone opinion post_tweet() failed.")
+        return None
+
+    state.increment_post_count()
+    state.set_last_post_timestamp(time.time())
+    state.mark_seen(state.fingerprint(tweet_text.lower()))
+    state.record_format(detected_fmt)
+    state._data["opinion_posts_today"] = opinion_today + 1
+    state._data["last_opinion_ts"] = time.time()
+    state.save()
+
+    result = {
+        "action":      "posted",
+        "tweet_id":    tweet_id,
+        "tweet_text":  tweet_text,
+        "reason":      "Standalone opinion post (%s)" % detected_fmt,
+        "topic":       "opinion",
+        "format_used": detected_fmt,
+    }
+    _post_success_hooks(state, result)
+    log.info("Standalone opinion posted: %s", tweet_id)
+    return result
+
+
+# ---------------------------------------------------------------------------
+# Market mood post -- fires when Fear & Greed swings sharply
+# ---------------------------------------------------------------------------
+
+_MOOD_SYSTEM = """You write market sentiment posts for @Qwinahh -- a crypto account that trades
+perps, farms airdrops, and moves into DeFi protocols before narratives form.
+
+You've been given a Fear & Greed index signal -- a sharp 24h swing or extreme
+reading. Write a genuine reaction post that tells your audience what this means
+for actual positioning, not just what the number is.
+
+WHAT MAKES A GREAT MOOD POST:
+  - Interprets the signal through the lens of someone actively trading
+  - Gives a specific implication: "this means [X] for longs / for the funding rate"
+  - References historical pattern if you have one: "last time F&G was here was [event]"
+  - Doesn't state the obvious. Everyone can read the index.
+  - Under 260 characters. No hashtags. No "the market is uncertain."
+
+FORMATS:
+  A. "F&G at [N] (extreme fear/greed). [what this means for your thesis]. [1 action]"
+  B. "Sentiment just [moved] [N] points in 24h. [why this matters]. [what you're watching]"
+  C. Contrarian: "crowd is [fearful/greedy] right now. historically this is when [counter-trade]"
+
+OUTPUT: Just the tweet text. No preamble.
+If no genuine take to add: SKIP
+"""
+
+
+def _maybe_market_mood_post(state: State):
+    """
+    Post a market mood reaction when Fear & Greed swings >15 pts in 24h
+    or crosses into Extreme Fear/Extreme Greed territory.
+
+    Max 1x/day, min 12h gap. Fires ~60% of the time when triggered.
+    Returns result dict or None.
+    """
+    mood_today = state._data.get("mood_posts_today", 0)
+    if mood_today >= 1:
+        return None
+
+    last_mood_ts = state._data.get("last_mood_ts", 0)
+    if time.time() - last_mood_ts < 12 * 3600:
+        return None
+
+    from bot.config import MAX_POSTS_PER_DAY
+    if state.posts_today() >= MAX_POSTS_PER_DAY:
+        return None
+
+    import random as _random
+    if _random.random() > 0.60:
+        return None
+
+    try:
+        from bot.sources.fear_greed import detect_mood_swing
+        swing = detect_mood_swing()
+    except Exception as exc:
+        log.debug("Mood swing detection failed: %s", exc)
+        return None
+
+    if not swing:
+        return None
+
+    log.info("Market mood trigger: %s", swing["description"])
+
+    try:
+        from bot.brain.context import build_writer_context
+        ctx = build_writer_context(topic="market_sentiment", title="market mood post")
+    except Exception:
+        ctx = ""
+
+    user_prompt = (
+        f"Fear & Greed signal:\n{swing['description']}\n\n"
+        f"Delta: {swing['delta']:+d} points in 24h "
+        f"({swing['yesterday']} -> {swing['today']})\n"
+        f"Current: {swing['today']} ({swing['today_label']})\n\n"
+        f"Additional market context:\n{ctx[:1500]}\n\n"
+        "Write your market reaction post. Under 260 chars. "
+        "Don't just restate the number -- give an implication or contrarian read."
+    )
+
+    from bot.brain.llm import complete as llm_complete
+    from bot.config import CLAUDE_MAX_TOKENS
+    try:
+        raw = llm_complete(
+            system=_MOOD_SYSTEM,
+            user=user_prompt,
+            max_tokens=CLAUDE_MAX_TOKENS,
+            temperature=0.82,
+        )
+    except Exception as exc:
+        log.warning("Mood post generation failed: %s", exc)
+        return None
+
+    if not raw:
+        return None
+
+    raw = raw.strip()
+    if raw.upper().startswith("SKIP"):
+        log.info("Mood writer chose SKIP.")
+        return None
+
+    tweet_text = raw.splitlines()[0].strip()
+    if len(tweet_text) > 280:
+        tweet_text = tweet_text[:277] + "..."
+
+    try:
+        from bot.brain.authenticity_judge import passes as judge_passes
+        ok, _ = judge_passes(tweet_text, content_type="tweet")
+        if not ok:
+            log.info("Mood post failed authenticity gate: %s", tweet_text[:60])
+            return None
+    except Exception:
+        pass
+
+    tweet_id = post_tweet(tweet_text)
+    if not tweet_id:
+        log.error("Mood post_tweet() failed.")
+        return None
+
+    state.increment_post_count()
+    state.set_last_post_timestamp(time.time())
+    state.mark_seen(state.fingerprint(tweet_text.lower()))
+    state._data["mood_posts_today"] = mood_today + 1
+    state._data["last_mood_ts"] = time.time()
+    state.save()
+
+    result = {
+        "action":      "posted",
+        "tweet_id":    tweet_id,
+        "tweet_text":  tweet_text,
+        "reason":      "Market mood post (F&G swing: %s)" % swing["description"][:60],
+        "topic":       "market_sentiment",
+        "format_used": "market_read",
+    }
+    log.info("Market mood posted: %s -- %s", tweet_id, tweet_text[:80])
+    return result
+
+
+# ---------------------------------------------------------------------------
+# Thread continuation -- posts 2-3 follow-up tweets after a thread_hook
+# ---------------------------------------------------------------------------
+
+def _post_thread_continuation(hook_id: str, hook_text: str, item, state: State) -> None:
+    """
+    After posting a thread_hook tweet, generate and post 2-3 continuation tweets
+    as replies to form a complete thread. Non-fatal -- any failure is logged and swallowed.
+    """
+    try:
+        from bot.brain.writer import generate_thread_continuation
+        from bot.portfolio.tracker import load_portfolio
+        portfolio = load_portfolio()
+        continuations = generate_thread_continuation(hook_text, item, portfolio)
+    except Exception as exc:
+        log.warning("Thread continuation generation failed: %s", exc)
+        return
+
+    if not continuations:
+        log.info("Thread continuation: no tweets generated.")
+        return
+
+    last_id = hook_id
+    for i, cont_text in enumerate(continuations, start=2):
+        try:
+            cont_id = post_tweet(cont_text, reply_to_id=last_id)
+            if cont_id:
+                last_id = cont_id
+                log.info("Thread part %d posted (%s): %s", i, cont_id, cont_text[:60])
+            else:
+                log.warning("Thread part %d post_tweet failed.", i)
+                break
+        except Exception as exc:
+            log.warning("Thread part %d error: %s", i, exc)
+            break
+
+
+# ---------------------------------------------------------------------------
 # Step 3: X conversation context (optional enrichment for writer)
 # ---------------------------------------------------------------------------
 
@@ -356,6 +692,39 @@ def run_post_cycle(state: State, alpha_only: bool = False) -> dict:
              state.posts_today(),
              (time.time() - state.last_post_timestamp()) / 3600
              if state.last_post_timestamp() else 999)
+
+    # ------------------------------------------------------------------
+    # Step 0a: Market mood post -- fires on sharp F&G swings (max 1x/day)
+    # Highest-priority proactive content: raw emotional market reads.
+    # ------------------------------------------------------------------
+    if not alpha_only:
+        mood_result = _maybe_market_mood_post(state)
+        if mood_result:
+            return mood_result
+
+    # ------------------------------------------------------------------
+    # Step 0b: Standalone opinion check (~2x/day, no news hook required)
+    # Fires ~30% of runs when eligible -- mixes reactive + proactive content.
+    # ------------------------------------------------------------------
+    import random as _random
+    if not alpha_only and _random.random() < 0.30:
+        opinion_result = _maybe_standalone_opinion(state)
+        if opinion_result:
+            return opinion_result
+
+    # ------------------------------------------------------------------
+    # Step 0c: Portfolio diary post -- fires when portfolio.json has content
+    # Personal trade reality posts ("just sized into X because Y").
+    # Max 1x/day, 8h gap. Source: data/portfolio.json
+    # ------------------------------------------------------------------
+    if not alpha_only:
+        try:
+            from bot.sources.portfolio_diary import maybe_diary_post
+            diary_result = maybe_diary_post(state)
+            if diary_result:
+                return diary_result
+        except Exception as exc:
+            log.warning("Portfolio diary check failed: %s", exc)
 
     # ------------------------------------------------------------------
     # Step 0: Portfolio announcements -- always highest priority
@@ -529,6 +898,11 @@ def run_post_cycle(state: State, alpha_only: bool = False) -> dict:
     }
 
     log.info("Posted tweet %s", tweet_id)
+
+    # Fire thread continuation if this was a thread_hook format
+    if fmt_name == "thread_hook":
+        _post_thread_continuation(tweet_id, text, item, state)
+
     _post_success_hooks(state, result)
     return result
 
