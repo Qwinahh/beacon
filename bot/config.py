@@ -41,7 +41,9 @@ POST_JITTER_SECONDS: Final[int] = 900  # ±15 min
 # ---------------------------------------------------------------------------
 
 # Items scoring below this are not posted.
-POST_SCORE_THRESHOLD: Final[int] = 62
+# Lowered to 58 during warm-up — quality gates in writer.py still apply.
+# Raise back to 62+ once the account has consistent daily engagement.
+POST_SCORE_THRESHOLD: Final[int] = 58
 
 # How many recent topics to track for variety enforcement.
 TOPIC_MEMORY_SIZE: Final[int] = 30

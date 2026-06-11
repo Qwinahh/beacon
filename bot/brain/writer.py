@@ -69,7 +69,50 @@ _REJECT_PHRASES = [
     "in today's",
     "the latest news",
     "according to reports",
+    # AI-sounding additions
+    "worth noting that",
+    "it is worth noting",
+    "as we can see",
+    "this is significant",
+    "this represents a significant",
+    "the broader",
+    "the overall",
+    "in the realm of",
+    "the landscape",
+    "this highlights",
+    "this underscores",
+    "this demonstrates",
+    "plays a crucial role",
+    "moving forward",
+    "going forward",
+    "it remains to be seen",
+    "only time will tell",
+    "it is important to note",
+    "needless to say",
+    "it goes without saying",
 ]
+
+# AI-sounding openers — reject if the tweet starts with any of these.
+_REJECT_OPENERS = [
+    "as ",           # "As funding rates rise..."
+    "in light of",
+    "given that",
+    "it's worth",
+    "it is worth",
+    "with the recent",
+    "following the recent",
+    "amid growing",
+    "amid the",
+    "in the wake of",
+    "building on",
+]
+
+
+def _has_bad_opener(text: str) -> bool:
+    """Return True if the tweet starts with an AI-sounding opener."""
+    lower = text.lower().strip()
+    return any(lower.startswith(opener) for opener in _REJECT_OPENERS)
+
 
 # Patterns that look like press-release headlines — reject these.
 _HEADLINE_PATTERNS = [
@@ -237,7 +280,76 @@ _FORMAT_PALETTE = [
      "Example: 'Hyperliquid just did $200B in monthly volume. It has 12 employees. "
      "Here's what that actually means for every other perp DEX'\n"
      "Under 200 chars. Must create genuine curiosity about what comes next."),
+
+    ("mistake_admission",
+     "Write a MISTAKE ADMISSION — be specific about what you got wrong, the cost, "
+     "and what you learned. Genuine, first-person, no self-pity. "
+     "These perform extremely well because authenticity is rare on CT. "
+     "Example: 'Got the Kaito farm timing wrong. Held into S2 which pays 3x worse. "
+     "Net positive but barely. Should have rotated earlier.'\n"
+     "Under 180 chars. Must reference a specific decision, not vague regret."),
+
+    ("prediction",
+     "Write a PREDICTION — a specific, testable, time-stamped call based on the data. "
+     "Predictions create future engagement when they land (or don't). "
+     "Be specific: name the protocol, give a timeframe, and state what you expect. "
+     "Example: 'Calling it: [Protocol] TVL halves within 45 days of incentives ending.'\n"
+     "Under 180 chars. Must be falsifiable. No vague 'watch this space' hedging."),
 ]
+
+
+# Authentic examples per format — injected into every LLM call as few-shot anchors.
+# Match the VOICE, not the content. Two examples per format.
+_FORMAT_EXAMPLES: dict[str, list[str]] = {
+    "data_observation": [
+        "HL OI $4.2B but HLP util at 34%. More parked capital than traders to absorb it. Spreads stay wide.",
+        "ETH funding negative on perps while spot holds. Someone's hedging something large. Not a direction call — just unusual.",
+    ],
+    "contrarian": [
+        "Everyone pointing at Hyperliquid volume. Not seeing anyone talk about the HLP composition risk if OI spikes again.",
+        "Restaking narrative is running 6 months ahead of actual AVS demand. TVL without buyers on the other side is just a timer.",
+    ],
+    "hot_take": [
+        "Perp DEXs have been saying CEXs are finished for 3 years. Hyperliquid is the first one making it actually true.",
+        "Points farming is just an unregulated ICO with extra steps. The SEC figured this out eventually with ICOs.",
+    ],
+    "farm_update": [
+        "Been wrong on Kaito timing. S2 rewards 3x worse per engagement than S1. Should have sized down earlier. Still net positive, barely.",
+        "6 weeks LP on Meteora. IL worse than I modelled but fee income covering it so far. Holding unless pool incentives change.",
+    ],
+    "pattern_recognition": [
+        "New protocol doing $500M TVL in a week on points. Seen this. Check where TVL goes when points end.",
+        "This is the 3rd time this cycle a new DEX launched with 'zero fees forever'. Both previous ones ended the same way.",
+    ],
+    "question": [
+        "HL OI at ATH but retail sentiment still cautious. Who's taking the other side right now?",
+        "How many of you are actually profitable net of IL on Meteora positions this year? Genuinely curious.",
+    ],
+    "callout": [
+        "Protocol announced 'fair launch' with 40% to team at TGE. 'Fair' is doing a lot of work in that sentence.",
+        "The TVL number everyone is citing includes $800M of their own protocol incentives. Strip that and it's a different story.",
+    ],
+    "alpha_tip": [
+        "If you're farming Meteora, the high-volume pairs are generating 2-3x the fees of the incentivised ones. Check the actual APR not the listed one.",
+        "Hyperliquid referral slots reset monthly. Most people aren't checking. Leaving points on the table.",
+    ],
+    "thread_hook": [
+        "Hyperliquid just processed $200B in volume with 12 employees. Here's what that actually means for every other perp DEX",
+        "I've been farming DeFi for 3 years. The protocols that are still here all have one thing in common",
+    ],
+    "short_take": [
+        "The number of 'Hyperliquid killers' is inversely correlated with their actual volume.",
+        "Airdrop meta is just: farm early, exit before the crowd realises the math doesn't work. Repeat.",
+    ],
+    "mistake_admission": [
+        "Got the Kaito timing wrong. Held too long into S2. Rewards 3x worse than S1. Net positive but barely.",
+        "Sized into the farm too late. TVL was already 3x what makes the math work. Down net after gas. Moving on.",
+    ],
+    "prediction": [
+        "Calling it: this protocol's TVL halves within 60 days of incentives ending. Marking the date.",
+        "This farm is 6 weeks from being too crowded to be worth entering. Noting it now.",
+    ],
+}
 
 
 def _pick_format(recent_formats: list[str]) -> tuple[str, str]:
@@ -279,6 +391,16 @@ def _user_prompt(
 
     if portfolio_block:
         parts += ["", portfolio_block]
+
+    # Inject few-shot voice examples for the chosen format
+    examples = _FORMAT_EXAMPLES.get(format_name, [])
+    if examples:
+        ex_lines = "\n".join(f'  "{ex}"' for ex in examples)
+        parts += [
+            "",
+            f"## Voice examples for {format_name.upper().replace('_', ' ')} (match tone, not content)",
+            ex_lines,
+        ]
 
     parts += [
         "",
@@ -335,28 +457,43 @@ def _is_headline(text: str) -> bool:
     return False
 
 
-def _validate_quality(text: str) -> tuple[bool, str]:
+def _validate_quality(text: str, format_name: str = "") -> tuple[bool, str]:
     """
     Returns (is_valid, reason_if_rejected).
 
     Checks:
     1. No generic low-value phrases.
     2. Not a press-release headline.
-    3. Contains at least one specific number or data point.
+    3. Contains at least one specific number or data point (skipped for opinion formats).
     4. Minimum length (a post under 60 chars can't say anything substantive).
+
+    Opinion formats (hot_take, short_take, thread_hook, comparison, prediction)
+    express views and don't need a number — skipping the substance gate for them
+    prevents the quality filter from silently preferring TVL/data posts.
     """
+    # Formats where a pure opinion is valid — no number required.
+    _OPINION_FORMATS = {
+        "hot_take", "short_take", "thread_hook",
+        "comparison", "prediction", "contrarian",
+        "callout", "question", "mistake_admission",
+    }
+
     lower = text.lower()
 
     for phrase in _REJECT_PHRASES:
         if phrase in lower:
             return False, f"Contains generic phrase: '{phrase}'"
 
+    if _has_bad_opener(text):
+        return False, "AI-sounding opener — start with the fact or implication"
+
     if _is_headline(text):
         return False, "Reads like a news headline — add angle or implication"
 
-    has_substance = any(re.search(p, text) for p in _SUBSTANCE_PATTERNS)
-    if not has_substance:
-        return False, "No specific number, amount, or percentage found -- too vague"
+    if format_name not in _OPINION_FORMATS:
+        has_substance = any(re.search(p, text) for p in _SUBSTANCE_PATTERNS)
+        if not has_substance:
+            return False, "No specific number, amount, or percentage found -- too vague"
 
     if len(text.strip()) < 60:
         return False, f"Too short ({len(text)} chars) to say anything substantive"
@@ -459,10 +596,57 @@ def generate(
         text = text[:276].rsplit(".", 1)[0] + "."
 
     # Quality gate -- reject generic output rather than posting slop.
-    valid, reject_reason = _validate_quality(text)
+    valid, reject_reason = _validate_quality(text, format_name=format_name)
     if not valid:
         log.warning("Tweet rejected by quality gate: %s | tweet: %s", reject_reason, text[:80])
         return None, format_name
+
+    # Authenticity gate — second LLM pass to catch AI-sounding output.
+    try:
+        from bot.brain.authenticity_judge import passes as judge_passes
+        ok, judge_result = judge_passes(text, content_type="post")
+        if not ok:
+            feedback = judge_result.get("feedback", "")
+            if feedback and feedback.upper() != "NONE":
+                log.info("Authenticity failed — retrying with feedback: %s", feedback)
+                retry_prompt = user_prompt + (
+                    f"\n\nIMPORTANT: The previous draft failed the authenticity check.\n"
+                    f"Specific fix needed: {feedback}\n"
+                    f"Rewrite to fix this. Keep it under 220 chars."
+                )
+                retry_raw = llm_complete(
+                    system=system_prompt,
+                    user=retry_prompt,
+                    max_tokens=CLAUDE_MAX_TOKENS,
+                    temperature=0.88,
+                )
+                if retry_raw:
+                    retry_raw = retry_raw.strip()
+                    if not retry_raw.upper().startswith("SKIP"):
+                        retry_lines = retry_raw.splitlines()
+                        if retry_lines and retry_lines[0].upper().startswith("REASON:"):
+                            retry_raw = "\n".join(retry_lines[1:]).strip()
+                        if len(retry_raw) >= 2 and retry_raw[0] == '"' and retry_raw[-1] == '"':
+                            retry_raw = retry_raw[1:-1].strip()
+                        if retry_raw and len(retry_raw) > 30:
+                            ok2, _ = judge_passes(retry_raw, content_type="post")
+                            if ok2:
+                                log.info("Retry passed authenticity judge")
+                                text = retry_raw
+                            else:
+                                log.info("Retry also failed authenticity — skipping")
+                                return None, format_name
+                        else:
+                            return None, format_name
+                    else:
+                        return None, format_name
+                else:
+                    return None, format_name
+            else:
+                log.info("Post failed authenticity judge (no feedback) — skipping")
+                return None, format_name
+    except Exception as exc:
+        log.warning("Authenticity judge raised: %s — proceeding without it", exc)
 
     log.info("Generated tweet (%d chars) [%s]: %s", len(text), format_name, text[:80])
     return text, format_name
