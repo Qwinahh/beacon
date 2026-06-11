@@ -147,7 +147,4 @@ The bot reads this file when generating posts referencing past events, cycles, a
 ---
 ## Related Notes
 - [[narrative-cycles]] — Current active narratives built on this history
-- [[exploit-history]] — Security incidents by cycle
-- [[defi-primitives]] — Mechanisms that drove each era
-- [[x-growth-strategy]] — How to post about these patterns credibly
-- [[dashboard]] — Vault home
+- [[exploit-hist

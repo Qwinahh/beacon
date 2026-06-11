@@ -171,9 +171,4 @@ class ScoutAgent(ToolAgent):
     )
 
     TOOLS = {
-        "fetch_rss":        (_fetch_rss,        _FETCH_RSS_SCHEMA),
-        "fetch_raises":     (_fetch_raises,     _FETCH_RAISES_SCHEMA),
-        "fetch_tvl_movers": (_fetch_tvl_movers, _FETCH_TVL_SCHEMA),
-        "detect_alpha":     (_detect_alpha,     _DETECT_ALPHA_SCHEMA),
-        "fetch_x_context":  (_fetch_x_context,  _FETCH_X_CONTEXT_SCHEMA),
-    }
+        "fetch_rss":        (_fetch_rss,        _FETCH_RSS_

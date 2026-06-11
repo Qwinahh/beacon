@@ -43,10 +43,4 @@ points-incentivised TVL.
 - Community focused on MET launch timing. Less noise than Kaito.
 
 ## Links
-- App: https://app.meteora.ag
-- DeFiLlama: https://defillama.com/protocol/meteora
-
-
----
-
-→ [[index]] · [[dashboard]]
+- App: ht

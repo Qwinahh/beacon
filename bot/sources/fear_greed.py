@@ -201,8 +201,4 @@ def detect_mood_swing() -> Optional[dict]:
         "yesterday":      yesterday_v,
         "delta":          delta,
         "today_label":    today_label,
-        "yesterday_label": yesterday_label,
-        "crossed_extreme": crossed_extreme_fear or crossed_extreme_greed,
-        "swing_magnitude": "large" if large_swing else "moderate",
-        "description":    desc,
-    }
+        "yesterday_l

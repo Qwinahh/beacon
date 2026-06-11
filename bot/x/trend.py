@@ -621,22 +621,4 @@ def run(state: State) -> int:
     from bot.sources.health_monitor import is_in_recovery
     if is_in_recovery():
         log.info("Recovery mode: skipping outbound engagement this cycle.")
-        return 0
-
-    log.info(
-        "Outbound engagement: %d/%d replies used today.",
-        state.replies_today(), State.MAX_REPLIES_PER_DAY,
-    )
-
-    portfolio = load_portfolio()
-
-    targeted  = _run_async(_engage_targeted_async(state, portfolio, MAX_PER_RUN)) or 0
-    remaining = max(0, MAX_PER_RUN - targeted)
-    keyword   = _run_async(_engage_keyword_async(state, portfolio, remaining)) or 0
-
-    total = targeted + keyword
-    log.info(
-        "Outbound: %d targeted + %d keyword = %d total | %d/%d used today.",
-        targeted, keyword, total, state.replies_today(), State.MAX_REPLIES_PER_DAY,
-    )
-    return total
+        return

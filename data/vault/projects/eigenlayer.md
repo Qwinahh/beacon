@@ -45,9 +45,4 @@ the next farming opportunity is.
 
 ## Links
 - App: https://app.eigenlayer.xyz
-- DeFiLlama: https://defillama.com/protocol/eigenlayer
-- Docs: https://docs.eigenlayer.xyz
-
----
-
-→ [[index]] · [[dashboard]]
+- DeFi

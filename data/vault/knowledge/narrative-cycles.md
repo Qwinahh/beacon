@@ -75,8 +75,4 @@ Reference for the writer — use these to identify where a current narrative sit
 - TVL under $100M but growing >20% weekly
 - No points program yet, but protocol clearly will need one
 - DeFiLlama category page has fewer than 5 protocols
-- Mechanism is genuinely novel, not a fork
-
----
-
--> [[crypto-history]] · [[defi-primitives]] · [[dashboard]]
+- Mechanism is genuine

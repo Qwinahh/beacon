@@ -32,6 +32,4 @@ positioning signals.
 - OI up >20% in 48h without news → structural flow, good post candidate
 - HLP drawdown >5% → risk-off signal, post with caution flag
 
-## Updates
-<!-- Bot appends narrative updates here -->
-- **2026-06-01** — Initial entry. Perps meta in full swing.
+## Updates

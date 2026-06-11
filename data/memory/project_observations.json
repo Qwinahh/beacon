@@ -37,37 +37,4 @@
     "Crypto Council for Innovation": [
       {
         "ts": "2026-06-05T16:25:17Z",
-        "observation": "Crypto Council for Innovation launched coalition pushing for regulatory clarity on vaults. Historical pattern: last similar regulatory clarity push coincided with 10% BTC dominance drop over one month.",
-        "source": "bot"
-      }
-    ],
-    "Rysk": [
-      {
-        "ts": "2026-06-06T16:00:39Z",
-        "observation": "Rysk Premium TVL surged 1966.4% in 24h—an extreme spike suggesting either a major liquidity event, strategy rebalance, or market movement that warrants close monitoring of sustainability.",
-        "source": "bot"
-      }
-    ],
-    "Hyperion": [
-      {
-        "ts": "2026-06-06T20:03:15Z",
-        "observation": "Hyperion DeFi is unwinding $29 million in HYPE deals across Felix and Native Markets, signaling a liquidity reduction event.",
-        "source": "bot"
-      }
-    ],
-    "MetaMask": [
-      {
-        "ts": "2026-06-08T16:34:04Z",
-        "observation": "MetaMask launched Agent Wallet in early access—positioned as enabling self-custody for AI agents, but bot evaluated most real-world use cases still require human intervention, limiting autonomous utility.",
-        "source": "bot"
-      }
-    ],
-    "MNX": [
-      {
-        "ts": "2026-06-10T16:35:16Z",
-        "observation": "MNX raised $6.4M pre-seed at $40M valuation to build AI-focused futures exchange on MegaETH, entering competitive perp DEX space with deep-pocketed capital backing.",
-        "source": "bot"
-      }
-    ]
-  }
-}
+        "observation": "

@@ -44,10 +44,4 @@ follow-on opportunities (HLP LP, builder grants, ecosystem tokens).
   mechanics and HLP risk. Contrarian angle available.
 
 ## Links
-- DeFiLlama: https://defillama.com/protocol/hyperliquid
-- App: https://app.hyperliquid.xyz
-
-
----
-
-→ [[index]] · [[dashboard]]
+- De

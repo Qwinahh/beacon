@@ -31,33 +31,4 @@
     },
     {
       "ts": "2026-06-06T16:00:39Z",
-      "signal_type": "tvl",
-      "topic": "Rysk Premium TVL",
-      "outcome": "posted",
-      "note": "1966% increase in 24h was significant enough to trigger a post and warrants disclosure of exposure impact."
-    },
-    {
-      "ts": "2026-06-06T20:03:15Z",
-      "signal_type": "alpha",
-      "topic": "Hyperion HYPE unwinding",
-      "outcome": "posted",
-      "note": "Large deal unwinding is a concrete liquidity event that compounds prior selling pressure; significant enough to flag to audience."
-    },
-    {
-      "ts": "2026-06-08T16:34:04Z",
-      "signal_type": "rss",
-      "topic": "MetaMask Agent Wallet launch",
-      "outcome": "posted",
-      "note": "Product launch signals are valuable when paired with critical framing—post took contrarian stance on actual utility limitations rather than just amplifying hype."
-    },
-    {
-      "ts": "2026-06-10T16:35:16Z",
-      "signal_type": "raise",
-      "topic": "MNX $6.4M pre-seed raise",
-      "outcome": "posted",
-      "note": "Clear signal with concrete numbers and specific positioning (AI + MegaETH + perp DEX); raised enough capital to be noteworthy in the space."
-    }
-  ],
-  "noise_signals": [],
-  "skipped_reasons": []
-}
+      "sign

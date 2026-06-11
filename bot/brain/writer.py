@@ -709,26 +709,4 @@ def generate_thread_continuation(
         raw = llm_complete(
             system=_THREAD_SYSTEM,
             user=user_prompt,
-            max_tokens=400,
-            temperature=0.80,
-        )
-    except Exception as exc:
-        log.warning("Thread continuation LLM call failed: %s", exc)
-        return []
-
-    if not raw:
-        return []
-
-    # Parse numbered tweets
-    tweets: list[str] = []
-    for line in raw.strip().splitlines():
-        line = line.strip()
-        # Match "2/ ...", "3/ ...", "4/ ..."
-        if len(line) >= 3 and line[0].isdigit() and line[1] == "/":
-            tweet_text = line[2:].strip()
-            if 20 <= len(tweet_text) <= 280:
-                tweets.append(tweet_text)
-
-    log.info("Thread continuation: %d follow-up tweets generated.", len(tweets))
-    return tweets[:3]  # Hard cap at 3 follow-ups
-
+        

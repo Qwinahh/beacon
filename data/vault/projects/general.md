@@ -17,11 +17,4 @@ updated: 2026-06-07
 *Overflow — move entries to dedicated project files when they grow.*
 
 Posts not tied to a specific project — market commentary, format experiments,
-or observations about the space in general.
-
-## Observations
-<!-- Bot appends new observations below. Newest at bottom. -->
-
----
-
-→ [[index]] · [[dashboard]]
+or observa

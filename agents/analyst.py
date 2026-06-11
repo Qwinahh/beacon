@@ -160,13 +160,4 @@ class AnalystAgent(ToolAgent):
         '"rejection_log": ["Item X rejected because: no specific number", '
         '"Item Y rejected because: same topic as last post"]}\n\n'
         "Or if nothing qualifies:\n"
-        '{"selected": null, "analyst_note": "Why nothing qualifies. Be specific.", '
-        '"rejection_log": ["..."]}'
-    )
-
-    TOOLS = {
-        "score_item":           (_score_item,           _SCORE_SCHEMA),
-        "get_recent_history":   (_get_recent_history,   _HISTORY_SCHEMA),
-        "check_seen":           (_check_seen,           _CHECK_SEEN_SCHEMA),
-        "get_portfolio_context":(_get_portfolio_context,_PORTFOLIO_SCHEMA),
-    }
+        '{"selected": null, "analyst_note": "Why nothing qualifies. Be s

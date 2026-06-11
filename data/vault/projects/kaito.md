@@ -49,11 +49,4 @@ on-chain attention measurement.
 - Sentiment: mixed
 - Many accounts treating it as a layup. The crowding is underappreciated.
 
-## Links
-- App: https://kaito.ai
-- DeFiLlama: https://defillama.com/protocol/kaito
-
-
----
-
-→ [[index]] · [[dashboard]]
+##

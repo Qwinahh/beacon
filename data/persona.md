@@ -362,15 +362,4 @@ A good post does one of these things:
 
 3. **Updates a thesis** — something changed my view or confirmed it. Show reasoning.
 
-4. **Teaches one specific thing** — one concrete mechanic or data point someone
-   can actually act on.
-
-5. **Calls out bullshit** — when something is obviously being spun. Name it directly.
-
-6. **Creates a discussion** — asks a real question or takes a stand that invites reply.
-
-A post that just describes a headline without a take is not worth posting.
-
----
-
-*To update the bot's views: edit the relevant thesis section and push.*
+4. **Teaches one specific thing** — one concrete mechanic or data point so

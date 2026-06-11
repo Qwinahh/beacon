@@ -172,7 +172,4 @@ Ask: "If token price went to zero, would this yield still exist?"
 ---
 ## Related Notes
 - [[crypto-history]] — When these primitives emerged and why
-- [[exploit-history]] — How each primitive has been exploited
-- [[narrative-cycles]] — Which primitives are driving current narratives
-- [[x-growth-strategy]] — Posting credibly about DeFi mechanics
-- [[dashboard]] — Vault home
+- [[exp

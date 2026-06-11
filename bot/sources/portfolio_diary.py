@@ -311,12 +311,4 @@ def maybe_diary_post(state) -> Optional[dict]:
     state.mark_seen(state.fingerprint(tweet_text.lower()))
     state.save()
 
-    log.info("Diary: posted %s — %s", tweet_id, tweet_text[:60])
-    return {
-        "action": "diary",
-        "tweet_id": tweet_id,
-        "tweet_text": tweet_text,
-        "reason": "Portfolio diary post (change_detected=%s)" % bool(change_context),
-        "topic": "portfolio_diary",
-        "format_used": "diary",
-    }
+    log.info("Diar

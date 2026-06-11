@@ -261,5 +261,4 @@ Avoid:
 ## Related Notes
 - [[persona]] — Voice and style rules for the writer
 - [[narrative-cycles]] — Current active narratives to focus on
-- [[crypto-history]] — Historical patterns that inform contrarian takes
-- [[defi-primitives]] — Mechanical knowledge for credible posts
+- [[crypto-history]] — Historical patterns
