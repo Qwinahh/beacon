@@ -42,6 +42,13 @@
       "topic": "GameStop BTC custodial arrangement",
       "outcome": "posted",
       "note": "10-Q filing revealed material on-chain collateral position with custodial terms that raise questions about position control and liquidation risk."
+    },
+    {
+      "ts": "2026-06-11T20:44:46Z",
+      "signal_type": "tvl",
+      "topic": "Honeypop DEX TVL spike",
+      "outcome": "posted",
+      "note": "Large single-day TVL move (50.7%) crossed threshold for actionable post; momentum appears to be accelerating across cycles."
     }
   ],
   "noise_signals": [],
