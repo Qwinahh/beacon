@@ -18,6 +18,11 @@
         "ts": "2026-06-11T20:44:46Z",
         "observation": "Honeypop DEX TVL up 50.7% in 24h — a larger spike than the 42% move previously observed, suggesting accelerating inflow momentum and repeated strong capital attraction signals.",
         "source": "bot"
+      },
+      {
+        "ts": "2026-06-11T22:45:20Z",
+        "observation": "Honeypop DEX TVL up 52.1% in 24h — third consecutive major spike above 40% in recent cycles, indicating sustained inflow momentum despite TVL remaining below $10M target.",
+        "source": "bot"
       }
     ],
     "HYPE": [

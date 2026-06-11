@@ -49,6 +49,13 @@
       "topic": "Honeypop DEX TVL spike",
       "outcome": "posted",
       "note": "Large single-day TVL move (50.7%) crossed threshold for actionable post; momentum appears to be accelerating across cycles."
+    },
+    {
+      "ts": "2026-06-11T22:45:20Z",
+      "signal_type": "tvl",
+      "topic": "Honeypop DEX TVL spike",
+      "outcome": "posted",
+      "note": "52% TVL spike is consistent with prior patterns (42%, 50.7%) and merits continued tracking; demonstrates reliable signal quality for detecting inflow momentum."
     }
   ],
   "noise_signals": [],
