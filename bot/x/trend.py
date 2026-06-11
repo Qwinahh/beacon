@@ -76,7 +76,21 @@ _KEYWORD_QUERIES = [
     "defillama tvl protocol lang:en min_faves:8",
     "perp dex funding rate lang:en min_faves:10",
     "solana defi yield farm lang:en min_faves:8",
+    # Core niche engagement — fresh DeFi/perps discussion
     "crypto airdrop criteria snapshot lang:en min_faves:5",
+    # Wrong-take hunting — find popular takes to challenge with data.
+    # These surface posts with high engagement that often contain
+    # misread signals, sloppy analysis, or crowd-consensus errors.
+    # The reply system's authenticity gate ensures we only fire
+    # when we have specific data to back the counter-take.
+    "funding rates negative therefore bullish lang:en min_faves:30",
+    "funding rates high bearish signal lang:en min_faves:30",
+    "tvl growing price will follow lang:en min_faves:20",
+    "defi is dead no one uses it lang:en min_faves:40",
+    "bitcoin dominance rising altseason over lang:en min_faves:25",
+    "this is the bottom buy now crypto lang:en min_faves:50",
+    "bears in control crypto lang:en min_faves:40",
+    "perps dex cant beat cex volume lang:en min_faves:20",
 ]
 
 _DEFAULT_TARGET_ACCOUNTS = [
@@ -99,6 +113,38 @@ _DEFAULT_TARGET_ACCOUNTS = [
     "functi0nZer0",
     "EigenLayerNews",
 ]
+
+# Viral posts get quote-tweeted instead of plain replied.
+# Quote tweets show up in your own timeline; plain replies don't.
+QUOTE_TWEET_LIKES_THRESHOLD  = 500    # >500 likes = genuinely viral in DeFi niche
+QUOTE_TWEET_MAX_AGE_MINUTES  = 120    # Only quote posts still in active feeds
+
+_QUOTE_SYSTEM = """\
+You write quote-tweets for @Qwinahh -- a crypto account that trades perps,
+farms airdrops, and moves into DeFi protocols before narratives form.
+
+A QUOTE TWEET IS DIFFERENT FROM A REPLY:
+- It shows up in your own timeline, not just buried in the thread
+- Your audience sees it independent of the original post
+- You must add REAL value -- not just "+1" or "great point"
+
+The best quote tweets do one of:
+  A. Extend with data: "This + [specific number/mechanic they missed]"
+  B. Reframe: take the same fact but from the angle of someone actually farming it
+  C. Contradict with data: "Actually the [specific metric] shows the opposite"
+  D. Add implication: "This means [specific thing] for people farming [X]"
+
+HARD RULES:
+- Under 240 characters
+- Must stand alone -- readers may not click through to the original
+- No "Great point", no "This!", no restating what the original already said
+- No hashtags, no emojis
+- If you cannot add genuine value: respond with SKIP
+
+OUTPUT FORMAT:
+  QUOTE: [your quote-tweet text]
+  SKIP: [one-word reason]
+"""
 
 _REPLY_SYSTEM = """\
 You write outbound replies for @Qwinahh -- a crypto account that trades perps,
@@ -153,6 +199,16 @@ EXAMPLES OF REPLIES NOT WORTH SENDING:
 "Agreed, this is a really important development for the space." -> SKIP
 "Great take, been watching this closely too." -> SKIP
 "This!" -> SKIP
+
+WRONG-TAKE REPLIES (highest engagement on CT):
+When the original tweet makes a claim you have specific data to contradict,
+you can push back. The key: you must have DATA, not just an opinion.
+  "funding negative = bullish" tweets -> counter with: "negative funding
+    means shorts are paying longs. historically flip to positive before moves."
+  "tvl up = price up" tweets -> counter with: "TVL and price decouple constantly.
+    check hyperliquid Q1: tvl 3x'd, HYPE -40%."
+  "defi dead" tweets -> counter with: real TVL/volume numbers from defillama
+If you don't have specific data to back a counter: SKIP, don't opinion-only disagree.
 """
 
 
@@ -283,6 +339,37 @@ def _parse_reply(raw: str) -> Optional[str]:
     return None
 
 
+def _generate_quote_tweet(tweet_text: str, author_username: str, portfolio: dict):
+    """Generate a quote-tweet for a viral post. Returns text or None."""
+    portfolio_ctx = _portfolio_context(portfolio)
+    prompt = (
+        f"Viral tweet by @{author_username} ({tweet_text[:280]})\n\n"
+        f"{portfolio_ctx}\n\n"
+        "Write a quote-tweet that adds real value for someone actively farming or trading DeFi. "
+        "Use the QUOTE:/SKIP: format."
+    )
+    raw = llm_complete(system=_QUOTE_SYSTEM, user=prompt, max_tokens=CLAUDE_MAX_TOKENS, temperature=0.75)
+    if not raw:
+        return None
+    raw = raw.strip()
+    if raw.upper().startswith("QUOTE:"):
+        text = raw[6:].strip()
+        if len(text) < 15:
+            return None
+        if len(text) > 280:
+            text = text[:276].rsplit(".", 1)[0] + "."
+        try:
+            from bot.brain.authenticity_judge import passes as judge_passes
+            ok, result = judge_passes(text, content_type="reply")
+            if not ok:
+                log.info("Quote-tweet failed authenticity (score=%d): %s", result["score"], text[:60])
+                return None
+        except Exception as exc:
+            log.debug("Quote judge error: %s -- proceeding", exc)
+        return text
+    return None
+
+
 def _generate_reply(tweet_text: str, author_username: str, portfolio: dict) -> Optional[str]:
     portfolio_ctx = _portfolio_context(portfolio)
     prompt = f"Tweet by @{author_username}:\n\n{tweet_text}"
@@ -296,12 +383,6 @@ def _generate_reply(tweet_text: str, author_username: str, portfolio: dict) -> O
     reply = _parse_reply(raw)
     if reply and len(reply) > 280:
         reply = reply[:276].rsplit(".", 1)[0] + "."
-    if reply:
-        from bot.brain.authenticity_judge import passes as judge_passes
-        ok, result = judge_passes(reply, content_type="reply")
-        if not ok:
-            log.info("Reply failed authenticity (score=%d): %s", result["score"], reply[:60])
-            return None
     return reply
 
 
@@ -371,6 +452,28 @@ async def _engage_targeted_async(state: State, portfolio: dict, budget: int) -> 
                 replies = getattr(tweet, "replyCount", 0) or 0
                 if likes < 1 and replies < 1:
                     continue
+
+                # High-engagement posts get quote-tweeted (show in own timeline).
+                # Plain replies are buried; quote tweets surface to our followers.
+                is_viral = (
+                    likes >= QUOTE_TWEET_LIKES_THRESHOLD
+                    and age <= QUOTE_TWEET_MAX_AGE_MINUTES
+                )
+                if is_viral:
+                    quote_text = _generate_quote_tweet(content, username, portfolio)
+                    if quote_text:
+                        sent_id = post_tweet(quote_text, quote_tweet_id=tweet_id)
+                        if sent_id:
+                            state.mark_replied(tweet_id)
+                            state.increment_reply_count()
+                            state.mark_engaged_account(username)
+                            sent += 1
+                            log.info(
+                                "Quote-tweeted @%s (%d likes, %.0fmin old): %s",
+                                username, likes, age, quote_text[:70],
+                            )
+                            break
+                    # Fall through to plain reply if quote generation failed
 
                 reply_text = _generate_reply(content, username, portfolio)
                 if not reply_text:

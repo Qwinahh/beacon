@@ -69,11 +69,10 @@ _REJECT_PHRASES = [
     "in today's",
     "the latest news",
     "according to reports",
-    # AI-sounding phrases
+    # AI-sounding additions
     "worth noting that",
     "it is worth noting",
     "as we can see",
-    "as mentioned",
     "this is significant",
     "this represents a significant",
     "the broader",
@@ -88,15 +87,14 @@ _REJECT_PHRASES = [
     "going forward",
     "it remains to be seen",
     "only time will tell",
-    "the fact remains",
     "it is important to note",
     "needless to say",
     "it goes without saying",
 ]
 
-# AI-sounding openers — reject if the tweet starts with any of these
+# AI-sounding openers — reject if the tweet starts with any of these.
 _REJECT_OPENERS = [
-    "as ",           # "As funding rates..."
+    "as ",           # "As funding rates rise..."
     "in light of",
     "given that",
     "it's worth",
@@ -282,44 +280,74 @@ _FORMAT_PALETTE = [
      "Example: 'Hyperliquid just did $200B in monthly volume. It has 12 employees. "
      "Here's what that actually means for every other perp DEX'\n"
      "Under 200 chars. Must create genuine curiosity about what comes next."),
+
+    ("mistake_admission",
+     "Write a MISTAKE ADMISSION — be specific about what you got wrong, the cost, "
+     "and what you learned. Genuine, first-person, no self-pity. "
+     "These perform extremely well because authenticity is rare on CT. "
+     "Example: 'Got the Kaito farm timing wrong. Held into S2 which pays 3x worse. "
+     "Net positive but barely. Should have rotated earlier.'\n"
+     "Under 180 chars. Must reference a specific decision, not vague regret."),
+
+    ("prediction",
+     "Write a PREDICTION — a specific, testable, time-stamped call based on the data. "
+     "Predictions create future engagement when they land (or don't). "
+     "Be specific: name the protocol, give a timeframe, and state what you expect. "
+     "Example: 'Calling it: [Protocol] TVL halves within 45 days of incentives ending.'\n"
+     "Under 180 chars. Must be falsifiable. No vague 'watch this space' hedging."),
 ]
 
 
+# Authentic examples per format — injected into every LLM call as few-shot anchors.
+# Match the VOICE, not the content. Two examples per format.
 _FORMAT_EXAMPLES: dict[str, list[str]] = {
     "data_observation": [
         "HL OI $4.2B but HLP util at 34%. More parked capital than traders to absorb it. Spreads stay wide.",
         "ETH funding negative on perps while spot holds. Someone's hedging something large. Not a direction call — just unusual.",
-        "Meteora pool emissions down 40% this week. Starting to see some TVL rotate. Worth watching if you're LP-ing.",
     ],
     "contrarian": [
         "Everyone pointing at Hyperliquid volume. Not seeing anyone talk about the HLP composition risk if OI spikes again.",
         "Restaking narrative is running 6 months ahead of actual AVS demand. TVL without buyers on the other side is just a timer.",
-        "The 'DeFi is back' posts are real but the revenue is concentrated in 3 protocols. Everything else is still bleeding users.",
+    ],
+    "hot_take": [
+        "Perp DEXs have been saying CEXs are finished for 3 years. Hyperliquid is the first one making it actually true.",
+        "Points farming is just an unregulated ICO with extra steps. The SEC figured this out eventually with ICOs.",
     ],
     "farm_update": [
         "Been wrong on Kaito timing. S2 rewards 3x worse per engagement than S1. Should have sized down earlier. Still net positive, barely.",
         "6 weeks LP on Meteora. IL worse than I modelled but fee income covering it so far. Holding unless pool incentives change.",
-        "Exiting my EigenLayer position. AVS revenue still basically zero and the unlock pressure is getting real.",
-    ],
-    "short_take": [
-        "The number of 'Hyperliquid killers' is inversely correlated with their actual volume.",
-        "Airdrop meta is just: farm early, exit before the crowd realises the math doesn't work. Repeat.",
-        "Most DeFi TVL is protocol-owned liquidity dressed up as organic demand. Know the difference.",
-    ],
-    "question": [
-        "HL OI at ATH but retail sentiment still cautious. Who's taking the other side right now?",
-        "How many of you are actually profitable net of IL on Meteora positions this year? Genuinely curious.",
-        "Restaking TVL up but no AVS is generating meaningful fees. At what point does the narrative need revenue to survive?",
     ],
     "pattern_recognition": [
         "New protocol doing $500M TVL in a week on points. Seen this. Check where TVL goes when points end.",
         "This is the 3rd time this cycle a new DEX launched with 'zero fees forever'. Both previous ones ended the same way.",
-        "Airdrop criteria leaked 2 weeks before snapshot. Farm getting crowded fast. This is how S1 Kaito played out.",
+    ],
+    "question": [
+        "HL OI at ATH but retail sentiment still cautious. Who's taking the other side right now?",
+        "How many of you are actually profitable net of IL on Meteora positions this year? Genuinely curious.",
     ],
     "callout": [
         "Protocol announced 'fair launch' with 40% to team at TGE. 'Fair' is doing a lot of work in that sentence.",
         "The TVL number everyone is citing includes $800M of their own protocol incentives. Strip that and it's a different story.",
-        "Airdrop eligibility criteria changed 3 times this month. The criteria that gets announced isn't always the one that matters.",
+    ],
+    "alpha_tip": [
+        "If you're farming Meteora, the high-volume pairs are generating 2-3x the fees of the incentivised ones. Check the actual APR not the listed one.",
+        "Hyperliquid referral slots reset monthly. Most people aren't checking. Leaving points on the table.",
+    ],
+    "thread_hook": [
+        "Hyperliquid just processed $200B in volume with 12 employees. Here's what that actually means for every other perp DEX",
+        "I've been farming DeFi for 3 years. The protocols that are still here all have one thing in common",
+    ],
+    "short_take": [
+        "The number of 'Hyperliquid killers' is inversely correlated with their actual volume.",
+        "Airdrop meta is just: farm early, exit before the crowd realises the math doesn't work. Repeat.",
+    ],
+    "mistake_admission": [
+        "Got the Kaito timing wrong. Held too long into S2. Rewards 3x worse than S1. Net positive but barely.",
+        "Sized into the farm too late. TVL was already 3x what makes the math work. Down net after gas. Moving on.",
+    ],
+    "prediction": [
+        "Calling it: this protocol's TVL halves within 60 days of incentives ending. Marking the date.",
+        "This farm is 6 weeks from being too crowded to be worth entering. Noting it now.",
     ],
 }
 
@@ -352,16 +380,6 @@ def _user_prompt(
 
     parts: list[str] = []
 
-    # Inject few-shot examples for the selected format
-    examples = _FORMAT_EXAMPLES.get(format_name, [])
-    if examples:
-        example_lines = "\n".join(f'  "{ex}"' for ex in examples[:2])
-        parts.append(
-            f"Examples of GOOD {format_name.upper().replace('_', ' ')} posts "
-            f"(match this voice exactly — do not copy content, copy tone):\n"
-            f"{example_lines}"
-        )
-
     if context_block:
         parts += [context_block, "---"]
 
@@ -373,6 +391,16 @@ def _user_prompt(
 
     if portfolio_block:
         parts += ["", portfolio_block]
+
+    # Inject few-shot voice examples for the chosen format
+    examples = _FORMAT_EXAMPLES.get(format_name, [])
+    if examples:
+        ex_lines = "\n".join(f'  "{ex}"' for ex in examples)
+        parts += [
+            "",
+            f"## Voice examples for {format_name.upper().replace('_', ' ')} (match tone, not content)",
+            ex_lines,
+        ]
 
     parts += [
         "",
@@ -436,10 +464,20 @@ def _validate_quality(text: str, format_name: str = "") -> tuple[bool, str]:
     Checks:
     1. No generic low-value phrases.
     2. Not a press-release headline.
-    3. Contains at least one specific number or data point.
-       (Skipped for format_name="thread_hook" — hooks are questions/claims, not data dumps.)
+    3. Contains at least one specific number or data point (skipped for opinion formats).
     4. Minimum length (a post under 60 chars can't say anything substantive).
+
+    Opinion formats (hot_take, short_take, thread_hook, comparison, prediction)
+    express views and don't need a number — skipping the substance gate for them
+    prevents the quality filter from silently preferring TVL/data posts.
     """
+    # Formats where a pure opinion is valid — no number required.
+    _OPINION_FORMATS = {
+        "hot_take", "short_take", "thread_hook",
+        "comparison", "prediction", "contrarian",
+        "callout", "question", "mistake_admission",
+    }
+
     lower = text.lower()
 
     for phrase in _REJECT_PHRASES:
@@ -447,12 +485,12 @@ def _validate_quality(text: str, format_name: str = "") -> tuple[bool, str]:
             return False, f"Contains generic phrase: '{phrase}'"
 
     if _has_bad_opener(text):
-        return False, "AI-sounding opener"
+        return False, "AI-sounding opener — start with the fact or implication"
 
     if _is_headline(text):
         return False, "Reads like a news headline — add angle or implication"
 
-    if format_name != "thread_hook":
+    if format_name not in _OPINION_FORMATS:
         has_substance = any(re.search(p, text) for p in _SUBSTANCE_PATTERNS)
         if not has_substance:
             return False, "No specific number, amount, or percentage found -- too vague"
@@ -558,299 +596,139 @@ def generate(
         text = text[:276].rsplit(".", 1)[0] + "."
 
     # Quality gate -- reject generic output rather than posting slop.
-    valid, reject_reason = _validate_quality(text)
+    valid, reject_reason = _validate_quality(text, format_name=format_name)
     if not valid:
         log.warning("Tweet rejected by quality gate: %s | tweet: %s", reject_reason, text[:80])
         return None, format_name
 
-    # AUTHENTICITY GATE — second-pass LLM check for AI-sounding content.
-    from bot.brain.authenticity_judge import passes as judge_passes
-    ok, judge_result = judge_passes(text, content_type="post")
-    if not ok:
-        feedback = judge_result.get("feedback", "")
-        if feedback and feedback != "NONE":
-            log.info("Retrying with judge feedback: %s", feedback)
-            retry_prompt = user_prompt + f"\n\nIMPORTANT FIX NEEDED: {feedback}\nRewrite to fix this specifically."
-            retry_raw = llm_complete(
-                system=system_prompt,
-                user=retry_prompt,
-                max_tokens=CLAUDE_MAX_TOKENS,
-                temperature=0.85,
-            )
-            if retry_raw:
-                retry_text = retry_raw.strip()
-                if len(retry_text) >= 2 and retry_text[0] == '"' and retry_text[-1] == '"':
-                    retry_text = retry_text[1:-1].strip()
-                if len(retry_text) > 279:
-                    retry_text = retry_text[:276].rsplit(".", 1)[0] + "."
-                retry_valid, _ = _validate_quality(retry_text)
-                if retry_valid:
-                    ok2, _ = judge_passes(retry_text, content_type="post")
-                    if ok2:
-                        log.info("Retry passed authenticity judge")
-                        return retry_text, format_name
-        log.info("Post failed authenticity judge after retry — skipping")
-        return None, format_name
+    # Authenticity gate — second LLM pass to catch AI-sounding output.
+    try:
+        from bot.brain.authenticity_judge import passes as judge_passes
+        ok, judge_result = judge_passes(text, content_type="post")
+        if not ok:
+            feedback = judge_result.get("feedback", "")
+            if feedback and feedback.upper() != "NONE":
+                log.info("Authenticity failed — retrying with feedback: %s", feedback)
+                retry_prompt = user_prompt + (
+                    f"\n\nIMPORTANT: The previous draft failed the authenticity check.\n"
+                    f"Specific fix needed: {feedback}\n"
+                    f"Rewrite to fix this. Keep it under 220 chars."
+                )
+                retry_raw = llm_complete(
+                    system=system_prompt,
+                    user=retry_prompt,
+                    max_tokens=CLAUDE_MAX_TOKENS,
+                    temperature=0.88,
+                )
+                if retry_raw:
+                    retry_raw = retry_raw.strip()
+                    if not retry_raw.upper().startswith("SKIP"):
+                        retry_lines = retry_raw.splitlines()
+                        if retry_lines and retry_lines[0].upper().startswith("REASON:"):
+                            retry_raw = "\n".join(retry_lines[1:]).strip()
+                        if len(retry_raw) >= 2 and retry_raw[0] == '"' and retry_raw[-1] == '"':
+                            retry_raw = retry_raw[1:-1].strip()
+                        if retry_raw and len(retry_raw) > 30:
+                            ok2, _ = judge_passes(retry_raw, content_type="post")
+                            if ok2:
+                                log.info("Retry passed authenticity judge")
+                                text = retry_raw
+                            else:
+                                log.info("Retry also failed authenticity — skipping")
+                                return None, format_name
+                        else:
+                            return None, format_name
+                    else:
+                        return None, format_name
+                else:
+                    return None, format_name
+            else:
+                log.info("Post failed authenticity judge (no feedback) — skipping")
+                return None, format_name
+    except Exception as exc:
+        log.warning("Authenticity judge raised: %s — proceeding without it", exc)
 
     log.info("Generated tweet (%d chars) [%s]: %s", len(text), format_name, text[:80])
     return text, format_name
 
 
 # ---------------------------------------------------------------------------
-# Thread writer
+# Thread continuation
 # ---------------------------------------------------------------------------
 
-_THREAD_WRITER_SYSTEM = """\
-You write Twitter threads for @Qwinahh — a crypto account that trades perps,
-farms airdrops, and moves into DeFi protocols before narratives form.
-The audience: people who are actively farming, trading, or watching the same protocols.
+_THREAD_SYSTEM = """You are writing the continuation tweets of a thread for @Qwinahh -- a crypto
+account that trades perps, farms airdrops, and moves into DeFi protocols
+before narratives form.
 
-EDITORIAL TEST — before writing, ask: does this topic have enough substance to fill
-3 meaningful, non-repetitive tweets? Valid reasons to thread:
+The first tweet (the hook) has already been posted. Your job: write 2-3
+follow-up tweets that deliver the promised substance.
 
-  A. A multi-part argument that loses its logic when compressed to one tweet.
-  B. Data with 3+ distinct implications — each worth its own sentence.
-  C. Pattern + historical parallel + what to watch now — each a separate tweet.
-  D. A contrarian view that needs evidence tweets to be credible, not just asserted.
+THREAD RULES:
+- Each tweet must be a self-contained insight, not just a sentence fragment
+- The thread should read: hook -> data/context -> implication/takeaway
+- Number them: start each with the tweet number (2/, 3/, 4/)
+- Under 260 chars each
+- No hashtags, no emojis (thread emoji was already used in the hook)
+- The last tweet should have a concrete takeaway or opinion
 
-If the topic can be said in one tweet: SKIP.
+OUTPUT FORMAT (exactly):
+2/ [second tweet]
+3/ [third tweet]
+4/ [fourth tweet if needed]
 
-THREAD STRUCTURE:
-- Tweet 1 (HOOK): A specific question, contrarian claim, or surprising fact.
-  Under 180 chars. Creates tension. Must make someone want to read the rest.
-  NOT a data dump. A thread emoji (🧵) is allowed here if it fits naturally.
-- Tweets 2-4 (ARGUMENT): One specific point per tweet. Numbers, mechanics, implications.
-  Each under 270 chars. First person where it adds credibility.
-  Each tweet must add something the previous didn't say — no restatement.
-- Last tweet (CONCLUSION): The implication or what to watch next.
-  A soft CTA is fine ("watching X this week", "will update when..."). Under 270 chars.
-
-VOICE: Direct. Specific. Opinionated. No "the DeFi ecosystem", no "it's worth noting",
-no hedged opinions ("could be", "might mean"). You have money in these protocols.
-Write like it.
-
-OUTPUT FORMAT:
-REASON: [A/B/C/D] -- [why this warrants a thread, not just one tweet]
-1. [hook — under 180 chars]
-2. [argument — under 270 chars]
-3. [argument — under 270 chars]
-4. [conclusion — under 270 chars]
-
-Or: SKIP
+Two tweets minimum, three maximum. Do not include the first tweet.
 """
 
 
-def _thread_user_prompt(
-    item: Optional[CandidateItem],
+def generate_thread_continuation(
+    hook_text: str,
+    item: CandidateItem,
     portfolio: dict,
-    x_conversation: Optional[str] = None,
-) -> str:
-    portfolio_block = _build_portfolio_context(portfolio)
-
-    if item is not None:
-        topic  = _item_topic(item)
-        title  = _item_title(item)
-        data_section = "## Event to build a thread about\n\n" + _build_item_summary(item)
-        context_block = build_writer_context(topic, title, x_conversation)
-    else:
-        # Freeform thread — no specific event, draw from current thinking and vault context
-        data_section = (
-            "## Thread topic\n\n"
-            "No specific event. Write from your current observations about DeFi, "
-            "perps, airdrops, or the protocols you're tracking. Pick the topic "
-            "that has the most substance right now."
-        )
-        context_block = build_writer_context("", "", x_conversation)
-
-    parts: list[str] = []
-    if context_block:
-        parts += [context_block, "---"]
-
-    parts.append(data_section)
-
-    if portfolio_block:
-        parts += ["", portfolio_block]
-
-    parts += [
-        "",
-        "## Hard constraints on every tweet in the thread",
-        "- No hashtags. No URLs. No quotes around output.",
-        "- Tweets 2+ must contain at least one specific number, percentage, "
-        "dollar amount, or named mechanic.",
-        "- Hook under 180 chars. All other tweets under 270 chars.",
-        "- Thread emoji on tweet 1 is the ONLY emoji allowed in the whole thread.",
-        "- If the topic can be said in one tweet, respond with SKIP.",
-    ]
-
-    return "\n".join(parts)
-
-
-def _parse_thread_tweets(raw: str) -> list[str]:
+) -> list[str]:
     """
-    Parse numbered tweets from thread LLM output.
+    Given the already-posted hook tweet, generate 2-3 continuation tweets.
 
-    Handles: "1. text", "1/ text", "Tweet 1: text", "1) text"
-    Skips REASON: lines and SKIP responses.
-    Joins continuation lines (non-numbered lines after a numbered one).
+    Returns a list of tweet strings (not including the hook).
+    Returns empty list on failure -- thread stops at hook.
     """
-    tweets: list[str] = []
-    current: list[str] = []
+    topic  = _item_topic(item)
+    title  = _item_title(item)
+    item_summary = _build_item_summary(item)
 
-    for line in raw.splitlines():
-        line = line.strip()
-        if not line:
-            continue
-        if line.upper().startswith(("REASON:", "SKIP")):
-            continue
-
-        m = re.match(r'^(?:tweet\s*)?\d+\s*[./:)]\s*', line, re.IGNORECASE)
-        if m:
-            if current:
-                tweets.append(" ".join(current).strip())
-                current = []
-            rest = line[m.end():].strip()
-            if rest:
-                current.append(rest)
-        elif current:
-            # Continuation of the current numbered tweet
-            current.append(line)
-
-    if current:
-        tweets.append(" ".join(current).strip())
-
-    return [t for t in tweets if t]
-
-
-def generate_thread(
-    item: Optional[CandidateItem],
-    portfolio: dict,
-    recent_formats: list[str],
-    x_conversation: Optional[str] = None,
-) -> Optional[list[str]]:
-    """
-    Generate a 3-5 tweet thread.
-
-    item may be None — in that case the thread draws from vault context
-    (freeform mode). When provided, the thread is built around the item.
-
-    Returns a list of 3-5 tweet strings or None if rejected.
-    Validates each tweet individually: the hook uses format_name="thread_hook"
-    (skips substance gate); body tweets require the full quality gate.
-    Runs authenticity judge on tweet 1 only; retries once with feedback.
-    """
-    from bot.brain.llm import complete as llm_complete, get_active_provider
-    log.debug("Thread writer — LLM: %s", get_active_provider())
-
-    system_prompt = _THREAD_WRITER_SYSTEM
-    user_prompt   = _thread_user_prompt(item, portfolio, x_conversation)
-
-    raw = llm_complete(
-        system=system_prompt,
-        user=user_prompt,
-        max_tokens=800,
-        temperature=0.85,
+    user_prompt = (
+        f"Hook tweet already posted:\n\n\"{hook_text}\"\n\n"
+        f"The item that triggered this thread:\n{item_summary}\n\n"
+        f"Topic: {topic} | Title: {title}\n\n"
+        "Write 2-3 follow-up tweets (numbered 2/, 3/, 4/) that deliver the substance "
+        "promised by the hook. Each tweet must give a DeFi trader or airdrop farmer "
+        "a specific, actionable insight. Under 260 chars each."
     )
 
-    if raw is None:
-        log.debug("Thread writer: LLM returned None")
-        return None
-
-    raw = raw.strip()
-    if raw.upper().startswith("SKIP"):
-        log.info("Thread writer: editorial SKIP")
-        return None
-
-    tweets = _parse_thread_tweets(raw)
-    if not tweets or len(tweets) < 3:
-        log.debug("Thread writer: only %d tweets parsed — need at least 3", len(tweets) if tweets else 0)
-        return None
-
-    tweets = tweets[:5]  # Cap at 5 even if the model went longer
-
-    return _validate_and_judge_thread(tweets, system_prompt, user_prompt)
-
-
-def _validate_and_judge_thread(
-    tweets: list[str],
-    system_prompt: str,
-    user_prompt: str,
-) -> Optional[list[str]]:
-    """Validate, length-cap, and judge a parsed tweet list. Returns cleaned list or None."""
     from bot.brain.llm import complete as llm_complete
+    try:
+        raw = llm_complete(
+            system=_THREAD_SYSTEM,
+            user=user_prompt,
+            max_tokens=400,
+            temperature=0.80,
+        )
+    except Exception as exc:
+        log.warning("Thread continuation LLM call failed: %s", exc)
+        return []
 
-    # Length-cap every tweet before validation
-    capped: list[str] = []
-    for t in tweets:
-        if len(t) > 279:
-            t = t[:276].rsplit(".", 1)[0] + "."
-        capped.append(t)
+    if not raw:
+        return []
 
-    # Validate hook with substance gate bypassed
-    hook_valid, reason = _validate_quality(capped[0], format_name="thread_hook")
-    if not hook_valid:
-        log.debug("Thread hook failed quality gate: %s | %s", reason, capped[0][:60])
-        return None
+    # Parse numbered tweets
+    tweets: list[str] = []
+    for line in raw.strip().splitlines():
+        line = line.strip()
+        # Match "2/ ...", "3/ ...", "4/ ..."
+        if len(line) >= 3 and line[0].isdigit() and line[1] == "/":
+            tweet_text = line[2:].strip()
+            if 20 <= len(tweet_text) <= 280:
+                tweets.append(tweet_text)
 
-    # Validate body tweets with full quality gate; stop accumulating on first failure
-    validated: list[str] = [capped[0]]
-    for i, tweet in enumerate(capped[1:], start=2):
-        v, r = _validate_quality(tweet)
-        if not v:
-            log.debug("Thread tweet %d failed quality: %s | %s", i, r, tweet[:60])
-            break
-        validated.append(tweet)
+    log.info("Thread continuation: %d follow-up tweets generated.", len(tweets))
+    return tweets[:3]  # Hard cap at 3 follow-ups
 
-    if len(validated) < 3:
-        log.debug("Thread: only %d tweets passed quality gate — need 3", len(validated))
-        return None
-
-    # Authenticity judge on hook only — hook quality determines the whole thread's fate
-    from bot.brain.authenticity_judge import passes as judge_passes
-    ok, judge_result = judge_passes(validated[0], content_type="post")
-    if not ok:
-        feedback = judge_result.get("feedback", "")
-        if feedback and feedback != "NONE":
-            log.info("Thread hook failed judge — retrying with feedback: %s", feedback)
-            retry_prompt = (
-                user_prompt
-                + f"\n\nIMPORTANT: The hook tweet failed the authenticity check. Fix: {feedback}\n"
-                "Rewrite the full thread with a stronger hook."
-            )
-            retry_raw = llm_complete(
-                system=system_prompt,
-                user=retry_prompt,
-                max_tokens=800,
-                temperature=0.85,
-            )
-            if retry_raw:
-                retry_tweets = _parse_thread_tweets(retry_raw.strip())
-                if retry_tweets and len(retry_tweets) >= 3:
-                    retry_tweets = retry_tweets[:5]
-                    retry_capped = []
-                    for t in retry_tweets:
-                        if len(t) > 279:
-                            t = t[:276].rsplit(".", 1)[0] + "."
-                        retry_capped.append(t)
-
-                    h_valid, _ = _validate_quality(retry_capped[0], format_name="thread_hook")
-                    if h_valid:
-                        ok2, _ = judge_passes(retry_capped[0], content_type="post")
-                        if ok2:
-                            retry_validated = [retry_capped[0]]
-                            for tweet in retry_capped[1:]:
-                                v, _ = _validate_quality(tweet)
-                                if not v:
-                                    break
-                                retry_validated.append(tweet)
-                            if len(retry_validated) >= 3:
-                                log.info(
-                                    "Thread retry passed judge (%d tweets): %s",
-                                    len(retry_validated), retry_validated[0][:70],
-                                )
-                                return retry_validated
-
-        log.info("Thread hook failed authenticity judge after retry — skipping")
-        return None
-
-    log.info("Generated thread (%d tweets): %s", len(validated), validated[0][:70])
-    return validated

@@ -6,6 +6,8 @@ content before it hits the timeline. Uses the cheap/fast model (Groq Llama)
 since this is a binary quality gate, not a generation task.
 
 A post that fails the judge is either regenerated with feedback or skipped.
+This is not optional — AI-sounding content damages credibility permanently
+and cannot be undone once posted.
 
 Scoring: 1-10 where:
   1-4: Clearly AI-written. Generic, data dump, over-explained. BLOCK.
@@ -18,14 +20,12 @@ The threshold is 7. Below 7 = rewrite with feedback or skip.
 from __future__ import annotations
 
 import logging
-from typing import Optional
 
 from bot.brain.llm import complete as llm_complete
 
 log = logging.getLogger(__name__)
 
 _MIN_SCORE = 7
-_MAX_RETRIES = 1   # Regenerate once with judge feedback before giving up
 
 _JUDGE_SYSTEM = """\
 You are an expert at detecting AI-generated content on crypto Twitter.

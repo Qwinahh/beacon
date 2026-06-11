@@ -149,3 +149,60 @@ def should_post_about_fg() -> tuple[bool, str]:
     if v >= 80:
         return True, f"Extreme Greed at {v} — worth warning about crowded positioning"
     return False, ""
+
+
+def detect_mood_swing() -> Optional[dict]:
+    """
+    Detect sharp 24h movements in the Fear & Greed index.
+
+    Returns a signal dict if any of the following are true:
+      - Index moved >=15 points in 24h (big swing)
+      - Index crossed into Extreme Fear (<20) from above
+      - Index crossed into Extreme Greed (>80) from below
+
+    Returns None if no significant movement or data unavailable.
+
+    Dict keys:
+      today (int), yesterday (int), delta (int),
+      today_label (str), yesterday_label (str),
+      crossed_extreme (bool), swing_magnitude (str),
+      description (str)
+    """
+    history = get_history(7)
+    if len(history) < 2:
+        return None
+
+    today_v = history[0]["value"]
+    yesterday_v = history[1]["value"]
+    today_label = history[0]["classification"]
+    yesterday_label = history[1]["classification"]
+    delta = today_v - yesterday_v
+
+    crossed_extreme_fear = yesterday_v > 20 and today_v <= 20
+    crossed_extreme_greed = yesterday_v < 80 and today_v >= 80
+    large_swing = abs(delta) >= 15
+
+    if not (crossed_extreme_fear or crossed_extreme_greed or large_swing):
+        return None
+
+    direction = "rising" if delta > 0 else "falling"
+    if crossed_extreme_fear:
+        desc = (f"F&G dropped into Extreme Fear: {yesterday_v} ({yesterday_label}) -> "
+                f"{today_v} ({today_label}). Historically strong contrarian buy zone.")
+    elif crossed_extreme_greed:
+        desc = (f"F&G hit Extreme Greed: {yesterday_v} ({yesterday_label}) -> "
+                f"{today_v} ({today_label}). Retail FOMO zone -- historically where longs get wrecked.")
+    else:
+        desc = (f"F&G swung {delta:+d} points in 24h: {yesterday_v} ({yesterday_label}) -> "
+                f"{today_v} ({today_label}). Sentiment {direction} fast.")
+
+    return {
+        "today":          today_v,
+        "yesterday":      yesterday_v,
+        "delta":          delta,
+        "today_label":    today_label,
+        "yesterday_label": yesterday_label,
+        "crossed_extreme": crossed_extreme_fear or crossed_extreme_greed,
+        "swing_magnitude": "large" if large_swing else "moderate",
+        "description":    desc,
+    }

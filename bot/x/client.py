@@ -36,13 +36,20 @@ def get_client() -> tweepy.Client:
     return _client
 
 
-def post_tweet(text: str, reply_to_id: Optional[str] = None) -> Optional[str]:
+def post_tweet(
+    text: str,
+    reply_to_id: Optional[str] = None,
+    quote_tweet_id: Optional[str] = None,
+) -> Optional[str]:
     """
     Post a tweet and return its ID, or None on failure.
 
     Args:
-        text:         The tweet text (≤280 characters).
-        reply_to_id:  If set, post as a reply to this tweet ID.
+        text:            The tweet text (≤280 characters).
+        reply_to_id:     If set, post as a reply to this tweet ID.
+        quote_tweet_id:  If set, post as a quote-tweet of this tweet ID.
+                         Quote tweets appear in your own timeline; plain
+                         replies do not — use this for high-value viral posts.
     """
     if len(text) > 280:
         log.error("Tweet exceeds 280 characters (%d). Aborting.", len(text))
@@ -52,11 +59,14 @@ def post_tweet(text: str, reply_to_id: Optional[str] = None) -> Optional[str]:
     kwargs: dict = {"text": text}
     if reply_to_id:
         kwargs["in_reply_to_tweet_id"] = reply_to_id
+    if quote_tweet_id:
+        kwargs["quote_tweet_id"] = quote_tweet_id
 
     try:
         response = client.create_tweet(**kwargs)
         tweet_id = str(response.data["id"])
-        log.info("Posted tweet %s: %s", tweet_id, text[:60])
+        mode = "quote" if quote_tweet_id else ("reply" if reply_to_id else "post")
+        log.info("Posted %s %s: %s", mode, tweet_id, text[:60])
         return tweet_id
     except tweepy.errors.Forbidden as exc:
         # Duplicate content, suspended account, etc.
@@ -67,71 +77,6 @@ def post_tweet(text: str, reply_to_id: Optional[str] = None) -> Optional[str]:
         return None
     except tweepy.errors.TweepyException as exc:
         log.error("Tweepy error posting tweet: %s", exc)
-        return None
-
-
-def quote_tweet(text: str, quote_tweet_id: str) -> Optional[str]:
-    """
-    Post a quote tweet and return its ID, or None on failure.
-
-    Args:
-        text:           The commentary text (≤280 characters).
-        quote_tweet_id: The ID of the tweet being quoted.
-    """
-    if len(text) > 280:
-        log.error("Quote tweet exceeds 280 characters (%d). Aborting.", len(text))
-        return None
-
-    client = get_client()
-    try:
-        response = client.create_tweet(text=text, quote_tweet_id=quote_tweet_id)
-        tweet_id = str(response.data["id"])
-        log.info("Quote-tweeted %s → new tweet %s: %s", quote_tweet_id, tweet_id, text[:60])
-        return tweet_id
-    except tweepy.errors.Forbidden as exc:
-        log.error("Quote tweet rejected (Forbidden): %s", exc)
-        return None
-    except tweepy.errors.TooManyRequests:
-        log.warning("Rate limited on quote tweet. Will retry on next run.")
-        return None
-    except tweepy.errors.TweepyException as exc:
-        log.error("Tweepy error posting quote tweet: %s", exc)
-        return None
-
-
-def fetch_tweet_metrics(tweet_id: str) -> Optional[dict]:
-    """
-    Fetch public engagement metrics for a tweet we posted.
-
-    Returns dict with keys: likes, replies, retweets, impressions (all int, default 0).
-    Returns None on any error — callers must handle None gracefully.
-
-    impressions requires Basic/Pro tier and will be 0 on the Free tier.
-    """
-    client = get_client()
-    try:
-        resp = client.get_tweet(tweet_id, tweet_fields=["public_metrics"])
-        if resp.data is None:
-            log.debug("fetch_tweet_metrics: no data for tweet %s.", tweet_id)
-            return None
-        pm = resp.data.public_metrics or {}
-        return {
-            "likes":       int(pm.get("like_count",       0) or 0),
-            "replies":     int(pm.get("reply_count",      0) or 0),
-            "retweets":    int(pm.get("retweet_count",    0) or 0),
-            "impressions": int(pm.get("impression_count", 0) or 0),
-        }
-    except tweepy.errors.NotFound:
-        log.debug("fetch_tweet_metrics: tweet %s not found.", tweet_id)
-        return None
-    except tweepy.errors.Forbidden as exc:
-        log.warning("fetch_tweet_metrics forbidden for %s: %s", tweet_id, exc)
-        return None
-    except tweepy.errors.TooManyRequests:
-        log.warning("Rate limited fetching metrics for %s — will retry next run.", tweet_id)
-        return None
-    except tweepy.errors.TweepyException as exc:
-        log.error("fetch_tweet_metrics error for %s: %s", tweet_id, exc)
         return None
 
 
@@ -231,6 +176,16 @@ def _get_mentions_via_twscrape(since_id: Optional[str] = None) -> list[dict]:
         return results
 
     try:
+        loop = asyncio.get_event_loop()
+        if loop.is_running():
+            with concurrent.futures.ThreadPoolExecutor(max_workers=1) as pool:
+                future = pool.submit(asyncio.run, _fetch())
+                return future.result(timeout=45) or []
+        else:
+            return loop.run_until_complete(_fetch()) or []
+    except Exception as exc:
+        log.warning("twscrape mentions runner error: %s", exc)
+        return []
         loop = asyncio.get_event_loop()
         if loop.is_running():
             with concurrent.futures.ThreadPoolExecutor(max_workers=1) as pool:

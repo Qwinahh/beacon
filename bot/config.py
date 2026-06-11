@@ -10,39 +10,30 @@ from typing import Final
 
 
 # ---------------------------------------------------------------------------
-# Bot identity
-# ---------------------------------------------------------------------------
-
-# Bot's own X username. Override via X_USERNAME env var if the account changes.
-BOT_USERNAME: Final[str] = os.environ.get("X_USERNAME", "Qwinahh")
-
-
-# ---------------------------------------------------------------------------
 # Posting cadence
 # ---------------------------------------------------------------------------
 
-# Post cadence cap — quality over volume; every post must pass the bar.
-# Algorithm visibility needs 5 posts/day; quality gate enforces the standard.
-MAX_POSTS_PER_DAY: Final[int] = 5
-MIN_HOURS_BETWEEN_POSTS: Final[float] = 3.0  # Forces genuine content variety.
+# 6 posts per day — matches what top CT accounts actually do.
+# Research across HsakaTrades, DefiIgnas, Pentosh1 and similar: they post 5-8x/day.
+# X's algorithm punishes inactivity: one inactive day drops per-post views from
+# 5-10k down to <1k. Frequency AND quality both matter — this is not either/or.
+# Quality gates (authenticity judge, reject phrases, score threshold) handle quality.
+# Frequency handles distribution.
+#
+# Mix: 2 filler/quick-takes early in the day, 2 value posts mid-day,
+# 2 bangers in US prime time. The last post works while you sleep.
+MAX_POSTS_PER_DAY: Final[int] = 6
+MIN_HOURS_BETWEEN_POSTS: Final[float] = 1.5  # Posts every ~2h during active windows.
 
-# UTC hour ranges during which posting is allowed (start_inclusive, end_exclusive).
-# Two peak windows: US morning overlap (highest global audience) + US evening.
-# Removed Asia window for now — audience is primarily EN-speaking DeFi traders.
+# UTC hour ranges during which posting is allowed.
+# Covers the full active crypto window: EU morning through US late evening.
+# Posts spread across 5 cron triggers (see post.yml) so distribution is even.
 POSTING_WINDOWS: Final[list[tuple[int, int]]] = [
-    (13, 17),   # US morning / EU afternoon — highest engagement window globally
-    (19, 22),   # US prime time — second best window
+    (8, 23),    # Wide window — individual post timing handled by cron schedule
 ]
 
 # Random jitter added to posting time so the schedule never looks mechanical.
 POST_JITTER_SECONDS: Final[int] = 900  # ±15 min
-
-# Minimum hours between quote tweets. One thoughtful QT per 6h is plenty.
-QUOTE_TWEET_COOLDOWN_HOURS: Final[float] = 6.0
-
-# Fraction of normal posting cycles that attempt a thread (3-5 tweets).
-# Separate from and checked before FREEFORM_CHANCE. Falls through if thread fails.
-THREAD_CHANCE: Final[float] = 0.15
 
 
 # ---------------------------------------------------------------------------
@@ -50,7 +41,9 @@ THREAD_CHANCE: Final[float] = 0.15
 # ---------------------------------------------------------------------------
 
 # Items scoring below this are not posted.
-POST_SCORE_THRESHOLD: Final[int] = 62
+# Lowered to 58 during warm-up — quality gates in writer.py still apply.
+# Raise back to 62+ once the account has consistent daily engagement.
+POST_SCORE_THRESHOLD: Final[int] = 58
 
 # How many recent topics to track for variety enforcement.
 TOPIC_MEMORY_SIZE: Final[int] = 30

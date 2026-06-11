@@ -144,17 +144,30 @@ async def _test_search_visibility_async() -> bool:
         async for _ in api.search(f"from:{_OWN_USERNAME}", limit=5):
             count += 1
             break  # Just need one result
-        # If count == 0 AND the account has recent posts, flag it
-        # We can't know for sure without checking post recency, so we
-        # flag only if we get a hard zero response with no error.
+
         if count == 0:
+            # A single zero-result run is NOT reliable — the account may simply
+            # be inactive, twscrape may have hiccupped, or the search index is
+            # lagging. Require consecutive failures across multiple runs before
+            # flagging, tracked in health_status.json.
+            status = _load_status()
+            consecutive = status.get("search_zero_streak", 0) + 1
+            status["search_zero_streak"] = consecutive
+            _save_status(status)
             log.warning(
-                "health_monitor: 0 results for 'from:%s' in search. "
-                "Possible shadowban or inactive account.",
-                _OWN_USERNAME,
+                "health_monitor: 0 results for 'from:%s' (streak=%d/3). "
+                "Will only flag shadowban after 3 consecutive zeros.",
+                _OWN_USERNAME, consecutive,
             )
-            return False
-        return True
+            # Only return False (trigger recovery) after 3 consecutive zeros
+            return consecutive < 3
+        else:
+            # Reset the streak on any positive result
+            status = _load_status()
+            if status.get("search_zero_streak", 0) > 0:
+                status["search_zero_streak"] = 0
+                _save_status(status)
+            return True
     except Exception as exc:
         log.debug("health_monitor search visibility test error: %s", exc)
         return True  # Error ≠ banned — assume OK
