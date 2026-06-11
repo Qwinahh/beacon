@@ -28,6 +28,13 @@
       "topic": "Regulatory clarity on vaults - Crypto Council for Innovation",
       "outcome": "posted",
       "note": "Regulatory push with clear historical precedent for market impact (10% BTC dominance decline). Actionable narrative linking policy to alt season potential."
+    },
+    {
+      "ts": "2026-06-11T15:02:06Z",
+      "signal_type": "tvl",
+      "topic": "DefiChain DEX TVL surge",
+      "outcome": "posted",
+      "note": "Large single-day TVL jump (112%+) was significant enough to warrant a post and framed as a timing opportunity."
     }
   ],
   "noise_signals": [],

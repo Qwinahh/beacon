@@ -35,6 +35,13 @@
         "observation": "Crypto Council for Innovation launched coalition pushing for regulatory clarity on vaults. Historical pattern: last similar regulatory clarity push coincided with 10% BTC dominance drop over one month.",
         "source": "bot"
       }
+    ],
+    "DefiChain": [
+      {
+        "ts": "2026-06-11T15:02:06Z",
+        "observation": "DEX TVL spiked 112.1% in 24 hours, triggering a post about potential early entry opportunity.",
+        "source": "bot"
+      }
     ]
   }
 }
