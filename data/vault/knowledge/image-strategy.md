@@ -95,4 +95,4 @@ no glow effects, professional trading dashboard look"
 
 ---
 
-→ [[index]] · [[knowledge/post-structure-science]] · [[knowledge/x-algorithm-2026]] · [[persona]]
+→ [

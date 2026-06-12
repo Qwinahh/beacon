@@ -65,4 +65,4 @@ As of 2026-06-09/11, the 2026 FIFA World Cup dominates:
 - "Polymarket USD" details (mechanics, launch date) were not independently verified beyond the CNBC mention.
 - The "Opinion captured 30–32% market share in Jan 2026" claim (Gambling Insider) conflicts with other sources showing Polymarket+Kalshi dominance; treat with skepticism.
 - Direct X/Twitter posts were not sampled; CT sentiment is inferred from news coverage of community discussion, not raw tweets.
-- Did not verify whether Polymarket US (CFTC-regulated entity) volume is included in the ~$7.1B figure — CNBC specifies it as the "international platform" only.
+- Did not verify whether Polymarket US (CFTC-regulated entity) volume is included in the ~$7.1B 

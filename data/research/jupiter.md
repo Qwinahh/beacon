@@ -60,4 +60,4 @@
 - **CT sentiment percentages** (CoinCodex 64.44% bullish) are an undated rolling aggregate from one vendor; directional only.
 - **May 2026 items (Securitize/Jump, Marinade) are sourced from CoinMarketCap's AI-generated updates feed**, not primary announcements — verify against @JupiterExchange before quoting specifics.
 - **Macro context:** broad market is weak (BTC ~$69.6K, SOL ~$87.7 on 2026-06-11 per crypto.news tickers), so JUP price action is partly beta, not purely idiosyncratic.
-- DeFiLlama volume figures are for the **Jupiter Aggregator module only** (swap routing on Solana); they exclude perps, lend, and other Jupiter products.
+- DeFiLlama volume figures are for the **Jupiter Aggregator module only** (swap routing on S

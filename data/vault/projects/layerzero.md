@@ -60,4 +60,4 @@ buyback floor and broken trust is a trader's chart, not an investor's.
 
 ---
 
-→ [[index]] · [[dashboard]] · [[projects/pendle]] · [[projects/ethena]] · [[projects/aave]] · [[knowledge/exploit-history]]
+→ [[index]] · [[dashboard]] · [[projects/pendle]] · [[projects/

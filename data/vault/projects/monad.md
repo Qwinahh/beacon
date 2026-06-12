@@ -59,4 +59,4 @@ that can't be bought.
 
 ---
 
-→ [[index]] · [[dashboard]] · [[projects/berachain]] · [[projects/morpho]] · [[narratives/modular-blockchains]]
+→ [[index]] · [[dashboard]] · [[projects/berachain]]

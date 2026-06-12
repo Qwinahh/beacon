@@ -918,4 +918,29 @@ def _post_success_hooks(state: State, result: dict) -> None:
         record_posted_tweet(
             tweet_id    = result["tweet_id"],
             tweet_text  = result.get("tweet_text", ""),
-         
+            format_used = result.get("format_used", "unknown"),
+            topic       = result.get("topic", ""),
+        )
+    except Exception as exc:
+        log.debug("Metric recording failed (non-fatal): %s", exc)
+
+    try:
+        from bot.brain.vault import log_post
+        log_post(result.get("tweet_text", ""), result.get("topic", ""),
+                 result.get("format_used", ""))
+    except Exception as exc:
+        log.warning("Vault log_post failed (non-fatal): %s", exc)
+
+    try:
+        from agents.memory_agent import run_reflection
+        run_reflection(result)
+    except Exception as exc:
+        log.warning("Memory reflection failed (non-fatal): %s", exc)
+
+
+def _log_skip(topic: str, reason: str, state: State) -> None:
+    try:
+        from bot.brain.vault import log_skip
+        log_skip(topic, reason)
+    except Exception as exc:
+        log.warning("Vault log_skip failed (non-fatal): %s", exc)

@@ -59,4 +59,4 @@ time in the token's life.
 
 ---
 
-→ [[index]] · [[dashboard]] · [[narratives/solana-defi]] · [[narratives/prediction-markets]] · [[projects/kamino]] · [[projects/ethena]]
+→ [[index]] · [[dashboard]] · [[narratives/solana-defi]] · [[narratives/predi

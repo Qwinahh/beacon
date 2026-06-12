@@ -81,4 +81,4 @@ Notes: high-APY standouts right now are apyUSD (~33.5% implied on the June matur
 - **Boros current stats unverified**: the >$250M Boros open-interest ATH and $7B+ cumulative notional date from ~late Dec 2025 (https://www.bitget.com/news/detail/12560605131298); I could not verify Boros OI/volume as of 2026-06-11. The 10.77% BTCUSDC Boros rate comes from a search-result snippet of boros.pendle.finance, not a direct API read.
 - **Sentiment percentages**: CoinCodex bullish/bearish split is undated and methodology-opaque; CMC AI roundup is dated 2026-05-14 (pre-dates the drop from ~$1.80 to $1.26, so sentiment may be cooler now).
 - **2025 aggregates** ($40M annualized revenue, $5.8B avg TVL, $47.8B volume) come from secondary sources (FalconX/earnpark summaries), not primary dashboards.
-- Sonic and Berachain returned zero active markets via the API on 2026-06-11; small residual TVL on those chains per DeFiLlama may be legacy/expired positions.
+- Sonic and Berachain returned zero active markets via the API on 2026-06-11;

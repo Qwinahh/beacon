@@ -58,4 +58,4 @@ product, weak token" disease as Jupiter and Morpho.
 
 ---
 
-→ [[index]] · [[dashboard]] · [[narratives/solana-defi]] · [[projects/jupiter]] · [[projects/ethena]] · [[projects/morpho]]
+→ [[index]] · [[dashboard]] · [[narratives/solana-defi]] · [[proj

@@ -46,4 +46,4 @@ in the entire top 20.
 
 ## Updates
 <!-- Bot appends narrative updates here -->
-- **2026-06-12** — Initial entry. The thesis played out in tech and died in economics: ~50% market share of DA = $62.80/day. "Modular vs monolithic" was the wrong debate — neither found paying demand.
+- **2026-06-12** — Initial entry. The thesis played out in tech and died in economics: ~50% market share of DA = $62.80/day. "Modular vs monolithic" was th

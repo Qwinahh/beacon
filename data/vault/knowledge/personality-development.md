@@ -82,4 +82,4 @@ personalization-cluster effect the 2026 algorithm rewards
 
 ---
 
-→ [[index]] · [[persona]] · [[knowledge/voice-integrity]] · [[knowledge/growth-playbook]]
+→ [[inde

@@ -47,4 +47,4 @@ Solana has ever printed. SOL at ~$87.7 (2026-06-11) prices none of this.
 
 ## Updates
 <!-- Bot appends narrative updates here -->
-- **2026-06-12** — Initial entry. Two-protocol economy thesis: Jupiter routes it, Kamino holds it, Ethena yields it. Drift's $295M exploit produced zero contagion — the chain's risk plumbing grew up and nobody posted about it.
+- **2026-06-12** — Initial entry. Two-protocol economy thesis: Jupiter routes it, Kamino holds it, Ethena yields it. Drift's $295M exploit produced zero contagion — the chain's r

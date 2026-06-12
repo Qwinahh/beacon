@@ -182,5 +182,4 @@ Sources: live mirror scrapes (sotwe.com, twstalker.com, fetched 2026-06-12), Thr
   - Route2FI: thread archive current to Feb 2024; bio + Nov 2024 single tweet are newer. His 2024–2026 day-to-day posting style is partly inferred.
   - Pentosh1: thread archive current to Jul 2023; Mar 2025 BTC-levels tweet and 2025 blockchain.news flash items confirm format continuity, but 2025–26 cadence is inferred.
 - **Follower counts** move; figures above are from the fetch date or latest available source.
-- Frequency figures are estimates from total-post counts and archive cadence, not measured posting logs. Marked "inferred" where applicable.
-- Quotes are reproduced as found in mirrors/archives; minor punctuation may differ from the original tweets.
+- Frequency figures are estimates from total-post counts and archi

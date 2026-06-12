@@ -58,4 +58,4 @@ the story.
 
 ---
 
-→ [[index]] · [[dashboard]] · [[projects/morpho]] · [[projects/ethena]] · [[narratives/yield-bearing-stables]]
+→ [[index]] · [[dashboard]] · [[projects/morpho]] ·

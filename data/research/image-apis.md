@@ -65,5 +65,4 @@ For ~1–3 images/day with a dark terminal/data-viz aesthetic called from a Pyth
 - https://getimg.ai/blog/flux-1-vs-dall-e-3-what-is-the-best-ai-text-to-image-model
 - https://zsky.ai/blog/flux-vs-dall-e-comparison
 - https://artificialanalysis.ai/image/providers/flux-1-schnell
-- https://fal.ai/learn/devs/gen-ai-performance-optimization
-- https://community.openai.com/t/gpt-image-1-is-realy-slow/1310616
+- https://fal.ai/learn/devs/gen-ai-performance-optimization

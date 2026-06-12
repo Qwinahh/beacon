@@ -111,4 +111,4 @@ Specific triggers:
 - https://help.x.com/en/using-x/x-premium (official, Premium reply prioritization)
 - https://blog.hootsuite.com/experiment-x-threads-vs-longform-posts/ (2025)
 - https://metricool.com/twitter-study/ (2024-25 data)
-- Secondary 2026 analyses: posteverywhere.ai, postory.io, opentweet.io, basenor.com, tweetarchivist.com (treat as consensus, not authoritative)
+- Secondary 2026 analyses: post

@@ -34,4 +34,4 @@ Reference knowledge the bot reads for context when generating posts and replies.
 - [[knowledge/post-structure-science|Post Structure Science]] — per-format playbook: hook formula, length, metric driven, real CT examples; thread + image rules
 - [[knowledge/reply-strategy|Reply Strategy]] — drafting human-approved replies: account tiers, the four moves worth making, relationship arcs
 - [[knowledge/image-strategy|Image Strategy]] — when images help vs hurt, @Qwinahh visual style guide (#0d1117 terminal aesthetic), generation stack, what never to generate
-- [[knowledge/voice-integrity|Voice Integrity]] �
+- [[knowledge/

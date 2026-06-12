@@ -46,4 +46,4 @@ prediction markets inside a DEX superapp, settled in JupUSD.
 
 ## Updates
 <!-- Bot appends narrative updates here -->
-- **2026-06-12** — Initial entry. The category is mainstream (Pew tracks it, CFTC rulemaking underway) but crypto's share is shrinking — Kalshi 2.5x'd Polymarket in May. The crypto-native counterplay is embedding (Jupiter Forecast), not destination apps.
+- **2026-06-12** — Initial entry. The category is mainstream (Pew tracks it, CFTC rulemaking underway) but crypto's share is shrinking — Kalshi 2.5x'd Polymarket in May. The crypto-native counterplay is embe

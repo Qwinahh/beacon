@@ -68,4 +68,4 @@ Source: https://api.hyperliquid.xyz/info (metaAndAssetCtxs; main perp DEX only)
 - **TVL scope:** $5.88B (DeFiLlama API, protocol slug) vs $6.30B (CoinGecko's displayed DeFiLlama TVL) — likely chain-vs-protocol scope or timestamp difference; unresolved.
 - Several June developments (Kalshi filing, ETF launches, lobbying, whale deposit) are sourced from CoinMarketCap's AI-aggregated news page and were not independently confirmed against primary filings/announcements.
 - Monthly unlock figures vary by source: ~9.92M HYPE / ~$565M (DEXTools) vs "~238M HYPE monthly vesting" mentioned in another aggregator snippet — the latter is inconsistent with supply math and likely an aggregator error; trust the ~9.92M figure but verify before tweeting.
-- CT sentiment is reconstructed from news coverage of X activity (Coinbase sentiment widget, CryptoPotato, named analysts), not from direct X scraping.
+- CT sentiment is reconstructed from news coverage of X activity (Coinbase sentime

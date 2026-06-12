@@ -45,4 +45,4 @@ which is exactly why CT ignores it — no bags to talk.
 
 ## Updates
 <!-- Bot appends narrative updates here -->
-- **2026-06-12** — Initial entry. The meta is real in flow terms, invisible in token terms. The post-worthy angle is solver economics and concentration — nobody covers the auction layer because there's no coin attached.
+- **2026-06-12** — Initial entry. The meta is real in flow terms, invisible in token terms. The post-worthy angle is solver economics and concentration — nobody covers the a

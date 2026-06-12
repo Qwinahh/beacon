@@ -67,4 +67,4 @@ The story in mid-2026: **USDe is barely a "basis trade" product anymore.** Live 
 - The USDe supply figure ($4.476B, DeFiLlama API) differs from total backing ($4.548B, Ethena API) — consistent with overcollateralization plus timing differences; not independently reconciled.
 - Could **not** verify: status/outcome of the dynamic-cooldown governance proposal (proposed ~April 2026); the exact launch date of the Coinbase savings product ("next week" as of June 2 reporting); current chain-by-chain USDe distribution.
 - Janus Henderson CLO allocation ($310M cap) is announced, not necessarily yet deployed as of 2026-06-11.
-- X/Twitter posts were not directly accessible; CT sentiment is reconstructed from news coverage quoting prominent figures (Star Xu, Ki Young Ju) and 2026 analyst write-ups.
+- X/Twitter posts were not directly accessible; CT sentiment is reconstructed from news coverage quoting 

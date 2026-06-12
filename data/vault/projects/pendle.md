@@ -58,4 +58,4 @@ compression is structural until funding regimes turn.
 
 ---
 
-→ [[index]] · [[dashboard]] · [[narratives/yield-bearing-stables]] · [[projects/ethena]] · [[projects/layerzero]]
+→ [[index]] · [[dashboard]] · [[narratives/yield-bearin

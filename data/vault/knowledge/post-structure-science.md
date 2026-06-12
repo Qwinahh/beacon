@@ -105,4 +105,4 @@ updated: 2026-06-12
 
 ---
 
-→ [[index]] · [[knowledge/x-algorithm-2026]] · [[knowledge/voice-integrity]] · [[knowledge/image-strategy]] · [[persona]]
+→ [[index]] · [[k

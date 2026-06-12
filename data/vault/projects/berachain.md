@@ -59,4 +59,4 @@ are the only protocols that matter; they ARE the chain TVL.
 
 ---
 
-→ [[index]] · [[dashboard]] · [[projects/monad]] · [[narratives/liquid-staking]]
+→ [[index]] · [[dashb

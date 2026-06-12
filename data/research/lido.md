@@ -65,4 +65,4 @@ Note: Passive Yield Lab (2026) quoted Rocket Pool APR at ~2.39% with a ~0.6pp ga
 - **WisdomTree and Hex Trust items:** publication dates unverified (The Block was unfetchable); may or may not fall within the last 30 days.
 - **CT sentiment figures** (69% bullish, 4.6/5) come from third-party price-page widgets via search snippets; sample size, window, and methodology unknown. No direct X/Twitter data was pulled.
 - **Binance staked ETH TVL** appeared as both $7.737B and $8.386B in two DeFiLlama page renders on the same day (cache skew).
-- All figures above are exclusively from searches/fetches performed 2026-06-12; nothing is from model training data.
+- All figures above are exclusively from searches/

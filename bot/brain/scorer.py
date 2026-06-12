@@ -148,4 +148,28 @@ def select_candidate(
             continue
 
         if recent_topics.count(item.topic) >= MAX_TOPIC_REPEAT:
-            log.debug("Skipping (topic saturation, %s): %s", item.topic, _title(
+            log.debug("Skipping (topic saturation, %s): %s", item.topic, _title(item)[:60])
+            continue
+
+        # Hard block: never post two TVL items in a row
+        last_two_topics = (recent_topics or [])[-2:]
+        is_tvl = isinstance(item, TvlMoverItem) or getattr(item, "kind", "") == "tvl"
+        if is_tvl and last_two_topics.count("tvl") >= 1:
+            log.debug("Skipping (TVL cooldown): %s", _title(item)[:60])
+            continue
+
+        # Source diversity: don't let DeFiLlama dominate two consecutive posts
+        last_two_sources = []
+        for entry in (state._data.get("recent_posts") or [])[-2:]:
+            if isinstance(entry, dict):
+                last_two_sources.append(entry.get("source", ""))
+        is_defillama = isinstance(item, (TvlMoverItem, RaiseItem))
+        if is_defillama and last_two_sources.count("DeFiLlama") >= 2:
+            log.debug("Skipping (source diversity, DeFiLlama x2): %s", _title(item)[:60])
+            continue
+
+        log.info("Selected candidate (score=%d, topic=%s): %s", s, item.topic, _title(item)[:80])
+        return item, s
+
+    log.info("No candidate passed all filters. Pool size: %d, scored: %d.", len(pool), len(scored))
+    return None, 0

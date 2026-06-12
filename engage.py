@@ -86,4 +86,20 @@ def main() -> None:
     mention_replies      = run_mentions(state)
     post_mention_replies = reply_to_own_mentions(state)
     trend_replies        = run_trends(state)
-    quote_tweets         =
+    quote_tweets         = run_quote_tweet(state)
+    thread_replies       = run_own_thread_replies(state)
+    follows              = run_follow_cycle(state)
+
+    state.save()  # Always persist -- reply tracking, mention cursor, thread state
+
+    log.info(
+        "Engagement run complete — "
+        "mention replies: %d | post-mention replies: %d | outbound replies: %d | "
+        "quote tweets: %d | thread replies: %d | follows: %d",
+        mention_replies, post_mention_replies, trend_replies,
+        quote_tweets, thread_replies, follows,
+    )
+
+
+if __name__ == "__main__":
+    main()

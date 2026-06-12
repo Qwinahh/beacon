@@ -205,4 +205,63 @@ class State:
     def mark_portfolio_posted(self, key: str) -> None:
         posted: list[str] = self._data.setdefault("portfolio_posted", [])
         if key not in posted:
-     
+            posted.append(key)
+
+    # ------------------------------------------------------------------
+    # Quote tweet tracking
+    # ------------------------------------------------------------------
+
+    # ------------------------------------------------------------------
+    # Post tracking (for metrics collection)
+    # ------------------------------------------------------------------
+
+    _POSTS_MEMORY = 200  # last ~2 months at 3 posts/day
+
+    def record_post(
+        self,
+        tweet_id: str,
+        fmt: str,
+        topic: str,
+        posted_at: Optional[float] = None,
+    ) -> None:
+        """Record a posted tweet so update_post_metrics can fetch its engagement later."""
+        posts: list = self._data.setdefault("posts", [])
+        if any(p.get("tweet_id") == tweet_id for p in posts):
+            return  # already recorded
+        posts.append({
+            "tweet_id":  tweet_id,
+            "format":    fmt,
+            "topic":     topic,
+            "posted_at": posted_at or time.time(),
+        })
+        self._data["posts"] = posts[-self._POSTS_MEMORY:]
+
+    def posts(self, min_age_h: float = 2.0, max_age_h: float = 48.0) -> list[dict]:
+        """Return posts that were made between min_age_h and max_age_h ago."""
+        now = time.time()
+        min_s = min_age_h * 3600
+        max_s = max_age_h * 3600
+        return [
+            p for p in self._data.get("posts", [])
+            if min_s <= (now - p.get("posted_at", 0)) <= max_s
+        ]
+
+    # ------------------------------------------------------------------
+    # Quote tweet tracking
+    # ------------------------------------------------------------------
+
+    def last_quote_tweet_ts(self) -> float:
+        return float(self._data.get("last_quote_tweet_ts", 0))
+
+    def set_last_quote_tweet_ts(self, ts: float) -> None:
+        self._data["last_quote_tweet_ts"] = ts
+
+    def already_quote_tweeted(self, tweet_id: str) -> bool:
+        return tweet_id in self._data.get("quote_tweeted_ids", [])
+
+    def mark_quote_tweeted(self, tweet_id: str) -> None:
+        ids: list[str] = self._data.setdefault("quote_tweeted_ids", [])
+        if tweet_id not in ids:
+            ids.append(tweet_id)
+        # Keep last 100 — more than enough for dedup purposes
+        self._data["quote_tweeted_ids"] = ids[-100:]
