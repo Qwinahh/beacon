@@ -317,6 +317,79 @@ def _portfolio_context(portfolio: dict) -> str:
     return "Your held positions (disclose if relevant): " + ", ".join(positions + airdrops)
 
 
+# ---------------------------------------------------------------------------
+# Vault personality injection -- replies must be consistent with documented
+# positions (data/vault/projects/*.md Stance + X Consensus sections and the
+# persona's Strong Positions). See data/vault/knowledge/reply-strategy.md.
+# ---------------------------------------------------------------------------
+
+_persona_positions_cache: Optional[str] = None
+
+
+def _persona_positions() -> str:
+    """Strong Positions section of the vault persona, cached per process."""
+    global _persona_positions_cache
+    if _persona_positions_cache is not None:
+        return _persona_positions_cache
+    try:
+        from pathlib import Path
+        from bot.config import VAULT_PERSONA_PATH
+        text = Path(VAULT_PERSONA_PATH).read_text(encoding="utf-8")
+        section = ""
+        capture = False
+        for line in text.splitlines():
+            if line.startswith("## "):
+                capture = line.strip().lower() == "## strong positions"
+                continue
+            if capture:
+                section += line + "\n"
+        _persona_positions_cache = section.strip()[:2000]
+    except Exception as exc:
+        log.debug("Persona positions unavailable: %s", exc)
+        _persona_positions_cache = ""
+    return _persona_positions_cache
+
+
+def _vault_reply_context(tweet_text: str) -> str:
+    """
+    If the tweet mentions a protocol we have a vault project file for,
+    return that project's documented Stance and X Consensus so the reply
+    is consistent with -- and can push back using -- our positions.
+    """
+    try:
+        from bot.brain.vault import PROJ_DIR, read_project
+    except Exception:
+        return ""
+
+    lower = tweet_text.lower()
+    parts: list = []
+    try:
+        for path in sorted(PROJ_DIR.glob("*.md")):
+            name = path.stem
+            if name in ("general",) or len(name) < 3:
+                continue
+            if name not in lower and name.replace("-", " ") not in lower:
+                continue
+            data = read_project(name)
+            if not data:
+                continue
+            seg = ["YOUR DOCUMENTED POSITION ON %s:" % data["name"].upper()]
+            if data.get("stance"):
+                seg.append("Stance: " + " ".join(data["stance"].split())[:400])
+            if data.get("x_consensus"):
+                seg.append("Where CT consensus is wrong: "
+                           + " ".join(data["x_consensus"].split())[:300])
+            if len(seg) > 1:
+                parts.append("\n".join(seg))
+            if len(parts) >= 2:
+                break
+    except Exception as exc:
+        log.debug("Vault reply context failed (non-fatal): %s", exc)
+
+    return "\n\n".join(parts)
+
+
+
 def _parse_reply(raw: str) -> Optional[str]:
     """Parse structured REPLY:/SKIP: response from LLM."""
     if not raw:
@@ -375,6 +448,25 @@ def _generate_reply(tweet_text: str, author_username: str, portfolio: dict) -> O
     prompt = f"Tweet by @{author_username}:\n\n{tweet_text}"
     if portfolio_ctx:
         prompt += f"\n\n{portfolio_ctx}"
+
+    # Inject documented vault positions so the reply is consistent with --
+    # and pushes back using -- our stances, not generic takes.
+    vault_ctx = _vault_reply_context(tweet_text)
+    if vault_ctx:
+        prompt += (
+            f"\n\n{vault_ctx}\n\n"
+            "Your reply MUST be consistent with the documented position above. "
+            "If the tweet contradicts your stance, push back with the documented "
+            "view and its data -- politely, once, no beef."
+        )
+
+    positions = _persona_positions()
+    if positions:
+        prompt += (
+            "\n\nYOUR STANDING POSITIONS (persona -- stay consistent with these):\n"
+            + positions[:1200]
+        )
+
     prompt += (
         "\n\nWrite a reply that would make someone click the profile. "
         "Use the REPLY:/SKIP: format from the system prompt."
@@ -621,4 +713,22 @@ def run(state: State) -> int:
     from bot.sources.health_monitor import is_in_recovery
     if is_in_recovery():
         log.info("Recovery mode: skipping outbound engagement this cycle.")
-        return
+        return 0
+
+    log.info(
+        "Outbound engagement: %d/%d replies used today.",
+        state.replies_today(), State.MAX_REPLIES_PER_DAY,
+    )
+
+    portfolio = load_portfolio()
+
+    targeted  = _run_async(_engage_targeted_async(state, portfolio, MAX_PER_RUN)) or 0
+    remaining = max(0, MAX_PER_RUN - targeted)
+    keyword   = _run_async(_engage_keyword_async(state, portfolio, remaining)) or 0
+
+    total = targeted + keyword
+    log.info(
+        "Outbound: %d targeted + %d keyword = %d total | %d/%d used today.",
+        targeted, keyword, total, state.replies_today(), State.MAX_REPLIES_PER_DAY,
+    )
+    return total

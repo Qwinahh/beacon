@@ -36,10 +36,47 @@ def get_client() -> tweepy.Client:
     return _client
 
 
+def upload_media(image_bytes: bytes) -> "Optional[str]":
+    """
+    Upload image bytes via the v1.1 media endpoint and return a media_id
+    string, or None on failure. Media upload still requires the v1.1 API
+    with OAuth 1.0a (tweepy.API, not tweepy.Client). Non-fatal by design:
+    callers post text-only when this returns None.
+    """
+    try:
+        auth = tweepy.OAuth1UserHandler(
+            require_env(ENV.x_api_key),
+            require_env(ENV.x_api_secret),
+            require_env(ENV.x_access_token),
+            require_env(ENV.x_access_secret),
+        )
+        api_v1 = tweepy.API(auth)
+        with tempfile.NamedTemporaryFile(suffix=".png", delete=False) as tmp:
+            tmp.write(image_bytes)
+            tmp_path = tmp.name
+        try:
+            media = api_v1.media_upload(filename=tmp_path)
+        finally:
+            try:
+                os.unlink(tmp_path)
+            except OSError:
+                pass
+        media_id = str(media.media_id)
+        log.info("Media uploaded: %s (%d bytes)", media_id, len(image_bytes))
+        return media_id
+    except tweepy.errors.TweepyException as exc:
+        log.warning("Media upload failed (non-fatal): %s", exc)
+        return None
+    except Exception as exc:
+        log.warning("Media upload error (non-fatal): %s", exc)
+        return None
+
+
 def post_tweet(
     text: str,
     reply_to_id: Optional[str] = None,
     quote_tweet_id: Optional[str] = None,
+    media_ids: Optional[list[str]] = None,
 ) -> Optional[str]:
     """
     Post a tweet and return its ID, or None on failure.
@@ -50,6 +87,7 @@ def post_tweet(
         quote_tweet_id:  If set, post as a quote-tweet of this tweet ID.
                          Quote tweets appear in your own timeline; plain
                          replies do not — use this for high-value viral posts.
+        media_ids:       Optional media IDs from upload_media() to attach.
     """
     if len(text) > 280:
         log.error("Tweet exceeds 280 characters (%d). Aborting.", len(text))
@@ -61,6 +99,8 @@ def post_tweet(
         kwargs["in_reply_to_tweet_id"] = reply_to_id
     if quote_tweet_id:
         kwargs["quote_tweet_id"] = quote_tweet_id
+    if media_ids:
+        kwargs["media_ids"] = media_ids
 
     try:
         response = client.create_tweet(**kwargs)

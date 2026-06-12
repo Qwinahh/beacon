@@ -1,0 +1,46 @@
+name: Suggest — Weekly Improvement Report
+
+on:
+  schedule:
+    # Mondays 07:00 UTC — after the daily tracker run, so the report
+    # synthesizes fresh metrics.
+    - cron: "0 7 * * 1"
+  workflow_dispatch:
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
+jobs:
+  suggest:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write   # Commits the weekly report.
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT }}
+          ref: master
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run suggestion agent
+        # Deterministic — no API keys needed.
+        run: python -m agents.suggestion_agent
+
+      - name: Commit report
+        run: |
+          git config user.name  "qwinahh-bot"
+          git config user.email "bot@qwinahh.local"
+          git add data/suggestions/
+          git diff --cached --quiet || git commit -m "chore: weekly suggestions report [skip ci]"
+          git checkout master 2>/dev/null || true
+          git pull --no-rebase -X ours origin master 2>/dev/null || true
+          git push origin master

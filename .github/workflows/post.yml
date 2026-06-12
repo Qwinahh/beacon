@@ -51,6 +51,9 @@ jobs:
           X_SCRAPER_COOKIES:    ${{ secrets.X_SCRAPER_COOKIES }}
           WHALE_ALERT_API_KEY:  ${{ secrets.WHALE_ALERT_API_KEY }}
           DROPSTAB_API_KEY:     ${{ secrets.DROPSTAB_API_KEY }}
+          # Optional — enables image generation (agents/image_agent.py).
+          # Posting continues text-only when unset.
+          REPLICATE_API_TOKEN:  ${{ secrets.REPLICATE_API_TOKEN }}
         run: python post.py
 
       - name: Commit state and memory
@@ -61,7 +64,4 @@ jobs:
           git diff --cached --quiet || git commit -m "chore: update bot state + vault [skip ci]"
           # Ensure we're on main (concurrent runs can leave a detached HEAD)
           git checkout master 2>/dev/null || true
-          # Merge instead of rebase — avoids add/add conflicts and detached HEAD issues.
-          # -X ours keeps the Actions-side version on any content conflict.
-          git pull --no-rebase -X ours origin master 2>/dev/null || true
-          git push origin master
+          # Merge instead of rebase — avoids add/add conflicts and detached HE

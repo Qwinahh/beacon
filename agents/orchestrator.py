@@ -620,6 +620,7 @@ def _maybe_market_mood_post(state: State):
         "topic":       "market_sentiment",
         "format_used": "market_read",
     }
+    _post_success_hooks(state, result)
     log.info("Market mood posted: %s -- %s", tweet_id, tweet_text[:80])
     return result
 
@@ -867,9 +868,28 @@ def run_post_cycle(state: State, alpha_only: bool = False) -> dict:
     log.info("Generated tweet (%d chars, fmt=%s): %s", len(text), fmt_name, text[:80])
 
     # ------------------------------------------------------------------
+    # Step 4b: Optional image attachment (never blocks the post)
+    # ------------------------------------------------------------------
+    media_ids = None
+    try:
+        from bot.config import IMAGE_GENERATION_ENABLED, IMAGE_CHANCE
+        import random as _img_random
+        if IMAGE_GENERATION_ENABLED and _img_random.random() < IMAGE_CHANCE:
+            from agents.image_agent import maybe_generate_image
+            image_bytes = maybe_generate_image(text, fmt_name or "")
+            if image_bytes:
+                from bot.x.client import upload_media
+                media_id = upload_media(image_bytes)
+                if media_id:
+                    media_ids = [media_id]
+                    log.info("Attaching generated image (media_id=%s).", media_id)
+    except Exception as exc:
+        log.info("Image attachment skipped (non-fatal): %s", exc)
+
+    # ------------------------------------------------------------------
     # Step 5: Post to X
     # ------------------------------------------------------------------
-    tweet_id = post_tweet(text)
+    tweet_id = post_tweet(text, media_ids=media_ids)
 
     if not tweet_id:
         reason = "post_tweet() failed -- see Tweepy error above for X API details."
@@ -911,8 +931,54 @@ def run_post_cycle(state: State, alpha_only: bool = False) -> dict:
 # Internal helpers
 # ---------------------------------------------------------------------------
 
+def _append_post_log(result: dict) -> None:
+    """
+    Append the posted tweet to data/performance/post_log.json with null
+    metrics. The performance tracker (agents/performance_tracker.py) fills
+    metrics in 24h later and computes engagement/reply/bookmark rates.
+    """
+    import json as _json
+    from datetime import datetime, timezone
+    from pathlib import Path
+    from bot.config import POST_LOG_PATH
+
+    path = Path(POST_LOG_PATH)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    entries: list = []
+    if path.exists():
+        try:
+            loaded = _json.loads(path.read_text(encoding="utf-8"))
+            if isinstance(loaded, list):
+                entries = loaded
+        except Exception as exc:
+            log.warning("post_log.json unreadable (%s) -- starting fresh list.", exc)
+
+    tweet_id = result.get("tweet_id", "")
+    if tweet_id and not any(e.get("tweet_id") == tweet_id for e in entries):
+        entries.append({
+            "tweet_id":        tweet_id,
+            "tweet_text":      result.get("tweet_text", ""),
+            "format_used":     result.get("format_used", "unknown"),
+            "topic":           result.get("topic", ""),
+            "posted_at":       datetime.now(timezone.utc).isoformat(),
+            "impressions":     None,
+            "likes":           None,
+            "replies":         None,
+            "bookmarks":       None,
+            "quote_tweets":    None,
+            "engagement_rate": None,
+        })
+        path.write_text(_json.dumps(entries, indent=2), encoding="utf-8")
+        log.debug("Post %s appended to post_log.json.", tweet_id)
+
+
 def _post_success_hooks(state: State, result: dict) -> None:
     """Non-fatal post-success actions: metrics, vault log, memory."""
+    try:
+        _append_post_log(result)
+    except Exception as exc:
+        log.warning("Post log append failed (non-fatal): %s", exc)
+
     try:
         from bot.sources.x_metrics import record_posted_tweet
         record_posted_tweet(

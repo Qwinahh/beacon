@@ -138,6 +138,23 @@ TEMPLATE_FALLBACK: Final[bool] = True
 
 
 # ---------------------------------------------------------------------------
+# Image generation (agents/image_agent.py)
+# ---------------------------------------------------------------------------
+
+# Replicate API token. Image generation is entirely optional — when the
+# token is missing the image agent disables itself and posting continues
+# text-only. Model: black-forest-labs/flux-schnell ($0.003/image).
+REPLICATE_API_TOKEN: Final[str] = os.getenv("REPLICATE_API_TOKEN", "")
+IMAGE_GENERATION_ENABLED: Final[bool] = bool(REPLICATE_API_TOKEN)
+
+# Probability that an image-eligible post attempts image generation.
+# Text posts slightly out-engage images on median (Buffer 18M-post data,
+# see data/vault/knowledge/image-strategy.md) — images are an accent,
+# not a default.
+IMAGE_CHANCE: Final[float] = 0.35
+
+
+# ---------------------------------------------------------------------------
 # File paths
 # ---------------------------------------------------------------------------
 
@@ -146,29 +163,4 @@ PORTFOLIO_PATH: Final[str] = "data/portfolio.json"
 WATCHLIST_PATH: Final[str] = "data/watchlist.json"
 PERSONA_PATH:   Final[str] = "data/persona.md"
 
-
-# ---------------------------------------------------------------------------
-# Environment variable names (never hardcode secrets)
-# ---------------------------------------------------------------------------
-
-@dataclass(frozen=True)
-class EnvKeys:
-    x_api_key:        str = "X_API_KEY"
-    x_api_secret:     str = "X_API_SECRET"
-    x_access_token:   str = "X_ACCESS_TOKEN"
-    x_access_secret:  str = "X_ACCESS_SECRET"
-    anthropic_api_key: str = "ANTHROPIC_API_KEY"
-
-
-ENV: Final[EnvKeys] = EnvKeys()
-
-
-def require_env(key: str) -> str:
-    """Return an environment variable or raise a descriptive error."""
-    value = os.environ.get(key)
-    if not value:
-        raise EnvironmentError(
-            f"Required environment variable '{key}' is not set. "
-            "Add it to GitHub Secrets or your local .env file."
-        )
-    return value
+# Performance tracking (agents/performance_t
