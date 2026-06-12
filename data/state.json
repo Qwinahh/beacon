@@ -3,9 +3,9 @@
     "2026-06-04": 1,
     "2026-06-05": 3,
     "2026-06-11": 4,
-    "2026-06-12": 2
+    "2026-06-12": 3
   },
-  "last_post_ts": 1781241200.493184,
+  "last_post_ts": 1781257264.6379297,
   "seen": [
     "92721f98279b91df501b",
     "6a52391eb83757bc8d90",
@@ -16,13 +16,15 @@
     "455ac7f47153ed0044d3",
     "af11ff6fb9837ac8f53a",
     "f0a955e9407212bc0645",
-    "4c361239998abfb89c7c"
+    "4c361239998abfb89c7c",
+    "cecc737d2c0768168496"
   ],
   "recent_topics": [
     "hype",
     "defi",
     "defi",
     "listing",
+    "general",
     "general",
     "general",
     "general",
@@ -39,7 +41,8 @@
     "farm_update",
     "prediction",
     "data_observation",
-    "pattern_recognition"
+    "pattern_recognition",
+    "farm_update"
   ],
   "replied_to": [
     "2060640874699399233",
