@@ -91,6 +91,13 @@
       "topic": "Honeypop DEX TVL spike",
       "outcome": "posted",
       "note": "TVL spike of 50.8% is material, sustained pattern of 7x consecutive 40%+ moves over 10 days validates the signal as credible sustained inflow, not noise."
+    },
+    {
+      "ts": "2026-06-12T16:03:40Z",
+      "signal_type": "rss",
+      "topic": "Kalshi crypto perpetuals regulatory classification",
+      "outcome": "posted",
+      "note": "Regulatory ambiguity around derivatives classification (futures vs swaps) creates a credible hook for a broader DeFi rebranding narrative."
     }
   ],
   "noise_signals": [],

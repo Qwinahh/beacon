@@ -79,6 +79,13 @@
         "observation": "GameStop holds $215M in BTC as of 10-Q filing, with Coinbase holding custodial liquidation rights on the position.",
         "source": "bot"
       }
+    ],
+    "Kalshi": [
+      {
+        "ts": "2026-06-12T16:03:40Z",
+        "observation": "Kalshi's crypto perpetuals product is facing regulatory scrutiny over whether they qualify as futures or swaps—triggering debate about potential industry-wide rebranding pressure among DeFi derivatives protocols.",
+        "source": "bot"
+      }
     ]
   }
 }
