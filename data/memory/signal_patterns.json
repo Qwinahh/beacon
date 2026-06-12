@@ -77,6 +77,13 @@
       "topic": "Honeypop TVL surge",
       "outcome": "posted",
       "note": "TVL spike of 51.1% in 24h continues established pattern of sustained inflows ≥40% -- remains a high-signal event worthy of post given pattern strength and account position disclosure."
+    },
+    {
+      "ts": "2026-06-12T11:45:21Z",
+      "signal_type": "tvl",
+      "topic": "Honeypop DEX",
+      "outcome": "posted",
+      "note": "Sixth consecutive ≥40% TVL spike in 9 days—signal remains useful for capturing sustained high-velocity inflow momentum."
     }
   ],
   "noise_signals": [],
