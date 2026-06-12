@@ -1,4 +1,11 @@
 {
   "_description": "Log of how the bot's views on projects have shifted based on what it observes. Each entry is a dated note.",
-  "updates": []
+  "updates": [
+    {
+      "ts": "2026-06-12T12:47:56Z",
+      "project": "Honeypop",
+      "update": "This is no longer a \"strong inflow\" story—it's become an exceptional persistence anomaly. The pattern suggests either structural capital attraction (not typical farm math) or a self-reinforcing network effect that has overcome typical yield-farm decay curves.",
+      "trigger": "Seventh consecutive 24h TVL spike ≥40% within 10 days with zero material deceleration"
+    }
+  ]
 }

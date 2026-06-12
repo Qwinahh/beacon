@@ -84,6 +84,13 @@
       "topic": "Honeypop DEX",
       "outcome": "posted",
       "note": "Sixth consecutive ≥40% TVL spike in 9 days—signal remains useful for capturing sustained high-velocity inflow momentum."
+    },
+    {
+      "ts": "2026-06-12T12:47:56Z",
+      "signal_type": "tvl",
+      "topic": "Honeypop DEX TVL spike",
+      "outcome": "posted",
+      "note": "TVL spike of 50.8% is material, sustained pattern of 7x consecutive 40%+ moves over 10 days validates the signal as credible sustained inflow, not noise."
     }
   ],
   "noise_signals": [],
