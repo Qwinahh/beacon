@@ -28,6 +28,11 @@
         "ts": "2026-06-12T00:12:32Z",
         "observation": "Honeypop DEX TVL up 52.9% in 24h — fourth consecutive spike ≥40% in 7 days, establishing a clear pattern of sustained high-velocity inflows rather than one-time event.",
         "source": "bot"
+      },
+      {
+        "ts": "2026-06-12T05:13:25Z",
+        "observation": "Honeypop DEX TVL up 53.0% in 24h — fifth consecutive spike ≥40% within 8 days, establishing persistent high-velocity inflow pattern that exceeds typical points-driven growth volatility.",
+        "source": "bot"
       }
     ],
     "HYPE": [

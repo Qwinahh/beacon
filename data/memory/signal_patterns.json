@@ -63,6 +63,13 @@
       "topic": "Honeypop DEX TVL spike",
       "outcome": "posted",
       "note": "Magnitude (52.9%) and pattern (4th consecutive ≥40% move) justified posting; signals sustained momentum worthy of narrative attention."
+    },
+    {
+      "ts": "2026-06-12T05:13:25Z",
+      "signal_type": "tvl",
+      "topic": "Honeypop DEX TVL spike",
+      "outcome": "posted",
+      "note": "Spike was significant at 53% and continues an established pattern of repeated >40% daily moves; posting called out the sustainability concern while maintaining credibility with prior narrative."
     }
   ],
   "noise_signals": [],
