@@ -86,6 +86,13 @@
         "observation": "Kalshi's crypto perpetuals product is facing regulatory scrutiny over whether they qualify as futures or swaps—triggering debate about potential industry-wide rebranding pressure among DeFi derivatives protocols.",
         "source": "bot"
       }
+    ],
+    "Sophon": [
+      {
+        "ts": "2026-06-13T02:36:35Z",
+        "observation": "Sophon Bridge TVL declined 52.3% in 24 hours, indicating rapid capital outflow from the farm despite prior persistence patterns.",
+        "source": "bot"
+      }
     ]
   }
 }

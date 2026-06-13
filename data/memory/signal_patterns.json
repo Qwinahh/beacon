@@ -98,6 +98,13 @@
       "topic": "Kalshi crypto perpetuals regulatory classification",
       "outcome": "posted",
       "note": "Regulatory ambiguity around derivatives classification (futures vs swaps) creates a credible hook for a broader DeFi rebranding narrative."
+    },
+    {
+      "ts": "2026-06-13T02:36:35Z",
+      "signal_type": "tvl",
+      "topic": "Sophon Bridge TVL collapse",
+      "outcome": "posted",
+      "note": "Large TVL move (52.3% decline in 24h) is meaningful and signals potential farm stress or user confidence loss."
     }
   ],
   "noise_signals": [],
