@@ -1,0 +1,48 @@
+name: Refresh — Live Market Data + Calibration Log
+
+on:
+  schedule:
+    # Daily at 06:30 UTC — after Learn (06:00), before the first posting
+    # window (08:00), so the day's posts can reference fresh metrics.
+    - cron: "30 6 * * *"
+  workflow_dispatch:
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write   # Commits updated vault project files + calibration log.
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT }}
+          ref: main
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Update live market data
+        run: python -m agents.market_updater
+
+      - name: Update calibration log
+        run: python -m agents.calibration_agent
+
+      - name: Commit vault updates
+        run: |
+          git config user.name  "qwinahh-bot"
+          git config user.email "bot@qwinahh.local"
+          git add data/vault/
+          git diff --cached --quiet || git commit -m "chore: refresh live market data + calibration log [skip ci]"
+          git checkout main 2>/dev/null || true
+          git pull --no-rebase -X ours origin main 2>/dev/null || true
+          git push origin main

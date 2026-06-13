@@ -10,6 +10,10 @@ airdrop_status: distributed
 worth_farming: false
 blocked: false
 updated: 2026-06-12
+tvl_usd: 4841007018
+price_usd: 0.0848
+price_change_24h: 6.3
+metrics_updated: 2026-06-13
 ---
 
 # Ethena
@@ -60,3 +64,8 @@ the bear case got weaker in June.
 ---
 
 → [[index]] · [[dashboard]] · [[narratives/yield-bearing-stables]] · [[projects/pendle]] · [[projects/aave]]
+
+## Live Metrics
+- TVL: $4.84B
+- Price: $0.0848 (+6.3% 24h)
+- Snapshot: 2026-06-13 (auto, DeFiLlama + CoinGecko)

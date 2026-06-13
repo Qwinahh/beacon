@@ -272,15 +272,30 @@ def _build_knowledge_context(topic: str, title: str) -> str:
 
     matches: list[str] = []
 
-    # Search static knowledge files
-    for md_file in ["crypto-history.md", "exploit-history.md",
-                     "narrative-cycles.md", "defi-primitives.md"]:
-        path = kb_dir / md_file
-        if not path.exists():
+    # Priority-ordered search set. Macro narrative files come first -- they hold
+    # the bot's running thesis on a theme and previously never reached the
+    # writer at all. Then the core reference files, then any other knowledge
+    # file (so newly added knowledge like market-regime / onchain-metrics is
+    # picked up automatically without editing this list).
+    narr_dir = kb_dir.parent / "narratives"
+    core = [
+        "narrative-cycles.md", "crypto-history.md",
+        "defi-primitives.md", "exploit-history.md",
+        "market-regime-2026.md", "onchain-metrics.md",
+    ]
+    search_files: list[Path] = []
+    if narr_dir.exists():
+        search_files += sorted(narr_dir.glob("*.md"))
+    search_files += [kb_dir / f for f in core]
+    search_files += [p for p in sorted(kb_dir.glob("*.md")) if p.name not in core]
+
+    seen_paths: set[Path] = set()
+    for path in search_files:
+        if path in seen_paths or not path.exists():
             continue
+        seen_paths.add(path)
         try:
             text = path.read_text(encoding="utf-8")
-            # Split into sections and find relevant ones
             sections = re.split(r"\n(?=#{2,3} )", text)
             for section in sections:
                 section_lower = section.lower()
@@ -291,6 +306,8 @@ def _build_knowledge_context(topic: str, title: str) -> str:
                         break
         except Exception:
             pass
+        if len(matches) >= 4:
+            break
 
     # Search recent confirmed events
     events_dir = kb_dir / "events"
@@ -312,7 +329,7 @@ def _build_knowledge_context(topic: str, title: str) -> str:
 
     return (
         "## Relevant Knowledge Base Facts (confirmed, use for grounding)\n"
-        + "\n\n---\n\n".join(matches[:3])
+        + "\n\n---\n\n".join(matches[:4])
     )
 
 

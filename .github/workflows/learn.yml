@@ -55,4 +55,10 @@ jobs:
       - name: Commit updated knowledge
         run: |
           git config user.name  "qwinahh-bot"
+          git config user.email "bot@qwinahh.local"
+          git add data/memory/ data/projects/ data/vault/
+          git diff --cached --quiet || git commit -m "chore: update knowledge base [skip ci]"
+          git checkout main 2>/dev/null || true
+          git pull --no-rebase -X ours origin main 2>/dev/null || true
+          git push origin main
          
