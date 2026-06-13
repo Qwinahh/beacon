@@ -22,7 +22,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GH_PAT }}
-          ref: master
+          ref: main
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -57,6 +57,6 @@ jobs:
           # Pull-rebase before push — alpha.yml and post.yml can run simultaneously
           # and both push state.json; without this one will fail with non-fast-forward
           # and the other's write may corrupt the file mid-push.
-          git checkout master 2>/dev/null || true
-          git pull --no-rebase -X ours origin master 2>/dev/null || true
-          git push origin master
+          git checkout main 2>/dev/null || true
+          git pull --no-rebase -X ours origin main 2>/dev/null || true
+          git push origin main
