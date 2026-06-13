@@ -6,6 +6,13 @@
       "topic": "HYPE position announcement",
       "outcome": "posted",
       "note": "Position signal triggered disclosure—treated as conviction signal worth sharing with audience for transparency."
+    },
+    {
+      "ts": "2026-06-13T22:34:52Z",
+      "signal_type": "announcement",
+      "topic": "HYPE position disclosure",
+      "outcome": "posted",
+      "note": "Portfolio position announcement signal worked as designed to trigger transparency post."
     }
   ]
 }
