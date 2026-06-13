@@ -1,7 +1,10 @@
 ---
+title: Restaking / EigenLayer
 narrative: Restaking / EigenLayer
-last_updated: 2026-06-05
+tags: [narrative, restaking, eigenlayer]
 conviction: medium
+last_updated: 2026-06-05
+updated: 2026-06-07
 ---
 
 # Restaking / EigenLayer
@@ -38,9 +41,4 @@ phase. Whether that transitions to real economic activity is the thesis.
 - Regulatory targeting of pooled staking arrangements
 
 ## Updates
-<!-- Bot appends narrative updates here -->
-- **2026-06-05** — Initial vault entry. Watching AVS fee revenue vs TVL divergence.
-
----
-
-→ [[index]] · [[dashboard]]
+<!-- Bot appends narrative update

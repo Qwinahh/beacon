@@ -1,9 +1,12 @@
 ---
+title: Crypto Narrative Cycles
 type: knowledge
 category: market-narrative
+tags: [knowledge, narratives, strategy]
 confirmed: true
 source_tier: 1
 last_updated: 2026-06-04
+updated: 2026-06-07
 ---
 
 # Crypto Narrative Cycles
@@ -72,8 +75,4 @@ Reference for the writer — use these to identify where a current narrative sit
 - TVL under $100M but growing >20% weekly
 - No points program yet, but protocol clearly will need one
 - DeFiLlama category page has fewer than 5 protocols
-- Mechanism is genuinely novel, not a fork
-
----
-
--> [[crypto-history]] · [[defi-primitives]] · [[dashboard]]
+- Mechanism is genuine

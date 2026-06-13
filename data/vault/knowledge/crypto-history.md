@@ -2,9 +2,11 @@
 title: Crypto History — Major Events 2017-2025
 type: knowledge
 category: history
+tags: [knowledge, history]
 last_updated: 2026-06-01
 source_tier: 1
 confirmed: true
+updated: 2026-06-07
 ---
 
 # Crypto History — Major Events 2017–2025
@@ -145,7 +147,4 @@ The bot reads this file when generating posts referencing past events, cycles, a
 ---
 ## Related Notes
 - [[narrative-cycles]] — Current active narratives built on this history
-- [[exploit-history]] — Security incidents by cycle
-- [[defi-primitives]] — Mechanisms that drove each era
-- [[x-growth-strategy]] — How to post about these patterns credibly
-- [[dashboard]] — Vault home
+- [[exploit-hist

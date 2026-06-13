@@ -1,63 +1,37 @@
-# Beacon — Bot Knowledge Base
+# Beacon Vault — Map
 
 This vault is built and maintained by the Beacon bot (@Qwinahh).
-It updates after every post cycle. Pull the repo and open this folder
-in Obsidian to browse what the bot knows and how its views are evolving.
+It updates after every post cycle. Pull the repo and open this folder in Obsidian to browse what the bot knows and how its views are evolving.
 
-You can edit any file here — the bot will pick up your changes on the
-next run. Useful for correcting a thesis or flagging a farm to stop.
+You can edit any file — the bot picks up your changes on the next run. Changes to thesis blocks, stance, or frontmatter flags (`blocked: true`, `airdrop_status`) take effect immediately.
 
 ---
 
-## Projects
+## Navigation
 
-The bot tracks these projects. Each file has a thesis, trust score,
-observations, and airdrop status.
-
-- [[projects/hyperliquid|Hyperliquid]] — perps DEX, long-term constructive
-- [[projects/kaito|Kaito]] — InfoFi, farming-oriented
-- [[projects/meteora|Meteora]] — Solana CLMM, actively farming
-- [[projects/eigenlayer|EigenLayer]] — restaking, watching
-
-*New projects are added automatically as the bot discovers them.*
+| File | Purpose |
+|---|---|
+| [[dashboard]] | Live Dataview overview — active farms, conviction scores, recent posts |
+| [[persona]] | Voice, style rules, and 17 Strong Positions governing all posts |
+| [[farms-kanban]] | Kanban board — Watching / Farming / Claiming / Done |
 
 ---
 
-## Narratives
+## Knowledge
 
-Macro-level thesis tracking across projects.
+Reference knowledge the bot reads for context when generating posts and replies.
 
-- [[narratives/perps-meta|Perps Meta]] — on-chain perps winning thesis
-- [[narratives/airdrop-meta|Airdrop Meta]] — farming strategy framework
-- [[narratives/restaking|Restaking / EigenLayer]] — AVS economics
+### Crypto references
 
----
+- [[knowledge/narrative-cycles|Narrative Cycles]] — lifecycle model (Discovery → Resolution), historical precedents, peaking/early signals
+- [[knowledge/crypto-history|Crypto History]] — major events 2017–2025, cross-cycle patterns, key precedents
+- [[knowledge/defi-primitives|DeFi Primitives]] — AMMs, lending, perps, yield sources, stablecoins — how things work
+- [[knowledge/exploit-history|Exploit History]] — DeFi hacks by vector: bridges, flash loans, smart contracts, oracle manipulation
 
-## Daily Inspiration
+### X intelligence (all sourced from data/research/, 2026-06-12)
 
-What's performing well in the DeFi/crypto space today — updated ~07:00 UTC.
-
-- [[inspiration/trending|Today's Top Posts]] — top posts by engagement with links
-- [[inspiration/patterns|What's Working]] — format and topic breakdown
-
----
-
-## Daily Log
-
-The bot logs every post cycle here. What was posted, what was skipped,
-what was researched.
-
-*Latest entries are in the [[log/]] folder — sorted by date.*
-
----
-
-## How to edit
-
-- **Change a thesis:** edit the `## Thesis` section in the project file.
-- **Mark a farm stopped:** change `airdrop_status: farming` to `airdrop_status: stopped` in the frontmatter.
-- **Add a note:** add a bullet under `## Observations` — the bot won't overwrite existing bullets.
-- **Block a project:** add `blocked: true` to the frontmatter — bot will skip it.
-
----
-
-→ [[dashboard]] · [[knowledge/crypto-history]] · [[knowledge/defi-primitives]] · [[knowledge/exploit-history]] · [[knowledge/narrative-cycles]] · [[knowledge/x-growth-strategy]]
+- [[knowledge/x-algorithm-2026|X Algorithm 2026]] — Phoenix/Grok ranking, signal weights (+75 author-engaged reply … −369 report), suppression triggers, Premium effects
+- [[knowledge/post-structure-science|Post Structure Science]] — per-format playbook: hook formula, length, metric driven, real CT examples; thread + image rules
+- [[knowledge/reply-strategy|Reply Strategy]] — drafting human-approved replies: account tiers, the four moves worth making, relationship arcs
+- [[knowledge/image-strategy|Image Strategy]] — when images help vs hurt, @Qwinahh visual style guide (#0d1117 terminal aesthetic), generation stack, what never to generate
+- [[knowledge/voice-integrity|Voice Integrity]] — anti-AI-tell guide: banned phrases and structural patterns, punctuation/case rules, positive tells, calibration test

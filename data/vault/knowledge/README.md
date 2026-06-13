@@ -2,7 +2,9 @@
 title: Knowledge Base Index
 type: knowledge
 category: index
+tags: [knowledge, index]
 last_updated: 2026-06-01
+updated: 2026-06-07
 ---
 
 # Knowledge Base Index
@@ -34,4 +36,3 @@ The bot also learns continuously and writes to:
 | 1 | On-chain data, official announcements, SEC filings | ✅ Yes |
 | 2 | Established researchers (Delphi, Messari, The Block), major media | ✅ Yes (cited) |
 | 3 | CT consensus, Reddit, Discord, Telegram signals | ❌ No — sentiment only |
-| 4 | Anonymous tips, unverified CT, single-source rumors | ❌ No — discarded |

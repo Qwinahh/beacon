@@ -1,5 +1,56 @@
 {
-  "positions": [],
-  "airdrops": [],
-  "watching": []
+  "_comment": "Quin's positions - the bot reads this for diary posts, disclosure flags, and reply context. Keys the code depends on: positions[].project/.status ('active'), airdrops[].project/.status ('farming'), watching[].project. Edit freely; keep those keys.",
+  "positions": [
+    {
+      "project": "HYPE",
+      "status": "active",
+      "direction": "long",
+      "size": "core",
+      "note": "long-term orderbook perps thesis. watching HLP TVL as the health signal, not price. unlocks vs buybacks is the live question."
+    },
+    {
+      "project": "stETH",
+      "status": "active",
+      "direction": "long",
+      "size": "core",
+      "note": "default ETH staking position. deepest LST liquidity, dual governance protection. LDO is a separate question we don't hold."
+    },
+    {
+      "project": "JUP",
+      "status": "active",
+      "direction": "long",
+      "size": "small",
+      "note": "staked for ASR (Q1 2026 claim window to Jul 8). not sizing up while ~53M JUP/month unlocks through June 2026."
+    }
+  ],
+  "airdrops": [
+    {
+      "project": "Polymarket",
+      "status": "farming",
+      "criteria": ["genuine volume on catalyst markets", "varied market types", "long account history"],
+      "note": "POLY confirmed planned, not launched. farming cost stays near zero; wash patterns are exactly what allocation filters learn to cut."
+    }
+  ],
+  "watching": [
+    {
+      "project": "Pendle PT pools",
+      "why": "fixed yield only worth locking when implied APY compensates for collateral risk.",
+      "trigger": "implied APY above 10% on a blue-chip underlying (sUSDe class, not apyUSD class)"
+    },
+    {
+      "project": "Morpho curated vaults",
+      "why": "isolated markets find rates faster than Aave's pooled model.",
+      "trigger": "curated vault supply APY sustained above Aave equivalent by 2%+"
+    },
+    {
+      "project": "Babylon TBV",
+      "why": "native BTC collateral without wrapper or bridge would be a structural event for BTCfi.",
+      "trigger": "Aave V4 native-BTC spoke confirmed live with real caps"
+    },
+    {
+      "project": "Drift relaunch",
+      "why": "first nine-figure exploit recovery attempt by a perps DEX - event, not trade.",
+      "trigger": "perps trading actually resumes and recovery pool scales toward $151M"
+    }
+  ]
 }

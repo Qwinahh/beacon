@@ -1,5 +1,7 @@
 ---
+title: EigenLayer
 name: EigenLayer
+tags: [project, restaking, ethereum]
 trust_score: 3
 category: Restaking
 chain: Ethereum
@@ -7,6 +9,7 @@ last_updated: 2026-06-05
 airdrop_status: watching
 worth_farming: false
 blocked: false
+updated: 2026-06-07
 ---
 
 # EigenLayer
@@ -42,9 +45,4 @@ the next farming opportunity is.
 
 ## Links
 - App: https://app.eigenlayer.xyz
-- DeFiLlama: https://defillama.com/protocol/eigenlayer
-- Docs: https://docs.eigenlayer.xyz
-
----
-
-→ [[index]] · [[dashboard]]
+- DeFi

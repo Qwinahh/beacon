@@ -2,9 +2,11 @@
 title: DeFi Primitives — How the Core Protocols Work
 type: knowledge
 category: technical
+tags: [knowledge, technical, defi]
 last_updated: 2026-06-01
 source_tier: 1
 confirmed: true
+updated: 2026-06-07
 ---
 
 # DeFi Primitives — How the Core Protocols Work
@@ -170,7 +172,4 @@ Ask: "If token price went to zero, would this yield still exist?"
 ---
 ## Related Notes
 - [[crypto-history]] — When these primitives emerged and why
-- [[exploit-history]] — How each primitive has been exploited
-- [[narrative-cycles]] — Which primitives are driving current narratives
-- [[x-growth-strategy]] — Posting credibly about DeFi mechanics
-- [[dashboard]] — Vault home
+- [[exp

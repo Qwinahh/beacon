@@ -55,7 +55,7 @@ def _fetch_raises(min_amount_m: float = 0.0) -> list:
     return out
 
 
-def _fetch_tvl_movers(min_change_pct: float = 15.0) -> list:
+def _fetch_tvl_movers(min_change_pct: float = 20.0) -> list:
     items = defillama.fetch_tvl_movers(min_change_pct=min_change_pct)
     return [
         {
@@ -63,8 +63,9 @@ def _fetch_tvl_movers(min_change_pct: float = 15.0) -> list:
             "name": i.name, "change_pct": round(i.change_pct, 1),
             "tvl_usd": round(i.tvl_usd), "category": i.category,
             "topic": i.topic, "url": i.url, "kind": "tvl",
+            "age_h": 1.5,   # Artificial age penalty — TVL data is always "fresh", deprioritise it
         }
-        for i in items[:15]
+        for i in items[:3]
     ]
 
 
@@ -122,14 +123,14 @@ _FETCH_TVL_SCHEMA = {
     "input_schema": {
         "type": "object",
         "properties": {
-            "min_change_pct": {"type": "number", "description": "Minimum absolute TVL change percentage. Default 15."}
+            "min_change_pct": {"type": "number", "description": "Minimum absolute TVL change percentage. Default 20."}
         },
     },
 }
 
 _DETECT_ALPHA_SCHEMA = {
     "name": "detect_alpha",
-    "description": "Run all alpha detectors: fresh RSS, new protocols, TVL spikes, large raises, GitHub releases, Hyperliquid funding rates, token unlocks. Returns urgency-ranked signals.",
+    "description": "Run all alpha detectors: fresh RSS, new protocols, TVL spikes, large raises, GitHub releases, Hyperliquid funding rates, token unlocks, large whale transactions. Returns urgency-ranked signals.",
     "input_schema": {"type": "object", "properties": {}},
 }
 

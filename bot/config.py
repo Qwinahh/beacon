@@ -138,6 +138,35 @@ TEMPLATE_FALLBACK: Final[bool] = True
 
 
 # ---------------------------------------------------------------------------
+# Image generation (agents/image_agent.py)
+# ---------------------------------------------------------------------------
+
+# Replicate API token. Image generation is entirely optional — when the
+# token is missing the image agent disables itself and posting continues
+# text-only. Model: black-forest-labs/flux-schnell ($0.003/image).
+REPLICATE_API_TOKEN: Final[str] = os.getenv("REPLICATE_API_TOKEN", "")
+IMAGE_GENERATION_ENABLED: Final[bool] = bool(REPLICATE_API_TOKEN)
+
+# Probability that an image-eligible post attempts image generation.
+# Text posts slightly out-engage images on median (Buffer 18M-post data,
+# see data/vault/knowledge/image-strategy.md) — images are an accent,
+# not a default.
+IMAGE_CHANCE: Final[float] = 0.35
+
+
+# ---------------------------------------------------------------------------
+# X account identity
+# ---------------------------------------------------------------------------
+
+# The bot's own X handle. Used to resolve its own user ID for mentions,
+# self-filtering in replies, and post-reply fetches.
+BOT_USERNAME: Final[str] = "Qwinahh"
+
+# Minimum hours between quote-tweets (engagement farming, see engage.py).
+QUOTE_TWEET_COOLDOWN_HOURS: Final[float] = 6.0
+
+
+# ---------------------------------------------------------------------------
 # File paths
 # ---------------------------------------------------------------------------
 
@@ -145,6 +174,16 @@ STATE_PATH:     Final[str] = "data/state.json"
 PORTFOLIO_PATH: Final[str] = "data/portfolio.json"
 WATCHLIST_PATH: Final[str] = "data/watchlist.json"
 PERSONA_PATH:   Final[str] = "data/persona.md"
+
+# Performance tracking (agents/performance_tracker.py)
+POST_LOG_PATH:            Final[str] = "data/performance/post_log.json"
+PERFORMANCE_LOG_MD_PATH:  Final[str] = "data/vault/knowledge/performance-log.md"
+
+# Weekly suggestion reports (agents/suggestion_agent.py)
+SUGGESTIONS_DIR: Final[str] = "data/suggestions"
+
+# Vault persona file read by writer + reply generation
+VAULT_PERSONA_PATH: Final[str] = "data/vault/persona.md"
 
 
 # ---------------------------------------------------------------------------

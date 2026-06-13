@@ -1,0 +1,57 @@
+name: Track — Post Performance
+
+on:
+  schedule:
+    # Daily at 06:00 UTC — before the first posting window (08:00),
+    # so the day's format/topic weighting can use fresh metrics.
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
+jobs:
+  track:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write   # Commits post_log.json + performance-log.md back.
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT }}
+          ref: master
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run performance tracker
+        env:
+          X_API_KEY:         ${{ secrets.X_API_KEY }}
+          X_API_SECRET:      ${{ secrets.X_API_SECRET }}
+          X_ACCESS_TOKEN:    ${{ secrets.X_ACCESS_TOKEN }}
+          X_ACCESS_SECRET:   ${{ secrets.X_ACCESS_SECRET }}
+          X_BEARER_TOKEN:    ${{ secrets.X_BEARER_TOKEN }}
+          # LLM keys passed for parity with other agent workflows; the
+          # tracker itself is deterministic and works without them.
+          GROQ_API_KEY:       ${{ secrets.GROQ_API_KEY }}
+          CEREBRAS_API_KEY:   ${{ secrets.CEREBRAS_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          ANTHROPIC_API_KEY:  ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python -m agents.performance_tracker
+
+      - name: Commit metrics and report
+        run: |
+          git config user.name  "qwinahh-bot"
+          git config user.email "bot@qwinahh.local"
+          git add data/performance/ data/vault/knowledge/performance-log.md
+          git diff --cached --quiet || git commit -m "chore: update post performance metrics [skip ci]"
+          git checkout master 2>/dev/null || true
+          git pull --no-rebase -X ours origin master 2>/dev/null || true
+          git push origin master

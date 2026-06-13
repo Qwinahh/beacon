@@ -1,1 +1,5 @@
-["obsidian-git","dataview","templater-obsidian","obsidian-kanban","calendar"]
+[
+  "dataview",
+  "templater-obsidian",
+  "obsidian-kanban",
+  "calendar",

@@ -1,5 +1,7 @@
 ---
+title: Meteora
 name: Meteora
+tags: [project, clmm, solana]
 trust_score: 4
 category: CLMM / AMM
 chain: Solana
@@ -7,6 +9,7 @@ last_updated: 2026-06-01
 airdrop_status: farming
 worth_farming: true
 blocked: false
+updated: 2026-06-07
 ---
 
 # Meteora
@@ -40,10 +43,4 @@ points-incentivised TVL.
 - Community focused on MET launch timing. Less noise than Kaito.
 
 ## Links
-- App: https://app.meteora.ag
-- DeFiLlama: https://defillama.com/protocol/meteora
-
-
----
-
-→ [[index]] · [[dashboard]]
+- App: ht
