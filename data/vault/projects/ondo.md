@@ -60,4 +60,4 @@ mainnet (still not verifiably live as of 2026-06-11 despite "early-to-mid
 
 ---
 
-→ [[index]] · [[dashboard]] · [[narratives/rwa]] 
+→ [[index]] · [[dashboard]] · [[narratives/rwa]] · [[narratives/yield-bearing-stables]] · [[projects/ethena]]

@@ -56,4 +56,4 @@
 - **Unlock USD value unverified:** the "$3.46M" figure attached to the June 30 unlock was computed at the stale $0.0151 price; at $0.02016 it would be ~$4.6M. Verify against a live unlocks tracker before citing.
 - **No KMNO buyback program was verifiable** in these searches — only speculative language ("revenue could support buybacks"). Do not claim a buyback exists.
 - **CT sentiment is thin:** based on a 94-tweet aggregator sample, not direct timeline analysis. marginfi/Save competitor TVL figures (~$700M/~$400M) come from a Backpack Learn article (April 2026 data) and were not independently re-verified on DeFiLlama.
-- Daily-active-user comparison (2,000 vs 400) comes from Eco support-article mar
+- Daily-active-user comparison (2,000 vs 400) comes from Eco support-article marketing-adjacent content; treat as directional, not exact.

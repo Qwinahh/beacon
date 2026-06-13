@@ -59,4 +59,4 @@ Rough share math: even using Drift's pre-hack ~$700M OI vs Hyperliquid's ~$10.2B
 - **Token confusion risk:** an initial search surfaced $0.0159 / $9.7M mcap — that is a DIFFERENT "Drift" token. The verified Drift Protocol (Solana) figures are from coingecko.com/en/coins/drift-protocol.
 - **CoinGecko's ATL display was ambiguous** ("$0.05333 — Apr 01, 2026 (43 minutes)") and equals today's 24h low; ATL may have been set on hack day or re-touched today. Either way price is at/near all-time lows.
 - CT sentiment is sourced from news coverage of social reaction (Stocktwits/CoinCentral/Cryptopolitan), not direct X firehose data.
-- Hyperliquid 24h figures are from a CoinGlass snapshot surfaced via search on 2026-06-11 and fluctuate intraday; the 156.69% 24h volume change suggests an unusually active day, so the $10.5B may be above tr
+- Hyperliquid 24h figures are from a CoinGlass snapshot surfaced via search on 2026-06-11 and fluctuate intraday; the 156.69% 24h volume change suggests an unusually active day, so the $10.5B may be above trend (30d avg ≈ $5.75B/day implied by the $172.63B figure).

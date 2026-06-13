@@ -60,4 +60,4 @@
 - GHO claims about the scaling team exiting in July 2026 and RWA collateral plans come from CoinMarketCap's AI-generated update page — verify before tweeting.
 - CT sentiment is inferred from news coverage of X posts and governance forums, not from direct X/Twitter data pulls.
 - AAVE price/mcap figures vary slightly across sources intraday ($63–65 range during 2026-06-08 to 06-11); table uses CoinGecko API at 2026-06-11 21:32 UTC.
-- The exact V4 mainnet launch date (2026-03-30) is reported by Coinpedia/TradingView; The Defiant confirms the launch but I 
+- The exact V4 mainnet launch date (2026-03-30) is reported by Coinpedia/TradingView; The Defiant confirms the launch but I did not confirm the precise date on Aave's official channels.

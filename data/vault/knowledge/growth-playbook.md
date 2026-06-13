@@ -82,4 +82,4 @@ came from quality scarcity, and volume is how accounts give it back.
 
 ---
 
-→ [[index]] · [[knowledge/x-algorithm-2026]] · [[knowledge/reply-st
+→ [[index]] · [[knowledge/x-algorithm-2026]] · [[knowledge/reply-strategy]] · [[knowledge/personality-development]] · [[knowledge/x-growth-strategy]]

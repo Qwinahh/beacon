@@ -106,4 +106,4 @@ Suppression labels: low-quality, spam, toxicity, untrusted URL, NSFW,
 
 ---
 
-→ [[index]
+→ [[index]] · [[knowledge/post-structure-science]] · [[knowledge/reply-strategy]] · [[knowledge/x-growth-strategy]]

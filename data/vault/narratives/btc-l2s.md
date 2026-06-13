@@ -46,4 +46,4 @@ a yield product.
 
 ## Updates
 <!-- Bot appends narrative updates here -->
-- **2026-06-12** — Initial entry. Verdict table: Stacks and Rootstock real, Core and BOB narrative. BTCfi meta contracting, not dead — the live threads are sBTC rai
+- **2026-06-12** — Initial entry. Verdict table: Stacks and Rootstock real, Core and BOB narrative. BTCfi meta contracting, not dead — the live threads are sBTC rails and BitVM bridges, not generalized BTC DeFi.

@@ -60,4 +60,4 @@ when TVL doesn't pay fees to the token.
 
 ---
 
-→ [[index]] · [[dashboard]] · [[
+→ [[index]] · [[dashboard]] · [[narratives/btc-l2s]] · [[projects/aave]] · [[projects/lido]]

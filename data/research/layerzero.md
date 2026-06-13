@@ -58,4 +58,4 @@
 - **Usage stats vintage**: the 75% bridge-volume share, 1.2M msgs/day, $293M/day figures are Sep 2025; the $100B/150M-messages/130-chain figures are mid-2025. No post-incident (May–June 2026) message-volume data found — actual current share is likely lower given the exodus, but this is inference, not data.
 - **StakeDAO incident date**: article undated in results; inferred early June 2026 from context.
 - **"Zero" L1 institutional partners** (DTCC, ICE, Citadel, Tether, Google Cloud): sourced from X threads only; unverified.
-- DeFiLlama API endpoints returned empty via fetch; no DeFiLlama-ve
+- DeFiLlama API endpoints returned empty via fetch; no DeFiLlama-verified Stargate TVL or current bridge volumes in this file.

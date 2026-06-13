@@ -50,4 +50,4 @@
 - **Fees figures** ($192.4M annualized, $15.77M 30d) come from a search-result summary of DeFiLlama dated ~2026-06-03, not a direct page fetch — verify on https://defillama.com/protocol/morpho before quoting.
 - **Morpho Midnight (2026-05-14)** and Vault V2 commit activity are sourced only from CoinMarketCap's AI updates page; not confirmed against an official Morpho blog post.
 - **Could not verify:** exact date of the 22.6% unlock and its size in tokens; exact launch dates of the Coinbase UK and SOL-backed loan products; current per-vault deposit figures for Gauntlet/Steakhouse (Gauntlet's "30+ vaults, $2B+ vault TVL across Morpho/Drift/Kamino" claim is from early-2026 secondary sources); precise count of active markets/vaults (Morpho app data not fetched). CT sentiment is from aggregator summaries, not direct X data.
-- All numbers above were found in searches/fetches perfo
+- All numbers above were found in searches/fetches performed 2026-06-11; none are from model training data.

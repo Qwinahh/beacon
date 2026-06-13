@@ -44,4 +44,4 @@ Just outside the top 20 (as of 2026-06-12, DeFiLlama): ether.fi Stake (Liquid Re
 - The API's `change_1m` field returned null for all protocols, so 30d change was computed from `tvl` vs `tvlPrevMonth` in the `/lite/protocols2` response — same source, but "prev month" is DeFiLlama's snapshot definition, not exactly 30 calendar days.
 - Several "Bridge" entries (WBTC, Coinbase Bridge, Binance Bitcoin, Binance staked ETH) are custodial wrappers counted by DeFiLlama as TVL; some analysts exclude these from "real DeFi" TVL. They are kept here per DeFiLlama's classification.
 - Staking/restaking TVL (Lido, SSV, EigenCloud, Babylon) partially double-counts the same underlying ETH/BTC across protocols; summing the column overstates unique capital.
-- TVL in this list is USD-denominated, so 30d changes blend
+- TVL in this list is USD-denominated, so 30d changes blend price moves and actual deposits/withdrawals.

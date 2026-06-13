@@ -75,4 +75,4 @@ Note: Kodiak + Infrared alone roughly account for the chain's ~$55M TVL; the lon
 - **BBB announcement exact date** not verified (The Defiant article undated in results; its "$0.4165" price quote implies it predates June 2026). CMC AI summaries place the pivot in May 2026.
 - One search summary referenced "$3.2B TVL" in 2026 context — that is the stale 2025 Boyco-era peak, not current; current chain TVL is ~$55M.
 - CT sentiment is sourced from secondary articles/aggregators, not direct X scraping; the 37.8% bullish / 5.4% bearish tweet stat circulating on aggregator sites is low-quality and was excluded.
-- BERA staking APR, validator count, and
+- BERA staking APR, validator count, and sWBERA yield figures were not found with verifiable dates — do not quote.

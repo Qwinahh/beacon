@@ -59,4 +59,4 @@ lower yield, more decentralized — a philosophy, not a competitor.
 
 ---
 
-→ [[index]] · [[dashboard]] · [[narratives/liquid
+→ [[index]] · [[dashboard]] · [[narratives/liquid-staking]] · [[projects/eigenlayer]] · [[projects/babylon]]

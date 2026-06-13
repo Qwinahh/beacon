@@ -58,4 +58,4 @@ token no, until value accrual switches on.
 
 ---
 
-→ [[index]] · [[dashboard]] · [[projects/aave]] ·
+→ [[index]] · [[dashboard]] · [[projects/aave]] · [[projects/ethena]] · [[narratives/yield-bearing-stables]]

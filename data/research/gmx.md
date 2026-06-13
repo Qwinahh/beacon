@@ -49,4 +49,4 @@
 - **GMX v2 30d trading volume:** could not retrieve an exact figure (DeFiLlama derivatives API returned empty for the GMX slugs). Volume-vs-competitor claims here are qualitative, based on April 2026 third-party analysis.
 - **CT sentiment is inferred** from articles, not from raw X data (LunarCrush paywalled). No verified engagement/sentiment metrics.
 - **Exact dates for "early June 2026" MegaETH launch** not pinned to a day; sourced from CoinMarketCap's AI-generated updates page, which should be double-checked against GMX's official announcement.
-- Price/mcap figures vary by aggregator ($5.43–$6.28 across CMC, CoinGecko, Blo
+- Price/mcap figures vary by aggregator ($5.43–$6.28 across CMC, CoinGecko, Blockworks on 2026-06-11); CoinGecko used as primary.

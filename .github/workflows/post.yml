@@ -64,4 +64,7 @@ jobs:
           git diff --cached --quiet || git commit -m "chore: update bot state + vault [skip ci]"
           # Ensure we're on main (concurrent runs can leave a detached HEAD)
           git checkout master 2>/dev/null || true
-          # Merge instead of rebase — avoids add/add conflicts and detached HE
+          # Merge instead of rebase — avoids add/add conflicts and detached HEAD issues.
+          # -X ours keeps the Actions-side version on any content conflict.
+          git pull --no-rebase -X ours origin master 2>/dev/null || true
+          git push origin master

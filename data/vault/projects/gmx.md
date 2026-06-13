@@ -57,4 +57,4 @@ arguments in perps have been losing for two years.
 
 ---
 
-→ [[index]] · [[dashboard]] · [[narratives/per
+→ [[index]] · [[dashboard]] · [[narratives/perps-meta]] · [[projects/hyperliquid]] · [[projects/drift]]

@@ -61,4 +61,4 @@ own money rail pre-token.
 
 ---
 
-→ [[index]] · [[dashboard
+→ [[index]] · [[dashboard]] · [[narratives/prediction-markets]] · [[projects/jupiter]]

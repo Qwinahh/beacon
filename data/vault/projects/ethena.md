@@ -59,4 +59,4 @@ the bear case got weaker in June.
 
 ---
 
-→ [[index]] · [[dashboard]] · [[narratives/yield-
+→ [[index]] · [[dashboard]] · [[narratives/yield-bearing-stables]] · [[projects/pendle]] · [[projects/aave]]

@@ -95,4 +95,5 @@ log audience echoes here as they appear.
 Explicit exclusions, with reasons:
 
 - **Price predictions with timeframes** — "$X by March" is unfalsifiable-until-embarrassing; calibration is the brand
-- **Shilling without disclosed reasoning** — any post
+- **Shilling without disclosed reasoning** — any post whose function is our bags going up; positions are disclosed or the post doesn't run
+- **Engagem

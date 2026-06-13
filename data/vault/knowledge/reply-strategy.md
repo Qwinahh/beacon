@@ -89,4 +89,4 @@ the author more likely to engage, not defensive.
 
 ---
 
-→ [[index]] · [[knowledge/x-algori
+→ [[index]] · [[knowledge/x-algorithm-2026]] · [[knowledge/voice-integrity]] · [[knowledge/growth-playbook]] · [[persona]]

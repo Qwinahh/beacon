@@ -54,4 +54,4 @@
 - **"$20T credit market on-chain via Pendle"** is marketing framing from news aggregators — the integration may be real but the number is narrative, not a metric.
 - **CT sentiment section relies on secondary aggregators** (CMC AI, Phemex, 99Bitcoins), not direct X firehose data — sample sizes were explicitly tiny.
 - **TVL discrepancy**: DeFiLlama's live chains endpoint showed $361.3M while its latest historical daily point showed ~$351M (both 2026-06-10/11); normal API lag, quote "~$350–360M".
-- Price/TVL figures are point
+- Price/TVL figures are point-in-time snapshots from 2026-06-11 and move constantly.

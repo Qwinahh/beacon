@@ -44,4 +44,4 @@ funding regimes turn and the crypto-native carry returns at size.
 
 ## Updates
 <!-- Bot appends narrative updates here -->
-- **2026-06-12** — Initial entry. Ethena +12.8% TVL over 30d while DeFi bled (DeFiLlama top 20) — the only stablecoin protocol gaining during the drawdown. Distribution deals (Coinbase, Janus H
+- **2026-06-12** — Initial entry. Ethena +12.8% TVL over 30d while DeFi bled (DeFiLlama top 20) — the only stablecoin protocol gaining during the drawdown. Distribution deals (Coinbase, Janus Henderson) are doing what yield no longer can.

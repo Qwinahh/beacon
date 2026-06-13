@@ -57,4 +57,4 @@
 - **Insider-supply discrepancy:** CCN's "66% insider" claim (April 2025 airdrop coverage) vs official docs' 49% (investors 30.5% + team 15% + advisors 3.5%) — the higher figure may include ecosystem/R&D allocations controlled by the Foundation (18% + 18%), which would total 85% Foundation/insider-adjacent. Not independently resolved.
 - **APR figures are point-in-time** from staking-api.babylonlabs.io on 2026-06-11 and fluctuate with total stake and BABY price.
 - BTC price used for USD conversions: $63,421 (CoinGecko API, 2026-06-11).
-- All web search results retrieved 2026-06-11; some secondary articles (Phemex, coingabbar, Mudrex) are low-tier sources 
+- All web search results retrieved 2026-06-11; some secondary articles (Phemex, coingabbar, Mudrex) are low-tier sources and were used only for sentiment/context, not for metrics.

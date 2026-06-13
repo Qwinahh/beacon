@@ -45,4 +45,4 @@ targeting 1M ETH, ValMart, LIP-35 Staking Router v3 mainnet ~July 2026).
 
 ## Updates
 <!-- Bot appends narrative updates here -->
-- **2026-06-12** — Initial entry. The 2022-era debates (cartel risk, RPL vs LDO) are settled or stale; the live story is institutional wrappers and Lido's platform pivot. SSV at #2 in DeFi by TVL i
+- **2026-06-12** — Initial entry. The 2022-era debates (cartel risk, RPL vs LDO) are settled or stale; the live story is institutional wrappers and Lido's platform pivot. SSV at #2 in DeFi by TVL is the most under-covered fact in the category.

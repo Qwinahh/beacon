@@ -57,4 +57,4 @@ recovery pool actually scales toward the promised $151M, reassess.
 
 ---
 
-→ [[index]] · [[dashboard]] · [[narratives/perps-meta]
+→ [[index]] · [[dashboard]] · [[narratives/perps-meta]] · [[narratives/solana-defi]] · [[projects/hyperliquid]]

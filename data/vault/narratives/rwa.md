@@ -42,4 +42,4 @@ tokenized stocks. Issuance was act one. Venues and leverage are act two.
 
 ## Updates
 <!-- Bot appends narrative updates here -->
-- **2026-06-12** — Initial entry. RWA outperformance vs DeFi-native categories is the cleanest 30d divergence on DeFiLlama. Tokenized equities
+- **2026-06-12** — Initial entry. RWA outperformance vs DeFi-native categories is the cleanest 30d divergence on DeFiLlama. Tokenized equities, not Treasuries, are the current frontier.

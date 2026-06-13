@@ -77,4 +77,4 @@ Before approving, the judge asks:
 
 ---
 
-→ [[index]] · [[persona]] �
+→ [[index]] · [[persona]] · [[knowledge/post-structure-science]] · [[knowledge/personality-development]]

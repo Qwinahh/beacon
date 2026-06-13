@@ -54,4 +54,4 @@ Dormant-to-contracting, not dead. Every one of the four chains lost DeFi TVL ove
 - BOB token price/mcap is from CoinGecko id "bob-build-on-bitcoin" (rank ~900); low liquidity, figures may be noisy.
 - Could not verify whether BOB's BitVM bridge actually hit mainnet ("early 2026" was the announced target; no confirmation found).
 - Merlin Chain claim of "$1.7B TVL" in one search result is stale/wrong — DeFiLlama shows Merlin at $7.7M (2026-06-12).
-- All token prices are point-in-time sna
+- All token prices are point-in-time snapshots from CoinGecko's simple-price API on 2026-06-12.

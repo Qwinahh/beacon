@@ -63,4 +63,4 @@
 - **Ondo Chain mainnet**: could NOT confirm whether mainnet is live as of 2026-06-11; latest found status was "scheduled early-to-mid 2026" with the JPM Kinexys DvP test on testnet (May 2025).
 - **Ondo Perps launch (June 9, 2026)**: announcement verified via embedded @OndoPerps tweet in the Coinpedia article, but no post-launch confirmation found that it actually went live.
 - **Superstate USTB**: no current AUM figure found; rwa.xyz was not directly fetched (JS-heavy app), so cross-issuer market-share numbers rely on the stablecoininsider/eco.com articles.
-- **CT sentiment stats (55.43% bullish etc.)**: single-source (Coinbase page tweet-analysis 
+- **CT sentiment stats (55.43% bullish etc.)**: single-source (Coinbase page tweet-analysis widget via search snapshot); methodology and exact date unknown.
