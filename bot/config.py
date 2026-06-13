@@ -155,6 +155,18 @@ IMAGE_CHANCE: Final[float] = 0.35
 
 
 # ---------------------------------------------------------------------------
+# X account identity
+# ---------------------------------------------------------------------------
+
+# The bot's own X handle. Used to resolve its own user ID for mentions,
+# self-filtering in replies, and post-reply fetches.
+BOT_USERNAME: Final[str] = "Qwinahh"
+
+# Minimum hours between quote-tweets (engagement farming, see engage.py).
+QUOTE_TWEET_COOLDOWN_HOURS: Final[float] = 6.0
+
+
+# ---------------------------------------------------------------------------
 # File paths
 # ---------------------------------------------------------------------------
 
@@ -163,4 +175,39 @@ PORTFOLIO_PATH: Final[str] = "data/portfolio.json"
 WATCHLIST_PATH: Final[str] = "data/watchlist.json"
 PERSONA_PATH:   Final[str] = "data/persona.md"
 
-# Performance tracking (agents/performance_t
+# Performance tracking (agents/performance_tracker.py)
+POST_LOG_PATH:            Final[str] = "data/performance/post_log.json"
+PERFORMANCE_LOG_MD_PATH:  Final[str] = "data/vault/knowledge/performance-log.md"
+
+# Weekly suggestion reports (agents/suggestion_agent.py)
+SUGGESTIONS_DIR: Final[str] = "data/suggestions"
+
+# Vault persona file read by writer + reply generation
+VAULT_PERSONA_PATH: Final[str] = "data/vault/persona.md"
+
+
+# ---------------------------------------------------------------------------
+# Environment variable names (never hardcode secrets)
+# ---------------------------------------------------------------------------
+
+@dataclass(frozen=True)
+class EnvKeys:
+    x_api_key:        str = "X_API_KEY"
+    x_api_secret:     str = "X_API_SECRET"
+    x_access_token:   str = "X_ACCESS_TOKEN"
+    x_access_secret:  str = "X_ACCESS_SECRET"
+    anthropic_api_key: str = "ANTHROPIC_API_KEY"
+
+
+ENV: Final[EnvKeys] = EnvKeys()
+
+
+def require_env(key: str) -> str:
+    """Return an environment variable or raise a descriptive error."""
+    value = os.environ.get(key)
+    if not value:
+        raise EnvironmentError(
+            f"Required environment variable '{key}' is not set. "
+            "Add it to GitHub Secrets or your local .env file."
+        )
+    return value
