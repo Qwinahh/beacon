@@ -732,3 +732,110 @@ def generate_thread_continuation(
     log.info("Thread continuation: %d follow-up tweets generated.", len(tweets))
     return tweets[:3]  # Hard cap at 3 follow-ups
 
+
+# ---------------------------------------------------------------------------
+# Standalone thread generation (no specific news item)
+# ---------------------------------------------------------------------------
+
+_FULL_THREAD_SYSTEM = """You write a complete thread (3-5 tweets) for @Qwinahh -- a DeFi
+trader who farms airdrops, trades perps, and moves into protocols early.
+
+There is no specific news event driving this thread. Pick ONE thing from your
+current thinking (a thesis, a pattern, a mistake, a metric) and walk through it
+properly -- something that needs more than 280 characters to land.
+
+THREAD STRUCTURE:
+- Tweet 1 is the HOOK: state a specific observation or tension that demands
+  explanation. End it with a thread emoji (this one time only).
+- Tweets 2-4 deliver the substance: data/context, then the implication or
+  takeaway. Each tweet must be a self-contained insight, not a fragment.
+- The last tweet should land on a concrete takeaway or opinion -- not "stay tuned"
+  or a call to follow.
+
+HARD RULES:
+- 3-5 tweets total.
+- Each tweet under 260 characters.
+- No hashtags. No emojis except the single thread emoji on tweet 1.
+- No generic takes. If you don't have something specific enough for a thread, SKIP.
+
+OUTPUT FORMAT (exactly, one line per tweet):
+1/ [hook]
+2/ [tweet]
+3/ [tweet]
+4/ [tweet, optional]
+5/ [tweet, optional]
+
+Or: SKIP
+"""
+
+
+def generate_thread(
+    item: Optional[CandidateItem],
+    portfolio: dict,
+    recent_formats: list[str],
+) -> list[str]:
+    """
+    Generate a complete 3-5 tweet thread with no specific news item driving it.
+
+    Returns a list of tweet strings (hook first), or an empty list if the
+    LLM SKIPs, fails, or the output doesn't parse into at least 3 tweets.
+    Never raises -- caller falls through to freeform/normal pipeline on [].
+    """
+    try:
+        from bot.brain.freeform_writer import _load_vault_context
+        from bot.brain.llm import complete as llm_complete
+
+        vault_context = _load_vault_context()
+        portfolio_context = _build_portfolio_context(portfolio)
+        recent = ", ".join((recent_formats or [])[-5:]) or "none"
+
+        context_block = (
+            f"Context from your vault:\n{vault_context}\n\n---\n\n"
+            if vault_context else ""
+        )
+        portfolio_block = (
+            f"{portfolio_context}\n\n---\n\n" if portfolio_context else ""
+        )
+
+        user_prompt = (
+            f"{context_block}"
+            f"{portfolio_block}"
+            f"Recent formats you've used (avoid repeating the angle): {recent}\n\n"
+            "Write a complete 3-5 tweet thread per the rules. If nothing in your "
+            "context is substantial enough for a thread -- SKIP."
+        )
+
+        raw = llm_complete(
+            system=_FULL_THREAD_SYSTEM,
+            user=user_prompt,
+            max_tokens=CLAUDE_MAX_TOKENS * 2,
+            temperature=0.85,
+        )
+    except Exception as exc:
+        log.warning("Thread generation failed: %s", exc)
+        return []
+
+    if not raw:
+        return []
+
+    raw = raw.strip()
+    if raw.upper().startswith("SKIP"):
+        log.debug("Thread generation: SKIP")
+        return []
+
+    tweets: list[str] = []
+    for line in raw.splitlines():
+        line = line.strip()
+        # Match "1/ ...", "2/ ...", ... "5/ ..."
+        if len(line) >= 3 and line[0].isdigit() and line[1] == "/":
+            tweet_text = line[2:].strip()
+            if 20 <= len(tweet_text) <= 280:
+                tweets.append(tweet_text)
+
+    if len(tweets) < 3:
+        log.debug("Thread generation: only %d tweets parsed -- discarding.", len(tweets))
+        return []
+
+    log.info("Thread generated (%d tweets): %s", len(tweets), tweets[0][:70])
+    return tweets[:5]
+

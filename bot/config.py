@@ -35,6 +35,11 @@ POSTING_WINDOWS: Final[list[tuple[int, int]]] = [
 # Random jitter added to posting time so the schedule never looks mechanical.
 POST_JITTER_SECONDS: Final[int] = 900  # ±15 min
 
+# Probability that a normal (non-alpha) cycle attempts a 3-5 tweet thread
+# instead of a single post. Falls through to freeform/normal pipeline on
+# any failure, so this never blocks a posting cycle.
+THREAD_CHANCE: Final[float] = 0.15
+
 
 # ---------------------------------------------------------------------------
 # Content quality gate
