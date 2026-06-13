@@ -92,6 +92,11 @@
         "ts": "2026-06-13T02:36:35Z",
         "observation": "Sophon Bridge TVL declined 52.3% in 24 hours, indicating rapid capital outflow from the farm despite prior persistence patterns.",
         "source": "bot"
+      },
+      {
+        "ts": "2026-06-13T06:44:12Z",
+        "observation": "Sophon Bridge TVL down 54.2% in 24h (following 52.3% decline previous day), confirming rapid capital flight accelerating—two consecutive ~50%+ daily drops suggest farm viability collapse.",
+        "source": "bot"
       }
     ]
   }

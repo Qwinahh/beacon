@@ -105,6 +105,13 @@
       "topic": "Sophon Bridge TVL collapse",
       "outcome": "posted",
       "note": "Large TVL move (52.3% decline in 24h) is meaningful and signals potential farm stress or user confidence loss."
+    },
+    {
+      "ts": "2026-06-13T06:44:12Z",
+      "signal_type": "tvl",
+      "topic": "Sophon Bridge TVL collapse",
+      "outcome": "posted",
+      "note": "TVL decline of 54.2% in 24h is large enough and represents a clear trend shift—warranted a post given the severity and pattern acceleration."
     }
   ],
   "noise_signals": [],

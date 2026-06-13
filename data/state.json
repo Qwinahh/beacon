@@ -4,9 +4,9 @@
     "2026-06-05": 3,
     "2026-06-11": 4,
     "2026-06-12": 6,
-    "2026-06-13": 1
+    "2026-06-13": 2
   },
-  "last_post_ts": 1781318191.6159828,
+  "last_post_ts": 1781333048.6220667,
   "seen": [
     "92721f98279b91df501b",
     "6a52391eb83757bc8d90",
@@ -22,7 +22,8 @@
     "b08cb8dae48f89af56f3",
     "987ab177026782f30f28",
     "05e331a50e7c363b3bd8",
-    "8fc0133cf1af96a1f90e"
+    "8fc0133cf1af96a1f90e",
+    "72a93a72e4732935c18d"
   ],
   "recent_topics": [
     "hype",
@@ -37,6 +38,7 @@
     "general",
     "general",
     "perps",
+    "general",
     "general"
   ],
   "recent_formats": [
@@ -55,7 +57,8 @@
     "alpha_tip",
     "mistake_admission",
     "prediction",
-    "short_take"
+    "short_take",
+    "farm_update"
   ],
   "replied_to": [
     "2060640874699399233",
