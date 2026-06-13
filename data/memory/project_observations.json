@@ -1,40 +1,11 @@
 {
-  "_description": "Bot-written observations about specific projects over time. The bot appends to this after each post cycle. Do not edit manually unless correcting an error.",
   "projects": {
-    "Hyperliquid": [
-      {
-        "ts": "2026-05-23T23:17:41Z",
-        "observation": "OI crossed $4B -- model holding without blowout",
-        "source": "test"
-      }
-    ],
-    "Honeypop": [
-      {
-        "ts": "2026-06-04T21:30:22Z",
-        "observation": "Honeypop DEX TVL spiked 42% in 24 hours — a rapid inflow event that prompted a post.",
-        "source": "bot"
-      }
-    ],
     "HYPE": [
       {
-        "ts": "2026-06-05T06:10:17Z",
-        "observation": "HYPE fell 15.67% in a cycle where Bitcoin retreated to near $62,000 amid broader AI trade unwinding. Post highlighted airdrop recipients potentially selling pressure.",
-        "source": "bot"
-      },
-      {
-        "ts": "2026-06-06T20:03:15Z",
-        "observation": "$29M in HYPE deals being unwound by Hyperion -- liquidity is tightening beyond the prior airdrop selling pressure observed in previous cycle.",
+        "ts": "2026-06-13T21:09:06Z",
+        "observation": "Position disclosed publicly in tweet. Bot framed HYPE as early-stage with meaningful traction but significant execution risk ahead, suggesting a cautious but conviction-backed entry.",
         "source": "bot"
       }
-    ],
-    "Bitcoin": [
-      {
-        "ts": "2026-06-05T13:33:54Z",
-        "observation": "BTC dropped 2.8% and triggered RSS alert from CoinDesk index decline, but author's stop orders did not execute—indicating volatility in the 2-3% range is not yet hitting critical support levels in author's position.",
-        "source": "bot"
-      }
-    ],
-    "Crypto Council for Innovation": [
-      {
-        "ts": "2026-06-05T16:25:17Z",
-        "observation": "
+    ]
+  }
+}

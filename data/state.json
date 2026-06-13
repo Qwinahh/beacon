@@ -1,3 +1,10 @@
 {
-  "thread_replies_daily": {}
+  "thread_replies_daily": {},
+  "daily_counts": {
+    "2026-06-13": 1
+  },
+  "last_post_ts": 1781384943.192706,
+  "seen": [
+    "146e492dd2617ecabb53"
+  ]
 }

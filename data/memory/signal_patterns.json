@@ -1,34 +1,11 @@
 {
-  "_description": "What kinds of signals consistently lead to good posts vs noise. Bot updates this over time by reflecting on what it posted and why.",
   "good_signals": [
     {
-      "ts": "2026-06-04T21:30:22Z",
-      "signal_type": "tvl",
-      "topic": "Honeypop DEX TVL spike",
-      "outcome": "posted",
-      "note": "Large single-day TVL move (42%) was significant enough to merit engagement—sharp moves can signal liquidity shifts or market interest."
-    },
-    {
-      "ts": "2026-06-05T06:10:17Z",
+      "ts": "2026-06-13T21:09:06Z",
       "signal_type": "alpha",
-      "topic": "HYPE airdrop selling pressure",
+      "topic": "HYPE position announcement",
       "outcome": "posted",
-      "note": "Price action correlated with broader market pullback, but narrative around airdrop recipients as sellers provided a distinctive angle that justified coverage."
-    },
-    {
-      "ts": "2026-06-05T13:33:54Z",
-      "signal_type": "rss",
-      "topic": "BTC price decline 2.8%",
-      "outcome": "posted",
-      "note": "CoinDesk macro signal triggered on meaningful intraday BTC drop; tweet framed as personal risk management response rather than directional call."
-    },
-    {
-      "ts": "2026-06-05T16:25:17Z",
-      "signal_type": "rss",
-      "topic": "Regulatory clarity on vaults - Crypto Council for Innovation",
-      "outcome": "posted",
-      "note": "Regulatory push with clear historical precedent for market impact (10% BTC dominance decline). Actionable narrative linking policy to alt season potential."
-    },
-    {
-      "ts": "2026-06-06T16:00:39Z",
-      "sign
+      "note": "Position signal triggered disclosure—treated as conviction signal worth sharing with audience for transparency."
+    }
+  ]
+}
