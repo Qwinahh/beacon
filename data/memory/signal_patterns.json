@@ -35,5 +35,14 @@
       "outcome": "posted",
       "note": "Repeat portfolio announcement. Position already disclosed in prior cycles; no new data on HYPE fundamentals or momentum justifies re-posting the same holding statement."
     }
+  ],
+  "noise_signals": [
+    {
+      "ts": "2026-06-14T17:55:22Z",
+      "signal_type": "alpha",
+      "topic": "HYPE position disclosure",
+      "outcome": "low_score",
+      "note": "Position already disclosed multiple times with identical framing; repeating the announcement without new developments or conviction changes adds no signal value."
+    }
   ]
 }
