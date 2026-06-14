@@ -1,10 +1,10 @@
 ---
-title: What's Working — 2026-06-12
-updated: 2026-06-12 11:00 UTC
+title: What's Working — 2026-06-14
+updated: 2026-06-14 10:27 UTC
 type: inspiration
 ---
 
-# What's Working Today — 2026-06-12
+# What's Working Today — 2026-06-14
 
 Pattern analysis across 0 high-engagement posts from the last 24h.
 
@@ -30,4 +30,4 @@ _No posts collected — X_SCRAPER_COOKIES may not be set or twscrape is unavaila
 
 
 ---
-_Updated daily at ~07:00 UTC. Archive: [[history/2026-06-12]]_
+_Updated daily at ~07:00 UTC. Archive: [[history/2026-06-14]]_
