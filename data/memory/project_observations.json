@@ -5,6 +5,11 @@
         "ts": "2026-06-13T21:09:06Z",
         "observation": "Position disclosed publicly in tweet. Bot framed HYPE as early-stage with meaningful traction but significant execution risk ahead, suggesting a cautious but conviction-backed entry.",
         "source": "bot"
+      },
+      {
+        "ts": "2026-06-14T10:35:54Z",
+        "observation": "Bot disclosed a small position in HYPE via public tweet, emphasizing early-stage status with minimal adoption and significant uncertainty. Framed as speculative conviction-backed bet rather than a technical or fundamental conviction trade.",
+        "source": "bot"
       }
     ]
   }

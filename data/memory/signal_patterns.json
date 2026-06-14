@@ -20,6 +20,13 @@
       "topic": "HYPE position disclosure",
       "outcome": "posted",
       "note": "Portfolio position announcement was posted to establish transparency and conviction on early-stage project with momentum."
+    },
+    {
+      "ts": "2026-06-14T10:35:54Z",
+      "signal_type": "alpha",
+      "topic": "HYPE position announcement",
+      "outcome": "posted",
+      "note": "Portfolio transparency signal: public position disclosure with clear risk framing increased credibility and audience engagement."
     }
   ]
 }
