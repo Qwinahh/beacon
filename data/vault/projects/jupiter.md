@@ -10,10 +10,10 @@ airdrop_status: distributed
 worth_farming: true
 blocked: false
 updated: 2026-06-12
-tvl_usd: 1495737043
+tvl_usd: 1501898450
 price_usd: 0.1737
 price_change_24h: 3.7
-metrics_updated: 2026-06-13
+metrics_updated: 2026-06-14
 ---
 
 # Jupiter
@@ -67,5 +67,4 @@ time in the token's life.
 
 ## Live Metrics
 - TVL: $1.50B
-- Price: $0.1737 (+3.7% 24h)
-- Snapshot: 2026-06-13 (auto, DeFiLlama + CoinGecko)
+- Snapshot: 2026-06-14 (auto, DeFiLlama + CoinGecko)
