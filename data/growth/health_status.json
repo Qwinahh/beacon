@@ -1,12 +1,11 @@
 {
-  "checked_at": 1781443010,
+  "checked_at": 1781442738,
   "search_banned": false,
   "engagement_suppressed": false,
   "suppression_ratio": 1.0,
   "recovery_mode": false,
   "recovery_started_at": null,
-  "search_zero_streak": 0,
-  "notes": "Manually cleared \u2014 false positive (new account not indexed in search yet, not a shadowban)",
+  "notes": "",
   "reply_ghosted": false,
   "suggestion_banned": false,
   "ban_type": "none"

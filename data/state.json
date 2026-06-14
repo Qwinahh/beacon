@@ -1,42 +1,21 @@
 {
+  "thread_replies_daily": {},
   "daily_counts": {
-    "2026-06-04": 1,
-    "2026-06-05": 3,
-    "2026-06-06": 2,
-    "2026-06-08": 1,
-    "2026-06-09": 2,
-    "2026-06-10": 2
+    "2026-06-13": 3,
+    "2026-06-14": 3
   },
-  "last_post_ts": 1781127231.386276,
+  "last_post_ts": 1781440236.8359163,
   "seen": [
-    "92721f98279b91df501b",
-    "6a52391eb83757bc8d90",
-    "fc78aadef75de215a30c",
-    "199afee4dae892c9403a",
-    "47ed3548fb86b98a0f33",
-    "28a7ca9bc4c0602aeeb6",
-    "f9fd88e045a985ee651e",
-    "1e29cf69859d9dbaafc4",
-    "3698a9bd4f5dc8a04780",
-    "7ff9909a7f823bc5ab30"
-  ],
-  "recent_topics": [
-    "general",
-    "hype",
-    "general",
-    "defi",
-    "defi",
-    "hype",
-    "agents",
-    "freeform",
-    "opinion",
-    "raise",
-    "opinion"
+    "0a59a95b3b3cd57d1f74",
+    "31ee999da8933acfb563",
+    "b984ba313de9bc768e13",
+    "9d1e2a68468dfd4ce97b",
+    "d03ed24561171f39d25b",
+    "4c4eacd1476eb20185fa"
   ],
   "recent_formats": [
-    "question",
-    "data_observation",
-    "contrarian",
-    "farm_update"
-  ]
+    "prediction"
+  ],
+  "opinion_posts_today": 1,
+  "last_opinion_ts": 1781385494.9468644
 }
