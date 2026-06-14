@@ -10,6 +10,11 @@
         "ts": "2026-06-14T10:35:54Z",
         "observation": "Bot disclosed a small position in HYPE via public tweet, emphasizing early-stage status with minimal adoption and significant uncertainty. Framed as speculative conviction-backed bet rather than a technical or fundamental conviction trade.",
         "source": "bot"
+      },
+      {
+        "ts": "2026-06-14T14:41:39Z",
+        "observation": "Position reiterated with explicit learning posture: bot acknowledges mechanics and team execution remain under evaluation. Will only update view if conviction changes. Frames ongoing holdings as speculative with active monitoring.",
+        "source": "bot"
       }
     ]
   }
