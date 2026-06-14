@@ -112,25 +112,10 @@ def _gather_candidates(alpha_only: bool = False) -> list:
     except Exception as exc:
         log.warning("Raises fetch failed: %s", exc)
 
-    # TVL movers — cap at 3 items, raise threshold, set real age so they
-    # don't always sort to the top (TVL data is not timestamped, use 1.5h)
-    try:
-        from bot.sources import defillama
-        for m in defillama.fetch_tvl_movers(min_change_pct=20.0)[:3]:
-            direction = "up" if m.change_pct > 0 else "down"
-            candidates.append({
-                "title": f"{m.name} TVL {direction} {abs(m.change_pct):.1f}%",
-                "source": "DeFiLlama", "kind": "tvl", "topic": m.topic,
-                "age_hours": 1.5, "url": m.url, "urgency": 1,
-                # Store structured fields so the writer gets the actual numbers
-                "tvl_name":       m.name,
-                "tvl_change_pct": m.change_pct,
-                "tvl_usd":        m.tvl_usd,
-                "tvl_category":   m.category,
-            })
-        log.info("Scout: %d TVL movers", len([c for c in candidates if c["kind"] == "tvl"]))
-    except Exception as exc:
-        log.warning("TVL fetch failed: %s", exc)
+    # TVL movers — DISABLED. CT does not engage with raw TVL numbers as content.
+    # "Protocol X TVL up 40%" gets no replies, no shares, no followers.
+    # If a TVL move matters it will appear in RSS as an article with context.
+    # log.debug("TVL mover source disabled.")
 
     # Whale alerts
     if not alpha_only:
@@ -279,22 +264,27 @@ def _select_best(candidates: list, state: State) -> Optional[dict]:
         if any(kw in title_lower for kw in contrarian_keywords):
             item_score += 8    # Counter-narrative = useful to audience
 
-        # TVL movers for unknown protocols aren't worth posting
-        if kind == "tvl" and item_score < 50:
-            rejection_log.append("TVL UNKNOWN PROTOCOL (%d): %s" % (item_score, title[:50]))
-            continue
-
-        # Source diversity: never post TVL/DeFiLlama back-to-back
-        last_source = (state.recent_topics() or [""])[-1]
-        last_fmt    = (state._data.get("recent_formats") or [""])[-1]
-        if kind == "tvl" and last_fmt in ("data_observation",) and "defillama" in (c.get("source", "")).lower():
-            rejection_log.append("SOURCE DIVERSITY (no back-to-back TVL): %s" % title[:50])
-            continue
+        # Topic performance bonus — bias toward topics that have driven real
+        # engagement (replies, follows) on this account in the past.
+        # Reads from data/growth/metrics.json via format_weights module.
+        # Non-fatal: if no data yet, scores are unchanged.
+        try:
+            from bot.brain.format_weights import get_topic_weights
+            tw = get_topic_weights()
+            if tw:
+                best_weight = 1.0
+                for kw, weight in tw.items():
+                    if kw and kw in title_lower:
+                        best_weight = max(best_weight, weight)
+                if best_weight > 1.2:
+                    bonus = min(int((best_weight - 1.0) * 20), 12)
+                    item_score += bonus
+                    log.debug("Topic perf bonus (+%d, weight=%.2f): %s", bonus, best_weight, title[:40])
+        except Exception:
+            pass
 
         # Score floor -- wide enough that bonuses (portfolio +30, watchlist +15,
-        # timing +12) can lift worthy items. Raised from -15 to -25 because the
-        # TVL penalty changes narrowed the effective range too much, causing
-        # 3-6h old articles to score 42 and get rejected despite being relevant.
+        # timing +12) can lift worthy items.
         if item_score < POST_SCORE_THRESHOLD - 25:
             rejection_log.append("LOW SCORE (%d): %s" % (item_score, title[:50]))
             continue
@@ -818,16 +808,6 @@ def run_post_cycle(state: State, alpha_only: bool = False) -> dict:
             published_ts = selected.get("raise_published",
                            time.time() - selected.get("age_hours", 0) * 3600),
             topic        = selected.get("topic", "raise"),
-        )
-    elif kind == "tvl" and selected.get("tvl_name"):
-        from bot.sources.defillama import TvlMoverItem
-        item = TvlMoverItem(
-            name       = selected["tvl_name"],
-            change_pct = selected["tvl_change_pct"],
-            tvl_usd    = selected["tvl_usd"],
-            category   = selected.get("tvl_category", selected.get("topic", "")),
-            url        = selected.get("url"),
-            topic      = selected.get("topic", "defi"),
         )
     elif kind == "whale" and selected.get("whale_item"):
         item = selected["whale_item"]

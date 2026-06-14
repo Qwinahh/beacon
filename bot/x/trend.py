@@ -70,27 +70,25 @@ KEYWORD_FRESHNESS_MINUTES  = 90
 MIN_FOLLOWERS_FOR_TARGETED = 5_000
 
 _KEYWORD_QUERIES = [
+    # Active niche — posts that are live conversations, not broadcasts
     "hyperliquid perp funding lang:en min_faves:8",
     "defi airdrop points farm lang:en min_faves:5",
     "kaito yap leaderboard lang:en min_faves:5",
-    "defillama tvl protocol lang:en min_faves:8",
     "perp dex funding rate lang:en min_faves:10",
-    "solana defi yield farm lang:en min_faves:8",
-    # Core niche engagement — fresh DeFi/perps discussion
+    "solana defi yield lang:en min_faves:8",
     "crypto airdrop criteria snapshot lang:en min_faves:5",
-    # Wrong-take hunting — find popular takes to challenge with data.
-    # These surface posts with high engagement that often contain
-    # misread signals, sloppy analysis, or crowd-consensus errors.
-    # The reply system's authenticity gate ensures we only fire
-    # when we have specific data to back the counter-take.
+    "pendle yield steth lang:en min_faves:5",
+    "hyperliquid vault hlp lang:en min_faves:5",
+    "ethena sena usde yield lang:en min_faves:8",
+    "morpho aave lending rate lang:en min_faves:8",
+    # Wrong-take hunting — high-engagement posts with sloppy analysis.
+    # We only reply when we have specific data to back a counter-take.
     "funding rates negative therefore bullish lang:en min_faves:30",
     "funding rates high bearish signal lang:en min_faves:30",
-    "tvl growing price will follow lang:en min_faves:20",
     "defi is dead no one uses it lang:en min_faves:40",
     "bitcoin dominance rising altseason over lang:en min_faves:25",
-    "this is the bottom buy now crypto lang:en min_faves:50",
-    "bears in control crypto lang:en min_faves:40",
     "perps dex cant beat cex volume lang:en min_faves:20",
+    "stablecoin yield free money lang:en min_faves:15",
 ]
 
 _DEFAULT_TARGET_ACCOUNTS = [
@@ -530,11 +528,8 @@ async def _engage_targeted_async(state: State, portfolio: dict, budget: int) -> 
                 if content.startswith("RT @"):
                     continue
 
-                # Relevance check
-                if not any(kw in content.lower() for kw in FOCUS_KEYWORDS):
-                    log.debug("@%s post not in focus topics.", username)
-                    continue
-
+                # Only skip hard non-crypto content (FOCUS_KEYWORDS gate removed —
+                # we curated these accounts; their non-keyword posts are still on-topic)
                 if not _is_crypto_tweet(content):
                     log.debug("Skipping non-crypto tweet from @%s", username)
                     continue
@@ -711,19 +706,22 @@ def run(state: State) -> int:
         return 0
 
     from bot.sources.health_monitor import is_in_recovery
-    if is_in_recovery():
-        log.info("Recovery mode: skipping outbound engagement this cycle.")
-        return 0
+    recovery = is_in_recovery()
+    if recovery:
+        # Throttle to 1 reply per run rather than hard-block — complete silence
+        # during recovery looks worse to the algorithm than low-volume genuine engagement.
+        log.info("Recovery mode active: limiting to 1 outbound reply this cycle.")
 
     log.info(
         "Outbound engagement: %d/%d replies used today.",
         state.replies_today(), State.MAX_REPLIES_PER_DAY,
     )
 
-    portfolio = load_portfolio()
+    portfolio  = load_portfolio()
+    run_budget = 1 if recovery else MAX_PER_RUN
 
-    targeted  = _run_async(_engage_targeted_async(state, portfolio, MAX_PER_RUN)) or 0
-    remaining = max(0, MAX_PER_RUN - targeted)
+    targeted  = _run_async(_engage_targeted_async(state, portfolio, run_budget)) or 0
+    remaining = max(0, run_budget - targeted)
     keyword   = _run_async(_engage_keyword_async(state, portfolio, remaining)) or 0
 
     total = targeted + keyword

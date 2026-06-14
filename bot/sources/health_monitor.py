@@ -113,13 +113,35 @@ def _run_async(coro):
 async def _test_search_visibility_async() -> bool:
     """
     Search for our own username. Returns True if visible (not banned).
-    Uses the authenticated cookie session — X shows suppressed results
-    differently from how they appear to logged-out users, but a complete
-    absence from search:from: is a reliable signal.
+
+    IMPORTANT: a new account with fewer than 20 posts won't appear in
+    X search even when totally healthy. Skip the test in that case to
+    prevent false recovery loops on brand-new accounts.
     """
     cookies = _get_cookies()
     if not cookies:
         return True  # Can't test — assume OK
+
+    # Don't flag a search ban when the account has very few posts — X doesn't
+    # index low-post accounts reliably and this causes false recovery loops.
+    from pathlib import Path as _Path
+    import json as _json
+    post_log = _Path("data/performance/post_log.json")
+    if post_log.exists():
+        try:
+            posts = _json.loads(post_log.read_text(encoding="utf-8"))
+            if isinstance(posts, list) and len(posts) < 20:
+                log.debug(
+                    "health_monitor: skipping search ban check — only %d posts "
+                    "logged (X doesn't index accounts reliably below 20 posts).",
+                    len(posts),
+                )
+                return True
+        except Exception:
+            pass
+    else:
+        log.debug("health_monitor: skipping search ban check — no post log yet (new account).")
+        return True
 
     try:
         from twscrape import API
