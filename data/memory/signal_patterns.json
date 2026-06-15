@@ -55,6 +55,13 @@
       "topic": "HYPE position disclosure",
       "outcome": "posted",
       "note": "Portfolio position disclosure (announcement type). Signal fired, post executed as part of transparency strategy. Consistent with prior HYPE announcements."
+    },
+    {
+      "ts": "2026-06-15T18:20:51Z",
+      "signal_type": "alpha",
+      "topic": "stETH position disclosure",
+      "outcome": "posted",
+      "note": "Portfolio transparency signal: disclosing personal stETH holding with thesis on liquid staking adoption and competitive dynamics."
     }
   ],
   "noise_signals": [
