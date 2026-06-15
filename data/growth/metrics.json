@@ -22,5 +22,17 @@
     "replies": 0,
     "retweets": 0,
     "quote_tweets": 0
+  },
+  "2066586721798545561": {
+    "tweet_id": "2066586721798545561",
+    "text": "I hold a position in stETH. Still early-stage on liquid staking adoption and curious how Lido's dominance evolves as the ecosystem matures. ",
+    "format": "announcement",
+    "topic": "position:steth",
+    "posted_at": 1781547644.563333,
+    "collected_at": 1781560824.562648,
+    "likes": 0,
+    "replies": 0,
+    "retweets": 0,
+    "quote_tweets": 0
   }
 }
