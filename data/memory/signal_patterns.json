@@ -48,6 +48,13 @@
       "topic": "HYPE position disclosure",
       "outcome": "posted",
       "note": "Portfolio announcement reiterating existing position with transparent uncertainty framing. Consistent with prior disclosures but no new concrete development or data point."
+    },
+    {
+      "ts": "2026-06-15T13:45:09Z",
+      "signal_type": "alpha",
+      "topic": "HYPE position disclosure",
+      "outcome": "posted",
+      "note": "Portfolio position disclosure (announcement type). Signal fired, post executed as part of transparency strategy. Consistent with prior HYPE announcements."
     }
   ],
   "noise_signals": [
