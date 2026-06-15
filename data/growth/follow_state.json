@@ -1,56 +1,28 @@
 {
   "followed": [
     {
-      "id": "1555657901619937280",
-      "username": "loshmi",
-      "followed_at": 1780936525
+      "id": "246686420",
+      "username": "Defi_Rocketeer",
+      "followed_at": 1781509518
     },
     {
-      "id": "2946464193",
-      "username": "Mars_DeFi",
-      "followed_at": 1780980276
+      "id": "1489455403360567296",
+      "username": "Airdrops_one",
+      "followed_at": 1781509521
     },
     {
-      "id": "1625063886",
-      "username": "murtuza_merc",
-      "followed_at": 1780980279
-    },
-    {
-      "id": "1799308863067541505",
-      "username": "0xvietnguyen",
-      "followed_at": 1780980282
-    },
-    {
-      "id": "899254509901361152",
-      "username": "Rukkssss__",
-      "followed_at": 1780994787
-    },
-    {
-      "id": "1706299648996990976",
-      "username": "oct_gems",
-      "followed_at": 1780994789
-    },
-    {
-      "id": "1521547310672531459",
-      "username": "alphacyl",
-      "followed_at": 1780994792
-    },
-    {
-      "id": "1803187737874366464",
-      "username": "ClutchMarkets",
-      "followed_at": 1781007727
-    },
-    {
-      "id": "296606110",
-      "username": "josefabregab",
-      "followed_at": 1781007730
-    },
-    {
-      "id": "1973010691113250816",
-      "username": "Coco_Airdrop",
-      "followed_at": 1781007732
-    },
-    {
-      "id": "1008757893728890880",
-      "username": "cukyn1812",
-  
+      "id": "27553316",
+      "username": "beijingdou",
+      "followed_at": 1781509524
+    }
+  ],
+  "daily": {
+    "2026-06-15": 3
+  },
+  "attempted": [
+    "1084397942319054850",
+    "246686420",
+    "1489455403360567296",
+    "27553316"
+  ]
+}
