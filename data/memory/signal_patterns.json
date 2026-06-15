@@ -41,6 +41,13 @@
       "topic": "HYPE position announcement",
       "outcome": "posted",
       "note": "Portfolio position disclosure to maintain transparency with followers; continues established narrative of early-stage conviction bet with active governance participation."
+    },
+    {
+      "ts": "2026-06-15T07:45:14Z",
+      "signal_type": "alpha",
+      "topic": "HYPE position disclosure",
+      "outcome": "posted",
+      "note": "Portfolio announcement reiterating existing position with transparent uncertainty framing. Consistent with prior disclosures but no new concrete development or data point."
     }
   ],
   "noise_signals": [
