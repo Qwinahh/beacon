@@ -3,9 +3,9 @@
   "daily_counts": {
     "2026-06-13": 3,
     "2026-06-14": 6,
-    "2026-06-15": 5
+    "2026-06-15": 6
   },
-  "last_post_ts": 1781547644.5599153,
+  "last_post_ts": 1781555471.2426283,
   "seen": [
     "0a59a95b3b3cd57d1f74",
     "31ee999da8933acfb563",
@@ -20,10 +20,12 @@
     "90ca51ebf8b31608eb67",
     "1edfb994a57cae5cc3fb",
     "8cb6961fe1b2c3c0ec48",
-    "85a758e5811f27e7eccd"
+    "85a758e5811f27e7eccd",
+    "54cfe927a3102638c352"
   ],
   "recent_formats": [
     "prediction",
+    "freeform",
     "freeform"
   ],
   "opinion_posts_today": 1,
@@ -56,6 +58,7 @@
     "position:steth"
   ],
   "recent_topics": [
+    "opinion",
     "opinion"
   ]
 }
