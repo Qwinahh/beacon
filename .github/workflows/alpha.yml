@@ -52,7 +52,7 @@ jobs:
         run: |
           git config user.name  "qwinahh-bot"
           git config user.email "bot@qwinahh.local"
-          git add data/state.json data/memory/ data/projects/ data/vault/
+          git add data/state.json data/memory/ data/projects/ data/vault/ data/performance/ data/growth/
           git diff --cached --quiet || git commit -m "chore: alpha state + vault [skip ci]"
           # Pull-rebase before push — alpha.yml and post.yml can run simultaneously
           # and both push state.json; without this one will fail with non-fast-forward

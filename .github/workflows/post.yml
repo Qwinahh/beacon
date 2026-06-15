@@ -60,7 +60,7 @@ jobs:
         run: |
           git config user.name  "qwinahh-bot"
           git config user.email "bot@qwinahh.local"
-          git add data/state.json data/memory/ data/projects/ data/vault/
+          git add data/state.json data/memory/ data/projects/ data/vault/ data/performance/ data/growth/
           git diff --cached --quiet || git commit -m "chore: update bot state + vault [skip ci]"
           # Ensure we're on main (concurrent runs can leave a detached HEAD)
           git checkout main 2>/dev/null || true
