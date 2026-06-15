@@ -69,6 +69,8 @@ def _save_json(path: Path, data) -> None:
 async def _make_api():
     try:
         from twscrape import API
+
+        from bot.x import twscrape_patch  # noqa: F401
     except ImportError:
         return None
     cookies = os.environ.get(_COOKIES_ENV, "").strip()

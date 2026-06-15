@@ -179,6 +179,8 @@ def _get_mentions_via_twscrape(since_id: Optional[str] = None) -> list[dict]:
     async def _fetch():
         try:
             from twscrape import API
+
+            from bot.x import twscrape_patch  # noqa: F401
         except ImportError:
             return []
 

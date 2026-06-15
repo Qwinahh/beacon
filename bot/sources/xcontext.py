@@ -49,6 +49,8 @@ async def _scrape(topic: str, limit: int) -> list[dict]:
     """
     try:
         from twscrape import API
+
+        from bot.x import twscrape_patch  # noqa: F401
     except ImportError:
         log.warning("twscrape not installed — X context unavailable. Run: pip install twscrape")
         return []

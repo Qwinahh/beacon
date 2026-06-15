@@ -11,6 +11,8 @@ import tempfile
 async def test():
     try:
         from twscrape import API
+
+        from bot.x import twscrape_patch  # noqa: F401
     except ImportError:
         print("ERROR: twscrape not installed. Run: pip install twscrape")
         sys.exit(1)

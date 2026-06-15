@@ -240,6 +240,8 @@ async def _make_api():
     """Create and authenticate a twscrape API instance."""
     try:
         from twscrape import API
+
+        from bot.x import twscrape_patch  # noqa: F401
     except ImportError:
         log.warning("twscrape not installed. Run: pip install twscrape")
         return None

@@ -145,6 +145,8 @@ async def _test_search_visibility_async() -> bool:
 
     try:
         from twscrape import API
+
+        from bot.x import twscrape_patch  # noqa: F401
     except ImportError:
         return True
 

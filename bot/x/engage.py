@@ -196,6 +196,8 @@ async def _fetch_own_recent_tweets_async() -> list[dict]:
 
     try:
         from twscrape import API
+
+        from bot.x import twscrape_patch  # noqa: F401
     except ImportError:
         log.debug("twscrape not installed -- thread reply fetch skipped.")
         return []
@@ -414,6 +416,8 @@ async def _fetch_quote_candidates_async() -> list[dict]:
 
     try:
         from twscrape import API
+
+        from bot.x import twscrape_patch  # noqa: F401
     except ImportError:
         log.debug("twscrape not installed — quote tweet candidate fetch skipped.")
         return []
@@ -645,6 +649,8 @@ async def _fetch_replies_to_own_posts_async() -> list[dict]:
 
     try:
         from twscrape import API
+
+        from bot.x import twscrape_patch  # noqa: F401
     except ImportError:
         log.debug("twscrape not installed — post-reply fetch skipped.")
         return []

@@ -183,6 +183,8 @@ def _get_cookies() -> Optional[str]:
 async def _make_api():
     try:
         from twscrape import API
+
+        from bot.x import twscrape_patch  # noqa: F401
     except ImportError:
         log.warning("twscrape not installed.")
         return None
