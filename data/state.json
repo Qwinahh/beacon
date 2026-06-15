@@ -2,9 +2,10 @@
   "thread_replies_daily": {},
   "daily_counts": {
     "2026-06-13": 3,
-    "2026-06-14": 6
+    "2026-06-14": 6,
+    "2026-06-15": 1
   },
-  "last_post_ts": 1781459716.3999853,
+  "last_post_ts": 1781489469.653883,
   "seen": [
     "0a59a95b3b3cd57d1f74",
     "31ee999da8933acfb563",
@@ -14,7 +15,8 @@
     "4c4eacd1476eb20185fa",
     "48b6b54f82d190c8a2f5",
     "a2d034b181bba9d17419",
-    "0b1da32c331894ab276c"
+    "0b1da32c331894ab276c",
+    "a87928c45be34a728761"
   ],
   "recent_formats": [
     "prediction"
