@@ -210,6 +210,8 @@ def _get_mentions_via_twscrape(since_id: Optional[str] = None) -> list[dict]:
                     "id": tweet_id,
                     "text": tweet.rawContent or "",
                     "author_id": str(tweet.user.id) if tweet.user else "",
+                    "author_username": tweet.user.username if tweet.user else "",
+                    "author_followers": getattr(tweet.user, "followersCount", 0) if tweet.user else 0,
                     "conversation_id": str(getattr(tweet, "conversationId", tweet.id) or tweet.id),
                 })
         except Exception as exc:
