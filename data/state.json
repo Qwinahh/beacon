@@ -3,9 +3,9 @@
   "daily_counts": {
     "2026-06-13": 3,
     "2026-06-14": 6,
-    "2026-06-15": 1
+    "2026-06-15": 2
   },
-  "last_post_ts": 1781489469.653883,
+  "last_post_ts": 1781509510.075773,
   "seen": [
     "0a59a95b3b3cd57d1f74",
     "31ee999da8933acfb563",
@@ -16,11 +16,15 @@
     "48b6b54f82d190c8a2f5",
     "a2d034b181bba9d17419",
     "0b1da32c331894ab276c",
-    "a87928c45be34a728761"
+    "a87928c45be34a728761",
+    "90ca51ebf8b31608eb67"
   ],
   "recent_formats": [
     "prediction"
   ],
   "opinion_posts_today": 1,
-  "last_opinion_ts": 1781385494.9468644
+  "last_opinion_ts": 1781385494.9468644,
+  "portfolio_posted": [
+    "position:hype"
+  ]
 }
