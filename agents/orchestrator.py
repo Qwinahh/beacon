@@ -728,6 +728,7 @@ def run_post_cycle(state: State, alpha_only: bool = False) -> dict:
                 state.increment_post_count()
                 state.set_last_post_timestamp(time.time())
                 state.mark_seen(state.fingerprint(text.lower()))
+                state.mark_portfolio_posted(key)
                 result = {
                     "action": "announcement", "tweet_id": tweet_id,
                     "tweet_text": text,
