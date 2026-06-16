@@ -62,6 +62,13 @@
       "topic": "stETH position disclosure",
       "outcome": "posted",
       "note": "Portfolio transparency signal: disclosing personal stETH holding with thesis on liquid staking adoption and competitive dynamics."
+    },
+    {
+      "ts": "2026-06-16T02:04:18Z",
+      "signal_type": "alpha",
+      "topic": "JUP portfolio position disclosure",
+      "outcome": "posted",
+      "note": "Transparent portfolio disclosure with execution-risk framing; establishes baseline for tracking."
     }
   ],
   "noise_signals": [

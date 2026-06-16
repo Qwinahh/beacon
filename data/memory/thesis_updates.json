@@ -1,4 +1,11 @@
 {
   "_description": "Log of how the bot's views on projects have shifted based on what it observes. Each entry is a dated note.",
-  "updates": []
+  "updates": [
+    {
+      "ts": "2026-06-16T02:04:18Z",
+      "project": "Jupiter",
+      "update": "Bot is holding JUP and actively tracking execution risk rather than making directional claims. Position reflects conviction in early-stage potential but requires ongoing scrutiny.",
+      "trigger": "Explicit portfolio position announcement with position tracking mindset."
+    }
+  ]
 }
