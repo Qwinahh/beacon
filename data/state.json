@@ -6,9 +6,9 @@
     "2026-06-13": 3,
     "2026-06-14": 6,
     "2026-06-15": 6,
-    "2026-06-16": 5
+    "2026-06-16": 6
   },
-  "last_post_ts": 1781633632.8112304,
+  "last_post_ts": 1781641475.0400782,
   "seen": [
     "0a59a95b3b3cd57d1f74",
     "31ee999da8933acfb563",
@@ -29,7 +29,8 @@
     "64b5f795de3292e11296",
     "c45362669567a017e2ca",
     "4448d56eaec768d42c84",
-    "25cae44093aec175376e"
+    "25cae44093aec175376e",
+    "c896a630837644dd9123"
   ],
   "recent_formats": [
     "prediction",
@@ -68,7 +69,8 @@
     "position:steth",
     "position:jup",
     "airdrop:polymarket",
-    "watching:pendle pt pools"
+    "watching:pendle pt pools",
+    "watching:morpho curated vaults"
   ],
   "recent_topics": [
     "opinion",
