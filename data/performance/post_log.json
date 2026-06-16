@@ -66,5 +66,18 @@
     "bookmarks": null,
     "quote_tweets": null,
     "engagement_rate": null
+  },
+  {
+    "tweet_id": "2066870032270020944",
+    "tweet_text": "DeFi TVL is down 11% in 30 days but everyone's still talking about new money coming in, that means the issue is retention, not acquisition.",
+    "format_used": "contrarian",
+    "topic": "opinion",
+    "posted_at": "2026-06-16T13:06:31.038716+00:00",
+    "impressions": null,
+    "likes": null,
+    "replies": null,
+    "bookmarks": null,
+    "quote_tweets": null,
+    "engagement_rate": null
   }
 ]

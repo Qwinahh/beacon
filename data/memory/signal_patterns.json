@@ -76,6 +76,13 @@
       "topic": "Polymarket POLY airdrop farming",
       "outcome": "posted",
       "note": "Airdrop signal triggered a personal portfolio move with clear mechanics and risk articulation -- farming cost near zero justified exploration before token launch."
+    },
+    {
+      "ts": "2026-06-16T13:06:33Z",
+      "signal_type": "tvl",
+      "topic": "DeFi TVL decline and user retention",
+      "outcome": "posted",
+      "note": "Macro observation about DeFi TVL weakness paired with narrative about retention vs acquisition — useful framing for broader ecosystem health context."
     }
   ],
   "noise_signals": [
