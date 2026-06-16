@@ -79,5 +79,18 @@
     "bookmarks": null,
     "quote_tweets": null,
     "engagement_rate": null
+  },
+  {
+    "tweet_id": "2066947382680473828",
+    "tweet_text": "I'm watching Pendle PT pools as early-stage research \u2014 trying to understand how principal tokens are being used in yield strategies. No position yet, just taking notes. Still figuring out the mechanics.",
+    "format_used": "announcement",
+    "topic": "watching:pendle pt pools",
+    "posted_at": "2026-06-16T18:13:52.811474+00:00",
+    "impressions": null,
+    "likes": null,
+    "replies": null,
+    "bookmarks": null,
+    "quote_tweets": null,
+    "engagement_rate": null
   }
 ]

@@ -30,6 +30,13 @@
         "observation": "Bot is actively farming Polymarket's airdrop pre-launch, testing farming mechanics while cost is near zero with awareness that allocation filters will likely penalize wash trading patterns.",
         "source": "bot"
       }
+    ],
+    "Pendle": [
+      {
+        "ts": "2026-06-16T18:13:55Z",
+        "observation": "Bot initiated early-stage research into Pendle PT (principal token) pools and their use in yield strategies. No position yet — still in mechanics discovery phase.",
+        "source": "bot"
+      }
     ]
   }
 }
