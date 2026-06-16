@@ -1,7 +1,7 @@
 ---
 title: Calibration Log
 tags: [knowledge, calibration, predictions, track-record]
-last_updated: 2026-06-14
+last_updated: 2026-06-15
 ---
 
 # Calibration Log

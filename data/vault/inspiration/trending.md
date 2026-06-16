@@ -1,10 +1,10 @@
 ---
-title: Trending — 2026-06-14
-updated: 2026-06-14 10:27 UTC
+title: Trending — 2026-06-15
+updated: 2026-06-15 13:14 UTC
 type: inspiration
 ---
 
-# Trending Today — 2026-06-14
+# Trending Today — 2026-06-15
 
 Top-performing posts from monitored accounts + keyword searches in the last 24h.
 Use these as raw material — find a post that made you think, then write your own take.
@@ -15,12 +15,224 @@ Use these as raw material — find a post that made you think, then write your o
 
 ## Top Posts by Engagement
 
+### 1. @Gainzy222 · 05:06 UTC
+
+> Ilia “no mas” Topuria 🤦🏻‍♂️
+
+**Likes:** 76406 · **Replies:** 2071 · **RTs:** 5604 · **Quotes:** 475 🔥🔥🔥🔥🔥
+[View post](https://x.com/Gainzy222/status/2066386945752944806)
+
+### 2. @0xSisyphus · 01:31 UTC
+
+> https://t.co/yUVogvdruU
+
+**Likes:** 2598 · **Replies:** 166 · **RTs:** 356 · **Quotes:** 189 🔥🔥🔥🔥🔥
+[View post](https://x.com/0xSisyphus/status/2066332670817456584)
+
+### 3. @0xSisyphus · 06:39 UTC
+
+> A 1999 IPO investor in NVIDIA still holding today turned 8,200x.
+
+If a SPCX IPO investor were to make 8,200x within 27 years, SPCX market cap would be 14.514 quadrillion — or 145x the current global M2 money supply.
+
+**Likes:** 718 · **Replies:** 36 · **RTs:** 33 · **Quotes:** 10 🔥🔥🔥🔥🔥
+[View post](https://x.com/0xSisyphus/status/2066410156729012336)
+
+### 4. @0xc06 · 09:43 UTC
+
+> The biggest IPO ever happened friday and crypto spent weeks racing to put it onchain. 
+
+Half the platforms refunded everyone. the other half traded all day. 
+
+The line between them isn’t the one most people are drawing 👇🏻
+
+◢ Exhanges Offering
+The campaigns everyone signed up for worked like a pre-or...
+
+**Likes:** 267 · **Replies:** 126 · **RTs:** 13 · **Quotes:** 0 🔥🔥🔥🔥🔥
+[View post](https://x.com/0xc06/status/2066456604069753258)
+
+### 5. @Pentosh1 · 21:57 UTC
+
+> About 2 hours from the weekly close for hyperliquid:native. Was watching to see a close above $57 tonight after that retest. It looks pretty good on that note.
+
+Beautiful retest of the prev ath weekly level and the macro uptrend is intact. 
+
+While there were many calls for the 30's and low 40's this...
+
+**Likes:** 387 · **Replies:** 39 · **RTs:** 31 · **Quotes:** 2 🔥🔥🔥🔥🔥
+[View post](https://x.com/Pentosh1/status/2066278966613147980)
+
+### 6. @Route2FI · 17:21 UTC
+
+> Gate with a campaign with @worldlibertyfi where USD1 holders gets 20% APR on their full balance, not 100% what the cap is, but even with $4m you get 20% APR, so pretty juicy (verify in screenshot below).
+
+No lockups, and rewards are paid out once per day.
+
+Daily Rewards = Average Staked Balance × AP...
+
+**Likes:** 369 · **Replies:** 10 · **RTs:** 34 · **Quotes:** 0 🔥🔥🔥🔥🔥
+[View post](https://x.com/Route2FI/status/2066209534402547814)
+
+### 7. @Pentosh1 · 22:29 UTC
+
+> futures are absolutely ripping
+
+**Likes:** 324 · **Replies:** 38 · **RTs:** 7 · **Quotes:** 1 🔥🔥🔥🔥🔥
+[View post](https://x.com/Pentosh1/status/2066286884288901548)
+
+### 8. @OG_Branxi · 12:06 UTC
+
+> Early-stage Perp DEXes or with no active points program yet
+
+RETRO POINTS
+@OndoPerps - backed by Ondo, retro tokens confirmed, 12-week program with usdc rewards straight up
+@tradexyz - top 1 HIP-3 on Hyperliquid, volume and oi are literally clear of most perp dexes. points aren't confirmed yet, just...
+
+**Likes:** 152 · **Replies:** 44 · **RTs:** 13 · **Quotes:** 2 🔥🔥🔥🔥🔥
+[View post](https://x.com/OG_Branxi/status/2066130052866363427)
+
+### 9. @Gainzy222 · 11:06 UTC
+
+> Bless whoever is buying zec up and keeping Arthur Hayes permanently sidelined from my bags https://t.co/vrFKPAZRko
+
+**Likes:** 204 · **Replies:** 24 · **RTs:** 12 · **Quotes:** 2 🔥🔥🔥🔥🔥
+[View post](https://x.com/Gainzy222/status/2066477477225185352)
+
+### 10. @Gainzy222 · 01:33 UTC
+
+> banana bread lowkey goated
+
+**Likes:** 145 · **Replies:** 42 · **RTs:** 4 · **Quotes:** 0 🔥🔥🔥🔥🔥
+[View post](https://x.com/Gainzy222/status/2066333357722779790)
+
+### 11. @yogadrianas · 12:38 UTC
+
+> Traditional Finance meets Blockchain with complete privacy! 🏦
+
+@CantonNetwork x @cashen_cc  is revolutionizing TradFi as a "Network of Networks." Built with Daml, it allows institutional giants to build private sub-ledgers while staying seamlessly interconnected via the Global Synchronizer powered b...
+
+**Likes:** 60 · **Replies:** 70 · **RTs:** 1 · **Quotes:** 0 🔥🔥🔥🔥🔥
+[View post](https://x.com/yogadrianas/status/2066138271084957799)
+
+### 12. @Gainzy222 · 05:06 UTC
+
+> I am literally the biggest contra in the world https://t.co/F443UNnbJY
+
+**Likes:** 114 · **Replies:** 36 · **RTs:** 12 · **Quotes:** 0 🔥🔥🔥🔥
+[View post](https://x.com/Gainzy222/status/2066386784578367925)
+
+### 13. @onrefinance · 02:01 UTC
+
+> The market is starting to score tokenized assets on three things:
+
+Can holders mint and exit? Is the chain the settlement layer? Can the asset be deployed across DeFi?
+
+ONyc against each one:
+
+• Mint and redeem at NAV against USDC or USDG for eligible investors, with active secondary market liquidit...
+
+**Likes:** 141 · **Replies:** 26 · **RTs:** 9 · **Quotes:** 3 🔥🔥🔥🔥
+[View post](https://x.com/onrefinance/status/2066340264323788888)
+
+### 14. @0xKairom · 10:08 UTC
+
+> The first unlocked version of SLX will arrive in about 20 days. @solsticefi cooking is near.
+
+That makes this phase important because Solstice is moving from pure participation into a more serious pricing moment
+
+Until now most people looked at the system through Flares Season 2 USX eUSX and yield a...
+
+**Likes:** 67 · **Replies:** 44 · **RTs:** 17 · **Quotes:** 2 🔥🔥🔥🔥
+[View post](https://x.com/0xKairom/status/2066462805117608337)
+
+### 15. @Gainzy222 · 05:40 UTC
+
+> What an insane card though 
+
+100% finishes by KO/TKO
+
+Boxing could never
+
+**Likes:** 128 · **Replies:** 13 · **RTs:** 1 · **Quotes:** 0 🔥🔥🔥
+[View post](https://x.com/Gainzy222/status/2066395489847660936)
+
+### 16. @ChuzzyTech · 19:03 UTC
+
+> Gn
+
+Trust your day was amazing 
+
+I guess it is safe to say the week ended well with Humanity Protocol’s token bouncing back after the hack they suffered some couple of weeks back from $0.05 to $0.4 
+
+Thing is, the tendency of these sort of hacks happening is what @quipnetwork is developed for. The q...
+
+**Likes:** 47 · **Replies:** 40 · **RTs:** 1 · **Quotes:** 0 🔥🔥🔥
+[View post](https://x.com/ChuzzyTech/status/2066235133254877576)
+
+### 17. @Gainzy222 · 04:46 UTC
+
+> Holy shit
+
+**Likes:** 86 · **Replies:** 13 · **RTs:** 2 · **Quotes:** 0 🔥🔥
+[View post](https://x.com/Gainzy222/status/2066381731431854494)
+
+### 18. @VikingoDigital_ · 17:44 UTC
+
+> ALPHA: 3X1 HYPERLIQUID ECOSYSTEM AIRDROP OPPORTUNITY
+
+There is a lot of speculation around a potential Hyperliquid and tradexyz airdrop, but the reality is that neither is confirmed.
+
+Here is what I believe is the best opportunity in the ecosystem right now:
+
+❓ Hyperliquid: next airdrop not confirme...
+
+**Likes:** 60 · **Replies:** 18 · **RTs:** 6 · **Quotes:** 0 🔥🔥
+[View post](https://x.com/VikingoDigital_/status/2066215140152815998)
+
+### 19. @kubvil551 · 15:03 UTC
+
+> While most trading platforms chase short-term volume, PopDEX is building a decentralized perpetual exchange with a radically different philosophy - returning revenue to active traders rather than passive token holders, directly solving the key flaw of earlier perp DEXs where rewards often went to in...
+
+**Likes:** 74 · **Replies:** 14 · **RTs:** 2 · **Quotes:** 1 🔥🔥
+[View post](https://x.com/kubvil551/status/2066174776788255160)
+
+### 20. @Route2FI · 11:47 UTC
+
+> If this would be possible that would be really interesting.
+
+1:1 stablecoin swap on any chain.
+
+**Likes:** 70 · **Replies:** 10 · **RTs:** 4 · **Quotes:** 0 🔥🔥
+[View post](https://x.com/Route2FI/status/2066487851005428159)
+
 ---
 
 ## Today's Pattern Analysis
 
-_No posts collected — X_SCRAPER_COOKIES may not be set or twscrape is unavailable._
+### Editorial Brief
+Based on the top-performing crypto posts from the last 24 hours, we've identified key trends to inform @Qwinahh's content strategy.
+
+### Topics Getting Traction
+* **IPOs and tokenized assets**: The posts from @0xSisyphus and @onrefinance highlight the growing interest in IPOs and tokenized assets, with a focus on their potential for massive returns (8,200x in 27 years) and the importance of settlement layers.
+* **DeFi and Perp DEXes**: @Pentosh1, @OG_Branxi, and @Route2FI's posts indicate a strong interest in DeFi, particularly in perpetual DEXes (e.g., Hyperliquid, OndoPerps) and their points programs.
+* **Contrarian takes and market analysis**: @Gainzy222's posts showcase the appeal of contrarian opinions and market analysis, with a focus on specific assets like ZEC and the potential for massive returns.
+
+### Formats Working
+* **Data dumps and calculations**: @0xSisyphus's post on the potential 8,200x return on SPCX IPO investment demonstrates the effectiveness of data-driven content.
+* **Contrarian takes and strong opinions**: @Gainzy222's posts highlight the appeal of bold, contrarian opinions and market analysis.
+* **Thread openers and callouts**: @Pentosh1's post on the weekly close for Hyperliquid-native shows the value of timely, insightful comments on market trends.
+
+### Voice Patterns
+* **Specific numbers and data points**: Using concrete numbers, like 8,200x or 20% APR, adds credibility and interest to posts.
+* **Strong opinions and contrarian takes**: @Gainzy222's posts demonstrate the appeal of bold, confident opinions.
+* **Insider knowledge and market analysis**: Sharing insightful analysis, like @Pentosh1's comments on Hyperliquid-native, helps establish authority and expertise.
+
+### Content Angles for @Qwinahh
+1. **Analyzing the potential for tokenized assets**: Explore the growth of tokenized assets, highlighting the importance of settlement layers and the potential for massive returns.
+2. **DeFi deep dive: Perp DEXes and points programs**: Examine the current state of perpetual DEXes, discussing their points programs, and potential opportunities for investors.
+3. **Contrarian take: Undervalued assets in
 
 ---
 
-_Updated daily at ~07:00 UTC by the inspiration agent. Archive: [[history/2026-06-14]]_
+_Updated daily at ~07:00 UTC by the inspiration agent. Archive: [[history/2026-06-15]]_

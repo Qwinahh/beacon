@@ -11,5 +11,44 @@
     "bookmarks": null,
     "quote_tweets": null,
     "engagement_rate": null
+  },
+  {
+    "tweet_id": "2066517351068205163",
+    "tweet_text": "I hold a position in HYPE. Early-stage project with meaningful community traction. Still plenty of unknowns, but the risk/reward at this stage interests me. Not financial advice.",
+    "format_used": "announcement",
+    "topic": "position:hype",
+    "posted_at": "2026-06-15T13:45:05.305004+00:00",
+    "impressions": null,
+    "likes": null,
+    "replies": null,
+    "bookmarks": null,
+    "quote_tweets": null,
+    "engagement_rate": null
+  },
+  {
+    "tweet_id": "2066586721798545561",
+    "tweet_text": "I hold a position in stETH. Still early-stage on liquid staking adoption and curious how Lido's dominance evolves as the ecosystem matures. Transparent about my skin in the game here.",
+    "format_used": "announcement",
+    "topic": "position:steth",
+    "posted_at": "2026-06-15T18:20:44.560159+00:00",
+    "impressions": null,
+    "likes": null,
+    "replies": null,
+    "bookmarks": null,
+    "quote_tweets": null,
+    "engagement_rate": null
+  },
+  {
+    "tweet_id": "2066703356127531420",
+    "tweet_text": "I hold a position in JUP. Interested in early-stage potential here, though plenty of execution risk remains. Tracking how this develops rather than making any claims about where it goes.",
+    "format_used": "announcement",
+    "topic": "position:jup",
+    "posted_at": "2026-06-16T02:04:12.362598+00:00",
+    "impressions": null,
+    "likes": null,
+    "replies": null,
+    "bookmarks": null,
+    "quote_tweets": null,
+    "engagement_rate": null
   }
 ]

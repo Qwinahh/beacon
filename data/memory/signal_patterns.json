@@ -48,6 +48,27 @@
       "topic": "HYPE position disclosure",
       "outcome": "posted",
       "note": "Portfolio announcement reiterating existing position with transparent uncertainty framing. Consistent with prior disclosures but no new concrete development or data point."
+    },
+    {
+      "ts": "2026-06-15T13:45:09Z",
+      "signal_type": "alpha",
+      "topic": "HYPE position disclosure",
+      "outcome": "posted",
+      "note": "Portfolio position disclosure (announcement type). Signal fired, post executed as part of transparency strategy. Consistent with prior HYPE announcements."
+    },
+    {
+      "ts": "2026-06-15T18:20:51Z",
+      "signal_type": "alpha",
+      "topic": "stETH position disclosure",
+      "outcome": "posted",
+      "note": "Portfolio transparency signal: disclosing personal stETH holding with thesis on liquid staking adoption and competitive dynamics."
+    },
+    {
+      "ts": "2026-06-16T02:04:18Z",
+      "signal_type": "alpha",
+      "topic": "JUP portfolio position disclosure",
+      "outcome": "posted",
+      "note": "Transparent portfolio disclosure with execution-risk framing; establishes baseline for tracking."
     }
   ],
   "noise_signals": [

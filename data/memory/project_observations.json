@@ -16,6 +16,13 @@
         "observation": "Position reiterated with explicit learning posture: bot acknowledges mechanics and team execution remain under evaluation. Will only update view if conviction changes. Frames ongoing holdings as speculative with active monitoring.",
         "source": "bot"
       }
+    ],
+    "Lido": [
+      {
+        "ts": "2026-06-15T18:20:51Z",
+        "observation": "Bot disclosed a personal stETH position, framing narrative around early-stage liquid staking adoption and interest in monitoring Lido's dominance share as the ecosystem matures.",
+        "source": "bot"
+      }
     ]
   }
 }
