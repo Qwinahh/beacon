@@ -50,5 +50,18 @@
     "bookmarks": null,
     "quote_tweets": null,
     "engagement_rate": null
+  },
+  {
+    "tweet_id": "2066799158946627948",
+    "tweet_text": "I'm farming Polymarket's airdrop. POLY hasn't launched yet but allocation filters will likely penalize wash trading patterns. Farming cost stays near zero so I'm testing the mechanics while I can. Disclosure: I'm doing this for potential POLY tokens.",
+    "format_used": "announcement",
+    "topic": "airdrop:polymarket",
+    "posted_at": "2026-06-16T08:24:53.529973+00:00",
+    "impressions": null,
+    "likes": null,
+    "replies": null,
+    "bookmarks": null,
+    "quote_tweets": null,
+    "engagement_rate": null
   }
 ]

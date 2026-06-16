@@ -69,6 +69,13 @@
       "topic": "JUP portfolio position disclosure",
       "outcome": "posted",
       "note": "Transparent portfolio disclosure with execution-risk framing; establishes baseline for tracking."
+    },
+    {
+      "ts": "2026-06-16T08:24:57Z",
+      "signal_type": "airdrop",
+      "topic": "Polymarket POLY airdrop farming",
+      "outcome": "posted",
+      "note": "Airdrop signal triggered a personal portfolio move with clear mechanics and risk articulation -- farming cost near zero justified exploration before token launch."
     }
   ],
   "noise_signals": [

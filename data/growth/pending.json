@@ -1,1 +1,10 @@
-[]
+[
+  {
+    "tweet_id": "2066799158946627948",
+    "text": "I'm farming Polymarket's airdrop. POLY hasn't launched yet but allocation filters will likely penalize wash trading patterns. Farming cost s",
+    "format": "announcement",
+    "topic": "airdrop:polymarket",
+    "posted_ts": 1781598293.5363147,
+    "fetch_after_ts": 1781684693.536315
+  }
+]

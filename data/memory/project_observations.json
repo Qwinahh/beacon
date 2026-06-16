@@ -23,6 +23,13 @@
         "observation": "Bot disclosed a personal stETH position, framing narrative around early-stage liquid staking adoption and interest in monitoring Lido's dominance share as the ecosystem matures.",
         "source": "bot"
       }
+    ],
+    "Polymarket": [
+      {
+        "ts": "2026-06-16T08:24:57Z",
+        "observation": "Bot is actively farming Polymarket's airdrop pre-launch, testing farming mechanics while cost is near zero with awareness that allocation filters will likely penalize wash trading patterns.",
+        "source": "bot"
+      }
     ]
   }
 }
