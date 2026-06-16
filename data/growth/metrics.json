@@ -70,5 +70,17 @@
     "replies": 0,
     "retweets": 0,
     "quote_tweets": 0
+  },
+  "2066947382680473828": {
+    "tweet_id": "2066947382680473828",
+    "text": "I'm watching Pendle PT pools as early-stage research \u2014 trying to understand how principal tokens are being used in yield strategies. No posi",
+    "format": "announcement",
+    "topic": "watching:pendle pt pools",
+    "posted_at": 1781633632.8145301,
+    "collected_at": 1781641612.487703,
+    "likes": 0,
+    "replies": 0,
+    "retweets": 0,
+    "quote_tweets": 0
   }
 }
