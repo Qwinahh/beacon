@@ -82,5 +82,17 @@
     "replies": 0,
     "retweets": 0,
     "quote_tweets": 0
+  },
+  "2066980275267977241": {
+    "tweet_id": "2066980275267977241",
+    "text": "I'm doing early-stage research on Morpho's curated vaults\u2014trying to understand how they stack against traditional lending protocols. No posi",
+    "format": "announcement",
+    "topic": "watching:morpho curated vaults",
+    "posted_at": 1781641475.0461075,
+    "collected_at": 1781648998.8573146,
+    "likes": 0,
+    "replies": 0,
+    "retweets": 0,
+    "quote_tweets": 0
   }
 }
