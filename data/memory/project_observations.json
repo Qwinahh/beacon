@@ -44,6 +44,13 @@
         "observation": "Bot initiated coverage of Babylon's Bitcoin staking infrastructure—positioned as early research phase with no position yet, indicating technical deep-dive underway before conviction.",
         "source": "bot"
       }
+    ],
+    "DefiChain": [
+      {
+        "ts": "2026-06-17T23:13:30Z",
+        "observation": "DefiChain DEX TVL collapsed 52% in 24 hours, indicating severe liquidity withdrawal or farm performance degradation triggering exit cascades.",
+        "source": "bot"
+      }
     ]
   }
 }

@@ -97,6 +97,13 @@
       "topic": "Drift relaunch post-exploit",
       "outcome": "posted",
       "note": "Relaunch announcements signal structural changes worth monitoring; useful as early research entry point rather than trade signal."
+    },
+    {
+      "ts": "2026-06-17T23:13:30Z",
+      "signal_type": "tvl",
+      "topic": "DefiChain DEX TVL",
+      "outcome": "posted",
+      "note": "Major TVL decline (52% in 24h) was sharp enough to warrant immediate signal — suggests acute liquidity stress or farm yield collapse."
     }
   ],
   "noise_signals": [
