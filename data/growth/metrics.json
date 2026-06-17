@@ -94,5 +94,17 @@
     "replies": 0,
     "retweets": 0,
     "quote_tweets": 0
+  },
+  "2067038450306732214": {
+    "tweet_id": "2067038450306732214",
+    "text": "I'm watching Babylon's approach to Bitcoin staking infrastructure. Still in early research phase\u2014lots of technical questions to work through",
+    "format": "announcement",
+    "topic": "watching:babylon tbv",
+    "posted_at": 1781655345.026967,
+    "collected_at": 1781734784.1958447,
+    "likes": 0,
+    "replies": 0,
+    "retweets": 0,
+    "quote_tweets": 0
   }
 }
