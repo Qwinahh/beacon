@@ -23,6 +23,27 @@
         "observation": "Bot disclosed a personal stETH position, framing narrative around early-stage liquid staking adoption and interest in monitoring Lido's dominance share as the ecosystem matures.",
         "source": "bot"
       }
+    ],
+    "Polymarket": [
+      {
+        "ts": "2026-06-16T08:24:57Z",
+        "observation": "Bot is actively farming Polymarket's airdrop pre-launch, testing farming mechanics while cost is near zero with awareness that allocation filters will likely penalize wash trading patterns.",
+        "source": "bot"
+      }
+    ],
+    "Pendle": [
+      {
+        "ts": "2026-06-16T18:13:55Z",
+        "observation": "Bot initiated early-stage research into Pendle PT (principal token) pools and their use in yield strategies. No position yet — still in mechanics discovery phase.",
+        "source": "bot"
+      }
+    ],
+    "Babylon": [
+      {
+        "ts": "2026-06-17T00:15:47Z",
+        "observation": "Bot initiated coverage of Babylon's Bitcoin staking infrastructure—positioned as early research phase with no position yet, indicating technical deep-dive underway before conviction.",
+        "source": "bot"
+      }
     ]
   }
 }

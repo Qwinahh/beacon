@@ -69,6 +69,27 @@
       "topic": "JUP portfolio position disclosure",
       "outcome": "posted",
       "note": "Transparent portfolio disclosure with execution-risk framing; establishes baseline for tracking."
+    },
+    {
+      "ts": "2026-06-16T08:24:57Z",
+      "signal_type": "airdrop",
+      "topic": "Polymarket POLY airdrop farming",
+      "outcome": "posted",
+      "note": "Airdrop signal triggered a personal portfolio move with clear mechanics and risk articulation -- farming cost near zero justified exploration before token launch."
+    },
+    {
+      "ts": "2026-06-16T13:06:33Z",
+      "signal_type": "tvl",
+      "topic": "DeFi TVL decline and user retention",
+      "outcome": "posted",
+      "note": "Macro observation about DeFi TVL weakness paired with narrative about retention vs acquisition — useful framing for broader ecosystem health context."
+    },
+    {
+      "ts": "2026-06-17T00:15:47Z",
+      "signal_type": "alpha",
+      "topic": "Babylon Bitcoin staking announcement",
+      "outcome": "posted",
+      "note": "Portfolio addition triggered announcement post; research-phase positioning allows for transparent exploration without premature conviction."
     }
   ],
   "noise_signals": [

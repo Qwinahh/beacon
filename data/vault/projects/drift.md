@@ -10,10 +10,10 @@ airdrop_status: distributed
 worth_farming: false
 blocked: false
 updated: 2026-06-12
-tvl_usd: 208548252
+tvl_usd: 215168087
 price_usd: 0.0165
 price_change_24h: 0.8
-metrics_updated: 2026-06-15
+metrics_updated: 2026-06-16
 ---
 
 # Drift
@@ -64,5 +64,5 @@ recovery pool actually scales toward the promised $151M, reassess.
 → [[index]] · [[dashboard]] · [[narratives/perps-meta]] · [[narratives/solana-defi]] · [[projects/hyperliquid]]
 
 ## Live Metrics
-- TVL: $208.5M
-- Snapshot: 2026-06-15 (auto, DeFiLlama + CoinGecko)
+- TVL: $215.2M
+- Snapshot: 2026-06-16 (auto, DeFiLlama + CoinGecko)

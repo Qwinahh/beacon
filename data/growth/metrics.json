@@ -34,5 +34,65 @@
     "replies": 0,
     "retweets": 0,
     "quote_tweets": 0
+  },
+  "2066703356127531420": {
+    "tweet_id": "2066703356127531420",
+    "text": "I hold a position in JUP. Interested in early-stage potential here, though plenty of execution risk remains. Tracking how this develops rath",
+    "format": "announcement",
+    "topic": "position:jup",
+    "posted_at": 1781575452.365696,
+    "collected_at": 1781588663.5013387,
+    "likes": 0,
+    "replies": 0,
+    "retweets": 0,
+    "quote_tweets": 0
+  },
+  "2066799158946627948": {
+    "tweet_id": "2066799158946627948",
+    "text": "I'm farming Polymarket's airdrop. POLY hasn't launched yet but allocation filters will likely penalize wash trading patterns. Farming cost s",
+    "format": "announcement",
+    "topic": "airdrop:polymarket",
+    "posted_at": 1781598293.5363147,
+    "collected_at": 1781610029.4785633,
+    "likes": 0,
+    "replies": 0,
+    "retweets": 0,
+    "quote_tweets": 0
+  },
+  "2066870032270020944": {
+    "tweet_id": "2066870032270020944",
+    "text": "DeFi TVL is down 11% in 30 days but everyone's still talking about new money coming in, that means the issue is retention, not acquisition.",
+    "format": "contrarian",
+    "topic": "opinion",
+    "posted_at": 1781615191.0419478,
+    "collected_at": 1781631021.6217515,
+    "likes": 0,
+    "replies": 0,
+    "retweets": 0,
+    "quote_tweets": 0
+  },
+  "2066947382680473828": {
+    "tweet_id": "2066947382680473828",
+    "text": "I'm watching Pendle PT pools as early-stage research \u2014 trying to understand how principal tokens are being used in yield strategies. No posi",
+    "format": "announcement",
+    "topic": "watching:pendle pt pools",
+    "posted_at": 1781633632.8145301,
+    "collected_at": 1781641612.487703,
+    "likes": 0,
+    "replies": 0,
+    "retweets": 0,
+    "quote_tweets": 0
+  },
+  "2066980275267977241": {
+    "tweet_id": "2066980275267977241",
+    "text": "I'm doing early-stage research on Morpho's curated vaults\u2014trying to understand how they stack against traditional lending protocols. No posi",
+    "format": "announcement",
+    "topic": "watching:morpho curated vaults",
+    "posted_at": 1781641475.0461075,
+    "collected_at": 1781648998.8573146,
+    "likes": 0,
+    "replies": 0,
+    "retweets": 0,
+    "quote_tweets": 0
   }
 }
