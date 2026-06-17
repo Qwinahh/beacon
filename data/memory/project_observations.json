@@ -37,6 +37,13 @@
         "observation": "Bot initiated early-stage research into Pendle PT (principal token) pools and their use in yield strategies. No position yet — still in mechanics discovery phase.",
         "source": "bot"
       }
+    ],
+    "Babylon": [
+      {
+        "ts": "2026-06-17T00:15:47Z",
+        "observation": "Bot initiated coverage of Babylon's Bitcoin staking infrastructure—positioned as early research phase with no position yet, indicating technical deep-dive underway before conviction.",
+        "source": "bot"
+      }
     ]
   }
 }

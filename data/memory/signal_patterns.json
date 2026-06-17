@@ -83,6 +83,13 @@
       "topic": "DeFi TVL decline and user retention",
       "outcome": "posted",
       "note": "Macro observation about DeFi TVL weakness paired with narrative about retention vs acquisition — useful framing for broader ecosystem health context."
+    },
+    {
+      "ts": "2026-06-17T00:15:47Z",
+      "signal_type": "alpha",
+      "topic": "Babylon Bitcoin staking announcement",
+      "outcome": "posted",
+      "note": "Portfolio addition triggered announcement post; research-phase positioning allows for transparent exploration without premature conviction."
     }
   ],
   "noise_signals": [
