@@ -106,5 +106,17 @@
     "replies": 0,
     "retweets": 0,
     "quote_tweets": 0
+  },
+  "2067364377188036964": {
+    "tweet_id": "2067364377188036964",
+    "text": "I'm watching Drift's relaunch as early-stage research. Interesting to see how they're restructuring post-exploit. Still evaluating fundament",
+    "format": "announcement",
+    "topic": "watching:drift relaunch",
+    "posted_at": 1781733052.073248,
+    "collected_at": 1781740548.6211965,
+    "likes": 0,
+    "replies": 0,
+    "retweets": 0,
+    "quote_tweets": 0
   }
 }
