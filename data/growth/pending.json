@@ -6,5 +6,13 @@
     "topic": "watching:babylon tbv",
     "posted_ts": 1781655345.026967,
     "fetch_after_ts": 1781741745.0269673
+  },
+  {
+    "tweet_id": "2067364377188036964",
+    "text": "I'm watching Drift's relaunch as early-stage research. Interesting to see how they're restructuring post-exploit. Still evaluating fundament",
+    "format": "announcement",
+    "topic": "watching:drift relaunch",
+    "posted_ts": 1781733052.073248,
+    "fetch_after_ts": 1781819452.0732481
   }
 ]

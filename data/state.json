@@ -5,9 +5,9 @@
     "2026-06-14": 6,
     "2026-06-15": 6,
     "2026-06-16": 6,
-    "2026-06-17": 1
+    "2026-06-17": 2
   },
-  "last_post_ts": 1781655345.0241454,
+  "last_post_ts": 1781733052.0697858,
   "seen": [
     "0a59a95b3b3cd57d1f74",
     "31ee999da8933acfb563",
@@ -30,7 +30,8 @@
     "4448d56eaec768d42c84",
     "25cae44093aec175376e",
     "c896a630837644dd9123",
-    "a62b755a81cce5de7d86"
+    "a62b755a81cce5de7d86",
+    "4a2b14c3faf97150d523"
   ],
   "recent_formats": [
     "prediction",
@@ -71,7 +72,8 @@
     "airdrop:polymarket",
     "watching:pendle pt pools",
     "watching:morpho curated vaults",
-    "watching:babylon tbv"
+    "watching:babylon tbv",
+    "watching:drift relaunch"
   ],
   "recent_topics": [
     "opinion",

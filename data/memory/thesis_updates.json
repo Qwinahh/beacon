@@ -6,6 +6,12 @@
       "project": "Jupiter",
       "update": "Bot is holding JUP and actively tracking execution risk rather than making directional claims. Position reflects conviction in early-stage potential but requires ongoing scrutiny.",
       "trigger": "Explicit portfolio position announcement with position tracking mindset."
+    },
+    {
+      "ts": "2026-06-17T21:50:55Z",
+      "project": "Drift",
+      "update": "Bot is tracking Drift's relaunch as early-stage research without a position. Focus is on how the protocol restructures operationally post-exploit, not on near-term directional bets.",
+      "trigger": "Public announcement of relaunch monitoring post-exploit"
     }
   ]
 }

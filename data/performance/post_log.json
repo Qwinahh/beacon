@@ -118,5 +118,18 @@
     "bookmarks": null,
     "quote_tweets": null,
     "engagement_rate": null
+  },
+  {
+    "tweet_id": "2067364377188036964",
+    "tweet_text": "I'm watching Drift's relaunch as early-stage research. Interesting to see how they're restructuring post-exploit. Still evaluating fundamentals. No position yet, just monitoring closely.",
+    "format_used": "announcement",
+    "topic": "watching:drift relaunch",
+    "posted_at": "2026-06-17T21:50:52.070023+00:00",
+    "impressions": null,
+    "likes": null,
+    "replies": null,
+    "bookmarks": null,
+    "quote_tweets": null,
+    "engagement_rate": null
   }
 ]

@@ -90,6 +90,13 @@
       "topic": "Babylon Bitcoin staking announcement",
       "outcome": "posted",
       "note": "Portfolio addition triggered announcement post; research-phase positioning allows for transparent exploration without premature conviction."
+    },
+    {
+      "ts": "2026-06-17T21:50:55Z",
+      "signal_type": "rss",
+      "topic": "Drift relaunch post-exploit",
+      "outcome": "posted",
+      "note": "Relaunch announcements signal structural changes worth monitoring; useful as early research entry point rather than trade signal."
     }
   ],
   "noise_signals": [
