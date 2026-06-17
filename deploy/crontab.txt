@@ -1,0 +1,36 @@
+# Beacon X Bot — Crontab (all times UTC)
+# Install: (crontab -l 2>/dev/null; cat /path/to/beacon/deploy/crontab.txt) | crontab -
+# View:    crontab -l
+# Logs:    tail -f /path/to/beacon/deploy/logs/<job>.log
+#
+# Replace /root/beacon with wherever you cloned the repo.
+
+BEACON=/root/beacon
+
+# Alpha fast-track — every 30 min (urgent signals only, exits fast if nothing urgent)
+*/30 * * * * bash $BEACON/deploy/run.sh alpha
+
+# Main posts — 6x per day at fixed windows (EU morning → US late night)
+0 8  * * * bash $BEACON/deploy/run.sh post
+0 11 * * * bash $BEACON/deploy/run.sh post
+0 14 * * * bash $BEACON/deploy/run.sh post
+0 17 * * * bash $BEACON/deploy/run.sh post
+0 20 * * * bash $BEACON/deploy/run.sh post
+0 22 * * * bash $BEACON/deploy/run.sh post
+
+# Engagement — replies, outbound, follow — every hour at :35 (5 min after alpha's :30 run)
+35 * * * * bash $BEACON/deploy/run.sh engage
+
+# Knowledge — learn runs twice daily, refresh after learn
+0  6  * * * bash $BEACON/deploy/run.sh learn
+0  17 * * * bash $BEACON/deploy/run.sh learn
+30 6  * * * bash $BEACON/deploy/run.sh refresh
+
+# Daily — track at 06:00, inspiration at 07:00, digest at 22:30
+0  6  * * * bash $BEACON/deploy/run.sh track
+0  7  * * * bash $BEACON/deploy/run.sh inspiration
+30 22 * * * bash $BEACON/deploy/run.sh digest
+
+# Weekly — growth analysis Sunday 09:00, suggestions report Monday 07:00
+0 9 * * 0 bash $BEACON/deploy/run.sh growth
+0 7 * * 1 bash $BEACON/deploy/run.sh suggest
