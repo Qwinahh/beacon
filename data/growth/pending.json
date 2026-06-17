@@ -1,13 +1,5 @@
 [
   {
-    "tweet_id": "2067364377188036964",
-    "text": "I'm watching Drift's relaunch as early-stage research. Interesting to see how they're restructuring post-exploit. Still evaluating fundament",
-    "format": "announcement",
-    "topic": "watching:drift relaunch",
-    "posted_ts": 1781733052.073248,
-    "fetch_after_ts": 1781819452.0732481
-  },
-  {
     "tweet_id": "2067385160144724028",
     "text": "DefiChain DEX TVL down 52% in 24h, farm yield likely to follow.",
     "format": "prediction",
