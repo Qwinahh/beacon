@@ -118,5 +118,17 @@
     "replies": 0,
     "retweets": 0,
     "quote_tweets": 0
+  },
+  "2067385160144724028": {
+    "tweet_id": "2067385160144724028",
+    "text": "DefiChain DEX TVL down 52% in 24h, farm yield likely to follow.",
+    "format": "prediction",
+    "topic": "defi",
+    "posted_at": 1781738007.0920146,
+    "collected_at": 1781759682.9908035,
+    "likes": 0,
+    "replies": 0,
+    "retweets": 0,
+    "quote_tweets": 0
   }
 }
