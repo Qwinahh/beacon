@@ -51,6 +51,13 @@
         "observation": "DefiChain DEX TVL collapsed 52% in 24 hours, indicating severe liquidity withdrawal or farm performance degradation triggering exit cascades.",
         "source": "bot"
       }
+    ],
+    "Honeypop": [
+      {
+        "ts": "2026-06-18T06:45:49Z",
+        "observation": "Honeypop DEX TVL surged 63% to $12.5M in 24h, indicating rapid capital inflow and early momentum in a DEX with limited TVL compared to peers.",
+        "source": "bot"
+      }
     ]
   }
 }

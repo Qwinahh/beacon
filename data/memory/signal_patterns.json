@@ -104,6 +104,13 @@
       "topic": "DefiChain DEX TVL",
       "outcome": "posted",
       "note": "Major TVL decline (52% in 24h) was sharp enough to warrant immediate signal — suggests acute liquidity stress or farm yield collapse."
+    },
+    {
+      "ts": "2026-06-18T06:45:49Z",
+      "signal_type": "tvl",
+      "topic": "Honeypop DEX TVL surge",
+      "outcome": "posted",
+      "note": "Large percentage TVL move (63% in 24h) on a smaller base is material enough to signal competitive positioning vs peers."
     }
   ],
   "noise_signals": [
