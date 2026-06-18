@@ -3,15 +3,15 @@ title: Performance Log
 type: knowledge
 topic: performance
 tags: [knowledge, performance, auto-generated]
-last_updated: 2026-06-16
-updated: 2026-06-16
+last_updated: 2026-06-18
+updated: 2026-06-18
 ---
 
 # Performance Log
 
 *Auto-generated daily by `agents/performance_tracker.py`. Do not edit — changes are overwritten. Source data: `data/performance/post_log.json`.*
 
-Tracked posts: 5 total, 5 in the last 7 days, 1 with measured impressions.
+Tracked posts: 12 total, 12 in the last 7 days, 1 with measured impressions.
 
 ## Top 5 this week — engagement rate
 
