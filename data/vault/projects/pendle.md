@@ -10,10 +10,10 @@ airdrop_status: none
 worth_farming: true
 blocked: false
 updated: 2026-06-12
-tvl_usd: 1183031851
-price_usd: 1.4
-price_change_24h: 0.3
-metrics_updated: 2026-06-16
+tvl_usd: 964094466
+price_usd: 1.46
+price_change_24h: -2.8
+metrics_updated: 2026-06-18
 ---
 
 # Pendle
@@ -65,6 +65,6 @@ compression is structural until funding regimes turn.
 → [[index]] · [[dashboard]] · [[narratives/yield-bearing-stables]] · [[projects/ethena]] · [[projects/layerzero]]
 
 ## Live Metrics
-- TVL: $1.18B
-- Price: $1.4 (+0.3% 24h)
-- Snapshot: 2026-06-16 (auto, DeFiLlama + CoinGecko)
+- TVL: $964.1M
+- Price: $1.46 (-2.8% 24h)
+- Snapshot: 2026-06-18 (auto, DeFiLlama + CoinGecko)
