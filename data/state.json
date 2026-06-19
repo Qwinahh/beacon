@@ -53,7 +53,8 @@
     "callout",
     "fallback",
     "prediction",
-    "fallback"
+    "fallback",
+    "hot_take"
   ],
   "opinion_posts_today": 2,
   "last_opinion_ts": 1781615191.0380602,
