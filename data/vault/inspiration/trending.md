@@ -1,10 +1,10 @@
 ---
-title: Trending — 2026-06-18
-updated: 2026-06-18 11:09 UTC
+title: Trending — 2026-06-19
+updated: 2026-06-19 11:23 UTC
 type: inspiration
 ---
 
-# Trending Today — 2026-06-18
+# Trending Today — 2026-06-19
 
 Top-performing posts from monitored accounts + keyword searches in the last 24h.
 Use these as raw material — find a post that made you think, then write your own take.
@@ -15,248 +15,227 @@ Use these as raw material — find a post that made you think, then write your o
 
 ## Top Posts by Engagement
 
-### 1. @Aster_DEX · 12:05 UTC
+### 1. @Gainzy222 · 13:42 UTC
 
-> [Tokenomics Update] $ASTER Buyback and Burn Steps Up to 198%
+> The best version of every food is in the USA.
 
-Aster is upgrading its buyback so the platform's own activity both rewards stakers and sets $ASTER on a deflationary path.
+**Likes:** 1062 · **Replies:** 33 · **RTs:** 1018 · **Quotes:** 3 🔥🔥🔥🔥🔥
+[View post](https://x.com/Gainzy222/status/2067603824215257434)
 
-Starting from 12:00 PM UTC today, 99% of Aster's daily platform fees buy back $ASTER. An equal amount of $ASTER is...
+### 2. @OGFIGO · 04:35 UTC
 
-**Likes:** 2133 · **Replies:** 432 · **RTs:** 722 · **Quotes:** 315 🔥🔥🔥🔥🔥
-[View post](https://x.com/Aster_DEX/status/2067217075089867086)
+> Good Morning Everyone 🏞️
 
-### 2. @Pentosh1 · 14:20 UTC
+$RIVER $600M+ TVL. 100K+ airdrop eligible users. built across Ethereum, BNB, Base, Arbitrum and more.
 
-> TRUMP ON IRAN: THEY WANT TO MAKE A DEAL
+@RiverdotInc isn’t a bridge play or a single-chain bet. it’s chain abstraction done properly. the first Omni-CDP protocol that lets you collateralize assets on one chain a...
 
-**Likes:** 494 · **Replies:** 92 · **RTs:** 25 · **Quotes:** 42 🔥🔥🔥🔥🔥
-[View post](https://x.com/Pentosh1/status/2067251068258406706)
+**Likes:** 553 · **Replies:** 484 · **RTs:** 41 · **Quotes:** 0 🔥🔥🔥🔥🔥
+[View post](https://x.com/OGFIGO/status/2067828548694323581)
 
-### 3. @alturax · 16:30 UTC
+### 3. @Pentosh1 · 02:26 UTC
 
-> Experience the World Cup, live in person ⚽️
+> This is insane. 9 years later, $ETH is the same price. Adjust for inflation and its even lower than the 2017 high by 14% 
 
-We're sending one lucky winner 2x VIP tickets to watch the Quarter Finals in the United States this July.
+cursed asset, lost decade https://t.co/qtuO0PmHOp
 
-Learn how to qualify ↓ https://t.co/Arw5YpCeau
+**Likes:** 848 · **Replies:** 114 · **RTs:** 53 · **Quotes:** 13 🔥🔥🔥🔥🔥
+[View post](https://x.com/Pentosh1/status/2067796049855385724)
 
-**Likes:** 146 · **Replies:** 178 · **RTs:** 37 · **Quotes:** 61 🔥🔥🔥🔥🔥
-[View post](https://x.com/alturax/status/2067283717119459721)
+### 4. @Pentosh1 · 14:03 UTC
 
-### 4. @Route2FI · 10:06 UTC
+> $STRC wow 
 
-> JUST IN:
+the crazy thing is this was advertised towards families as being a safe, and better than a high yields savings account with low or no volatility. The fine print said otherwise, but i wonder if that type of marketing comes back to haunt saylor later https://t.co/MGYqMwxc6X
 
-The First DeFi Yield Venue for Confidential USDC (cUSDC) in Partnership with @Morpho and @SteakhouseFi
+**Likes:** 660 · **Replies:** 102 · **RTs:** 42 · **Quotes:** 20 🔥🔥🔥🔥🔥
+[View post](https://x.com/Pentosh1/status/2067609101073293824)
 
-The Zama Protocol made confidential tokens possible on Ethereum. The next step is giving them utility.
+### 5. @Pentosh1 · 15:04 UTC
 
-Vault opens June 23. https://t.co/9m1lEVapzh
+> Ethereum basically back to where it was during the 2017 top almost a decade ago
 
-**Likes:** 369 · **Replies:** 71 · **RTs:** 60 · **Quotes:** 64 🔥🔥🔥🔥🔥
-[View post](https://x.com/Route2FI/status/2067187138517459107)
+Whereas crypto holistically 3x higher from where it was during 2017 top
 
-### 5. @Route2FI · 14:56 UTC
+There’s still eth bulls, but none of them have put forth a narrative or thesis on why eth will outperform from here lol https://t.co/4q6UD6Y2Yr
 
-> Being in crypto can really fuck with your head and your relationship with money. Just one trade can bring in as much money as a whole year’s salary. 
+**Likes:** 391 · **Replies:** 178 · **RTs:** 18 · **Quotes:** 16 🔥🔥🔥🔥🔥
+[View post](https://x.com/Pentosh1/status/2067624409092005959)
 
-Some hours later on the same day, you might sit down with your friends at a bar and watch the FIFA World Cup and buy a beer for let's say $10, and th...
+### 6. @CRYPTOKING2i · 17:34 UTC
 
-**Likes:** 570 · **Replies:** 44 · **RTs:** 31 · **Quotes:** 4 🔥🔥🔥🔥🔥
-[View post](https://x.com/Route2FI/status/2067260016873144731)
+> 🚀 https://t.co/FdQzAM31kE Incoming — AI Agent Trading Network on @Hyperliquid!
+Soon: Hold ONE token → Get an actively rebalanced basket of Hyperliquid perps.
+AI agents competing, posting analysis, managing funds with transparent reasoning & swarm intelligence.
+The future of perp trading is loading…
+...
 
-### 6. @Pentosh1 · 14:53 UTC
+**Likes:** 184 · **Replies:** 65 · **RTs:** 216 · **Quotes:** 0 🔥🔥🔥🔥🔥
+[View post](https://x.com/CRYPTOKING2i/status/2067662239188832438)
 
-> i wake up
+### 7. @Pentosh1 · 13:51 UTC
 
-i see this tweet every morning 
+> if i had to guess why stocks are selling off a bit, its prob bc gta6 is dropping and people wont have as much time for trading. it is a big macro event and people playing games means higher energy prices bc the electronics are on and such, and a lot of people will call in sick so there is less produ...
 
-i feel like im in a loop and starting to go crazy 
+**Likes:** 405 · **Replies:** 49 · **RTs:** 14 · **Quotes:** 3 🔥🔥🔥🔥🔥
+[View post](https://x.com/Pentosh1/status/2067606166612386178)
 
-next thing i see the deal is done, i go to bed 
+### 8. @Route2FI · 11:35 UTC
 
-i wake up, iran wants to make a deal
+> Only 4 days left of S1. Because DeFi Saver Rewards is PnL‑weighted, waiting for the last day is a bad strategy. One red trade can crush your multiplier and erase days of progress in a few minutes. 
 
-**Likes:** 518 · **Replies:** 51 · **RTs:** 24 · **Quotes:** 3 🔥🔥🔥🔥🔥
-[View post](https://x.com/Pentosh1/status/2067259348657594803)
+If you start now, you can iterate into a profitable structure and let steady DeFi + perp activity on ...
 
-### 7. @tayvano_ · 20:12 UTC
+**Likes:** 313 · **Replies:** 16 · **RTs:** 96 · **Quotes:** 1 🔥🔥🔥🔥🔥
+[View post](https://x.com/Route2FI/status/2067571807066984729)
 
-> The Trump White House says that if Boeing wants to build more airplanes, they have to ensure that they can never, ever fall out of the sky. https://t.co/Ljxx06oP4k
+### 9. @Kalshi · 16:12 UTC
 
-**Likes:** 465 · **Replies:** 48 · **RTs:** 36 · **Quotes:** 15 🔥🔥🔥🔥🔥
-[View post](https://x.com/tayvano_/status/2067339497566884103)
+> The purest form of trading.
 
-### 8. @Nicolas_itl · 10:10 UTC
+Kalshi Perpetuals.
 
-> Let's take a look at what technologies our interlink giant has.
+Now open to the public. https://t.co/n0Y5BiycWK
 
-HyperLiquid ($13.5B) = ITLX Perp
+**Likes:** 230 · **Replies:** 61 · **RTs:** 22 · **Quotes:** 27 🔥🔥🔥🔥🔥
+[View post](https://x.com/Kalshi/status/2067641495495086218)
 
-MetaMask (~$7.5B) = ITLX Wallet
+### 10. @BlomieB · 14:58 UTC
 
-World ID ($2B) = InterLink ID
+> Most people will discover @QwertiAI after the airdrop.
 
-Ethereum ($300B+) = InterLink Chain
+They will see what early users earned through the points system and referrals, do the math, and wonder why they waited.
 
-Ondo ($2.5B) = InterLink Business Token Exchange
+I have been using the Qwerti dex for few months now, and here is what actually makes it different.
 
-Combined value: ~$325B+
+➥ 𝐈𝐭 𝐚𝐠𝐠𝐫𝐞𝐠𝐚𝐭𝐞𝐬 𝐞𝐯𝐞𝐫𝐲𝐭𝐡...
 
-If InterLink eventually c...
+**Likes:** 183 · **Replies:** 83 · **RTs:** 3 · **Quotes:** 0 🔥🔥🔥🔥🔥
+[View post](https://x.com/BlomieB/status/2067622892863414527)
 
-**Likes:** 292 · **Replies:** 47 · **RTs:** 71 · **Quotes:** 9 🔥🔥🔥🔥🔥
-[View post](https://x.com/Nicolas_itl/status/2067188244614435067)
+### 11. @Route2FI · 21:31 UTC
 
-### 9. @Pentosh1 · 15:39 UTC
+> Most of us are still in crypto for one reason: convexity.
 
-> Spot twap's btw 
+Like, there are still opportunities from time to time in this industry where you can risk a small amount, but end up winning so much that you're set for life. https://t.co/7F1InLW9tt
 
-$HYPE https://t.co/6e19GrhF7k
+**Likes:** 327 · **Replies:** 28 · **RTs:** 10 · **Quotes:** 1 🔥🔥🔥🔥🔥
+[View post](https://x.com/Route2FI/status/2067721896318095863)
 
-**Likes:** 406 · **Replies:** 34 · **RTs:** 23 · **Quotes:** 3 🔥🔥🔥🔥🔥
-[View post](https://x.com/Pentosh1/status/2067270885250089082)
+### 12. @Bency1749379 · 06:27 UTC
 
-### 10. @Route2FI · 10:26 UTC
+> GM GM 
 
-> Confidential DeFi is starting to take shape.
+It's 11 days until Season 5 ends, and the race for @River4fun Points is heating up each day 
 
-@Zama launched their app today, making it easier to shield assets and use confidential tokens onchain.
+@RiverdotInc is building momentum across the ecosystem, with the 200M River Points reward pool active creator campaigns, increasing community participation and metrics
 
-The first yield venue for private USDC (cUSDC) goes live on Morpho with Steakhouse. Until now, private capital had limited utility, but now it can be ...
+Community participation and m...
 
-**Likes:** 370 · **Replies:** 20 · **RTs:** 34 · **Quotes:** 0 🔥🔥🔥🔥🔥
-[View post](https://x.com/Route2FI/status/2067192073271349440)
+**Likes:** 102 · **Replies:** 102 · **RTs:** 3 · **Quotes:** 0 🔥🔥🔥🔥🔥
+[View post](https://x.com/Bency1749379/status/2067856823332266026)
 
-### 11. @PredictFDN · 10:30 UTC
+### 13. @tiur_eth · 09:57 UTC
 
-> Predict Protocol × @BullbitDEXHQ
+> More great news for the entire Solstice ecosystem! 
 
-Permissionless prediction markets meet the invisible blockchain trading experience.
+@Bullish joining the @solsticefi ecosystem a major step in the development of institutional finance.
 
-Predict's unified USDC liquidity vault on BNB Chain. Bullbit's perp DEX on Base with passkey wallets, zero gas fees, and CEX-like simplicity.
+The NYSE-listed crypto exchange has deployed capital into eUSX through YieldVault, gaining exposure to Solstice’s delta-neutral yield strategy. F...
 
-Two protocols. One direction.
+**Likes:** 99 · **Replies:** 79 · **RTs:** 7 · **Quotes:** 0 🔥🔥🔥🔥🔥
+[View post](https://x.com/tiur_eth/status/2067547225928986807)
 
-Forecas...
+### 14. @Defi_Rocketeer · 10:00 UTC
 
-**Likes:** 78 · **Replies:** 42 · **RTs:** 118 · **Quotes:** 2 🔥🔥🔥🔥🔥
-[View post](https://x.com/PredictFDN/status/2067193036254200192)
+> DeFi Yield-Bearing + RWA Collateral Cards 
 
-### 12. @sol_nxxn · 13:33 UTC
+Everyone loves yield, both retail and institutions. So I believe products that print passive yield like DeFi neobanks and RWAs are the next PMF for every type of user.
 
-> $JUP at $1 in a year? 🤔
+Maybe bank accounts in the future won’t look like what they offer today.
 
-Here are my 1-year bull targets for our coins:
-$SOL - $200 
-$HYPE - $120 
-$ONDO - $1.20 
-$JUP - $1 
-$JTO - $1.5 
-$BP - $1.80 
-$ARX - $0.8
+DeFi's moat c...
 
-What are your predictions?
+**Likes:** 152 · **Replies:** 55 · **RTs:** 13 · **Quotes:** 1 🔥🔥🔥🔥🔥
+[View post](https://x.com/Defi_Rocketeer/status/2067548029004206375)
 
-**Likes:** 200 · **Replies:** 56 · **RTs:** 15 · **Quotes:** 2 🔥🔥🔥🔥🔥
-[View post](https://x.com/sol_nxxn/status/2067239303839687091)
+### 15. @Eliteonchain · 14:04 UTC
 
-### 13. @0xSisyphus · 15:32 UTC
+> EigenLayer peaked at $21.8B TVL in August 2025.
 
-> This stablecoin is now 10% depegged btw https://t.co/TsMwZgserK
+It’s at $4.78B today.
 
-**Likes:** 306 · **Replies:** 19 · **RTs:** 6 · **Quotes:** 0 🔥🔥🔥🔥🔥
-[View post](https://x.com/0xSisyphus/status/2067269076766884347)
+That’s $17B in capital that quietly decided the restaking narrative wasn’t worth the risk anymore.
 
-### 14. @sol_nxxn · 19:42 UTC
+Here’s the part nobody wants to say out loud: restaking never had a revenue model. It had a story.
 
-> My bull thesis 🐂
+The thesis was clean: restak...
 
-$SOL - network's running harder than it did at $294 (Firedancer, Alpenglow). Does ~97% of all on-chain tokenized-stock volume. SIMD-0550 will fix inflation
+**Likes:** 127 · **Replies:** 62 · **RTs:** 12 · **Quotes:** 1 🔥🔥🔥🔥🔥
+[View post](https://x.com/Eliteonchain/status/2067609446029611444)
 
-$HYPE - token that prints money. Dominant perp DEX, fees buy back HYPE, only ~27% of supply circulating. A flywheel that keep...
+### 16. @Dan1umma · 05:21 UTC
 
-**Likes:** 219 · **Replies:** 34 · **RTs:** 18 · **Quotes:** 5 🔥🔥🔥🔥🔥
-[View post](https://x.com/sol_nxxn/status/2067332119035068903)
+> Most people evaluate Perp DEXs by looking at trading volume, liquidity, UI or incentives.
 
-### 15. @Route2FI · 19:12 UTC
+Those metrics matter.
 
-> So, Arcium:
+But there's another question that often gets ignored:
 
-- Acquired Inpher, the leading encrypted AI compute company
-- Inherited the fastest encrypted AI protocol
-- Now planning a major encrypted AI product launch
+Who actually owns the network?
 
-AI privacy has relied exclusively on TEEs, this appears to be the first cryptography-powered alternative.
+For years, the standard crypto fundraising playbook has looked something like this:
 
-Note: I am an investor...
+⫸   Seed Round...
 
-**Likes:** 297 · **Replies:** 4 · **RTs:** 19 · **Quotes:** 1 🔥🔥🔥🔥🔥
-[View post](https://x.com/Route2FI/status/2067324424114651507)
+**Likes:** 73 · **Replies:** 65 · **RTs:** 5 · **Quotes:** 3 🔥🔥🔥🔥🔥
+[View post](https://x.com/Dan1umma/status/2067840152601342165)
 
-### 16. @DefiIgnas · 11:14 UTC
+### 17. @Kryptomonach · 19:31 UTC
 
-> Farming Variational airdrop is starting to tax me mentality.
+> my perp dex tier list going into airdrop season (my own ranking, nfa):
 
-It's just a few hundred USD per trade earned from referral rewards but positions end up in liquidations.
+S — Hyperliquid: benchmark, but you are not early anymore.
 
-Yet sometime that one 15x leverage trade goes well and you feel good winning.
+A — @AFX_XYZ: own L1, on-chain orderbook, 0 VC, mainnet live, fixed points pool, airdrop path via points.
 
-Then fake confidence builds, you end up pumping lever...
+B — the rest of my farm list: still waiting for token details...
 
-**Likes:** 83 · **Replies:** 39 · **RTs:** 69 · **Quotes:** 0 🔥🔥🔥🔥🔥
-[View post](https://x.com/DefiIgnas/status/2067204275797954903)
+**Likes:** 99 · **Replies:** 39 · **RTs:** 19 · **Quotes:** 0 🔥🔥🔥🔥🔥
+[View post](https://x.com/Kryptomonach/status/2067691666535014838)
 
-### 17. @Mayacrypt · 10:20 UTC
+### 18. @WhaleNoName · 19:22 UTC
 
-> The next major consumer crypto product isn’t another L2, perp DEX or AI agent.
+> 🚨 MY CRYPTO AND MACRO PREDICTIONS FOR THE NEXT 3 YEARS 🚨
 
-It’s crypto cards.
+2026:
 
-For years, crypto payments promised to bridge Web2 and Web3, but adoption remained limited. Most products were little more than prepaid cards that converted crypto into fiat at the point of sale.
+- BTC bottoms at MA 350 zone (47k-51k) in October
+- Japan rate hike triggers the first major global deleveraging of the cycle
+- S&P 500 drops to $5,500 as AI bubble starts unwinding
+- ETH hits real buy zone ($1,000-1,300) while CT slee...
 
-Tha...
+**Likes:** 129 · **Replies:** 29 · **RTs:** 18 · **Quotes:** 1 🔥🔥🔥🔥🔥
+[View post](https://x.com/WhaleNoName/status/2067689349894824221)
 
-**Likes:** 245 · **Replies:** 26 · **RTs:** 3 · **Quotes:** 0 🔥🔥🔥🔥🔥
-[View post](https://x.com/Mayacrypt/status/2067190763687985285)
+### 19. @Kaffchad · 08:30 UTC
 
-### 18. @cryptogoos · 13:02 UTC
+> ► Stock Tokenization Wars
 
-> 🚨 This is Hyperliquid's Polymarket moment.
+Even crypto bros are off-ramping to trade $NVDA and $SPCX now, so ofc the biggest players are chasing the demand.
 
-Remember when Polymarket called the US election while the polls fumbled it? 
+Every major exchange, broker, issuer, chain, oracle, custodian, and DeFi venue is suddenly fighting over who gets to become the default rail for equities onch...
 
-The crowd with real money on the line beat the experts.
+**Likes:** 95 · **Replies:** 42 · **RTs:** 14 · **Quotes:** 2 🔥🔥🔥🔥🔥
+[View post](https://x.com/Kaffchad/status/2067887709767831776)
 
-Hyperliquid just did the same thing with SpaceX.
+### 20. @Yura4Gus · 15:59 UTC
 
-The perp priced the listing way above the $135 IPO, days before Wall St...
+> There is a real war going on in Perp DEX for the user through buyback programs.
+Aster, $Hyperliquid and several other platforms actively allocate a significant portion of the fees for the purchase and burning of tokens. Someone promises 99% of feeds for buyback + a reduction of supply by almost 2 ti...
 
-**Likes:** 150 · **Replies:** 8 · **RTs:** 47 · **Quotes:** 0 🔥🔥🔥🔥🔥
-[View post](https://x.com/cryptogoos/status/2067231285161107612)
-
-### 19. @onrefinance · 17:36 UTC
-
-> Fixed yield. Higher leverage.
-
-PT-ONyc-10SEPT26 from @ExponentFinance can now be supplied as collateral on the OnRe Market via @kamino.
-
-Higher risk-adjusted LTVs now enable users to leverage ONyc up to 2.9x for 22%+ APY.
-
-More ways to hold, borrow, and earn with ONyc. https://t.co/twN4oazUQS
-
-**Likes:** 148 · **Replies:** 26 · **RTs:** 14 · **Quotes:** 7 🔥🔥🔥🔥🔥
-[View post](https://x.com/onrefinance/status/2067300323912466646)
-
-### 20. @Gainzy222 · 09:50 UTC
-
-> dirty bulked my way into a massive double chin on accident 
-
-and now we diet to diminish the jabba the hutt appearance https://t.co/tL9dTg7Rx3
-
-**Likes:** 149 · **Replies:** 24 · **RTs:** 1 · **Quotes:** 1 🔥🔥🔥🔥
-[View post](https://x.com/Gainzy222/status/2067183149315244205)
+**Likes:** 56 · **Replies:** 2 · **RTs:** 88 · **Quotes:** 0 🔥🔥🔥🔥
+[View post](https://x.com/Yura4Gus/status/2067638434810786046)
 
 ---
 
@@ -266,20 +245,25 @@ and now we diet to diminish the jabba the hutt appearance https://t.co/tL9dTg7Rx
 Based on the top-performing crypto posts from the last 24 hours, we've identified key trends to inform @Qwinahh's content strategy.
 
 ### Topics Getting Traction
-The narrative around **confidential DeFi** is gaining traction, with protocols like **Zama** and **Morpho** making headlines. The concept of **tokenomics** is also popular, as seen in the **$ASTER** buyback and burn update, which aims to make the token deflationary. Additionally, **AI privacy** is emerging as a topic of interest, with **Arcium**'s acquisition of **Inpher** and plans for an encrypted AI product launch.
+* The narrative around Ethereum's price stagnation is gaining traction, with $ETH being compared to its 2017 high, adjusted for inflation, it's 14% lower.
+* Decentralized finance (DeFi) and yield-bearing products are being discussed, with protocols like @RiverdotInc and @Hyperliquid being mentioned.
+* The concept of convexity and the potential for high-risk, high-reward opportunities in crypto is being explored.
 
 ### Formats Working
-Data-driven posts, such as **$ASTER**'s tokenomics update, are performing well. Contrarian takes, like **Pentosh1**'s tweets on Iran, are also sparking engagement. Thread openers, such as **Route2FI**'s post on confidential DeFi, are effective in generating discussion.
+* Contrarian takes, such as @Pentosh1's opinion on Ethereum's price, are sparking engagement.
+* Data dumps, like @OGFIGO's post on $RIVER's TVL and airdrop eligible users, are being well-received.
+* Thread openers, such as @CRYPTOKING2i's introduction to the AI Agent Trading Network on @Hyperliquid, are generating interest.
 
 ### Voice Patterns
-Specific numbers, like **$ASTER**'s 198% buyback and burn, are grabbing attention. Strong opinions, such as **Route2FI**'s thoughts on crypto's impact on mental health, are resonating with audiences. Insider knowledge, like **Nicolas_itl**'s breakdown of **InterLink**'s technologies, is also valued.
+* Strong opinions, like @Pentosh1's statement on Ethereum being a "cursed asset," are landing with audiences.
+* Specific numbers, such as $600M+ TVL and 100K+ airdrop eligible users, are being used to add credibility to posts.
+* Insider knowledge, like @BlomieB's experience with the Qwerti dex, is being shared to build trust.
 
-### Content Angles
-For @Qwinahh's next posts, consider the following angles:
-1. **Confidential DeFi**: Explore the potential of confidential tokens and their utility, highlighting protocols like **Zama** and **Morpho**.
-2. **Tokenomics**: Analyze the tokenomics of a specific cryptocurrency, such as **$ASTER**, and discuss the implications of buyback and burn mechanisms.
-3. **AI Privacy**: Delve into the emerging topic of AI privacy, discussing **Arcium**'s encrypted AI protocol and its potential impact on the industry.
+### Content Angles for @Qwinahh
+1. **Ethereum's Stagnation**: Write a post exploring the reasons behind Ethereum's price stagnation, using data to support the argument, and discuss potential implications for the crypto market.
+2. **DeFi Yield-Bearing Products**: Create a thread introducing @Qwinahh's audience to DeFi yield-bearing products, highlighting the benefits and potential risks, and featuring protocols like @RiverdotInc and @Hyperliquid.
+3. **Convexity in Crypto**: Develop a post discussing the concept of convexity in crypto, using examples of high-risk, high-reward opportunities, and explore the potential for @Qwinahh's audience to capitalize on these opportunities.
 
 ---
 
-_Updated daily at ~07:00 UTC by the inspiration agent. Archive: [[history/2026-06-18]]_
+_Updated daily at ~07:00 UTC by the inspiration agent. Archive: [[history/2026-06-19]]_

@@ -1,12 +1,12 @@
 ---
-title: What's Working — 2026-06-18
-updated: 2026-06-18 11:09 UTC
+title: What's Working — 2026-06-19
+updated: 2026-06-19 11:23 UTC
 type: inspiration
 ---
 
-# What's Working Today — 2026-06-18
+# What's Working Today — 2026-06-19
 
-Pattern analysis across 56 high-engagement posts from the last 24h.
+Pattern analysis across 44 high-engagement posts from the last 24h.
 
 [[trending|→ Today's Top Posts]] | [[../dashboard|← Dashboard]]
 
@@ -15,20 +15,20 @@ Pattern analysis across 56 high-engagement posts from the last 24h.
 ## Trending Topics
 
 - **hyperliquid** █ (1 posts)
-- **kaito** █ (1 posts)
 - **airdrop** █ (1 posts)
 - **points** █ (1 posts)
 - **perp** █ (1 posts)
 - **defi** █ (1 posts)
+- **restaking** █ (1 posts)
+- **eigenlayer** █ (1 posts)
 - **solana** █ (1 posts)
-- **arbitrum** █ (1 posts)
 
 ## Format Breakdown
 
-- **thread_hook**: 51 posts
-- **data_observation**: 39 posts
-- **contrarian**: 31 posts
-- **question**: 8 posts
+- **thread_hook**: 42 posts
+- **data_observation**: 35 posts
+- **contrarian**: 30 posts
+- **question**: 4 posts
 
 ## Editorial Analysis
 
@@ -36,34 +36,39 @@ Pattern analysis across 56 high-engagement posts from the last 24h.
 Based on the top-performing crypto posts from the last 24 hours, we've identified key trends to inform @Qwinahh's content strategy.
 
 ### Topics Getting Traction
-The narrative around **confidential DeFi** is gaining traction, with protocols like **Zama** and **Morpho** making headlines. The concept of **tokenomics** is also popular, as seen in the **$ASTER** buyback and burn update, which aims to make the token deflationary. Additionally, **AI privacy** is emerging as a topic of interest, with **Arcium**'s acquisition of **Inpher** and plans for an encrypted AI product launch.
+* The narrative around Ethereum's price stagnation is gaining traction, with $ETH being compared to its 2017 high, adjusted for inflation, it's 14% lower.
+* Decentralized finance (DeFi) and yield-bearing products are being discussed, with protocols like @RiverdotInc and @Hyperliquid being mentioned.
+* The concept of convexity and the potential for high-risk, high-reward opportunities in crypto is being explored.
 
 ### Formats Working
-Data-driven posts, such as **$ASTER**'s tokenomics update, are performing well. Contrarian takes, like **Pentosh1**'s tweets on Iran, are also sparking engagement. Thread openers, such as **Route2FI**'s post on confidential DeFi, are effective in generating discussion.
+* Contrarian takes, such as @Pentosh1's opinion on Ethereum's price, are sparking engagement.
+* Data dumps, like @OGFIGO's post on $RIVER's TVL and airdrop eligible users, are being well-received.
+* Thread openers, such as @CRYPTOKING2i's introduction to the AI Agent Trading Network on @Hyperliquid, are generating interest.
 
 ### Voice Patterns
-Specific numbers, like **$ASTER**'s 198% buyback and burn, are grabbing attention. Strong opinions, such as **Route2FI**'s thoughts on crypto's impact on mental health, are resonating with audiences. Insider knowledge, like **Nicolas_itl**'s breakdown of **InterLink**'s technologies, is also valued.
+* Strong opinions, like @Pentosh1's statement on Ethereum being a "cursed asset," are landing with audiences.
+* Specific numbers, such as $600M+ TVL and 100K+ airdrop eligible users, are being used to add credibility to posts.
+* Insider knowledge, like @BlomieB's experience with the Qwerti dex, is being shared to build trust.
 
-### Content Angles
-For @Qwinahh's next posts, consider the following angles:
-1. **Confidential DeFi**: Explore the potential of confidential tokens and their utility, highlighting protocols like **Zama** and **Morpho**.
-2. **Tokenomics**: Analyze the tokenomics of a specific cryptocurrency, such as **$ASTER**, and discuss the implications of buyback and burn mechanisms.
-3. **AI Privacy**: Delve into the emerging topic of AI privacy, discussing **Arcium**'s encrypted AI protocol and its potential impact on the industry.
+### Content Angles for @Qwinahh
+1. **Ethereum's Stagnation**: Write a post exploring the reasons behind Ethereum's price stagnation, using data to support the argument, and discuss potential implications for the crypto market.
+2. **DeFi Yield-Bearing Products**: Create a thread introducing @Qwinahh's audience to DeFi yield-bearing products, highlighting the benefits and potential risks, and featuring protocols like @RiverdotInc and @Hyperliquid.
+3. **Convexity in Crypto**: Develop a post discussing the concept of convexity in crypto, using examples of high-risk, high-reward opportunities, and explore the potential for @Qwinahh's audience to capitalize on these opportunities.
 
 ---
 
 ## Top Accounts Active Today
 
-- @tayvano_ (5 qualifying posts)
+- @Pentosh1 (4 qualifying posts)
 - @Route2FI (4 qualifying posts)
-- @Pentosh1 (3 qualifying posts)
-- @0xSisyphus (2 qualifying posts)
-- @Gainzy222 (2 qualifying posts)
-- @muarmemuar (2 qualifying posts)
-- @sol_nxxn (2 qualifying posts)
-- @imekan_udohaya (1 qualifying posts)
-- @Web3BPP (1 qualifying posts)
-- @tronghaieth (1 qualifying posts)
+- @Gainzy222 (3 qualifying posts)
+- @givenoxbt (2 qualifying posts)
+- @Dan1umma (1 qualifying posts)
+- @Hyperliquid_Hub (1 qualifying posts)
+- @Ryuzaki_SEI (1 qualifying posts)
+- @Henrik_on_HL (1 qualifying posts)
+- @raikucom (1 qualifying posts)
+- @WizardDoom (1 qualifying posts)
 
 ---
-_Updated daily at ~07:00 UTC. Archive: [[history/2026-06-18]]_
+_Updated daily at ~07:00 UTC. Archive: [[history/2026-06-19]]_
