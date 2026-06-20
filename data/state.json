@@ -37,7 +37,6 @@
     "ccdb3d964273c7d2091f"
   ],
   "recent_formats": [
-    "fallback",
     "hot_take",
     "alpha_tip",
     "mistake_admission",
@@ -56,7 +55,8 @@
     "fallback",
     "data_observation",
     "farm_update",
-    "alpha_tip"
+    "alpha_tip",
+    "fallback"
   ],
   "opinion_posts_today": 2,
   "last_opinion_ts": 1781615191.0380602,
