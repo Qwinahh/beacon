@@ -37,7 +37,6 @@
     "ccdb3d964273c7d2091f"
   ],
   "recent_formats": [
-    "short_take",
     "fallback",
     "thread_hook",
     "prediction",
@@ -56,6 +55,7 @@
     "callout",
     "fallback",
     "prediction",
+    "fallback",
     "fallback"
   ],
   "opinion_posts_today": 2,
