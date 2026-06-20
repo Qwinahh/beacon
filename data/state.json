@@ -37,7 +37,6 @@
     "ccdb3d964273c7d2091f"
   ],
   "recent_formats": [
-    "mistake_admission",
     "callout",
     "short_take",
     "fallback",
@@ -54,6 +53,7 @@
     "data_observation",
     "farm_update",
     "alpha_tip",
+    "fallback",
     "fallback",
     "fallback",
     "fallback"
