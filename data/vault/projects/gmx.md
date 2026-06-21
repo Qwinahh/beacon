@@ -10,10 +10,10 @@ airdrop_status: none
 worth_farming: false
 blocked: false
 updated: 2026-06-12
-tvl_usd: 176363437
-price_usd: 6.26
-price_change_24h: 12.3
-metrics_updated: 2026-06-20
+tvl_usd: 177024427
+price_usd: 6.04
+price_change_24h: -3.0
+metrics_updated: 2026-06-21
 ---
 
 # GMX
@@ -64,6 +64,6 @@ arguments in perps have been losing for two years.
 → [[index]] · [[dashboard]] · [[narratives/perps-meta]] · [[projects/hyperliquid]] · [[projects/drift]]
 
 ## Live Metrics
-- TVL: $176.4M
-- Price: $6.26 (+12.3% 24h)
-- Snapshot: 2026-06-20 (auto, DeFiLlama + CoinGecko)
+- TVL: $177.0M
+- Price: $6.04 (-3.0% 24h)
+- Snapshot: 2026-06-21 (auto, DeFiLlama + CoinGecko)
