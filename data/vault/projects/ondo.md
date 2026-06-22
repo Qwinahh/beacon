@@ -10,10 +10,10 @@ airdrop_status: none
 worth_farming: false
 blocked: false
 updated: 2026-06-12
-tvl_usd: 3669135361
+tvl_usd: 3668071233
 price_usd: 0.3663
 price_change_24h: 1.7
-metrics_updated: 2026-06-18
+metrics_updated: 2026-06-22
 ---
 
 # Ondo Finance
@@ -68,4 +68,4 @@ mainnet (still not verifiably live as of 2026-06-11 despite "early-to-mid
 
 ## Live Metrics
 - TVL: $3.67B
-- Snapshot: 2026-06-18 (auto, DeFiLlama + CoinGecko)
+- Snapshot: 2026-06-22 (auto, DeFiLlama + CoinGecko)

@@ -1,12 +1,12 @@
 ---
-title: What's Working — 2026-06-18
-updated: 2026-06-18 11:09 UTC
+title: What's Working — 2026-06-22
+updated: 2026-06-22 12:50 UTC
 type: inspiration
 ---
 
-# What's Working Today — 2026-06-18
+# What's Working Today — 2026-06-22
 
-Pattern analysis across 56 high-engagement posts from the last 24h.
+Pattern analysis across 27 high-engagement posts from the last 24h.
 
 [[trending|→ Today's Top Posts]] | [[../dashboard|← Dashboard]]
 
@@ -15,20 +15,20 @@ Pattern analysis across 56 high-engagement posts from the last 24h.
 ## Trending Topics
 
 - **hyperliquid** █ (1 posts)
-- **kaito** █ (1 posts)
 - **airdrop** █ (1 posts)
 - **points** █ (1 posts)
 - **perp** █ (1 posts)
 - **defi** █ (1 posts)
+- **restaking** █ (1 posts)
 - **solana** █ (1 posts)
-- **arbitrum** █ (1 posts)
+- **base** █ (1 posts)
 
 ## Format Breakdown
 
-- **thread_hook**: 51 posts
-- **data_observation**: 39 posts
-- **contrarian**: 31 posts
-- **question**: 8 posts
+- **thread_hook**: 24 posts
+- **data_observation**: 18 posts
+- **contrarian**: 17 posts
+- **question**: 4 posts
 
 ## Editorial Analysis
 
@@ -36,34 +36,41 @@ Pattern analysis across 56 high-engagement posts from the last 24h.
 Based on the top-performing crypto posts from the last 24 hours, we've identified key trends to inform @Qwinahh's content strategy.
 
 ### Topics Getting Traction
-The narrative around **confidential DeFi** is gaining traction, with protocols like **Zama** and **Morpho** making headlines. The concept of **tokenomics** is also popular, as seen in the **$ASTER** buyback and burn update, which aims to make the token deflationary. Additionally, **AI privacy** is emerging as a topic of interest, with **Arcium**'s acquisition of **Inpher** and plans for an encrypted AI product launch.
+The current narrative is centered around **Hyperliquid**, with multiple posts highlighting its impressive metrics, such as "$60.55M gross protocol revenue" and "$52b+ in perp volume over the last 7d". Other notable mentions include **Rain Trade**, **Mythos**, and **Injective**. The focus is on **prediction markets**, **perp dex**, and **Layer 1** solutions.
 
 ### Formats Working
-Data-driven posts, such as **$ASTER**'s tokenomics update, are performing well. Contrarian takes, like **Pentosh1**'s tweets on Iran, are also sparking engagement. Thread openers, such as **Route2FI**'s post on confidential DeFi, are effective in generating discussion.
+Successful post formats include:
+* **Data dumps**: sharing specific numbers and metrics, like @Brainmaster's post on Hyperliquid's income statement
+* **Contrarian takes**: challenging common opinions, such as @TMtheOG's post on Solana's perp dex competitor
+* **Thread openers**: introducing new topics or protocols, like @Route2FI's post on Rain Trade
+* **Callouts**: highlighting underrated projects, such as @molusol's post on @onrefinance
 
 ### Voice Patterns
-Specific numbers, like **$ASTER**'s 198% buyback and burn, are grabbing attention. Strong opinions, such as **Route2FI**'s thoughts on crypto's impact on mental health, are resonating with audiences. Insider knowledge, like **Nicolas_itl**'s breakdown of **InterLink**'s technologies, is also valued.
+Posts that land well often feature:
+* **Specific numbers**: using exact figures to demonstrate a point, like "$180M+ AUM" and "11.8% APY"
+* **Strong opinions**: expressing confident views, such as "@HyperliquidX is printing numbers that most protocols can only dream about"
+* **Insider knowledge**: sharing exclusive information or insights, like @desola__xn's post on their favorite crypto tools
 
-### Content Angles
-For @Qwinahh's next posts, consider the following angles:
-1. **Confidential DeFi**: Explore the potential of confidential tokens and their utility, highlighting protocols like **Zama** and **Morpho**.
-2. **Tokenomics**: Analyze the tokenomics of a specific cryptocurrency, such as **$ASTER**, and discuss the implications of buyback and burn mechanisms.
-3. **AI Privacy**: Delve into the emerging topic of AI privacy, discussing **Arcium**'s encrypted AI protocol and its potential impact on the industry.
+### Content Angles for @Qwinahh
+Based on these trends, @Qwinahh can explore the following content angles:
+1. **Hyperliquid's dominance**: Analyze Hyperliquid's impressive metrics and what they mean for the broader crypto market.
+2. **Rain Trade's prediction market potential**: Explore Rain Trade's features and how they're changing the prediction market landscape.
+3. **Underrated Layer 1 solutions**: Highlight Injective and other Layer 1 protocols that are flying under the radar, despite their potential for growth.
 
 ---
 
 ## Top Accounts Active Today
 
-- @tayvano_ (5 qualifying posts)
 - @Route2FI (4 qualifying posts)
-- @Pentosh1 (3 qualifying posts)
-- @0xSisyphus (2 qualifying posts)
-- @Gainzy222 (2 qualifying posts)
-- @muarmemuar (2 qualifying posts)
-- @sol_nxxn (2 qualifying posts)
-- @imekan_udohaya (1 qualifying posts)
-- @Web3BPP (1 qualifying posts)
-- @tronghaieth (1 qualifying posts)
+- @tayvano_ (3 qualifying posts)
+- @thedefiedge (1 qualifying posts)
+- @Gainzy222 (1 qualifying posts)
+- @desola__xn (1 qualifying posts)
+- @ourcryptotalk (1 qualifying posts)
+- @Brainmaster (1 qualifying posts)
+- @Hyperliquid_Hub (1 qualifying posts)
+- @alpha_co (1 qualifying posts)
+- @TMtheOG (1 qualifying posts)
 
 ---
-_Updated daily at ~07:00 UTC. Archive: [[history/2026-06-18]]_
+_Updated daily at ~07:00 UTC. Archive: [[history/2026-06-22]]_
