@@ -1,12 +1,12 @@
 ---
-title: What's Working — 2026-06-21
-updated: 2026-06-21 10:29 UTC
+title: What's Working — 2026-06-22
+updated: 2026-06-22 12:50 UTC
 type: inspiration
 ---
 
-# What's Working Today — 2026-06-21
+# What's Working Today — 2026-06-22
 
-Pattern analysis across 28 high-engagement posts from the last 24h.
+Pattern analysis across 27 high-engagement posts from the last 24h.
 
 [[trending|→ Today's Top Posts]] | [[../dashboard|← Dashboard]]
 
@@ -19,16 +19,16 @@ Pattern analysis across 28 high-engagement posts from the last 24h.
 - **points** █ (1 posts)
 - **perp** █ (1 posts)
 - **defi** █ (1 posts)
+- **restaking** █ (1 posts)
 - **solana** █ (1 posts)
 - **base** █ (1 posts)
-- **tvl** █ (1 posts)
 
 ## Format Breakdown
 
 - **thread_hook**: 24 posts
 - **data_observation**: 18 posts
-- **contrarian**: 13 posts
-- **question**: 8 posts
+- **contrarian**: 17 posts
+- **question**: 4 posts
 
 ## Editorial Analysis
 
@@ -36,41 +36,41 @@ Pattern analysis across 28 high-engagement posts from the last 24h.
 Based on the top-performing crypto posts from the last 24 hours, we've identified key trends to inform @Qwinahh's content strategy.
 
 ### Topics Getting Traction
-* Solana ($SOL) is a dominant narrative, with discussions around its price action, potential basing, and comparisons to other assets.
-* Crypto gaming, particularly Kintara, is gaining attention, with some users rooting for its success to breathe life into the sector.
-* New protocols and testnet campaigns, such as Nomisma Network's Season 3 Testnet Campaign, are being closely watched.
-* Stablecoins, specifically the XRP Ledger's TVL, are experiencing a decline, despite an impressive stablecoin supply.
+The current narrative is centered around **Hyperliquid**, with multiple posts highlighting its impressive metrics, such as "$60.55M gross protocol revenue" and "$52b+ in perp volume over the last 7d". Other notable mentions include **Rain Trade**, **Mythos**, and **Injective**. The focus is on **prediction markets**, **perp dex**, and **Layer 1** solutions.
 
 ### Formats Working
-* Contrarian takes, such as @Pentosh1's opinion on Solana, are sparking engagement.
-* Questions, like @Route2FI's inquiry about the highest IQ move in crypto for summer, are encouraging discussion.
-* Data dumps, including @DefiDeck's discovery of AFX, a new perp dex, are providing valuable insights.
-* Thread openers, such as @smolwyne's post about Tori Finance, are generating interest.
+Successful post formats include:
+* **Data dumps**: sharing specific numbers and metrics, like @Brainmaster's post on Hyperliquid's income statement
+* **Contrarian takes**: challenging common opinions, such as @TMtheOG's post on Solana's perp dex competitor
+* **Thread openers**: introducing new topics or protocols, like @Route2FI's post on Rain Trade
+* **Callouts**: highlighting underrated projects, such as @molusol's post on @onrefinance
 
 ### Voice Patterns
-* Specific numbers, like @Kaffchad's comparison of $Zinc and $Ore, are making posts more credible.
-* Strong opinions, such as @issathecooker's take on Solana's rally, are resonating with users.
-* Insider knowledge, like @tiur_eth's update on $USX, is providing unique perspectives.
+Posts that land well often feature:
+* **Specific numbers**: using exact figures to demonstrate a point, like "$180M+ AUM" and "11.8% APY"
+* **Strong opinions**: expressing confident views, such as "@HyperliquidX is printing numbers that most protocols can only dream about"
+* **Insider knowledge**: sharing exclusive information or insights, like @desola__xn's post on their favorite crypto tools
 
 ### Content Angles for @Qwinahh
-1. **Solana's Potential Basing**: Analyze the current price action and historical data to predict whether Solana will experience a significant basing.
-2. **Crypto Gaming's Future**: Explore the potential of crypto gaming, including Kintara, and discuss how it could impact the broader crypto market.
-3. **Undervalued Protocols**: Identify undervalued protocols, like $Zinc, and compare their revenue and market capitalization to similar projects, highlighting potential investment opportunities.
+Based on these trends, @Qwinahh can explore the following content angles:
+1. **Hyperliquid's dominance**: Analyze Hyperliquid's impressive metrics and what they mean for the broader crypto market.
+2. **Rain Trade's prediction market potential**: Explore Rain Trade's features and how they're changing the prediction market landscape.
+3. **Underrated Layer 1 solutions**: Highlight Injective and other Layer 1 protocols that are flying under the radar, despite their potential for growth.
 
 ---
 
 ## Top Accounts Active Today
 
-- @Pentosh1 (6 qualifying posts)
-- @smolwyne (2 qualifying posts)
-- @BSCNews (2 qualifying posts)
-- @Route2FI (1 qualifying posts)
+- @Route2FI (4 qualifying posts)
+- @tayvano_ (3 qualifying posts)
+- @thedefiedge (1 qualifying posts)
 - @Gainzy222 (1 qualifying posts)
-- @0xfrigg (1 qualifying posts)
-- @seeksahib (1 qualifying posts)
-- @Beliukh_ (1 qualifying posts)
-- @MavenHL (1 qualifying posts)
-- @dhavied_brown (1 qualifying posts)
+- @desola__xn (1 qualifying posts)
+- @ourcryptotalk (1 qualifying posts)
+- @Brainmaster (1 qualifying posts)
+- @Hyperliquid_Hub (1 qualifying posts)
+- @alpha_co (1 qualifying posts)
+- @TMtheOG (1 qualifying posts)
 
 ---
-_Updated daily at ~07:00 UTC. Archive: [[history/2026-06-21]]_
+_Updated daily at ~07:00 UTC. Archive: [[history/2026-06-22]]_
