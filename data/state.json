@@ -37,7 +37,6 @@
     "ccdb3d964273c7d2091f"
   ],
   "recent_formats": [
-    "alpha_tip",
     "contrarian",
     "short_take",
     "fallback",
@@ -56,6 +55,7 @@
     "fallback",
     "short_take",
     "mistake_admission",
+    "fallback",
     "fallback"
   ],
   "opinion_posts_today": 2,
