@@ -38,7 +38,6 @@
   ],
   "recent_formats": [
     "fallback",
-    "fallback",
     "short_take",
     "fallback",
     "alpha_tip",
@@ -56,6 +55,7 @@
     "hot_take",
     "short_take",
     "alpha_tip",
+    "fallback",
     "fallback"
   ],
   "opinion_posts_today": 2,
