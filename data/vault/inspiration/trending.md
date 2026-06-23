@@ -1,10 +1,10 @@
 ---
-title: Trending — 2026-06-22
-updated: 2026-06-22 12:50 UTC
+title: Trending — 2026-06-23
+updated: 2026-06-23 10:36 UTC
 type: inspiration
 ---
 
-# Trending Today — 2026-06-22
+# Trending Today — 2026-06-23
 
 Top-performing posts from monitored accounts + keyword searches in the last 24h.
 Use these as raw material — find a post that made you think, then write your own take.
@@ -15,258 +15,224 @@ Use these as raw material — find a post that made you think, then write your o
 
 ## Top Posts by Engagement
 
-### 1. @tayvano_ · 10:56 UTC
+### 1. @Pentosh1 · 15:29 UTC
 
-> BREAKING: The NSA confirms Mythos “broke into almost all of our classified systems, not in weeks, but in hours”
+> I bought $1 million of $STRC today. Will hold it until it reaches par, likely longer.
 
-**Likes:** 33262 · **Replies:** 1063 · **RTs:** 3129 · **Quotes:** 1032 🔥🔥🔥🔥🔥
-[View post](https://x.com/tayvano_/status/2068649209654309288)
+**Likes:** 7998 · **Replies:** 760 · **RTs:** 540 · **Quotes:** 182 🔥🔥🔥🔥🔥
+[View post](https://x.com/Pentosh1/status/2069080463126470781)
 
-### 2. @Route2FI · 18:25 UTC
+### 2. @0xSisyphus · 12:35 UTC
 
-> RTG Checker is Live
+> We have raised a $75M Series B from @IndexVentures and @usv, with continued support from @benchmark! https://t.co/uFgqlgmxTL
 
-This is not the end ↓ https://t.co/5QFN3swBwS
+**Likes:** 2560 · **Replies:** 643 · **RTs:** 684 · **Quotes:** 262 🔥🔥🔥🔥🔥
+[View post](https://x.com/0xSisyphus/status/2069036523064852753)
 
-**Likes:** 658 · **Replies:** 161 · **RTs:** 79 · **Quotes:** 153 🔥🔥🔥🔥🔥
-[View post](https://x.com/Route2FI/status/2068762321162478031)
+### 3. @tayvano_ · 01:17 UTC
 
-### 3. @Route2FI · 15:21 UTC
+> guys 😭 https://t.co/LGBXxmyoFF
 
-> Hi - We are Rain Trade.
+**Likes:** 5168 · **Replies:** 69 · **RTs:** 112 · **Quotes:** 17 🔥🔥🔥🔥🔥
+[View post](https://x.com/tayvano_/status/2069228195124252698)
 
-We’re a prediction market platform, but without the boring corporate training wheels. We take public opinion, internet debates, and real-world chaos and turn them into actual, tradeable odds.
+### 4. @Route2FI · 03:36 UTC
 
-Built on top of the @Rain__Protocol, our platform showcases exactly what it's capa...
+> solana pretty quickly accelerating on all parts of the stack
 
-**Likes:** 314 · **Replies:** 149 · **RTs:** 129 · **Quotes:** 22 🔥🔥🔥🔥🔥
-[View post](https://x.com/Route2FI/status/2068715835317743631)
+already the fastest &amp; cheapest blockchain + home to most retail onchain activity while solana eco teams keep shipping aggressively
 
-### 4. @virtuals_io · 12:47 UTC
+believe privacy will continue to be popular narra
 
-> This Week in Virtuals: Ecosystem + Robotics 🟩
+**Likes:** 770 · **Replies:** 239 · **RTs:** 48 · **Quotes:** 8 🔥🔥🔥🔥🔥
+[View post](https://x.com/Route2FI/status/2069263253163606331)
 
-VIRTUALS
-🟩 @ethermage published Liquid Machine Labor, an open thesis on why machine labor must be coordinated openly rather than enclosed by capital, and the vision Virtuals Protocol is building toward.
+### 5. @Gainzy222 · 20:19 UTC
 
-🟩 @eastworlds_io trained its Unitree G1 to autono...
+> So many people quitting man shits actually sad to see
 
-**Likes:** 271 · **Replies:** 63 · **RTs:** 41 · **Quotes:** 8 🔥🔥🔥🔥🔥
-[View post](https://x.com/virtuals_io/status/2068677179811217707)
+**Likes:** 744 · **Replies:** 230 · **RTs:** 26 · **Quotes:** 17 🔥🔥🔥🔥🔥
+[View post](https://x.com/Gainzy222/status/2069153441646018881)
 
-### 5. @Route2FI · 18:47 UTC
+### 6. @tayvano_ · 20:57 UTC
 
-> $ARX going live tomorrow.
+> A person operating under the moniker "mizanthropiaz" compromised the Brazilian governments Emergency Alert System in Sao Paulo, Rio, and Brasilia. The Threat Actor sent a notification to hundreds of thousands of people which read "misanthropi4".
 
-Token airdrop checker live now. LFG. 
+More details have emerged regarding the compromise, a...
 
-Arcium arc.
+**Likes:** 1146 · **Replies:** 33 · **RTs:** 117 · **Quotes:** 19 🔥🔥🔥🔥🔥
+[View post](https://x.com/tayvano_/status/2069162922375365090)
 
-**Likes:** 361 · **Replies:** 17 · **RTs:** 36 · **Quotes:** 0 🔥🔥🔥🔥🔥
-[View post](https://x.com/Route2FI/status/2068767772285313328)
+### 7. @Gainzy222 · 01:42 UTC
 
-### 6. @Route2FI · 17:45 UTC
+> One more legit bull run like 2017 or 2021 and we will see insane prices again
 
-> Prediction markets are evolving. @rain__trade supports creating and trading markets across a wide range of topics, including both global events and niche discussions.
+I’ve never seen a higher rate of roundtrips and crash outs
 
-The platform does not rely on predefined categories, allowing users to define their own market parameters and outcomes.
+No one has enough coins
 
-Early acces...
+**Likes:** 678 · **Replies:** 73 · **RTs:** 21 · **Quotes:** 6 🔥🔥🔥🔥🔥
+[View post](https://x.com/Gainzy222/status/2069234640800633096)
 
-**Likes:** 286 · **Replies:** 16 · **RTs:** 18 · **Quotes:** 1 🔥🔥🔥🔥🔥
-[View post](https://x.com/Route2FI/status/2068752217373589582)
+### 8. @Pentosh1 · 15:16 UTC
 
-### 7. @TMtheOG · 20:18 UTC
+> I have been trading now nearly 10 years 
 
-> solana realized they cannot fake a perp dex competitor to hyperliquid so they pay KOLs to post TA charts that make it seem like the bottom is in
+This past year, I probably learned more than any year, luckily surrounded by the right people far more talented than myself
 
-the ship is sinking
+You always know less than you think you do. There is always more to learn, and more ways to sharpen your skills
 
-**Likes:** 155 · **Replies:** 25 · **RTs:** 10 · **Quotes:** 5 🔥🔥🔥🔥🔥
-[View post](https://x.com/TMtheOG/status/2068790798527680655)
+**Likes:** 575 · **Replies:** 48 · **RTs:** 19 · **Quotes:** 3 🔥🔥🔥🔥🔥
+[View post](https://x.com/Pentosh1/status/2069077076393566418)
 
-### 8. @Rabiussunny11 · 05:38 UTC
+### 9. @Pentosh1 · 18:59 UTC
 
-> I finally threw $2,000 into the Bulk Trade pre-deposit campaign to farm AURA points.
+> "steady lads, deploying more capital" 
 
-If you look at how pre-launch points for projects like Lightr and Variational ended up trading at a premium on OTC markets, getting in early makes a lot of sense before everyone else dilutes the pool.
+price proceeds to go lower 
 
-The numbers ...
+dev shouldn't talk about price. 
 
-**Likes:** 59 · **Replies:** 65 · **RTs:** 0 · **Quotes:** 0 🔥🔥🔥🔥🔥
-[View post](https://x.com/Rabiussunny11/status/2068931705617240135)
+lesson 1 page 36, line 3.
 
-### 9. @desola__xn · 08:32 UTC
+**Likes:** 435 · **Replies:** 27 · **RTs:** 14 · **Quotes:** 1 🔥🔥🔥🔥🔥
+[View post](https://x.com/Pentosh1/status/2069133212559814899)
 
-> things I literally can’t do without in a week: 
+### 10. @Route2FI · 19:08 UTC
 
-L1: Ethereum 
-L2: Base 
-Dex: jupiter
-Cex: Bybit 
-Prediction: polymarket/limitless
-Bridge: relay protocol 
-Perp Dex: hyperliquid 
-Stablecoin: Circle (usdc)
-Wallet: Zerion
-Analytics : Nansen/defilama
-Crypto Comms App: X nd Telegram 
+> Moving out of my house and heading for Switzerland this weekend.
 
-I’m not addicted to...
+Could this be my new home? Idk yet, but doing it as a research trip to get a feel for the vibes over there.
 
-**Likes:** 60 · **Replies:** 47 · **RTs:** 1 · **Quotes:** 1 🔥🔥🔥🔥
-[View post](https://x.com/desola__xn/status/2068975524802613632)
+Euromaxxing summer.
 
-### 10. @Brainmaster · 04:57 UTC
+**Likes:** 270 · **Replies:** 46 · **RTs:** 29 · **Quotes:** 0 🔥🔥🔥🔥🔥
+[View post](https://x.com/Route2FI/status/2069135410073120791)
 
-> You see @HyperliquidX is printing numbers that most protocols can only dream about
+### 11. @0xDvox · 18:58 UTC
 
-According to this income statement
+> Hyperliquid is interesting because it didn’t try to make DeFi feel slightly less painful.
 
---> $60.55M gross protocol revenue
---> $47.99M earnings
---> Nearly 79% profit margin
---> Around $48M distributed back to token holders
+It just went straight at the CEX experience.
 
-The craziest part
-Almost all of this is comi...
+Fast orderbook. Onchain perps. No random AMM slippage games. A trading flow that actually feels built for people who trade, not people who enjoy clicking 14 confir...
 
-**Likes:** 61 · **Replies:** 45 · **RTs:** 0 · **Quotes:** 0 🔥🔥🔥
-[View post](https://x.com/Brainmaster/status/2068921243794039049)
+**Likes:** 166 · **Replies:** 71 · **RTs:** 24 · **Quotes:** 1 🔥🔥🔥🔥🔥
+[View post](https://x.com/0xDvox/status/2069132838885085462)
 
-### 11. @fakkogoat · 13:53 UTC
+### 12. @Bankless · 12:00 UTC
 
-> i genuinely think this is the best chart in crypto right now and it’s not even close
+> INTERVIEW: @CryptoHayes - The AI Crash That Could Send bitcoin:native  to $1M
 
-crypto spent years begging for a real onchain exchange with real users, real volume, real fees, no weird unlock games, no fake activity
+Arthur thinks the AI trade is sucking the oxygen out of crypto, and the real opportunity may come after the AI bubble cracks.
 
-hyperliquid did it
+Inside the episode:
 
-$52b+ in perp volume over the last 7d
+- AI CapEx mania
+- Why ethereum:native  looks cheap
+- Oil as the macro be...
 
-$hype
+**Likes:** 218 · **Replies:** 36 · **RTs:** 29 · **Quotes:** 9 🔥🔥🔥🔥🔥
+[View post](https://x.com/Bankless/status/2069027635582103941)
 
-**Likes:** 110 · **Replies:** 19 · **RTs:** 10 · **Quotes:** 1 🔥🔥🔥
-[View post](https://x.com/fakkogoat/status/2068693850898436147)
+### 13. @tayvano_ · 12:54 UTC
 
-### 12. @molusol · 11:00 UTC
+> 🚨 @taikoxyz  Bridge Hacked | ~$1.7M Drained
 
-> $ONyc
+An RSA private key committed to a public GitHub repo just became a $1.7M exploit.
 
-@onrefinance maybe the most underrated rwa play on solana rn.
+The attacker forged SGX prover registrations, generated fake L2 state attestations, and drained Taiko's L1 Bridge and ERC20Vault across two phases.
 
-what you're missing:
+No private key theft. N...
 
-> $180M+ AUM and climbing
-> 6.6K+ holders, steady growth
-> 11.8% APY, sustainable yield
-> first to bring the reinsurance industry onchain
-> fully composable across solana defi (exponent, loopscale, kamino)
-> ...
+**Likes:** 202 · **Replies:** 13 · **RTs:** 38 · **Quotes:** 19 🔥🔥🔥🔥🔥
+[View post](https://x.com/tayvano_/status/2069041275211530673)
 
-**Likes:** 67 · **Replies:** 12 · **RTs:** 17 · **Quotes:** 0 🔥🔥
-[View post](https://x.com/molusol/status/2068650148260098443)
+### 14. @BigFIBO · 04:40 UTC
 
-### 13. @CryptoGurujiOG · 13:23 UTC
+> Sustainable yield is tough to find in crypto. @onrefinance is changing that on Solana with ONyc. It generates real, institutional grade returns from reinsurance premiums that are completely uncorrelated to crypto volatility. Even better, it is built to be used as productive collateral across DeFi le...
 
-> TxFlow: New Perp DEX Don't Miss 🚀
+**Likes:** 155 · **Replies:** 66 · **RTs:** 1 · **Quotes:** 0 🔥🔥🔥🔥🔥
+[View post](https://x.com/BigFIBO/status/2069279344157938174)
 
-👉 $1.0 Million Early Reward
-👉 Points Program Soon
+### 15. @SurfAI · 03:13 UTC
 
-@TxFlow_L1 is an open Layer 1 with a multi-application ecosystem built around TIP Liquidity Standards, where every Channel shares on-chain liquidity, settlement, and market data without bridging.
+> List of the biggest airdrops that happened in 2026 so far (by funding).
 
-Traders can earn ...
+@ofc_the_club ($OFC)— $310M
 
-**Likes:** 61 · **Replies:** 4 · **RTs:** 28 · **Quotes:** 0 🔥🔥
-[View post](https://x.com/CryptoGurujiOG/status/2068686238081798313)
+@megaeth  ($MEGA)— $108M
 
-### 14. @Hyperliquid_Hub · 03:16 UTC
+@SentientAGI  ($SENT)— $93M
 
-> #Hyperliquid Ecosystem Weekly Recap (Jun 15 - 21, 2026)
+@EspressoSys  ($ESP)— $68M
 
-Hyperliquid had another explosive week, with $HYPE burns, World Cup prediction market mania, booming yields, new trading products, and stronger infrastructure across the ecosystem.
+@Backpack ($BP) — $37M
 
-✅Hyperliquid (@HyperliquidX): Hyperliquid has now burned $3.3...
+@teaprotocol ($TEA)— $20M
 
-**Likes:** 57 · **Replies:** 19 · **RTs:** 4 · **Quotes:** 0 🔥🔥
-[View post](https://x.com/Hyperliquid_Hub/status/2068895806539841824)
+@KAIO_xyz ($KAIO)— $19M
 
-### 15. @DukeD_Defi · 11:16 UTC
+@citrea_xyz ($CTR)— $17M
 
-> $INJ @injective is one of the few Layer 1s that I think the market is still pricing incorrectly.
+@zen_chain ($...
 
-Most people still view #Injective as just another DeFi chain from the Cosmos ecosystem. I don't think that's the real story anymore.
+**Likes:** 116 · **Replies:** 49 · **RTs:** 16 · **Quotes:** 8 🔥🔥🔥🔥🔥
+[View post](https://x.com/SurfAI/status/2069257386343411905)
 
-Over the past year, Injective has been pushing far beyond traditiona...
+### 16. @ax1vc · 13:00 UTC
 
-**Likes:** 51 · **Replies:** 22 · **RTs:** 2 · **Quotes:** 0 🔥🔥
-[View post](https://x.com/DukeD_Defi/status/2069016779440136684)
+> Dune Dashboard for the Perp DEX Market, 2026
 
-### 16. @ustyianskyi · 07:53 UTC
+The majority of dashboards for perps just replicate the volumes the venue claims.
 
-> daily early projects
+We built one that breaks down which of those figures the chain actually supports.
 
-@epicentral_ – options trading platform on Solana
-backed by Superteam USA
+Six venues, head-to-head
+@HyperliquidX, @Lighter_xyz, @JupiterExchange, @edgeX_exchange,...
 
-@GetRektApp – mobile-first trading app on Solana
+**Likes:** 85 · **Replies:** 54 · **RTs:** 22 · **Quotes:** 4 🔥🔥🔥🔥🔥
+[View post](https://x.com/ax1vc/status/2069042906027986998)
 
-@cardcentergg – socialized TCG collecting and cozy gaming
+### 17. @Route2FI · 18:17 UTC
 
-@spenddotmarket – consumer spending data platform
+> Both Canada and Switzerland have 4 points in group B. They're playing each other in the final game, and both will be happy with a draw, as this means they both will advance to the next round. However, the group winner will most likely meet an easier opponent (at least in theory).
 
-@insfers – instant cross-border USDC paymen...
+Anyway, trying Swi...
 
-**Likes:** 52 · **Replies:** 16 · **RTs:** 5 · **Quotes:** 0 🔥🔥
-[View post](https://x.com/ustyianskyi/status/2068965635028111523)
+**Likes:** 237 · **Replies:** 9 · **RTs:** 12 · **Quotes:** 0 🔥🔥🔥🔥🔥
+[View post](https://x.com/Route2FI/status/2069122612333019582)
 
-### 17. @Sakrexer · 17:33 UTC
+### 18. @Route2FI · 05:04 UTC
 
-> @0xn4te guy who thinks hyperliquid is a perp dex is bullish on sol
+> Arcium is the most-used confidential compute network in crypto, with over 1.6M confidential computations and 6M transactions on Solana.
 
-**Likes:** 89 · **Replies:** 3 · **RTs:** 0 · **Quotes:** 0 🔥
-[View post](https://x.com/Sakrexer/status/2068749205191979111)
+$ARX should do well this cycle.
 
-### 18. @givenoxbt · 04:10 UTC
+**Likes:** 209 · **Replies:** 14 · **RTs:** 17 · **Quotes:** 0 🔥🔥🔥🔥🔥
+[View post](https://x.com/Route2FI/status/2069285366654181638)
 
-> perpl @perpltrade is the perp dex everyone said was impossible to build
+### 19. @Tanaka_L2 · 13:33 UTC
 
-here's why it matters and what they're actually solving
+> Not many people are yapping about DeFi anymore, even though it was supposed to be the new financial primitive. DeFi didn’t die at all, it just ran out of fake yield and got boring.
 
-- the problem
-every perp dex before perpl was forced into a compromise
+The game now isn't the same as 2021, with emissions, ponzi APYs, and users farming anything that blinked.
 
-AMMs on L2s - faster but worse execution, no real order book
+I think the...
 
-app-chains - real CLOB but gave up d...
+**Likes:** 148 · **Replies:** 36 · **RTs:** 4 · **Quotes:** 0 🔥🔥🔥🔥🔥
+[View post](https://x.com/Tanaka_L2/status/2069051113035481305)
 
-**Likes:** 42 · **Replies:** 16 · **RTs:** 2 · **Quotes:** 0 🔥
-[View post](https://x.com/givenoxbt/status/2068909523826323913)
+### 20. @Pentosh1 · 13:52 UTC
 
-### 19. @ourcryptotalk · 06:54 UTC
+> $BB first order got filled at the open and added 25,000 shares to my position
 
-> $HYPE is up ~150% this year.
-$PUMP is down ~75%.
-$WLFI is down ~83% from its high.
+Have some lower but not sure they will get filled since it just went up 6% from the open. Plan remains the same. 
 
-All three are profitable. All three print millions in revenue every single month.
+However I might be 1 quarter too early on my thesis. Where I think looking at the timing of recent comment...
 
-So why are their charts in completely different universes?
-
-I ranked the 10 biggest revenue earners on-chain and what each token actu...
-
-**Likes:** 39 · **Replies:** 12 · **RTs:** 7 · **Quotes:** 0 🔥
-[View post](https://x.com/ourcryptotalk/status/2068950622771314958)
-
-### 20. @Time_and_Trade · 17:41 UTC
-
-> What are interlink Network's ( $ITLG,  $ITL) advantages against other blockchains
-
-InterLink Network positions itself as a human-centric Layer 1 blockchain whose primary niche is Proof of Personhood (PoP) — a consensus and identity model built around verified real humans rather than anonymous wallet...
-
-**Likes:** 63 · **Replies:** 0 · **RTs:** 5 · **Quotes:** 2 🔥
-[View post](https://x.com/Time_and_Trade/status/2068751053068390586)
+**Likes:** 186 · **Replies:** 15 · **RTs:** 12 · **Quotes:** 0 🔥🔥🔥🔥🔥
+[View post](https://x.com/Pentosh1/status/2069055852405723154)
 
 ---
 
@@ -276,27 +242,24 @@ InterLink Network positions itself as a human-centric Layer 1 blockchain whose p
 Based on the top-performing crypto posts from the last 24 hours, we've identified key trends to inform @Qwinahh's content strategy.
 
 ### Topics Getting Traction
-The current narrative is centered around **Hyperliquid**, with multiple posts highlighting its impressive metrics, such as "$60.55M gross protocol revenue" and "$52b+ in perp volume over the last 7d". Other notable mentions include **Rain Trade**, **Mythos**, and **Injective**. The focus is on **prediction markets**, **perp dex**, and **Layer 1** solutions.
+* **Solana's growth**: @Route2FI's post highlighting Solana's acceleration on all parts of the stack, with 770 likes and 239 replies, indicates interest in the protocol's progress.
+* **Bull runs and market trends**: @Gainzy222's post discussing the potential for another bull run, with 678 likes and 73 replies, shows that users are eager to speculate about market movements.
+* **Security and hacks**: @tayvano_'s post about the Taiko bridge hack, with 202 likes and 13 replies, demonstrates that users are concerned about security in the crypto space.
 
 ### Formats Working
-Successful post formats include:
-* **Data dumps**: sharing specific numbers and metrics, like @Brainmaster's post on Hyperliquid's income statement
-* **Contrarian takes**: challenging common opinions, such as @TMtheOG's post on Solana's perp dex competitor
-* **Thread openers**: introducing new topics or protocols, like @Route2FI's post on Rain Trade
-* **Callouts**: highlighting underrated projects, such as @molusol's post on @onrefinance
+* **Data dumps**: @SurfAI's list of the biggest airdrops in 2026, with 116 likes and 49 replies, suggests that users appreciate concise, data-driven content.
+* **Contrarian takes**: @Bankless's interview with @CryptoHayes, with 218 likes and 36 replies, indicates that users are interested in alternative perspectives on the market.
+* **Thread openers**: @Pentosh1's post about buying $1 million of $STRC, with 7998 likes and 760 replies, shows that users engage with bold, attention-grabbing statements.
 
 ### Voice Patterns
-Posts that land well often feature:
-* **Specific numbers**: using exact figures to demonstrate a point, like "$180M+ AUM" and "11.8% APY"
-* **Strong opinions**: expressing confident views, such as "@HyperliquidX is printing numbers that most protocols can only dream about"
-* **Insider knowledge**: sharing exclusive information or insights, like @desola__xn's post on their favorite crypto tools
+* **Specific numbers**: @Pentosh1's use of "$1 million" and @SurfAI's listing of airdrop funding amounts (e.g., "$310M" for @ofc_the_club) demonstrate the effectiveness of using concrete numbers to grab attention.
+* **Strong opinions**: @Gainzy222's statement that "no one has enough coins" showcases the impact of confident, unambiguous language.
+* **Insider knowledge**: @0xDvox's discussion of Hyperliquid's approach to DeFi, with 166 likes and 71 replies, suggests that users value expertise and behind-the-scenes insights.
 
 ### Content Angles for @Qwinahh
-Based on these trends, @Qwinahh can explore the following content angles:
-1. **Hyperliquid's dominance**: Analyze Hyperliquid's impressive metrics and what they mean for the broader crypto market.
-2. **Rain Trade's prediction market potential**: Explore Rain Trade's features and how they're changing the prediction market landscape.
-3. **Underrated Layer 1 solutions**: Highlight Injective and other Layer 1 protocols that are flying under the radar, despite their potential for growth.
+1. **Solana's potential for growth**: Explore Solana's recent developments and speculate about its potential for future growth, building on @Route2FI's narrative.
+2. **Market trends and bull runs**: Analyze the current market landscape and discuss the possibility of another bull run, using data and
 
 ---
 
-_Updated daily at ~07:00 UTC by the inspiration agent. Archive: [[history/2026-06-22]]_
+_Updated daily at ~07:00 UTC by the inspiration agent. Archive: [[history/2026-06-23]]_
