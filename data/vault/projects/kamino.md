@@ -10,10 +10,10 @@ airdrop_status: distributed
 worth_farming: true
 blocked: false
 updated: 2026-06-12
-tvl_usd: 1238357554
+tvl_usd: 1208514716
 price_usd: 0.018
 price_change_24h: 1.9
-metrics_updated: 2026-06-22
+metrics_updated: 2026-06-23
 ---
 
 # Kamino
@@ -65,5 +65,5 @@ product, weak token" disease as Jupiter and Morpho.
 → [[index]] · [[dashboard]] · [[narratives/solana-defi]] · [[projects/jupiter]] · [[projects/ethena]] · [[projects/morpho]]
 
 ## Live Metrics
-- TVL: $1.24B
-- Snapshot: 2026-06-22 (auto, DeFiLlama + CoinGecko)
+- TVL: $1.21B
+- Snapshot: 2026-06-23 (auto, DeFiLlama + CoinGecko)
