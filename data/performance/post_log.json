@@ -201,5 +201,44 @@
     "bookmarks": null,
     "quote_tweets": null,
     "engagement_rate": null
+  },
+  {
+    "tweet_id": "2069707458709213310",
+    "tweet_text": "Aegis Markets TVL down 51.1% in 24h",
+    "format_used": "fallback",
+    "topic": "defi",
+    "posted_at": "2026-06-24T09:01:26.262129+00:00",
+    "impressions": null,
+    "likes": null,
+    "replies": null,
+    "bookmarks": null,
+    "quote_tweets": null,
+    "engagement_rate": null
+  },
+  {
+    "tweet_id": "2069729999624499680",
+    "tweet_text": "3Jane Lending TVL up 58.6% in 24h",
+    "format_used": "fallback",
+    "topic": "general",
+    "posted_at": "2026-06-24T10:31:00.439857+00:00",
+    "impressions": null,
+    "likes": null,
+    "replies": null,
+    "bookmarks": null,
+    "quote_tweets": null,
+    "engagement_rate": null
+  },
+  {
+    "tweet_id": "2069752796123947273",
+    "tweet_text": "3Jane Lending TVL up 60.4% in 24h",
+    "format_used": "fallback",
+    "topic": "general",
+    "posted_at": "2026-06-24T12:01:35.545835+00:00",
+    "impressions": null,
+    "likes": null,
+    "replies": null,
+    "bookmarks": null,
+    "quote_tweets": null,
+    "engagement_rate": null
   }
 ]

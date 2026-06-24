@@ -1,10 +1,18 @@
 [
   {
-    "tweet_id": "2069684916569116948",
-    "text": "Cronos zkEVM Bridge TVL up 64.0% in 24h",
+    "tweet_id": "2069729999624499680",
+    "text": "3Jane Lending TVL up 58.6% in 24h",
     "format": "fallback",
     "topic": "general",
-    "posted_ts": 1782286311.8175175,
-    "fetch_after_ts": 1782372711.817518
+    "posted_ts": 1782297060.441386,
+    "fetch_after_ts": 1782383460.4413865
+  },
+  {
+    "tweet_id": "2069752796123947273",
+    "text": "3Jane Lending TVL up 60.4% in 24h",
+    "format": "fallback",
+    "topic": "general",
+    "posted_ts": 1782302495.547242,
+    "fetch_after_ts": 1782388895.5472424
   }
 ]
