@@ -154,5 +154,17 @@
     "replies": 0,
     "retweets": 0,
     "quote_tweets": 0
+  },
+  "2069707458709213310": {
+    "tweet_id": "2069707458709213310",
+    "text": "Aegis Markets TVL down 51.1% in 24h",
+    "format": "fallback",
+    "topic": "defi",
+    "posted_at": 1782291686.2629979,
+    "collected_at": 1782301802.6188638,
+    "likes": 0,
+    "replies": 0,
+    "retweets": 0,
+    "quote_tweets": 0
   }
 }
