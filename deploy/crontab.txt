@@ -18,8 +18,10 @@ BEACON=/root/beacon
 0 20 * * * bash $BEACON/deploy/run.sh post
 0 22 * * * bash $BEACON/deploy/run.sh post
 
-# Engagement — replies, outbound, follow — every hour at :35 (5 min after alpha's :30 run)
-35 * * * * bash $BEACON/deploy/run.sh engage
+# Engagement — replies, outbound, follow — every hour at :50
+#   (~10 min before each post window at :00 — warms up account activity so early
+#    engagement velocity primes the algorithm to distribute the upcoming post)
+50 * * * * bash $BEACON/deploy/run.sh engage
 
 # Knowledge — learn runs twice daily, refresh after learn
 0  6  * * * bash $BEACON/deploy/run.sh learn

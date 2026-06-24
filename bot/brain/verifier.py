@@ -242,6 +242,69 @@ def verify_batch(claims: list[Claim]) -> list[VerificationResult]:
 
 _SIGNALS_DIR = Path("data/vault/knowledge/signals")
 _EVENTS_DIR  = Path("data/vault/knowledge/events")
+_VAULT_ROOT  = Path("data/vault")
+
+# Auto-link new events to existing vault notes (projects / chains / narratives).
+# (regex keyword -> vault note path without .md). Only linked if the note exists,
+# so events weave into the graph instead of floating. Keeps the brain self-organising.
+_TOPIC_MAP: list[tuple[str, str]] = [
+    (r"\baave\b", "projects/aave"),
+    (r"\bbabylon\b", "projects/babylon"),
+    (r"\bberachain\b", "projects/berachain"),
+    (r"\bdrift\b", "projects/drift"),
+    (r"\beigen ?layer\b", "projects/eigenlayer"),
+    (r"\bethena\b", "projects/ethena"),
+    (r"\bgmx\b", "projects/gmx"),
+    (r"\bhyperliquid\b", "projects/hyperliquid"),
+    (r"\bjupiter\b", "projects/jupiter"),
+    (r"\bkaito\b", "projects/kaito"),
+    (r"\bkamino\b", "projects/kamino"),
+    (r"\blayerzero\b", "projects/layerzero"),
+    (r"\blido\b", "projects/lido"),
+    (r"\bmeteora\b", "projects/meteora"),
+    (r"\bmonad\b", "projects/monad"),
+    (r"\bmorpho\b", "projects/morpho"),
+    (r"\bondo\b", "projects/ondo"),
+    (r"\bpendle\b", "projects/pendle"),
+    (r"\bpolymarket\b", "projects/polymarket"),
+    (r"\bairdrop", "narratives/airdrop-meta"),
+    (r"\brestaking\b", "narratives/restaking"),
+    (r"\bavs\b", "narratives/restaking"),
+    (r"\bliquid stak", "narratives/liquid-staking"),
+    (r"\bperp(s|etual)?\b", "narratives/perps-meta"),
+    (r"\bprediction market", "narratives/prediction-markets"),
+    (r"\bkalshi\b", "narratives/prediction-markets"),
+    (r"\brwa\b", "narratives/rwa"),
+    (r"real[- ]world asset", "narratives/rwa"),
+    (r"\btokeniz", "narratives/rwa"),
+    (r"\bstablecoin", "narratives/stablecoin-payments"),
+    (r"\bmodular\b", "narratives/modular-blockchains"),
+    (r"\brollup", "narratives/modular-blockchains"),
+    (r"\bintent", "narratives/intents-solvers"),
+    (r"\bsolver", "narratives/intents-solvers"),
+    (r"\bdefai\b", "narratives/defai"),
+    (r"\bethereum\b", "chains/ethereum"),
+    (r"\bsolana\b", "chains/solana"),
+    (r"\bbitcoin\b", "chains/bitcoin"),
+]
+
+
+def _topic_label(path: str) -> str:
+    return path.split("/")[-1].replace("-", " ").title()
+
+
+def _detect_related_topics(text: str, max_links: int = 8) -> list[str]:
+    """Return vault note paths (that exist) referenced by the event text."""
+    low = text.lower()
+    found: list[str] = []
+    for pattern, target in _TOPIC_MAP:
+        if target in found:
+            continue
+        if re.search(pattern, low) and (_VAULT_ROOT / f"{target}.md").exists():
+            found.append(target)
+        if len(found) >= max_links:
+            break
+    return found
 
 
 def write_confirmed_event(result: VerificationResult) -> None:
@@ -261,9 +324,10 @@ def write_confirmed_event(result: VerificationResult) -> None:
     if path.exists():
         return  # Don't duplicate
 
-    project_link = ""
-    if result.claim.related_project:
-        project_link = f"\n**Project**: [[projects/{result.claim.related_project}]] · [[dashboard]]\n"
+    related = _detect_related_topics(result.claim.text)
+    topic_links = "[[dashboard]]"
+    for t in related:
+        topic_links += f" · [[{t}|{_topic_label(t)}]]"
 
     content = f"""---
 date: {ts}
@@ -277,7 +341,8 @@ related_project: {result.claim.related_project or ""}
 
 **Source**: {result.claim.source}
 **Verified**: {result.reason}
-{project_link}
+**Topics**: {topic_links}
+
 {result.claim.text}
 """
     try:
