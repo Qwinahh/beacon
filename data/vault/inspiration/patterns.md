@@ -1,12 +1,12 @@
 ---
-title: What's Working — 2026-06-22
-updated: 2026-06-22 12:50 UTC
+title: What's Working — 2026-06-23
+updated: 2026-06-23 10:36 UTC
 type: inspiration
 ---
 
-# What's Working Today — 2026-06-22
+# What's Working Today — 2026-06-23
 
-Pattern analysis across 27 high-engagement posts from the last 24h.
+Pattern analysis across 61 high-engagement posts from the last 24h.
 
 [[trending|→ Today's Top Posts]] | [[../dashboard|← Dashboard]]
 
@@ -19,16 +19,16 @@ Pattern analysis across 27 high-engagement posts from the last 24h.
 - **points** █ (1 posts)
 - **perp** █ (1 posts)
 - **defi** █ (1 posts)
-- **restaking** █ (1 posts)
 - **solana** █ (1 posts)
+- **arbitrum** █ (1 posts)
 - **base** █ (1 posts)
 
 ## Format Breakdown
 
-- **thread_hook**: 24 posts
-- **data_observation**: 18 posts
-- **contrarian**: 17 posts
-- **question**: 4 posts
+- **thread_hook**: 47 posts
+- **data_observation**: 41 posts
+- **contrarian**: 30 posts
+- **question**: 15 posts
 
 ## Editorial Analysis
 
@@ -36,41 +36,38 @@ Pattern analysis across 27 high-engagement posts from the last 24h.
 Based on the top-performing crypto posts from the last 24 hours, we've identified key trends to inform @Qwinahh's content strategy.
 
 ### Topics Getting Traction
-The current narrative is centered around **Hyperliquid**, with multiple posts highlighting its impressive metrics, such as "$60.55M gross protocol revenue" and "$52b+ in perp volume over the last 7d". Other notable mentions include **Rain Trade**, **Mythos**, and **Injective**. The focus is on **prediction markets**, **perp dex**, and **Layer 1** solutions.
+* **Solana's growth**: @Route2FI's post highlighting Solana's acceleration on all parts of the stack, with 770 likes and 239 replies, indicates interest in the protocol's progress.
+* **Bull runs and market trends**: @Gainzy222's post discussing the potential for another bull run, with 678 likes and 73 replies, shows that users are eager to speculate about market movements.
+* **Security and hacks**: @tayvano_'s post about the Taiko bridge hack, with 202 likes and 13 replies, demonstrates that users are concerned about security in the crypto space.
 
 ### Formats Working
-Successful post formats include:
-* **Data dumps**: sharing specific numbers and metrics, like @Brainmaster's post on Hyperliquid's income statement
-* **Contrarian takes**: challenging common opinions, such as @TMtheOG's post on Solana's perp dex competitor
-* **Thread openers**: introducing new topics or protocols, like @Route2FI's post on Rain Trade
-* **Callouts**: highlighting underrated projects, such as @molusol's post on @onrefinance
+* **Data dumps**: @SurfAI's list of the biggest airdrops in 2026, with 116 likes and 49 replies, suggests that users appreciate concise, data-driven content.
+* **Contrarian takes**: @Bankless's interview with @CryptoHayes, with 218 likes and 36 replies, indicates that users are interested in alternative perspectives on the market.
+* **Thread openers**: @Pentosh1's post about buying $1 million of $STRC, with 7998 likes and 760 replies, shows that users engage with bold, attention-grabbing statements.
 
 ### Voice Patterns
-Posts that land well often feature:
-* **Specific numbers**: using exact figures to demonstrate a point, like "$180M+ AUM" and "11.8% APY"
-* **Strong opinions**: expressing confident views, such as "@HyperliquidX is printing numbers that most protocols can only dream about"
-* **Insider knowledge**: sharing exclusive information or insights, like @desola__xn's post on their favorite crypto tools
+* **Specific numbers**: @Pentosh1's use of "$1 million" and @SurfAI's listing of airdrop funding amounts (e.g., "$310M" for @ofc_the_club) demonstrate the effectiveness of using concrete numbers to grab attention.
+* **Strong opinions**: @Gainzy222's statement that "no one has enough coins" showcases the impact of confident, unambiguous language.
+* **Insider knowledge**: @0xDvox's discussion of Hyperliquid's approach to DeFi, with 166 likes and 71 replies, suggests that users value expertise and behind-the-scenes insights.
 
 ### Content Angles for @Qwinahh
-Based on these trends, @Qwinahh can explore the following content angles:
-1. **Hyperliquid's dominance**: Analyze Hyperliquid's impressive metrics and what they mean for the broader crypto market.
-2. **Rain Trade's prediction market potential**: Explore Rain Trade's features and how they're changing the prediction market landscape.
-3. **Underrated Layer 1 solutions**: Highlight Injective and other Layer 1 protocols that are flying under the radar, despite their potential for growth.
+1. **Solana's potential for growth**: Explore Solana's recent developments and speculate about its potential for future growth, building on @Route2FI's narrative.
+2. **Market trends and bull runs**: Analyze the current market landscape and discuss the possibility of another bull run, using data and
 
 ---
 
 ## Top Accounts Active Today
 
+- @tayvano_ (10 qualifying posts)
+- @Pentosh1 (7 qualifying posts)
 - @Route2FI (4 qualifying posts)
-- @tayvano_ (3 qualifying posts)
-- @thedefiedge (1 qualifying posts)
-- @Gainzy222 (1 qualifying posts)
-- @desola__xn (1 qualifying posts)
-- @ourcryptotalk (1 qualifying posts)
-- @Brainmaster (1 qualifying posts)
-- @Hyperliquid_Hub (1 qualifying posts)
-- @alpha_co (1 qualifying posts)
-- @TMtheOG (1 qualifying posts)
+- @Gainzy222 (4 qualifying posts)
+- @DefiIgnas (2 qualifying posts)
+- @muarmemuar (2 qualifying posts)
+- @0xSisyphus (1 qualifying posts)
+- @Tom_Degen68 (1 qualifying posts)
+- @cryptogoos (1 qualifying posts)
+- @Defipeniel (1 qualifying posts)
 
 ---
-_Updated daily at ~07:00 UTC. Archive: [[history/2026-06-22]]_
+_Updated daily at ~07:00 UTC. Archive: [[history/2026-06-23]]_
