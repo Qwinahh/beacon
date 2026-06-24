@@ -17,3 +17,7 @@ Deel Deploys Stripe's Full Stablecoin Stack to Pay 1.5M Contractors in DLUSD
 ---
 
 **Related**: [[dashboard]] · [[index]]
+
+
+## Related
+- [[narratives/stablecoin-payments|Stablecoin Payments]]

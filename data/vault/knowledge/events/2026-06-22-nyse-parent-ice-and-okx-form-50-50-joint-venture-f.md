@@ -12,3 +12,7 @@ related_project:
 **Verified**: Tier 2 source (established research/media). no contradiction found
 
 NYSE Parent ICE and OKX Form 50-50 Joint Venture for Tokenized Equities, Co-Chaired by Andrew Cuomo
+
+
+## Related
+- [[narratives/rwa|Rwa]]

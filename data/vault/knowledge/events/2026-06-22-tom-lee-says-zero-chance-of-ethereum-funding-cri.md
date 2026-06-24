@@ -14,3 +14,7 @@ related_project: ethereum
 **Project**: [[projects/ethereum]] · [[dashboard]]
 
 Tom Lee Says 'Zero Chance' of Ethereum Funding Crisis as Insider Warns of $30M Gap
+
+
+## Related
+- [[chains/ethereum|Ethereum]]

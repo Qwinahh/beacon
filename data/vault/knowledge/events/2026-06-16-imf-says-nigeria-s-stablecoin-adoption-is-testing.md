@@ -12,3 +12,7 @@ related_project:
 **Verified**: Tier 2 source (established research/media). no contradiction found
 
 IMF says Nigeria’s stablecoin adoption is ‘testing the limits’ of monetary and regulatory frameworks
+
+
+## Related
+- [[narratives/stablecoin-payments|Stablecoin Payments]]

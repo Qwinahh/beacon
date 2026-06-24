@@ -17,3 +17,8 @@ Polymarket’s UMA vote upholds ‘No’ outcome on Strategy bitcoin sale market
 ---
 
 **Related**: [[dashboard]] · [[index]]
+
+
+## Related
+- [[projects/polymarket|Polymarket]]
+- [[chains/bitcoin|Bitcoin]]

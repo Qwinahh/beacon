@@ -14,3 +14,7 @@ related_project: ethereum
 **Project**: [[projects/ethereum]] · [[dashboard]]
 
 BitMine, Sharplink, Joe Lubin Back New Ethereum Research and Development Lab
+
+
+## Related
+- [[chains/ethereum|Ethereum]]

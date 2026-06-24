@@ -12,3 +12,7 @@ related_project:
 **Verified**: Tier 2 source (established research/media). no contradiction found
 
 ICE and OKX Are Teaming Up to Bring Tokenized Securities to Wall Street
+
+
+## Related
+- [[narratives/rwa|Rwa]]

@@ -17,3 +17,7 @@ Venezuela’s sanctions are stablecoins’ proof of concept
 ---
 
 **Related**: [[dashboard]] · [[index]]
+
+
+## Related
+- [[narratives/stablecoin-payments|Stablecoin Payments]]

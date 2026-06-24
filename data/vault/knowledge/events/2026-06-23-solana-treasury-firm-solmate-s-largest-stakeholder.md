@@ -14,3 +14,7 @@ related_project: solana
 **Project**: [[projects/solana]] · [[dashboard]]
 
 Solana treasury firm Solmate’s largest stakeholder sues board for self-dealing, fiduciary breaches
+
+
+## Related
+- [[chains/solana|Solana]]

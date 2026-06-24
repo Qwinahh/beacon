@@ -14,3 +14,7 @@ related_project: bitcoin
 **Project**: [[projects/bitcoin]] · [[dashboard]]
 
 Spot bitcoin ETFs log sixth consecutive week of net outflows; analyst says selling wave is exhausting itself
+
+
+## Related
+- [[chains/bitcoin|Bitcoin]]

@@ -17,3 +17,8 @@ Tether Debuts Tokenized Gold Stablecoin Visa Card That Pays Out Crypto Rewards
 ---
 
 **Related**: [[dashboard]] · [[index]]
+
+
+## Related
+- [[narratives/rwa|Rwa]]
+- [[narratives/stablecoin-payments|Stablecoin Payments]]

@@ -14,3 +14,7 @@ related_project: bitcoin
 **Project**: [[projects/bitcoin]] · [[dashboard]]
 
 Bitcoin Network Activity Is Rising as BTC Falls Nearly 50% Below Peak Price: CryptoQuant
+
+
+## Related
+- [[chains/bitcoin|Bitcoin]]

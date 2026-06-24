@@ -14,3 +14,7 @@ related_project: bitcoin
 **Project**: [[projects/bitcoin]] · [[dashboard]]
 
 Bitcoin's Hidden Yield: Why Options Are Taking Over Crypto | David Lawant, Anchorage Digital
+
+
+## Related
+- [[chains/bitcoin|Bitcoin]]

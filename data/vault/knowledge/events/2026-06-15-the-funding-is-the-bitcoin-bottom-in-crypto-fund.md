@@ -14,3 +14,7 @@ related_project: bitcoin
 **Project**: [[projects/bitcoin]] · [[dashboard]]
 
 The Funding: Is the bitcoin bottom in? Crypto funds weigh in
+
+
+## Related
+- [[chains/bitcoin|Bitcoin]]

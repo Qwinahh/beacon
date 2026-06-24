@@ -12,3 +12,7 @@ related_project:
 **Verified**: Tier 2 source (established research/media). no contradiction found
 
 $1.9M in Fake Bets Drove Polymarket Hype: WSJ
+
+
+## Related
+- [[projects/polymarket|Polymarket]]

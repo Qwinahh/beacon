@@ -12,3 +12,7 @@ related_project:
 **Verified**: Tier 2 source (established research/media). no contradiction found
 
 CFTC Sues New Mexico to Block State Gaming Laws From Reaching Federally Regulated Prediction Markets
+
+
+## Related
+- [[narratives/prediction-markets|Prediction Markets]]

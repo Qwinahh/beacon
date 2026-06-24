@@ -14,3 +14,7 @@ related_project: bitcoin
 **Project**: [[projects/bitcoin]] · [[dashboard]]
 
 Bitcoin tops $65,000 as reports of US-Iran peace deal ease geopolitical fears
+
+
+## Related
+- [[chains/bitcoin|Bitcoin]]

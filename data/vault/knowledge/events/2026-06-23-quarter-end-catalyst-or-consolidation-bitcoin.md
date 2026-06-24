@@ -14,3 +14,7 @@ related_project: bitcoin
 **Project**: [[projects/bitcoin]] · [[dashboard]]
 
 ‘Quarter-end catalyst or consolidation?’: Bitcoin below $63,000 amid ETF outflows, $10.6 billion options expiry
+
+
+## Related
+- [[chains/bitcoin|Bitcoin]]

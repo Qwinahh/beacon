@@ -14,3 +14,7 @@ related_project: bitcoin
 **Project**: [[projects/bitcoin]] · [[dashboard]]
 
 Bitcoin Tops $67,000 to Two-Week High After Trump Declares US-Iran Deal Complete and Hormuz Reopening
+
+
+## Related
+- [[chains/bitcoin|Bitcoin]]

@@ -17,3 +17,8 @@ Builder-Deployed Perp Markets Push Hyperliquid to Record Share of Global Perps V
 ---
 
 **Related**: [[projects/hyperliquid]] · [[dashboard]] · [[index]]
+
+
+## Related
+- [[projects/hyperliquid|Hyperliquid]]
+- [[narratives/perps-meta|Perps Meta]]

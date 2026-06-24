@@ -12,3 +12,7 @@ related_project:
 **Verified**: Tier 2 source (established research/media). no contradiction found
 
 Former SEC Chair Gensler rejects CFTC claim of authority over prediction market sports betting
+
+
+## Related
+- [[narratives/prediction-markets|Prediction Markets]]

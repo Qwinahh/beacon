@@ -12,3 +12,7 @@ related_project:
 **Verified**: Tier 2 source (established research/media). no contradiction found
 
 Trump-backed World Liberty Financial to fund UFC fighter bonuses in USD1 stablecoin at White House event
+
+
+## Related
+- [[narratives/stablecoin-payments|Stablecoin Payments]]

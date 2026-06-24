@@ -14,3 +14,7 @@ related_project: ethereum
 **Project**: [[projects/ethereum]] · [[dashboard]]
 
 ETH derivatives reset and the next retail trade
+
+
+## Related
+- [[chains/ethereum|Ethereum]]

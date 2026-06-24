@@ -17,3 +17,7 @@ Bessent backs summer push for Clarity Act, says bitcoin reserve moving at ‘del
 ---
 
 **Related**: [[dashboard]] · [[index]]
+
+
+## Related
+- [[chains/bitcoin|Bitcoin]]

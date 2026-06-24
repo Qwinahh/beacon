@@ -14,3 +14,7 @@ related_project: ethereum
 **Project**: [[projects/ethereum]] · [[dashboard]]
 
 Ethereum Foundation Cuts 20% of Workforce in 'Leaner' Reorganization
+
+
+## Related
+- [[chains/ethereum|Ethereum]]

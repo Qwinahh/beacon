@@ -14,3 +14,7 @@ related_project: bitcoin
 **Project**: [[projects/bitcoin]] · [[dashboard]]
 
 CryptoQuant says Strategy should pause bitcoin purchases and rebuild cash reserves
+
+
+## Related
+- [[chains/bitcoin|Bitcoin]]

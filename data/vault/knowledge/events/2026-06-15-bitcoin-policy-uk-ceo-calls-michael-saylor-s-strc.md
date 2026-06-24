@@ -14,3 +14,7 @@ related_project: bitcoin
 **Project**: [[projects/bitcoin]] · [[dashboard]]
 
 Bitcoin Policy UK CEO calls Michael Saylor’s STRC investment promotion ‘dishonest’
+
+
+## Related
+- [[chains/bitcoin|Bitcoin]]

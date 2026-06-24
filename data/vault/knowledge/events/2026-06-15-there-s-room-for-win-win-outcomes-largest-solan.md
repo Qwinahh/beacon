@@ -14,3 +14,7 @@ related_project: solana
 **Project**: [[projects/solana]] · [[dashboard]]
 
 ‘There’s room for win-win outcomes’: Largest Solana treasury firm Forward looks to acquire smaller SOL DATs
+
+
+## Related
+- [[chains/solana|Solana]]

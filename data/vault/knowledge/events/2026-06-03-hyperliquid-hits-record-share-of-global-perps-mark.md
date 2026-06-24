@@ -17,3 +17,8 @@ Hyperliquid hits record share of global perps market as HIP-3 tops $62 billion m
 ---
 
 **Related**: [[projects/hyperliquid]] · [[dashboard]] · [[index]]
+
+
+## Related
+- [[projects/hyperliquid|Hyperliquid]]
+- [[narratives/perps-meta|Perps Meta]]

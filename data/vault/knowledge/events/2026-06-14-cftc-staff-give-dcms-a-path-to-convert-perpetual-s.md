@@ -12,3 +12,7 @@ related_project:
 **Verified**: Tier 2 source (established research/media). no contradiction found
 
 CFTC Staff Give DCMs a Path to Convert Perpetual-Style Digital Commodity Futures Into True Perpetuals
+
+
+## Related
+- [[narratives/perps-meta|Perps Meta]]

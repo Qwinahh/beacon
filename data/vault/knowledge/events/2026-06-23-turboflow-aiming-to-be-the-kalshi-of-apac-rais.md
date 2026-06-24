@@ -12,3 +12,7 @@ related_project:
 **Verified**: Tier 2 source (established research/media). no contradiction found
 
 TurboFlow, aiming to be the ‘Kalshi of APAC,’ raises $6 million seed led by Pantera Capital
+
+
+## Related
+- [[narratives/prediction-markets|Prediction Markets]]

@@ -14,3 +14,7 @@ related_project: bitcoin
 **Project**: [[projects/bitcoin]] · [[dashboard]]
 
 ‘That’s the wrong question’: Bitwise CIO reframes bitcoin bottom debate, points to long-term drivers
+
+
+## Related
+- [[chains/bitcoin|Bitcoin]]

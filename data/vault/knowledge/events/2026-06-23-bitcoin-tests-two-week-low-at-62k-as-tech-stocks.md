@@ -14,3 +14,7 @@ related_project: bitcoin
 **Project**: [[projects/bitcoin]] · [[dashboard]]
 
 Bitcoin Tests Two-Week Low at $62K as Tech Stocks Waver on Wall Street
+
+
+## Related
+- [[chains/bitcoin|Bitcoin]]

@@ -17,3 +17,8 @@ Hyperliquid’s HYPE overtakes Solana in price as SOL falls to lowest levels sin
 ---
 
 **Related**: [[projects/hyperliquid]] · [[dashboard]] · [[index]]
+
+
+## Related
+- [[projects/hyperliquid|Hyperliquid]]
+- [[chains/solana|Solana]]

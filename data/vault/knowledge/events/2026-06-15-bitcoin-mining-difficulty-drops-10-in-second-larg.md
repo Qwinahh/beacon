@@ -14,3 +14,7 @@ related_project: bitcoin
 **Project**: [[projects/bitcoin]] · [[dashboard]]
 
 Bitcoin mining difficulty drops 10% in second-largest negative adjustment of 2026
+
+
+## Related
+- [[chains/bitcoin|Bitcoin]]

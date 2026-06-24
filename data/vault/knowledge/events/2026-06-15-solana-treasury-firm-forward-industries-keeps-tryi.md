@@ -14,3 +14,7 @@ related_project: solana
 **Project**: [[projects/solana]] · [[dashboard]]
 
 Solana Treasury Firm Forward Industries Keeps Trying to Acquire Rivals—But Nobody's Biting
+
+
+## Related
+- [[chains/solana|Solana]]

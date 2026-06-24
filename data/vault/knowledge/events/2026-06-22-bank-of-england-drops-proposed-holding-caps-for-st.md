@@ -12,3 +12,7 @@ related_project:
 **Verified**: Tier 2 source (established research/media). no contradiction found
 
 Bank of England drops proposed holding caps for sterling stablecoins, sets £40 billion issuance guardrail
+
+
+## Related
+- [[narratives/stablecoin-payments|Stablecoin Payments]]

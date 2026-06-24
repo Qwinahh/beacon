@@ -14,3 +14,7 @@ related_project: ethereum
 **Project**: [[projects/ethereum]] · [[dashboard]]
 
 Ethereum Foundation Cuts Budget 40% in Sweeping Restructuring
+
+
+## Related
+- [[chains/ethereum|Ethereum]]

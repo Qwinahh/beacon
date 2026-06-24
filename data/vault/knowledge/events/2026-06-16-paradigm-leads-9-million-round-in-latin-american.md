@@ -12,3 +12,7 @@ related_project:
 **Verified**: Tier 2 source (established research/media). no contradiction found
 
 Paradigm Leads $9 Million Round in Latin American Stablecoin App El Dorado
+
+
+## Related
+- [[narratives/stablecoin-payments|Stablecoin Payments]]

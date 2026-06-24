@@ -14,3 +14,7 @@ related_project: solana
 **Project**: [[projects/solana]] · [[dashboard]]
 
 MoneyGram Becomes Solana Validator, Joins Institutional Developer Platform
+
+
+## Related
+- [[chains/solana|Solana]]

@@ -14,3 +14,7 @@ related_project: bitcoin
 **Project**: [[projects/bitcoin]] · [[dashboard]]
 
 Comparing Bitcoin Giant Strategy to Terra Luna Is a STRC, Benchmark Says
+
+
+## Related
+- [[chains/bitcoin|Bitcoin]]

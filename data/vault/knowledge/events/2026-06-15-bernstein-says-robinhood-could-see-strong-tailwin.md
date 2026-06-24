@@ -12,3 +12,7 @@ related_project:
 **Verified**: Tier 2 source (established research/media). no contradiction found
 
 Bernstein says Robinhood could see ‘strong tailwinds’ as World Cup drives record prediction market volumes
+
+
+## Related
+- [[narratives/prediction-markets|Prediction Markets]]

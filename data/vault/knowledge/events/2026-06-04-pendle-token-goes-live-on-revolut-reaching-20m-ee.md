@@ -17,3 +17,7 @@ PENDLE Token Goes Live on Revolut, Reaching 20M EEA Crypto Traders
 ---
 
 **Related**: [[dashboard]] · [[index]]
+
+
+## Related
+- [[projects/pendle|Pendle]]

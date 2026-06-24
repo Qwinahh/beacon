@@ -12,3 +12,7 @@ related_project:
 **Verified**: Tier 2 source (established research/media). no contradiction found
 
 Gensler Files Brief Arguing Sports Prediction Markets Fall Outside CFTC Swap Rules
+
+
+## Related
+- [[narratives/prediction-markets|Prediction Markets]]

@@ -12,3 +12,7 @@ related_project:
 **Verified**: Tier 2 source (established research/media). no contradiction found
 
 Kraken and Coinbase Bring Perps Onshore as US Derivatives Markets Shift
+
+
+## Related
+- [[narratives/perps-meta|Perps Meta]]

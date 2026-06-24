@@ -17,3 +17,7 @@ As Oil Moves Higher, Bitcoin Sinks to Lowest Price Since March
 ---
 
 **Related**: [[dashboard]] · [[index]]
+
+
+## Related
+- [[chains/bitcoin|Bitcoin]]

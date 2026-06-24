@@ -12,3 +12,7 @@ related_project:
 **Verified**: Tier 2 source (established research/media). no contradiction found
 
 Aztec Reaches L2Beat Stage 2 After Governance Revokes Rollup Contract Ownership
+
+
+## Related
+- [[narratives/modular-blockchains|Modular Blockchains]]

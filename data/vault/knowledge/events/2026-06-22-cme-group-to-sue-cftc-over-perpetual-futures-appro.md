@@ -12,3 +12,7 @@ related_project:
 **Verified**: Tier 2 source (established research/media). no contradiction found
 
 CME Group to Sue CFTC Over Perpetual Futures Approval, Citing Dodd-Frank Swaps Definition
+
+
+## Related
+- [[narratives/perps-meta|Perps Meta]]

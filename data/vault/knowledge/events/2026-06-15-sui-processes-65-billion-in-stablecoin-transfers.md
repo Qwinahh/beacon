@@ -12,3 +12,7 @@ related_project:
 **Verified**: Tier 2 source (established research/media). no contradiction found
 
 Sui Processes $65 Billion in Stablecoin Transfers in Five Days After Zeroing Out Fees
+
+
+## Related
+- [[narratives/stablecoin-payments|Stablecoin Payments]]

@@ -14,3 +14,7 @@ related_project: ethereum
 **Project**: [[projects/ethereum]] · [[dashboard]]
 
 Bitmine, SharpLink and Joe Lubin back Ethlabs nonprofit to advance Ethereum’s ‘next phase’ of growth
+
+
+## Related
+- [[chains/ethereum|Ethereum]]

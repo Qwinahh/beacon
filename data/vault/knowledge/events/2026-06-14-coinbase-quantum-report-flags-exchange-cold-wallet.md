@@ -14,3 +14,7 @@ related_project: bitcoin
 **Project**: [[projects/bitcoin]] · [[dashboard]]
 
 Coinbase quantum report flags exchange cold wallets among millions of bitcoin exposed by address reuse
+
+
+## Related
+- [[chains/bitcoin|Bitcoin]]

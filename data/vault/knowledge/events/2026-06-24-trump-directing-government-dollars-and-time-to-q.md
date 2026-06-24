@@ -14,3 +14,7 @@ related_project: bitcoin
 **Project**: [[projects/bitcoin]] · [[dashboard]]
 
 Trump directing ‘government dollars and time’ to quantum security could be a boon for bitcoin
+
+
+## Related
+- [[chains/bitcoin|Bitcoin]]

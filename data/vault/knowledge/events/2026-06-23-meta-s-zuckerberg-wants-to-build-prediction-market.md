@@ -12,3 +12,8 @@ related_project:
 **Verified**: Tier 2 source (established research/media). no contradiction found
 
 Meta’s Zuckerberg wants to build prediction market app like Polymarket and Kalshi: NYT
+
+
+## Related
+- [[projects/polymarket|Polymarket]]
+- [[narratives/prediction-markets|Prediction Markets]]

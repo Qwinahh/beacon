@@ -14,3 +14,7 @@ related_project: bitcoin
 **Project**: [[projects/bitcoin]] · [[dashboard]]
 
 Bitcoin Tops $65K on US-Iran Deal, But Traders Remain Skeptical
+
+
+## Related
+- [[chains/bitcoin|Bitcoin]]

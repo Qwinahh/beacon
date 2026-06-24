@@ -14,3 +14,7 @@ related_project: bitcoin
 **Project**: [[projects/bitcoin]] · [[dashboard]]
 
 ‘Between supportive and restrictive forces’: Bitcoin stalls near $64,000 as Fed rate-hike risk overshadows Iran ceasefire relief
+
+
+## Related
+- [[chains/bitcoin|Bitcoin]]

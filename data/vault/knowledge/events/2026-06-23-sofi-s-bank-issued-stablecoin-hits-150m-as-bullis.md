@@ -12,3 +12,7 @@ related_project:
 **Verified**: Tier 2 source (established research/media). no contradiction found
 
 SoFi's Bank-Issued Stablecoin Hits $150M as Bullish Becomes First CEX to List It
+
+
+## Related
+- [[narratives/stablecoin-payments|Stablecoin Payments]]

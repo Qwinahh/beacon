@@ -14,3 +14,7 @@ related_project: ethereum
 **Project**: [[projects/ethereum]] · [[dashboard]]
 
 Ethereum Foundation’s Interim ED Lays Out Execution Plan: MEV Elimination, Default Privacy, ETH Pay
+
+
+## Related
+- [[chains/ethereum|Ethereum]]

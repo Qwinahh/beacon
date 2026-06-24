@@ -12,3 +12,7 @@ related_project:
 **Verified**: Tier 2 source (established research/media). no contradiction found
 
 Someone Just Lost $1 Million on Polymarket Over Spain World Cup Shocker
+
+
+## Related
+- [[projects/polymarket|Polymarket]]

@@ -14,3 +14,7 @@ related_project: bitcoin
 **Project**: [[projects/bitcoin]] · [[dashboard]]
 
 Trump's Quantum Push Wins Praise, But Experts Warn Bitcoin Isn't Ready
+
+
+## Related
+- [[chains/bitcoin|Bitcoin]]

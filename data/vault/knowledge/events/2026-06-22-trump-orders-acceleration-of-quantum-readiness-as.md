@@ -14,3 +14,7 @@ related_project: bitcoin
 **Project**: [[projects/bitcoin]] · [[dashboard]]
 
 Trump Orders Acceleration of Quantum Readiness as Bitcoin Faces Coming Risk
+
+
+## Related
+- [[chains/bitcoin|Bitcoin]]

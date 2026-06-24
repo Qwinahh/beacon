@@ -14,3 +14,7 @@ related_project: ethereum
 **Project**: [[projects/ethereum]] · [[dashboard]]
 
 Ethereum MEV Bot JaredFromSubway Threatens Legal Action After $7.5 Million Loss
+
+
+## Related
+- [[chains/ethereum|Ethereum]]

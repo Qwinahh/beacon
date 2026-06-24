@@ -17,3 +17,8 @@ Solayer rolls out Solana-native onchain perps trading platform Margin Trade main
 ---
 
 **Related**: [[dashboard]] · [[index]]
+
+
+## Related
+- [[narratives/perps-meta|Perps Meta]]
+- [[chains/solana|Solana]]

@@ -17,3 +17,7 @@ Bitcoin Slides Below $66,000 as Spot ETF Outflow Streak Hits a Record 12 Days
 ---
 
 **Related**: [[dashboard]] · [[index]]
+
+
+## Related
+- [[chains/bitcoin|Bitcoin]]

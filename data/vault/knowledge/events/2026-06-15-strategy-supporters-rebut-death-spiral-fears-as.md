@@ -14,3 +14,7 @@ related_project: bitcoin
 **Project**: [[projects/bitcoin]] · [[dashboard]]
 
 Strategy supporters rebut ‘death spiral’ fears as bitcoin price wobbles
+
+
+## Related
+- [[chains/bitcoin|Bitcoin]]

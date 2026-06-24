@@ -14,3 +14,7 @@ related_project: ethereum
 **Project**: [[projects/ethereum]] · [[dashboard]]
 
 Ethereum ‘tax’ debate erupts over proposal to redirect portion of staking rewards to ecosystem funding
+
+
+## Related
+- [[chains/ethereum|Ethereum]]

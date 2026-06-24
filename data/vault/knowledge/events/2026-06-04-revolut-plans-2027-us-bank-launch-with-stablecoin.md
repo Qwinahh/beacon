@@ -17,3 +17,7 @@ Revolut Plans 2027 US Bank Launch With Stablecoin Services Built In From Day One
 ---
 
 **Related**: [[dashboard]] · [[index]]
+
+
+## Related
+- [[narratives/stablecoin-payments|Stablecoin Payments]]

@@ -12,3 +12,7 @@ related_project:
 **Verified**: Tier 2 source (established research/media). no contradiction found
 
 Securitize asks court to reject tZERO’s ‘meritless’ tokenization patent allegations
+
+
+## Related
+- [[narratives/rwa|Rwa]]

@@ -14,3 +14,8 @@ related_project: ethereum
 **Project**: [[projects/ethereum]] · [[dashboard]]
 
 Spot bitcoin ETFs snap five-day outflow streak with $85.8 million Friday inflow as ether funds keep sliding
+
+
+## Related
+- [[chains/ethereum|Ethereum]]
+- [[chains/bitcoin|Bitcoin]]

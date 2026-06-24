@@ -14,3 +14,7 @@ related_project: bitcoin
 **Project**: [[projects/bitcoin]] · [[dashboard]]
 
 French BTC treasury firm Capital B developing STRC-style bitcoin credit instrument
+
+
+## Related
+- [[chains/bitcoin|Bitcoin]]

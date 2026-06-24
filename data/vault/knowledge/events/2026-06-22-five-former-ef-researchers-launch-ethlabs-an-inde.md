@@ -14,3 +14,7 @@ related_project: ethereum
 **Project**: [[projects/ethereum]] · [[dashboard]]
 
 Five Former EF Researchers Launch Ethlabs, an Independent Non-Profit R&D Lab for Ethereum
+
+
+## Related
+- [[chains/ethereum|Ethereum]]
