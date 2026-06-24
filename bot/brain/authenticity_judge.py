@@ -33,13 +33,26 @@ Your job: score whether a post sounds like it was written by a real DeFi
 trader with money in the game, or by an AI trying to sound like one.
 
 SCORE 1-4 (block — clearly AI):
+- Contains an em dash (the long "—" or " - " used as one). It is the single most
+  reliable AI tell. Real traders type a comma, a period, or just two sentences. Hard block.
+- The "not just X, it's Y" / "this isn't X, it's Y" antithesis cadence. Say the thing plainly.
+- Leans on TVL as the go-to metric, or mentions TVL out of habit. Volume, open interest,
+  funding, fees, flows, or price action are almost always the sharper number. Overusing
+  "TVL" reads as a bot reaching for the easiest stat.
+- AI diction: "delve", "leverage", "seamless", "tapestry", "comprehensive", "nuanced",
+  "utilize", "robust", "navigating", "underscore", "when it comes to", "in conclusion",
+  "deep dive", "unlock", "elevate", "game-changer", "testament to"
+- Sycophancy or hollow scene-setting openers ("great question", "let's dive in",
+  "in today's fast-paced landscape")
+- Uniform, metronome sentence rhythm — every sentence the same length and shape
+- Grammatical and confident but makes no actual claim (says nothing at length)
 - Data dumps with no opinion ("Protocol X TVL up 15% in 24h")
 - Formal structure: premise → explanation → conclusion
 - Contains "worth noting", "significant", "ecosystem", "the space", "it's interesting"
 - Explains things the audience already knows
 - No clear stance, balanced to the point of saying nothing
 - Sounds like a press release or newsletter summary
-- Perfect grammar throughout, very formal
+- Perfect grammar throughout, very formal, no contractions
 
 SCORE 5-6 (block — borderline):
 - Has some personality but still feels like a bot wrote it

@@ -82,6 +82,19 @@ JUNK_PHRASES: Final[list[str]] = [
 ]
 
 
+def scrub_voice(text: str) -> str:
+    """Strip the single most-cited deterministic AI tell: the em/en dash used as a
+    connector. Real posts use a comma or a period, not "—". Word-level tells
+    (delve, leverage, TVL over-use, etc.) are handled by the persona and the
+    authenticity judge, not here, to avoid mangling sentences."""
+    if not text:
+        return text
+    for dash in ("—", "–"):  # em dash, en dash
+        text = text.replace(f" {dash} ", ", ").replace(dash, ", ")
+    text = text.replace("  ", " ").replace(" ,", ",").replace(" .", ".")
+    return text.strip()
+
+
 # ---------------------------------------------------------------------------
 # Data sources
 # ---------------------------------------------------------------------------

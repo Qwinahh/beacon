@@ -17,7 +17,7 @@ import re
 from typing import Optional, Union
 
 from bot.brain.context import build_system_prompt, build_writer_context
-from bot.config import CLAUDE_MAX_TOKENS, CLAUDE_MODEL, TEMPLATE_FALLBACK
+from bot.config import CLAUDE_MAX_TOKENS, CLAUDE_MODEL, TEMPLATE_FALLBACK, scrub_voice
 from bot.sources.defillama import RaiseItem, TvlMoverItem
 from bot.sources.dropstab import UnlockItem
 from bot.sources.rss import FeedItem
@@ -587,6 +587,9 @@ def generate(
     if len(text) >= 2 and text[0] == '"' and text[-1] == '"':
         text = text[1:-1].strip()
 
+    # De-AI: strip em dashes (the #1 tell) before validation and judging.
+    text = scrub_voice(text)
+
     if not text:
         log.warning("Writer returned empty tweet after parsing.")
         return None, format_name
@@ -727,7 +730,7 @@ def generate_thread_continuation(
         if len(line) >= 3 and line[0].isdigit() and line[1] == "/":
             tweet_text = line[2:].strip()
             if 20 <= len(tweet_text) <= 280:
-                tweets.append(tweet_text)
+                tweets.append(scrub_voice(tweet_text))
 
     log.info("Thread continuation: %d follow-up tweets generated.", len(tweets))
     return tweets[:3]  # Hard cap at 3 follow-ups
@@ -830,7 +833,7 @@ def generate_thread(
         if len(line) >= 3 and line[0].isdigit() and line[1] == "/":
             tweet_text = line[2:].strip()
             if 20 <= len(tweet_text) <= 280:
-                tweets.append(tweet_text)
+                tweets.append(scrub_voice(tweet_text))
 
     if len(tweets) < 3:
         log.debug("Thread generation: only %d tweets parsed -- discarding.", len(tweets))

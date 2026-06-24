@@ -18,7 +18,7 @@ from pathlib import Path
 from typing import Optional
 
 from bot.brain.llm import complete as llm_complete
-from bot.config import CLAUDE_MAX_TOKENS
+from bot.config import CLAUDE_MAX_TOKENS, scrub_voice
 
 log = logging.getLogger(__name__)
 
@@ -220,7 +220,7 @@ def generate_freeform(recent_formats: list[str], recent_topics: list[str]) -> Op
         if not tweet_lines:
             return None
 
-        tweet = " ".join(tweet_lines).strip()
+        tweet = scrub_voice(" ".join(tweet_lines).strip())
 
         if len(tweet) < 20 or len(tweet) > 280:
             return None
