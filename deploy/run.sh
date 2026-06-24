@@ -20,6 +20,7 @@ if [ -z "$JOB" ]; then
 fi
 
 REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+set -a
 source "$REPO/.env" 2>/dev/null || { echo "[beacon] ERROR: .env not found at $REPO/.env"; exit 1; }
 
 # ---- Git identity & credentials ----
@@ -27,7 +28,7 @@ export GIT_AUTHOR_NAME="qwinahh-bot"
 export GIT_AUTHOR_EMAIL="bot@qwinahh.local"
 export GIT_COMMITTER_NAME="qwinahh-bot"
 export GIT_COMMITTER_EMAIL="bot@qwinahh.local"
-git -C "$REPO" remote set-url origin "https://${GH_PAT}@github.com/Qwinahh/beacon.git"
+git -C "$REPO" remote set-url origin "https://x-access-token:${GH_PAT}@github.com/Qwinahh/beacon.git"
 
 # ---- Logging ----
 LOG_DIR="$REPO/deploy/logs"
