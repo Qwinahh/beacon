@@ -7,9 +7,9 @@
     "2026-06-16": 6,
     "2026-06-17": 3,
     "2026-06-18": 1,
-    "2026-06-24": 1
+    "2026-06-24": 2
   },
-  "last_post_ts": 1782286311.812247,
+  "last_post_ts": 1782291686.2618377,
   "seen": [
     "0a59a95b3b3cd57d1f74",
     "31ee999da8933acfb563",
@@ -36,10 +36,10 @@
     "4a2b14c3faf97150d523",
     "f5e4f47e556fbfd2de6c",
     "ccdb3d964273c7d2091f",
-    "5d2fc2f475e4ef9d87b8"
+    "5d2fc2f475e4ef9d87b8",
+    "33228d6c6b2df3b8a99f"
   ],
   "recent_formats": [
-    "fallback",
     "fallback",
     "short_take",
     "mistake_admission",
@@ -57,6 +57,7 @@
     "pattern_recognition",
     "fallback",
     "short_take",
+    "fallback",
     "fallback",
     "fallback"
   ],
@@ -101,7 +102,8 @@
     "opinion",
     "defi",
     "general",
-    "general"
+    "general",
+    "defi"
   ],
   "replied_to_mentions": {},
   "quote_tweeted_ids": [
