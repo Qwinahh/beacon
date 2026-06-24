@@ -10,10 +10,10 @@ airdrop_status: none
 worth_farming: true
 blocked: false
 updated: 2026-06-12
-tvl_usd: 1029130187
+tvl_usd: 1027808622
 price_usd: 1.3
 price_change_24h: -8.9
-metrics_updated: 2026-06-23
+metrics_updated: 2026-06-24
 ---
 
 # Pendle
@@ -66,5 +66,4 @@ compression is structural until funding regimes turn.
 
 ## Live Metrics
 - TVL: $1.03B
-- Price: $1.3 (-8.9% 24h)
-- Snapshot: 2026-06-23 (auto, DeFiLlama + CoinGecko)
+- Snapshot: 2026-06-24 (auto, DeFiLlama + CoinGecko)
