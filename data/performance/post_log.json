@@ -240,5 +240,18 @@
     "bookmarks": null,
     "quote_tweets": null,
     "engagement_rate": null
+  },
+  {
+    "tweet_id": "2069926443715342702",
+    "tweet_text": "I'm reweighting my lending portfolio towards 3Jane, their 139.5% TVL surge in 24h signals a new market favorite. (position disclosed)",
+    "format_used": "alpha_tip",
+    "topic": "general",
+    "posted_at": "2026-06-24T23:31:36.377356+00:00",
+    "impressions": null,
+    "likes": null,
+    "replies": null,
+    "bookmarks": null,
+    "quote_tweets": null,
+    "engagement_rate": null
   }
 ]

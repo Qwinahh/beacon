@@ -58,6 +58,13 @@
         "observation": "Honeypop DEX TVL surged 63% to $12.5M in 24h, indicating rapid capital inflow and early momentum in a DEX with limited TVL compared to peers.",
         "source": "bot"
       }
+    ],
+    "3Jane": [
+      {
+        "ts": "2026-06-24T23:31:40Z",
+        "observation": "3Jane Lending TVL surged 139.5% in 24h, triggering a bot reweight into the lending portfolio with a disclosed position.",
+        "source": "bot"
+      }
     ]
   }
 }
