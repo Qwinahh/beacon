@@ -21,6 +21,17 @@ A complete, cross-referenced map of the Beacon brain. The bot maintains [[index]
 
 ---
 
+## ⛓️ Chains / Ecosystems
+
+The organizing spine — each ecosystem hub ties its narratives and projects together.
+
+- [[chains/ethereum|Ethereum]] — staking, restaking, RWAs, L2s
+- [[chains/solana|Solana]] — on-chain perps + DeFi velocity
+- [[chains/bitcoin|Bitcoin]] — macro anchor + BTC yield / L2s
+- [[chains/emerging-l1s|Emerging L1s]] — Monad, Berachain, Hyperliquid
+
+---
+
 ## 🧵 Narratives → Projects
 
 The core cross-reference: each macro narrative and the projects that express it. Follow a narrative to see the plays; follow a project to see its thesis.
