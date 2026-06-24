@@ -42,7 +42,6 @@
     "9442a86436701e8c6dd2"
   ],
   "recent_formats": [
-    "fallback",
     "short_take",
     "fallback",
     "fallback",
@@ -61,7 +60,8 @@
     "contrarian",
     "data_observation",
     "hot_take",
-    "question"
+    "question",
+    "pattern_recognition"
   ],
   "opinion_posts_today": 2,
   "last_opinion_ts": 1781615191.0380602,
