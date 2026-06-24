@@ -166,5 +166,17 @@
     "replies": 0,
     "retweets": 0,
     "quote_tweets": 0
+  },
+  "2069729999624499680": {
+    "tweet_id": "2069729999624499680",
+    "text": "3Jane Lending TVL up 58.6% in 24h",
+    "format": "fallback",
+    "topic": "general",
+    "posted_at": 1782297060.441386,
+    "collected_at": 1782305402.5119202,
+    "likes": 0,
+    "replies": 0,
+    "retweets": 0,
+    "quote_tweets": 0
   }
 }
