@@ -7,9 +7,9 @@
     "2026-06-16": 6,
     "2026-06-17": 3,
     "2026-06-18": 1,
-    "2026-06-24": 3
+    "2026-06-24": 4
   },
-  "last_post_ts": 1782297060.4394217,
+  "last_post_ts": 1782302495.5454037,
   "seen": [
     "0a59a95b3b3cd57d1f74",
     "31ee999da8933acfb563",
@@ -38,10 +38,10 @@
     "ccdb3d964273c7d2091f",
     "5d2fc2f475e4ef9d87b8",
     "33228d6c6b2df3b8a99f",
-    "cf87407c9cae14e8190f"
+    "cf87407c9cae14e8190f",
+    "9442a86436701e8c6dd2"
   ],
   "recent_formats": [
-    "short_take",
     "mistake_admission",
     "fallback",
     "fallback",
@@ -57,6 +57,7 @@
     "pattern_recognition",
     "fallback",
     "short_take",
+    "fallback",
     "fallback",
     "fallback",
     "fallback",
@@ -105,6 +106,7 @@
     "general",
     "general",
     "defi",
+    "general",
     "general"
   ],
   "replied_to_mentions": {},

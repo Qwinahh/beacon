@@ -6,5 +6,13 @@
     "topic": "general",
     "posted_ts": 1782297060.441386,
     "fetch_after_ts": 1782383460.4413865
+  },
+  {
+    "tweet_id": "2069752796123947273",
+    "text": "3Jane Lending TVL up 60.4% in 24h",
+    "format": "fallback",
+    "topic": "general",
+    "posted_ts": 1782302495.547242,
+    "fetch_after_ts": 1782388895.5472424
   }
 ]
