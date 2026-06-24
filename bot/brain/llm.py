@@ -37,6 +37,15 @@ log = logging.getLogger(__name__)
 
 _PROVIDERS = [
     {
+        "name": "anthropic_compat",
+        "env_key": "ANTHROPIC_API_KEY",
+        "base_url": None,          # uses native anthropic SDK
+        "model": "claude-sonnet-4-6",
+        "free": False,
+        "rpm": 50,
+        "rpd": 10000,
+    },
+    {
         "name": "groq",
         "env_key": "GROQ_API_KEY",
         "base_url": "https://api.groq.com/openai/v1",
@@ -62,15 +71,6 @@ _PROVIDERS = [
         "free": True,
         "rpm": 20,
         "rpd": 200,
-    },
-    {
-        "name": "anthropic_compat",
-        "env_key": "ANTHROPIC_API_KEY",
-        "base_url": None,          # uses native anthropic SDK
-        "model": "claude-sonnet-4-6",
-        "free": False,
-        "rpm": 50,
-        "rpd": 10000,
     },
 ]
 
