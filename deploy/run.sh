@@ -125,6 +125,12 @@ case "$JOB" in
     GIT_MSG="chore: weekly suggestions report [skip ci]"
     ;;
 
+  retime)
+    python -m agents.schedule_optimizer
+    GIT_ADD="data/growth/posting_schedule.json"
+    GIT_MSG="chore: auto-tune posting schedule [skip ci]"
+    ;;
+
   *)
     echo "Unknown job: $JOB"
     exit 1

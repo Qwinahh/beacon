@@ -10,13 +10,10 @@ BEACON=/root/beacon
 # Alpha fast-track — every 30 min (urgent signals only, exits fast if nothing urgent)
 */30 * * * * bash $BEACON/deploy/run.sh alpha
 
-# Main posts — 6x per day at fixed windows (EU morning → US late night)
-0 8  * * * bash $BEACON/deploy/run.sh post
-0 11 * * * bash $BEACON/deploy/run.sh post
-0 14 * * * bash $BEACON/deploy/run.sh post
-0 17 * * * bash $BEACON/deploy/run.sh post
-0 20 * * * bash $BEACON/deploy/run.sh post
-0 22 * * * bash $BEACON/deploy/run.sh post
+# Main posts — fires hourly 08-22 UTC; post.py publishes ONLY during the auto-tuned
+# active hours in data/growth/posting_schedule.json (capped at 6/day by MAX_POSTS_PER_DAY
+# + cooldown). The exact hours are retuned weekly by the `retime` job below.
+0 8-22 * * * bash $BEACON/deploy/run.sh post
 
 # Engagement — replies, outbound, follow — every hour at :50
 #   (~10 min before each post window at :00 — warms up account activity so early
@@ -36,3 +33,6 @@ BEACON=/root/beacon
 # Weekly — growth analysis Sunday 09:00, suggestions report Monday 07:00
 0 9 * * 0 bash $BEACON/deploy/run.sh growth
 0 7 * * 1 bash $BEACON/deploy/run.sh suggest
+
+# Auto-tune posting hours from trailing performance-by-hour — Sunday 05:00 UTC
+0 5 * * 0 bash $BEACON/deploy/run.sh retime

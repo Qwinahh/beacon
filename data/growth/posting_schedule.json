@@ -1,0 +1,10 @@
+{
+  "active_hours_utc": [8, 11, 14, 17, 20, 22],
+  "updated": "2026-06-24 (seed)",
+  "source": "default seed — auto-tunes weekly once enough posts have measured impressions",
+  "guardrails": {
+    "allowed_window_utc": [8, 22],
+    "slots": 6,
+    "min_gap_hours": 2
+  }
+}

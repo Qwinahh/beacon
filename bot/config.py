@@ -151,8 +151,12 @@ CLAUDE_MODEL: Final[str] = "claude-haiku-4-5-20251001"
 # 400 gives headroom for the REASON: line + tweet text without truncation.
 CLAUDE_MAX_TOKENS: Final[int] = 400
 
-# Whether to fall back to template writing when the Claude API is unavailable.
-TEMPLATE_FALLBACK: Final[bool] = True
+# Whether to fall back to raw template writing when the LLM is unavailable.
+# OFF: the template path (e.g. "X TVL down 51% in 24h") bypasses the authenticity
+# judge, persona, and em-dash scrub, so it posts exactly the data-dump slop we ban.
+# Better to skip than to post that. If the bot stops posting, it means no LLM
+# provider key is set (GROQ/CEREBRAS/OPENROUTER/ANTHROPIC) — add one to .env.
+TEMPLATE_FALLBACK: Final[bool] = False
 
 
 # ---------------------------------------------------------------------------

@@ -43,6 +43,19 @@ def _within_posting_window() -> bool:
     return any(start <= hour < end for start, end in POSTING_WINDOWS)
 
 
+def _active_hours() -> set[int]:
+    """Auto-tuned posting hours (UTC), maintained weekly by agents.schedule_optimizer
+    in data/growth/posting_schedule.json. Falls back to the default windows."""
+    import json
+    default = {8, 11, 14, 17, 20, 22}
+    try:
+        with open("data/growth/posting_schedule.json", encoding="utf-8") as f:
+            hrs = json.load(f).get("active_hours_utc")
+        return set(hrs) if hrs else default
+    except Exception:
+        return default
+
+
 def _hours_since(ts: float) -> float:
     return (time.time() - ts) / 3600.0
 
@@ -98,9 +111,11 @@ def main() -> None:
             sys.exit(0)
         log.info("Alpha-only mode: urgency-3 signal detected — proceeding.")
     else:
-        # Normal mode: respect posting windows.
-        if not _within_posting_window():
-            log.info("Outside posting windows. Exiting.")
+        # Normal mode: respect the coarse window AND the auto-tuned active hours.
+        import datetime as _dt
+        hour = _dt.datetime.now(_dt.timezone.utc).hour
+        if not _within_posting_window() or hour not in _active_hours():
+            log.info("Outside active posting hours (UTC %d). Exiting.", hour)
             sys.exit(0)
 
     # Random jitter so posts never look mechanical (shorter in alpha mode).
