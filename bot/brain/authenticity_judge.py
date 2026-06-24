@@ -40,8 +40,13 @@ SCORE 1-4 (block — clearly AI):
   funding, fees, flows, or price action are almost always the sharper number. Overusing
   "TVL" reads as a bot reaching for the easiest stat.
 - AI diction: "delve", "leverage", "seamless", "tapestry", "comprehensive", "nuanced",
-  "utilize", "robust", "navigating", "underscore", "when it comes to", "in conclusion",
-  "deep dive", "unlock", "elevate", "game-changer", "testament to"
+  "utilize", "robust", "navigating", "underscore", "showcase", "crucial", "harness",
+  "profound", "streamline", "ever-evolving", "when it comes to", "in conclusion",
+  "deep dive", "unlock", "elevate", "game-changer", "testament to", "not only ... but also"
+- Chatbot closers / boilerplate: "as an AI", "as a language model", "would you like me to",
+  "let me know if", "I hope this helps", "look no further"
+- Listicle formatting in a post: bullet points, emoji headers, bolded lead-ins, or the
+  rule-of-three triad ("X, Y, and Z"). Real posts are prose, not formatted docs.
 - Sycophancy or hollow scene-setting openers ("great question", "let's dive in",
   "in today's fast-paced landscape")
 - Uniform, metronome sentence rhythm — every sentence the same length and shape
@@ -144,3 +149,6 @@ def passes(content: str, content_type: str = "post") -> tuple[bool, dict]:
             result["score"], content[:60], result["reason"], result["feedback"],
         )
     return ok, result
+
+
+# Voice/AI-tell rationale and full research: data/vault/knowledge/ai-writing-tells.md
