@@ -44,7 +44,6 @@
   "recent_formats": [
     "fallback",
     "fallback",
-    "fallback",
     "short_take",
     "farm_update",
     "question",
@@ -61,7 +60,8 @@
     "fallback",
     "fallback",
     "fallback",
-    "callout"
+    "callout",
+    "farm_update"
   ],
   "opinion_posts_today": 2,
   "last_opinion_ts": 1781615191.0380602,
