@@ -214,5 +214,18 @@
     "bookmarks": null,
     "quote_tweets": null,
     "engagement_rate": null
+  },
+  {
+    "tweet_id": "2069729999624499680",
+    "tweet_text": "3Jane Lending TVL up 58.6% in 24h",
+    "format_used": "fallback",
+    "topic": "general",
+    "posted_at": "2026-06-24T10:31:00.439857+00:00",
+    "impressions": null,
+    "likes": null,
+    "replies": null,
+    "bookmarks": null,
+    "quote_tweets": null,
+    "engagement_rate": null
   }
 ]
