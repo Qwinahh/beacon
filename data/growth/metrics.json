@@ -238,5 +238,17 @@
     "replies": 0,
     "retweets": 0,
     "quote_tweets": 0
+  },
+  "2070016936579072092": {
+    "tweet_id": "2070016936579072092",
+    "text": "3Jane Lending up 140.5% TVL in 24h. No one knew this protocol yesterday. Seen this exact move before, points announcement follows, TVL peaks",
+    "format": "pattern_recognition",
+    "topic": "general",
+    "posted_at": 1782365471.5521326,
+    "collected_at": 1782373804.1409175,
+    "likes": 0,
+    "replies": 0,
+    "retweets": 0,
+    "quote_tweets": 0
   }
 }
