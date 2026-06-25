@@ -72,6 +72,13 @@
         "observation": "3Jane Lending TVL up 139.7% in 24h while total DeFi TVL down 15% in 30 days—extreme divergence in downmarket conditions flagged as potential inorganic deposit growth warranting verification.",
         "source": "bot"
       }
+    ],
+    "Kalshi": [
+      {
+        "ts": "2026-06-25T02:30:29Z",
+        "observation": "Kalshi fundraising at $40B valuation, nearly doubling from prior round, despite Polymarket maintaining higher monthly volume. Valuation reflects regulatory roadmap expectations not yet validated by trading metrics.",
+        "source": "bot"
+      }
     ]
   }
 }
