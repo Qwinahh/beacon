@@ -146,6 +146,13 @@
       "topic": "3Jane Lending TVL spike",
       "outcome": "posted",
       "note": "TVL spike was large enough and pattern-recognizable enough to warrant a post and educational angle on incentive structure risk."
+    },
+    {
+      "ts": "2026-06-25T07:00:47Z",
+      "signal_type": "tvl",
+      "topic": "3Jane Lending TVL spike",
+      "outcome": "posted",
+      "note": "140.5% TVL move in 24h is extreme enough to flag, but prior cycle already identified this as incentive-driven and warned about capital exit risk. Signal was useful for visibility but observation is repeating."
     }
   ],
   "noise_signals": [

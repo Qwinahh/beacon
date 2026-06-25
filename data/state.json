@@ -10,9 +10,9 @@
     "2026-06-17": 3,
     "2026-06-18": 1,
     "2026-06-24": 5,
-    "2026-06-25": 4
+    "2026-06-25": 5
   },
-  "last_post_ts": 1782365471.5501707,
+  "last_post_ts": 1782370842.237415,
   "seen": [
     "0a59a95b3b3cd57d1f74",
     "31ee999da8933acfb563",
@@ -47,10 +47,10 @@
     "b7ca45d274ac7b4657d7",
     "2f768afade93bb7ce0be",
     "0ff32f32eea60a80c42e",
-    "ee0b11a656db2911b023"
+    "ee0b11a656db2911b023",
+    "4ce5d00fde9281ad0c9c"
   ],
   "recent_formats": [
-    "fallback",
     "callout",
     "farm_update",
     "mistake_admission",
@@ -69,7 +69,8 @@
     "callout",
     "contrarian",
     "farm_update",
-    "pattern_recognition"
+    "pattern_recognition",
+    "question"
   ],
   "opinion_posts_today": 2,
   "last_opinion_ts": 1781615191.0380602,
@@ -119,6 +120,7 @@
     "general",
     "general",
     "raise",
+    "general",
     "general",
     "general"
   ],
