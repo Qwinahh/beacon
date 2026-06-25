@@ -1,5 +1,7 @@
 {
-  "thread_replies_daily": {},
+  "thread_replies_daily": {
+    "2026-06-25": 1
+  },
   "daily_counts": {
     "2026-06-13": 3,
     "2026-06-14": 6,
@@ -218,7 +220,8 @@
     "2069736476854583477"
   ],
   "threaded_tweet_ids": [
-    "2066619549328232585"
+    "2066619549328232585",
+    "2069948885095563667"
   ],
   "portfolio_hash": "a97d12d4220ff786",
   "diary_posts_today": 1,
