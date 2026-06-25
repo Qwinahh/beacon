@@ -292,5 +292,18 @@
     "bookmarks": null,
     "quote_tweets": null,
     "engagement_rate": null
+  },
+  {
+    "tweet_id": "2070016936579072092",
+    "tweet_text": "3Jane Lending up 140.5% TVL in 24h. No one knew this protocol yesterday. Seen this exact move before, points announcement follows, TVL peaks, then exits. Check the incentive structure before you size in.",
+    "format_used": "pattern_recognition",
+    "topic": "general",
+    "posted_at": "2026-06-25T05:31:11.550600+00:00",
+    "impressions": null,
+    "likes": null,
+    "replies": null,
+    "bookmarks": null,
+    "quote_tweets": null,
+    "engagement_rate": null
   }
 ]

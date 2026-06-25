@@ -139,6 +139,13 @@
       "topic": "3Jane Lending",
       "outcome": "posted",
       "note": "141% TVL spike during broad DeFi decline is a strong contrarian signal—suggests real capital movement, not market-wide noise."
+    },
+    {
+      "ts": "2026-06-25T05:31:17Z",
+      "signal_type": "tvl",
+      "topic": "3Jane Lending TVL spike",
+      "outcome": "posted",
+      "note": "TVL spike was large enough and pattern-recognizable enough to warrant a post and educational angle on incentive structure risk."
     }
   ],
   "noise_signals": [

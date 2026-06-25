@@ -76,6 +76,11 @@
         "ts": "2026-06-25T01:00:57Z",
         "observation": "3Jane Lending TVL up 139.7% in 24h while total DeFi TVL down 15% in 30 days—extreme divergence in downmarket conditions flagged as potential inorganic deposit growth warranting verification.",
         "source": "bot"
+      },
+      {
+        "ts": "2026-06-25T05:31:17Z",
+        "observation": "TVL spike continued from prior 139.7% move — now at 140.5% in 24h. Bot identified pattern recognition: incentive-driven TVL surges typically precede announcements, peak, then see capital exits. Warned followers on incentive structure risk rather than endorsing.",
+        "source": "bot"
       }
     ],
     "Kalshi": [
