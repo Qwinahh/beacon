@@ -3,15 +3,15 @@ title: Performance Log
 type: knowledge
 topic: performance
 tags: [knowledge, performance, auto-generated]
-last_updated: 2026-06-24
-updated: 2026-06-24
+last_updated: 2026-06-25
+updated: 2026-06-25
 ---
 
 # Performance Log
 
 *Auto-generated daily by `agents/performance_tracker.py`. Do not edit — changes are overwritten. Source data: `data/performance/post_log.json`.*
 
-Tracked posts: 12 total, 3 in the last 7 days, 3 with measured impressions.
+Tracked posts: 21 total, 10 in the last 7 days, 1 with measured impressions.
 
 ## Top 5 this week — engagement rate
 
@@ -29,16 +29,12 @@ No measured posts yet.
 
 | format | avg engagement | n |
 |---|---|---|
-| announcement | — | 1 |
-| prediction | — | 1 |
 | hot_take | — | 1 |
 
 ## Average engagement rate by topic
 
 | topic | avg engagement | n |
 |---|---|---|
-| watching:drift relaunch | — | 1 |
-| defi | — | 1 |
 | general | — | 1 |
 
 ## Average impressions by hour of day (UTC)
