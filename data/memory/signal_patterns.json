@@ -132,6 +132,13 @@
       "topic": "Kalshi $40B funding round",
       "outcome": "posted",
       "note": "Raise was noteworthy because valuation doubled while competitive position (vs Polymarket) remained unclear - this gap warranted framing."
+    },
+    {
+      "ts": "2026-06-25T04:00:26Z",
+      "signal_type": "tvl",
+      "topic": "3Jane Lending",
+      "outcome": "posted",
+      "note": "141% TVL spike during broad DeFi decline is a strong contrarian signal—suggests real capital movement, not market-wide noise."
     }
   ],
   "noise_signals": [

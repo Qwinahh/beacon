@@ -6,5 +6,13 @@
     "topic": "raise",
     "posted_ts": 1782354625.3551865,
     "fetch_after_ts": 1782441025.355187
+  },
+  {
+    "tweet_id": "2069994080155693432",
+    "text": "3Jane lending up 141% TVL in 24h while total DeFi TVL is down 15% in 30 days. Something is pulling capital in during extreme fear. Looking a",
+    "format": "farm_update",
+    "topic": "general",
+    "posted_ts": 1782360022.156307,
+    "fetch_after_ts": 1782446422.1563075
   }
 ]
