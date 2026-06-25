@@ -118,6 +118,13 @@
       "topic": "3Jane Lending",
       "outcome": "posted",
       "note": "Large, rapid TVL surge (139.5% in 24h) was a credible signal of momentum shift in lending market; justified a reweight post with position disclosure."
+    },
+    {
+      "ts": "2026-06-25T01:00:57Z",
+      "signal_type": "tvl",
+      "topic": "3Jane Lending TVL spike",
+      "outcome": "posted",
+      "note": "Extreme TVL spike (139.7% in 24h) during market-wide decline identified as newsworthy anomaly requiring scrutiny; the contrarian move in fear conditions made it worth flagging to audience."
     }
   ],
   "noise_signals": [

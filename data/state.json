@@ -7,9 +7,10 @@
     "2026-06-16": 6,
     "2026-06-17": 3,
     "2026-06-18": 1,
-    "2026-06-24": 5
+    "2026-06-24": 5,
+    "2026-06-25": 1
   },
-  "last_post_ts": 1782343896.3769279,
+  "last_post_ts": 1782349246.8130062,
   "seen": [
     "0a59a95b3b3cd57d1f74",
     "31ee999da8933acfb563",
@@ -40,10 +41,10 @@
     "33228d6c6b2df3b8a99f",
     "cf87407c9cae14e8190f",
     "9442a86436701e8c6dd2",
-    "208e9ac7a99715f60efd"
+    "208e9ac7a99715f60efd",
+    "b7ca45d274ac7b4657d7"
   ],
   "recent_formats": [
-    "fallback",
     "fallback",
     "fallback",
     "fallback",
@@ -62,7 +63,8 @@
     "hot_take",
     "question",
     "pattern_recognition",
-    "alpha_tip"
+    "alpha_tip",
+    "callout"
   ],
   "opinion_posts_today": 2,
   "last_opinion_ts": 1781615191.0380602,
@@ -107,6 +109,7 @@
     "general",
     "general",
     "defi",
+    "general",
     "general",
     "general",
     "general"

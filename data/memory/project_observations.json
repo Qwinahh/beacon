@@ -65,6 +65,13 @@
         "observation": "3Jane Lending TVL surged 139.5% in 24h, triggering a bot reweight into the lending portfolio with a disclosed position.",
         "source": "bot"
       }
+    ],
+    "3Jane Lending": [
+      {
+        "ts": "2026-06-25T01:00:57Z",
+        "observation": "3Jane Lending TVL up 139.7% in 24h while total DeFi TVL down 15% in 30 days—extreme divergence in downmarket conditions flagged as potential inorganic deposit growth warranting verification.",
+        "source": "bot"
+      }
     ]
   }
 }
