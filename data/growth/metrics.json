@@ -310,5 +310,17 @@
     "replies": 0,
     "retweets": 0,
     "quote_tweets": 0
+  },
+  "2070409542811242866": {
+    "tweet_id": "2070409542811242866",
+    "text": "Wildcat farm no longer works. TVL down 59.4% in 24h. Rotated out, farm math broken. (position disclosed)",
+    "format": "mistake_admission",
+    "topic": "general",
+    "posted_at": 1782459076.1716821,
+    "collected_at": 1782467403.4950624,
+    "likes": 0,
+    "replies": 0,
+    "retweets": 0,
+    "quote_tweets": 0
   }
 }
