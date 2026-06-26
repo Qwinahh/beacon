@@ -331,5 +331,18 @@
     "bookmarks": null,
     "quote_tweets": null,
     "engagement_rate": null
+  },
+  {
+    "tweet_id": "2070311691812806987",
+    "tweet_text": "Wildcat Protocol TVL down 58.0% in 24h. Farm math getting worse, not a frenzy to follow.",
+    "format_used": "data_observation",
+    "topic": "general",
+    "posted_at": "2026-06-26T01:02:26.661742+00:00",
+    "impressions": null,
+    "likes": null,
+    "replies": null,
+    "bookmarks": null,
+    "quote_tweets": null,
+    "engagement_rate": null
   }
 ]
