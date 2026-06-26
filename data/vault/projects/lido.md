@@ -10,8 +10,8 @@ airdrop_status: none
 worth_farming: false
 blocked: false
 updated: 2026-06-12
-tvl_usd: 15041448113
-metrics_updated: 2026-06-24
+tvl_usd: 14049932362
+metrics_updated: 2026-06-26
 ---
 
 # Lido
@@ -64,5 +64,5 @@ lower yield, more decentralized — a philosophy, not a competitor.
 → [[index]] · [[dashboard]] · [[narratives/liquid-staking]] · [[projects/eigenlayer]] · [[projects/babylon]]
 
 ## Live Metrics
-- TVL: $15.04B
-- Snapshot: 2026-06-24 (auto, DeFiLlama + CoinGecko)
+- TVL: $14.05B
+- Snapshot: 2026-06-26 (auto, DeFiLlama + CoinGecko)

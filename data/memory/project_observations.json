@@ -64,6 +64,30 @@
         "ts": "2026-06-24T23:31:40Z",
         "observation": "3Jane Lending TVL surged 139.5% in 24h, triggering a bot reweight into the lending portfolio with a disclosed position.",
         "source": "bot"
+      },
+      {
+        "ts": "2026-06-25T04:00:26Z",
+        "observation": "3Jane Lending TVL up 141% in 24h while total DeFi TVL down 15% in 30 days—the protocol is pulling capital against broad market fear, suggesting either protocol-specific momentum or yield-driven rotation into concentrated risk.",
+        "source": "bot"
+      }
+    ],
+    "3Jane Lending": [
+      {
+        "ts": "2026-06-25T01:00:57Z",
+        "observation": "3Jane Lending TVL up 139.7% in 24h while total DeFi TVL down 15% in 30 days—extreme divergence in downmarket conditions flagged as potential inorganic deposit growth warranting verification.",
+        "source": "bot"
+      },
+      {
+        "ts": "2026-06-25T05:31:17Z",
+        "observation": "TVL spike continued from prior 139.7% move — now at 140.5% in 24h. Bot identified pattern recognition: incentive-driven TVL surges typically precede announcements, peak, then see capital exits. Warned followers on incentive structure risk rather than endorsing.",
+        "source": "bot"
+      }
+    ],
+    "Kalshi": [
+      {
+        "ts": "2026-06-25T02:30:29Z",
+        "observation": "Kalshi fundraising at $40B valuation, nearly doubling from prior round, despite Polymarket maintaining higher monthly volume. Valuation reflects regulatory roadmap expectations not yet validated by trading metrics.",
+        "source": "bot"
       }
     ]
   }
