@@ -6,5 +6,13 @@
     "topic": "general",
     "posted_ts": 1782441183.8619678,
     "fetch_after_ts": 1782527583.8619683
+  },
+  {
+    "tweet_id": "2070364214061863018",
+    "text": "Wildcat TVL down 57.5% in 24h. Recheck farm math. (position disclosed)",
+    "format": "hot_take",
+    "topic": "general",
+    "posted_ts": 1782448268.9393146,
+    "fetch_after_ts": 1782534668.9393153
   }
 ]
