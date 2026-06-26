@@ -334,5 +334,17 @@
     "replies": 0,
     "retweets": 0,
     "quote_tweets": 0
+  },
+  "2070515702667034702": {
+    "tweet_id": "2070515702667034702",
+    "text": "Tothemoon TVL up 123.5% in 24h. Reassessing farm math, may rotate out if no sustainable yield.",
+    "format": "mistake_admission",
+    "topic": "general",
+    "posted_at": 1782484386.6436126,
+    "collected_at": 1782492603.83139,
+    "likes": 0,
+    "replies": 0,
+    "retweets": 0,
+    "quote_tweets": 0
   }
 }
