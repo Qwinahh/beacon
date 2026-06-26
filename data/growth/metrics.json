@@ -298,5 +298,17 @@
     "replies": 0,
     "retweets": 0,
     "quote_tweets": 0
+  },
+  "2070364214061863018": {
+    "tweet_id": "2070364214061863018",
+    "text": "Wildcat TVL down 57.5% in 24h. Recheck farm math. (position disclosed)",
+    "format": "hot_take",
+    "topic": "general",
+    "posted_at": 1782448268.9393146,
+    "collected_at": 1782456604.0977035,
+    "likes": 0,
+    "replies": 0,
+    "retweets": 0,
+    "quote_tweets": 0
   }
 }
