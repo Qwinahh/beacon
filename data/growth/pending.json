@@ -1,13 +1,5 @@
 [
   {
-    "tweet_id": "2070311691812806987",
-    "text": "Wildcat Protocol TVL down 58.0% in 24h. Farm math getting worse, not a frenzy to follow.",
-    "format": "data_observation",
-    "topic": "general",
-    "posted_ts": 1782435746.663232,
-    "fetch_after_ts": 1782522146.6632326
-  },
-  {
     "tweet_id": "2070334497107653054",
     "text": "Wildcat TVL down 58% in 24h. Got in too late, farm's now unprofitable.",
     "format": "mistake_admission",
