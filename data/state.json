@@ -56,7 +56,6 @@
     "69f85f84aeff092cfb79"
   ],
   "recent_formats": [
-    "contrarian",
     "data_observation",
     "hot_take",
     "question",
@@ -75,7 +74,8 @@
     "question",
     "hot_take",
     "mistake_admission",
-    "alpha_tip"
+    "alpha_tip",
+    "hot_take"
   ],
   "opinion_posts_today": 2,
   "last_opinion_ts": 1781615191.0380602,
