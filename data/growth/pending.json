@@ -1,13 +1,5 @@
 [
   {
-    "tweet_id": "2070334497107653054",
-    "text": "Wildcat TVL down 58% in 24h. Got in too late, farm's now unprofitable.",
-    "format": "mistake_admission",
-    "topic": "general",
-    "posted_ts": 1782441183.8619678,
-    "fetch_after_ts": 1782527583.8619683
-  },
-  {
     "tweet_id": "2070364214061863018",
     "text": "Wildcat TVL down 57.5% in 24h. Recheck farm math. (position disclosed)",
     "format": "hot_take",

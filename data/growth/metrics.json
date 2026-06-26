@@ -286,5 +286,17 @@
     "replies": 0,
     "retweets": 0,
     "quote_tweets": 0
+  },
+  "2070334497107653054": {
+    "tweet_id": "2070334497107653054",
+    "text": "Wildcat TVL down 58% in 24h. Got in too late, farm's now unprofitable.",
+    "format": "mistake_admission",
+    "topic": "general",
+    "posted_at": 1782441183.8619678,
+    "collected_at": 1782449404.1917555,
+    "likes": 0,
+    "replies": 0,
+    "retweets": 0,
+    "quote_tweets": 0
   }
 }
