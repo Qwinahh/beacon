@@ -53,7 +53,6 @@
     "85cb352f8465c3fb7fb5"
   ],
   "recent_formats": [
-    "hot_take",
     "question",
     "prediction",
     "thread_hook",
@@ -72,7 +71,8 @@
     "alpha_tip",
     "pattern_recognition",
     "data_observation",
-    "mistake_admission"
+    "mistake_admission",
+    "question"
   ],
   "opinion_posts_today": 2,
   "last_opinion_ts": 1781615191.0380602,
