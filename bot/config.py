@@ -54,7 +54,7 @@ POST_SCORE_THRESHOLD: Final[int] = 58
 TOPIC_MEMORY_SIZE: Final[int] = 30
 
 # Max times the same topic may appear in recent history before being skipped.
-MAX_TOPIC_REPEAT: Final[int] = 2
+MAX_TOPIC_REPEAT: Final[int] = 1
 
 # How many post fingerprints to retain for deduplication.
 FINGERPRINT_MEMORY_SIZE: Final[int] = 500
@@ -91,6 +91,8 @@ def scrub_voice(text: str) -> str:
         return text
     for dash in ("—", "–"):  # em dash, en dash
         text = text.replace(f" {dash} ", ", ").replace(dash, ", ")
+    # Double hyphen used as a dash ("this -- that") is the same tell typed differently.
+    text = text.replace(" -- ", ", ").replace("--", ", ")
     text = text.replace("  ", " ").replace(" ,", ",").replace(" .", ".")
     return text.strip()
 

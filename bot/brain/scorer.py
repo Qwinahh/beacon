@@ -84,19 +84,17 @@ def score(item: CandidateItem) -> int:
         points += 14  # Raises are concrete, specific signals.
 
     if isinstance(item, TvlMoverItem):
-        points += 10
-        if abs(item.change_pct) >= 30:
-            points += 8
-        if abs(item.change_pct) >= 50:
-            points += 6
+        points += 3  # TVL movers are low-value; only worth posting if nothing better exists.
+        # Deliberately NO bonus for big % moves: a random protocol pumping 140% in 24h is
+        # almost always a points-farm / incentive blip, not signal worth a post.
 
-    # --- TVL penalty — generic TVL movement posts are lowest-value content ---
+    # --- TVL penalty — generic TVL movement posts are the lowest-value content ---
     is_tvl = isinstance(item, TvlMoverItem) or getattr(item, "kind", "") == "tvl"
     if is_tvl and not any(k in title_text.lower() for k in [
         "exploit", "hack", "attack", "drain", "rug",
         "launch", "new", "first",
     ]):
-        points = int(points * 0.6)
+        points = int(points * 0.3)
         log.debug("Scorer: TVL penalty applied to '%s'", title_text[:40])
 
     # --- Relevance to focus areas ---
