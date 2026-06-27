@@ -499,5 +499,18 @@
     "bookmarks": null,
     "quote_tweets": null,
     "engagement_rate": null
+  },
+  {
+    "tweet_id": "2070877955526459570",
+    "tweet_text": "Farming Polymarket, but $3.1M hack is a red flag. Reassessing farm math given potential user exodus. (position disclosed)",
+    "format_used": "farm_update",
+    "topic": "general",
+    "posted_at": "2026-06-27T14:32:34.455011+00:00",
+    "impressions": null,
+    "likes": null,
+    "replies": null,
+    "bookmarks": null,
+    "quote_tweets": null,
+    "engagement_rate": null
   }
 ]
