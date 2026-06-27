@@ -60,7 +60,6 @@
     "aa4b79689fbcc4a5907d"
   ],
   "recent_formats": [
-    "contrarian",
     "farm_update",
     "pattern_recognition",
     "question",
@@ -79,7 +78,8 @@
     "farm_update",
     "mistake_admission",
     "hot_take",
-    "contrarian"
+    "contrarian",
+    "mistake_admission"
   ],
   "opinion_posts_today": 2,
   "last_opinion_ts": 1781615191.0380602,
