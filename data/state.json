@@ -63,7 +63,6 @@
     "2d9cfd71089f8ed442bd"
   ],
   "recent_formats": [
-    "alpha_tip",
     "hot_take",
     "callout",
     "alpha_tip",
@@ -82,7 +81,8 @@
     "question",
     "pattern_recognition",
     "farm_update",
-    "mistake_admission"
+    "mistake_admission",
+    "pattern_recognition"
   ],
   "opinion_posts_today": 2,
   "last_opinion_ts": 1781615191.0380602,
