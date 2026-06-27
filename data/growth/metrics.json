@@ -370,5 +370,17 @@
     "replies": 0,
     "retweets": 0,
     "quote_tweets": 0
+  },
+  "2070742195309613234": {
+    "tweet_id": "2070742195309613234",
+    "text": "Rhea Lend TVL down 52% in 24h. Should've rotated out earlier, now the math is broken.",
+    "format": "mistake_admission",
+    "topic": "general",
+    "posted_at": 1782538386.7054148,
+    "collected_at": 1782546604.1128502,
+    "likes": 0,
+    "replies": 0,
+    "retweets": 0,
+    "quote_tweets": 0
   }
 }

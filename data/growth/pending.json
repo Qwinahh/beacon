@@ -1,13 +1,5 @@
 [
   {
-    "tweet_id": "2070742195309613234",
-    "text": "Rhea Lend TVL down 52% in 24h. Should've rotated out earlier, now the math is broken.",
-    "format": "mistake_admission",
-    "topic": "general",
-    "posted_ts": 1782538386.7054148,
-    "fetch_after_ts": 1782624786.7054152
-  },
-  {
     "tweet_id": "2070772167583715670",
     "text": "Rhea Lend TVL down 52.2% in 24h, another farm with worse math than people think.",
     "format": "pattern_recognition",
