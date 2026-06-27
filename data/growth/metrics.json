@@ -382,5 +382,17 @@
     "replies": 0,
     "retweets": 0,
     "quote_tweets": 0
+  },
+  "2070772167583715670": {
+    "tweet_id": "2070772167583715670",
+    "text": "Rhea Lend TVL down 52.2% in 24h, another farm with worse math than people think.",
+    "format": "pattern_recognition",
+    "topic": "general",
+    "posted_at": 1782545532.6388395,
+    "collected_at": 1782553803.6741512,
+    "likes": 0,
+    "replies": 0,
+    "retweets": 0,
+    "quote_tweets": 0
   }
 }
