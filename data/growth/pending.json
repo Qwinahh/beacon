@@ -1,1 +1,10 @@
-[]
+[
+  {
+    "tweet_id": "2070742195309613234",
+    "text": "Rhea Lend TVL down 52% in 24h. Should've rotated out earlier, now the math is broken.",
+    "format": "mistake_admission",
+    "topic": "general",
+    "posted_ts": 1782538386.7054148,
+    "fetch_after_ts": 1782624786.7054152
+  }
+]
