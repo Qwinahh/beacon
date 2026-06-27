@@ -358,5 +358,17 @@
     "replies": 0,
     "retweets": 0,
     "quote_tweets": 0
+  },
+  "2070681161278378451": {
+    "tweet_id": "2070681161278378451",
+    "text": "Rhea Lend TVL crashed 52.4% in 24h, not just a dump, farm math is broken",
+    "format": "contrarian",
+    "topic": "general",
+    "posted_at": 1782523835.0482898,
+    "collected_at": 1782532204.0433218,
+    "likes": 0,
+    "replies": 0,
+    "retweets": 0,
+    "quote_tweets": 0
   }
 }
