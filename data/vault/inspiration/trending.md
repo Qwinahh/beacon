@@ -1,10 +1,10 @@
 ---
-title: Trending — 2026-06-26
-updated: 2026-06-26 07:01 UTC
+title: Trending — 2026-06-27
+updated: 2026-06-27 07:01 UTC
 type: inspiration
 ---
 
-# Trending Today — 2026-06-26
+# Trending Today — 2026-06-27
 
 Top-performing posts from monitored accounts + keyword searches in the last 24h.
 Use these as raw material — find a post that made you think, then write your own take.
@@ -15,192 +15,215 @@ Use these as raw material — find a post that made you think, then write your o
 
 ## Top Posts by Engagement
 
-### 1. @0xSisyphus · 20:24 UTC
+### 1. @tayvano_ · 17:10 UTC
 
-> New w/ @leomschwartz @amir: 
+> Introducing a limited preview of GPT-5.6 Sol, our next generation frontier model, as well as GPT-5.6 Terra, a balanced model for efficient, everyday work, and GPT-5.6 Luna, a fast and affordable model for high-volume work.
 
-The Trump admin has asked OpenAI to stagger the release of GPT-5.6 over security concerns. 
+https://t.co/OoM83SyISN
 
-On Thursday, CEO Sam Altman told staff that the government will be approving access to GPT-5.6 customer by customer, a highly unusual approach. https://t.co/JEkGR97SAU
+**Likes:** 34491 · **Replies:** 2797 · **RTs:** 4903 · **Quotes:** 4582 🔥🔥🔥🔥🔥
+[View post](https://x.com/tayvano_/status/2070555272230384038)
 
-**Likes:** 1401 · **Replies:** 215 · **RTs:** 211 · **Quotes:** 528 🔥🔥🔥🔥🔥
-[View post](https://x.com/0xSisyphus/status/2070241787180966279)
+### 2. @blknoiz06 · 14:30 UTC
 
-### 2. @Route2FI · 20:18 UTC
+> solana looks great
 
-> Many young people see no realistic path into a normal life like their parents had. Housing is unaffordable, wages don't compound, and the wealth gap is visible every single day. On top of that you have the fear that AI will take most jobs. 
+**Likes:** 2211 · **Replies:** 587 · **RTs:** 178 · **Quotes:** 89 🔥🔥🔥🔥🔥
+[View post](https://x.com/blknoiz06/status/2070514945393918239)
 
-The only reasonable option left for a locked-out generatio...
+### 3. @tayvano_ · 17:12 UTC
 
-**Likes:** 1099 · **Replies:** 99 · **RTs:** 96 · **Quotes:** 13 🔥🔥🔥🔥🔥
-[View post](https://x.com/Route2FI/status/2070240338724208649)
+> excuse me did they just say $SOL $TERRA $LUNA?! https://t.co/thFU9RKy0d
 
-### 3. @SpencerApplebau · 14:54 UTC
+**Likes:** 1053 · **Replies:** 123 · **RTs:** 39 · **Quotes:** 24 🔥🔥🔥🔥🔥
+[View post](https://x.com/tayvano_/status/2070555710576881942)
 
-> 1/ Today, @multicoin publishes our HYPE analysis and valuation
+### 4. @Dreamcash · 11:04 UTC
 
-HYPE is now one of our largest liquid fund positions and we've been accumulating aggressively since February
+> https://t.co/Twu1UTfo2F
 
-Full report and disclosures in link. Link here - 
+**Likes:** 310 · **Replies:** 79 · **RTs:** 20 · **Quotes:** 122 🔥🔥🔥🔥🔥
+[View post](https://x.com/Dreamcash/status/2070463127511015765)
 
-https://t.co/tA2kwWbG9Q
+### 5. @Pentosh1 · 17:03 UTC
 
-**Likes:** 853 · **Replies:** 71 · **RTs:** 156 · **Quotes:** 75 🔥🔥🔥🔥🔥
-[View post](https://x.com/SpencerApplebau/status/2070158722978984235)
+> Things to consider, look for exposure in when opportunities arise
 
-### 4. @tayvano_ · 13:19 UTC
+$BB physical AI safety layer
+$DRAM memory, robotics 
+$BOT the physical side, private robotics companies that will all need to scale. This timeline is being sped up rapidly
 
-> I promised I would post the letter Dario Amodei sent to the White House and Senators Tim Scott and Elizabeth Warren as soon as it became available: https://t.co/ZWA8nyBqfA
+all 3 tie in together over the next decade and benefit each ...
 
-**Likes:** 1023 · **Replies:** 58 · **RTs:** 115 · **Quotes:** 37 🔥🔥🔥🔥🔥
-[View post](https://x.com/tayvano_/status/2070134863370567864)
+**Likes:** 575 · **Replies:** 50 · **RTs:** 43 · **Quotes:** 2 🔥🔥🔥🔥🔥
+[View post](https://x.com/Pentosh1/status/2070553561503572002)
 
-### 5. @world_xyz · 13:01 UTC
+### 6. @DrPengu6 · 01:48 UTC
 
-> if @world_xyz comes out of stealth as solana's new perp DEX to beat hyperliquid 
+> gTRIA gNOMISMA gQUIP & gARC CT
 
-i'm going to quit crypto forever
+a few projects are building infrastructure that improves as adoption grows, not apps fighting for attention.
 
-**Likes:** 592 · **Replies:** 140 · **RTs:** 61 · **Quotes:** 30 🔥🔥🔥🔥🔥
-[View post](https://x.com/world_xyz/status/2070130318556754372)
+@useTria is tackling the user experience layer. BestPath routes across 200+ chains with AI optimization, abstracts gas, and stays self-custodial. users can tr...
 
-### 6. @Pentosh1 · 15:07 UTC
+**Likes:** 172 · **Replies:** 185 · **RTs:** 4 · **Quotes:** 0 🔥🔥🔥🔥🔥
+[View post](https://x.com/DrPengu6/status/2070685555336024203)
 
-> So hyperliquid:native has been doing roughly 2m per day in fees from perps, in a bear market. 
+### 7. @Pentosh1 · 18:32 UTC
 
-However there was a change this past week that I haven't really seen covered so much and thats priority fees on orders that went live this week. Priority fees already hit over 150k in a day yesterday. Its...
+> There should be no S3 for Hype imo 
 
-**Likes:** 659 · **Replies:** 44 · **RTs:** 49 · **Quotes:** 7 🔥🔥🔥🔥🔥
-[View post](https://x.com/Pentosh1/status/2070162078543786351)
+Jeff already gave an airdrop which today is worth 14 billion plus  
 
-### 7. @Pentosh1 · 19:17 UTC
+The team continues to give to the long term believers via the AF, which uses 99% of the revenues to buy and burn hype. The gift is, that if you believe long enough, you get rewarded over time 
 
-> So here is a little bit of framework thinking on bitcoin:native 
+...
 
-Is the bottom in? Maybe. A great sign of course is one of the most reliable signs of all time. That it stops reacting to negative news. We aren't quite there yet. The downside imo is prob 48k ish. So, nothing real crazy for spot peopl...
+**Likes:** 405 · **Replies:** 68 · **RTs:** 10 · **Quotes:** 6 🔥🔥🔥🔥🔥
+[View post](https://x.com/Pentosh1/status/2070576061440803050)
 
-**Likes:** 583 · **Replies:** 59 · **RTs:** 29 · **Quotes:** 5 🔥🔥🔥🔥🔥
-[View post](https://x.com/Pentosh1/status/2070224810450252197)
+### 8. @Pentosh1 · 13:52 UTC
 
-### 8. @Gainzy222 · 10:29 UTC
+> $BB new highs again 
 
-> USA is gonna win the world cup and it will globally be called soccer in my lifetime
+has found a way to go up during both market weakness and strength
 
-**Likes:** 386 · **Replies:** 134 · **RTs:** 13 · **Quotes:** 2 🔥🔥🔥🔥🔥
-[View post](https://x.com/Gainzy222/status/2070091922727940514)
+**Likes:** 361 · **Replies:** 38 · **RTs:** 10 · **Quotes:** 3 🔥🔥🔥🔥🔥
+[View post](https://x.com/Pentosh1/status/2070505590598906288)
 
-### 9. @Pentosh1 · 18:31 UTC
+### 9. @Route2FI · 15:03 UTC
 
-> One of the main bear cases for hyperliquid:native  is "what if BTC dumps" 
+> Group K could throw up a big shock here as one of the pre-tournament favourites Portugal need to beat Colombia if they’re to top the group.
 
-Well, $BTC has dumped from $126k to $58k 
+Colombia have already qualified for the knockout stages for a 3rd World Cup appearance in a row after beating Uzbekistan and Congo, and now has 6 points.
 
-Hype just hit an ath recently. I guess the real question should be, what if crypto bottoms? 
+Cris...
 
-The majority of people calling for the 30's didn't participate in it's upside But they ...
+**Likes:** 278 · **Replies:** 17 · **RTs:** 36 · **Quotes:** 0 🔥🔥🔥🔥🔥
+[View post](https://x.com/Route2FI/status/2070523285960290509)
 
-**Likes:** 552 · **Replies:** 49 · **RTs:** 39 · **Quotes:** 7 🔥🔥🔥🔥🔥
-[View post](https://x.com/Pentosh1/status/2070213402274734331)
+### 10. @2JJRJR · 14:21 UTC
 
-### 10. @tayvano_ · 07:04 UTC
+> Hey guys
+Are you paying attention yet?
 
-> https://t.co/19PlJ1BTBS
+https://t.co/lWira6uBPP 
 
-**Likes:** 253 · **Replies:** 66 · **RTs:** 89 · **Quotes:** 29 🔥🔥🔥🔥🔥
-[View post](https://x.com/tayvano_/status/2070040375331586338)
+Thats our ca https://t.co/Iklv4K9Rd9
 
-### 11. @ThinkingUSD · 15:01 UTC
+**Likes:** 203 · **Replies:** 31 · **RTs:** 41 · **Quotes:** 5 🔥🔥🔥🔥🔥
+[View post](https://x.com/2JJRJR/status/2070512845012254996)
 
-> Anyone still using perp DEXs besides Hyperliquid should be chemically castrated
+### 11. @Gainzy222 · 01:54 UTC
 
-**Likes:** 459 · **Replies:** 53 · **RTs:** 20 · **Quotes:** 10 🔥🔥🔥🔥🔥
-[View post](https://x.com/ThinkingUSD/status/2070160508473204983)
+> Don’t sit all bear market in boring coins, reallocate into more promising ones
 
-### 12. @Pentosh1 · 15:29 UTC
+Handful of coins will massively outperform, the rest are going to hades https://t.co/3woPYhMvjA
 
-> This was probably one of my largest misses. Having the opportunity to invest in Figure series A. 
+**Likes:** 179 · **Replies:** 54 · **RTs:** 10 · **Quotes:** 6 🔥🔥🔥🔥🔥
+[View post](https://x.com/Gainzy222/status/2070687148291010934)
 
-The video is worth a watch. Robotics is attempting to solve for a 59T problem that is labor. And now it’s actually beginning to scale. Its current market cap is around 200B. How early are we? We’re so ...
+### 12. @Route2FI · 07:00 UTC
 
-**Likes:** 412 · **Replies:** 40 · **RTs:** 35 · **Quotes:** 5 🔥🔥🔥🔥🔥
-[View post](https://x.com/Pentosh1/status/2070167511761400110)
+> Season 2 ends on June 30, marking the final week of the campaign.
 
-### 13. @Pentosh1 · 12:52 UTC
+While attention has been on points, @grvt_io has continued building in the background.
+RWA vaults are now live, with a Balanced vault targeting 4.5% APY and an Opportunistic vault targeting 11% APY.
 
-> There are so many positives to cover from $BB earnings that it’s just not possible to do. 
+With spot also live, the focus sh...
 
-Massive amount of US gov contracts from military to the white. I’ll try to condense everything into this thread. The growth trajectory of BB is off the charts over the next few years https://t.co/y7uQ5puKis
+**Likes:** 238 · **Replies:** 17 · **RTs:** 26 · **Quotes:** 0 🔥🔥🔥🔥🔥
+[View post](https://x.com/Route2FI/status/2070401904073458035)
 
-**Likes:** 398 · **Replies:** 26 · **RTs:** 44 · **Quotes:** 6 🔥🔥🔥🔥🔥
-[View post](https://x.com/Pentosh1/status/2070127949458579724)
+### 13. @Tanaka_L2 · 05:20 UTC
 
-### 14. @Pentosh1 · 23:34 UTC
+> ➥ Which DeFi protocols can survive without heavy token incentives?
 
-> $hype 11% off todays lows. Potentially forming a higher low market structure wise 
+If DeFi 2021 was built around liquidity mining, DeFi 2026 is increasingly separating temporary TVL from sustainable product demand.
 
- the fastest horse, which it has been all year https://t.co/sf40UKaPb2
+Token incentives can attract capital, but they rarely create retention once rewards disappear, espe...
 
-**Likes:** 407 · **Replies:** 37 · **RTs:** 27 · **Quotes:** 0 🔥🔥🔥🔥🔥
-[View post](https://x.com/Pentosh1/status/2070289514367451488)
+**Likes:** 147 · **Replies:** 47 · **RTs:** 15 · **Quotes:** 2 🔥🔥🔥🔥🔥
+[View post](https://x.com/Tanaka_L2/status/2070376668833947717)
 
-### 15. @Pentosh1 · 19:06 UTC
+### 14. @0xasrequired · 12:16 UTC
 
-> one of the things i like about equities is they go up 
+> I’ve come to accept that HIP-3 was never intended to be permissionless (and neither was HIP-1 most probably)
 
-i think thats pretty neat
+cash mounted the most promising assualt on xyz’s hegemony imo, but in retrospect, even with the full backing of tether and 200k USDT per week, there was no hope for cash
 
-**Likes:** 416 · **Replies:** 29 · **RTs:** 6 · **Quotes:** 4 🔥🔥🔥🔥🔥
-[View post](https://x.com/Pentosh1/status/2070222113722576947)
+wouldn’t surprise m...
 
-### 16. @tayvano_ · 06:42 UTC
+**Likes:** 154 · **Replies:** 47 · **RTs:** 6 · **Quotes:** 6 🔥🔥🔥🔥🔥
+[View post](https://x.com/0xasrequired/status/2070481222778630195)
 
-> Important Security Update. 
-As stated, we have identified the root cause of the incident. It is at the address level.
+### 15. @DefiIgnas · 08:38 UTC
 
-The affected software signer used a deterministic nonce derivation flaw. Every time an address signed a transaction, it leaked enough information to mathematically reconstruct that ...
+> I feel like revenue multiple is a much better indicator for determining a project's health.
 
-**Likes:** 166 · **Replies:** 57 · **RTs:** 62 · **Quotes:** 24 🔥🔥🔥🔥🔥
-[View post](https://x.com/tayvano_/status/2070034865832202281)
+Revenue multiple = Market Cap ÷ Annual Revenue
 
-### 17. @Pentosh1 · 23:57 UTC
+It's basically a comparison of what the token is worth today VS. what the protocol earned in the last 12 months.
 
-> people can spend the better part of a year trying to call bottom on something, just to see it continue to make a new low for the duration of that period, over and over. Same with trying to call the stock market top repeatedly. 
+For example, @worldlibertyfi at 17x means the...
 
-what have we don't this year? We have completely avoided assets in down...
+**Likes:** 145 · **Replies:** 41 · **RTs:** 17 · **Quotes:** 5 🔥🔥🔥🔥🔥
+[View post](https://x.com/DefiIgnas/status/2070426345390354742)
 
-**Likes:** 332 · **Replies:** 34 · **RTs:** 17 · **Quotes:** 1 🔥🔥🔥🔥🔥
-[View post](https://x.com/Pentosh1/status/2070295411860869318)
+### 16. @DefiIgnas · 10:39 UTC
 
-### 18. @tayvano_ · 08:59 UTC
+> Crypto is a lot less fun when I lose money
 
-> Anthropic’s letter accusing Alibaba of distillation. https://t.co/CJy8SeYxZq
+**Likes:** 139 · **Replies:** 35 · **RTs:** 3 · **Quotes:** 2 🔥🔥🔥🔥🔥
+[View post](https://x.com/DefiIgnas/status/2070456842312995194)
 
-**Likes:** 199 · **Replies:** 17 · **RTs:** 39 · **Quotes:** 47 🔥🔥🔥🔥🔥
-[View post](https://x.com/tayvano_/status/2070069250513900005)
+### 17. @0xKairom · 12:30 UTC
 
-### 19. @tayvano_ · 11:31 UTC
+> 10 days until the first SLX unlock and this is where the @solsticefi story starts getting harder to ignore
 
-> They did it. They actually did it.
+Before this, most of the attention was on participation
 
-They actually managed to fuck up and reuse nonces for Ed25519 sigs.
+Flares
+USX growth
+eUSX yield
+Solana DeFi integrations
+and the wider activity forming around the protocol
 
-Incredible things happening on Cardano.
+But an unlock creates a diffe...
 
-Innovation, even. 😳
+**Likes:** 81 · **Replies:** 42 · **RTs:** 13 · **Quotes:** 3 🔥🔥🔥🔥
+[View post](https://x.com/0xKairom/status/2070484939334688899)
 
-**Likes:** 336 · **Replies:** 15 · **RTs:** 17 · **Quotes:** 2 🔥🔥🔥🔥🔥
-[View post](https://x.com/tayvano_/status/2070107628639047744)
+### 18. @stacy_muur · 18:09 UTC
 
-### 20. @onrefinance · 15:42 UTC
+> Bitcoin has around a $1.24T market cap, but @DefiLlama shows only ~$4.12B in Bitcoin DeFi TVL.
 
-> $200M AUM.
+So, for as big as Bitcoin is, that is roughly 0.33% of BTC’s market cap. Very tiny.
 
-The leading global capital partner for reinsurance, redefining DeFi by bringing real-world premiums onchain through transparent, liquid, and composable infrastructure.
+I didn't really mention it before, but the reason why Stacks is my favorite BTCfi project is that their thesis resonate...
 
-A new era for capital markets starts here. https://t.co/ADSoYI9XJi
+**Likes:** 105 · **Replies:** 35 · **RTs:** 12 · **Quotes:** 1 🔥🔥🔥🔥
+[View post](https://x.com/stacy_muur/status/2070570035354235001)
 
-**Likes:** 192 · **Replies:** 46 · **RTs:** 28 · **Quotes:** 12 🔥🔥🔥🔥🔥
-[View post](https://x.com/onrefinance/status/2070170781473214598)
+### 19. @0xSisyphus · 07:06 UTC
+
+> Now that hyperscaler FCF has collectively gone from hundreds of billions to zero, and the suppliers they’ve enriched on this death quest for compute have gone up 10x, the market is finally beginning to digest the implications 
+
+A new generation of telecom companies has formed
+
+**Likes:** 165 · **Replies:** 15 · **RTs:** 8 · **Quotes:** 1 🔥🔥🔥🔥
+[View post](https://x.com/0xSisyphus/status/2070403383630921820)
+
+### 20. @0xshowmaker · 16:48 UTC
+
+> Hey amigos🦀
+
+- I've been testing RealClaw, the AI agent powered by @byreal_io , a Bybit-backed spot DEX (not a perp DEX btw it’s a spot DEX).
+
+- RealClaw offers users a unique AI experience on Telegram, allowing them to seamlessly manage on-chain transactions and discover potential profit opportunit...
+
+**Likes:** 167 · **Replies:** 3 · **RTs:** 18 · **Quotes:** 0 🔥🔥🔥🔥
+[View post](https://x.com/0xshowmaker/status/2070549682749624647)
 
 ---
 
@@ -210,4 +233,4 @@ _LLM analysis unavailable._
 
 ---
 
-_Updated daily at ~07:00 UTC by the inspiration agent. Archive: [[history/2026-06-26]]_
+_Updated daily at ~07:00 UTC by the inspiration agent. Archive: [[history/2026-06-27]]_
