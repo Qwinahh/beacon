@@ -10,10 +10,10 @@ airdrop_status: none
 worth_farming: false
 blocked: false
 updated: 2026-06-12
-tvl_usd: 12137967227
+tvl_usd: 12419743406
 price_usd: 71.97
 price_change_24h: -5.0
-metrics_updated: 2026-06-26
+metrics_updated: 2026-06-27
 ---
 
 # Aave
@@ -65,5 +65,5 @@ the story.
 → [[index]] · [[dashboard]] · [[projects/morpho]] · [[projects/ethena]] · [[narratives/yield-bearing-stables]]
 
 ## Live Metrics
-- TVL: $12.14B
-- Snapshot: 2026-06-26 (auto, DeFiLlama + CoinGecko)
+- TVL: $12.42B
+- Snapshot: 2026-06-27 (auto, DeFiLlama + CoinGecko)
