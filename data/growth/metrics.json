@@ -394,5 +394,17 @@
     "replies": 0,
     "retweets": 0,
     "quote_tweets": 0
+  },
+  "2070832741029970017": {
+    "tweet_id": "2070832741029970017",
+    "text": "Rhea Lend TVL down 52.6% in 24h, reassessing farm viability now.",
+    "format": "farm_update",
+    "topic": "general",
+    "posted_at": 1782559974.4762545,
+    "collected_at": 1782568204.1425078,
+    "likes": 0,
+    "replies": 0,
+    "retweets": 0,
+    "quote_tweets": 0
   }
 }
