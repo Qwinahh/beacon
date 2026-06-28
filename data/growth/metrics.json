@@ -430,5 +430,17 @@
     "replies": 0,
     "retweets": 0,
     "quote_tweets": 0
+  },
+  "2071044232043790345": {
+    "tweet_id": "2071044232043790345",
+    "text": "Cronos zkEVM Bridge TVL up 67.4% in 24h. Too late for the farm to work.",
+    "format": "mistake_admission",
+    "topic": "general",
+    "posted_at": 1782610397.8612564,
+    "collected_at": 1782618603.5759647,
+    "likes": 0,
+    "replies": 0,
+    "retweets": 0,
+    "quote_tweets": 0
   }
 }
