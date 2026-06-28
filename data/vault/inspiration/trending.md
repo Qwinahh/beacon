@@ -1,10 +1,10 @@
 ---
-title: Trending — 2026-06-27
-updated: 2026-06-27 07:01 UTC
+title: Trending — 2026-06-28
+updated: 2026-06-28 07:01 UTC
 type: inspiration
 ---
 
-# Trending Today — 2026-06-27
+# Trending Today — 2026-06-28
 
 Top-performing posts from monitored accounts + keyword searches in the last 24h.
 Use these as raw material — find a post that made you think, then write your own take.
@@ -15,215 +15,234 @@ Use these as raw material — find a post that made you think, then write your o
 
 ## Top Posts by Engagement
 
-### 1. @tayvano_ · 17:10 UTC
+### 1. @Pentosh1 · 14:03 UTC
 
-> Introducing a limited preview of GPT-5.6 Sol, our next generation frontier model, as well as GPT-5.6 Terra, a balanced model for efficient, everyday work, and GPT-5.6 Luna, a fast and affordable model for high-volume work.
+> It's hard to compare robotics companies and their valuations to each other. Saying one is cheaper than the other for the most part is extremely difficult to do. Which is what I am seeing in a lot of posts. 
 
-https://t.co/OoM83SyISN
+There are really big design differences, like bipedal vs fixed or general vs specialized. Wh...
 
-**Likes:** 34491 · **Replies:** 2797 · **RTs:** 4903 · **Quotes:** 4582 🔥🔥🔥🔥🔥
-[View post](https://x.com/tayvano_/status/2070555272230384038)
+**Likes:** 260 · **Replies:** 41 · **RTs:** 7 · **Quotes:** 4 🔥🔥🔥🔥🔥
+[View post](https://x.com/Pentosh1/status/2070870660382142630)
 
-### 2. @blknoiz06 · 14:30 UTC
+### 2. @Route2FI · 11:46 UTC
 
-> solana looks great
+> Gm from Zürich 🌸 https://t.co/UatMrVZKBT
 
-**Likes:** 2211 · **Replies:** 587 · **RTs:** 178 · **Quotes:** 89 🔥🔥🔥🔥🔥
-[View post](https://x.com/blknoiz06/status/2070514945393918239)
+**Likes:** 169 · **Replies:** 33 · **RTs:** 3 · **Quotes:** 0 🔥🔥🔥🔥🔥
+[View post](https://x.com/Route2FI/status/2070836244322369755)
 
-### 3. @tayvano_ · 17:12 UTC
+### 3. @Crypto_Pranjal · 12:41 UTC
 
-> excuse me did they just say $SOL $TERRA $LUNA?! https://t.co/thFU9RKy0d
+> Funny how many people are still sleeping on @xStocksFi.
 
-**Likes:** 1053 · **Replies:** 123 · **RTs:** 39 · **Quotes:** 24 🔥🔥🔥🔥🔥
-[View post](https://x.com/tayvano_/status/2070555710576881942)
+It honestly sits in the top tier of my airdrop watchlist right now.
 
-### 4. @Dreamcash · 11:04 UTC
+If I had a few hundred bucks, I'd probably throw it all into this. Buy NVIDIA xStock, deposit it into Kamino, earn yield, and farm xPoints. Pretty straightforward.
 
-> https://t.co/Twu1UTfo2F
+The bigge...
 
-**Likes:** 310 · **Replies:** 79 · **RTs:** 20 · **Quotes:** 122 🔥🔥🔥🔥🔥
-[View post](https://x.com/Dreamcash/status/2070463127511015765)
+**Likes:** 151 · **Replies:** 25 · **RTs:** 14 · **Quotes:** 0 🔥🔥🔥🔥🔥
+[View post](https://x.com/Crypto_Pranjal/status/2070850010745586138)
 
-### 5. @Pentosh1 · 17:03 UTC
+### 4. @0xfrigg · 18:42 UTC
 
-> Things to consider, look for exposure in when opportunities arise
+> 10 days ago we said hype’s real risk was the calendar.
 
-$BB physical AI safety layer
-$DRAM memory, robotics 
-$BOT the physical side, private robotics companies that will all need to scale. This timeline is being sped up rapidly
+$678m. 9.92m tokens. unlocks tomorrow.
 
-all 3 tie in together over the next decade and benefit each ...
+now there’s a second thing on the calendar.
 
-**Likes:** 575 · **Replies:** 50 · **RTs:** 43 · **Quotes:** 2 🔥🔥🔥🔥🔥
-[View post](https://x.com/Pentosh1/status/2070553561503572002)
+singapore’s central bank added hyperliquid to its investor alert list. june 26.
 
-### 6. @DrPengu6 · 01:48 UTC
+not a ban. not enforcement. hyperliquid even said “we never claimed to be lice...
 
-> gTRIA gNOMISMA gQUIP & gARC CT
+**Likes:** 101 · **Replies:** 32 · **RTs:** 8 · **Quotes:** 0 🔥🔥🔥🔥
+[View post](https://x.com/0xfrigg/status/2070940920875569439)
 
-a few projects are building infrastructure that improves as adoption grows, not apps fighting for attention.
+### 5. @inno_ox · 14:29 UTC
 
-@useTria is tackling the user experience layer. BestPath routes across 200+ chains with AI optimization, abstracts gas, and stays self-custodial. users can tr...
+> ngl the card by @JupiterExchange may be the best i’ve tried 💳
 
-**Likes:** 172 · **Replies:** 185 · **RTs:** 4 · **Quotes:** 0 🔥🔥🔥🔥🔥
-[View post](https://x.com/DrPengu6/status/2070685555336024203)
+&gt; already at $130 cashback this month, works everywhere, self-custody, minimal fees, apple pay...
 
-### 7. @Pentosh1 · 18:32 UTC
+heard perks dropping soon 👀 https://t.co/ETXTFVG7rk
 
-> There should be no S3 for Hype imo 
+**Likes:** 90 · **Replies:** 26 · **RTs:** 6 · **Quotes:** 3 🔥🔥🔥
+[View post](https://x.com/inno_ox/status/2070877220516552882)
 
-Jeff already gave an airdrop which today is worth 14 billion plus  
+### 6. @hankisinvesting · 17:52 UTC
 
-The team continues to give to the long term believers via the AF, which uses 99% of the revenues to buy and burn hype. The gift is, that if you believe long enough, you get rewarded over time 
+> hyperliquid is a winner for a reason
 
+➜ 57.9% market share of all perp dex fees
+➜ 18.4% is where the nearest competitor is at
+➜ 97% of every fee dollar buys hyperliquid:native automatically
+
+growth will only continue with hip-3 and hip-4 https://t.co/jHNxcQCR3v
+
+**Likes:** 72 · **Replies:** 27 · **RTs:** 1 · **Quotes:** 0 🔥🔥🔥
+[View post](https://x.com/hankisinvesting/status/2070928389410800059)
+
+### 7. @rodrigomcrypto · 19:30 UTC
+
+> 10 reasons why it STILL makes sense to farm points on PerpDEX projects with strong asymmetry in 2026.
+
+The meta is not dead. It just changed.
+
+People who farm smarter can still find opportunities with solid risk to reward.
+
+Let me break down the main reasons.
+
+1. Community allocations are still big
 ...
 
-**Likes:** 405 · **Replies:** 68 · **RTs:** 10 · **Quotes:** 6 🔥🔥🔥🔥🔥
-[View post](https://x.com/Pentosh1/status/2070576061440803050)
+**Likes:** 50 · **Replies:** 22 · **RTs:** 15 · **Quotes:** 3 🔥🔥🔥
+[View post](https://x.com/rodrigomcrypto/status/2070952808757784617)
 
-### 8. @Pentosh1 · 13:52 UTC
+### 8. @Gainzy222 · 00:49 UTC
 
-> $BB new highs again 
+> Haaland and Ronaldo have the same number of goals
 
-has found a way to go up during both market weakness and strength
+All it took was for Haaland to be benched the whole game
 
-**Likes:** 361 · **Replies:** 38 · **RTs:** 10 · **Quotes:** 3 🔥🔥🔥🔥🔥
-[View post](https://x.com/Pentosh1/status/2070505590598906288)
+**Likes:** 64 · **Replies:** 25 · **RTs:** 0 · **Quotes:** 0 🔥🔥
+[View post](https://x.com/Gainzy222/status/2071033156879503711)
 
-### 9. @Route2FI · 15:03 UTC
+### 9. @zippy257 · 08:45 UTC
 
-> Group K could throw up a big shock here as one of the pre-tournament favourites Portugal need to beat Colombia if they’re to top the group.
+> From a car to a bicycle. 🥹
 
-Colombia have already qualified for the knockout stages for a 3rd World Cup appearance in a row after beating Uzbekistan and Congo, and now has 6 points.
+If you've spent any time farming InfoFi, you're probably familiar with KaitoAI.
 
-Cris...
+Back when Yap-to-Earn was one of the hottest ways to earn in crypto, Kaito launched its NFT collection with a mint price of around 0.1 $ETH (roughly $350 at today's ETH price). At its peak, a...
 
-**Likes:** 278 · **Replies:** 17 · **RTs:** 36 · **Quotes:** 0 🔥🔥🔥🔥🔥
-[View post](https://x.com/Route2FI/status/2070523285960290509)
+**Likes:** 44 · **Replies:** 27 · **RTs:** 3 · **Quotes:** 2 🔥🔥
+[View post](https://x.com/zippy257/status/2070790640657633435)
 
-### 10. @2JJRJR · 14:21 UTC
+### 10. @CryptoPatel · 04:30 UTC
 
-> Hey guys
-Are you paying attention yet?
+> $SLX Just Pumped 400% In 5 Days. Here Is The Real Reason Nobody Is Telling You
 
-https://t.co/lWira6uBPP 
+Solana Yield Protocol. Not A Meme.
+→ Catalyst: Solstice + TensorX $1B Facility To Finance EU Sovereign AI Compute Onchain
+→ New Product: aiUSX, Yield Asset For AI Treasury Cash
+→ Narrative: AI + RWA + DeFi Yield (Hottest...
 
-Thats our ca https://t.co/Iklv4K9Rd9
+**Likes:** 115 · **Replies:** 4 · **RTs:** 4 · **Quotes:** 0 🔥🔥
+[View post](https://x.com/CryptoPatel/status/2071088703741874476)
 
-**Likes:** 203 · **Replies:** 31 · **RTs:** 41 · **Quotes:** 5 🔥🔥🔥🔥🔥
-[View post](https://x.com/2JJRJR/status/2070512845012254996)
+### 11. @Okada_DeFi0x · 07:21 UTC
 
-### 11. @Gainzy222 · 01:54 UTC
+> AI Agent is slowly replacing the human in the loop.
 
-> Don’t sit all bear market in boring coins, reallocate into more promising ones
+I think the shift is already visible in the data. The areas that reward speed, automation, and constant execution are moving away from manual human activity first.
 
-Handful of coins will massively outperform, the rest are going to hades https://t.co/3woPYhMvjA
+Perps is the clearest example.
 
-**Likes:** 179 · **Replies:** 54 · **RTs:** 10 · **Quotes:** 6 🔥🔥🔥🔥🔥
-[View post](https://x.com/Gainzy222/status/2070687148291010934)
+→ Top perp protocols generated around $592B in rep...
 
-### 12. @Route2FI · 07:00 UTC
+**Likes:** 63 · **Replies:** 16 · **RTs:** 7 · **Quotes:** 1 🔥🔥
+[View post](https://x.com/Okada_DeFi0x/status/2070769365763449051)
 
-> Season 2 ends on June 30, marking the final week of the campaign.
+### 12. @the_smart_ape · 10:50 UTC
 
-While attention has been on points, @grvt_io has continued building in the background.
-RWA vaults are now live, with a Balanced vault targeting 4.5% APY and an Opportunistic vault targeting 11% APY.
+> been a while since i farmed an airdrop properly. doing it with @Theo_Network right now.
 
-With spot also live, the focus sh...
+thUSD is a stablecoin that pays a real gold-backed yield, and right now you get points on top of it.
 
-**Likes:** 238 · **Replies:** 17 · **RTs:** 26 · **Quotes:** 0 🔥🔥🔥🔥🔥
-[View post](https://x.com/Route2FI/status/2070401904073458035)
+the yield isn’t a defi loop that dies as tvl grows, it’s the gold carry trade banks have run for decades.
 
-### 13. @Tanaka_L2 · 05:20 UTC
+th...
 
-> ➥ Which DeFi protocols can survive without heavy token incentives?
+**Likes:** 41 · **Replies:** 15 · **RTs:** 8 · **Quotes:** 0 🔥🔥
+[View post](https://x.com/the_smart_ape/status/2070821976520974592)
 
-If DeFi 2021 was built around liquidity mining, DeFi 2026 is increasingly separating temporary TVL from sustainable product demand.
+### 13. @Mars_DeFi · 07:10 UTC
 
-Token incentives can attract capital, but they rarely create retention once rewards disappear, espe...
+> This week, most of the insightful articles on the timeline highlighted where crypto and AI are creating real leverage.
 
-**Likes:** 147 · **Replies:** 47 · **RTs:** 15 · **Quotes:** 2 🔥🔥🔥🔥🔥
-[View post](https://x.com/Tanaka_L2/status/2070376668833947717)
+From onchain banking and prediction markets to AI workflows, social mining, and airdrop opportunities, if you’re looking for the narratives shaping the next phase of adoption, here...
 
-### 14. @0xasrequired · 12:16 UTC
+**Likes:** 34 · **Replies:** 21 · **RTs:** 1 · **Quotes:** 0 🔥
+[View post](https://x.com/Mars_DeFi/status/2070766755753177381)
 
-> I’ve come to accept that HIP-3 was never intended to be permissionless (and neither was HIP-1 most probably)
+### 14. @virtualbacon · 15:00 UTC
 
-cash mounted the most promising assualt on xyz’s hegemony imo, but in retrospect, even with the full backing of tether and 200k USDT per week, there was no hope for cash
+> ☕️ GM! Here are the most important market events over the last 24 hours:
 
-wouldn’t surprise m...
+🌍Market Overview:
+🔸 The US government cleared #AI lab Anthropic to release Mythos 5 to roughly 100 trusted companies and federal agencies, ending a 2-week standoff. Commerce chief Lutnick said safeguards are now in place.
 
-**Likes:** 154 · **Replies:** 47 · **RTs:** 6 · **Quotes:** 6 🔥🔥🔥🔥🔥
-[View post](https://x.com/0xasrequired/status/2070481222778630195)
+🔸 M...
 
-### 15. @DefiIgnas · 08:38 UTC
+**Likes:** 45 · **Replies:** 10 · **RTs:** 6 · **Quotes:** 1 🔥
+[View post](https://x.com/virtualbacon/status/2070884874165318124)
 
-> I feel like revenue multiple is a much better indicator for determining a project's health.
+### 15. @sol_nxxn · 15:03 UTC
 
-Revenue multiple = Market Cap ÷ Annual Revenue
+> Just bought GTA 6 with my Solana card 💳
 
-It's basically a comparison of what the token is worth today VS. what the protocol earned in the last 12 months.
+A few years ago, I never thought I'd be able to earn yield in DeFi and then use it directly to buy the most anticipated game in history
 
-For example, @worldlibertyfi at 17x means the...
+What's your favorite crypto card? 🤔
 
-**Likes:** 145 · **Replies:** 41 · **RTs:** 17 · **Quotes:** 5 🔥🔥🔥🔥🔥
-[View post](https://x.com/DefiIgnas/status/2070426345390354742)
+**Likes:** 45 · **Replies:** 14 · **RTs:** 1 · **Quotes:** 0 🔥
+[View post](https://x.com/sol_nxxn/status/2070885770487845080)
 
-### 16. @DefiIgnas · 10:39 UTC
+### 16. @RagerrrYT · 10:34 UTC
 
-> Crypto is a lot less fun when I lose money
+> 🚨 NEW AIRDROP ALPHA
 
-**Likes:** 139 · **Replies:** 35 · **RTs:** 3 · **Quotes:** 2 🔥🔥🔥🔥🔥
-[View post](https://x.com/DefiIgnas/status/2070456842312995194)
+If you are not farming this airdrop you are missing one of the best opportunities since $LIT and $VAR
 
-### 17. @0xKairom · 12:30 UTC
+Season 0 ends in 3 weeks (Secret season)👇
 
-> 10 days until the first SLX unlock and this is where the @solsticefi story starts getting harder to ignore
+@risextrade  is a unified exchange built on RISE Chain combining orderbook, margin trading, yield generation and DeFi in a single sys...
 
-Before this, most of the attention was on participation
+**Likes:** 29 · **Replies:** 13 · **RTs:** 6 · **Quotes:** 0 🔥
+[View post](https://x.com/RagerrrYT/status/2070818100803494164)
 
-Flares
-USX growth
-eUSX yield
-Solana DeFi integrations
-and the wider activity forming around the protocol
+### 17. @lzminsky · 19:12 UTC
 
-But an unlock creates a diffe...
+> The core claim is that prediction markets are a specific case of state-contingent pricing. In Arrow-Debreu terms, a complete market has claims that pay in particular future states. One state realizes, the corresponding claim pays.
 
-**Likes:** 81 · **Replies:** 42 · **RTs:** 13 · **Quotes:** 3 🔥🔥🔥🔥
-[View post](https://x.com/0xKairom/status/2070484939334688899)
+Hyperliquid is interesting because it is moving toward a venue where...
 
-### 18. @stacy_muur · 18:09 UTC
+**Likes:** 31 · **Replies:** 6 · **RTs:** 1 · **Quotes:** 0 🔥
+[View post](https://x.com/lzminsky/status/2070948490973175896)
 
-> Bitcoin has around a $1.24T market cap, but @DefiLlama shows only ~$4.12B in Bitcoin DeFi TVL.
+### 18. @BNB_Hub · 05:00 UTC
 
-So, for as big as Bitcoin is, that is roughly 0.33% of BTC’s market cap. Very tiny.
+> This Week on @BNBCHAIN
 
-I didn't really mention it before, but the reason why Stacks is my favorite BTCfi project is that their thesis resonate...
+News:
+🔶 @BNBChainDevs rolled out sub-second finality at 0.65 seconds on BSC, making bridges, deposits, and DeFi transactions instant. Network finality is now 70x faster than in 2022.
+🔶 @BNBCHAIN ecosystem continues pushing agent economy development with new SDKs, cross-chain ...
 
-**Likes:** 105 · **Replies:** 35 · **RTs:** 12 · **Quotes:** 1 🔥🔥🔥🔥
-[View post](https://x.com/stacy_muur/status/2070570035354235001)
+**Likes:** 22 · **Replies:** 4 · **RTs:** 6 · **Quotes:** 2 🔥
+[View post](https://x.com/BNB_Hub/status/2071096252909977869)
 
-### 19. @0xSisyphus · 07:06 UTC
+### 19. @sandyXBT · 18:08 UTC
 
-> Now that hyperscaler FCF has collectively gone from hundreds of billions to zero, and the suppliers they’ve enriched on this death quest for compute have gone up 10x, the market is finally beginning to digest the implications 
+> $SLX at $0.52 and ripping 🔥
 
-A new generation of telecom companies has formed
+Presale buyers sitting on a clean 4x now 
 
-**Likes:** 165 · **Replies:** 15 · **RTs:** 8 · **Quotes:** 1 🔥🔥🔥🔥
-[View post](https://x.com/0xSisyphus/status/2070403383630921820)
+Next unlock hits July 5th and momentum is only building. 
 
-### 20. @0xshowmaker · 16:48 UTC
+Shorters getting absolutely rekt as we push new highs on real yield + Solana DeFi summer.  
 
-> Hey amigos🦀
+This is just the beginning. $SLX season loading... https://t.co/toqMWr5LGV
 
-- I've been testing RealClaw, the AI agent powered by @byreal_io , a Bybit-backed spot DEX (not a perp DEX btw it’s a spot DEX).
+**Likes:** 23 · **Replies:** 9 · **RTs:** 0 · **Quotes:** 0 🔥
+[View post](https://x.com/sandyXBT/status/2070932333201604968)
 
-- RealClaw offers users a unique AI experience on Telegram, allowing them to seamlessly manage on-chain transactions and discover potential profit opportunit...
+### 20. @incentivedorg · 21:16 UTC
 
-**Likes:** 167 · **Replies:** 3 · **RTs:** 18 · **Quotes:** 0 🔥🔥🔥🔥
-[View post](https://x.com/0xshowmaker/status/2070549682749624647)
+> BIG NEWS: Cambrian @CambrianNetwork  Secures $5.9M in Seed Funding, Led by a16z crypto’s CSX Accelerator with Participation from Blockchain Builders Fund!Today, Cambrian Network — the leading financial intelligence layer for AI agents — is accelerating into the future of finance. With total funding ...
+
+**Likes:** 44 · **Replies:** 0 · **RTs:** 0 · **Quotes:** 0 ·
+[View post](https://x.com/incentivedorg/status/2070979496933781977)
 
 ---
 
@@ -233,4 +252,4 @@ _LLM analysis unavailable._
 
 ---
 
-_Updated daily at ~07:00 UTC by the inspiration agent. Archive: [[history/2026-06-27]]_
+_Updated daily at ~07:00 UTC by the inspiration agent. Archive: [[history/2026-06-28]]_
