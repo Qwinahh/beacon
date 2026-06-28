@@ -418,5 +418,17 @@
     "replies": 0,
     "retweets": 0,
     "quote_tweets": 0
+  },
+  "2071021538799682016": {
+    "tweet_id": "2071021538799682016",
+    "text": "Cronos zkEVM Bridge TVL up 67.6% in 24h. Who's behind this move?",
+    "format": "question",
+    "topic": "general",
+    "posted_at": 1782604987.368669,
+    "collected_at": 1782615004.5351906,
+    "likes": 0,
+    "replies": 0,
+    "retweets": 0,
+    "quote_tweets": 0
   }
 }
