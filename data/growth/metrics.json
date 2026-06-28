@@ -478,5 +478,17 @@
     "replies": 0,
     "retweets": 0,
     "quote_tweets": 0
+  },
+  "2071179621056323861": {
+    "tweet_id": "2071179621056323861",
+    "text": "Rhea Lend TVL up 111.3% but DeFi TVL still down 13.8% in 30d.",
+    "format": "contrarian",
+    "topic": "general",
+    "posted_at": 1782642677.120947,
+    "collected_at": 1782651004.2313817,
+    "likes": 0,
+    "replies": 0,
+    "retweets": 0,
+    "quote_tweets": 0
   }
 }
