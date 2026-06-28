@@ -466,5 +466,17 @@
     "replies": 0,
     "retweets": 0,
     "quote_tweets": 0
+  },
+  "2071134196903346559": {
+    "tweet_id": "2071134196903346559",
+    "text": "Cronos zkEVM Bridge TVL up 67% in 24h, but how much is protocol-driven?",
+    "format": "callout",
+    "topic": "general",
+    "posted_at": 1782631847.1682465,
+    "collected_at": 1782640204.041032,
+    "likes": 0,
+    "replies": 0,
+    "retweets": 0,
+    "quote_tweets": 0
   }
 }
