@@ -442,5 +442,17 @@
     "replies": 0,
     "retweets": 0,
     "quote_tweets": 0
+  },
+  "2071066793733468288": {
+    "tweet_id": "2071066793733468288",
+    "text": "Cronos zkEVM Bridge TVL up 67% in 24h to $23M. Narrative shift brewing.",
+    "format": "hot_take",
+    "topic": "general",
+    "posted_at": 1782615776.989382,
+    "collected_at": 1782625804.04024,
+    "likes": 0,
+    "replies": 0,
+    "retweets": 0,
+    "quote_tweets": 0
   }
 }
