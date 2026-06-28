@@ -1,1 +1,10 @@
-[]
+[
+  {
+    "tweet_id": "2071179621056323861",
+    "text": "Rhea Lend TVL up 111.3% but DeFi TVL still down 13.8% in 30d.",
+    "format": "contrarian",
+    "topic": "general",
+    "posted_ts": 1782642677.120947,
+    "fetch_after_ts": 1782729077.1209474
+  }
+]
