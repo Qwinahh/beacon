@@ -1,9 +1,37 @@
 {
-  "active_hours_utc": [8, 11, 14, 17, 20, 22],
-  "updated": "2026-06-24 (seed)",
-  "source": "default seed — auto-tunes weekly once enough posts have measured impressions",
+  "active_hours_utc": [
+    8,
+    10,
+    12,
+    14,
+    18,
+    20
+  ],
+  "updated": "2026-06-28 05:00 UTC",
+  "source": "tuned from 19 measured posts (trailing 28d)",
+  "avg_impressions_by_hour": {
+    "0": 10,
+    "1": 39,
+    "2": 20,
+    "4": 22,
+    "5": 28,
+    "6": 7,
+    "7": 15,
+    "8": 93,
+    "9": 19,
+    "10": 33,
+    "12": 27,
+    "13": 10,
+    "18": 13,
+    "20": 10,
+    "21": 9,
+    "23": 46
+  },
   "guardrails": {
-    "allowed_window_utc": [8, 22],
+    "allowed_window_utc": [
+      8,
+      22
+    ],
     "slots": 6,
     "min_gap_hours": 2
   }
