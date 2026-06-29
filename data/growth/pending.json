@@ -6,5 +6,13 @@
     "topic": "general",
     "posted_ts": 1782709275.5929613,
     "fetch_after_ts": 1782795675.5929618
+  },
+  {
+    "tweet_id": "2071496806588928054",
+    "text": "Loopring DEX sunset shows zkRollup adoption isn't there, $0 TVL growth in 6 months.",
+    "format": "contrarian",
+    "topic": "general",
+    "posted_ts": 1782718300.039601,
+    "fetch_after_ts": 1782804700.0396013
   }
 ]

@@ -675,5 +675,18 @@
     "bookmarks": null,
     "quote_tweets": null,
     "engagement_rate": null
+  },
+  {
+    "tweet_id": "2071496806588928054",
+    "tweet_text": "Loopring DEX sunset shows zkRollup adoption isn't there, $0 TVL growth in 6 months.",
+    "format_used": "contrarian",
+    "topic": "general",
+    "posted_at": "2026-06-29T07:31:40.038642+00:00",
+    "impressions": null,
+    "likes": null,
+    "replies": null,
+    "bookmarks": null,
+    "quote_tweets": null,
+    "engagement_rate": null
   }
 ]
