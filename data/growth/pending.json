@@ -6,5 +6,13 @@
     "topic": "general",
     "posted_ts": 1782698517.639814,
     "fetch_after_ts": 1782784917.6398146
+  },
+  {
+    "tweet_id": "2071436096370597967",
+    "text": "Loopring DEX closed due to low adoption, a warning sign for similar low-volume projects.",
+    "format": "short_take",
+    "topic": "general",
+    "posted_ts": 1782703825.6024728,
+    "fetch_after_ts": 1782790225.602473
   }
 ]
