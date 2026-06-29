@@ -1,1 +1,10 @@
-[]
+[
+  {
+    "tweet_id": "2071383472749371891",
+    "text": "ETH0 TVL down 62.5% in 24h, $62M remaining. Worst 24h drop since launch.",
+    "format": "pattern_recognition",
+    "topic": "general",
+    "posted_ts": 1782691279.151909,
+    "fetch_after_ts": 1782777679.1519094
+  }
+]
