@@ -526,5 +526,17 @@
     "replies": 0,
     "retweets": 0,
     "quote_tweets": 0
+  },
+  "2071458955230937473": {
+    "tweet_id": "2071458955230937473",
+    "text": "ETH0 TVL down 62.2% in 24h, not a 'rotation' story, farm incentives likely drying up",
+    "format": "callout",
+    "topic": "general",
+    "posted_at": 1782709275.5929613,
+    "collected_at": 1782719403.7210221,
+    "likes": 0,
+    "replies": 0,
+    "retweets": 0,
+    "quote_tweets": 0
   }
 }
