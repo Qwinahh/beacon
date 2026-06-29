@@ -502,5 +502,17 @@
     "replies": 0,
     "retweets": 0,
     "quote_tweets": 0
+  },
+  "2071413826847703082": {
+    "tweet_id": "2071413826847703082",
+    "text": "ETH0 TVL down 62.2% in 24h, $23M to $8.8M, warning signs for overexposure \ud83e\uddf5",
+    "format": "thread_hook",
+    "topic": "general",
+    "posted_at": 1782698517.639814,
+    "collected_at": 1782708604.1037831,
+    "likes": 0,
+    "replies": 0,
+    "retweets": 0,
+    "quote_tweets": 0
   }
 }
