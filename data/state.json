@@ -12,9 +12,9 @@
     "2026-06-26": 6,
     "2026-06-27": 6,
     "2026-06-28": 6,
-    "2026-06-29": 1
+    "2026-06-29": 2
   },
-  "last_post_ts": 1782691279.149613,
+  "last_post_ts": 1782698516.1286635,
   "seen": [
     "0a59a95b3b3cd57d1f74",
     "31ee999da8933acfb563",
@@ -70,10 +70,10 @@
     "3393c49decd09d14009a",
     "e7e28a89ea89cdf50150",
     "bb3f02640e92d639d0a3",
-    "567d5468ca19dd7dd693"
+    "567d5468ca19dd7dd693",
+    "5ebcad2458aae3890fda"
   ],
   "recent_formats": [
-    "farm_update",
     "mistake_admission",
     "pattern_recognition",
     "hot_take",
@@ -92,7 +92,8 @@
     "question",
     "contrarian",
     "pattern_recognition",
-    "data_observation"
+    "data_observation",
+    "thread_hook"
   ],
   "opinion_posts_today": 2,
   "last_opinion_ts": 1781615191.0380602,
@@ -131,13 +132,13 @@
     "watching:drift relaunch"
   ],
   "recent_topics": [
-    "general",
     "defi",
     "general",
     "general",
     "general",
     "general",
     "raise",
+    "general",
     "general",
     "general",
     "general",
