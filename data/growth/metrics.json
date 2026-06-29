@@ -550,5 +550,17 @@
     "replies": 0,
     "retweets": 0,
     "quote_tweets": 0
+  },
+  "2071526919162437915": {
+    "tweet_id": "2071526919162437915",
+    "text": "Usual ETH0 TVL down 61.6% to $X. Implications for ETH0 narrative and positioning.",
+    "format": "data_observation",
+    "topic": "general",
+    "posted_at": 1782725479.4620523,
+    "collected_at": 1782733804.4824188,
+    "likes": 0,
+    "replies": 0,
+    "retweets": 0,
+    "quote_tweets": 0
   }
 }
