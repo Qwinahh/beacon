@@ -514,5 +514,17 @@
     "replies": 0,
     "retweets": 0,
     "quote_tweets": 0
+  },
+  "2071436096370597967": {
+    "tweet_id": "2071436096370597967",
+    "text": "Loopring DEX closed due to low adoption, a warning sign for similar low-volume projects.",
+    "format": "short_take",
+    "topic": "general",
+    "posted_at": 1782703825.6024728,
+    "collected_at": 1782712203.948898,
+    "likes": 0,
+    "replies": 0,
+    "retweets": 0,
+    "quote_tweets": 0
   }
 }
