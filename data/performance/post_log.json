@@ -688,5 +688,18 @@
     "bookmarks": null,
     "quote_tweets": null,
     "engagement_rate": null
+  },
+  {
+    "tweet_id": "2071526919162437915",
+    "tweet_text": "Usual ETH0 TVL down 61.6% to $X. Implications for ETH0 narrative and positioning.",
+    "format_used": "data_observation",
+    "topic": "general",
+    "posted_at": "2026-06-29T09:31:19.460230+00:00",
+    "impressions": null,
+    "likes": null,
+    "replies": null,
+    "bookmarks": null,
+    "quote_tweets": null,
+    "engagement_rate": null
   }
 ]
