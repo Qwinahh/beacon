@@ -10,8 +10,8 @@ airdrop_status: distributed
 worth_farming: true
 blocked: false
 updated: 2026-06-12
-tvl_usd: 6570685927
-metrics_updated: 2026-06-29
+tvl_usd: 6568431963
+metrics_updated: 2026-06-30
 ---
 
 # Morpho
@@ -64,4 +64,4 @@ token no, until value accrual switches on.
 
 ## Live Metrics
 - TVL: $6.57B
-- Snapshot: 2026-06-29 (auto, DeFiLlama + CoinGecko)
+- Snapshot: 2026-06-30 (auto, DeFiLlama + CoinGecko)
