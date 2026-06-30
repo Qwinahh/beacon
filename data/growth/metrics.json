@@ -562,5 +562,17 @@
     "replies": 0,
     "retweets": 0,
     "quote_tweets": 0
+  },
+  "2071745856517103759": {
+    "tweet_id": "2071745856517103759",
+    "text": "Honeypop DEX TVL up 69.1% in 24h, expect overcrowding within 2 weeks.",
+    "format": "prediction",
+    "topic": "general",
+    "posted_at": 1782777678.17425,
+    "collected_at": 1782787803.596983,
+    "likes": 0,
+    "replies": 0,
+    "retweets": 0,
+    "quote_tweets": 0
   }
 }
