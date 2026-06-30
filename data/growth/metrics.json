@@ -610,5 +610,17 @@
     "replies": 0,
     "retweets": 0,
     "quote_tweets": 0
+  },
+  "2071874396642320555": {
+    "tweet_id": "2071874396642320555",
+    "text": "Ionic Digital seeks Nasdaq listing after AI pivot, but what's the real growth metric?",
+    "format": "callout",
+    "topic": "listing",
+    "posted_at": 1782808324.5268936,
+    "collected_at": 1782816603.7015004,
+    "likes": 0,
+    "replies": 0,
+    "retweets": 0,
+    "quote_tweets": 0
   }
 }
