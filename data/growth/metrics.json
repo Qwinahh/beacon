@@ -622,5 +622,17 @@
     "replies": 0,
     "retweets": 0,
     "quote_tweets": 0
+  },
+  "2071904242386759833": {
+    "tweet_id": "2071904242386759833",
+    "text": "Honeypop DEX TVL up 66.4% in 24h. Early sign of a narrative shift.",
+    "format": "data_observation",
+    "topic": "general",
+    "posted_at": 1782815440.3097,
+    "collected_at": 1782823803.796119,
+    "likes": 0,
+    "replies": 0,
+    "retweets": 0,
+    "quote_tweets": 0
   }
 }
