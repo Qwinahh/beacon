@@ -586,5 +586,17 @@
     "replies": 0,
     "retweets": 0,
     "quote_tweets": 0
+  },
+  "2071791412585120047": {
+    "tweet_id": "2071791412585120047",
+    "text": "Honeypop DEX TVL up 67.5% in 24h, but how much is organic vs incentive-driven?",
+    "format": "callout",
+    "topic": "general",
+    "posted_at": 1782788539.5858214,
+    "collected_at": 1782798603.7400455,
+    "likes": 0,
+    "replies": 0,
+    "retweets": 0,
+    "quote_tweets": 0
   }
 }
