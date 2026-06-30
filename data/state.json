@@ -82,7 +82,6 @@
     "3afe48d73dc79bee1209"
   ],
   "recent_formats": [
-    "pattern_recognition",
     "farm_update",
     "question",
     "mistake_admission",
@@ -101,7 +100,8 @@
     "data_observation",
     "prediction",
     "mistake_admission",
-    "callout"
+    "callout",
+    "farm_update"
   ],
   "opinion_posts_today": 2,
   "last_opinion_ts": 1781615191.0380602,
