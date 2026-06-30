@@ -574,5 +574,17 @@
     "replies": 0,
     "retweets": 0,
     "quote_tweets": 0
+  },
+  "2071768302758564050": {
+    "tweet_id": "2071768302758564050",
+    "text": "Got too comfortable with Hyperliquid, ignored regulatory risks, Singapore just warned them.",
+    "format": "mistake_admission",
+    "topic": "hype",
+    "posted_at": 1782783029.7672863,
+    "collected_at": 1782791403.190298,
+    "likes": 0,
+    "replies": 0,
+    "retweets": 0,
+    "quote_tweets": 0
   }
 }
