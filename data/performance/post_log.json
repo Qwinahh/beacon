@@ -831,5 +831,18 @@
     "bookmarks": null,
     "quote_tweets": null,
     "engagement_rate": null
+  },
+  {
+    "tweet_id": "2072130778972996066",
+    "tweet_text": "SundaeSwap V3 TVL down 51.2% in 24h, expect another 20% drop in a week.",
+    "format_used": "prediction",
+    "topic": "general",
+    "posted_at": "2026-07-01T01:30:50.838318+00:00",
+    "impressions": null,
+    "likes": null,
+    "replies": null,
+    "bookmarks": null,
+    "quote_tweets": null,
+    "engagement_rate": null
   }
 ]
