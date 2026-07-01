@@ -883,5 +883,18 @@
     "bookmarks": null,
     "quote_tweets": null,
     "engagement_rate": null
+  },
+  {
+    "tweet_id": "2072251847725724092",
+    "tweet_text": "Bitcoin ETFs lost $4.5B in June, eclipsing Strategy's $1.25B raise, a reversal from expected growth.",
+    "format_used": "pattern_recognition",
+    "topic": "raise",
+    "posted_at": "2026-07-01T09:31:55.886727+00:00",
+    "impressions": null,
+    "likes": null,
+    "replies": null,
+    "bookmarks": null,
+    "quote_tweets": null,
+    "engagement_rate": null
   }
 ]
