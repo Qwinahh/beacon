@@ -90,7 +90,6 @@
     "9008fe15de738915ffc0"
   ],
   "recent_formats": [
-    "data_observation",
     "thread_hook",
     "short_take",
     "callout",
@@ -109,7 +108,8 @@
     "short_take",
     "prediction",
     "mistake_admission",
-    "hot_take"
+    "hot_take",
+    "prediction"
   ],
   "opinion_posts_today": 2,
   "last_opinion_ts": 1781615191.0380602,
