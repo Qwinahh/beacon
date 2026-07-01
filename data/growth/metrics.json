@@ -670,5 +670,17 @@
     "replies": 0,
     "retweets": 0,
     "quote_tweets": 0
+  },
+  "2072176419845575161": {
+    "tweet_id": "2072176419845575161",
+    "text": "SundaeSwap V3 TVL down 50.9% in 24h. Farm is crowded, math is worse than thought.",
+    "format": "hot_take",
+    "topic": "general",
+    "posted_at": 1782880332.471341,
+    "collected_at": 1782888605.6335363,
+    "likes": 0,
+    "replies": 0,
+    "retweets": 0,
+    "quote_tweets": 0
   }
 }
