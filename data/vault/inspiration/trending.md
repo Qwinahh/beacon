@@ -1,10 +1,10 @@
 ---
-title: Trending — 2026-06-30
-updated: 2026-06-30 07:00 UTC
+title: Trending — 2026-07-01
+updated: 2026-07-01 07:01 UTC
 type: inspiration
 ---
 
-# Trending Today — 2026-06-30
+# Trending Today — 2026-07-01
 
 Top-performing posts from monitored accounts + keyword searches in the last 24h.
 Use these as raw material — find a post that made you think, then write your own take.
@@ -15,245 +15,236 @@ Use these as raw material — find a post that made you think, then write your o
 
 ## Top Posts by Engagement
 
-### 1. @0xSisyphus · 12:03 UTC
+### 1. @Gainzy222 · 13:30 UTC
 
-> Strategy announces a Digital Credit Capital Framework designed to strengthen Digital Credit, enhance liquidity, preserve long-term Bitcoin exposure, and support long-term value creation. $MSTR $STRC https://t.co/AUoUCtem53
+> 🚨 BREAKING: Nasdaq selects Pyth for data distribution.
 
-**Likes:** 10992 · **Replies:** 1295 · **RTs:** 1437 · **Quotes:** 887 🔥🔥🔥🔥🔥
-[View post](https://x.com/0xSisyphus/status/2071565162377568377)
+The exchange behind the opening bell is now distributing its market data through the Pyth Data Marketplace.
 
-### 2. @DefiIgnas · 12:03 UTC
+One of the most recognized names in global finance. Now on Pyth. 🧵 https://t.co/IGK9PeJLo9
 
-> Strategy announces a Digital Credit Capital Framework designed to strengthen Digital Credit, enhance liquidity, preserve long-term Bitcoin exposure, and support long-term value creation. $MSTR $STRC
-https://t.co/P770rd7fva
+**Likes:** 1000 · **Replies:** 144 · **RTs:** 220 · **Quotes:** 95 🔥🔥🔥🔥🔥
+[View post](https://x.com/Gainzy222/status/2071949503469609334)
 
-**Likes:** 1931 · **Replies:** 118 · **RTs:** 225 · **Quotes:** 128 🔥🔥🔥🔥🔥
-[View post](https://x.com/DefiIgnas/status/2071565219374023061)
+### 2. @Canborsa_DEX · 14:08 UTC
 
-### 3. @mango_ · 17:10 UTC
+> For years, trading RWAs and crypto meant jumping between platforms, brokers, and accounts. That changes today.
 
-> career update:
+Canborsa DEX is officially live!🚀
 
-Today, I’m excited to announce the next step in my journey, as I’ll be joining the @backyard_fi team as Growth Lead.
+★ New assets, including $MSFT, $META, $GOOGL, $AMZN, $AMD and more
+★ Higher leverage across all markets, now up to 30x
+★ Maximum position size is now $10...
 
-Unironically, it feels like for the first time in my professional career, I’m in the right place, at the right time, with the right team. Ready to keep pushing the bo...
+**Likes:** 812 · **Replies:** 77 · **RTs:** 29 · **Quotes:** 65 🔥🔥🔥🔥🔥
+[View post](https://x.com/Canborsa_DEX/status/2071959145431847188)
 
-**Likes:** 295 · **Replies:** 112 · **RTs:** 5 · **Quotes:** 0 🔥🔥🔥🔥🔥
-[View post](https://x.com/mango_/status/2071642420878684629)
+### 3. @DefiIgnas · 16:33 UTC
 
-### 4. @Pentosh1 · 13:42 UTC
+> I couldn’t care less if Circle’s USDC lost dominance and went to zero. 
 
-> Let's go over $BOT since there's a lot of misunderstandings around it and NAV.
+Crypto natives were the ones making it successful but got no airdrops, no IPO allocation or anything. 
 
-Why own bot? Bc you get liquid exposure to the leading robotics companies. It's essentially a bet that there will be mark appreciation from further funding rounds sometime over the next 12-18 months. *IF* you believe tha...
+If Open USD via Plasma, Tempo etc throw billions in incentives via liquidity mining to grow $OUSD MC, then it’s better for ...
 
-**Likes:** 379 · **Replies:** 49 · **RTs:** 36 · **Quotes:** 4 🔥🔥🔥🔥🔥
-[View post](https://x.com/Pentosh1/status/2071590082725744663)
+**Likes:** 603 · **Replies:** 62 · **RTs:** 33 · **Quotes:** 5 🔥🔥🔥🔥🔥
+[View post](https://x.com/DefiIgnas/status/2071995493480288533)
 
-### 5. @Pentosh1 · 21:56 UTC
+### 4. @MarketBubble · 15:57 UTC
 
-> We are in the midst of an equities melt up that is probably the largest wealth creation event for retail in history
+> Ansem on solana:So11111111111111111111111111111111111111112 vs hyperliquid:native 
 
-and something that I think will be deeply engrained in several generations culture as a result of how we got here
+"You should hold both. I don't think it's one or the other. They're both great assets and both will do well long term"
 
-**Likes:** 376 · **Replies:** 55 · **RTs:** 18 · **Quotes:** 2 🔥🔥🔥🔥🔥
-[View post](https://x.com/Pentosh1/status/2071714476148044161)
+"Hyperliquid has proven itself with one singular application. But what Solana is much better at ...
 
-### 6. @Route2FI · 08:18 UTC
+**Likes:** 517 · **Replies:** 76 · **RTs:** 35 · **Quotes:** 1 🔥🔥🔥🔥🔥
+[View post](https://x.com/MarketBubble/status/2071986515110981814)
 
-> Most people don’t realize this, but a normal job usually limits how you think. The reason for this is that it narrows your ambition. It consumes all of your energy. It trains you to optimize for small, predefined goals instead of exploring asymmetric opportunities.
+### 5. @Gainzy222 · 14:01 UTC
 
-I’ve seen it over and over. Frien...
+> ZEC Perpetuals are now live for trading.
 
-**Likes:** 321 · **Replies:** 41 · **RTs:** 32 · **Quotes:** 2 🔥🔥🔥🔥🔥
-[View post](https://x.com/Route2FI/status/2071508562170253740)
+The first US regulated perpetuals on Zcash.
 
-### 7. @MadMagicSOL · 07:50 UTC
+Only on Kalshi. https://t.co/N6T0eEAtQc
 
-> Cross-chain DeFi is a car crash of fragmented liquidity and wrapped asset risk. We’ve accepted that sovereign chains must exist as isolated islands, forcing teams to build complex bridging logic just to share capital.
+**Likes:** 339 · **Replies:** 69 · **RTs:** 65 · **Quotes:** 28 🔥🔥🔥🔥🔥
+[View post](https://x.com/Gainzy222/status/2071957210419093851)
 
-What @CNPYNetwork is doing with synchronized settlement flows changes the math.
+### 6. @Route2FI · 13:58 UTC
 
-...
+> Being in Switzerland has an interesting side effect: the high prices leave very little room for small thinking, because everything is so insanely expensive here compared to what I am used to in Scandinavia.
 
-**Likes:** 105 · **Replies:** 121 · **RTs:** 1 · **Quotes:** 0 🔥🔥🔥🔥🔥
-[View post](https://x.com/MadMagicSOL/status/2071501532298924391)
+Instead of seeing the cost of living here as a problem, you can treat it as a forcing functi...
 
-### 8. @DefiIgnas · 15:23 UTC
+**Likes:** 484 · **Replies:** 35 · **RTs:** 12 · **Quotes:** 1 🔥🔥🔥🔥🔥
+[View post](https://x.com/Route2FI/status/2071956623535243539)
 
-> Sucks to see EUropooors losing access to global CEXs. 
+### 7. @Route2FI · 13:25 UTC
 
-When OKx closed my global account  to the OKx EU I stopped using it altogether. 
+> 1/ Theo has invested $20M into FILQ, Fidelity International's tokenized USD digital liquidity fund, built on @sygnumofficial. @chainlink brings FILQ's NAV onchain, with daily pricing data sourced from @jpmorgan.
 
-Because many of the tokens I wanted to trade were not on the EU version. And liquidity was worse. 
+This is the first time a crypto-native platform has accessed Fidelity International's t...
 
-Before that it was my main CEX together with Binance. 
+**Likes:** 230 · **Replies:** 48 · **RTs:** 34 · **Quotes:** 42 🔥🔥🔥🔥🔥
+[View post](https://x.com/Route2FI/status/2071948147836788858)
 
-Now, B...
+### 8. @KookCapitalLLC · 08:29 UTC
 
-**Likes:** 204 · **Replies:** 78 · **RTs:** 4 · **Quotes:** 5 🔥🔥🔥🔥🔥
-[View post](https://x.com/DefiIgnas/status/2071615620282495012)
+> hype at $65 with $btc at $59k seems crazy
 
-### 9. @Pentosh1 · 13:20 UTC
+until you realize 7 of the top 10 markets by volume on hyperliquid are tradfi markets
 
-> pov 
+and 40%+ of all trading volume is driven by hip-3 markets
 
-your stocks go up 50x in 12 months, then have a 4% pullback
+eventually this number will be 90%
 
-**Likes:** 348 · **Replies:** 25 · **RTs:** 8 · **Quotes:** 1 🔥🔥🔥🔥🔥
-[View post](https://x.com/Pentosh1/status/2071584670718791807)
+$hype is going up with or without crypto
 
-### 10. @0xCan24 · 19:18 UTC
+$200+ https://t.co/ql4N3Lac7b
 
-> Bookmark this post and farm these airdrops if you want to make 5 figures at least
+**Likes:** 271 · **Replies:** 44 · **RTs:** 15 · **Quotes:** 2 🔥🔥🔥🔥🔥
+[View post](https://x.com/KookCapitalLLC/status/2071873874157855043)
 
-Market’s slow, which is exactly when early positioning pays the most
+### 9. @DefiIgnas · 16:28 UTC
 
-Here are the projects worth your time right now
+> It’s perverse how a stablecoin controlled by centralized companies with reserves held in USD is called Open USD/Standard. 
 
-→ @Vanta_exchange 
+A crypto native, decentralized stablecoin should have this name.
 
-Perp dex, testnet went live 5 days ago, backed by millions in funding 
+**Likes:** 194 · **Replies:** 46 · **RTs:** 12 · **Quotes:** 3 🔥🔥🔥🔥🔥
+[View post](https://x.com/DefiIgnas/status/2071994376679469154)
 
-6M tot...
+### 10. @Route2FI · 15:14 UTC
 
-**Likes:** 178 · **Replies:** 81 · **RTs:** 9 · **Quotes:** 0 🔥🔥🔥🔥🔥
-[View post](https://x.com/0xCan24/status/2071674636790583758)
+> I've been digging into thUSD by @Theo_Network for a while, and with Season 2 officially launching + a major announcement of a Fidelity International partnership dropping today, this is the right moment to give it a proper breakdown tbh.
 
-### 11. @Pentosh1 · 14:14 UTC
+First — the Fidelity news. @theo_network just partnered with F...
 
-> I think this is the best writeup on $BB out there. 
+**Likes:** 305 · **Replies:** 11 · **RTs:** 6 · **Quotes:** 0 🔥🔥🔥🔥🔥
+[View post](https://x.com/Route2FI/status/2071975668502368671)
 
-Although, some of the price targets are a bit optimistic. The read is quite long, but it's worth it as it goes into every detail of the business and it's growth. 
+### 11. @Verajuneonx · 07:03 UTC
 
-It is also a lot of research that we've already shared, just better organized. But ...
+> Trading tools love to hype faster execution, but most don’t actually rethink how traders move through their day.
+I spent some time checking out the new Velvet X from @Velvet_Capital, and what really stood out wasn’t any single flashy feature…
+it was how the whole platform is built around the real fl...
 
-**Likes:** 319 · **Replies:** 22 · **RTs:** 22 · **Quotes:** 0 🔥🔥🔥🔥🔥
-[View post](https://x.com/Pentosh1/status/2071598250033914153)
+**Likes:** 78 · **Replies:** 41 · **RTs:** 62 · **Quotes:** 0 🔥🔥🔥🔥🔥
+[View post](https://x.com/Verajuneonx/status/2071852117879296081)
 
-### 12. @Pentosh1 · 15:53 UTC
+### 12. @Deebs_DeFi · 14:19 UTC
 
-> $BB obviously we've been in this since the 5's and this has been a great move. My expectations are that we are coming into an area of HTF resistance so we will likely need to consolidate here above here for a bit. it may pullback (idk) 
+> Can't beat em? Join em.
 
-Dips if given, are an opportunity to buy. I myself, will be lo...
+TradFi assets have outperformed 99% of altcoins in the past 2 years.
 
-**Likes:** 280 · **Replies:** 30 · **RTs:** 16 · **Quotes:** 2 🔥🔥🔥🔥🔥
-[View post](https://x.com/Pentosh1/status/2071623020381094381)
+While some projects cry, others are adapting.
 
-### 13. @Pentosh1 · 17:28 UTC
+Canborsa just moved from beta to official release and is now live for trading stocks, commodities like SP500 NVIDIA GOLD (not just crypto)
 
-> yep
+Their idea is to s...
 
-**Likes:** 246 · **Replies:** 15 · **RTs:** 9 · **Quotes:** 1 🔥🔥🔥🔥🔥
-[View post](https://x.com/Pentosh1/status/2071647054607102220)
+**Likes:** 125 · **Replies:** 60 · **RTs:** 2 · **Quotes:** 1 🔥🔥🔥🔥🔥
+[View post](https://x.com/Deebs_DeFi/status/2071961870441894312)
 
-### 14. @Route2FI · 15:00 UTC
+### 13. @ramseyfox1 · 20:08 UTC
 
-> Argentina reaching the semifinals looks like a great trade.
+> wrapped up more tasks on @NomismaNetwork testnet and I'm genuinely impressed 
+This is the first L1 truly built for AI-driven DeFi  relational data models, subchain magic powered by @Chromia, gasless feels, MEV resistance, and real-time execution that actually works. No more patching off-chain hacks....
 
-They have a quite nice road to the semis with Cape Verde, then Egypt/Australia, Colombia in the 1/4 final, before they will meet Brazil/England in the semis.
+**Likes:** 63 · **Replies:** 79 · **RTs:** 1 · **Quotes:** 0 🔥🔥🔥🔥🔥
+[View post](https://x.com/ramseyfox1/status/2072049783527907496)
 
-On paper, they probably have the easiest route to the semis, and 61c feels okay ...
+### 14. @DamiDefi · 15:39 UTC
 
-**Likes:** 248 · **Replies:** 16 · **RTs:** 1 · **Quotes:** 0 🔥🔥🔥🔥🔥
-[View post](https://x.com/Route2FI/status/2071609667701096732)
+> June Was the Month AI and Crypto Stopped Flirting and Started Building Infrastructure Together.
 
-### 15. @Gyokeres_eth · 14:21 UTC
+Here's every major partnership that landed:
 
-> Solstice currently at ~ $550M FDV
+$MA Mastercard launched Agent Pay for Machines with Coinbase, OKX, Stripe and Ripple onboard, autonomous AI agent payments now settling on Polygon, Solana, an...
 
-And USX reached 10% of the total DeFi TVL locked on Solana
+**Likes:** 174 · **Replies:** 18 · **RTs:** 24 · **Quotes:** 1 🔥🔥🔥🔥🔥
+[View post](https://x.com/DamiDefi/status/2071981845810655267)
 
-On the total Solana stablecoins market cap they are already on the top 10 with now almost $510M TVL
+### 15. @stitchdegen · 18:30 UTC
 
-From the very beginning to retail 9 months ago, and now one of the biggest and fast-growing Solana yield...
+> I've got to be honest , I've started feeling pretty exhausted with the market lately
 
-**Likes:** 119 · **Replies:** 47 · **RTs:** 0 · **Quotes:** 1 🔥🔥🔥🔥🔥
-[View post](https://x.com/Gyokeres_eth/status/2071600032017502316)
+Ever since $ANSEM exploded, dozens of new memecoins have been launching every single day
 
-### 16. @risextrade · 12:23 UTC
+Some copy the narrative, some fork the idea, and some simply change the ticker hoping the community will FOMO in 
 
-> https://t.co/RpWa8Y8ksU
+At the en...
 
-**Likes:** 119 · **Replies:** 21 · **RTs:** 28 · **Quotes:** 10 🔥🔥🔥🔥🔥
-[View post](https://x.com/risextrade/status/2071570214614159593)
+**Likes:** 80 · **Replies:** 58 · **RTs:** 5 · **Quotes:** 2 🔥🔥🔥🔥🔥
+[View post](https://x.com/stitchdegen/status/2072024963062907265)
 
-### 17. @Pentosh1 · 14:56 UTC
+### 16. @stacy_muur · 14:43 UTC
 
-> PSA to those of you are trying to promote or use air conditioning machines 
+> Canton owns 83% of all tokenized RWA value onchain.
 
-We are coming for you https://t.co/aOiKRBUmMD
+That's more than $335B in value and an RWA count of > 7,900.
 
-**Likes:** 119 · **Replies:** 38 · **RTs:** 1 · **Quotes:** 7 🔥🔥🔥🔥
-[View post](https://x.com/Pentosh1/status/2071608805629010233)
+What's interesting to me is that there's only one perp DEX on this chain where you can trade RWAs.
 
-### 18. @zordcrypt · 12:14 UTC
+Talking about @Canborsa_DEX, which just moved from beta to official release. It alrea...
 
-> TL,DR on @maplefinance update (June)
+**Likes:** 110 · **Replies:** 38 · **RTs:** 11 · **Quotes:** 0 🔥🔥🔥🔥
+[View post](https://x.com/stacy_muur/status/2071967802953752882)
 
-• Launched the official Transparency page (https://t.co/SXthgKtQw6), providing live, Dune-reconciled data on AUM, revenue, deposits, and performance for full on-chain verifiability.
+### 17. @Route2FI · 12:01 UTC
 
-• June 25: Closed an institutional-grade on-chain warehouse facility with Krake...
+> Velvet-1 is a good tool to keep a close eye on onchain flows in real time and understand what’s changing before it becomes obvious.
 
-**Likes:** 85 · **Replies:** 52 · **RTs:** 4 · **Quotes:** 0 🔥🔥🔥🔥
-[View post](https://x.com/zordcrypt/status/2071567941469184014)
+It can help you connect wallet behavior, market activity, and social context, all in one place.
 
-### 19. @Mythicdotlive · 05:34 UTC
+**Likes:** 212 · **Replies:** 7 · **RTs:** 5 · **Quotes:** 1 🔥🔥🔥🔥
+[View post](https://x.com/Route2FI/status/2071927154036662464)
 
-> 🤝 PARTNERSHIP ANNOUNCEMENT
+### 18. @DeFiDecoder_ · 12:17 UTC
 
-MYTHIC × MOAI
+> I had another idea about how @GenLayer tech could be used in Web3
 
-We're excited to announce our official partnership with MOAI to bring an exclusive airdrop campaign to both communities.
+And I'm talking about airdrop farming 👀
 
-🎁 What's coming: 
+First of all, big reminder to everyone that we're entering the agentic era of DeFi (and finance in general)
 
-• Exclusive Airdrop Rewards
-• Community Quests
-• Cross-Community Exposure
-• More surprises ahead
+Recap of what GenLayer tech does:
 
-⚔️ Special Note fo...
+▶️ GenLayer replaces Smart Contracts with Intell...
 
-**Likes:** 77 · **Replies:** 37 · **RTs:** 25 · **Quotes:** 0 🔥🔥🔥🔥
-[View post](https://x.com/Mythicdotlive/status/2071467211378577645)
+**Likes:** 107 · **Replies:** 35 · **RTs:** 13 · **Quotes:** 0 🔥🔥🔥🔥
+[View post](https://x.com/DeFiDecoder_/status/2071931163447640236)
 
-### 20. @sjdedic · 21:06 UTC
+### 19. @standotsui · 12:34 UTC
 
-> If @world_xyz manages to bring serious prediction market share to Solana, and @jtx_trade and @PhoenixTrade do the same on the perp DEX side, the last two missing pieces of the puzzle are finally filled, leaving one chain that hosts everything retail and institutional finance could ask for, all in on...
+> Looks like Solana is on its way to flipping Ethereum in total RWA value and becoming the #1 RWA network https://t.co/uQjDe7JwSu
 
-**Likes:** 125 · **Replies:** 31 · **RTs:** 2 · **Quotes:** 5 🔥🔥🔥🔥
-[View post](https://x.com/sjdedic/status/2071701979940769910)
+**Likes:** 79 · **Replies:** 44 · **RTs:** 5 · **Quotes:** 3 🔥🔥🔥🔥
+[View post](https://x.com/standotsui/status/2071935438907113944)
+
+### 20. @DefiIgnas · 13:52 UTC
+
+> Best opportunities are in tokens that:
+
+- Have no perps/pre-launch markets
+- No (major) CEXs listings
+- Only spot
+- Price discovery happens on DEXs
+
+The moment perps are live for mid-caps is when things get tricky.
+
+**Likes:** 112 · **Replies:** 22 · **RTs:** 4 · **Quotes:** 2 🔥🔥🔥
+[View post](https://x.com/DefiIgnas/status/2071955147110969751)
 
 ---
 
 ## Today's Pattern Analysis
 
-### Editorial Brief
-Based on the top-performing crypto posts from the last 24 hours, we've identified key trends to inform @Qwinahh's content strategy.
-
-### Topics Getting Traction
-* Digital Credit Capital Framework, specifically Strategy's announcement to strengthen Digital Credit and enhance liquidity ($MSTR, $STRC)
-* Cross-chain DeFi and sovereign chains, with @CNPYNetwork's synchronized settlement flows gaining attention
-* Equities melt-up and its potential impact on retail wealth creation
-* Career updates and personal growth in the crypto space, as seen in @mango_'s announcement of joining @backyard_fi as Growth Lead
-
-### Formats Working
-* Data dumps, such as @0xCan24's list of projects worth farming for airdrops
-* Contrarian takes, like @MadMagicSOL's criticism of cross-chain DeFi
-* Thread openers, as seen in @Pentosh1's series of posts on $BOT and $BB
-* Career updates and personal anecdotes, which generated significant engagement for @mango_
-
-### Voice Patterns
-* Specific numbers and data points, such as @Gyokeres_eth's mention of Solstice's $550M FDV and USX's 10% of total DeFi TVL locked on Solana
-* Strong opinions, like @Pentosh1's statement on the equities melt-up being a historic wealth creation event
-* Insider knowledge, as seen in @Pentosh1's analysis of $BB and $BOT
-
-### Content Angles for @Qwinahh
-1. **Analysis of Strategy's Digital Credit Capital Framework**: Break down the implications of this framework on the crypto market and its potential impact on liquidity and long-term value creation.
-2. **The Future of Cross-Chain DeFi**: Explore the challenges and opportunities in cross-chain DeFi, highlighting @CNPYNetwork's innovative approach and its potential to revolutionize the space.
-3. **Navigating the Equities Melt-Up**: Provide insights on how the current equities melt-up will affect retail investors and the crypto market, using data points and expert opinions to support the narrative.
+_LLM analysis unavailable._
 
 ---
 
-_Updated daily at ~07:00 UTC by the inspiration agent. Archive: [[history/2026-06-30]]_
+_Updated daily at ~07:00 UTC by the inspiration agent. Archive: [[history/2026-07-01]]_
