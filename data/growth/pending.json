@@ -1,1 +1,10 @@
-[]
+[
+  {
+    "tweet_id": "2072108496233927069",
+    "text": "DefiChain DEX TVL up 117.8% in 24h to unknown total, capital flow spike.",
+    "format": "short_take",
+    "topic": "defi",
+    "posted_ts": 1782864138.2128534,
+    "fetch_after_ts": 1782950538.212854
+  }
+]

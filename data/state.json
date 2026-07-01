@@ -13,9 +13,10 @@
     "2026-06-27": 6,
     "2026-06-28": 6,
     "2026-06-29": 6,
-    "2026-06-30": 6
+    "2026-06-30": 6,
+    "2026-07-01": 1
   },
-  "last_post_ts": 1782815440.3071053,
+  "last_post_ts": 1782864138.2101738,
   "seen": [
     "0a59a95b3b3cd57d1f74",
     "31ee999da8933acfb563",
@@ -82,10 +83,10 @@
     "3afe48d73dc79bee1209",
     "8485f5d15d0954df2305",
     "b164d3d33ff827375ebf",
-    "72248ef540a226ccbedb"
+    "72248ef540a226ccbedb",
+    "f5dddaf3e7972ca497b2"
   ],
   "recent_formats": [
-    "farm_update",
     "question",
     "contrarian",
     "pattern_recognition",
@@ -104,7 +105,8 @@
     "data_observation",
     "mistake_admission",
     "callout",
-    "data_observation"
+    "data_observation",
+    "short_take"
   ],
   "opinion_posts_today": 2,
   "last_opinion_ts": 1781615191.0380602,
@@ -167,12 +169,12 @@
     "general",
     "general",
     "general",
-    "general",
     "hype",
     "general",
     "general",
     "listing",
-    "general"
+    "general",
+    "defi"
   ],
   "replied_to_mentions": {},
   "quote_tweeted_ids": [

@@ -818,5 +818,18 @@
     "bookmarks": null,
     "quote_tweets": null,
     "engagement_rate": null
+  },
+  {
+    "tweet_id": "2072108496233927069",
+    "tweet_text": "DefiChain DEX TVL up 117.8% in 24h to unknown total, capital flow spike.",
+    "format_used": "short_take",
+    "topic": "defi",
+    "posted_at": "2026-07-01T00:02:18.210845+00:00",
+    "impressions": null,
+    "likes": null,
+    "replies": null,
+    "bookmarks": null,
+    "quote_tweets": null,
+    "engagement_rate": null
   }
 ]
