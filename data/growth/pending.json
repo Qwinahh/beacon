@@ -1,13 +1,5 @@
 [
   {
-    "tweet_id": "2072153625548259722",
-    "text": "Got SundaeSwap V3 farm timing wrong, 50.9% TVL drop in 24h makes the math unworkable.",
-    "format": "mistake_admission",
-    "topic": "general",
-    "posted_ts": 1782874897.8856847,
-    "fetch_after_ts": 1782961297.8856852
-  },
-  {
     "tweet_id": "2072176419845575161",
     "text": "SundaeSwap V3 TVL down 50.9% in 24h. Farm is crowded, math is worse than thought.",
     "format": "hot_take",
