@@ -6,5 +6,13 @@
     "topic": "general",
     "posted_ts": 1782869450.8404133,
     "fetch_after_ts": 1782955850.840414
+  },
+  {
+    "tweet_id": "2072153625548259722",
+    "text": "Got SundaeSwap V3 farm timing wrong, 50.9% TVL drop in 24h makes the math unworkable.",
+    "format": "mistake_admission",
+    "topic": "general",
+    "posted_ts": 1782874897.8856847,
+    "fetch_after_ts": 1782961297.8856852
   }
 ]
