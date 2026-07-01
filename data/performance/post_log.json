@@ -870,5 +870,18 @@
     "bookmarks": null,
     "quote_tweets": null,
     "engagement_rate": null
+  },
+  {
+    "tweet_id": "2072221877032944071",
+    "tweet_text": "SundaeSwap V3 TVL down 50.3% in 24h. Who's still farming here?",
+    "format_used": "question",
+    "topic": "general",
+    "posted_at": "2026-07-01T07:32:50.309487+00:00",
+    "impressions": null,
+    "likes": null,
+    "replies": null,
+    "bookmarks": null,
+    "quote_tweets": null,
+    "engagement_rate": null
   }
 ]
