@@ -1,13 +1,5 @@
 [
   {
-    "tweet_id": "2072221877032944071",
-    "text": "SundaeSwap V3 TVL down 50.3% in 24h. Who's still farming here?",
-    "format": "question",
-    "topic": "general",
-    "posted_ts": 1782891170.3155603,
-    "fetch_after_ts": 1782977570.3155613
-  },
-  {
     "tweet_id": "2072251847725724092",
     "text": "Bitcoin ETFs lost $4.5B in June, eclipsing Strategy's $1.25B raise, a reversal from expected growth.",
     "format": "pattern_recognition",

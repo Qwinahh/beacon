@@ -682,5 +682,17 @@
     "replies": 0,
     "retweets": 0,
     "quote_tweets": 0
+  },
+  "2072221877032944071": {
+    "tweet_id": "2072221877032944071",
+    "text": "SundaeSwap V3 TVL down 50.3% in 24h. Who's still farming here?",
+    "format": "question",
+    "topic": "general",
+    "posted_at": 1782891170.3155603,
+    "collected_at": 1782899404.5671718,
+    "likes": 0,
+    "replies": 0,
+    "retweets": 0,
+    "quote_tweets": 0
   }
 }
