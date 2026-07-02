@@ -984,5 +984,18 @@
     "bookmarks": null,
     "quote_tweets": null,
     "engagement_rate": null
+  },
+  {
+    "tweet_id": "2072614108365525402",
+    "tweet_text": "Taiko Bridge TVL up 53.5% in 24h, may rebalance farm allocations.",
+    "format_used": "farm_update",
+    "topic": "general",
+    "posted_at": "2026-07-02T09:31:25.544538+00:00",
+    "impressions": null,
+    "likes": null,
+    "replies": null,
+    "bookmarks": null,
+    "quote_tweets": null,
+    "engagement_rate": null
   }
 ]
