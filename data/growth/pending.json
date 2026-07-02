@@ -1,1 +1,10 @@
-[]
+[
+  {
+    "tweet_id": "2072545915315864039",
+    "text": "Fragmetric TVL up 51.1% in 24h, $X million in new value. Seen this before, points end then TVL drops.",
+    "format": "pattern_recognition",
+    "topic": "general",
+    "posted_ts": 1782968427.0581167,
+    "fetch_after_ts": 1783054827.0581172
+  }
+]
