@@ -95,7 +95,6 @@
     "e6ff3b8b9f5813ca8529"
   ],
   "recent_formats": [
-    "data_observation",
     "prediction",
     "mistake_admission",
     "callout",
@@ -114,7 +113,8 @@
     "question",
     "pattern_recognition",
     "alpha_tip",
-    "callout"
+    "callout",
+    "question"
   ],
   "opinion_posts_today": 2,
   "last_opinion_ts": 1781615191.0380602,
