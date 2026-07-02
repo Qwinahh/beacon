@@ -706,5 +706,17 @@
     "replies": 0,
     "retweets": 0,
     "quote_tweets": 0
+  },
+  "2072471013837733935": {
+    "tweet_id": "2072471013837733935",
+    "text": "Blackhole CLMM TVL down 50.4% in 24h, farm math getting worse.",
+    "format": "alpha_tip",
+    "topic": "general",
+    "posted_at": 1782950569.2195418,
+    "collected_at": 1782960606.7359416,
+    "likes": 0,
+    "replies": 0,
+    "retweets": 0,
+    "quote_tweets": 0
   }
 }

@@ -1,13 +1,5 @@
 [
   {
-    "tweet_id": "2072471013837733935",
-    "text": "Blackhole CLMM TVL down 50.4% in 24h, farm math getting worse.",
-    "format": "alpha_tip",
-    "topic": "general",
-    "posted_ts": 1782950569.2195418,
-    "fetch_after_ts": 1783036969.2195423
-  },
-  {
     "tweet_id": "2072493072579969038",
     "text": "Fragmetric TVL up 52.5% in 24h, but is that organic or incentivized?",
     "format": "callout",
