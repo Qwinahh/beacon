@@ -98,7 +98,6 @@
     "be87336ad3f3d85a5901"
   ],
   "recent_formats": [
-    "mistake_admission",
     "callout",
     "data_observation",
     "short_take",
@@ -117,7 +116,8 @@
     "pattern_recognition",
     "mistake_admission",
     "farm_update",
-    "prediction"
+    "prediction",
+    "thread_hook"
   ],
   "opinion_posts_today": 2,
   "last_opinion_ts": 1781615191.0380602,
