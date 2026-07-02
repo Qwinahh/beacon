@@ -730,5 +730,17 @@
     "replies": 0,
     "retweets": 0,
     "quote_tweets": 0
+  },
+  "2072545915315864039": {
+    "tweet_id": "2072545915315864039",
+    "text": "Fragmetric TVL up 51.1% in 24h, $X million in new value. Seen this before, points end then TVL drops.",
+    "format": "pattern_recognition",
+    "topic": "general",
+    "posted_at": 1782968427.0581167,
+    "collected_at": 1782978604.296616,
+    "likes": 0,
+    "replies": 0,
+    "retweets": 0,
+    "quote_tweets": 0
   }
 }
