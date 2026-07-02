@@ -10,10 +10,10 @@ airdrop_status: distributed
 worth_farming: false
 blocked: false
 updated: 2026-06-07
-tvl_usd: 5715432240
-price_usd: 65.51
-price_change_24h: 3.9
-metrics_updated: 2026-06-30
+tvl_usd: 5718498230
+price_usd: 63.36
+price_change_24h: -2.6
+metrics_updated: 2026-07-02
 ---
 
 # Hyperliquid
@@ -52,5 +52,5 @@ follow-on opportunities (HLP LP, builder grants, ecosystem tokens).
 
 ## Live Metrics
 - TVL: $5.72B
-- Price: $65.51 (+3.9% 24h)
-- Snapshot: 2026-06-30 (auto, DeFiLlama + CoinGecko)
+- Price: $63.36 (-2.6% 24h)
+- Snapshot: 2026-07-02 (auto, DeFiLlama + CoinGecko)

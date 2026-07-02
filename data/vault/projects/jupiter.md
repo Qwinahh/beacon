@@ -10,10 +10,10 @@ airdrop_status: distributed
 worth_farming: true
 blocked: false
 updated: 2026-06-12
-tvl_usd: 1529426508
+tvl_usd: 1568567600
 price_usd: 0.1737
 price_change_24h: 3.7
-metrics_updated: 2026-06-30
+metrics_updated: 2026-07-02
 ---
 
 # Jupiter
@@ -66,5 +66,5 @@ time in the token's life.
 → [[index]] · [[dashboard]] · [[narratives/solana-defi]] · [[narratives/prediction-markets]] · [[projects/kamino]] · [[projects/ethena]]
 
 ## Live Metrics
-- TVL: $1.53B
-- Snapshot: 2026-06-30 (auto, DeFiLlama + CoinGecko)
+- TVL: $1.57B
+- Snapshot: 2026-07-02 (auto, DeFiLlama + CoinGecko)
