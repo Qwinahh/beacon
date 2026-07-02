@@ -1,13 +1,5 @@
 [
   {
-    "tweet_id": "2072584244094710179",
-    "text": "Butter Network TVL up 83.5% in 24h. Got in too late, TVL surge kills the math.",
-    "format": "mistake_admission",
-    "topic": "general",
-    "posted_ts": 1782977565.3708162,
-    "fetch_after_ts": 1783063965.370817
-  },
-  {
     "tweet_id": "2072614108365525402",
     "text": "Taiko Bridge TVL up 53.5% in 24h, may rebalance farm allocations.",
     "format": "farm_update",

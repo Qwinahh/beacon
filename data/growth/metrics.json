@@ -742,5 +742,17 @@
     "replies": 0,
     "retweets": 0,
     "quote_tweets": 0
+  },
+  "2072584244094710179": {
+    "tweet_id": "2072584244094710179",
+    "text": "Butter Network TVL up 83.5% in 24h. Got in too late, TVL surge kills the math.",
+    "format": "mistake_admission",
+    "topic": "general",
+    "posted_at": 1782977565.3708162,
+    "collected_at": 1782985806.4404454,
+    "likes": 0,
+    "replies": 0,
+    "retweets": 0,
+    "quote_tweets": 0
   }
 }
