@@ -909,5 +909,18 @@
     "bookmarks": null,
     "quote_tweets": null,
     "engagement_rate": null
+  },
+  {
+    "tweet_id": "2072493072579969038",
+    "tweet_text": "Fragmetric TVL up 52.5% in 24h, but is that organic or incentivized?",
+    "format_used": "callout",
+    "topic": "general",
+    "posted_at": "2026-07-02T01:30:28.355449+00:00",
+    "impressions": null,
+    "likes": null,
+    "replies": null,
+    "bookmarks": null,
+    "quote_tweets": null,
+    "engagement_rate": null
   }
 ]
