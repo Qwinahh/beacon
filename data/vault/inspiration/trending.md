@@ -1,10 +1,10 @@
 ---
-title: Trending — 2026-07-01
-updated: 2026-07-01 07:01 UTC
+title: Trending — 2026-07-02
+updated: 2026-07-02 07:00 UTC
 type: inspiration
 ---
 
-# Trending Today — 2026-07-01
+# Trending Today — 2026-07-02
 
 Top-performing posts from monitored accounts + keyword searches in the last 24h.
 Use these as raw material — find a post that made you think, then write your own take.
@@ -15,236 +15,244 @@ Use these as raw material — find a post that made you think, then write your o
 
 ## Top Posts by Engagement
 
-### 1. @Gainzy222 · 13:30 UTC
+### 1. @tayvano_ · 17:57 UTC
 
-> 🚨 BREAKING: Nasdaq selects Pyth for data distribution.
+> She’s so real for this 💍 https://t.co/TsKWyOCtS7
 
-The exchange behind the opening bell is now distributing its market data through the Pyth Data Marketplace.
+**Likes:** 161858 · **Replies:** 552 · **RTs:** 10230 · **Quotes:** 374 🔥🔥🔥🔥🔥
+[View post](https://x.com/tayvano_/status/2072379192545604029)
 
-One of the most recognized names in global finance. Now on Pyth. 🧵 https://t.co/IGK9PeJLo9
+### 2. @tayvano_ · 18:49 UTC
 
-**Likes:** 1000 · **Replies:** 144 · **RTs:** 220 · **Quotes:** 95 🔥🔥🔥🔥🔥
-[View post](https://x.com/Gainzy222/status/2071949503469609334)
+> This bitch scaled that shit with engagement nails 😭😭😭 https://t.co/i26CuhIly8
 
-### 2. @Canborsa_DEX · 14:08 UTC
+**Likes:** 77192 · **Replies:** 256 · **RTs:** 3453 · **Quotes:** 150 🔥🔥🔥🔥🔥
+[View post](https://x.com/tayvano_/status/2072392234499244162)
 
-> For years, trading RWAs and crypto meant jumping between platforms, brokers, and accounts. That changes today.
+### 3. @DefiIgnas · 13:07 UTC
 
-Canborsa DEX is officially live!🚀
+> https://t.co/43mnhFedXH
 
-★ New assets, including $MSFT, $META, $GOOGL, $AMZN, $AMD and more
-★ Higher leverage across all markets, now up to 30x
-★ Maximum position size is now $10...
+**Likes:** 2069 · **Replies:** 672 · **RTs:** 412 · **Quotes:** 435 🔥🔥🔥🔥🔥
+[View post](https://x.com/DefiIgnas/status/2072306098837635377)
 
-**Likes:** 812 · **Replies:** 77 · **RTs:** 29 · **Quotes:** 65 🔥🔥🔥🔥🔥
-[View post](https://x.com/Canborsa_DEX/status/2071959145431847188)
+### 4. @Route2FI · 18:01 UTC
 
-### 3. @DefiIgnas · 16:33 UTC
+> Ansem reveals the exact reason trading crypto took over his original plan to be a software engineer.
 
-> I couldn’t care less if Circle’s USDC lost dominance and went to zero. 
+It comes down to how quickly you get rewarded. A standard career forces you to work set hours and wait until a massive project is done just to feel some excitement. Trading offers an instant reality...
 
-Crypto natives were the ones making it successful but got no airdrops, no IPO allocation or anything. 
+**Likes:** 827 · **Replies:** 71 · **RTs:** 72 · **Quotes:** 13 🔥🔥🔥🔥🔥
+[View post](https://x.com/Route2FI/status/2072380192966988104)
 
-If Open USD via Plasma, Tempo etc throw billions in incentives via liquidity mining to grow $OUSD MC, then it’s better for ...
+### 5. @Pentosh1 · 14:23 UTC
 
-**Likes:** 603 · **Replies:** 62 · **RTs:** 33 · **Quotes:** 5 🔥🔥🔥🔥🔥
-[View post](https://x.com/DefiIgnas/status/2071995493480288533)
+> Ive made a point to only talk about public equities largely for the last year and avoid shitcoins. Say what you will about me. 
 
-### 4. @MarketBubble · 15:57 UTC
+I have zero advantages over anyone else  
 
-> Ansem on solana:So11111111111111111111111111111111111111112 vs hyperliquid:native 
+I avoided 100% of the drawdown in crypto this year. Not 99%. 100%. 
 
-"You should hold both. I don't think it's one or the other. They're both great assets and both will do well long term"
+While capturing the hype move starting from $28 and 2 local...
 
-"Hyperliquid has proven itself with one singular application. But what Solana is much better at ...
+**Likes:** 620 · **Replies:** 63 · **RTs:** 12 · **Quotes:** 4 🔥🔥🔥🔥🔥
+[View post](https://x.com/Pentosh1/status/2072325148871475212)
 
-**Likes:** 517 · **Replies:** 76 · **RTs:** 35 · **Quotes:** 1 🔥🔥🔥🔥🔥
-[View post](https://x.com/MarketBubble/status/2071986515110981814)
+### 6. @DrPengu6 · 00:37 UTC
 
-### 5. @Gainzy222 · 14:01 UTC
+> Gm my July legends
 
-> ZEC Perpetuals are now live for trading.
+I am highly into infra plays lately, and four are actually building real tech, not just chasing hype.
 
-The first US regulated perpetuals on Zcash.
+@TheARCTERMINAL keeps shipping. Their June 30 post explained how ChatGPT, Claude, and Gemini handle user data versus ARC’s approach, where every AI inference is verifiable oncha...
 
-Only on Kalshi. https://t.co/N6T0eEAtQc
+**Likes:** 181 · **Replies:** 193 · **RTs:** 13 · **Quotes:** 0 🔥🔥🔥🔥🔥
+[View post](https://x.com/DrPengu6/status/2072479857892524314)
 
-**Likes:** 339 · **Replies:** 69 · **RTs:** 65 · **Quotes:** 28 🔥🔥🔥🔥🔥
-[View post](https://x.com/Gainzy222/status/2071957210419093851)
+### 7. @0xSisyphus · 08:48 UTC
 
-### 6. @Route2FI · 13:58 UTC
+> Trump took over a billion dollars in cash out of crypto, mostly from his own coin
 
-> Being in Switzerland has an interesting side effect: the high prices leave very little room for small thinking, because everything is so insanely expensive here compared to what I am used to in Scandinavia.
+The memecoin of the week has less than a million dollars in liquidity 
 
-Instead of seeing the cost of living here as a problem, you can treat it as a forcing functi...
+Cause and effect
 
-**Likes:** 484 · **Replies:** 35 · **RTs:** 12 · **Quotes:** 1 🔥🔥🔥🔥🔥
-[View post](https://x.com/Route2FI/status/2071956623535243539)
+**Likes:** 505 · **Replies:** 36 · **RTs:** 18 · **Quotes:** 2 🔥🔥🔥🔥🔥
+[View post](https://x.com/0xSisyphus/status/2072240986680348823)
 
-### 7. @Route2FI · 13:25 UTC
+### 8. @perpltrade · 16:17 UTC
 
-> 1/ Theo has invested $20M into FILQ, Fidelity International's tokenized USD digital liquidity fund, built on @sygnumofficial. @chainlink brings FILQ's NAV onchain, with daily pricing data sourced from @jpmorgan.
+> We’ve updated our Fee Structure.
 
-This is the first time a crypto-native platform has accessed Fidelity International's t...
+Base Maker Fees have been cut by 82% and Base Taker Fees by 21.6%. We’ve also lowered our Volume Tier Thresholds to better reflect real user behavior.
 
-**Likes:** 230 · **Replies:** 48 · **RTs:** 34 · **Quotes:** 42 🔥🔥🔥🔥🔥
-[View post](https://x.com/Route2FI/status/2071948147836788858)
+As a reminder, fees are charged only on opening. Closing is free.
 
-### 8. @KookCapitalLLC · 08:29 UTC
+Here’s the full breakdown: https://t.co/FUNUQo8...
 
-> hype at $65 with $btc at $59k seems crazy
+**Likes:** 267 · **Replies:** 77 · **RTs:** 25 · **Quotes:** 19 🔥🔥🔥🔥🔥
+[View post](https://x.com/perpltrade/status/2072353823536853081)
 
-until you realize 7 of the top 10 markets by volume on hyperliquid are tradfi markets
+### 9. @Pentosh1 · 17:25 UTC
 
-and 40%+ of all trading volume is driven by hip-3 markets
+> this last year has probably been the most fun for me in any market ever 
 
-eventually this number will be 90%
+its been very exciting to have to deep dive into new and upcoming technologies that are going to have some of the most insane impacts we have ever seen and this is very broadly speaking across all sectors. both good and bad. B...
 
-$hype is going up with or without crypto
+**Likes:** 302 · **Replies:** 56 · **RTs:** 9 · **Quotes:** 1 🔥🔥🔥🔥🔥
+[View post](https://x.com/Pentosh1/status/2072371064022167709)
 
-$200+ https://t.co/ql4N3Lac7b
+### 10. @Route2FI · 18:13 UTC
 
-**Likes:** 271 · **Replies:** 44 · **RTs:** 15 · **Quotes:** 2 🔥🔥🔥🔥🔥
-[View post](https://x.com/KookCapitalLLC/status/2071873874157855043)
+> Regulation just got exciting. OKX is now MiCA-licensed across Europe, meaning protected funds, audited systems, and full transparency on every trade. This is what safe crypto actually looks like 🇪🇺. 
 
-### 9. @DefiIgnas · 16:28 UTC
+The reason this is important is that, from today, July 1st, MiCA is tightening the rules for crypto...
 
-> It’s perverse how a stablecoin controlled by centralized companies with reserves held in USD is called Open USD/Standard. 
+**Likes:** 389 · **Replies:** 22 · **RTs:** 15 · **Quotes:** 0 🔥🔥🔥🔥🔥
+[View post](https://x.com/Route2FI/status/2072383192510726170)
 
-A crypto native, decentralized stablecoin should have this name.
+### 11. @Pentosh1 · 18:20 UTC
 
-**Likes:** 194 · **Replies:** 46 · **RTs:** 12 · **Quotes:** 3 🔥🔥🔥🔥🔥
-[View post](https://x.com/DefiIgnas/status/2071994376679469154)
+> for those asking, if you don't have any exposure to $BB 
 
-### 10. @Route2FI · 15:14 UTC
+I think a decent plays to look to start building a position would be between the top two blue lines if given
 
-> I've been digging into thUSD by @Theo_Network for a while, and with Season 2 officially launching + a major announcement of a Fidelity International partnership dropping today, this is the right moment to give it a proper breakdown tbh.
+11-12 area which would still be quite supportive of the overall trend https://t.co/g3XNbFXjIj
 
-First — the Fidelity news. @theo_network just partnered with F...
+**Likes:** 310 · **Replies:** 31 · **RTs:** 18 · **Quotes:** 0 🔥🔥🔥🔥🔥
+[View post](https://x.com/Pentosh1/status/2072384815156928627)
 
-**Likes:** 305 · **Replies:** 11 · **RTs:** 6 · **Quotes:** 0 🔥🔥🔥🔥🔥
-[View post](https://x.com/Route2FI/status/2071975668502368671)
+### 12. @CryptoTeluguO · 03:16 UTC
 
-### 11. @Verajuneonx · 07:03 UTC
+> 💥 Simple guide on @arcus_xyz waitlist
 
-> Trading tools love to hype faster execution, but most don’t actually rethink how traders move through their day.
-I spent some time checking out the new Velvet X from @Velvet_Capital, and what really stood out wasn’t any single flashy feature…
-it was how the whole platform is built around the real fl...
+🆕New DEX by @dydxfoundation
+⛓️On @RobinhoodCrypto Chain
 
-**Likes:** 78 · **Replies:** 41 · **RTs:** 62 · **Quotes:** 0 🔥🔥🔥🔥🔥
-[View post](https://x.com/Verajuneonx/status/2071852117879296081)
+💸RobinHood chain went live few hrs ago
+🆕 @arcus_xyz is major DEX on Robinhood Chain, built for 24/7 trading of 95 Stock Tokens, Equity Perpetuals, and major crypto
 
-### 12. @Deebs_DeFi · 14:19 UTC
+😉So potential drop from 2 projects with...
 
-> Can't beat em? Join em.
+**Likes:** 221 · **Replies:** 55 · **RTs:** 24 · **Quotes:** 1 🔥🔥🔥🔥🔥
+[View post](https://x.com/CryptoTeluguO/status/2072519735036776907)
 
-TradFi assets have outperformed 99% of altcoins in the past 2 years.
+### 13. @arcus_xyz · 22:25 UTC
 
-While some projects cry, others are adapting.
+> Today, we launched Arcus.
 
-Canborsa just moved from beta to official release and is now live for trading stocks, commodities like SP500 NVIDIA GOLD (not just crypto)
+A major DEX on Robinhood Chain, built for 24/7 trading of 95 Stock Tokens, Equity Perpetuals, and major cryptocurrencies.
 
-Their idea is to s...
+🧵 Here's everything you need to know https://t.co/XT1Vt99TkP
 
-**Likes:** 125 · **Replies:** 60 · **RTs:** 2 · **Quotes:** 1 🔥🔥🔥🔥🔥
-[View post](https://x.com/Deebs_DeFi/status/2071961870441894312)
+**Likes:** 226 · **Replies:** 27 · **RTs:** 20 · **Quotes:** 33 🔥🔥🔥🔥🔥
+[View post](https://x.com/arcus_xyz/status/2072446598731448581)
 
-### 13. @ramseyfox1 · 20:08 UTC
+### 14. @Route2FI · 18:55 UTC
 
-> wrapped up more tasks on @NomismaNetwork testnet and I'm genuinely impressed 
-This is the first L1 truly built for AI-driven DeFi  relational data models, subchain magic powered by @Chromia, gasless feels, MEV resistance, and real-time execution that actually works. No more patching off-chain hacks....
+> I feel alts could be close to a bottom. I still kind of believe in the 4-year cycle, and trying my best to position for that. This cycle, it will be much more spot and chill. I don't need to trade excessively anymore, and will try to make fewer trades in general. Well, it's easier said than done ofc...
 
-**Likes:** 63 · **Replies:** 79 · **RTs:** 1 · **Quotes:** 0 🔥🔥🔥🔥🔥
-[View post](https://x.com/ramseyfox1/status/2072049783527907496)
+**Likes:** 256 · **Replies:** 25 · **RTs:** 8 · **Quotes:** 0 🔥🔥🔥🔥🔥
+[View post](https://x.com/Route2FI/status/2072393714836640133)
 
-### 14. @DamiDefi · 15:39 UTC
+### 15. @0xSisyphus · 06:26 UTC
 
-> June Was the Month AI and Crypto Stopped Flirting and Started Building Infrastructure Together.
+> It’s crazy to think that Circle and Coinbase were at some point worth more than Hyperliquid. Both are down 60%+ from their valuations last summer
 
-Here's every major partnership that landed:
+Some of the most bloated, least efficient public companies in the world were competing against a team of less than 20 people and lost
 
-$MA Mastercard launched Agent Pay for Machines with Coinbase, OKX, Stripe and Ripple onboard, autonomous AI agent payments now settling on Polygon, Solana, an...
+**Likes:** 254 · **Replies:** 18 · **RTs:** 13 · **Quotes:** 4 🔥🔥🔥🔥🔥
+[View post](https://x.com/0xSisyphus/status/2072205226505797887)
 
-**Likes:** 174 · **Replies:** 18 · **RTs:** 24 · **Quotes:** 1 🔥🔥🔥🔥🔥
-[View post](https://x.com/DamiDefi/status/2071981845810655267)
+### 16. @Kaffchad · 09:59 UTC
 
-### 15. @stitchdegen · 18:30 UTC
+> No doubt that Solana’s ability to scale is truly impressive.
 
-> I've got to be honest , I've started feeling pretty exhausted with the market lately
+Its design is built specifically for high-performance consumer apps with:
 
-Ever since $ANSEM exploded, dozens of new memecoins have been launching every single day
+– @Raydium | $Ray: backbone DEX for DeFi on Solana, already surpassed $360B in trading volume YTD, leading all other chains.
 
-Some copy the narrative, some fork the idea, and some simply change the ticker hoping the community will FOMO in 
+– @Pumpfun | $Pump: Launchpad memecoi...
 
-At the en...
+**Likes:** 120 · **Replies:** 54 · **RTs:** 18 · **Quotes:** 6 🔥🔥🔥🔥🔥
+[View post](https://x.com/Kaffchad/status/2072258708269314372)
 
-**Likes:** 80 · **Replies:** 58 · **RTs:** 5 · **Quotes:** 2 🔥🔥🔥🔥🔥
-[View post](https://x.com/stitchdegen/status/2072024963062907265)
+### 17. @DefiIgnas · 13:25 UTC
 
-### 16. @stacy_muur · 14:43 UTC
+> They say it takes 3 cycles to make it.
 
-> Canton owns 83% of all tokenized RWA value onchain.
+It's my 4th cycle. 
 
-That's more than $335B in value and an RWA count of > 7,900.
+TL;DR:
 
-What's interesting to me is that there's only one perp DEX on this chain where you can trade RWAs.
+1. Learn
+2. Earn
+3. FUUUUCK
+4. Make it?
 
-Talking about @Canborsa_DEX, which just moved from beta to official release. It alrea...
+**Likes:** 169 · **Replies:** 43 · **RTs:** 4 · **Quotes:** 3 🔥🔥🔥🔥🔥
+[View post](https://x.com/DefiIgnas/status/2072310723384914163)
 
-**Likes:** 110 · **Replies:** 38 · **RTs:** 11 · **Quotes:** 0 🔥🔥🔥🔥
-[View post](https://x.com/stacy_muur/status/2071967802953752882)
+### 18. @Pentosh1 · 14:09 UTC
 
-### 17. @Route2FI · 12:01 UTC
+> $BB summer https://t.co/CKQyM0cSdk
 
-> Velvet-1 is a good tool to keep a close eye on onchain flows in real time and understand what’s changing before it becomes obvious.
+**Likes:** 203 · **Replies:** 21 · **RTs:** 8 · **Quotes:** 0 🔥🔥🔥🔥🔥
+[View post](https://x.com/Pentosh1/status/2072321601345913222)
 
-It can help you connect wallet behavior, market activity, and social context, all in one place.
+### 19. @Route2FI · 05:30 UTC
 
-**Likes:** 212 · **Replies:** 7 · **RTs:** 5 · **Quotes:** 1 🔥🔥🔥🔥
-[View post](https://x.com/Route2FI/status/2071927154036662464)
+> Fully agree with this even though I'm not a full time trader. But the same is true with investing.
 
-### 18. @DeFiDecoder_ · 12:17 UTC
+Instant reality check. If you're profitable, you survive. If you lose money (long-term), you don't have anything to do in this business. 
 
-> I had another idea about how @GenLayer tech could be used in Web3
+In many ways it is the most honest form of work. Compare it w...
 
-And I'm talking about airdrop farming 👀
+**Likes:** 167 · **Replies:** 23 · **RTs:** 9 · **Quotes:** 0 🔥🔥🔥🔥🔥
+[View post](https://x.com/Route2FI/status/2072553575616573478)
 
-First of all, big reminder to everyone that we're entering the agentic era of DeFi (and finance in general)
+### 20. @EmvynX · 13:13 UTC
 
-Recap of what GenLayer tech does:
+> Quick look at ALPIX DEX on my phone JUP perp chart is crisp and responsive. Connected my wallet and it just works, full control the whole time.
 
-▶️ GenLayer replaces Smart Contracts with Intell...
+DEX for on-chain perps + AI Traders powered by Swarm (agents collaborating on signals), Bee AI for copy-trading, Honey AI for smart strategies.
 
-**Likes:** 107 · **Replies:** 35 · **RTs:** 13 · **Quotes:** 0 🔥🔥🔥🔥
-[View post](https://x.com/DeFiDecoder_/status/2071931163447640236)
+Trading an...
 
-### 19. @standotsui · 12:34 UTC
-
-> Looks like Solana is on its way to flipping Ethereum in total RWA value and becoming the #1 RWA network https://t.co/uQjDe7JwSu
-
-**Likes:** 79 · **Replies:** 44 · **RTs:** 5 · **Quotes:** 3 🔥🔥🔥🔥
-[View post](https://x.com/standotsui/status/2071935438907113944)
-
-### 20. @DefiIgnas · 13:52 UTC
-
-> Best opportunities are in tokens that:
-
-- Have no perps/pre-launch markets
-- No (major) CEXs listings
-- Only spot
-- Price discovery happens on DEXs
-
-The moment perps are live for mid-caps is when things get tricky.
-
-**Likes:** 112 · **Replies:** 22 · **RTs:** 4 · **Quotes:** 2 🔥🔥🔥
-[View post](https://x.com/DefiIgnas/status/2071955147110969751)
+**Likes:** 221 · **Replies:** 1 · **RTs:** 7 · **Quotes:** 0 🔥🔥🔥🔥
+[View post](https://x.com/EmvynX/status/2072307610636763285)
 
 ---
 
 ## Today's Pattern Analysis
 
-_LLM analysis unavailable._
+### Editorial Brief
+Based on the top-performing crypto posts from the last 24 hours, we've identified key trends to inform @Qwinahh's content strategy.
+
+### Topics Getting Traction
+The current narrative revolves around:
+* Infra plays, with protocols like @TheARCTERMINAL and @arcus_xyz gaining attention for their innovative approaches to user data and 24/7 trading.
+* Regulation, with OKX's MiCA-licensing across Europe being seen as a positive development for the industry.
+* Trading and market analysis, with users sharing their experiences and insights on the current market conditions.
+
+### Formats Working
+Successful post formats include:
+* Personal anecdotes and experiences, such as @Pentosh1's stories about avoiding the crypto drawdown and @Route2FI's journey into trading.
+* Data-driven analysis, like @perpltrade's update on their fee structure and @0xSisyphus's comparison of Circle and Coinbase's valuations.
+* Thread openers, such as @DrPengu6's introduction to infra plays and @arcus_xyz's launch announcement.
+
+### Voice Patterns
+Posts that land well often feature:
+* Specific numbers, like @Pentosh1's claim of avoiding 100% of the crypto drawdown and @perpltrade's 82% cut in base maker fees.
+* Strong opinions, such as @0xSisyphus's statement on the inefficiency of public companies like Circle and Coinbase.
+* Insider knowledge, like @Route2FI's insight into the 4-year cycle and @DrPengu6's analysis of infra plays.
+
+### Content Angles
+For @Qwinahh's next posts, we recommend exploring the following angles:
+1. **Infra plays and their potential impact**: Delve into the world of protocols like @TheARCTERMINAL and @arcus_xyz, and discuss their innovative approaches to user data and 24/7 trading.
+2. **Regulation and its effects on the market**: Analyze the implications of OKX's MiCA-licensing and how it may shape the future of the crypto industry.
+3. **Trading strategies and market analysis**: Share personal experiences and insights on the current market conditions, and provide data-driven analysis on the best approaches to trading in the current environment.
 
 ---
 
-_Updated daily at ~07:00 UTC by the inspiration agent. Archive: [[history/2026-07-01]]_
+_Updated daily at ~07:00 UTC by the inspiration agent. Archive: [[history/2026-07-02]]_
